@@ -8,12 +8,9 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="col-span-2 lg:col-span-2">
                         <Link to="/" className="flex items-center gap-2 mb-6">
-                            <div className="bg-primary p-1.5 rounded-lg text-white">
-                                <span className="material-symbols-outlined text-2xl">school</span>
-                            </div>
-                            <span className="text-2xl font-black tracking-tight text-[#0d121b] dark:text-white uppercase">
-                                Head Edu Care
-                            </span>
+                             <img 
+                           src='/HEAD_horizontal.png'
+                           className='h-16 w-48'/>
                         </Link>
                         <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8 max-w-sm">
                             Premier education and migration consultancy providing professional
