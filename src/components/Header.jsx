@@ -35,12 +35,9 @@ export default function Header() {
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-2 group cursor-pointer">
-                            <div className="bg-primary p-1.5 rounded-lg text-white group-hover:rotate-12 transition-transform">
-                                <span className="material-symbols-outlined text-2xl">school</span>
-                            </div>
-                            <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0d121b] dark:text-white uppercase">
-                                Head Edu Care
-                            </span>
+                           <img 
+                           src='/HEAD_horizontal.png'
+                           className='h-12 w-40'/>
                         </Link>
 
                         {/* Desktop Nav */}

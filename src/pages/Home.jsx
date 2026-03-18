@@ -16,14 +16,14 @@ const FALLBACK_COUNTRIES = [
     { id: '1', name: 'Australia', flag_url: '🇦🇺', image_url: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800', description: 'World-class education with excellent post-study work opportunities.' },
     { id: '2', name: 'United Kingdom', flag_url: '🇬🇧', image_url: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800', description: 'Home to the most prestigious universities in the world.' },
     { id: '3', name: 'Canada', flag_url: '🇨🇦', image_url: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800', description: 'Affordable education with excellent immigration pathways.' },
-    { id: '4', name: 'United States', flag_url: '🇺🇸', image_url: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f04?w=800', description: 'World leader in higher education and research.' },
+    { id: '4', name: 'United States', flag_url: '🇺🇸', image_url: 'https://images.unsplash.com/photo-1508433957232-3107f5fd5995?q=80&w=1186&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800', description: 'World leader in higher education and research.' },
     { id: '5', name: 'Germany', flag_url: '🇩🇪', image_url: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800', description: 'Tuition-free public universities with strong programs.' },
     { id: '6', name: 'Japan', flag_url: '🇯🇵', image_url: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800', description: 'Cutting-edge technology education with scholarships.' },
 ]
 
 const FALLBACK_TESTIMONIALS = [
     { id: '1', student_name: 'Rahim Ahmed', photo_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200', university: 'University of Melbourne', country: 'Australia', quote: 'Head Edu Care made my dream of studying in Australia a reality. Their guidance was exceptional from start to finish!' },
-    { id: '2', student_name: 'Fatima Khan', photo_url: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200', university: 'University of Toronto', country: 'Canada', quote: 'The team helped me secure a full scholarship at UofT. Their expertise is unmatched. Truly life-changing!' },
+    { id: '2', student_name: 'Fatima Khan', photo_url: 'https://images.unsplash.com/photo-1706256446485-58bedf9cbf97?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=200', university: 'University of Toronto', country: 'Canada', quote: 'The team helped me secure a full scholarship at UofT. Their expertise is unmatched. Truly life-changing!' },
     { id: '3', student_name: 'Sakib Hasan', photo_url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200', university: 'Imperial College London', country: 'United Kingdom', quote: 'From IELTS prep to visa approval, Head Edu Care handled everything professionally. Now at Imperial!' },
     { id: '4', student_name: 'Nadia Islam', photo_url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200', university: 'MIT', country: 'United States', quote: 'I never thought I could get into MIT, but the counselors believed in me and guided me every step!' },
 ]
@@ -61,8 +61,7 @@ function useReveal() {
 
 const HERO_IMAGES = [
     // Row 1 - varied sizes
-    { src: 'https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600', alt: 'University Campus', cls: 'top-0 left-0', w: 160, h: 140, delay: '0s', dur: '5s', vanishDelay: '0s' },
-    { src: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600', alt: 'Student Life', cls: 'top-[5px] left-[30%]', w: 120, h: 100, delay: '0.8s', dur: '6s', vanishDelay: '3s' },
+    { src: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600', alt: 'University Campus', cls: 'top-0 left-0', w: 160, h: 140, delay: '0s', dur: '5s', vanishDelay: '0s' },
     { src: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=600', alt: 'Graduation', cls: 'top-0 left-[55%]', w: 90, h: 110, delay: '1.5s', dur: '4.5s', vanishDelay: '6s' },
     { src: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600', alt: 'Education', cls: 'top-[10px] right-0', w: 140, h: 120, delay: '0.3s', dur: '5.5s', vanishDelay: '9s' },
     // Row 2
@@ -184,7 +183,7 @@ export default function Home() {
                             </div>
                             <div className="mt-12 flex items-center gap-6 animate-fadeInUp animate-delay-300">
                                 <div className="flex -space-x-3">
-                                    {['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100', 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100'].map((src, i) => (
+                                    {['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100', 'https://images.unsplash.com/photo-1666667018808-f52c81c2fb09?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=100', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100'].map((src, i) => (
                                         <img
                                             key={i}
                                             alt="Student"
@@ -331,9 +330,9 @@ export default function Home() {
                                 <img
                                     src={country.image_url}
                                     alt={country.name}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    className="w-full h-full object-cover group-hover:scale-110  transition-transform duration-700"
                                 />
-                                <div className="overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                                <div className="overlay absolute inset-0 bg-gradient-to-t  from-black/70 via-black/20 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
                                     <span className="text-3xl mb-2 block">{country.flag_url}</span>
                                     <h4 className="text-2xl font-bold">{country.name}</h4>
@@ -421,7 +420,7 @@ export default function Home() {
                                 <img
                                     alt="Students studying"
                                     className="rounded-2xl shadow-2xl"
-                                    src="https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800"
+                                    src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800"
                                 />
                             </div>
                         </div>

@@ -2,9 +2,9 @@
 @plugin "@tailwindcss/forms";
 
 @theme {
-  --color-primary: #135bec;
-  --color-primary-dark: #0f4bc4;
-  --color-primary-light: #4a83f3;
+  --color-primary: #005B8F; /* Updated primary blue color */
+  --color-primary-dark: #00487C; /* Adjusted darker blue */
+  --color-primary-light: #4A83F3; /* Keep the lighter blue tone */
   --color-background-light: #f6f6f8;
   --color-background-dark: #101622;
   --color-surface-dark: #1a2235;
@@ -66,7 +66,7 @@ html {
 
 /* ===== CHAT BUBBLE ===== */
 .chat-bubble-shadow {
-  box-shadow: 0 10px 40px -10px rgba(19, 91, 236, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(0, 91, 143, 0.3); /* Updated blue for chat bubbles */
 }
 
 /* ===== ANIMATION DELAYS ===== */
@@ -112,7 +112,6 @@ html {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -146,7 +145,6 @@ html {
 }
 
 @keyframes slideFade {
-
   0%,
   20% {
     opacity: 1;
@@ -288,12 +286,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #135bec;
+  background: #005B8F; /* Updated scroll bar thumb */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0f4bc4;
+  background: #00487C; /* Darker hover effect */
 }
 
 .dark ::-webkit-scrollbar-track {
@@ -302,7 +300,7 @@ html {
 
 /* ===== GRADIENT TEXT ===== */
 .gradient-text {
-  background: linear-gradient(135deg, #135bec, #4a83f3);
+  background: linear-gradient(135deg, #005B8F, #4A83F3); /* Updated gradient with new blue */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -315,7 +313,7 @@ html {
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px -15px rgba(19, 91, 236, 0.15);
+  box-shadow: 0 20px 60px -15px rgba(0, 91, 143, 0.15); /* Updated blue for card hover effect */
 }
 
 /* ===== COUNTRY CARD ===== */
@@ -324,7 +322,7 @@ html {
 }
 
 .country-card:hover .overlay {
-  background: rgba(19, 91, 236, 0.8);
+  background: rgba(2, 57, 165, 0.475);
 }
 
 .country-card:hover .country-info {
@@ -350,8 +348,8 @@ html {
   width: 250px !important;
   height: 250px !important;
   z-index: 30 !important;
-  box-shadow: 0 20px 50px -10px rgba(19, 91, 236, 0.4), 0 0 0 3px rgba(19, 91, 236, 0.3);
-  border-color: rgba(19, 91, 236, 0.5) !important;
+  box-shadow: 0 20px 50px -10px rgba(0, 91, 143, 0.4), 0 0 0 3px rgba(0, 91, 143, 0.3); /* Updated hover effect */
+  border-color: rgba(0, 91, 143, 0.5) !important;
 }
 
 .mosaic-img:hover img {
