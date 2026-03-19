@@ -399,7 +399,7 @@ export default function Home() {
       )}
 
       {/* ===== HERO SECTION ===== */}
-      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32 bg-white dark:bg-background-dark">
+      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
@@ -408,9 +408,12 @@ export default function Home() {
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
                 Admissions Open 2025-26
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-[#0d121b] dark:text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 dark:text-white">
                 Transform Your Future with{" "}
-                <span className="text-primary">Expert Global</span> Education
+                <span className="text-primary dark:text-white">
+                  Expert Global
+                </span>{" "}
+                Education
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
                 Your bridge to {stats.partner_universities} world-class

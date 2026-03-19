@@ -3,7 +3,7 @@
 
 @theme {
   --color-primary: #005B8F;
-   --color-primary-dark: #101622;
+   --color-primary-dark-bg: #005B8F;
   --color-primary-light: #4A83F3;
   --color-background-light: #f6f6f8;
   --font-family-display: "Lexend", sans-serif;
@@ -14,8 +14,8 @@ body {
   font-family: "Lexend", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-background-light);
-  color: #000000;
+
+  
 }
 
 html {
@@ -25,13 +25,13 @@ html {
 /* ===== DARK MODE ===== */
 /* Dark mode styles only applied when .dark class is on <html> */
 .dark body {
-  background-color: #101622;
-  color: #ffffff;
+  background-color: #005B8F;
+  
 }
 
 .dark .glass-header {
-  background: #101622;
-  color:aliceblue;
+
+  
   border-bottom: 1px solid rgba(55, 65, 81, 0.5);
 }
 
@@ -46,7 +46,7 @@ html {
   z-index: 50;
   width: 100%;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.75);
+ 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(229, 231, 235, 0.5);

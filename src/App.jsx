@@ -20,7 +20,7 @@ function ScrollToTop() {
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     // Load initial value from localStorage
-    return localStorage.getItem("darkMode") === "true";
+    return localStorage.getItem("darkMode") === "false";
   });
 
   useEffect(() => {
@@ -33,19 +33,19 @@ export default function App() {
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
   return (
-    <div className="min-h-screen bg-background-light text-[#0d121b]">
+    <div className="min-h-screen ">
       <ScrollToTop />
       {/* Pass toggle function to header */}
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/countries" element={<Countries />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/countries" element={<Countries />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
       <Footer />
       <ChatWidget />
     </div>

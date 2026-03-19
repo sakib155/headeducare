@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function Header({ toggleDarkMode, darkMode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -20,13 +20,6 @@ export default function Header({ toggleDarkMode, darkMode }) {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Toggle .dark class on <html> when dark mode changes
-  useEffect(() => {
-    const root = document.documentElement;
-    if (dark) root.classList.add("dark");
-    else root.classList.remove("dark");
-  }, [dark]);
 
   return (
     <>
@@ -53,7 +46,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
                     ${
                       location.pathname === section.url
                         ? "text-primary after:w-full"
-                        : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full"
+                        : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full dark:hover:text-black dark:group-hover:text-white"
                     }`}
                   >
                     {section.title} <ChevronDown className="h-4 w-4" />
@@ -61,7 +54,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
 
                   {/* Submenu */}
                   <div
-                    className="absolute left-0 hidden mt-1.5 space-y-2 bg-white dark:bg-primary-dark shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 submenu"
+                    className="absolute left-0 mt-1.5 space-y-2 bg-white dark:bg-black text-black dark:text-white shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 "
                     style={{ width: "200px" }}
                   >
                     {section.items.map((item) => (
@@ -69,11 +62,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
                         key={item.name}
                         to={item.url}
                         className={`block text-sm font-normal py-2 px-4 transition-colors duration-200 
-                        ${
-                          location.pathname.includes(item.url)
-                            ? "text-primary"
-                            : "hover:bg-blue-200 dark:hover:bg-blue-800"
-                        }`}
+                        ${location.pathname.includes(item.url) ? "" : ""}`}
                       >
                         {item.name}
                       </Link>
