@@ -3,24 +3,29 @@ import { Link, useLocation } from "react-router-dom";
 import { menuData } from "./menuData";
 import { ChevronDown } from "lucide-react";
 
-export default function Header() {
+export default function Header({ toggleDarkMode, darkMode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
 
+  // Add shadow on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Toggle .dark class on <html> when dark mode changes
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
+    const root = document.documentElement;
+    if (dark) root.classList.add("dark");
+    else root.classList.remove("dark");
   }, [dark]);
 
   return (
@@ -42,36 +47,35 @@ export default function Header() {
                 <div key={section.title} className="relative group">
                   <Link
                     to={section.url}
-                    className={`
-    relative flex items-center text-sm font-semibold transition-all duration-300 
-    after:content-[''] after:absolute after:bottom-[-4px] after:left-0 
-    after:h-[2px] after:bg-primary after:transition-all 
-    ${
-      location.pathname === section.url
-        ? "text-primary after:w-full"
-        : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full"
-    }
-  `}
+                    className={`relative flex items-center text-sm font-semibold transition-all duration-300
+                    after:content-[''] after:absolute after:bottom-[-4px] after:left-0 
+                    after:h-[2px] after:bg-primary after:transition-all
+                    ${
+                      location.pathname === section.url
+                        ? "text-primary after:w-full"
+                        : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full"
+                    }`}
                   >
                     {section.title} <ChevronDown className="h-4 w-4" />
                   </Link>
 
-                  {/* Submenu for each section */}
+                  {/* Submenu */}
                   <div
-                    className="absolute left-0 hidden mt-1.5 border-b-2 border-l-2 border-l-gray-100 border-t-primary space-y-2 bg-white shadow-lg dark:bg-background-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300 submenu"
+                    className="absolute left-0 hidden mt-1.5 space-y-2 bg-white dark:bg-primary-dark shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 submenu"
                     style={{ width: "200px" }}
                   >
                     {section.items.map((item) => (
                       <Link
                         key={item.name}
                         to={item.url}
-                        className={`block text-sm font-normal py-2 px-4 transition-colors duration-200 ${
+                        className={`block text-sm font-normal py-2 px-4 transition-colors duration-200 
+                        ${
                           location.pathname.includes(item.url)
                             ? "text-primary"
                             : "hover:bg-blue-200 dark:hover:bg-blue-800"
                         }`}
                       >
-                        {item.name} {/* Display the item name */}
+                        {item.name}
                       </Link>
                     ))}
                   </div>
@@ -83,12 +87,12 @@ export default function Header() {
             <div className="flex items-center gap-3">
               {/* Dark mode toggle */}
               <button
-                onClick={() => setDark(!dark)}
+                onClick={toggleDarkMode}
                 className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Toggle dark mode"
               >
                 <span className="material-symbols-outlined text-xl">
-                  {dark ? "light_mode" : "dark_mode"}
+                  {darkMode ? "light_mode" : "dark_mode"}
                 </span>
               </button>
 
@@ -114,9 +118,10 @@ export default function Header() {
           </div>
         </div>
       </header>
+
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 md:hidden ">
+        <div className="fixed inset-0 z-40 md:hidden">
           <div
             className="absolute inset-0 bg-black/50 mobile-menu-overlay"
             onClick={() => setMobileOpen(false)}
@@ -134,12 +139,13 @@ export default function Header() {
                       <Link
                         key={item.name}
                         to={item.url}
-                        className={`block text-lg py-2 px-4 rounded-xl transition-colors ${
+                        className={`block text-lg py-2 px-4 rounded-xl transition-colors
+                        ${
                           location.pathname.includes(item.url)
                             ? "bg-primary/10 text-primary"
                             : "hover:bg-gray-100 dark:hover:bg-gray-800"
                         }`}
-                        style={{ width: "200px" }} // Ensure submenu items have consistent width
+                        style={{ width: "200px" }}
                       >
                         {item.name}
                       </Link>
@@ -156,7 +162,7 @@ export default function Header() {
             </nav>
           </div>
         </div>
-      )}{" "}
+      )}
     </>
   );
 }
