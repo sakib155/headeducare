@@ -81,16 +81,16 @@ export default function About() {
           .order("display_order");
         if (data?.length) setTeam(data);
       } catch (e) {
-        /* fallback */
+        /* use fallback */
       }
     }
     fetchTeam();
   }, []);
 
   return (
-    <div className="transition-colors duration-300">
+    <div>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-gray-900 overflow-hidden">
+      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
@@ -112,7 +112,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white dark:bg-background-dark transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-background-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -134,7 +134,7 @@ export default function About() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-background-light dark:bg-gray-800 p-10 rounded-2xl border border-gray-100 dark:border-gray-700 transition-colors duration-300"
+                className="bg-background-light dark:bg-gray-800 p-10 rounded-2xl border border-gray-100 dark:border-gray-700"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
                   <span className="material-symbols-outlined text-3xl">
@@ -154,7 +154,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-background-light dark:bg-background-dark/50 transition-colors duration-300">
+      <section className="py-20 bg-background-light dark:bg-background-dark/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
@@ -195,7 +195,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-white dark:bg-background-dark transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-background-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
@@ -214,7 +214,7 @@ export default function About() {
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <h4 className="text-lg font-bold text-[#0d121b] dark:text-white">
                   {member.name}

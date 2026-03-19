@@ -74,7 +74,6 @@ const FALLBACK = [
 
 export default function Countries() {
   const [countries, setCountries] = useState(FALLBACK);
-
   useEffect(() => {
     supabase
       .from("countries")
@@ -84,14 +83,11 @@ export default function Countries() {
       .then(({ data }) => {
         if (data?.length) setCountries(data);
       })
-      .catch(() => {
-        /* fallback will be used */
-      });
+      .catch(() => {});
   }, []);
 
   return (
     <div>
-      {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
         <div className="absolute top-0 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-x-1/2" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -110,11 +106,13 @@ export default function Countries() {
         </div>
       </section>
 
-      {/* Countries List */}
       <section className="py-24 bg-white dark:bg-background-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {countries.map((c, i) => (
-            <div key={c.id} className="grid lg:grid-cols-2 gap-10 items-center">
+            <div
+              key={c.id}
+              className={`grid lg:grid-cols-2 gap-10 items-center`}
+            >
               <div
                 className={`rounded-2xl overflow-hidden shadow-xl ${i % 2 === 1 ? "lg:order-2" : ""}`}
               >
