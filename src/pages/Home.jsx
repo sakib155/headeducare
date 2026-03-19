@@ -440,7 +440,7 @@ export default function Home() {
                 <div className="flex -space-x-3">
                   {[
                     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
-                    "https://images.unsplash.com/photo-1666667018808-f52c81c2fb09?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=100",
+                    "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100",
                     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
                   ].map((src, i) => (
                     <img
@@ -637,9 +637,9 @@ export default function Home() {
                 <img
                   src={country.image_url}
                   alt={country.name}
-                  className="w-full h-full object-cover group-hover:scale-110  transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="overlay absolute inset-0 bg-gradient-to-t  from-black/70 via-black/20 to-transparent" />
+                <div className="overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
                   <span className="text-3xl mb-2 block">
                     {country.flag_url}
@@ -744,7 +744,7 @@ export default function Home() {
                 <img
                   alt="Students studying"
                   className="rounded-2xl shadow-2xl"
-                  src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800"
+                  src="https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800"
                 />
               </div>
             </div>

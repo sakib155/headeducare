@@ -52,6 +52,7 @@ html {
   border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }
 
+
 /* ===== CAROUSEL ===== */
 .carousel-item {
   position: absolute;
@@ -78,71 +79,312 @@ html {
 
 /* ===== CHAT BUBBLE ===== */
 .chat-bubble-shadow {
-  box-shadow: 0 10px 40px -10px rgba(0, 91, 143, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(19, 91, 236, 0.3);
 }
 
 /* ===== ANIMATION DELAYS ===== */
-.animate-delay-100 { animation-delay: 100ms; }
-.animate-delay-200 { animation-delay: 200ms; }
-.animate-delay-300 { animation-delay: 300ms; }
-.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
 
 /* ===== KEYFRAMES ===== */
-@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-@keyframes slideInRight { 0% { opacity: 0; transform: translateX(30px); } 100% { opacity: 1; transform: translateX(0); } }
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-@keyframes popIn { 0% { opacity: 0; scale: 0.9; } 100% { opacity: 1; scale: 1; } }
-@keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
-@keyframes slideFade { 0%,20% { opacity:1; z-index:10;} 25%,95%{opacity:0; z-index:0;} 100% {opacity:1; z-index:10;} }
-@keyframes progress { 0% { width: 0%; } 100% { width: 100%; } }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slideFade {
+
+  0%,
+  20% {
+    opacity: 1;
+    z-index: 10;
+  }
+
+  25%,
+  95% {
+    opacity: 0;
+    z-index: 0;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes countUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+
+  75% {
+    transform: translateY(-12px) rotate(0.3deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes heroVanish {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  45% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  55% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  65% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 /* ===== ANIMATION UTILITIES ===== */
-.animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
-.animate-slideInRight { animation: slideInRight 0.8s ease-out forwards; }
-.animate-float { animation: float 4s ease-in-out infinite; }
-.animate-popIn { animation: popIn 0.5s cubic-bezier(0.26,0.53,0.74,1.48) forwards; }
-.animate-kenBurns { animation: kenBurns 6s ease-out infinite alternate; }
-.animate-progressBar { animation: progress 4s linear infinite; }
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-popIn {
+  animation: popIn 0.5s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards;
+}
+
+.animate-kenBurns {
+  animation: kenBurns 6s ease-out infinite alternate;
+}
+
+.animate-progressBar {
+  animation: progress 4s linear infinite;
+}
 
 /* ===== SCROLL REVEAL ===== */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ===== CUSTOM SCROLLBAR ===== */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #005B8F; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #00487C; }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #135bec;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f4bc4;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a2235;
+}
 
 /* ===== GRADIENT TEXT ===== */
 .gradient-text {
-  background: linear-gradient(135deg, #005B8F, #4A83F3);
+  background: linear-gradient(135deg, #135bec, #4a83f3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* ===== CARD HOVER ===== */
-.service-card { transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
-.service-card:hover { transform: translateY(-8px); box-shadow:0 20px 60px -15px rgba(0,91,143,0.15); }
+.service-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px -15px rgba(19, 91, 236, 0.15);
+}
 
 /* ===== COUNTRY CARD ===== */
-.country-card .overlay { transition: all 0.4s ease; }
-.country-card:hover .overlay { background: rgba(2,57,165,0.475); }
-.country-card:hover .country-info { transform: translateY(0); opacity:1; }
-.country-card .country-info { transform: translateY(10px); opacity:0; transition: all 0.4s ease; }
+.country-card .overlay {
+  transition: all 0.4s ease;
+}
+
+.country-card:hover .overlay {
+  background: rgba(19, 91, 236, 0.8);
+}
+
+.country-card:hover .country-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.country-card .country-info {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
 
 /* ===== MOSAIC IMAGE POPUP ===== */
-.mosaic-img { transition: width 0.4s cubic-bezier(0.34,1.56,0.64,1), height 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease, z-index 0s; }
-.mosaic-img:hover { width: 250px !important; height: 250px !important; z-index:30 !important; box-shadow: 0 20px 50px -10px rgba(0,91,143,0.4),0 0 0 3px rgba(0,91,143,0.3); border-color: rgba(0,91,143,0.5)!important; }
-.mosaic-img:hover img { transform: scale(1.08); }
-.mosaic-img:hover .mosaic-overlay { opacity:1; }
-.mosaic-img:hover .mosaic-label { opacity:1; transform: translateY(0); }
+.mosaic-img {
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+    z-index 0s;
+}
+
+.mosaic-img:hover {
+  width: 250px !important;
+  height: 250px !important;
+  z-index: 30 !important;
+  box-shadow: 0 20px 50px -10px rgba(19, 91, 236, 0.4), 0 0 0 3px rgba(19, 91, 236, 0.3);
+  border-color: rgba(19, 91, 236, 0.5) !important;
+}
+
+.mosaic-img:hover img {
+  transform: scale(1.08);
+}
+
+.mosaic-img:hover .mosaic-overlay {
+  opacity: 1;
+}
+
+.mosaic-img:hover .mosaic-label {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ===== MOBILE MENU ===== */
-.mobile-menu-overlay { transition: opacity 0.3s ease; }
-.mobile-menu-drawer { transition: transform 0.3s ease; }
+.mobile-menu-overlay {
+  transition: opacity 0.3s ease;
+}
 
-/* ===== SUBMENU ===== */
-.group:hover .submenu { display: block; }
-.group .submenu { display: none; }
+.mobile-menu-drawer {
+  transition: transform 0.3s ease;
+}
