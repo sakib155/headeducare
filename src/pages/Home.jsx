@@ -404,16 +404,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div className="max-w-2xl opacity-0 animate-fadeInUp">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 animate-popIn animate-delay-300">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10  text-primary text-xs font-bold uppercase tracking-wider mb-6 animate-popIn animate-delay-300">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
                 Admissions Open 2025-26
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 dark:text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 ">
                 Transform Your Future with{" "}
-                <span className="text-primary dark:text-white">
-                  Expert Global
-                </span>{" "}
-                Education
+                <span className="text-primary ">Expert Global</span> Education
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
                 Your bridge to {stats.partner_universities} world-class
@@ -443,7 +440,7 @@ export default function Home() {
                 <div className="flex -space-x-3">
                   {[
                     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
-                    "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100",
+                    "https://images.unsplash.com/photo-1672857994550-154578be9f41?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
                   ].map((src, i) => (
                     <img
@@ -714,17 +711,17 @@ export default function Home() {
       {/* ===== CTA SECTION ===== */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-background-dark rounded-[2rem] p-12 lg:p-20 overflow-hidden shadow-2xl">
+          <div className="relative bg-[#005B8F] rounded-[2rem] p-12 lg:p-20 overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-20">
               <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px]" />
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-[120px]" />
             </div>
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="reveal">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 mb-6">
                   Ready to Start Your Global Journey?
                 </h2>
-                <p className="text-gray-400 text-lg mb-10">
+                <p className="text-gray-300 text-normal mb-10">
                   Our expert counselors are waiting to help you choose the right
                   path for your academic and professional growth.
                 </p>
@@ -747,7 +744,7 @@ export default function Home() {
                 <img
                   alt="Students studying"
                   className="rounded-2xl shadow-2xl"
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800"
+                  src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 />
               </div>
             </div>
