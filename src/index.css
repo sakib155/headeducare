@@ -373,3 +373,11 @@ html {
 .mobile-menu-drawer {
   transition: transform 0.3s ease;
 }
+/* Ensure submenu appears on hover, but doesn't block title hover effect */
+.group:hover .submenu {
+  display: block; /* or 'opacity: 1' */
+}
+
+.group .submenu {
+  display: none; /* Initially hide the submenu */
+}
