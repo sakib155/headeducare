@@ -2,12 +2,10 @@
 @plugin "@tailwindcss/forms";
 
 @theme {
-  --color-primary: #135bec;
-  --color-primary-dark: #0f4bc4;
-  --color-primary-light: #4a83f3;
+  --color-primary: #005B8F;
+   --color-primary-dark-bg: #005B8F;
+  --color-primary-light: #4A83F3;
   --color-background-light: #f6f6f8;
-  --color-background-dark: #101622;
-  --color-surface-dark: #1a2235;
   --font-family-display: "Lexend", sans-serif;
 }
 
@@ -16,10 +14,29 @@ body {
   font-family: "Lexend", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ===== DARK MODE ===== */
+/* Dark mode styles only applied when .dark class is on <html> */
+.dark body {
+  background-color: #005B8F;
+  
+}
+
+.dark .glass-header {
+
+  
+  border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a2235;
 }
 
 /* ===== GLASSMORPHIC HEADER ===== */
@@ -29,16 +46,12 @@ html {
   z-index: 50;
   width: 100%;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.75);
+ 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }
 
-.dark .glass-header {
-  background: rgba(16, 22, 34, 0.8);
-  border-bottom: 1px solid rgba(55, 65, 81, 0.5);
-}
 
 /* ===== CAROUSEL ===== */
 .carousel-item {
