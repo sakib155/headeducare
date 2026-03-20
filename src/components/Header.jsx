@@ -41,7 +41,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
                   <Link
                     to={section.url}
                     className={`relative flex items-center text-sm font-semibold transition-all duration-300
-                    after:content-[''] after:absolute after:bottom-[-4px] after:left-0 
+                    after:content-[''] after:absolute after:bottom-[-4px] after:left-0 title_header
                     after:h-[2px] after:bg-primary after:transition-all
                     ${
                       location.pathname === section.url
@@ -54,15 +54,22 @@ export default function Header({ toggleDarkMode, darkMode }) {
 
                   {/* Submenu */}
                   <div
-                    className="absolute left-0 mt-1.5 space-y-2 bg-white dark:bg-black text-black dark:text-white shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 "
+                    className="absolute left-0 mt-1.5 space-y-2 
+                    bg-white headergroup 
+                    text-gray-800 dark:text-gray-100 
+                    shadow-lg border border-gray-200 dark:border-gray-700
+                    opacity-0 pointer-events-none 
+                    group-hover:opacity-100 group-hover:pointer-events-auto 
+                    transition-opacity duration-300"
                     style={{ width: "200px" }}
                   >
                     {section.items.map((item) => (
                       <Link
                         key={item.name}
                         to={item.url}
-                        className={`block text-sm font-normal py-2 px-4 transition-colors duration-200 
-                        ${location.pathname.includes(item.url) ? "" : ""}`}
+                        className="block text-sm py-2 px-4 
+                       
+                        transition-colors duration-200"
                       >
                         {item.name}
                       </Link>

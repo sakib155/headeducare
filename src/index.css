@@ -15,7 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  
+   color: #01091c
 }
 
 html {
@@ -25,13 +25,34 @@ html {
 /* ===== DARK MODE ===== */
 /* Dark mode styles only applied when .dark class is on <html> */
 .dark body {
-  background-color: #005B8F;
-  
+  background-color: #01091c;
+  color: #f1f1f1
 }
 
-.dark .glass-header {
+.dark .greyhome{
+  color : #3f3e3ed9
+}
 
-  
+.dark .title_header{
+  color: #45596e
+}
+.dark .expgbl{
+  color:#19399b
+}
+.dark .footergroup{
+  background-color: #0d2453;
+
+}
+.dark .headergroup{
+  background-color: #01091c;
+    color: #f1f1f1;
+    
+}
+.dark .headergroup:hover{
+  background-color: #01091c99;
+  opacity: 100;
+}
+.dark .glass-header {
   border-bottom: 1px solid rgba(55, 65, 81, 0.5);
 }
 
