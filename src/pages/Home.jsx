@@ -408,9 +408,10 @@ export default function Home() {
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
                 Admissions Open 2025-26
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 ">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 greyhome">
                 Transform Your Future with{" "}
-                <span className="text-primary ">Expert Global</span> Education
+                <span className="text-primary expgbl ">Expert Global</span>{" "}
+                Education
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
                 Your bridge to {stats.partner_universities} world-class
@@ -452,7 +453,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <p className="font-bold text-[#0d121b] dark:text-white">
+                  <p className="font-bold text-[#0d121b] expgbl">
                     Join {stats.students_placed} Alumni
                   </p>
                   <p className="text-gray-500">Trusted by students worldwide</p>
@@ -535,7 +536,7 @@ export default function Home() {
       </section>
 
       {/* ===== STATS BANNER ===== */}
-      <section className="bg-primary py-12 relative overflow-hidden">
+      <section className="bg-primary  py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -549,7 +550,7 @@ export default function Home() {
             ].map((stat, i) => (
               <div
                 key={i}
-                className={`text-center text-white ${i < 3 ? "border-r border-white/20" : ""} reveal`}
+                className={`text-center  ${i < 3 ? "border-r border-white/20" : ""} reveal`}
               >
                 <p className="text-4xl lg:text-5xl font-black mb-1">
                   {stat.val}
@@ -564,13 +565,13 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES SECTION ===== */}
-      <section className="py-24 bg-background-light dark:bg-background-dark/50">
+      <section className="py-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Our Expert Services
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] dark:text-white mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] expgbl mb-6">
               Tailored Solutions for Your International Career
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -582,7 +583,7 @@ export default function Home() {
             {services.slice(0, 6).map((service, i) => (
               <div
                 key={service.id}
-                className="service-card bg-white dark:bg-gray-800 p-10 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 group reveal"
+                className="service-card   p-10 rounded-2xl shadow-sm border border-gray-100  group reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors group-hover:scale-110 transform">
@@ -590,7 +591,7 @@ export default function Home() {
                     {service.icon}
                   </span>
                 </div>
-                <h4 className="text-2xl font-bold mb-4 text-[#0d121b] dark:text-white">
+                <h4 className="text-2xl font-bold mb-4 expgbl">
                   {service.title}
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
@@ -612,13 +613,13 @@ export default function Home() {
       </section>
 
       {/* ===== STUDY DESTINATIONS ===== */}
-      <section className="py-24 bg-white dark:bg-background-dark">
+      <section className="py-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
+            <h2 className="text-primary  font-bold text-sm uppercase tracking-widest mb-3">
               Study Destinations
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] dark:text-white mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black title_header mb-6">
               Explore Top Countries
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -644,7 +645,7 @@ export default function Home() {
                   <span className="text-3xl mb-2 block">
                     {country.flag_url}
                   </span>
-                  <h4 className="text-2xl font-bold">{country.name}</h4>
+                  <h4 className="text-2xl font-bold ">{country.name}</h4>
                   <p className="country-info text-sm text-white/80 mt-1">
                     {country.description}
                   </p>
@@ -656,13 +657,13 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="py-24 bg-background-light dark:bg-background-dark/50">
+      <section className="py-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Success Stories
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] dark:text-white mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black title_header mb-6">
               What Our Students Say
             </h3>
           </div>
@@ -670,7 +671,7 @@ export default function Home() {
             {testimonials.map((t, i) => (
               <div
                 key={t.id}
-                className="bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-shadow reveal"
+                className=" p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-shadow reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-1 mb-4">

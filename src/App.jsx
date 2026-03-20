@@ -19,8 +19,13 @@ function ScrollToTop() {
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
-    // Load initial value from localStorage
-    return localStorage.getItem("darkMode") === "false";
+    const stored = localStorage.getItem("darkMode");
+
+    if (stored !== null) {
+      return stored === "true"; // correct
+    }
+
+    return false; // default ALWAYS light
   });
 
   useEffect(() => {
