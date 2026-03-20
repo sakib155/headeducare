@@ -35,7 +35,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden xl:flex items-center space-x-8">
               {menuData.map((section) => (
                 <div key={section.title} className="relative group">
                   <Link
@@ -103,7 +103,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden w-10 h-10 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300"
+                className="xl:hidden w-10 h-10 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300"
                 aria-label="Toggle menu"
               >
                 <span className="material-symbols-outlined text-2xl">
@@ -117,12 +117,12 @@ export default function Header({ toggleDarkMode, darkMode }) {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+        <div className="fixed inset-0 z-40 xl:hidden">
           <div
-            className="absolute inset-0 bg-black/50 mobile-menu-overlay"
+            className="absolute inset-0mobile-menu-overlay"
             onClick={() => setMobileOpen(false)}
           />
-          <div className="absolute top-20 left-0 right-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-700 shadow-xl mobile-menu-drawer overflow-y-auto max-h-screen">
+          <div className="absolute top-20 left-0 right-0 bg-white headergroup border-b border-gray-200 dark:border-gray-700 shadow-xl mobile-menu-drawer overflow-y-auto max-h-screen">
             <nav className="flex flex-col p-6 space-y-4">
               {menuData.map((section) => (
                 <div key={section.title} className="relative">
