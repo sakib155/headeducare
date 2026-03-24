@@ -318,6 +318,16 @@ export default function Home() {
   const [stats, setStats] = useState(FALLBACK_STATS);
   const [lightbox, setLightbox] = useState(null); // index of open image
   const containerRef = useReveal();
+  useEffect(() => {
+    const test = async () => {
+      const { data, error } = await supabase.from("countries").select("*");
+
+      console.log("DATA:", data);
+      console.log("ERROR:", error);
+    };
+
+    test();
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
