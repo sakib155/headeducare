@@ -54,9 +54,8 @@ export default function Header({ toggleDarkMode, darkMode }) {
 
                   {/* Submenu */}
                   <div
-                    className="absolute left-0 mt-1.5 space-y-2 
-                    bg-white headergroup 
-                    text-gray-800 dark:text-gray-100 
+                    className="nav-dropdown absolute left-0 mt-1.5 space-y-2 
+                    bg-white dark:bg-[#01091c] headergroup 
                     shadow-lg border border-gray-200 dark:border-gray-700
                     opacity-0 pointer-events-none 
                     group-hover:opacity-100 group-hover:pointer-events-auto 
@@ -67,9 +66,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
                       <Link
                         key={item.name}
                         to={item.url}
-                        className="block text-sm py-2 px-4 
-                       
-                        transition-colors duration-200"
+                        className="block text-sm py-2 px-4 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
