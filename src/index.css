@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+/* Tell Tailwind v4 to use .dark class for dark: variant instead of prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #005B8F;
    --color-primary-dark-bg: #005B8F;
@@ -96,6 +99,23 @@ html {
 
 .carousel-item img {
   animation: kenBurns 6s ease-in-out infinite alternate;
+}
+
+/* ===== DROPDOWN MENU LINKS ===== */
+/* Explicit colors to guarantee visibility in both light & dark modes */
+.nav-dropdown a {
+  color: #1f2937;
+}
+.dark .nav-dropdown a {
+  color: #f3f4f6;
+}
+.nav-dropdown a:hover {
+  color: #005B8F;
+  background-color: #f9fafb;
+}
+.dark .nav-dropdown a:hover {
+  color: #4A83F3;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ===== CHAT BUBBLE ===== */
