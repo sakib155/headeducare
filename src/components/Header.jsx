@@ -39,39 +39,43 @@ export default function Header({ toggleDarkMode, darkMode }) {
               {menuData.map((section) => (
                 <div key={section.title} className="relative group">
                   <Link
-                    to={section.url}
+                    to={section.title.url}
                     className={`relative flex items-center text-sm font-semibold transition-all duration-300
-                    after:content-[''] after:absolute after:bottom-[-4px] after:left-0 title_header
-                    after:h-[2px] after:bg-primary after:transition-all
-                    ${
-                      location.pathname === section.url
-                        ? "text-primary after:w-full"
-                        : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full dark:hover:text-black dark:group-hover:text-white"
-                    }`}
+  after:content-[''] after:absolute after:bottom-[-4px] after:left-0 title_header
+  after:h-[2px] after:bg-primary after:transition-all
+  ${
+    location.pathname === section.title.url
+      ? "text-primary after:w-full"
+      : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full dark:hover:text-black dark:group-hover:text-white"
+  }`}
                   >
-                    {section.title} <ChevronDown className="h-4 w-4" />
+                    {section.title.name}{" "}
+                    {section.items && section.items.length > 0 && (
+                      <ChevronDown className="h-4 w-4 ml-1" />
+                    )}
                   </Link>
-
                   {/* Submenu */}
-                  <div
-                    className="nav-dropdown absolute left-0 mt-1.5 space-y-2 
+                  {section.items?.length > 0 && (
+                    <div
+                      className="nav-dropdown absolute left-0 mt-1.5 space-y-2 
                     bg-white dark:bg-[#01091c] headergroup 
                     shadow-lg border border-gray-200 dark:border-gray-700
                     opacity-0 pointer-events-none 
                     group-hover:opacity-100 group-hover:pointer-events-auto 
                     transition-opacity duration-300"
-                    style={{ width: "200px" }}
-                  >
-                    {section.items.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.url}
-                        className="block text-sm py-2 px-4 transition-colors duration-200"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
+                      style={{ width: "200px" }}
+                    >
+                      {section.items.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.url}
+                          className="block text-sm py-2 px-4 transition-colors duration-200"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </nav>
@@ -91,7 +95,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
 
               {/* CTA */}
               <Link
-                to="/contact"
+                to="/freeconsulation"
                 className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/20 active:scale-95"
               >
                 Free Consultation
@@ -111,43 +115,71 @@ export default function Header({ toggleDarkMode, darkMode }) {
           </div>
         </div>
       </header>
-
-      {/* Mobile menu overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 xl:hidden">
+          {/* Overlay */}
           <div
-            className="absolute inset-0mobile-menu-overlay"
+            className="absolute inset-0 mobile-menu-overlay"
             onClick={() => setMobileOpen(false)}
           />
+
+          {/* Drawer */}
           <div className="absolute top-20 left-0 right-0 bg-white headergroup border-b border-gray-200 dark:border-gray-700 shadow-xl mobile-menu-drawer overflow-y-auto max-h-screen">
             <nav className="flex flex-col p-6 space-y-4">
-              {menuData.map((section) => (
-                <div key={section.title} className="relative">
-                  <button className="text-lg font-semibold py-3 px-4 rounded-xl transition-colors">
-                    {section.title}
-                  </button>
-                  {/* Mobile submenu */}
-                  <div className="ml-4 space-y-2">
-                    {section.items.map((item) => (
+              {menuData.map((section) => {
+                const hasItems = section.items?.length > 0;
+
+                return (
+                  <div key={section.title.name}>
+                    {/* ✅ If NO dropdown → direct link */}
+                    {!hasItems ? (
                       <Link
-                        key={item.name}
-                        to={item.url}
-                        className={`block text-lg py-2 px-4 rounded-xl transition-colors
+                        to={section.title.url}
+                        className={`block text-lg font-semibold py-3 px-4 rounded-xl
+                  ${
+                    location.pathname === section.title.url
+                      ? "bg-primary/10 text-primary"
+                      : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                  }`}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {section.title.name}
+                      </Link>
+                    ) : (
+                      <>
+                        {/* ✅ Parent with dropdown */}
+                        <div className="text-lg font-semibold py-3 px-4">
+                          {section.title.name}
+                        </div>
+
+                        {/* Submenu */}
+                        <div className="ml-4 space-y-2">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.url}
+                              onClick={() => setMobileOpen(false)}
+                              className={`block text-lg py-2 px-4 rounded-xl transition-colors
                         ${
                           location.pathname.includes(item.url)
                             ? "bg-primary/10 text-primary"
                             : "hover:bg-gray-100 dark:hover:bg-gray-800"
                         }`}
-                        style={{ width: "200px" }}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
+
+              {/* CTA */}
               <Link
-                to="/contact"
+                to="/freeconsulation"
+                onClick={() => setMobileOpen(false)}
                 className="bg-primary text-white text-center py-3 px-4 rounded-xl font-bold text-lg mt-2"
               >
                 Free Consultation
@@ -155,7 +187,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
             </nav>
           </div>
         </div>
-      )}
+      )}{" "}
     </>
   );
 }

@@ -33,11 +33,11 @@ html {
 }
 
 .dark .greyhome{
-  color : #3f3e3ed9
+  color : #bababad9
 }
 
 .dark .title_header{
-  color: #45596e
+  color: #b5babf
 }
 .dark .expgbl{
   color:#19399b
@@ -71,7 +71,7 @@ html {
   width: 100%;
   transition: all 0.3s ease;
  
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(55px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }

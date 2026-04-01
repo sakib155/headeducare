@@ -6,9 +6,11 @@ import ChatWidget from "./components/ChatWidget";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Countries from "./pages/Countries";
+import CountryDetails from "./pages/country/CountryDetails";
 import Contact from "./pages/Contact";
 import OurPeople from "./pages/about/our-people";
+import DestinationPage from "./pages/allcountries/allcountry";
+import FreeConsultation from "./pages/FreeConsultations";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -49,8 +51,10 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/about/our-people" element={<OurPeople />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/countries" element={<Countries />} />
+        <Route path="/destination/:slug" element={<CountryDetails />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/freeconsulation" element={<FreeConsultation />} />
+        <Route path="/allcountries/allcountry" element={<DestinationPage />} />
       </Routes>
 
       <Footer />

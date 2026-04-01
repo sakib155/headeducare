@@ -225,7 +225,7 @@ export default function Services() {
             plan for your academic future.
           </p>
           <Link
-            to="/contact"
+            to="/freeconsulation"
             className="inline-flex bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
           >
             Book Free Consultation

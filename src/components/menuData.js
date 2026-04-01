@@ -1,28 +1,28 @@
 export const menuData = [
   {
-    title: "About Us",
+    title: { name: "About Us", url: "/about" },
     items: [
       { name: "Our People", url: "/about/our-people" },
-      { name: "(We Will Provide)", url: "/about/we-will-provide" },
+      { name: "We Will Provide", url: "/about/we-will-provide" },
     ],
   },
   {
-    title: "Destination",
+    title: { name: "Destination", url: "/allcountries/allcountry" },
     items: [
-      { name: "Study In USA", url: "/destination/study-in-usa" },
-      { name: "Study In UK", url: "/destination/study-in-uk" },
-      { name: "Study In CANADA", url: "/destination/study-in-canada" },
-      { name: "Study In AUSTRALIA", url: "/destination/study-in-australia" },
-      { name: "Study In NZ", url: "/destination/study-in-nz" },
-      { name: "Study In IRELAND", url: "/destination/study-in-ireland" },
-      { name: "Study In EUROPE", url: "/destination/study-in-europe" },
-      { name: "Study In KOREA", url: "/destination/study-in-korea" },
-      { name: "Study In MALAYSIA", url: "/destination/study-in-malaysia" },
-      { name: "Study In CHINA", url: "/destination/study-in-china" },
+      { name: "Study In USA", url: "/destination/usa" },
+      { name: "Study In UK", url: "/destination/uk" },
+      { name: "Study In Canada", url: "/destination/canada" },
+      { name: "Study In Australia", url: "/destination/australia" },
+      { name: "Study In New Zealand", url: "/destination/nz" },
+      { name: "Study In Ireland", url: "/destination/ireland" },
+      { name: "Study In Europe", url: "/destination/europe" },
+      { name: "Study In Korea", url: "/destination/korea" },
+      { name: "Study In Malaysia", url: "/destination/malaysia" },
+      { name: "Study In China", url: "/destination/china" },
     ],
   },
   {
-    title: "Our Services",
+    title: { name: "Our Services", url: "/services" },
     items: [
       { name: "Admission", url: "/services/admission" },
       { name: "Scholarship", url: "/services/scholarship" },
@@ -32,7 +32,7 @@ export const menuData = [
     ],
   },
   {
-    title: "USA Mentorship Program (Bootcamp)",
+    title: { name: "USA Mentorship Program (Bootcamp)", url: "/mentorship" },
     items: [
       { name: "Liberal Arts College", url: "/mentorship/liberal-arts-college" },
       {
@@ -59,13 +59,6 @@ export const menuData = [
     ],
   },
   {
-    title: "Contact Us",
-    items: [
-      { name: "Our Address", url: "/contact/address" },
-      { name: "Email", url: "/contact/email" },
-      { name: "FB Page", url: "/contact/facebook" },
-      { name: "Instagram Id", url: "/contact/instagram" },
-      { name: "Contact No", url: "/contact/phone" },
-    ],
+    title: { name: "Contact Us", url: "/contact" },
   },
 ];
