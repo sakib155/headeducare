@@ -164,13 +164,27 @@ export default function Footer() {
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} Head Edu Care. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 opacity-50">
-            <span className="text-xs font-bold uppercase tracking-widest mr-4">
-              Trusted Worldwide
-            </span>
-            <div className="h-6 w-12 bg-gray-400 rounded" />
-            <div className="h-6 w-12 bg-gray-400 rounded" />
-            <div className="h-6 w-12 bg-gray-400 rounded" />
+
+          {/* Flags of top 7 countries - styled like your student example */}
+          <div className="mt-4 flex items-center gap-6">
+            <div className="text-sm hidden md:block">
+              <p className="font-bold text-gray-900">
+                Trusted by students worldwide
+              </p>
+            </div>
+            <div className="flex -space-x-3">
+              {["us", "gb", "ca", "au", "in", "de", "fr"].map(
+                (countryCode, i) => (
+                  <img
+                    key={i}
+                    alt={`Country ${countryCode.toUpperCase()}`}
+                    className="h-10 w-10 rounded-full border-2 border-white dark:border-background-dark object-cover hover:z-10 transition-transform hover:scale-110"
+                    src={`https://flagcdn.com/w40/${countryCode}.png`}
+                    srcSet={`https://flagcdn.com/w80/${countryCode}.png 2x`}
+                  />
+                ),
+              )}
+            </div>
           </div>
         </div>
       </div>

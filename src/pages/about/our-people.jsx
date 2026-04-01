@@ -28,7 +28,14 @@ const people = [
 const OurPeople = () => {
   return (
     <div className="mx-auto m-4 px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl">
-      <h2 className="text-3xl font-bold text-center mb-10">Our People</h2>
+      <div className="text-center mb-16">
+        <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
+          Meet Our Team
+        </h2>
+        <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white">
+          Expert Counselors at Your Service
+        </h3>
+      </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {people.map((person, index) => (

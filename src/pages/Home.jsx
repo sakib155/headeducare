@@ -552,7 +552,7 @@ export default function Home() {
                 key={i}
                 className={`text-center  ${i < 3 ? "border-r border-white/20" : ""} reveal`}
               >
-                <p className="text-4xl lg:text-5xl font-black mb-1">
+                <p className="text-4xl lg:text-5xl font-black mb-1 text-white greyhome ">
                   {stat.val}
                 </p>
                 <p className="text-white/80 text-sm font-medium uppercase tracking-wider">
