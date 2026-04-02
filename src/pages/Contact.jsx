@@ -240,14 +240,18 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
-              {/* Map placeholder */}
-              <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 h-64 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <span className="material-symbols-outlined text-5xl mb-2 block">
-                    map
-                  </span>
-                  <p className="text-sm font-semibold">Map Coming Soon</p>
-                </div>
+              {/* Google Map */}
+              <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 h-64">
+                <iframe
+                  title="Head Educare Location"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=44/16+Head+Educare+West+Panthapath+Dhaka+1205&output=embed"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
