@@ -1,10 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { menuData } from "./menuData";
 import { ChevronDown } from "lucide-react";
 
 export default function Header({ toggleDarkMode, darkMode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
+  const closeTimers = useRef({});
+
+  const handleMenuEnter = (title) => {
+    if (closeTimers.current[title]) {
+      clearTimeout(closeTimers.current[title]);
+      delete closeTimers.current[title];
+    }
+    setOpenMenu(title);
+  };
+
+  const handleMenuLeave = (title) => {
+    closeTimers.current[title] = setTimeout(() => {
+      setOpenMenu((prev) => (prev === title ? null : prev));
+    }, 350);
+  };
 
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -36,48 +52,61 @@ export default function Header({ toggleDarkMode, darkMode }) {
 
             {/* Desktop Nav */}
             <nav className="hidden xl:flex items-center space-x-8">
-              {menuData.map((section) => (
-                <div key={section.title} className="relative group">
-                  <Link
-                    to={section.title.url}
-                    className={`relative flex items-center text-sm font-semibold transition-all duration-300
+              {menuData.map((section) => {
+                const isOpen = openMenu === section.title.name;
+                return (
+                  <div
+                    key={section.title.name}
+                    className="relative"
+                    onMouseEnter={() => handleMenuEnter(section.title.name)}
+                    onMouseLeave={() => handleMenuLeave(section.title.name)}
+                  >
+                    <Link
+                      to={section.title.url}
+                      className={`relative flex items-center text-sm font-semibold transition-all duration-300
   after:content-[''] after:absolute after:bottom-[-4px] after:left-0 title_header
   after:h-[2px] after:bg-primary after:transition-all
   ${
     location.pathname === section.title.url
       ? "text-primary after:w-full"
-      : "group-hover:text-primary group-hover:after:w-full hover:text-primary after:w-0 hover:after:w-full dark:hover:text-black dark:group-hover:text-white"
+      : isOpen
+      ? "text-primary after:w-full"
+      : "hover:text-primary after:w-0 hover:after:w-full dark:hover:text-black"
   }`}
-                  >
-                    {section.title.name}{" "}
-                    {section.items && section.items.length > 0 && (
-                      <ChevronDown className="h-4 w-4 ml-1" />
-                    )}
-                  </Link>
-                  {/* Submenu */}
-                  {section.items?.length > 0 && (
-                    <div
-                      className="nav-dropdown absolute left-0 mt-1.5 space-y-2 
-                    bg-white dark:bg-[#01091c] headergroup 
-                    shadow-lg border border-gray-200 dark:border-gray-700
-                    opacity-0 pointer-events-none 
-                    group-hover:opacity-100 group-hover:pointer-events-auto 
-                    transition-opacity duration-300"
-                      style={{ width: "200px" }}
                     >
-                      {section.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.url}
-                          className="block text-sm py-2 px-4 transition-colors duration-200"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                      {section.title.name}{" "}
+                      {section.items && section.items.length > 0 && (
+                        <ChevronDown className="h-4 w-4 ml-1" />
+                      )}
+                    </Link>
+                    {/* Submenu */}
+                    {section.items?.length > 0 && (
+                      <div
+                        className="nav-dropdown absolute left-0 mt-1.5 space-y-2
+                      bg-white dark:bg-[#01091c] headergroup
+                      shadow-lg border border-gray-200 dark:border-gray-700
+                      transition-all duration-300"
+                        style={{
+                          width: "200px",
+                          opacity: isOpen ? 1 : 0,
+                          pointerEvents: isOpen ? "auto" : "none",
+                          transform: isOpen ? "translateY(0)" : "translateY(-4px)",
+                        }}
+                      >
+                        {section.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            to={item.url}
+                            className="block text-sm py-2 px-4 transition-colors duration-200"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
 
             {/* Right side */}

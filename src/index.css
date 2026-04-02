@@ -35,10 +35,17 @@ html {
 .dark .greyhome{
   color : #bababad9
 }
+.dark .greyhomelightbg{
+  background-color : #02182ad9
+}
+
+
+
 
 .dark .title_header{
   color: #b5babf
 }
+
 .dark .expgbl{
   color:#19399b
 }
@@ -62,7 +69,9 @@ html {
 .dark ::-webkit-scrollbar-track {
   background: #1a2235;
 }
-
+.dark .titlecountries{
+  color : #01091c99;
+}
 /* ===== GLASSMORPHIC HEADER ===== */
 .glass-header {
   position: sticky;

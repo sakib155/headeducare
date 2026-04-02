@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 export default function Footer() {
   return (
     <footer className=" pt-20 pb-10 border-t border-gray-100 dark:border-gray-800">
@@ -15,6 +15,7 @@ export default function Footer() {
               advice and support for international students. Your trusted
               partner for global education.
             </p>
+
             <div className="flex gap-4">
               <a
                 href="https://facebook.com"
@@ -22,27 +23,25 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-100 footergroup flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
               >
-                <span className="material-symbols-outlined text-lg">share</span>
+                <Facebook size={18} />
               </a>
+
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-100 footergroup flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
               >
-                <span className="material-symbols-outlined text-lg">
-                  photo_camera
-                </span>
+                <Instagram size={18} />
               </a>
+
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-100 footergroup flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
               >
-                <span className="material-symbols-outlined text-lg">
-                  person
-                </span>
+                <Linkedin size={18} />
               </a>
             </div>
           </div>
@@ -96,7 +95,7 @@ export default function Footer() {
             <ul className="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
               <li>
                 <Link
-                  to="/countries"
+                  to="/destination/australia"
                   className="hover:text-primary transition-colors"
                 >
                   Australia
@@ -104,7 +103,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/countries"
+                  to="/destination/uk"
                   className="hover:text-primary transition-colors"
                 >
                   United Kingdom
@@ -112,7 +111,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/countries"
+                  to="/destination/canada"
                   className="hover:text-primary transition-colors"
                 >
                   Canada
@@ -120,10 +119,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/countries"
+                  to="/destination/us"
                   className="hover:text-primary transition-colors"
                 >
                   United States
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destination/europe"
+                  className="hover:text-primary transition-colors"
+                >
+                  Europe
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destination/china"
+                  className="hover:text-primary transition-colors"
+                >
+                  China
                 </Link>
               </li>
             </ul>
@@ -168,7 +183,7 @@ export default function Footer() {
           {/* Flags of top 7 countries - styled like your student example */}
           <div className="mt-4 flex items-center gap-6">
             <div className="text-sm hidden md:block">
-              <p className="font-bold text-gray-900">
+              <p className="font-bold text-gray-900 greyhome">
                 Trusted by students worldwide
               </p>
             </div>
