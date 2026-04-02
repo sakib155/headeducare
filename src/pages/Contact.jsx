@@ -38,15 +38,16 @@ export default function Contact() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="relative py-20 lg:py-28 bg-blue-50 greyhomelightbg overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] " />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
           <div className="max-w-3xl">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Get in Touch
             </h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
-              Book Your <span className="text-primary">Free Consultation</span>
+              Contact us & Book free
+              <span className="text-primary"> Consultation</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Fill out the form below and one of our expert counselors will get
@@ -57,7 +58,7 @@ export default function Contact() {
       </section>
 
       {/* Form + Info */}
-      <section className="py-24 bg-white dark:bg-background-dark">
+      <section className="py-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
@@ -240,20 +241,20 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
-              {/* Google Map */}
-              <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 h-64">
-                <iframe
-                  title="Head Educare Location"
-                  width="100%"
-                  height="100%"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://maps.google.com/maps?q=44/16+Head+Educare+West+Panthapath+Dhaka+1205&output=embed"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                />
-              </div>
             </div>
+          </div>
+          {/* Google Map */}
+          <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 h-96 mt-10">
+            <iframe
+              title="Head Educare Location"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=44/16+Head+Educare+West+Panthapath+Dhaka+1205&output=embed"
+              style={{ border: 0 }}
+              allowFullScreen
+            />
           </div>
         </div>
       </section>

@@ -6,10 +6,10 @@ export default function FreeConsultation() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
+      <section className="relative py-24 overflow-hidden bg-blue-50 greyhomelightbg">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-[#0d121b] dark:text-white mb-6">
-            Free <span className="text-primary">Consultation</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-[#0d121b] greyhome  mb-6">
+            Book Your <span className="text-primary">Free Consultation</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
             Talk to our expert counselors and get a personalized roadmap for
@@ -26,7 +26,7 @@ export default function FreeConsultation() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-20 bg-white dark:bg-background-dark">
+      <section className="py-20 ">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-14 text-[#0d121b] dark:text-white">
             How It Works
@@ -52,12 +52,12 @@ export default function FreeConsultation() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-gray-800 text-center"
+                className="p-8 rounded-2xl border border-gray-100  text-center"
               >
                 <div className="text-primary text-3xl font-black mb-4">
                   {item.step}
                 </div>
-                <h3 className="font-bold text-xl mb-2 text-[#0d121b] dark:text-white">
+                <h3 className="font-bold text-xl mb-2 text-[#0d121b] greyhome">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
@@ -68,7 +68,7 @@ export default function FreeConsultation() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section className="py-20 bg-gray-50 dark:bg-surface-dark">
+      <section className="py-20 ">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-14 text-[#0d121b] dark:text-white">
             What You’ll Get
@@ -85,7 +85,7 @@ export default function FreeConsultation() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-100 dark:border-gray-700"
+                className="flex items-center gap-4  p-5 rounded-xl border border-gray-100 dark:border-gray-700"
               >
                 <span className="material-symbols-outlined text-primary">
                   check_circle
@@ -98,7 +98,7 @@ export default function FreeConsultation() {
       </section>
 
       {/* CONNECT METHODS */}
-      <section className="py-20 bg-white dark:bg-background-dark">
+      <section className="py-20 ">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-14 text-[#0d121b] dark:text-white">
             Choose How You Want to Connect
@@ -124,12 +124,12 @@ export default function FreeConsultation() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border border-gray-100 dark:border-gray-700 bg-background-light dark:bg-gray-800 text-center"
+                className="p-8 rounded-2xl border border-gray-100 text-center"
               >
                 <span className="material-symbols-outlined text-primary text-4xl mb-4 block">
                   {item.icon}
                 </span>
-                <h3 className="font-bold text-xl mb-2 text-[#0d121b] dark:text-white">
+                <h3 className="font-bold text-xl mb-2 text-[#0d121b] greyhome">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
@@ -140,7 +140,7 @@ export default function FreeConsultation() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 bg-primary text-white text-center">
+      <section className="py-24 greyhomelightbg text-white text-center">
         <h2 className="text-3xl sm:text-4xl font-black mb-6">
           Ready to Start Your Journey?
         </h2>
