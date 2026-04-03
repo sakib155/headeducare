@@ -1,60 +1,89 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient";
 import { countriesFallback } from "./countriesFallback";
+import { countryDetailStyles as css } from "./Countrydetailstyles";
+import {
+  SectionCard,
+  TuitionFees,
+  LanguageRequirements,
+  Intakes,
+  Salaries,
+  TopCourses,
+  VisaDocs,
+} from "./countryDetailHelpers";
 
 export default function CountryDetails() {
   const { slug } = useParams();
-  const [country, setCountry] = useState(null);
 
-  useEffect(() => {
-    // fallback first
-    const local = countriesFallback.find((c) => c.slug === slug);
-    if (local) setCountry(local);
+  const country = countriesFallback.find(
+    (c) => (c.slug ?? c.country?.toLowerCase()) === slug?.toLowerCase(),
+  );
+  if (!country)
+    return (
+      <>
+        <style>{css}</style>
+        <div className="loading-screen">
+          <span>Country not found.</span>
+        </div>
+      </>
+    );
 
-    // fetch from DB
-    supabase
-      .from("countries")
-      .select("*")
-      .eq("slug", slug)
-      .single()
-      .then(({ data }) => {
-        if (data) setCountry(data);
-      });
-  }, [slug]);
-
-  if (!country) return <div className="p-10">Loading...</div>;
+  const name = country.name ?? country.country;
+  const flag = country.flag_url ?? "";
+  const desc = country.description ?? "";
+  const imgUrl = country.image_url;
+  const fees = country.tuition_fees;
+  const langs = country.language_requirements;
+  const intakes = country.intakes;
+  const salaries = country.post_study_work_salary;
+  const courses = country.top_courses ?? country.popular_courses;
+  const visaDocs = country.visa_documents;
 
   return (
-    <div className="py-20 max-w-5xl mx-auto px-4">
-      <img
-        src={country.image_url}
-        alt={country.name}
-        className="w-full h-96 object-cover rounded-xl mb-8"
-      />
-
-      <h1 className="text-4xl font-black mb-4">
-        {country.flag_url} {country.name}
-      </h1>
-
-      <p className="text-gray-600 mb-6">{country.description}</p>
-
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div>
-          <strong>Tuition:</strong> {country.cost_info}
+    <>
+      <style>{css}</style>
+      <div className="cd-root">
+        {/* ── hero ── */}
+        <div className="hero">
+          {imgUrl ? (
+            <img src={imgUrl} alt={name} className="hero-img" />
+          ) : (
+            <div className="hero-placeholder" />
+          )}
+          <div className="hero-overlay" />
+          <div className="hero-content">
+            {flag && <div className="hero-flag">{flag}</div>}
+            <h1 className="hero-title">Study in {name}</h1>
+            {desc && <p className="hero-desc">{desc}</p>}
+          </div>
         </div>
-        <div>
-          <strong>Visa:</strong> {country.visa_info}
+
+        {/* ── sections ── */}
+        <div className="sections">
+          <SectionCard icon="money" title="Tuition Fees">
+            <TuitionFees fees={fees} />
+          </SectionCard>
+
+          <SectionCard icon="language" title="Language Requirements">
+            <LanguageRequirements reqs={langs} />
+          </SectionCard>
+
+          <SectionCard icon="calendar" title="Intake Periods">
+            <Intakes intakes={intakes} />
+          </SectionCard>
+
+          <SectionCard icon="briefcase" title="Post-Study Work Salaries">
+            <Salaries salaries={salaries} />
+          </SectionCard>
+
+          <SectionCard icon="book" title="Top Courses">
+            <TopCourses courses={courses} />
+          </SectionCard>
+
+          <SectionCard icon="document" title="Visa Documents Required">
+            <VisaDocs docs={visaDocs} />
+          </SectionCard>
         </div>
       </div>
-
-      <div className="flex flex-wrap gap-2">
-        {country.popular_courses?.map((course, i) => (
-          <span key={i} className="px-3 py-1 bg-primary/10 rounded-full">
-            {course}
-          </span>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
