@@ -53,6 +53,7 @@ const FALLBACK_COUNTRIES = [
     id: "1",
     name: "Australia",
     flag_url: "🇦🇺",
+    route: "/destination/australia",
     image_url:
       "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800",
     description:
@@ -62,6 +63,7 @@ const FALLBACK_COUNTRIES = [
     id: "2",
     name: "United Kingdom",
     flag_url: "🇬🇧",
+    route: "/destination/uk",
     image_url:
       "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
     description: "Home to the most prestigious universities in the world.",
@@ -70,6 +72,7 @@ const FALLBACK_COUNTRIES = [
     id: "3",
     name: "Canada",
     flag_url: "🇨🇦",
+    route: "/destination/canada",
     image_url:
       "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800",
     description: "Affordable education with excellent immigration pathways.",
@@ -78,6 +81,7 @@ const FALLBACK_COUNTRIES = [
     id: "4",
     name: "United States",
     flag_url: "🇺🇸",
+    route: "/destination/usa",
     image_url:
       "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?q=80&w=1186&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800",
     description: "World leader in higher education and research.",
@@ -86,6 +90,7 @@ const FALLBACK_COUNTRIES = [
     id: "5",
     name: "Germany",
     flag_url: "🇩🇪",
+    route: "/destination/germany",
     image_url:
       "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800",
     description: "Tuition-free public universities with strong programs.",
@@ -94,6 +99,7 @@ const FALLBACK_COUNTRIES = [
     id: "6",
     name: "Japan",
     flag_url: "🇯🇵",
+    route: "/destination/japan",
     image_url:
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800",
     description: "Cutting-edge technology education with scholarships.",
@@ -630,7 +636,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {countries.slice(0, 6).map((country, i) => (
               <Link
-                to="/countries"
+                to={country.route}
                 key={country.id}
                 className="country-card relative group rounded-2xl overflow-hidden h-72 reveal cursor-pointer"
                 style={{ transitionDelay: `${i * 100}ms` }}
