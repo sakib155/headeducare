@@ -184,14 +184,24 @@ export const countriesFallback = [
     ],
     post_study_work_salary: [
       {
-        field: "Technology and Software Development",
-        note: "Highest demand",
+        field: "Business Management / Statistics & Data Science",
+        min: 70000,
+        max: 70000,
         currency: "USD",
       },
-      { field: "Finance and Banking", currency: "USD" },
-      { field: "Healthcare and Medical Research", currency: "USD" },
-      { field: "Engineering", currency: "USD" },
-      { field: "Business Analytics and Data Science", currency: "USD" },
+      {
+        field: "Education and Training",
+        min: 45000,
+        max: 45000,
+        currency: "USD",
+      },
+      { field: "Healthcare", min: 51000, max: 51000, currency: "USD" },
+      {
+        field: "IT & Computer Science",
+        min: 65000,
+        max: 65000,
+        currency: "USD",
+      },
     ],
     top_courses: [
       "Computer Science and Information Technology",

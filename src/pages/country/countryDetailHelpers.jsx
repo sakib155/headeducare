@@ -14,6 +14,7 @@ export const Icon = ({ d, size = 18 }) => (
     strokeWidth={2}
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d={d} />
   </svg>
@@ -124,7 +125,7 @@ export function Intakes({ intakes }) {
           <div className="intake-name">{intake.name}</div>
           <div className="intake-term">{intake.term}</div>
           <div className="intake-window">
-            <Icon d={icons.calendar} size={14} />
+            <Icon d={icons.calendar} size={13} />
             <span>{intake.apply_window}</span>
           </div>
           {intake.start_month && (
@@ -140,7 +141,10 @@ export function Intakes({ intakes }) {
 export function Salaries({ salaries }) {
   if (!salaries?.length)
     return <p className="empty">No salary data available.</p>;
-  const maxVal = Math.max(...salaries.filter((s) => s.max).map((s) => s.max));
+  const maxVal = Math.max(
+    ...salaries.filter((s) => s.max).map((s) => s.max),
+    1,
+  );
   return (
     <div className="salary-list">
       {salaries.map((s, i) => {
@@ -203,7 +207,7 @@ export function VisaDocs({ docs }) {
       {docs.map((doc, i) => (
         <li key={i} className="visa-item" style={{ "--delay": `${i * 0.06}s` }}>
           <span className="visa-check">
-            <Icon d={icons.check} size={14} />
+            <Icon d={icons.check} size={13} />
           </span>
           {doc}
         </li>
