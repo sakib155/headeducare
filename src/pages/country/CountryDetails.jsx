@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { countriesFallback } from "./countriesFallback";
 import { countryDetailStyles as css } from "./Countrydetailstyles";
 import {
@@ -13,10 +14,12 @@ import {
 
 export default function CountryDetails() {
   const { slug } = useParams();
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const country = countriesFallback.find(
     (c) => (c.slug ?? c.country?.toLowerCase()) === slug?.toLowerCase(),
   );
+
   if (!country)
     return (
       <>
@@ -45,19 +48,24 @@ export default function CountryDetails() {
         {/* ── hero ── */}
         <div className="hero">
           {imgUrl ? (
-            <img src={imgUrl} alt={name} className="hero-img" />
+            <img
+              src={imgUrl}
+              alt={name}
+              className={`hero-img${imgLoaded ? " loaded" : ""}`}
+              onLoad={() => setImgLoaded(true)}
+            />
           ) : (
             <div className="hero-placeholder" />
           )}
           <div className="hero-overlay" />
           <div className="hero-content">
-            {flag && <div className="hero-flag">{flag}</div>}
+            {flag && <span className="hero-flag">{flag}</span>}
             <h1 className="hero-title">Study in {name}</h1>
             {desc && <p className="hero-desc">{desc}</p>}
           </div>
         </div>
 
-        {/* ── sections ── */}
+        {/* ── content sections ── */}
         <div className="sections">
           <SectionCard icon="money" title="Tuition Fees">
             <TuitionFees fees={fees} />
