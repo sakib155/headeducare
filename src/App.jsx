@@ -11,6 +11,10 @@ import Contact from "./pages/Contact";
 import OurPeople from "./pages/about/our-people";
 import DestinationPage from "./pages/allcountries/allcountry";
 import FreeConsultation from "./pages/FreeConsultations";
+import TermsServices from "./pages/legal/termsServices";
+import PrivacyPolicy from "./pages/legal/privacyPolicy";
+import RefundPolicy from "./pages/legal/refundPolicy";
+import Disclaimer from "./pages/legal/disclaimer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -55,6 +59,10 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/freeconsulation" element={<FreeConsultation />} />
         <Route path="/allcountries/allcountry" element={<DestinationPage />} />
+        <Route path="/legal/termsService" element={<TermsServices />} />
+        <Route path="/legal/privacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/legal/refundPolicy" element={<RefundPolicy />} />
+        <Route path="/legal/disclaimer" element={<Disclaimer />} />
       </Routes>
 
       <Footer />

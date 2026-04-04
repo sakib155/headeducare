@@ -151,24 +151,36 @@ export default function Footer() {
             </h5>
             <ul className="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link
+                  to="/legal/privacyPolicy"
+                  className="hover:text-primary transition-colors"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link
+                  to="/legal/termsService"
+                  className="hover:text-primary transition-colors"
+                >
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link
+                  to="/legal/refundPolicy"
+                  className="hover:text-primary transition-colors"
+                >
                   Refund Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link
+                  to="/legal/disclaimer"
+                  className="hover:text-primary transition-colors"
+                >
                   Disclaimer
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
