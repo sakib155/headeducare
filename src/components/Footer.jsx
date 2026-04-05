@@ -62,7 +62,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/countries"
+                  to="/allcountries/allcountry"
                   className="hover:text-primary transition-colors"
                 >
                   Study Destinations
