@@ -28,8 +28,9 @@ html {
 /* ===== DARK MODE ===== */
 /* Dark mode styles only applied when .dark class is on <html> */
 .dark body {
-  background-color: #01091c;
-  color: #f1f1f1
+  background: radial-gradient(circle at 80% 0%, #0a1a2f, #01091c);
+  /* or a darker variation */
+  background: radial-gradient(circle at 20% 30%, #0a1f2a, #01091c);
 }
 
 .dark .greyhome{

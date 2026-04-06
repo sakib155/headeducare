@@ -415,9 +415,9 @@ export default function Home() {
                 Admissions Open 2025-26
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 greyhome">
-                Transform Your Future with{" "}
-                <span className="text-primary expgbl ">Expert Global</span>{" "}
-                Education
+                <span style={{ color: '#64B6F5' }}>Transform Your Future with </span>
+                <span style={{ color: '#f7fffd' }}>Expert Global</span>
+                <span style={{ color: '#64B6F5' }}> Education</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
                 Your bridge to {stats.partner_universities} world-class
@@ -459,7 +459,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <p className="font-bold text-[#0d121b] expgbl">
+                  <p className="font-bold text-[#0d121b]">
                     Join {stats.students_placed} Alumni
                   </p>
                   <p className="text-gray-500">Trusted by students worldwide</p>
@@ -542,7 +542,7 @@ export default function Home() {
       </section>
 
       {/* ===== STATS BANNER ===== */}
-      <section className="bg-primary  py-12 relative overflow-hidden">
+      <section className="bg-[#222C3A] py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -558,7 +558,7 @@ export default function Home() {
                 key={i}
                 className={`text-center  ${i < 3 ? "border-r border-white/20" : ""} reveal`}
               >
-                <p className="text-4xl lg:text-5xl font-black mb-1 text-white greyhome ">
+                <p className="text-4xl lg:text-5xl font-black mb-1 text-[#64B6F5] ">
                   {stat.val}
                 </p>
                 <p className="text-white/80 text-sm font-medium uppercase tracking-wider">
@@ -577,7 +577,7 @@ export default function Home() {
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Our Expert Services
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] expgbl mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#64B6F5] mb-6">
               Tailored Solutions for Your International Career
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -597,7 +597,7 @@ export default function Home() {
                     {service.icon}
                   </span>
                 </div>
-                <h4 className="text-2xl font-bold mb-4 expgbl">
+                <h4 className="text-2xl font-bold mb-4 text-#64b6f5 expgbl">
                   {service.title}
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
