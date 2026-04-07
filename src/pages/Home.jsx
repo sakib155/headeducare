@@ -416,7 +416,7 @@ export default function Home() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 greyhome">
                 Transform Your Future with{" "}
-                <span className="text-primary expgbl ">Expert Global</span>{" "}
+                <span className="text-primary ">Expert Global</span>{" "}
                 Education
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
@@ -542,7 +542,7 @@ export default function Home() {
       </section>
 
       {/* ===== STATS BANNER ===== */}
-      <section className="bg-primary  py-12 relative overflow-hidden">
+      <section className="bg-primary dark:bg-[#1E2939] py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -577,7 +577,7 @@ export default function Home() {
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Our Expert Services
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] expgbl mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary mb-6">
               Tailored Solutions for Your International Career
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -597,7 +597,7 @@ export default function Home() {
                     {service.icon}
                   </span>
                 </div>
-                <h4 className="text-2xl font-bold mb-4 expgbl">
+                <h4 className="text-2xl font-bold mb-4 text-primary">
                   {service.title}
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
@@ -718,14 +718,14 @@ export default function Home() {
       {/* ===== CTA SECTION ===== */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-[#005B8F] rounded-[2rem] p-12 lg:p-20 overflow-hidden shadow-2xl">
+          <div className="relative bg-[#005B8F] dark:bg-[#1E2939] rounded-[2rem] p-12 lg:p-20 overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-20">
               <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px]" />
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-[120px]" />
             </div>
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="reveal">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 greyhome mb-6">
                   Ready to Start Your Global Journey?
                 </h2>
                 <p className="text-gray-300 text-normal mb-10">
@@ -735,7 +735,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4">
                   <Link
                     to="/contact"
-                    className="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
+                    className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors shadow-xl hover:-translate-y-1"
                   >
                     Book Free Consultation
                   </Link>

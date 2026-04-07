@@ -90,14 +90,14 @@ export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
+      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-[#1E2939] dark:to-[#243347] overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               About Us
             </h2>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-[#BBB9BB] mb-6 leading-tight">
               Empowering Dreams, <span className="text-primary">Globally</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -112,7 +112,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white dark:bg-background-dark">
+      <section className="py-20 bg-white dark:bg-[#061726]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -141,7 +141,7 @@ export default function About() {
                     {item.icon}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#0d121b] dark:text-white">
+                <h3 className="text-xl font-bold mb-3 text-[#0d121b] dark:text-primary">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -154,13 +154,13 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-background-light dark:bg-background-dark/50">
+      <section className="py-20 bg-background-light dark:bg-[#1E2939]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Our Journey
             </h2>
-            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white">
+            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-[#BBB9BB]">
               Milestones That Define Us
             </h3>
           </div>
@@ -178,7 +178,7 @@ export default function About() {
                     <span className="text-primary font-black text-2xl">
                       {m.year}
                     </span>
-                    <h4 className="text-xl font-bold text-[#0d121b] dark:text-white mt-1">
+                    <h4 className="text-xl font-bold text-[#0d121b] dark:text-[#BBB9BB] mt-1">
                       {m.title}
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400 mt-2">

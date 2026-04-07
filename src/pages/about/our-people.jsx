@@ -32,7 +32,7 @@ const OurPeople = () => {
         <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
           Meet Our Team
         </h2>
-        <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white">
+        <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-[#BBB9BB]">
           Expert Counselors at Your Service
         </h3>
       </div>
@@ -41,14 +41,16 @@ const OurPeople = () => {
         {people.map((person, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-md p-5 text-center hover:shadow-lg transition"
+            className="bg-white dark:bg-[#1E2939] rounded-2xl shadow-md p-5 text-center hover:shadow-lg transition"
           >
             <img
               src={person.image}
               alt={person.name}
               className="w-24 h-24 mx-auto rounded-full object-cover mb-4"
             />
-            <h3 className="text-lg font-semibold">{person.name}</h3>
+            <h3 className="text-lg font-semibold dark:text-[#BBB9BB]">
+              {person.name}
+            </h3>
             <p className="text-sm text-gray-500 mb-2">{person.role}</p>
             <p className="text-sm text-gray-600">{person.bio}</p>
           </div>

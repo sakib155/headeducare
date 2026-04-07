@@ -26,14 +26,14 @@ html {
 }
 
 /* ===== DARK MODE ===== */
-/* Dark mode styles only applied when .dark class is on <html> */
+/* Dark mode styl only applied when .dark class is on <html> */
 .dark body {
-  background-color: #01091c;
+  background-color: #061624;
   color: #f1f1f1
 }
 
 .dark .greyhome{
-  color : #bababad9
+  color : #dad6d6d9
 }
 .dark .greyhomelightbg{
   background-color : #02182ad9
@@ -47,7 +47,7 @@ html {
 }
 
 .dark .expgbl{
-  color:#19399b
+  color:#4565c4
 }
 .dark .footergroup{
   background-color: #0d2453;
@@ -71,6 +71,9 @@ html {
 }
 .dark .titlecountries{
   color : #01091c99;
+}
+.dark .dcard {
+  background-color: #1E2939;
 }
 /* ===== GLASSMORPHIC HEADER ===== */
 .glass-header {
