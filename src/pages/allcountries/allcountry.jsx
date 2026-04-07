@@ -23,15 +23,12 @@ const css = `
     min-height: 100vh;
     padding: 56px 32px 80px;
     position: relative;
-  }
+}
 
-  /* subtle dot-grid background */
-  .dp-root::before {
-    content: '';
-    position: fixed; inset: 0; pointer-events: none; z-index: 0;
-    background-image: radial-gradient(circle, #c9962a22 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
+/* Dark mode background */
+.dark .dp-root {
+    background: #061624;
+}
 
   .dp-inner {
     max-width: 1280px;
@@ -89,21 +86,29 @@ const css = `
     border-radius: var(--radius);
     overflow: hidden;
     text-decoration: none;
-    display: flex; flex-direction: column;
+    display: flex; 
+    flex-direction: column;
     transition: transform .32s cubic-bezier(.22,1,.36,1),
                 box-shadow .32s cubic-bezier(.22,1,.36,1),
                 border-color .2s;
     animation: cardIn .5s ease var(--stagger, 0s) both;
-  }
-  @keyframes cardIn {
+}
+
+/* Dark mode background */
+.dark .dp-card {
+    background: #1E2939;
+}
+
+@keyframes cardIn {
     from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-  .dp-card:hover {
+}
+
+.dp-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 56px rgba(22,19,14,.13);
-    border-color: var(var(--primary));
-  }
+    border-color: var(--primary);
+}
 
   /* image area */
   .dp-img-wrap {
@@ -156,10 +161,17 @@ const css = `
   }
   .dp-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.45rem; font-weight: 700;
-    color: var(--ink); line-height: 1.1;
+    font-size: 1.45rem; 
+    font-weight: 700;
+    color: var(--ink); 
+    line-height: 1.1;
     letter-spacing: -.01em;
-  }
+}
+
+/* Dark mode text color */
+.dark .dp-name {
+    color: #B5BABF;
+}
   .dp-desc {
     font-size: .83rem; color: var(--ink-mid);
     line-height: 1.65; font-weight: 300;
