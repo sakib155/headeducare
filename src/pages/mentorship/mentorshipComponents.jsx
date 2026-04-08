@@ -79,9 +79,44 @@ export const MENTOR_STYLES = `
   .dark .mtr-badge-dot { background:#60a5fa; }
   .dark .mtr-section-alt { background:#02182a; }
 
+  /* Cards */
+  .dark .mtr-icon-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-step-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-card-title { color:#ffffff !important; }
+  .dark .mtr-checklist-item { color:#d1d5db !important; }
+  .dark .mtr-tag { background:#02182a !important; color:#f1f1f1 !important; border-color:rgba(96,165,250,0.2) !important; }
+  .dark .mtr-prog-nav { background:#01091c !important; border-color:rgba(255,255,255,0.06) !important; }
+
   /* FAQ */
   .mtr-faq-q { color:#0d121b; }
-  .dark .mtr-faq-q { color:#ffffff; }
+  .dark .mtr-faq-q { color:#ffffff !important; }
+  .dark .mtr-faq-item { border-color:rgba(255,255,255,0.1) !important; }
+
+  /* InfoBox variants */
+  .dark .mtr-infobox-blue { background:rgba(0,91,143,0.15) !important; border-color:rgba(0,91,143,0.3) !important; }
+  .dark .mtr-infobox-green { background:rgba(22,163,74,0.1) !important; border-color:rgba(22,163,74,0.25) !important; }
+  .dark .mtr-infobox-amber { background:rgba(245,158,11,0.1) !important; border-color:rgba(245,158,11,0.25) !important; }
+  .dark .mtr-infobox-blue .mtr-infobox-title,
+  .dark .mtr-infobox-blue .mtr-infobox-icon > svg { color:#60a5fa !important; }
+  .dark .mtr-infobox-green .mtr-infobox-title,
+  .dark .mtr-infobox-green .mtr-infobox-icon > svg { color:#4ade80 !important; }
+  .dark .mtr-infobox-amber .mtr-infobox-title,
+  .dark .mtr-infobox-amber .mtr-infobox-icon > svg { color:#fcd34d !important; }
+
+  /* Layout components */
+  .dark .mtr-vtl-title { color:#ffffff !important; }
+  .dark .mtr-proc-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-proc-title { color:#ffffff !important; }
+  .dark .mtr-alt-title { color:#ffffff !important; }
+  @media(max-width:640px){ .mtr-alt-row { flex-direction:column !important; } }
+  .dark .mtr-color-card { background:#02182a !important; }
+  .dark .mtr-cc-title { color:#ffffff !important; }
+  .dark .mtr-pq-text { color:#e5e7eb !important; }
+  .dark .mtr-accent-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-ac-title { color:#ffffff !important; }
+  .dark .mtr-tier-title { color:#ffffff !important; }
+  .dark .mtr-tier-track { background:rgba(255,255,255,0.12) !important; }
+  .dark .mtr-alert-banner { background:rgba(255,255,255,0.04) !important; border-color:rgba(255,255,255,0.12) !important; }
 
   /* Responsive */
   @media(max-width:768px){
@@ -180,7 +215,7 @@ export function MentorIconCard({ icon, title, desc, accent = "#005B8F", style = 
   const Icon = icon;
   return (
     <div
-      className="mtr-reveal"
+      className="mtr-reveal mtr-icon-card"
       style={{
         background: "#fff",
         border: "1px solid rgba(0,0,0,0.06)",
@@ -228,8 +263,6 @@ export function MentorIconCard({ icon, title, desc, accent = "#005B8F", style = 
       <p className="mtr-body" style={{ fontSize: 14 }}>
         {desc}
       </p>
-
-      <style>{`.dark .mtr-card-title { color:#ffffff; }`}</style>
     </div>
   );
 }
@@ -241,7 +274,7 @@ export function MentorStepCard({ step, icon, title, desc }) {
   const Icon = icon;
   return (
     <div
-      className="mtr-reveal"
+      className="mtr-reveal mtr-step-card"
       style={{
         background: "#fff",
         border: "1px solid rgba(0,0,0,0.06)",
@@ -313,7 +346,7 @@ export function MentorFAQ({ items }) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="mtr-reveal"
+          className="mtr-reveal mtr-faq-item"
           style={{
             border: `1px solid ${open === i ? "rgba(0,91,143,0.25)" : "rgba(0,0,0,0.07)"}`,
             borderRadius: 16,
@@ -584,7 +617,6 @@ export function MentorCheckList({ items, columns = 1 }) {
           {item}
         </li>
       ))}
-      <style>{`.dark .mtr-checklist-item { color:#d1d5db; }`}</style>
     </ul>
   );
 }
@@ -601,7 +633,7 @@ export function MentorInfoBox({ icon: Icon, title, children, variant = "blue" })
   const v = variants[variant];
   return (
     <div
-      className="mtr-reveal"
+      className={`mtr-reveal mtr-infobox-${variant}`}
       style={{
         background: v.bg,
         border: `1px solid ${v.border}`,
@@ -610,8 +642,9 @@ export function MentorInfoBox({ icon: Icon, title, children, variant = "blue" })
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-        {Icon && <Icon size={24} color={v.title} />}
+        {Icon && <span className="mtr-infobox-icon"><Icon size={24} color={v.title} /></span>}
         <h4
+          className="mtr-infobox-title"
           style={{
             fontWeight: 700,
             fontSize: 16,
@@ -651,7 +684,6 @@ export function MentorTagList({ tags }) {
           {tag}
         </span>
       ))}
-      <style>{`.dark .mtr-tag { background:#02182a; color:#f1f1f1; border-color:rgba(96,165,250,0.2); }`}</style>
     </div>
   );
 }
@@ -702,9 +734,6 @@ export function MentorProgramNav({ pages, current }) {
           </Link>
         ))}
       </div>
-      <style>{`
-        .dark .mtr-prog-nav { background:#01091c; border-color:rgba(255,255,255,0.06); }
-      `}</style>
     </nav>
   );
 }
@@ -737,7 +766,6 @@ export function MentorVerticalTimeline({ steps }) {
           </div>
         </div>
       ))}
-      <style>{`.dark .mtr-vtl-title { color:#ffffff; }`}</style>
     </div>
   );
 }
@@ -771,10 +799,6 @@ export function MentorProcessArrows({ steps }) {
           )}
         </React.Fragment>
       ))}
-      <style>{`
-        .dark .mtr-proc-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
-        .dark .mtr-proc-title { color:#ffffff; }
-      `}</style>
     </div>
   );
 }
@@ -815,10 +839,6 @@ export function MentorAlternatingFeatures({ features, icons }) {
           </div>
         );
       })}
-      <style>{`
-        .dark .mtr-alt-title { color:#ffffff; }
-        @media(max-width:640px){ .mtr-alt-row { flex-direction:column !important; } }
-      `}</style>
     </div>
   );
 }
@@ -848,7 +868,6 @@ export function MentorColorCard({ title, desc, accentColor = "#005B8F", icon, ba
         )}
       </div>
       <p className="mtr-body" style={{ fontSize: 14 }}>{desc}</p>
-      <style>{`.dark .mtr-color-card { background:#02182a !important; } .dark .mtr-cc-title { color:#ffffff; }`}</style>
     </div>
   );
 }
@@ -875,7 +894,6 @@ export function MentorPullQuote({ quote, author, role }) {
           {role && <span style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}> — {role}</span>}
         </div>
       )}
-      <style>{`.dark .mtr-pq-text { color:#e5e7eb; }`}</style>
     </div>
   );
 }
@@ -925,7 +943,6 @@ export function MentorAccentCard({ title, desc, accent = "#005B8F", icon }) {
         <h4 className="mtr-ac-title" style={{ fontWeight: 700, fontSize: 15, color: "#0d121b", fontFamily: "Lexend,sans-serif", marginBottom: 8 }}>{title}</h4>
         <p className="mtr-body" style={{ fontSize: 14 }}>{desc}</p>
       </div>
-      <style>{`.dark .mtr-accent-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; } .dark .mtr-ac-title { color:#ffffff; }`}</style>
     </div>
   );
 }
@@ -947,13 +964,12 @@ export function MentorTierBars({ tiers }) {
               <span style={{ fontSize: 12, color: colors[i], fontWeight: 700, fontFamily: "Lexend,sans-serif", background: `${colors[i]}15`, padding: "2px 10px", borderRadius: 20 }}>{t.count} schools</span>
             </div>
           </div>
-          <div style={{ height: 8, background: "rgba(0,0,0,0.06)", borderRadius: 8, overflow: "hidden", marginBottom: 10 }}>
+          <div className="mtr-tier-track" style={{ height: 8, background: "rgba(0,0,0,0.06)", borderRadius: 8, overflow: "hidden", marginBottom: 10 }}>
             <div style={{ height: "100%", width: widths[i], background: colors[i], borderRadius: 8, transition: "width 1s ease" }} />
           </div>
           <p className="mtr-body" style={{ fontSize: 14 }}>{t.desc}</p>
         </div>
       ))}
-      <style>{`.dark .mtr-tier-title { color:#ffffff; }`}</style>
     </div>
   );
 }
