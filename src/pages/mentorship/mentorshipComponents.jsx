@@ -9,7 +9,11 @@ export function useReveal(cls = "mtr-visible") {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
-        entries.forEach((e) => e.isIntersecting && e.target.classList.add(cls)),
+        entries.forEach((e) =>
+          e.isIntersecting
+            ? e.target.classList.add(cls)
+            : e.target.classList.remove(cls)
+        ),
       { threshold: 0.08 }
     );
     const el = ref.current;
