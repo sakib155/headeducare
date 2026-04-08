@@ -1,73 +1,70 @@
-import {
-  BookOpen, Microscope, Award, DollarSign, GraduationCap, Globe,
-} from "lucide-react";
+/* ── Post Graduate Funding — Large 2-col funding cards + vertical timeline + FAQ ── */
+import { BookOpen, Microscope, Award, DollarSign, GraduationCap, Globe } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
-  MentorHero, MentorSectionHeader, MentorIconCard,
-  MentorFAQ, MentorStatsStrip, MentorCtaBanner,
-  MentorCheckList,
+  MentorHero, MentorSectionHeader, MentorColorCard,
+  MentorFAQ, MentorStatsStrip, MentorCtaBanner, MentorVerticalTimeline,
 } from "./mentorshipComponents";
 import { postGraduateFundingData as d } from "./mentorshipData";
 
 const fundingIcons = [BookOpen, Microscope, Award, DollarSign, GraduationCap, Globe];
+const fundingColors = ["#005B8F", "#7c3aed", "#059669", "#d97706", "#0891b2", "#dc2626"];
 
 export default function PostGraduateFunding() {
   const containerRef = useReveal();
   return (
     <>
       <style>{MENTOR_STYLES + `
-        @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
-        @media(max-width:480px){ .grid-3{ grid-template-columns:1fr !important; } }
+        .pgf-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+        .pgf-timeline-wrap { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; align-items:start; }
+        @media(max-width:768px){ .pgf-grid{ grid-template-columns:1fr !important; } .pgf-timeline-wrap{ grid-template-columns:1fr !important; gap:40px; } }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Funding Types */}
+        {/* 2-col large funding cards — more layout space per item vs cramped 3-col */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.fundingSection} />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }} className="grid-3">
-              {d.fundingTypes.map((f, i) => {
-                const Icon = fundingIcons[i] || BookOpen;
-                return <MentorIconCard key={i} icon={Icon} title={f.title} desc={f.desc} />;
-              })}
+            <div className="pgf-grid">
+              {d.fundingTypes.map((f, i) => (
+                <MentorColorCard
+                  key={i}
+                  icon={fundingIcons[i] || BookOpen}
+                  title={f.title}
+                  desc={f.desc}
+                  accentColor={fundingColors[i]}
+                />
+              ))}
             </div>
           </div>
         </section>
 
         <div className="mtr-divider" />
 
-        {/* Funding Timeline */}
+        {/* Vertical timeline — action plan from brainstorm to submission */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="grid-2">
-              <div>
-                <MentorSectionHeader
-                  label="Action Plan"
-                  title="Your Graduate"
-                  highlight="Funding Timeline"
-                  body="A month-by-month action plan to ensure you apply for every funding opportunity available before deadlines close."
-                />
-              </div>
-              <div className="mtr-reveal">
-                <MentorCheckList items={d.fundingTimeline} columns={1} />
-              </div>
+            <div className="pgf-timeline-wrap">
+              <MentorSectionHeader
+                label="Action Plan"
+                title="Your Graduate"
+                highlight="Funding Timeline"
+                body="A month-by-month action plan to ensure you apply for every funding opportunity available before deadlines close."
+              />
+              <MentorVerticalTimeline
+                steps={d.fundingTimeline.map(t => ({ title: t, desc: "" }))}
+              />
             </div>
           </div>
         </section>
 
         <div className="mtr-divider" />
 
-        {/* FAQ */}
         <section className="mtr-section">
           <div className="mtr-container">
-            <MentorSectionHeader
-              label="Common Questions"
-              title="Frequently Asked"
-              highlight="Questions"
-              centered
-            />
+            <MentorSectionHeader label="Common Questions" title="Frequently Asked" highlight="Questions" centered />
             <div style={{ maxWidth: 800, margin: "0 auto" }}>
               <MentorFAQ items={d.faqs} />
             </div>

@@ -1,87 +1,75 @@
-import {
-  FileText, BookOpen, School, GraduationCap, PenTool, MessageCircle,
-} from "lucide-react";
+/* ── Writing & Application — Accent-top essay cards + vertical timeline process (NO FAQ) ── */
+import { FileText, BookOpen, School, GraduationCap, PenTool, MessageCircle } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
-  MentorHero, MentorSectionHeader, MentorIconCard,
-  MentorFAQ, MentorStatsStrip, MentorCtaBanner,
-  MentorCheckList, MentorInfoBox,
+  MentorHero, MentorSectionHeader, MentorAccentCard,
+  MentorStatsStrip, MentorCtaBanner, MentorVerticalTimeline,
+  MentorInfoBox,
 } from "./mentorshipComponents";
 import { writingApplicationData as d } from "./mentorshipData";
 
 const essayIcons = [FileText, BookOpen, School, GraduationCap, PenTool, MessageCircle];
+const essayAccents = ["#005B8F", "#7c3aed", "#059669", "#d97706", "#dc2626", "#0891b2"];
 
 export default function WritingApplication() {
   const containerRef = useReveal();
   return (
     <>
       <style>{MENTOR_STYLES + `
-        @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
-        @media(max-width:480px){ .grid-3{ grid-template-columns:1fr !important; } }
+        .wa-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .wa-process { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
+        @media(max-width:768px){ .wa-grid{ grid-template-columns:1fr 1fr !important; } .wa-process{ grid-template-columns:1fr !important; gap:40px; } }
+        @media(max-width:480px){ .wa-grid{ grid-template-columns:1fr !important; } }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Essay Types */}
+        {/* Accent-top cards — each essay type has its own color */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.essayTypes} />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }} className="grid-3">
-              {d.essays.map((e, i) => {
-                const Icon = essayIcons[i] || FileText;
-                return <MentorIconCard key={i} icon={Icon} title={e.title} desc={e.desc} />;
-              })}
+            <div className="wa-grid">
+              {d.essays.map((e, i) => (
+                <MentorAccentCard
+                  key={i}
+                  icon={essayIcons[i] || FileText}
+                  title={e.title}
+                  desc={e.desc}
+                  accent={essayAccents[i]}
+                />
+              ))}
             </div>
           </div>
         </section>
 
         <div className="mtr-divider" />
 
-        {/* Writing Process */}
+        {/* Vertical timeline process + authenticity note side by side */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="grid-2">
+            <div className="wa-process">
               <div>
                 <MentorSectionHeader
                   label="Our Writing Process"
-                  title="How We Help You"
-                  highlight="Write Great Essays"
-                  body="Our structured writing process takes your essay from a blank page to a polished, authentic final submission through multiple guided revision cycles."
+                  title="From Blank Page to"
+                  highlight="Final Submission"
+                  body="Our structured 8-step writing process guides every essay to a polished, authentic final draft."
                 />
-                <MentorInfoBox icon={PenTool} title="A Note on Authenticity" variant="amber">
+                <MentorInfoBox icon={PenTool} title="On Authenticity" variant="amber">
                   <p className="mtr-body" style={{ fontSize: 14 }}>
-                    We guide, coach, and refine. The ideas, voice, and experiences in your essay must always be genuinely and authentically yours. This is both an ethical requirement and a practical one — admissions officers read thousands of essays and recognise inauthenticity immediately.
+                    We guide and refine. The ideas, voice, and experiences must always be genuinely yours. Admissions officers read thousands of essays and recognise inauthenticity immediately.
                   </p>
                 </MentorInfoBox>
               </div>
-              <div className="mtr-reveal">
-                <MentorCheckList items={d.writingProcess} columns={1} />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="mtr-divider" />
-
-        {/* FAQ */}
-        <section className="mtr-section">
-          <div className="mtr-container">
-            <MentorSectionHeader
-              label="Common Questions"
-              title="Frequently Asked"
-              highlight="Questions"
-              centered
-            />
-            <div style={{ maxWidth: 800, margin: "0 auto" }}>
-              <MentorFAQ items={d.faqs} />
+              <MentorVerticalTimeline steps={d.writingProcess.map(t => ({ title: t, desc: "" }))} />
             </div>
           </div>
         </section>
 
         <MentorCtaBanner
           title="Ready to Write Essays That Get You In?"
-          desc="Our writing coaches have helped hundreds of students craft essays that made the difference. Start yours today."
+          desc="Our writing coaches have helped hundreds of students craft essays that made the difference."
         />
       </div>
     </>

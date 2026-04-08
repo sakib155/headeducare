@@ -708,3 +708,272 @@ export function MentorProgramNav({ pages, current }) {
     </nav>
   );
 }
+
+/* ─────────────────────────────────────────────
+   VERTICAL TIMELINE  (numbered steps with connector line)
+───────────────────────────────────────────── */
+export function MentorVerticalTimeline({ steps }) {
+  return (
+    <div style={{ position: "relative", paddingLeft: 48 }}>
+      {/* connector line */}
+      <div style={{
+        position: "absolute", left: 17, top: 18, bottom: 18,
+        width: 2, background: "rgba(0,91,143,0.15)",
+      }} />
+      {steps.map((s, i) => (
+        <div key={i} className="mtr-reveal" style={{ display: "flex", gap: 24, marginBottom: i < steps.length - 1 ? 40 : 0, position: "relative" }}>
+          {/* circle */}
+          <div style={{
+            position: "absolute", left: -48,
+            width: 36, height: 36, borderRadius: "50%",
+            background: "#005B8F", color: "#fff",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontWeight: 900, fontSize: 14, fontFamily: "Lexend,sans-serif",
+            flexShrink: 0, zIndex: 1,
+          }}>{i + 1}</div>
+          <div>
+            <h4 className="mtr-vtl-title" style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, fontFamily: "Lexend,sans-serif", color: "#0d121b" }}>{s.title}</h4>
+            <p className="mtr-body" style={{ fontSize: 14 }}>{s.desc}</p>
+          </div>
+        </div>
+      ))}
+      <style>{`.dark .mtr-vtl-title { color:#ffffff; }`}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   HORIZONTAL PROCESS ARROWS  (steps with →)
+───────────────────────────────────────────── */
+export function MentorProcessArrows({ steps }) {
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap", gap: 0, alignItems: "stretch" }}>
+      {steps.map((s, i) => (
+        <React.Fragment key={i}>
+          <div className="mtr-reveal mtr-proc-card" style={{
+            flex: "1 1 160px", minWidth: 140,
+            background: "#fff", border: "1px solid rgba(0,91,143,0.1)",
+            borderRadius: 16, padding: "24px 20px", textAlign: "center",
+            position: "relative",
+          }}>
+            <div style={{
+              width: 36, height: 36, borderRadius: "50%",
+              background: "rgba(0,91,143,0.1)", color: "#005B8F",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontWeight: 900, fontSize: 14, fontFamily: "Lexend,sans-serif",
+              margin: "0 auto 12px",
+            }}>{i + 1}</div>
+            <h5 className="mtr-proc-title" style={{ fontWeight: 700, fontSize: 13, color: "#0d121b", fontFamily: "Lexend,sans-serif", lineHeight: 1.4 }}>{s.title}</h5>
+            {s.desc && <p className="mtr-body" style={{ fontSize: 12, marginTop: 6 }}>{s.desc}</p>}
+          </div>
+          {i < steps.length - 1 && (
+            <div style={{ display: "flex", alignItems: "center", padding: "0 4px", color: "#005B8F", fontSize: 20, fontWeight: 300, flexShrink: 0 }}>→</div>
+          )}
+        </React.Fragment>
+      ))}
+      <style>{`
+        .dark .mtr-proc-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+        .dark .mtr-proc-title { color:#ffffff; }
+      `}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   ALTERNATING FEATURE ROWS  (img-like left/right layout)
+───────────────────────────────────────────── */
+export function MentorAlternatingFeatures({ features, icons }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 56 }}>
+      {features.map((f, i) => {
+        const Icon = icons?.[i];
+        const isReverse = i % 2 !== 0;
+        return (
+          <div key={i} className="mtr-reveal mtr-alt-row" style={{
+            display: "flex", gap: 56, alignItems: "center",
+            flexDirection: isReverse ? "row-reverse" : "row",
+          }}>
+            {/* Icon panel */}
+            <div style={{
+              flexShrink: 0, width: 240, height: 180,
+              background: `rgba(0,91,143,${0.04 + (i * 0.02)})`,
+              borderRadius: 24,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              border: "1px solid rgba(0,91,143,0.08)",
+            }}>
+              {Icon && <Icon size={56} color="#005B8F" strokeWidth={1.25} />}
+              {!Icon && (
+                <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#005B8F", opacity: 0.15 }} />
+              )}
+            </div>
+            {/* Text */}
+            <div style={{ flex: 1 }}>
+              <p className="mtr-subtitle" style={{ marginBottom: 8 }}>0{i + 1}</p>
+              <h3 className="mtr-alt-title" style={{ fontWeight: 700, fontSize: 22, color: "#0d121b", fontFamily: "Lexend,sans-serif", marginBottom: 12, lineHeight: 1.3 }}>{f.title}</h3>
+              <p className="mtr-body" style={{ fontSize: 15 }}>{f.desc}</p>
+            </div>
+          </div>
+        );
+      })}
+      <style>{`
+        .dark .mtr-alt-title { color:#ffffff; }
+        @media(max-width:640px){ .mtr-alt-row { flex-direction:column !important; } }
+      `}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   COLOR BORDER CARD  (left accent border, for decision types / aid types)
+───────────────────────────────────────────── */
+export function MentorColorCard({ title, desc, accentColor = "#005B8F", icon, badge }) {
+  const Icon = icon;
+  return (
+    <div className="mtr-reveal mtr-color-card" style={{
+      background: "#fff",
+      borderRadius: 16,
+      borderLeft: `4px solid ${accentColor}`,
+      padding: "24px 24px 24px 28px",
+      boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+      transition: "box-shadow .2s, transform .2s",
+    }}
+      onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.09)"; e.currentTarget.style.transform = "translateY(-3px)"; }}
+      onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "none"; }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+        {Icon && <Icon size={18} color={accentColor} />}
+        <h4 className="mtr-cc-title" style={{ fontWeight: 700, fontSize: 15, color: "#0d121b", fontFamily: "Lexend,sans-serif" }}>{title}</h4>
+        {badge && (
+          <span style={{ marginLeft: "auto", fontSize: 10, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase", color: accentColor, background: `${accentColor}15`, padding: "3px 8px", borderRadius: 20 }}>{badge}</span>
+        )}
+      </div>
+      <p className="mtr-body" style={{ fontSize: 14 }}>{desc}</p>
+      <style>{`.dark .mtr-color-card { background:#02182a !important; } .dark .mtr-cc-title { color:#ffffff; }`}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   PULL QUOTE  (large editorial quote block)
+───────────────────────────────────────────── */
+export function MentorPullQuote({ quote, author, role }) {
+  return (
+    <div className="mtr-reveal" style={{
+      borderLeft: "4px solid #005B8F",
+      paddingLeft: 32, margin: "40px 0",
+    }}>
+      <p style={{
+        fontSize: "clamp(18px,2.5vw,26px)", fontWeight: 300, color: "#0d121b",
+        fontFamily: "Lexend,sans-serif", lineHeight: 1.6, fontStyle: "italic",
+        marginBottom: author ? 16 : 0,
+      }} className="mtr-pq-text">
+        "{quote}"
+      </p>
+      {author && (
+        <div>
+          <span style={{ fontWeight: 700, fontSize: 13, color: "#005B8F", fontFamily: "Lexend,sans-serif" }}>{author}</span>
+          {role && <span style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}> — {role}</span>}
+        </div>
+      )}
+      <style>{`.dark .mtr-pq-text { color:#e5e7eb; }`}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   DEADLINE / ALERT BANNER
+───────────────────────────────────────────── */
+export function MentorAlertBanner({ icon: Icon, label, value, sub, color = "#005B8F" }) {
+  return (
+    <div className="mtr-reveal mtr-alert-banner" style={{
+      background: `${color}10`,
+      border: `1px solid ${color}30`,
+      borderRadius: 16, padding: "24px 32px",
+      display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap",
+    }}>
+      {Icon && <Icon size={36} color={color} />}
+      <div>
+        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color, fontFamily: "Lexend,sans-serif" }}>{label}</p>
+        <p style={{ fontSize: 24, fontWeight: 900, color, fontFamily: "Lexend,sans-serif", lineHeight: 1.2 }}>{value}</p>
+        {sub && <p className="mtr-body" style={{ fontSize: 13, marginTop: 4 }}>{sub}</p>}
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   ACCENT TOP CARD  (colored top strip card — for essays / aid)
+───────────────────────────────────────────── */
+export function MentorAccentCard({ title, desc, accent = "#005B8F", icon }) {
+  const Icon = icon;
+  return (
+    <div className="mtr-reveal mtr-accent-card" style={{
+      borderRadius: 20, overflow: "hidden",
+      border: "1px solid rgba(0,0,0,0.06)",
+      background: "#fff", transition: "all .25s",
+    }}
+      onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.09)"; }}
+      onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
+    >
+      <div style={{ height: 4, background: accent }} />
+      <div style={{ padding: "24px 24px 28px" }}>
+        {Icon && (
+          <div style={{ width: 44, height: 44, borderRadius: 12, background: `${accent}15`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14, color: accent }}>
+            <Icon size={22} />
+          </div>
+        )}
+        <h4 className="mtr-ac-title" style={{ fontWeight: 700, fontSize: 15, color: "#0d121b", fontFamily: "Lexend,sans-serif", marginBottom: 8 }}>{title}</h4>
+        <p className="mtr-body" style={{ fontSize: 14 }}>{desc}</p>
+      </div>
+      <style>{`.dark .mtr-accent-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; } .dark .mtr-ac-title { color:#ffffff; }`}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   TIER VISUAL BARS  (college list tiers comparison)
+───────────────────────────────────────────── */
+export function MentorTierBars({ tiers }) {
+  const colors = ["#ef4444", "#f59e0b", "#22c55e"];
+  const widths = ["40%", "65%", "90%"];
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+      {tiers.map((t, i) => (
+        <div key={i} className="mtr-reveal">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 10 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ width: 12, height: 12, borderRadius: "50%", background: colors[i], display: "inline-block", flexShrink: 0 }} />
+              <span className="mtr-tier-title" style={{ fontWeight: 700, fontSize: 17, color: "#0d121b", fontFamily: "Lexend,sans-serif" }}>{t.tier}</span>
+              <span style={{ fontSize: 12, color: colors[i], fontWeight: 700, fontFamily: "Lexend,sans-serif", background: `${colors[i]}15`, padding: "2px 10px", borderRadius: 20 }}>{t.count} schools</span>
+            </div>
+          </div>
+          <div style={{ height: 8, background: "rgba(0,0,0,0.06)", borderRadius: 8, overflow: "hidden", marginBottom: 10 }}>
+            <div style={{ height: "100%", width: widths[i], background: colors[i], borderRadius: 8, transition: "width 1s ease" }} />
+          </div>
+          <p className="mtr-body" style={{ fontSize: 14 }}>{t.desc}</p>
+        </div>
+      ))}
+      <style>{`.dark .mtr-tier-title { color:#ffffff; }`}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   TWO COLUMN EDITORIAL  (magazine-style text layout)
+───────────────────────────────────────────── */
+export function MentorEditorial({ header, headerBody, body1, body2 }) {
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="mtr-reveal mtr-editorial">
+      <div>
+        <h2 className="mtr-h2" style={{ marginBottom: 16 }} dangerouslySetInnerHTML={{ __html: header }} />
+        <p className="mtr-body" style={{ fontSize: 16 }}>{headerBody}</p>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        <p className="mtr-body" style={{ fontSize: 15 }}>{body1}</p>
+        {body2 && <p className="mtr-body" style={{ fontSize: 15 }}>{body2}</p>}
+      </div>
+      <style>{`@media(max-width:768px){ .mtr-editorial { grid-template-columns:1fr !important; gap:24px !important; } }`}</style>
+    </div>
+  );
+}
+
