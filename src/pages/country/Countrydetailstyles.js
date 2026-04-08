@@ -162,7 +162,6 @@ export const countryDetailStyles = `
   ═══════════════════════════════════════════ */
   .section-card {
     background: var(--card);
-    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -173,6 +172,9 @@ export const countryDetailStyles = `
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
   }
+    .dark .section-card {
+  background-color: #1E2939;
+}
   @keyframes cd-fadeIn {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -185,6 +187,10 @@ export const countryDetailStyles = `
     border-bottom: 1px solid var(--border);
     background: linear-gradient(to right, var(--accent-bg), #fff);
   }
+    .dark .section-header {
+  background: #1E2939;
+  border-bottom-color: rgba(255, 255, 255, 0.1); /* optional: softer border in dark mode */
+}
   .section-icon {
     width: 40px; height: 40px;
     border-radius: 10px;
@@ -203,6 +209,9 @@ export const countryDetailStyles = `
     color: var(--ink);
     letter-spacing: -.01em;
   }
+    .dark .section-title {
+  color: #BBB9BB;
+}
   .section-body {
     padding: clamp(18px, 3vw, 28px) clamp(16px, 3vw, 28px);
   }
@@ -220,6 +229,7 @@ export const countryDetailStyles = `
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 14px;
 }
+
   .fee-card {
    display: flex;
   flex-direction: column;
@@ -256,12 +266,19 @@ export const countryDetailStyles = `
     color: var(--accent);
     margin-bottom: 8px;
   }
+      .dark .fee-card {
+  background-color: #035787;
+   border-color: transparent;
+}
   .fee-range {
     font-size: clamp(.88rem, 1.6vw, 1rem);
     font-weight: 600;
     color: var(--ink);
     line-height: 1.35;
   }
+    .dark .fee-range {
+  color: #BBB9BB;
+}
   .fee-note {
     font-size: .72rem;
     color: var(--ink-xsoft);
@@ -331,6 +348,7 @@ export const countryDetailStyles = `
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 14px;
 }
+  
   .intake-card {
     background: var(--surface);
     border: 1.5px solid var(--border);
@@ -344,6 +362,10 @@ export const countryDetailStyles = `
   justify-content: space-between;
   height: 100%;
   }
+  .dark .intake-card {
+  background-color: #035787;
+   border-color: transparent;
+}
   .intake-card::after {
     content: '';
     position: absolute;
@@ -364,6 +386,9 @@ export const countryDetailStyles = `
     color: var(--ink);
     margin-bottom: 3px;
   }
+    .dark .intake-name {
+  color: #BBB9BB;
+}
   .intake-term {
     font-size: .68rem;
     font-weight: 700;
@@ -430,6 +455,9 @@ export const countryDetailStyles = `
     border-radius: 99px;
     transition: width .9s cubic-bezier(.22,1,.36,1);
   }
+        .dark .salary-bar-wrap {
+  background-color: #BBB9BB;
+}
   .salary-value {
     font-size: .82rem;
     font-weight: 700;

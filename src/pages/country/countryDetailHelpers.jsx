@@ -46,7 +46,7 @@ export function SectionCard({ icon, title, children }) {
   return (
     <div className="section-card">
       <div className="section-header">
-        <span className="section-icon">
+        <span className="section-icon" style={{ color: '#BBB9BB' }}>
           <Icon d={icons[icon]} size={20} />
         </span>
         <h2 className="section-title">{title}</h2>

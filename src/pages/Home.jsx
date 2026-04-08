@@ -577,7 +577,7 @@ export default function Home() {
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Our Expert Services
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black title_header mb-6">
               Tailored Solutions for Your International Career
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">

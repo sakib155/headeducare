@@ -44,7 +44,7 @@ export default function CountryDetails() {
   return (
     <>
       <style>{css}</style>
-      <div className="cd-root">
+      <div className="cd-root dark:!bg-[#071827]">
         {/* ── hero ── */}
         <div className="hero">
           {imgUrl ? (
@@ -66,7 +66,7 @@ export default function CountryDetails() {
         </div>
 
         {/* ── content sections ── */}
-        <div className="sections">
+        <div className="sections dark:bg-[#071827]">
           <SectionCard icon="money" title="Tuition Fees">
             <TuitionFees fees={fees} />
           </SectionCard>

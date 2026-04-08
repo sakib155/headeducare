@@ -10,7 +10,8 @@ export default function Contact() {
               Get in Touch
             </h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
-              <span className="text-primary">Contact</span> us
+              <span className="text-primary">Contact</span>{' '}
+              <span className="title_header">us</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Fill out the form below and one of our expert counselors will get
@@ -51,7 +52,7 @@ export default function Contact() {
                 </span>
               </div>
               <div>
-                <h4 className="font-bold text-xl text-[#0d121b] dark:text-white mb-3">
+                <h4 className="font-bold text-xl text-[#0d121b] dark: title_header mb-3">
                   {item.title}
                 </h4>
                 {item.lines.map((l, j) => (
