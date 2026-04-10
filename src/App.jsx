@@ -20,16 +20,7 @@ import HealthInsurance from "./pages/services/HealthInsurance";
 import VisaServices from "./pages/services/VisaServices";
 import StudentAccommodation from "./pages/services/StudentAccommodation";
 import ScholarshipSupport from "./pages/services/ScholarshipSupport";
-import LiberalArtsCollege from "./pages/mentorship/LiberalArtsCollege";
-import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
-import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
-import LiberalArtsEducation from "./pages/mentorship/LiberalArtsEducation";
-import AcceptanceLetters from "./pages/mentorship/AcceptanceLetters";
-import StrategyBrainstorm from "./pages/mentorship/StrategyBrainstorm";
-import WritingApplication from "./pages/mentorship/WritingApplication";
-import CollegeSelection from "./pages/mentorship/CollegeSelection";
-import FinancialAid from "./pages/mentorship/FinancialAid";
-import PostGraduateFunding from "./pages/mentorship/PostGraduateFunding";
+import WillProvide from "./pages/about/we-will-provide";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -79,6 +70,8 @@ export default function App() {
         <Route path="/legal/refundPolicy" element={<RefundPolicy />} />
         <Route path="/services/admission" element={<AdmissionSupport />} />
         <Route path="/services/visa-application" element={<VisaServices />} />
+        <Route path="/about/we-will-provide" element={<WillProvide />} />
+
         <Route
           path="/services/health-insurance"
           element={<HealthInsurance />}
@@ -89,16 +82,43 @@ export default function App() {
         />
         <Route path="/services/scholarship" element={<ScholarshipSupport />} />
         {/* USA Mentorship Program */}
-        <Route path="/mentorship/liberal-arts-college" element={<LiberalArtsCollege />} />
-        <Route path="/mentorship/elite-school-admission" element={<EliteSchoolAdmission />} />
-        <Route path="/mentorship/masters-mentorship-program" element={<MastersMentorshipProgram />} />
-        <Route path="/mentorship/liberal-arts-education" element={<LiberalArtsEducation />} />
-        <Route path="/mentorship/acceptance-letters" element={<AcceptanceLetters />} />
-        <Route path="/mentorship/strategy-brainstorm" element={<StrategyBrainstorm />} />
-        <Route path="/mentorship/writing-application" element={<WritingApplication />} />
-        <Route path="/mentorship/college-selection" element={<CollegeSelection />} />
+        <Route
+          path="/mentorship/liberal-arts-college"
+          element={<LiberalArtsCollege />}
+        />
+        <Route
+          path="/mentorship/elite-school-admission"
+          element={<EliteSchoolAdmission />}
+        />
+        <Route
+          path="/mentorship/masters-mentorship-program"
+          element={<MastersMentorshipProgram />}
+        />
+        <Route
+          path="/mentorship/liberal-arts-education"
+          element={<LiberalArtsEducation />}
+        />
+        <Route
+          path="/mentorship/acceptance-letters"
+          element={<AcceptanceLetters />}
+        />
+        <Route
+          path="/mentorship/strategy-brainstorm"
+          element={<StrategyBrainstorm />}
+        />
+        <Route
+          path="/mentorship/writing-application"
+          element={<WritingApplication />}
+        />
+        <Route
+          path="/mentorship/college-selection"
+          element={<CollegeSelection />}
+        />
         <Route path="/mentorship/financial-aid" element={<FinancialAid />} />
-        <Route path="/mentorship/post-graduate-funding" element={<PostGraduateFunding />} />
+        <Route
+          path="/mentorship/post-graduate-funding"
+          element={<PostGraduateFunding />}
+        />
       </Routes>
 
       <Footer />
