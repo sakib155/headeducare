@@ -21,6 +21,15 @@ import VisaServices from "./pages/services/VisaServices";
 import StudentAccommodation from "./pages/services/StudentAccommodation";
 import ScholarshipSupport from "./pages/services/ScholarshipSupport";
 import WillProvide from "./pages/about/we-will-provide";
+import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
+import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
+import LiberalArtsEducation from "./pages/mentorship/LiberalArtsEducation";
+import AcceptanceLetters from "./pages/mentorship/AcceptanceLetters";
+import StrategyBrainstorm from "./pages/mentorship/StrategyBrainstorm";
+import WritingApplication from "./pages/mentorship/WritingApplication";
+import CollegeSelection from "./pages/mentorship/CollegeSelection";
+import FinancialAid from "./pages/mentorship/FinancialAid";
+import PostGraduateFunding from "./pages/mentorship/PostGraduateFunding";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -68,6 +77,7 @@ export default function App() {
         <Route path="/legal/termsService" element={<TermsServices />} />
         <Route path="/legal/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/legal/refundPolicy" element={<RefundPolicy />} />
+        <Route path="/legal/disclaimer" element={<Disclaimer />} />
         <Route path="/services/admission" element={<AdmissionSupport />} />
         <Route path="/services/visa-application" element={<VisaServices />} />
         <Route path="/about/we-will-provide" element={<WillProvide />} />
@@ -84,7 +94,7 @@ export default function App() {
         {/* USA Mentorship Program */}
         <Route
           path="/mentorship/liberal-arts-college"
-          element={<LiberalArtsCollege />}
+          element={<LiberalArtsEducation />}
         />
         <Route
           path="/mentorship/elite-school-admission"
