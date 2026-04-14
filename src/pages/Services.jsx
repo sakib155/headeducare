@@ -119,14 +119,14 @@ export default function Services() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
+      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-[#1E2939] dark:to-[#243347] overflow-hidden">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               What We Offer
             </h2>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] textWhite mb-6 leading-tight">
               Expert <span className="text-primary">Services</span> for Your
               Global Journey
             </h1>
@@ -139,7 +139,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white dark:bg-background-dark">
+      <section className="py-24 bg-white bgBlue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, i) => (
@@ -154,7 +154,7 @@ export default function Services() {
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3 text-[#0d121b] dark:text-white">
+                    <h3 className="text-xl font-bold mb-3 text-[#0d121b] textBlue">
                       {service.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
@@ -174,13 +174,13 @@ export default function Services() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-background-light dark:bg-background-dark/50">
+      <section className="py-24 bg-background-light bgBlue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               The Process
             </h2>
-            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white mb-6">
+            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] textWhite mb-6">
               How It Works
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -192,7 +192,7 @@ export default function Services() {
             {processSteps.map((step, i) => (
               <div
                 key={i}
-                className="relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
+                className="relative bg-white bgCard p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
               >
                 <div className="absolute -top-4 -left-2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-black text-lg shadow-lg">
                   {i + 1}
@@ -201,7 +201,7 @@ export default function Services() {
                   <span className="material-symbols-outlined text-primary text-3xl mb-4 block">
                     {step.icon}
                   </span>
-                  <h4 className="text-lg font-bold mb-2 text-[#0d121b] dark:text-white">
+                  <h4 className="text-lg font-bold mb-2 text-[#0d121b] textWhite">
                     {step.title}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -215,9 +215,9 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-primary bgCard">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-white textWhite mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
@@ -226,7 +226,7 @@ export default function Services() {
           </p>
           <Link
             to="/freeconsulation"
-            className="inline-flex bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
+            className="buttonBlue textWhite inline-flex bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
           >
             Book Free Consultation
           </Link>

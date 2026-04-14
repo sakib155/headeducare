@@ -251,7 +251,7 @@ export default function AdmissionSupport() {
         <div className="srv-divider" />
 
         {/* Study levels */}
-        <section className="srv-section-alt">
+        <section className="srv-section-alt bgCard">
           <div className="srv-container">
             <SectionHeader
               label="Study Levels"
@@ -267,7 +267,7 @@ export default function AdmissionSupport() {
               }}
             >
               {levels.map((l, i) => (
-                <div key={i} className="level-card srv-reveal">
+                <div key={i} className="level-card srv-reveal bgLightCard">
                   <div className="level-card-header">
                     <l.icon size={28} color="#fff" />
                     <h4
@@ -342,7 +342,7 @@ export default function AdmissionSupport() {
         <div className="srv-divider" />
 
         {/* Profile evaluation + Documents */}
-        <section className="srv-section-alt">
+        <section className="srv-section-alt bgCard">
           <div className="srv-container">
             <div
               style={{

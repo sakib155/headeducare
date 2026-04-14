@@ -75,6 +75,33 @@ html {
 .dark .dcard {
   background-color: #1E2939;
 }
+
+.dark .bgBlue {
+  background-color: #061624;
+}
+
+.dark .bgCard {
+  background-color: #1E2939;
+}
+
+.dark .buttonBlue {
+  background-color: #005B8F;
+}
+
+.dark .textBlue {
+  color: #005B8F;
+}
+
+.dark .textWhite {
+  color: #BBB9BB;
+}
+
+.dark .bgLightCard {
+  background-color: #2C3E50;
+}
+.dark .cta-banner-section {
+  background: #27354a !important;
+}
 /* ===== GLASSMORPHIC HEADER ===== */
 .glass-header {
   position: sticky;

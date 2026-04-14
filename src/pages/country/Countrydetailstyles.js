@@ -147,6 +147,13 @@ export const countryDetailStyles = `
   .dark .hero-title {
   color: #BEBCBE;
 }
+  .dark .bgWhite {
+  background-color: #BEBCBE;
+  }
+
+.dark .textWhite {
+  color: #BEBCBE;
+}
 
 .dark .hero-title::after {
   background: #BEBCBE; /* or another color */
@@ -496,6 +503,10 @@ export const countryDetailStyles = `
     border-radius: 99px;
     transition: width .9s cubic-bezier(.22,1,.36,1);
   }
+
+  .dark .salary-bar {
+   background: #035787;
+  }
         .dark .salary-bar-wrap {
   background-color: #BBB9BB;
 }
@@ -505,6 +516,10 @@ export const countryDetailStyles = `
     color: var(--accent);
     white-space: nowrap;
     flex-shrink: 0;
+  }
+
+  .dark .salary-value {
+    color: #BEBCBE;
   }
   .salary-note {
     font-size: .82rem;

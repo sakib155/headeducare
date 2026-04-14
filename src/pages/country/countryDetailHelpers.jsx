@@ -63,7 +63,7 @@ export function TuitionFees({ fees }) {
     <div className="fees-grid">
       {Object.entries(fees).map(([level, data]) => (
         <div key={level} className="fee-card">
-          <div className="fee-label">
+          <div className="textWhite">
             {level.charAt(0).toUpperCase() + level.slice(1)}
           </div>
           <div className="fee-range">
@@ -86,11 +86,11 @@ export function LanguageRequirements({ reqs }) {
     <div className="table-wrap">
       <table className="data-table">
         <thead>
-          <tr>
-            <th>Test</th>
-            {hasLevel && <th>Level</th>}
-            <th>Min Score</th>
-            {hasMaxScore && <th>Max Score</th>}
+          <tr >
+            <th className="bgWhite">Test</th>
+            {hasLevel && <th className="bgWhite">Level</th>}
+            <th className="bgWhite">Min Score</th>
+            {hasMaxScore && <th className="bgWhite">Max Score</th>}
           </tr>
         </thead>
         <tbody>
@@ -123,7 +123,7 @@ export function Intakes({ intakes }) {
           style={{ "--delay": `${i * 0.08}s` }}
         >
           <div className="intake-name">{intake.name}</div>
-          <div className="intake-term">{intake.term}</div>
+          <div className="textWhite">{intake.term}</div>
           <div className="intake-window">
             <Icon d={icons.calendar} size={13} />
             <span>{intake.apply_window}</span>
@@ -152,7 +152,7 @@ export function Salaries({ salaries }) {
         const barPct = hasRange ? Math.round((s.max / maxVal) * 100) : null;
         return (
           <div key={i} className="salary-row">
-            <div className="salary-field">{s.field}</div>
+            <div className="salary-field textWhite">{s.field}</div>
             <div className="salary-right">
               {hasRange ? (
                 <>
@@ -188,7 +188,7 @@ export function TopCourses({ courses }) {
       {courses.map((c, i) => (
         <span
           key={i}
-          className="course-chip"
+          className="course-chip bgWhite"
           style={{ "--delay": `${i * 0.04}s` }}
         >
           <Icon d={icons.book} size={13} />

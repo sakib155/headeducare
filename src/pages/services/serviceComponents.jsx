@@ -72,7 +72,7 @@ export function PageHero({
 }) {
   return (
     <section className="srv-hero">
-      <div className="srv-hero-bg" />
+      <div className="srv-hero-bg dark:from-[#1E2939] dark:to-[#243347]" />
       <div
         className="srv-hero-blob"
         style={{
@@ -92,7 +92,7 @@ export function PageHero({
             <span className="srv-badge-dot" />
             {badge}
           </span>
-          <h1 className="srv-h1">
+          <h1 className="srv-h1 textWhite">
             {title} <span>{highlight}</span>
             {subtitle ? (
               <>
@@ -145,7 +145,7 @@ export function SectionHeader({
       }}
     >
       <p className="srv-subtitle">{label}</p>
-      <h2 className="srv-h2">
+      <h2 className="srv-h2 textWhite">
         {title} {highlight && <span>{highlight}</span>}
       </h2>
       {body && (
@@ -161,60 +161,32 @@ export function SectionHeader({
    ICON CARD (service feature card)
 ───────────────────────────────────────────── */
 export function IconCard({
-  icon,
+  icon: Icon,
   title,
   desc,
   accent = "#005B8F",
   style = {},
 }) {
-  const Icon = icon;
   return (
     <div
-      className="srv-reveal"
+      className="bg-white dark:bg-[#1E2939] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       style={{
-        background: "#fff",
         border: "1px solid rgba(0,0,0,0.06)",
-        borderRadius: 20,
-        padding: "32px 28px",
-        transition: "all .25s",
         ...style,
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,91,143,0.1)";
-        e.currentTarget.style.transform = "translateY(-4px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = "none";
-        e.currentTarget.style.transform = "none";
-      }}
     >
+      {/* Icon container */}
       <div
-        style={{
-          width: 52,
-          height: 52,
-          background: `${accent}15`,
-          borderRadius: 14,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: 20,
-          fontSize: 24,
-        }}
+        className="w-13 h-13 rounded-xl flex items-center justify-center mb-5 text-2xl bg-primary/15 dark:bg-[#005B8F]"
+        style={{ width: 52, height: 52, fontSize: 24 }}
       >
-        <Icon size={24} />
+        <Icon size={24} className="text-primary dark:text-[#BBB9BB]" />
       </div>
-      <h4
-        style={{
-          fontWeight: 700,
-          fontSize: 16,
-          color: "#0d121b",
-          marginBottom: 8,
-          fontFamily: "Lexend,sans-serif",
-        }}
-      >
+
+      <h4 className="font-bold text-base text-gray-900 dark:text-[#BBB9BB] mb-2 font-sans">
         {title}
       </h4>
-      <p className="srv-body" style={{ fontSize: 14 }}>
+      <p className="text-sm text-gray-600 dark:text-gray-400">
         {desc}
       </p>
     </div>
@@ -224,64 +196,35 @@ export function IconCard({
 /* ─────────────────────────────────────────────
    STEP CARD  (numbered process step)
 ───────────────────────────────────────────── */
-export function StepCard({ step, icon, title, desc }) {
+export function StepCard({ step, icon, desc, title }) {
   const Icon = icon;
   return (
     <div
-      className="srv-reveal"
+      className="bg-white dark:bg-[#1E2939] rounded-2xl p-8 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       style={{
-        background: "#fff",
         border: "1px solid rgba(0,0,0,0.06)",
-        borderRadius: 20,
-        padding: "32px 28px",
-        position: "relative",
-        transition: "all .25s",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,91,143,0.1)";
-        e.currentTarget.style.transform = "translateY(-4px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = "none";
-        e.currentTarget.style.transform = "none";
       }}
     >
+      {/* Step badge */}
       <div
-        style={{
-          position: "absolute",
-          top: -14,
-          left: 20,
-          width: 36,
-          height: 36,
-          background: "#005B8F",
-          color: "#fff",
-          borderRadius: "50%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontWeight: 900,
-          fontSize: 14,
-          fontFamily: "Lexend,sans-serif",
-        }}
+        className="absolute -top-3.5 left-5 w-9 h-9 bg-primary text-white rounded-full flex items-center justify-center font-black text-sm"
+        style={{ fontFamily: "Lexend, sans-serif" }}
       >
         {step}
       </div>
-      <div style={{ marginTop: 8 }}>
-        <span style={{ display: "block", marginBottom: 12 }}>
+
+      {/* Content */}
+      <div className="mt-2">
+        <span className="block mb-3">
           <Icon size={28} />
         </span>
         <h4
-          style={{
-            fontWeight: 700,
-            fontSize: 15,
-            color: "#0d121b",
-            marginBottom: 8,
-            fontFamily: "Lexend,sans-serif",
-          }}
+          className="font-bold text-base text-gray-900 dark:text-[#BBB9BB] mb-2"
+          style={{ fontFamily: "Lexend, sans-serif" }}
         >
           {title}
         </h4>
-        <p className="srv-body" style={{ fontSize: 14 }}>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
           {desc}
         </p>
       </div>
@@ -309,6 +252,7 @@ export function FAQ({ items }) {
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
+            className="dark:!bg-[#1E2939]"    // ← only this line added
             style={{
               width: "100%",
               padding: "20px 24px",
@@ -326,7 +270,7 @@ export function FAQ({ items }) {
               style={{
                 fontWeight: 700,
                 fontSize: 15,
-                color: "#0d121b",
+                color: "#BBB9BB",
                 fontFamily: "Lexend,sans-serif",
                 lineHeight: 1.4,
               }}
@@ -347,8 +291,8 @@ export function FAQ({ items }) {
             </span>
           </button>
           {open === i && (
-            <div style={{ padding: "0 24px 20px" }}>
-              <p className="srv-body" style={{ fontSize: 14 }}>
+            <div className =" bgLightCard" style={{ padding: "0 24px 20px" }}>
+              <p className="srv-body textWhite" style={{ fontSize: 14 }}>
                 {item.a}
               </p>
             </div>
@@ -364,50 +308,24 @@ export function FAQ({ items }) {
 ───────────────────────────────────────────── */
 export function StatsStrip({ stats }) {
   return (
-    <section style={{ background: "#005B8F", padding: "56px 0" }}>
+    <section className="bg-primary dark:bg-[#1E2939] py-14">
       <div className="srv-container">
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: `repeat(${stats.length},1fr)`,
-            gap: 0,
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0">
           {stats.map((s, i) => (
             <div
               key={i}
-              className="srv-reveal"
+              className="srv-reveal text-center px-5"
               style={{
-                textAlign: "center",
                 borderRight:
                   i < stats.length - 1
                     ? "1px solid rgba(255,255,255,0.15)"
                     : "none",
-                padding: "0 20px",
               }}
             >
-              <p
-                style={{
-                  fontSize: 44,
-                  fontWeight: 900,
-                  color: "#fff",
-                  fontFamily: "Lexend,sans-serif",
-                  lineHeight: 1,
-                }}
-              >
+              <p className="text-4xl lg:text-5xl font-black text-white dark:text-[#BBB9BB] leading-none font-sans">
                 {s.value}
               </p>
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "rgba(255,255,255,0.75)",
-                  textTransform: "uppercase",
-                  letterSpacing: ".08em",
-                  marginTop: 8,
-                  fontFamily: "Lexend,sans-serif",
-                  fontWeight: 600,
-                }}
-              >
+              <p className="text-xs text-white/75 dark:text-[#BBB9BB]/75 uppercase tracking-wide mt-2 font-semibold font-sans">
                 {s.label}
               </p>
             </div>
@@ -429,6 +347,7 @@ export function CtaBanner({
 }) {
   return (
     <section
+      className="cta-banner-section"
       style={{
         padding: "80px 0",
         background: "linear-gradient(135deg,#005B8F 0%,#004270 100%)",
@@ -437,6 +356,7 @@ export function CtaBanner({
       }}
     >
       <div
+        className="dark:!bg-[#2C3E50]"
         style={{
           position: "absolute",
           top: -80,
@@ -448,6 +368,7 @@ export function CtaBanner({
         }}
       />
       <div
+        className="dark:!bg-[#2C3E50]"
         style={{
           position: "absolute",
           bottom: -60,
@@ -464,6 +385,7 @@ export function CtaBanner({
       >
         <div className="srv-reveal">
           <h2
+            className="dark:!text-[#BBB9BB]"
             style={{
               fontSize: 36,
               fontWeight: 900,
@@ -490,6 +412,7 @@ export function CtaBanner({
           </p>
           <Link
             to={link}
+            className="dark:!bg-[#BBB9BB] dark:!text-[#005B8F]"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -639,20 +562,12 @@ export function InfoBox({ icon: Icon, title, children, variant = "blue" }) {
 ───────────────────────────────────────────── */
 export function CountryTags({ countries }) {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+    <div className="flex flex-wrap gap-2.5">
       {countries.map((c, i) => (
         <span
           key={i}
-          style={{
-            padding: "7px 16px",
-            borderRadius: 40,
-            background: "#fff",
-            border: "1px solid rgba(0,91,143,0.15)",
-            fontSize: 13,
-            fontWeight: 600,
-            color: "#005B8F",
-            fontFamily: "Lexend,sans-serif",
-          }}
+          className="px-4 py-1.5 rounded-full bg-white border border-primary/15 text-primary font-semibold text-sm dark:bg-[#BBB9BB] dark:text-[#061624] dark:border-transparent"
+          style={{ fontFamily: "Lexend, sans-serif" }}
         >
           {c.flag} {c.name}
         </span>
