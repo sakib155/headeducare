@@ -144,6 +144,14 @@ export const countryDetailStyles = `
     margin-top: 14px;
   }
 
+  .dark .hero-title {
+  color: #BEBCBE;
+}
+
+.dark .hero-title::after {
+  background: #BEBCBE; /* or another color */
+}
+
   /* ═══════════════════════════════════════════
      SECTIONS CONTAINER
   ═══════════════════════════════════════════ */
@@ -202,6 +210,11 @@ export const countryDetailStyles = `
     flex-shrink: 0;
     box-shadow: 0 3px 12px var(--accent-glow);
   }
+    .dark .section-icon {
+  background: #035787;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  color: #BEBCBE; /* optional: softer icon color */
+}
   .section-title {
     font-family: 'Fraunces', serif;
     font-size: clamp(1rem, 2.2vw, 1.2rem);
@@ -214,7 +227,8 @@ export const countryDetailStyles = `
 }
   .section-body {
     padding: clamp(18px, 3vw, 28px) clamp(16px, 3vw, 28px);
-  }
+ +
+   }
   .empty {
     color: var(--ink-xsoft);
     font-size: .9rem;
@@ -267,7 +281,7 @@ export const countryDetailStyles = `
     margin-bottom: 8px;
   }
       .dark .fee-card {
-  background-color: #035787;
+  background-color: #2C3E50;
    border-color: transparent;
 }
   .fee-range {
@@ -294,6 +308,9 @@ export const countryDetailStyles = `
     border: 1px solid var(--border);
     -webkit-overflow-scrolling: touch;
   }
+    .dark .table-wrap {
+  border-color: #BEBCBE;
+}
   .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -334,11 +351,35 @@ export const countryDetailStyles = `
     letter-spacing: .05em;
     white-space: nowrap;
   }
+    .dark .badge {
+  background: #035687;
+}
+    /* Dark mode: table row background */
+.dark .data-table tbody tr {
+  background-color: #2C3E50;
+}
+
+/* Dark mode: table row hover background */
+.dark .data-table tbody tr:hover td {
+  background-color: #BEBCBE;
+}
+
+/* Optional: adjust text color for contrast on hover (if needed) */
+.dark .data-table tbody tr:hover td {
+  color: #000; /* or keep as is, depending on design */
+}
   .score {
     font-weight: 700;
     color: var(--accent);
     font-size: .95rem;
   }
+    .dark .score {
+  color: #BEBCBE;
+}
+
+.dark .score:hover {
+  color: #000000;
+}
 
   /* ═══════════════════════════════════════════
      INTAKES
@@ -363,7 +404,7 @@ export const countryDetailStyles = `
   height: 100%;
   }
   .dark .intake-card {
-  background-color: #035787;
+  background-color: #2C3E50;
    border-color: transparent;
 }
   .intake-card::after {
@@ -527,6 +568,7 @@ export const countryDetailStyles = `
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    border-color: #BEBCBE;
     padding: 12px 14px;
     transition: border-color var(--transition), box-shadow var(--transition);
   }
@@ -534,6 +576,9 @@ export const countryDetailStyles = `
     border-color: var(--green);
     box-shadow: 0 2px 12px rgba(22,163,74,.1);
   }
+    .dark .visa-item {
+  background-color: #2C3E50;
+}
   .visa-check {
     flex-shrink: 0;
     width: 22px; height: 22px;

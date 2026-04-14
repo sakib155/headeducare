@@ -99,7 +99,7 @@ export function LanguageRequirements({ reqs }) {
               <td>
                 <span className="badge">{r.test}</span>
               </td>
-              {hasLevel && <td>{r.level ?? "—"}</td>}
+              {hasLevel && <td className="score">{r.level ?? "—"}</td>}
               <td className="score">{r.min_score}</td>
               {hasMaxScore && <td className="score">{r.max_score ?? "—"}</td>}
             </tr>
