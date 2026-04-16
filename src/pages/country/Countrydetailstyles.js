@@ -534,4 +534,42 @@ export const countryDetailStyles = `
     .fees-grid    { grid-template-columns: 1fr; }
     .intakes-grid { grid-template-columns: 1fr; }
   }
+
+  /* ═══════════════════════════════════════════
+     DARK MODE  (.dark class on <html>)
+  ═══════════════════════════════════════════ */
+  .dark .cd-root {
+    --ink:         #e2e8f0;
+    --ink-soft:    #94a3b8;
+    --ink-xsoft:   #64748b;
+    --surface:     #01091c;
+    --surface-2:   #0a1628;
+    --card:        #0d1e30;
+    --border:      #1e3050;
+    --accent:      #60a5fa;
+    --accent-mid:  #3b82f6;
+    --accent-bg:   #0d1e40;
+    --accent-glow: rgba(96,165,250,.18);
+    --green:       #4ade80;
+    --green-bg:    #052e16;
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  /* hero stays dark-over-image regardless of mode */
+  .dark .cd-root .hero { background: #000; }
+
+  /* section headers in dark */
+  .dark .cd-root .section-header {
+    background: linear-gradient(to right, var(--accent-bg), var(--card));
+  }
+
+  /* table zebra stripe */
+  .dark .cd-root .data-table th {
+    background: var(--surface-2);
+    color: var(--ink-soft);
+  }
+  .dark .cd-root .data-table td { color: var(--ink); }
+  .dark .cd-root .data-table tbody tr:hover td { background: var(--accent-bg); }
+  .dark .cd-root .badge { background: var(--accent); color: #fff; }
 `;
