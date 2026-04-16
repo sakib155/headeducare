@@ -276,19 +276,23 @@ export default function ScholarshipSupport() {
       <style>
         {BASE_STYLES +
           `
-        .schol-type-card { border-radius:20px; overflow:hidden; border:1px solid rgba(0,0,0,0.07); background:#fff; transition:all .25s; }
+        .schol-type-card { border-radius:20px; overflow:hidden; border:1px solid var(--srv-border); background:var(--srv-bg-card); transition:all .25s; }
         .schol-type-card:hover { box-shadow:0 8px 32px rgba(0,91,143,0.1); transform:translateY(-4px); border-color:rgba(0,91,143,0.2); }
+        .dark .schol-type-card:hover { border-color:rgba(74,131,243,0.3); }
         .schol-type-header { padding:20px 24px; display:flex; align-items:center; gap:12px; }
         .schol-type-body { padding:16px 24px 22px; }
 
         .schol-table { width:100%; border-collapse:collapse; border-radius:16px; overflow:hidden; border:1px solid rgba(0,91,143,0.1); }
+        .dark .schol-table { border-color:rgba(74,131,243,0.15); }
         .schol-table thead tr { background:#005B8F; }
         .schol-table thead th { padding:14px 18px; color:#fff; font-size:12px; font-weight:700; text-align:left; letter-spacing:.06em; text-transform:uppercase; font-family:Lexend,sans-serif; }
-        .schol-table tbody tr { border-bottom:1px solid rgba(0,91,143,0.06); transition:background .15s; }
+        .schol-table tbody tr { border-bottom:1px solid rgba(0,91,143,0.06); transition:background .15s; background:var(--srv-bg-card); }
+        .dark .schol-table tbody tr { border-bottom-color:rgba(74,131,243,0.08); }
         .schol-table tbody tr:last-child { border-bottom:none; }
         .schol-table tbody tr:hover { background:rgba(0,91,143,0.03); }
-        .schol-table tbody td { padding:14px 18px; font-size:14px; color:#374151; font-family:Lexend,sans-serif; }
-        .schol-table tbody td:first-child { font-weight:700; color:#0d121b; }
+        .dark .schol-table tbody tr:hover { background:rgba(74,131,243,0.06); }
+        .schol-table tbody td { padding:14px 18px; font-size:14px; color:var(--srv-text-body); font-family:Lexend,sans-serif; }
+        .schol-table tbody td:first-child { font-weight:700; color:var(--srv-text-primary); }
         .schol-badge-pill { display:inline-block; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700; font-family:Lexend,sans-serif; }
 
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
@@ -421,8 +425,8 @@ export default function ScholarshipSupport() {
                         <span
                           className="schol-badge-pill"
                           style={{
-                            background: "rgba(0,91,143,0.09)",
-                            color: "#005B8F",
+                            background: "rgba(0,91,143,0.12)",
+                            color: "#4A83F3",
                           }}
                         >
                           {row.level}
@@ -432,14 +436,14 @@ export default function ScholarshipSupport() {
                         <span
                           className="schol-badge-pill"
                           style={{
-                            background: "rgba(22,163,74,0.1)",
-                            color: "#166534",
+                            background: "rgba(22,163,74,0.12)",
+                            color: "#16a34a",
                           }}
                         >
                           {row.coverage}
                         </span>
                       </td>
-                      <td style={{ color: "#6b7280" }}>{row.deadline}</td>
+                      <td style={{ color: "var(--srv-text-body)" }}>{row.deadline}</td>
                     </tr>
                   ))}
                 </tbody>

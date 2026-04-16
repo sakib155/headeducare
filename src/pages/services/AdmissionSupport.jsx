@@ -207,8 +207,9 @@ export default function AdmissionSupport() {
       <style>
         {BASE_STYLES +
           `
-        .level-card { border-radius:20px; overflow:hidden; border:1px solid rgba(0,0,0,0.07); background:#fff; transition:all .25s; }
+        .level-card { border-radius:20px; overflow:hidden; border:1px solid var(--srv-border); background:var(--srv-bg-card); transition:all .25s; }
         .level-card:hover { box-shadow:0 8px 32px rgba(0,91,143,0.1); transform:translateY(-4px); border-color:rgba(0,91,143,0.2); }
+        .dark .level-card:hover { border-color:rgba(74,131,243,0.3); }
         .level-card-header { padding:20px 24px; background:#005B8F; display:flex; align-items:center; gap:12px; }
         .level-card-body { padding:20px 24px; }
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
