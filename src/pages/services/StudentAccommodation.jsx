@@ -203,10 +203,11 @@ export default function StudentAccommodation() {
       <style>
         {BASE_STYLES +
           `
-        .provider-card { border-radius:24px; overflow:hidden; border:1px solid rgba(0,0,0,0.07); background:#fff; transition:all .25s; }
+        .provider-card { border-radius:24px; overflow:hidden; border:1px solid var(--srv-border); background:var(--srv-bg-card); transition:all .25s; }
         .provider-card:hover { box-shadow:0 12px 40px rgba(0,91,143,0.12); transform:translateY(-4px); }
-        .room-chip { padding:14px 18px; border-radius:14px; background:#f6f6f8; border:1px solid rgba(0,0,0,0.05); transition:all .2s; cursor:default; }
-        .room-chip:hover { background:#fff; border-color:rgba(0,91,143,0.2); box-shadow:0 4px 16px rgba(0,91,143,0.08); }
+        .room-chip { padding:14px 18px; border-radius:14px; background:var(--srv-bg-alt); border:1px solid var(--srv-border); transition:all .2s; cursor:default; }
+        .room-chip:hover { background:var(--srv-bg-card); border-color:rgba(0,91,143,0.2); box-shadow:0 4px 16px rgba(0,91,143,0.08); }
+        .dark .room-chip:hover { border-color:rgba(74,131,243,0.3); }
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
         @media(max-width:480px){ .grid-3{ grid-template-columns:1fr !important; } }
       `}
@@ -332,7 +333,7 @@ export default function StudentAccommodation() {
                       style={{
                         fontWeight: 700,
                         fontSize: 15,
-                        color: "#0d121b",
+                        color: "var(--srv-text-primary)",
                         fontFamily: "Lexend,sans-serif",
                         marginBottom: 6,
                       }}

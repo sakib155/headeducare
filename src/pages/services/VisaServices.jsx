@@ -212,9 +212,10 @@ export default function VisaServices() {
       <style>
         {BASE_STYLES +
           `
-        .visa-country-card { background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:16px; padding:20px 22px; transition:all .22s; }
+        .visa-country-card { background:var(--srv-bg-card); border:1px solid var(--srv-border); border-radius:16px; padding:20px 22px; transition:all .22s; }
         .visa-country-card:hover { border-color:rgba(0,91,143,0.25); box-shadow:0 4px 20px rgba(0,91,143,0.08); transform:translateY(-2px); }
-        .interview-row { display:grid; grid-template-columns:auto 1fr 2fr; gap:16px; align-items:center; padding:16px 20px; border-radius:12px; background:#f6f6f8; border:1px solid rgba(0,0,0,0.05); margin-bottom:8px; }
+        .dark .visa-country-card:hover { border-color:rgba(74,131,243,0.35); }
+        .interview-row { display:grid; grid-template-columns:auto 1fr 2fr; gap:16px; align-items:center; padding:16px 20px; border-radius:12px; background:var(--srv-bg-alt); border:1px solid var(--srv-border); margin-bottom:8px; }
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } .interview-row{ grid-template-columns:auto 1fr; } .interview-row span:last-child{ grid-column:1/-1; } }
       `}
       </style>
@@ -298,7 +299,7 @@ export default function VisaServices() {
                       style={{
                         fontWeight: 700,
                         fontSize: 15,
-                        color: "#0d121b",
+                        color: "var(--srv-text-primary)",
                         fontFamily: "Lexend,sans-serif",
                       }}
                     >
@@ -396,7 +397,7 @@ export default function VisaServices() {
                   style={{
                     fontWeight: 700,
                     fontSize: 15,
-                    color: "#0d121b",
+                    color: "var(--srv-text-primary)",
                     fontFamily: "Lexend,sans-serif",
                   }}
                 >
@@ -405,7 +406,7 @@ export default function VisaServices() {
                 <span
                   style={{
                     fontSize: 13,
-                    color: "#6b7280",
+                    color: "var(--srv-text-body)",
                     fontFamily: "Lexend,sans-serif",
                     fontWeight: 300,
                   }}

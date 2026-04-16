@@ -246,11 +246,11 @@ export default function HealthInsurance() {
                     <div
                       key={i}
                       style={{
-                        background: "#f6f6f8",
+                        background: "var(--srv-bg-alt)",
                         borderRadius: 16,
                         padding: "24px 20px",
                         textAlign: "center",
-                        border: "1px solid rgba(0,0,0,0.05)",
+                        border: "1px solid var(--srv-border)",
                       }}
                     >
                       <span
@@ -320,10 +320,10 @@ export default function HealthInsurance() {
                     key={i}
                     className="srv-reveal"
                     style={{
-                      background: "#fff",
+                      background: "var(--srv-bg-card)",
                       borderRadius: 24,
                       padding: "36px 32px",
-                      border: "1px solid rgba(0,0,0,0.07)",
+                      border: "1px solid var(--srv-border)",
                       position: "relative",
                       overflow: "hidden",
                     }}
@@ -377,7 +377,7 @@ export default function HealthInsurance() {
                           style={{
                             fontWeight: 900,
                             fontSize: 20,
-                            color: "#0d121b",
+                            color: "var(--srv-text-primary)",
                             fontFamily: "Lexend,sans-serif",
                             lineHeight: 1.2,
                           }}
