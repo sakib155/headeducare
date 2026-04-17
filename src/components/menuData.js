@@ -16,7 +16,7 @@ export const menuData = [
       { name: "Study In New Zealand", url: "/destination/nz" },
       { name: "Study In Ireland", url: "/destination/ireland" },
       { name: "Study In Europe", url: "/destination/europe" },
-      { name: "Study In Korea", url: "/destination/korea" },
+      { name: "Study In South Korea", url: "/destination/korea" },
       { name: "Study In Malaysia", url: "/destination/malaysia" },
       { name: "Study In China", url: "/destination/china" },
       { name: "Study In Germany", url: "/destination/germany" },

@@ -292,10 +292,25 @@ export const countriesFallback = [
       },
     ],
     post_study_work_salary: [
-      { field: "IT & Computer Science", min: 65000, max: 90000, currency: "CAD" },
+      {
+        field: "IT & Computer Science",
+        min: 65000,
+        max: 90000,
+        currency: "CAD",
+      },
       { field: "Engineering", min: 60000, max: 85000, currency: "CAD" },
-      { field: "Business & Management", min: 55000, max: 80000, currency: "CAD" },
-      { field: "Healthcare & Nursing", min: 65000, max: 95000, currency: "CAD" },
+      {
+        field: "Business & Management",
+        min: 55000,
+        max: 80000,
+        currency: "CAD",
+      },
+      {
+        field: "Healthcare & Nursing",
+        min: 65000,
+        max: 95000,
+        currency: "CAD",
+      },
     ],
     top_courses: [
       "Computer Science & IT",
@@ -324,7 +339,7 @@ export const countriesFallback = [
   {
     country: "New Zealand",
     name: "New Zealand",
-    slug: "new-zealand",
+    slug: "nz",
     flag_url: "🇳🇿",
     description:
       "New Zealand combines a high quality of life with an innovative education system ranked among the best globally. Students benefit from a Post-Study Work Visa of up to 3 years and a safe, welcoming environment.",
@@ -359,8 +374,18 @@ export const countriesFallback = [
     post_study_work_salary: [
       { field: "IT & Technology", min: 55000, max: 80000, currency: "NZD" },
       { field: "Engineering", min: 55000, max: 78000, currency: "NZD" },
-      { field: "Healthcare & Nursing", min: 60000, max: 85000, currency: "NZD" },
-      { field: "Business & Management", min: 50000, max: 72000, currency: "NZD" },
+      {
+        field: "Healthcare & Nursing",
+        min: 60000,
+        max: 85000,
+        currency: "NZD",
+      },
+      {
+        field: "Business & Management",
+        min: 50000,
+        max: 72000,
+        currency: "NZD",
+      },
     ],
     top_courses: [
       "Agriculture & Environmental Science",
@@ -433,10 +458,30 @@ export const countriesFallback = [
       },
     ],
     post_study_work_salary: [
-      { field: "Engineering & Technology", min: 45000, max: 65000, currency: "EUR" },
-      { field: "IT & Computer Science", min: 50000, max: 70000, currency: "EUR" },
-      { field: "Business & Management", min: 40000, max: 60000, currency: "EUR" },
-      { field: "Medicine & Healthcare", min: 50000, max: 75000, currency: "EUR" },
+      {
+        field: "Engineering & Technology",
+        min: 45000,
+        max: 65000,
+        currency: "EUR",
+      },
+      {
+        field: "IT & Computer Science",
+        min: 50000,
+        max: 70000,
+        currency: "EUR",
+      },
+      {
+        field: "Business & Management",
+        min: 40000,
+        max: 60000,
+        currency: "EUR",
+      },
+      {
+        field: "Medicine & Healthcare",
+        min: 50000,
+        max: 75000,
+        currency: "EUR",
+      },
     ],
     top_courses: [
       "Engineering (Mechanical, Electrical, Civil)",
@@ -498,10 +543,25 @@ export const countriesFallback = [
       },
     ],
     post_study_work_salary: [
-      { field: "IT & Computer Science", min: 45000, max: 70000, currency: "EUR" },
-      { field: "Pharma & Biotechnology", min: 45000, max: 65000, currency: "EUR" },
+      {
+        field: "IT & Computer Science",
+        min: 45000,
+        max: 70000,
+        currency: "EUR",
+      },
+      {
+        field: "Pharma & Biotechnology",
+        min: 45000,
+        max: 65000,
+        currency: "EUR",
+      },
       { field: "Finance & Banking", min: 40000, max: 60000, currency: "EUR" },
-      { field: "Business & Management", min: 38000, max: 55000, currency: "EUR" },
+      {
+        field: "Business & Management",
+        min: 38000,
+        max: 55000,
+        currency: "EUR",
+      },
     ],
     top_courses: [
       "Computer Science & IT",
@@ -569,7 +629,12 @@ export const countriesFallback = [
       },
     ],
     post_study_work_salary: [
-      { field: "Business & Management", min: 38000, max: 55000, currency: "EUR" },
+      {
+        field: "Business & Management",
+        min: 38000,
+        max: 55000,
+        currency: "EUR",
+      },
       { field: "Engineering & Tech", min: 40000, max: 60000, currency: "EUR" },
       { field: "Fashion & Luxury", min: 30000, max: 50000, currency: "EUR" },
       { field: "Finance & Banking", min: 42000, max: 62000, currency: "EUR" },
@@ -635,9 +700,19 @@ export const countriesFallback = [
     ],
     post_study_work_salary: [
       { field: "Finance & Banking", min: 50000, max: 80000, currency: "SGD" },
-      { field: "IT & Computer Science", min: 55000, max: 85000, currency: "SGD" },
+      {
+        field: "IT & Computer Science",
+        min: 55000,
+        max: 85000,
+        currency: "SGD",
+      },
       { field: "Engineering", min: 48000, max: 72000, currency: "SGD" },
-      { field: "Business & Management", min: 45000, max: 70000, currency: "SGD" },
+      {
+        field: "Business & Management",
+        min: 45000,
+        max: 70000,
+        currency: "SGD",
+      },
     ],
     top_courses: [
       "Business & Finance",
@@ -701,8 +776,18 @@ export const countriesFallback = [
     post_study_work_salary: [
       { field: "Finance & Banking", min: 120000, max: 200000, currency: "AED" },
       { field: "Engineering", min: 100000, max: 160000, currency: "AED" },
-      { field: "IT & Computer Science", min: 110000, max: 180000, currency: "AED" },
-      { field: "Hospitality & Tourism", min: 80000, max: 140000, currency: "AED" },
+      {
+        field: "IT & Computer Science",
+        min: 110000,
+        max: 180000,
+        currency: "AED",
+      },
+      {
+        field: "Hospitality & Tourism",
+        min: 80000,
+        max: 140000,
+        currency: "AED",
+      },
     ],
     top_courses: [
       "Business Administration & MBA",
@@ -726,6 +811,513 @@ export const countriesFallback = [
       "English proficiency test scores",
       "Academic transcripts and certificates",
       "Proof of sufficient funds",
+    ],
+  },
+  // Add to countriesFallback array:
+
+  // 1. FIX New Zealand slug
+  // Change: slug: "new-zealand"
+  // To:     slug: "nz"
+
+  {
+    country: "Europe",
+    name: "Europe",
+    slug: "europe",
+    flag_url: "🇪🇺",
+    description:
+      "Europe offers an unmatched diversity of world-class education systems, from the Netherlands to Spain and beyond. Students benefit from the Schengen Area's freedom of movement, affordable tuition at public universities, and rich cultural immersion across 40+ countries.",
+    cost_info: "EUR 2,000 – 20,000/year",
+    visa_info:
+      "Schengen Student Visa / National Long-Stay Visa (varies by country)",
+    image_url:
+      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800",
+    tuition_fees: {
+      undergraduate: {
+        min: 2000,
+        max: 15000,
+        currency: "EUR",
+        note: "Varies by country",
+      },
+      postgraduate: { min: 3000, max: 20000, currency: "EUR" },
+      mba: { min: 10000, max: 40000, currency: "EUR" },
+    },
+    language_requirements: [
+      { test: "IELTS", min_score: 6.0, max_score: 7.0 },
+      { test: "TOEFL_IBT", min_score: 80, max_score: 100 },
+      { test: "PTE", min_score: 55, max_score: 65 },
+    ],
+    intakes: [
+      {
+        name: "Autumn",
+        term: "Primary",
+        apply_window: "February - May",
+        start_month: "September",
+      },
+      {
+        name: "Spring",
+        term: "Secondary",
+        apply_window: "September - November",
+        start_month: "February",
+      },
+    ],
+    post_study_work_salary: [
+      {
+        field: "Engineering & Technology",
+        min: 35000,
+        max: 60000,
+        currency: "EUR",
+      },
+      {
+        field: "IT & Computer Science",
+        min: 40000,
+        max: 65000,
+        currency: "EUR",
+      },
+      {
+        field: "Business & Management",
+        min: 35000,
+        max: 55000,
+        currency: "EUR",
+      },
+      {
+        field: "Healthcare & Medicine",
+        min: 38000,
+        max: 65000,
+        currency: "EUR",
+      },
+    ],
+    top_courses: [
+      "Engineering",
+      "Business Administration",
+      "Computer Science & IT",
+      "Medicine & Healthcare",
+      "Architecture",
+      "International Relations",
+      "Economics & Finance",
+      "Data Science & AI",
+      "Environmental Sciences",
+      "Law",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "University Admission Letter",
+      "Proof of sufficient funds",
+      "Health/travel insurance",
+      "Completed visa application form",
+      "Biometric passport photos",
+      "Language proficiency certificate",
+      "Academic transcripts and certificates",
+      "Statement of Purpose (SOP)",
+    ],
+  },
+  {
+    country: "Korea",
+    name: "South Korea",
+    slug: "korea",
+    flag_url: "🇰🇷",
+    description:
+      "South Korea is rapidly emerging as a top Asian study destination, combining cutting-edge technology, K-culture influence, and globally ranked universities like KAIST, POSTECH, and Seoul National University. Generous government scholarships like KGSP make it highly affordable.",
+    cost_info: "KRW 3,000,000 – 12,000,000/year (approx. USD 2,200 – 9,000)",
+    visa_info: "Student Visa (D-2) via Korean Embassy/Consulate",
+    image_url:
+      "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    tuition_fees: {
+      undergraduate: {
+        min: 3000000,
+        max: 10000000,
+        currency: "KRW",
+        note: "≈ USD 2,200–7,500/year",
+      },
+      postgraduate: {
+        min: 4000000,
+        max: 12000000,
+        currency: "KRW",
+        note: "≈ USD 3,000–9,000/year",
+      },
+      mba: {
+        min: 8000000,
+        max: 20000000,
+        currency: "KRW",
+        note: "≈ USD 6,000–15,000/year",
+      },
+    },
+    language_requirements: [
+      { test: "IELTS", min_score: 5.5, max_score: 6.5 },
+      { test: "TOEFL_IBT", min_score: 71, max_score: 90 },
+      {
+        test: "TOPIK (Korean)",
+        min_score: 3,
+        note: "Level 3–6 for Korean-medium programs",
+      },
+    ],
+    intakes: [
+      {
+        name: "Spring",
+        term: "Primary",
+        apply_window: "September - November",
+        start_month: "March",
+      },
+      {
+        name: "Autumn",
+        term: "Secondary",
+        apply_window: "March - May",
+        start_month: "September",
+      },
+    ],
+    post_study_work_salary: [
+      {
+        field: "IT & Computer Science",
+        min: 35000000,
+        max: 55000000,
+        currency: "KRW",
+      },
+      { field: "Engineering", min: 32000000, max: 50000000, currency: "KRW" },
+      {
+        field: "Business & Management",
+        min: 30000000,
+        max: 48000000,
+        currency: "KRW",
+      },
+      {
+        field: "Education & Research",
+        min: 28000000,
+        max: 45000000,
+        currency: "KRW",
+      },
+    ],
+    top_courses: [
+      "Computer Science & AI",
+      "Engineering (Mechanical, Electrical)",
+      "Business Administration",
+      "Korean Language & Culture",
+      "International Studies",
+      "Biotechnology",
+      "Architecture & Design",
+      "Film & Media Studies",
+      "Economics",
+      "Public Health",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "Admission letter from a Korean university",
+      "Completed visa application form (D-2)",
+      "Certificate of Bank Balance (proof of funds)",
+      "Academic transcripts and certificates",
+      "English or Korean proficiency test scores",
+      "Statement of Purpose (SOP)",
+      "Passport-sized photographs",
+      "Health insurance proof",
+    ],
+  },
+  {
+    country: "Malaysia",
+    name: "Malaysia",
+    slug: "malaysia",
+    flag_url: "🇲🇾",
+    description:
+      "Malaysia is one of Asia's most affordable and diverse study destinations, offering globally recognised degrees through twinning programs with UK and Australian universities. With English as the medium of instruction and a low cost of living, it is ideal for budget-conscious international students.",
+    cost_info: "MYR 15,000 – 50,000/year (approx. USD 3,200 – 11,000)",
+    visa_info: "Student Pass via Immigration Department of Malaysia (iKad)",
+    image_url:
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800",
+    tuition_fees: {
+      undergraduate: {
+        min: 15000,
+        max: 40000,
+        currency: "MYR",
+        note: "≈ USD 3,200–8,500/year",
+      },
+      postgraduate: {
+        min: 20000,
+        max: 50000,
+        currency: "MYR",
+        note: "≈ USD 4,300–11,000/year",
+      },
+      mba: {
+        min: 30000,
+        max: 70000,
+        currency: "MYR",
+        note: "≈ USD 6,400–15,000/year",
+      },
+    },
+    language_requirements: [
+      { test: "IELTS", min_score: 5.5, max_score: 6.5 },
+      { test: "TOEFL_IBT", min_score: 64, max_score: 90 },
+      { test: "PTE", min_score: 45, max_score: 58 },
+    ],
+    intakes: [
+      {
+        name: "March",
+        term: "Term 1",
+        apply_window: "November - January",
+        start_month: "March",
+      },
+      {
+        name: "July",
+        term: "Term 2",
+        apply_window: "March - May",
+        start_month: "July",
+      },
+      {
+        name: "October",
+        term: "Term 3",
+        apply_window: "July - August",
+        start_month: "October",
+      },
+    ],
+    post_study_work_salary: [
+      {
+        field: "IT & Computer Science",
+        min: 36000,
+        max: 72000,
+        currency: "MYR",
+      },
+      { field: "Engineering", min: 36000, max: 66000, currency: "MYR" },
+      {
+        field: "Business & Management",
+        min: 30000,
+        max: 60000,
+        currency: "MYR",
+      },
+      {
+        field: "Hospitality & Tourism",
+        min: 24000,
+        max: 48000,
+        currency: "MYR",
+      },
+    ],
+    top_courses: [
+      "Business Administration",
+      "Computer Science & IT",
+      "Engineering",
+      "Hospitality & Tourism Management",
+      "Medicine & Healthcare",
+      "Accounting & Finance",
+      "Architecture",
+      "Mass Communication",
+      "Biotechnology",
+      "Data Science",
+    ],
+    visa_documents: [
+      "Valid Passport (minimum 18 months validity)",
+      "Offer/Acceptance letter from a Malaysian institution",
+      "Completed EMGS application (Education Malaysia Global Services)",
+      "Medical examination report",
+      "Proof of sufficient funds",
+      "English proficiency test scores",
+      "Academic transcripts and certificates",
+      "Passport-sized photographs",
+      "Health insurance coverage",
+    ],
+  },
+  {
+    country: "China",
+    name: "China",
+    slug: "china",
+    flag_url: "🇨🇳",
+    description:
+      "China is the world's third most popular destination for international students, with over 300 universities offering English-medium programs. Government scholarships (CSC) and an affordable cost of living make it an increasingly attractive option for students from South Asia and Africa.",
+    cost_info: "CNY 20,000 – 60,000/year (approx. USD 2,800 – 8,500)",
+    visa_info: "Student Visa (X1/X2) via Chinese Embassy/Consulate",
+    image_url:
+      "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800",
+    tuition_fees: {
+      undergraduate: {
+        min: 20000,
+        max: 50000,
+        currency: "CNY",
+        note: "≈ USD 2,800–7,000/year",
+      },
+      postgraduate: {
+        min: 25000,
+        max: 60000,
+        currency: "CNY",
+        note: "≈ USD 3,500–8,500/year",
+      },
+      mba: {
+        min: 50000,
+        max: 120000,
+        currency: "CNY",
+        note: "≈ USD 7,000–17,000/year",
+      },
+      doctorate: {
+        min: 20000,
+        max: 50000,
+        currency: "CNY",
+        note: "≈ USD 2,800–7,000/year",
+      },
+    },
+    language_requirements: [
+      { test: "IELTS", min_score: 5.5, max_score: 6.5 },
+      { test: "TOEFL_IBT", min_score: 61, max_score: 90 },
+      {
+        test: "HSK (Chinese)",
+        min_score: 3,
+        note: "Level 3–5 for Chinese-medium programs",
+      },
+    ],
+    intakes: [
+      {
+        name: "Autumn",
+        term: "Primary",
+        apply_window: "March - June",
+        start_month: "September",
+      },
+      {
+        name: "Spring",
+        term: "Secondary",
+        apply_window: "October - December",
+        start_month: "March",
+      },
+    ],
+    post_study_work_salary: [
+      {
+        field: "IT & Computer Science",
+        min: 150000,
+        max: 300000,
+        currency: "CNY",
+      },
+      { field: "Engineering", min: 120000, max: 250000, currency: "CNY" },
+      {
+        field: "Business & Management",
+        min: 100000,
+        max: 220000,
+        currency: "CNY",
+      },
+      {
+        field: "Education & Research",
+        min: 90000,
+        max: 180000,
+        currency: "CNY",
+      },
+    ],
+    top_courses: [
+      "Chinese Language & Culture (HSK)",
+      "Medicine (MBBS)",
+      "Engineering",
+      "Computer Science & AI",
+      "Business Administration",
+      "International Trade & Economics",
+      "Architecture",
+      "Biotechnology",
+      "Environmental Science",
+      "Finance & Banking",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "JW201 or JW202 admission form",
+      "University Admission Notice",
+      "Completed visa application form (Form V.2013)",
+      "Physical examination record for foreigners",
+      "Academic transcripts and certificates",
+      "English or Chinese proficiency test scores",
+      "Passport-sized photographs",
+      "Proof of sufficient funds",
+    ],
+  },
+  {
+    country: "Japan",
+    name: "Japan",
+    slug: "japan",
+    flag_url: "🇯🇵",
+    description:
+      "Japan blends world-leading technology, a rich cultural heritage, and globally recognised universities like Tokyo and Osaka. With generous MEXT government scholarships, English-taught programs, and one of Asia's safest environments, Japan is a top destination for ambitious international students.",
+    cost_info: "JPY 500,000 – 1,500,000/year (approx. USD 3,300 – 10,000)",
+    visa_info: "College Student Visa (留学) via Japanese Embassy/Consulate",
+    image_url:
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800",
+    tuition_fees: {
+      undergraduate: {
+        min: 535800,
+        max: 1200000,
+        currency: "JPY",
+        note: "≈ USD 3,600–8,000/year",
+      },
+      postgraduate: {
+        min: 535800,
+        max: 1500000,
+        currency: "JPY",
+        note: "≈ USD 3,600–10,000/year",
+      },
+      mba: {
+        min: 1000000,
+        max: 3000000,
+        currency: "JPY",
+        note: "≈ USD 6,700–20,000/year",
+      },
+      doctorate: {
+        min: 535800,
+        max: 1200000,
+        currency: "JPY",
+        note: "≈ USD 3,600–8,000/year",
+      },
+    },
+    language_requirements: [
+      { test: "IELTS", min_score: 5.5, max_score: 6.5 },
+      { test: "TOEFL_IBT", min_score: 61, max_score: 90 },
+      {
+        test: "JLPT (Japanese)",
+        min_score: "N2",
+        note: "Required for Japanese-medium programs",
+      },
+    ],
+    intakes: [
+      {
+        name: "April",
+        term: "Primary",
+        apply_window: "September - December",
+        start_month: "April",
+      },
+      {
+        name: "October",
+        term: "Secondary",
+        apply_window: "April - June",
+        start_month: "October",
+      },
+    ],
+    post_study_work_salary: [
+      {
+        field: "IT & Computer Science",
+        min: 3500000,
+        max: 6000000,
+        currency: "JPY",
+      },
+      { field: "Engineering", min: 3200000, max: 5500000, currency: "JPY" },
+      {
+        field: "Business & Management",
+        min: 3000000,
+        max: 5000000,
+        currency: "JPY",
+      },
+      {
+        field: "Education & Research",
+        min: 2800000,
+        max: 4500000,
+        currency: "JPY",
+      },
+    ],
+    top_courses: [
+      "Engineering (Robotics, Mechanical, Electrical)",
+      "Computer Science & AI",
+      "Business Administration",
+      "Japanese Language & Linguistics",
+      "Architecture & Design",
+      "Medicine & Biomedical Sciences",
+      "International Studies",
+      "Environmental Science",
+      "Anime & Game Design",
+      "Economics & Finance",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "Certificate of Eligibility (CoE) issued by JASSO or university",
+      "Completed visa application form",
+      "Passport-sized photographs",
+      "Academic transcripts and certificates",
+      "English or Japanese proficiency test scores",
+      "Proof of sufficient funds",
+      "Health insurance",
+      "Statement of Purpose (SOP)",
     ],
   },
 ];
