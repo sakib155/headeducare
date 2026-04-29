@@ -16,10 +16,19 @@ import PrivacyPolicy from "./pages/legal/privacyPolicy";
 import RefundPolicy from "./pages/legal/refundPolicy";
 import Disclaimer from "./pages/legal/disclaimer";
 import AdmissionSupport from "./pages/services/AdmissionSupport";
-import HealthInsurance from "./pages/services/HealthInsurance";
-import VisaServices from "./pages/services/VisaServices";
-import StudentAccommodation from "./pages/services/StudentAccommodation";
-import ScholarshipSupport from "./pages/services/ScholarshipSupport";
+// import ProfileEvaluation from "./pages/services/ProfileEvaluation";
+// import SopEssayDrafting from "./pages/services/SopEssayDrafting";
+// import CommonEssay from "./pages/services/CommonEssay";
+// import ScholarshipGuidance from "./pages/services/ScholarshipGuidance";
+// import CompleteApplicationHelp from "./pages/services/CompleteApplicationHelp";
+// import FinancialDocumentation from "./pages/services/FinancialDocumentation";
+// import VisaDocumentation from "./pages/services/VisaDocumentation";
+// import VisaApplication from "./pages/services/VisaApplication";
+// import QuickAppointment from "./pages/services/QuickAppointment";
+// import HealthInsurance from "./pages/services/HealthInsurance";
+// import StudentAccommodation from "./pages/services/StudentAccommodation";
+// import EducationLoanSupport from "./pages/services/EducationLoanSupport";
+// import VisaMockInterview from "./pages/services/VisaMockInterview";
 import WillProvide from "./pages/about/we-will-provide";
 import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
 import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
@@ -42,33 +51,31 @@ function ScrollToTop() {
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const stored = localStorage.getItem("darkMode");
-
     if (stored !== null) {
-      return stored === "true"; // correct
+      return stored === "true";
     }
-
-    return false; // default ALWAYS light
+    return false;
   });
 
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) root.classList.add("dark");
     else root.classList.remove("dark");
-
-    localStorage.setItem("darkMode", darkMode); // save to storage
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
+
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       <ScrollToTop />
-      {/* Pass toggle function to header */}
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/about/our-people" element={<OurPeople />} />
+        <Route path="/about/we-will-provide" element={<WillProvide />} />
         <Route path="/services" element={<Services />} />
         <Route path="/destination/:slug" element={<CountryDetails />} />
         <Route path="/contact" element={<Contact />} />
@@ -78,19 +85,62 @@ export default function App() {
         <Route path="/legal/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/legal/refundPolicy" element={<RefundPolicy />} />
         <Route path="/legal/disclaimer" element={<Disclaimer />} />
-        <Route path="/services/admission" element={<AdmissionSupport />} />
-        <Route path="/services/visa-application" element={<VisaServices />} />
-        <Route path="/about/we-will-provide" element={<WillProvide />} />
 
+        {/* Services */}
+        {/* <Route
+          path="/services/admission-support"
+          element={<AdmissionSupport />}
+        />
         <Route
+          path="/services/profile-evaluation"
+          element={<ProfileEvaluation />}
+        />
+        <Route
+          path="/services/sop-essay-drafting"
+          element={<SopEssayDrafting />}
+        />
+        <Route path="/services/common-essay" element={<CommonEssay />} />
+        <Route
+          path="/services/scholarship-guidance"
+          element={<ScholarshipGuidance />}
+        />
+        <Route
+          path="/services/complete-application-help"
+          element={<CompleteApplicationHelp />}
+        />
+        <Route
+          path="/services/financial-documentation"
+          element={<FinancialDocumentation />}
+        />
+        <Route
+          path="/services/visa-documentation"
+          element={<VisaDocumentation />}
+        />
+        <Route
+          path="/services/visa-application"
+          element={<VisaApplication />}
+        />
+        <Route
+          path="/services/quick-appointment"
+          element={<QuickAppointment />}
+        /> */}
+        {/* <Route
           path="/services/health-insurance"
           element={<HealthInsurance />}
-        />
-        <Route
-          path="/services/accommodation"
+        /> */}
+        {/* <Route
+          path="/services/student-accommodation"
           element={<StudentAccommodation />}
         />
-        <Route path="/services/scholarship" element={<ScholarshipSupport />} />
+        <Route
+          path="/services/education-loan-support"
+          element={<EducationLoanSupport />}
+        />
+        <Route
+          path="/services/visa-mock-interview"
+          element={<VisaMockInterview />}
+        /> */}
+
         {/* USA Mentorship Program */}
         <Route
           path="/mentorship/liberal-arts-college"
