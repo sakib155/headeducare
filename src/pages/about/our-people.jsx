@@ -1,98 +1,105 @@
 const people = [
   {
     name: "Shuvo M.",
-    image: "https://i.pravatar.cc/150?img=2",
+    image: "/assets/people/Shuvo_M.jpg",
     bsc: "BSc, BRAC University",
     msc: "MSc, University of Leeds, UK",
     role: "Senior Associate, Research",
   },
   {
     name: "Patwary A.",
-    image: "https://i.pravatar.cc/150?img=3",
+    image: "/assets/people/Patwary_A.jpg",
     bsc: "BSc, University of Dhaka",
     msc: "MSc, University of Manchester, UK",
     role: "Associate, Strategy Team",
   },
   {
     name: "Maymuna S.",
-    image: "https://i.pravatar.cc/150?img=9",
+    image: "/assets/people/Maymuna_S.jpg",
     bsc: "BSc, North South University",
     msc: "MSc, Coventry University, UK",
     role: "Associate, Consulting Team",
   },
   {
     name: "Tasin R.",
-    image: "https://i.pravatar.cc/150?img=12",
-    bsc: "BSc, Independent University Bangladesh",
-    msc: "MSc, University of Birmingham, UK",
-    role: "Analyst, Data & Insights",
+    image: "/assets/people/Tasin_R.jpg",
+    bsc: "BSc, RUET",
+    msc: "MSc, Cranfield University,UK ",
+    role: "Associate, Consulting Team",
   },
   {
     name: "Nimnee N.",
-    image: "https://i.pravatar.cc/150?img=16",
+    image: "/assets/people/Nimnee_N.jpg",
     bsc: "BSc, East West University",
     msc: "MSc, University of Glasgow, UK",
     role: "Associate, Operations",
   },
   {
     name: "Faisal M.",
-    image: "https://i.pravatar.cc/150?img=11",
+    image: "/assets/people/Faisal_M.jpg",
     bsc: "BSc, Ahsanullah University of Science & Technology",
     msc: "MSc, University of Sheffield, UK",
     role: "Senior Analyst, Finance",
   },
   {
     name: "Arafat Y.",
-    image: "https://i.pravatar.cc/150?img=15",
+    image: "/assets/people/Arafat_Y.jpg",
     bsc: "BSc, BUET",
     msc: "MSc, University of Nottingham, UK",
     role: "Associate, Engineering",
   },
   {
     name: "Asad S.",
-    image: "https://i.pravatar.cc/150?img=17",
+    image: "/assets/people/Asad_S.jpg",
     bsc: "BSc, American International University",
     msc: "MSc, Brunel University London, UK",
     role: "Analyst, Consulting Team",
   },
   {
     name: "Riyad T.",
-    image: "https://i.pravatar.cc/150?img=20",
-    bsc: "BSc, Southeast University",
-    msc: "MSc, University of Exeter, UK",
-    role: "Associate, Policy & Research",
+    image: "/assets/people/Riyad_T.jpg",
+    bsc: "BSc, BUTEX",
+    msc: "MSc, Liverpool University, UK",
+    role: "Associate, Consulting Team",
   },
   {
     name: "Alfee M.",
-    image: "https://i.pravatar.cc/150?img=22",
+    image: "/assets/people/Alfee_M.jpg",
     bsc: "BSc, Daffodil International University",
     msc: "MSc, Cardiff University, UK",
     role: "Junior Associate, Strategy",
   },
   {
     name: "Zobayer M.",
-    image: "https://i.pravatar.cc/150?img=25",
+    image: "/assets/people/Zobayer_M.jpg",
     bsc: "BSc, Stamford University Bangladesh",
     msc: "MSc, University of Aberdeen, UK",
     role: "Associate, Consulting Team",
   },
   {
     name: "Rajib S.",
-    image: "https://i.pravatar.cc/150?img=27",
+    image: "/assets/people/Rajib_S.jpg",
     bsc: "BSc, Metropolitan University",
     msc: "MSc, Heriot-Watt University, UK",
     role: "Senior Associate, Operations",
   },
   {
     name: "Sakib R.",
-    image: "https://i.pravatar.cc/150?img=29",
+    image: "/assets/people/Sakib_R.jpg",
     bsc: "BSc, Green University of Bangladesh",
     msc: "MSc, University of Portsmouth, UK",
     role: "Analyst, Market Research",
   },
   {
     name: "Nadim M.",
-    image: "https://i.pravatar.cc/150?img=33",
+    image: "/assets/people/Nadim_M.jpg",
+    bsc: "BSc, Daffodil International University",
+    msc: "MSc, York St Johns University, UK",
+    role: "Associate, Consulting Team",
+  },
+  {
+    name: "Joy M.",
+    image: "/assets/people/Joy_M.jpg",
     bsc: "BSc, Daffodil International University",
     msc: "MSc, York St Johns University, UK",
     role: "Associate, Consulting Team",
@@ -115,24 +122,24 @@ const OurPeople = () => {
         {people.map((person, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl border border-gray-100 p-5 text-center hover:border-gray-200 transition"
+            className="bg-white dark:bg-[#0d1f3c] rounded-2xl border border-gray-100 dark:border-gray-700 p-5 text-center hover:border-gray-200 dark:hover:border-gray-500 transition"
           >
             <img
               src={person.image}
               alt={person.name}
               className="w-16 h-16 mx-auto rounded-full object-cover mb-3"
             />
-            <h3 className="text-sm font-semibold text-gray-900 mb-1">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
               {person.name}
             </h3>
             {person.bsc && (
-              <p className="text-xs text-gray-500 leading-snug">{person.bsc}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">{person.bsc}</p>
             )}
             {person.msc && (
-              <p className="text-xs text-gray-500 leading-snug">{person.msc}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">{person.msc}</p>
             )}
             {person.role && (
-              <span className="inline-block mt-2 text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+              <span className="inline-block mt-2 text-xs font-medium px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-700">
                 {person.role}
               </span>
             )}
