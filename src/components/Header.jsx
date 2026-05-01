@@ -83,11 +83,12 @@ export default function Header({ toggleDarkMode, darkMode }) {
                     {section.items?.length > 0 && (
                       <div
                         className="nav-dropdown absolute left-0 mt-1.5 space-y-2
-                      bg-white dark:bg-[#01091c] headergroup
+                      bg-white dark:bg-[#01091c]
                       shadow-lg border border-gray-200 dark:border-gray-700
-                      transition-all duration-300"
+                      transition-all duration-300 overflow-y-auto"
                         style={{
-                          width: "200px",
+                          width: "220px",
+                          maxHeight: "60vh",
                           opacity: isOpen ? 1 : 0,
                           pointerEvents: isOpen ? "auto" : "none",
                           transform: isOpen ? "translateY(0)" : "translateY(-4px)",

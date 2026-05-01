@@ -111,6 +111,31 @@ html {
 }
 
 /* ===== DROPDOWN MENU LINKS ===== */
+/* Solid opaque backgrounds so page content never shows through */
+.nav-dropdown {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 6px 0;
+}
+.dark .nav-dropdown {
+  background-color: #01091c !important;
+}
+
+/* Custom scrollbar for the dropdown */
+.nav-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+.nav-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nav-dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.dark .nav-dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 /* Explicit colors to guarantee visibility in both light & dark modes */
 .nav-dropdown a {
   color: #1f2937;
