@@ -179,7 +179,7 @@ export default function EducationLoanSupport() {
 
   const stats = [
     { value: "50+", label: "Bank & NBFC Partners" },
-    { value: "৳50Cr+", label: "Loans Disbursed" },
+    { value: "$50000", label: "Loans Disbursed" },
     { value: "95%", label: "Approval Success Rate" },
     { value: "12+", label: "Years Experience" },
   ];
@@ -190,7 +190,24 @@ export default function EducationLoanSupport() {
 
   return (
     <>
-      <style>{BASE_STYLES}</style>
+      <style>
+        {BASE_STYLES +
+          `
+          @media(max-width:768px){
+            .srv-section .srv-container > div[style*="grid-template-columns: repeat(3"] {
+              grid-template-columns: 1fr 1fr !important;
+            }
+            .srv-section .srv-container > div[style*="grid-template-columns: 1fr 1fr"] {
+              grid-template-columns: 1fr !important;
+            }
+          }
+          @media(max-width:480px){
+            .srv-section .srv-container > div[style*="grid-template-columns"] {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}
+      </style>
       <div className="srv-page" ref={containerRef}>
         {/* HERO */}
         <PageHero
@@ -215,22 +232,30 @@ export default function EducationLoanSupport() {
               body="We bridge the gap between your academic dreams and financial reality with expert loan advisory and processing."
               centered={true}
             />
-            <div className="srv-grid-3">
+            <div
+              className="srv-reveal"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3,1fr)",
+                gap: 20,
+              }}
+            >
               {services.map((svc, idx) => (
                 <IconCard
                   key={idx}
                   icon={svc.icon}
                   title={svc.title}
                   desc={svc.desc}
-                  className="srv-reveal"
                 />
               ))}
             </div>
           </div>
         </section>
 
+        <div className="srv-divider" />
+
         {/* PROCESS STEPS */}
-        <section className="srv-section srv-divider">
+        <section className="srv-section">
           <div className="srv-container">
             <SectionHeader
               label="How It Works"
@@ -239,7 +264,14 @@ export default function EducationLoanSupport() {
               body="A structured, stress-free process designed to maximize approval chances and minimize delays."
               centered={true}
             />
-            <div className="srv-grid-3">
+            <div
+              className="srv-reveal"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3,1fr)",
+                gap: 20,
+              }}
+            >
               {processSteps.slice(0, 3).map((step, idx) => (
                 <StepCard
                   key={idx}
@@ -247,11 +279,18 @@ export default function EducationLoanSupport() {
                   icon={step.icon}
                   title={step.title}
                   desc={step.desc}
-                  className="srv-reveal"
                 />
               ))}
             </div>
-            <div className="srv-grid-3" style={{ marginTop: "24px" }}>
+            <div
+              className="srv-reveal"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3,1fr)",
+                gap: 20,
+                marginTop: 24,
+              }}
+            >
               {processSteps.slice(3, 6).map((step, idx) => (
                 <StepCard
                   key={idx + 3}
@@ -259,7 +298,6 @@ export default function EducationLoanSupport() {
                   icon={step.icon}
                   title={step.title}
                   desc={step.desc}
-                  className="srv-reveal"
                 />
               ))}
             </div>
@@ -276,12 +314,19 @@ export default function EducationLoanSupport() {
               body="Understanding requirements upfront helps us prepare a stronger, faster loan application."
               centered={true}
             />
-            <div className="srv-grid-2" style={{ marginTop: "48px" }}>
+            <div
+              className="srv-reveal"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 32,
+                marginTop: 48,
+              }}
+            >
               <InfoBox
                 icon={AlertCircle}
                 title="Eligibility Checklist"
                 variant="blue"
-                className="srv-reveal"
               >
                 <CheckList items={eligibilityItems} columns={1} />
               </InfoBox>
@@ -289,7 +334,6 @@ export default function EducationLoanSupport() {
                 icon={FileText}
                 title="Required Documents"
                 variant="green"
-                className="srv-reveal"
               >
                 <CheckList items={documentItems} columns={1} />
               </InfoBox>

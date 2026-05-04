@@ -29,6 +29,8 @@ import HealthInsurance from "./pages/services/HealthInsurance";
 import StudentAccommodation from "./pages/services/StudentAccommodation";
 import EducationLoanSupport from "./pages/services/EducationLoanSupport";
 import VisaMockInterview from "./pages/services/VisaMockInterview";
+import ScholarshipSupport from "./pages/services/ScholarshipSupport";
+import VisaServices from "./pages/services/VisaServices";
 import WillProvide from "./pages/about/we-will-provide";
 import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
 import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
@@ -138,6 +140,14 @@ export default function App() {
         <Route
           path="/services/visa-mock-interview"
           element={<VisaMockInterview />}
+        />
+        <Route
+          path="/services/scholarship-support"
+          element={<ScholarshipSupport />}
+        />
+        <Route
+          path="/services/visa-services"
+          element={<VisaServices />}
         />
 
         {/* USA Mentorship Program */}
