@@ -62,9 +62,9 @@ html {
   background-color: #01091c99;
   opacity: 100;
 }
-.dark .glass-header {
+/* .dark .glass-header {
   border-bottom: 1px solid rgba(55, 65, 81, 0.5);
-}
+} */
 
 .dark ::-webkit-scrollbar-track {
   background: #1a2235;
@@ -73,7 +73,7 @@ html {
   color : #01091c99;
 }
 /* ===== GLASSMORPHIC HEADER ===== */
-.glass-header {
+/* .glass-header {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -81,11 +81,31 @@ html {
   transition: all 0.3s ease;
  
   backdrop-filter: blur(55px);
-  -webkit-backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(100px);
   border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+} */
+
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  /* Solid background */
+  background-color: #ffffff;
+
+  /* Remove glass effect */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  border-bottom: 1px solid rgba(229, 231, 235, 1);
 }
 
-
+.dark .glass-header {
+  background-color: #111827;
+  border-bottom: 1px solid rgba(55, 65, 81, 1);
+}
 /* ===== CAROUSEL ===== */
 .carousel-item {
   position: absolute;

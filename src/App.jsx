@@ -16,19 +16,21 @@ import PrivacyPolicy from "./pages/legal/privacyPolicy";
 import RefundPolicy from "./pages/legal/refundPolicy";
 import Disclaimer from "./pages/legal/disclaimer";
 import AdmissionSupport from "./pages/services/AdmissionSupport";
-// import ProfileEvaluation from "./pages/services/ProfileEvaluation";
-// import SopEssayDrafting from "./pages/services/SopEssayDrafting";
-// import CommonEssay from "./pages/services/CommonEssay";
-// import ScholarshipGuidance from "./pages/services/ScholarshipGuidance";
-// import CompleteApplicationHelp from "./pages/services/CompleteApplicationHelp";
-// import FinancialDocumentation from "./pages/services/FinancialDocumentation";
-// import VisaDocumentation from "./pages/services/VisaDocumentation";
-// import VisaApplication from "./pages/services/VisaApplication";
-// import QuickAppointment from "./pages/services/QuickAppointment";
-// import HealthInsurance from "./pages/services/HealthInsurance";
-// import StudentAccommodation from "./pages/services/StudentAccommodation";
-// import EducationLoanSupport from "./pages/services/EducationLoanSupport";
-// import VisaMockInterview from "./pages/services/VisaMockInterview";
+import ProfileEvaluation from "./pages/services/ProfileEvaluation";
+import SopEssayDrafting from "./pages/services/SopEssayDrafting";
+import CommonEssay from "./pages/services/CommonEssay";
+import ScholarshipGuidance from "./pages/services/ScholarshipGuidance";
+import CompleteApplicationHelp from "./pages/services/CompleteApplicationHelp";
+import FinancialDocumentation from "./pages/services/FinancialDocumentation";
+import VisaDocumentation from "./pages/services/VisaDocumentation";
+import VisaApplication from "./pages/services/VisaApplication";
+import QuickAppointment from "./pages/services/QuickAppointment";
+import HealthInsurance from "./pages/services/HealthInsurance";
+import StudentAccommodation from "./pages/services/StudentAccommodation";
+import EducationLoanSupport from "./pages/services/EducationLoanSupport";
+import VisaMockInterview from "./pages/services/VisaMockInterview";
+import ScholarshipSupport from "./pages/services/ScholarshipSupport";
+import VisaServices from "./pages/services/VisaServices";
 import WillProvide from "./pages/about/we-will-provide";
 import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
 import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
@@ -85,9 +87,8 @@ export default function App() {
         <Route path="/legal/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/legal/refundPolicy" element={<RefundPolicy />} />
         <Route path="/legal/disclaimer" element={<Disclaimer />} />
-
         {/* Services */}
-        {/* <Route
+        <Route
           path="/services/admission-support"
           element={<AdmissionSupport />}
         />
@@ -123,12 +124,12 @@ export default function App() {
         <Route
           path="/services/quick-appointment"
           element={<QuickAppointment />}
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/services/health-insurance"
           element={<HealthInsurance />}
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/services/student-accommodation"
           element={<StudentAccommodation />}
         />
@@ -139,7 +140,15 @@ export default function App() {
         <Route
           path="/services/visa-mock-interview"
           element={<VisaMockInterview />}
-        /> */}
+        />
+        <Route
+          path="/services/scholarship-support"
+          element={<ScholarshipSupport />}
+        />
+        <Route
+          path="/services/visa-services"
+          element={<VisaServices />}
+        />
 
         {/* USA Mentorship Program */}
         <Route
