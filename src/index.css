@@ -91,9 +91,9 @@ html {
   z-index: 50;
   width: 100%;
   transition: all 0.3s ease;
-
+color: #f3f4f6;
   /* Solid background */
-  background-color: #ffffff;
+  background-color: #080f31;
 
   /* Remove glass effect */
   backdrop-filter: none;
@@ -103,8 +103,15 @@ html {
 }
 
 .dark .glass-header {
-  background-color: #111827;
+  color: #120104 !important;
+  /* Solid background */
+  background-color: #080f31 !important;
   border-bottom: 1px solid rgba(55, 65, 81, 1);
+}
+
+/* Force text color for all children in dark mode header */
+.dark .glass-header * {
+  color: #b6b2b3 !important;
 }
 /* ===== CAROUSEL ===== */
 .carousel-item {
