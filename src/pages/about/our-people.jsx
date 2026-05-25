@@ -35,10 +35,17 @@ const people = [
   },
   {
     name: "Sarkar R.",
-    image: "/assets/people/Rajib_S.jpg",
+    image: "/assets/people/Sarkar_R.jpeg",
     degree1: "MBA, American International University - Bangladesh",
     degree2: "MBA, Washington University St. Louis, USA",
     role: "Team Lead, Creative",
+  },
+    {
+    name: "Rajib S.",
+    image: "/assets/people/Rajib_S.jpg",
+    bsc: "BSc, Metropolitan University",
+    msc: "MSc, Heriot-Watt University, UK",
+    role: "Senior Associate, Operations",
   },
   {
     name: "Sakib R.",
@@ -88,11 +95,11 @@ const people = [
     degree2: "MSc, Liverpool University, UK",
     role: "Associate, Consulting Team",
   },
-  {
-    name: "Prantic H.",
-    image: "",
-    role: "Team Lead, Design",
-  },
+  // {
+  //   name: "Prantic H.",
+  //   image: "",
+  //   role: "Team Lead, Design",
+  // },
   {
     name: "Nadim M.",
     image: "/assets/people/Nadim_M.jpg",
