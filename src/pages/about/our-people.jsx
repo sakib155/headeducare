@@ -40,13 +40,6 @@ const people = [
     degree2: "MBA, Washington University St. Louis, USA",
     role: "Team Lead, Creative",
   },
-    {
-    name: "Rajib S.",
-    image: "/assets/people/Rajib_S.jpg",
-    bsc: "BSc, Metropolitan University",
-    msc: "MSc, Heriot-Watt University, UK",
-    role: "Senior Associate, Operations",
-  },
   {
     name: "Sakib R.",
     image: "/assets/people/Sakib_R.jpg",
@@ -90,16 +83,11 @@ const people = [
   },
   {
     name: "Tarikul I.",
-    image: "",
+    image: "/assets/people/tarikul.jpeg",
     degree1: "BSc, BUTEX, Bangladesh",
     degree2: "MSc, Liverpool University, UK",
     role: "Associate, Consulting Team",
   },
-  // {
-  //   name: "Prantic H.",
-  //   image: "",
-  //   role: "Team Lead, Design",
-  // },
   {
     name: "Nadim M.",
     image: "/assets/people/Nadim_M.jpg",
@@ -116,50 +104,86 @@ const people = [
   },
 ];
 
+const roleStyle = {
+  "Founder & CEO": "bg-[#005B8F] text-white",
+  "Creative Director": "bg-[#0e7490] text-white",
+  "Senior Team Lead, Creative": "bg-[#7c3aed] text-white",
+  "Team Lead, Creative": "bg-[#0284c7] text-white",
+  "Associate, Consulting Team": "bg-[#059669] text-white",
+};
+
+const getRoleStyle = (role) =>
+  roleStyle[role] || "bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-200";
+
+const degrees = (person) =>
+  [person.degree1, person.degree2, person.degree3].filter(Boolean);
+
 const OurPeople = () => {
   return (
-    <div className="mx-auto m-4 px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl">
-      <div className="text-center mb-16">
-        <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
+    <section className="mx-auto px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl py-16">
+      {/* Section header */}
+      <div className="text-center mb-14">
+        <span className="inline-block text-primary font-semibold text-xs uppercase tracking-widest mb-3">
           Meet Our Team
-        </h2>
-        <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white">
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white leading-tight">
           Expert Counselors at Your Service
-        </h3>
+        </h2>
+        <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm max-w-xl mx-auto">
+          Our diverse team brings decades of combined experience from top universities across four continents.
+        </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      {/* People grid */}
+      <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {people.map((person, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-[#0d1f3c] rounded-2xl border border-gray-100 dark:border-gray-700 p-5 text-center hover:border-gray-200 dark:hover:border-gray-500 transition"
+            className="group flex flex-col items-center bg-white dark:bg-[#0d1f3c] rounded-2xl border border-gray-100 dark:border-gray-700/60 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200"
           >
-            <img
-              src={person.image || "/assets/people/placeholder.jpg"}
-              alt={person.name}
-              className="w-16 h-16 mx-auto rounded-full object-cover mb-3"
-            />
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
-              {person.name}
-            </h3>
-            {person.degree1 && (
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">{person.degree1}</p>
-            )}
-            {person.degree2 && (
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">{person.degree2}</p>
-            )}
-            {person.degree3 && (
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">{person.degree3}</p>
-            )}
-            {person.role && (
-              <span className="inline-block mt-2 text-xs font-medium px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-700">
+            {/* Photo area */}
+            <div className="w-full aspect-square overflow-hidden bg-gray-50 dark:bg-[#091628]">
+              <img
+                src={person.image || "/assets/people/placeholder.jpg"}
+                alt={person.name}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            {/* Info area */}
+            <div className="w-full flex flex-col p-4 gap-1.5">
+              {/* Role badge */}
+              <span
+                className={`self-start text-[10px] font-semibold px-2 py-0.5 rounded-full ${getRoleStyle(person.role)}`}
+              >
                 {person.role}
               </span>
-            )}
+
+              {/* Name */}
+              <p className="text-sm font-bold text-gray-900 dark:text-white leading-tight">
+                {person.name}
+              </p>
+
+              {/* Divider */}
+              <div className="w-8 h-px bg-primary/30 my-0.5" />
+
+              {/* Degrees */}
+              <ul className="flex flex-col gap-1">
+                {degrees(person).map((deg, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-1 text-[11px] text-gray-500 dark:text-gray-400 leading-snug"
+                  >
+                    <span className="mt-[3px] shrink-0 w-1 h-1 rounded-full bg-primary/40" />
+                    {deg}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
