@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { supabase } from "../lib/supabaseClient";
 
 const FALLBACK_TEAM = [
   {
@@ -73,18 +72,7 @@ export default function About() {
   const [team, setTeam] = useState(FALLBACK_TEAM);
 
   useEffect(() => {
-    async function fetchTeam() {
-      try {
-        const { data } = await supabase
-          .from("team_members")
-          .select("*")
-          .order("display_order");
-        if (data?.length) setTeam(data);
-      } catch (e) {
-        /* use fallback */
-      }
-    }
-    fetchTeam();
+    // Team members are static. Keep hook for future extensions.
   }, []);
 
   return (
@@ -93,20 +81,34 @@ export default function About() {
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               About Us
             </h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
-              Empowering Dreams, <span className="text-primary">Globally</span>
+              About <span className="text-primary">Head Educare</span>
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Head Edu Care is a premier education and migration consultancy
-              dedicated to helping students achieve their dreams of studying and
-              building careers abroad. With over 12 years of experience and
-              partnerships with 500+ universities worldwide, we are your trusted
-              guide to global education.
-            </p>
+            <div className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-6">
+              <p>
+                The Head Educare provides students around the world with bespoke admissions counseling
+                services with our unrivaled experience and expertise. For over 10 years, Head Educare has
+                been dedicated to helping students find the schools that will be great fits for them — where
+                they will thrive and be happy.
+              </p>
+              <p>
+                The Head Educare counselors are highly experienced in undergraduate, Postgraduate
+                and Doctoral admission at top institutions in the US, UK, Australia, Canada, NZ, Europe
+                and Malaysia. Our experts serve as mentors and motivators who nurture a student’s
+                development and confidence, while simultaneously demystifying the complex admissions
+                process.
+              </p>
+              <p>
+                The Head Educare also conduct High touch mentorship for elite and liberal arts college
+                admission, that guide students through each phase of the process – from refining college lists
+                and shaping application strategy to developing essays and preparing for interviews – helping
+                them translate their experiences into clear, cohesive, and compelling applications.
+              </p>
+            </div>
           </div>
         </div>
       </section>

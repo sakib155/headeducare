@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
-import { supabase } from "../lib/supabaseClient";
+import { api } from "../lib/apiClient";
 
 type Status = "sending" | "success" | "error" | null;
 
@@ -31,8 +31,7 @@ export default function FreeConsultation() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const { error } = await supabase.from("leads").insert([form]);
-      if (error) throw error;
+      await api.submitLead(form);
       setStatus("success");
       setForm({
         name: "",

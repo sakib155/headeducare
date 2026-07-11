@@ -22,6 +22,7 @@ export const menuData = [
       { name: "Study In Germany", url: "/destination/germany" },
       { name: "Study In Finland", url: "/destination/finland" },
       { name: "Study In Sweden", url: "/destination/sweden" },
+      { name: "Study In Belgium", url: "/destination/belgium" },
       { name: "Study In Malaysia", url: "/destination/malaysia" },
       { name: "Study In China", url: "/destination/china" },
     ],
@@ -58,6 +59,7 @@ export const menuData = [
         url: "/services/education-loan-support",
       },
       { name: "Visa Mock Interview", url: "/services/visa-mock-interview" },
+      { name: "US Mentorship", url: "/services/us-mentorship" },
     ],
   },
   {

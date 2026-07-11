@@ -221,7 +221,7 @@ export default function AdmissionSupport() {
           badge="Student Services"
           title="Unlock Global Opportunities with"
           highlight="Expert Admission Support"
-          desc="From university selection to application submission and enrolment — our experienced counselors guide Bangladeshi students to their dream institutions worldwide."
+          desc="We provide one-on-one consulting to help students craft a well-defined application based on interests, ECA, professional experiences and objectives. Our approach focuses on identifying each student’s unique standout factor and developing a structured framework for profile enhancement, ensuring a cohesive and compelling application over time."
           blobTop={-100}
           blobRight={-40}
         />

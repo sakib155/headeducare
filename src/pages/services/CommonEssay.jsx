@@ -380,12 +380,30 @@ export default function CommonEssay() {
         {/* ── HERO ── */}
         <PageHero
           badge="Student Services"
-          title="Essays That Get You Into Your"
-          highlight="Dream University"
-          desc="Your grades open doors. Your essay determines which ones stay open. Head Edu Care's expert writers help you tell your authentic story in a way that captivates admissions committees and scholarship panels worldwide."
+          title="Statement of Purpose &"
+          highlight="Common Essay Drafting"
+          desc="The SOP is one of the most critical parts of your application because it helps the admissions committee know your personal interests and experiences. No other part of the application conveys this information to the committee. It can help you explain your sins and give reason that they will not be repeated. It can help you change a reject to an admit. It can also help you change an admit to an admit with funding. Given this importance, we want to ensure YOU get the best. For the same reason, our drafts are written by students who have already graduated from some of the top universities. We guide every draft with practical feedback and fast iterations."
           blobTop={-50}
           blobRight={-90}
         />
+
+        {/* ── KEY AREAS COVERED ── */}
+        <section className="srv-section" style={{ paddingBottom: 0 }}>
+          <div className="srv-container" style={{ maxWidth: 800 }}>
+            <InfoBox
+              icon={Sparkles}
+              title="Key Areas We Guide"
+              variant="blue"
+            >
+              <CheckList items={[
+                "Personal statement ideation, structure, and revision cycles",
+                "Supplemental strategy to avoid repetitive writing",
+                "Activities and honors wording with stronger clarity and impact",
+                "Final edits for voice, depth, and polish"
+              ]} />
+            </InfoBox>
+          </div>
+        </section>
 
         {/* ── ESSAY TYPES WE WRITE ── */}
         <section className="srv-section">

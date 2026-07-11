@@ -214,8 +214,8 @@ export default function EducationLoanSupport() {
           badge="Student Services"
           title="Secure Your Future with Expert"
           highlight="Education Loan Guidance"
-          subtitle="From eligibility assessment to disbursement — we simplify financing"
-          desc="Studying abroad is an investment in your future. Our education loan support helps Bangladeshi students access affordable financing from trusted lenders — with transparent terms, minimal paperwork, and dedicated guidance at every step."
+          subtitle="One-stop solution for education loans with trusted partners"
+          desc="We’ve partnered with some of the most trusted financial institutions to offer a one-stop solution for education loans. Head Educare and our partners will help make your study abroad journey convenient and simple."
           ctaLabel="Book a Free Consultation"
           ctaLink="/freeconsulation"
           blobTop={-40}
@@ -337,6 +337,55 @@ export default function EducationLoanSupport() {
               >
                 <CheckList items={documentItems} columns={1} />
               </InfoBox>
+            </div>
+          </div>
+        </section>
+
+        {/* LENDER PARTNERS (Prodigy & MPower) */}
+        <section className="srv-section">
+          <div className="srv-container">
+            <SectionHeader
+              label="Financing Partners"
+              title="International Loan Providers"
+              highlight="for Graduate (MS/MBA) Students"
+              body="We connect you with globally recognized educational lenders offering unsecured, collateral-free study loans."
+              centered={true}
+            />
+            <div className="grid-2 srv-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40, alignItems: "center" }}>
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700/60 aspect-[4/3] relative group">
+                <img 
+                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" 
+                  alt="Graduate holding diploma" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white text-left">
+                  <p className="text-lg font-bold">Unsecured Funding Solutions</p>
+                  <p className="text-xs text-white/80">Tailored for global graduate students</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-6">
+                {/* Prodigy Card */}
+                <div style={{ background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 16, padding: 24, textAlign: "left" }}>
+                  <div style={{ background: "#e0f2fe", color: "#0284c7", padding: "6px 16px", borderRadius: 8, fontWeight: 900, fontSize: 16, display: "inline-block", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
+                    Prodigy Finance
+                  </div>
+                  <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>Collateral-Free Grad Loans</h4>
+                  <p className="srv-body" style={{ fontSize: 13, margin: 0 }}>
+                    Access funding for top business, engineering, law, and medical schools. No co-signer or collateral needed — approved based on your future career potential.
+                  </p>
+                </div>
+                {/* MPOWER Card */}
+                <div style={{ background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 16, padding: 24, textAlign: "left" }}>
+                  <div style={{ background: "#dcfce7", color: "#16a34a", padding: "6px 16px", borderRadius: 8, fontWeight: 900, fontSize: 16, display: "inline-block", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
+                    MPOWER Financing
+                  </div>
+                  <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>No Co-signer Student Loans</h4>
+                  <p className="srv-body" style={{ fontSize: 13, margin: 0 }}>
+                    Fixed-rate educational loans up to $100,000 for international students in the US and Canada. Build your US credit history and get free career support.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

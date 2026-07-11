@@ -32,6 +32,7 @@ import VisaMockInterview from "./pages/services/VisaMockInterview";
 import ScholarshipSupport from "./pages/services/ScholarshipSupport";
 import VisaServices from "./pages/services/VisaServices";
 import WillProvide from "./pages/about/we-will-provide";
+import USMentorship from "./pages/services/USMentorship";
 import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
 import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
 import LiberalArtsEducation from "./pages/mentorship/LiberalArtsEducation";
@@ -41,6 +42,7 @@ import WritingApplication from "./pages/mentorship/WritingApplication";
 import CollegeSelection from "./pages/mentorship/CollegeSelection";
 import FinancialAid from "./pages/mentorship/FinancialAid";
 import PostGraduateFunding from "./pages/mentorship/PostGraduateFunding";
+import Admin from "./pages/Admin";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -68,12 +70,16 @@ export default function App() {
 
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
+  const location = useLocation();
+  const isAdminPage = location.pathname.startsWith("/admin");
+
   return (
     <div className="min-h-screen">
       <ScrollToTop />
-      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+      {!isAdminPage && <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />}
 
       <Routes>
+        <Route path="/admin" element={<Admin />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/about/our-people" element={<OurPeople />} />
@@ -149,6 +155,10 @@ export default function App() {
           path="/services/visa-services"
           element={<VisaServices />}
         />
+        <Route
+          path="/services/us-mentorship"
+          element={<USMentorship />}
+        />
 
         {/* USA Mentorship Program */}
         <Route
@@ -190,8 +200,8 @@ export default function App() {
         />
       </Routes>
 
-      <Footer />
-      <ChatWidget />
+      {!isAdminPage && <Footer />}
+      {!isAdminPage && <ChatWidget />}
     </div>
   );
 }

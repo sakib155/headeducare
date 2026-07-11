@@ -11,15 +11,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800",
     tuition_fees: {
-      undergraduate: { min: 20000, max: 35000, currency: "AUD" },
-      postgraduate: { min: 25000, max: 40000, currency: "AUD" },
-      doctorate: { min: 18000, max: 32000, currency: "AUD" },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", min_score: 6.5 },
-      { test: "TOEFL_IBT", min_score: 79 },
-      { test: "PTE", min_score: 58 },
-      { test: "CAE", min_score: 169 },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       { name: "February", term: "Term 1", apply_window: "October - November" },
@@ -76,14 +77,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
     tuition_fees: {
-      undergraduate: { min: 12000, max: 35000, currency: "GBP" },
-      postgraduate: { min: 12000, max: 35000, currency: "GBP" },
-      mba: { min: 13000, max: 60000, currency: "GBP" },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", min_score: 6.0, max_score: 7.5 },
-      { test: "TOEFL_IBT", min_score: 80, max_score: 100 },
-      { test: "PTE", min_score: 51, max_score: 67 },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       { name: "Autumn", term: "Term 1", apply_window: "September - December" },
@@ -142,46 +145,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1564309780826-cce2ef0705a0?q=80&w=1170&auto=format&fit=crop",
     tuition_fees: {
-      undergraduate: {
-        min: 25000,
-        max: 50000,
-        currency: "USD",
-        note: "Private universities",
-      },
-      postgraduate: {
-        min: 30000,
-        max: 60000,
-        currency: "USD",
-        note: "Private universities",
-      },
-      mba: {
-        min: 50000,
-        max: 100000,
-        currency: "USD",
-        note: "Private universities",
-      },
-      doctorate: {
-        min: 40000,
-        max: 70000,
-        currency: "USD",
-        note: "Private universities",
-      },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", level: "undergraduate", min_score: 6.0, max_score: 7.0 },
-      { test: "IELTS", level: "postgraduate", min_score: 6.5, max_score: 7.5 },
-      {
-        test: "TOEFL_IBT",
-        level: "undergraduate",
-        min_score: 61,
-        max_score: 83,
-      },
-      {
-        test: "TOEFL_IBT",
-        level: "postgraduate",
-        min_score: 78,
-        max_score: 100,
-      },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       {
@@ -260,16 +233,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800",
     tuition_fees: {
-      undergraduate: { min: 15000, max: 35000, currency: "CAD" },
-      postgraduate: { min: 18000, max: 40000, currency: "CAD" },
-      mba: { min: 30000, max: 60000, currency: "CAD" },
-      doctorate: { min: 7000, max: 20000, currency: "CAD" },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", min_score: 6.0, max_score: 7.0 },
-      { test: "TOEFL_IBT", min_score: 80, max_score: 100 },
-      { test: "PTE", min_score: 58, max_score: 68 },
-      { test: "CAEL", min_score: 60 },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       {
@@ -348,14 +321,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800",
     tuition_fees: {
-      undergraduate: { min: 22000, max: 32000, currency: "NZD" },
-      postgraduate: { min: 26000, max: 37000, currency: "NZD" },
-      doctorate: { min: 6500, max: 9000, currency: "NZD" },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", min_score: 6.0, max_score: 6.5 },
-      { test: "TOEFL_IBT", min_score: 80, max_score: 90 },
-      { test: "PTE", min_score: 50, max_score: 58 },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       {
@@ -922,33 +897,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
     tuition_fees: {
-      undergraduate: {
-        min: 3000000,
-        max: 10000000,
-        currency: "KRW",
-        note: "≈ USD 2,200–7,500/year",
-      },
-      postgraduate: {
-        min: 4000000,
-        max: 12000000,
-        currency: "KRW",
-        note: "≈ USD 3,000–9,000/year",
-      },
-      mba: {
-        min: 8000000,
-        max: 20000000,
-        currency: "KRW",
-        note: "≈ USD 6,000–15,000/year",
-      },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", min_score: 5.5, max_score: 6.5 },
-      { test: "TOEFL_IBT", min_score: 71, max_score: 90 },
-      {
-        test: "TOPIK (Korean)",
-        min_score: 3,
-        note: "Level 3–6 for Korean-medium programs",
-      },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       {
@@ -1021,29 +979,16 @@ export const countriesFallback = [
     image_url:
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800",
     tuition_fees: {
-      undergraduate: {
-        min: 15000,
-        max: 40000,
-        currency: "MYR",
-        note: "≈ USD 3,200–8,500/year",
-      },
-      postgraduate: {
-        min: 20000,
-        max: 50000,
-        currency: "MYR",
-        note: "≈ USD 4,300–11,000/year",
-      },
-      mba: {
-        min: 30000,
-        max: 70000,
-        currency: "MYR",
-        note: "≈ USD 6,400–15,000/year",
-      },
+      undergraduate: { min: 9000, max: 27000, currency: "$" },
+      postgraduate: { min: 8000, max: 35000, currency: "$" },
+      mba: { min: 9000, max: 70000, currency: "$" },
+      doctorate: { min: 12000, max: 35000, currency: "$" },
     },
     language_requirements: [
-      { test: "IELTS", min_score: 5.5, max_score: 6.5 },
-      { test: "TOEFL_IBT", min_score: 64, max_score: 90 },
-      { test: "PTE", min_score: 45, max_score: 58 },
+      { test: "IELTS", level: "Undergraduate", min_score: "5.5", max_score: "7.0" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "MBA", min_score: "6.0", max_score: "7.5" },
+      { test: "IELTS", level: "Doctorate", min_score: "6.0", max_score: "7.5" },
     ],
     intakes: [
       {
@@ -1320,4 +1265,163 @@ export const countriesFallback = [
       "Statement of Purpose (SOP)",
     ],
   },
+  {
+    country: "Finland",
+    name: "Finland",
+    slug: "finland",
+    flag_url: "🇫🇮",
+    description: "Finland is known for having one of the world's most successful education systems, pristine nature, and top-tier universities like University of Helsinki and Aalto University.",
+    cost_info: "EUR 6,000 – 18,000/year",
+    visa_info: "Student Residence Permit via Migri (Finnish Immigration Service)",
+    image_url: "https://images.unsplash.com/photo-1517404212738-19266e9017f5?w=800",
+    tuition_fees: {
+      undergraduate: { min: 6000, max: 15000, currency: "EUR" },
+      postgraduate: { min: 8000, max: 18000, currency: "EUR" },
+      doctorate: { min: 0, max: 0, currency: "EUR", note: "Doctoral programs are generally tuition-free" },
+    },
+    language_requirements: [
+      { test: "IELTS", level: "Undergraduate", min_score: "6.0", max_score: "6.5" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.5", max_score: "7.0" },
+    ],
+    intakes: [
+      { name: "Joint Application", term: "Autumn Intake", apply_window: "January" },
+      { name: "Additional Application", term: "Spring Intake", apply_window: "August - September" },
+    ],
+    post_study_work_salary: [
+      { field: "Software Engineering", min: 38000, max: 55000, currency: "EUR" },
+      { field: "Business & Analytics", min: 32000, max: 48000, currency: "EUR" },
+    ],
+    top_courses: [
+      "Information Technology",
+      "Business & Entrepreneurship",
+      "Environmental Science",
+      "Education & Pedagogy",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "Official Letter of Acceptance",
+      "Proof of financial resources (€560/month or €6,720/year)",
+      "Health Insurance coverage",
+      "Receipt of tuition fee payment",
+      "Academic transcripts",
+    ],
+  },
+  {
+    country: "Denmark",
+    name: "Denmark",
+    slug: "denmark",
+    flag_url: "🇩🇰",
+    description: "Denmark offers high-quality education in a safe, friendly, and innovative environment. Renowned for its student-centered learning and green initiatives.",
+    cost_info: "EUR 6,000 – 16,000/year",
+    visa_info: "Danish Student Residence Permit (ST1) via SIRI",
+    image_url: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=800",
+    tuition_fees: {
+      undergraduate: { min: 6000, max: 16000, currency: "EUR" },
+      postgraduate: { min: 8000, max: 18000, currency: "EUR" },
+    },
+    language_requirements: [
+      { test: "IELTS", level: "Undergraduate", min_score: "6.0", max_score: "6.5" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.5", max_score: "7.0" },
+    ],
+    intakes: [
+      { name: "Autumn", term: "Term 1", apply_window: "January - March" },
+      { name: "Spring", term: "Term 2", apply_window: "August - October" },
+    ],
+    post_study_work_salary: [
+      { field: "Engineering & Tech", min: 45000, max: 65000, currency: "EUR" },
+      { field: "Life Sciences & Pharma", min: 48000, max: 70000, currency: "EUR" },
+    ],
+    top_courses: [
+      "Renewable Energy Engineering",
+      "Design & Architecture",
+      "Environmental Policy",
+      "Business & Economics",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "Letter of admission from Danish institution",
+      "Proof of financial support (€1,000/month)",
+      "Proof of visa application fee payment",
+      "Language test scores",
+    ],
+  },
+  {
+    country: "Belgium",
+    name: "Belgium",
+    slug: "belgium",
+    flag_url: "🇧🇪",
+    description: "Belgium, located in the heart of Europe, hosts highly ranked universities offering diverse English-taught programs and an international environment.",
+    cost_info: "EUR 1,000 – 9,000/year",
+    visa_info: "Belgian Student Visa (Type D) via Belgian Embassy",
+    image_url: "https://images.unsplash.com/photo-1565538810844-1e119fa1112d?w=800",
+    tuition_fees: {
+      undergraduate: { min: 1000, max: 6000, currency: "EUR" },
+      postgraduate: { min: 2000, max: 9000, currency: "EUR" },
+    },
+    language_requirements: [
+      { test: "IELTS", level: "Undergraduate", min_score: "6.0", max_score: "6.5" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.5", max_score: "7.0" },
+    ],
+    intakes: [
+      { name: "Autumn", term: "Term 1", apply_window: "January - April" },
+      { name: "Spring", term: "Term 2", apply_window: "September - November" },
+    ],
+    post_study_work_salary: [
+      { field: "IT & Telecommunications", min: 36000, max: 50000, currency: "EUR" },
+      { field: "International Relations", min: 30000, max: 45000, currency: "EUR" },
+    ],
+    top_courses: [
+      "International Relations & Politics",
+      "Biomedical Sciences",
+      "Business Management",
+      "Computer Science",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "Acceptance letter from a Belgian university",
+      "Proof of solvency/financial support",
+      "Medical certificate",
+      "Certificate of good conduct (criminal record check)",
+    ],
+  },
+  {
+    country: "Netherlands",
+    name: "Netherlands",
+    slug: "netherlands",
+    flag_url: "🇳🇱",
+    description: "The Netherlands was one of the first non-English-speaking countries to offer English-taught courses. It features top universities, excellent research facilities, and a highly international student body.",
+    cost_info: "EUR 8,000 – 20,000/year",
+    visa_info: "MVV Entry Visa and VVR Residence Permit via IND",
+    image_url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800",
+    tuition_fees: {
+      undergraduate: { min: 8000, max: 15000, currency: "EUR" },
+      postgraduate: { min: 10000, max: 20000, currency: "EUR" },
+    },
+    language_requirements: [
+      { test: "IELTS", level: "Undergraduate", min_score: "6.0", max_score: "6.5" },
+      { test: "IELTS", level: "Postgraduate", min_score: "6.5", max_score: "7.0" },
+    ],
+    intakes: [
+      { name: "September Intake", term: "Semester 1", apply_window: "October - January" },
+      { name: "February Intake", term: "Semester 2", apply_window: "June - August" },
+    ],
+    post_study_work_salary: [
+      { field: "Data Science & IT", min: 42000, max: 60000, currency: "EUR" },
+      { field: "Engineering & Logistics", min: 38000, max: 55000, currency: "EUR" },
+    ],
+    top_courses: [
+      "Civil & Hydraulic Engineering",
+      "Business & Economics",
+      "Data Science & AI",
+      "Agricultural Studies",
+    ],
+    visa_documents: [
+      "Valid Passport",
+      "University enrollment confirmation",
+      "Proof of financial sufficiency (€950/month)",
+      "Tuberculosis test (if applicable)",
+      "Health insurance details",
+    ],
+  },
 ];
+

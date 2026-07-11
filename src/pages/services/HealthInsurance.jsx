@@ -175,7 +175,7 @@ export default function HealthInsurance() {
           badge="Student Services"
           title="Overseas Health Insurance"
           highlight="for Study Abroad Aspirants"
-          desc="Discover comprehensive health coverage options that protect your wellbeing without breaking the bank — mandatory for most student visas and essential for every student going abroad."
+          desc="If you are contemplating studying abroad, you should be aware that some countries may insist on student health insurance coverage. Even if they don’t, considering the exorbitant medical costs in foreign countries, having student health cover is prudent to avoid financial burdens while studying abroad."
           blobTop={-60}
           blobRight={-60}
         />
@@ -198,17 +198,19 @@ export default function HealthInsurance() {
                   highlight="Health Insurance?"
                 />
                 <p className="srv-body" style={{ marginBottom: 20 }}>
-                  If you are contemplating studying abroad, you should be aware
-                  that many countries require student health insurance coverage.
-                  Even where it is not mandatory, medical costs in foreign
-                  countries can be exorbitant — having student health cover is
-                  prudent financial protection.
+                  If you are contemplating studying abroad, you should be aware that some countries may insist on student health insurance coverage. Even if they don’t, considering the exorbitant medical costs in foreign countries, having student health cover is prudent to avoid financial burdens while studying abroad. These health insurance plans typically cover pre and post-hospitalization expenses, prescription medicines, and the cost of surgeries.
                 </p>
+                <p className="srv-body" style={{ marginBottom: 20 }}>
+                  Students who purchase health plans from foreign countries while studying abroad will pay heavy premiums. Getting coverage under the best health insurance plans in India can be more economical.
+                </p>
+                <p className="srv-body" style={{ marginBottom: 20 }}>
+                  So, students studying abroad or planning to study abroad should have a student health cover to avoid additional financial burdens.
+                </p>
+                <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
+                  Get the right student health insurance while studying abroad
+                </h4>
                 <p className="srv-body" style={{ marginBottom: 28 }}>
-                  These plans typically cover pre and post-hospitalisation
-                  expenses, prescription medicines, and the cost of surgeries.
-                  Purchasing coverage in Bangladesh can be significantly more
-                  economical than buying plans directly in the host country.
+                  We connect you with trusted student healthcare plans for peace of mind. Focus on your studies while we help guide your healthcare choices.
                 </p>
                 <Link to="/freeconsulation" className="srv-cta-btn">
                   Get Expert Guidance →

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../lib/supabaseClient";
+import { api } from "../lib/apiClient";
 
 /* ===== Fallback data (used when Supabase is not configured) ===== */
 const FALLBACK_SERVICES = [
@@ -183,8 +183,8 @@ function useReveal() {
 const HERO_IMAGES = [
   // Row 1 - varied sizes
   {
-    src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600",
-    alt: "University Campus",
+    src: "/assets/prettiest-college-campuses-princeton-1592777643.avif",
+    alt: "Princeton University",
     cls: "top-0 left-0",
     w: 160,
     h: 140,
@@ -193,8 +193,8 @@ const HERO_IMAGES = [
     vanishDelay: "0s",
   },
   {
-    src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=600",
-    alt: "Graduation",
+    src: "/assets/prettiest-college-campuses-stanford-university-1592777646.avif",
+    alt: "Stanford University",
     cls: "top-0 left-[55%]",
     w: 90,
     h: 110,
@@ -203,8 +203,8 @@ const HERO_IMAGES = [
     vanishDelay: "6s",
   },
   {
-    src: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600",
-    alt: "Education",
+    src: "/assets/prettiest-college-campuses-m-i-t-1592777642.avif",
+    alt: "MIT",
     cls: "top-[10px] right-0",
     w: 140,
     h: 120,
@@ -214,8 +214,8 @@ const HERO_IMAGES = [
   },
   // Row 2
   {
-    src: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600",
-    alt: "Library",
+    src: "/assets/prettiest-college-campuses-dartmouth-college-1592777600.avif",
+    alt: "Dartmouth College",
     cls: "top-[32%] left-[2%]",
     w: 110,
     h: 130,
@@ -224,8 +224,8 @@ const HERO_IMAGES = [
     vanishDelay: "2s",
   },
   {
-    src: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600",
-    alt: "Students Abroad",
+    src: "/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif",
+    alt: "University of Chicago",
     cls: "top-[28%] left-[26%]",
     w: 150,
     h: 110,
@@ -234,8 +234,8 @@ const HERO_IMAGES = [
     vanishDelay: "5s",
   },
   {
-    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600",
-    alt: "Campus View",
+    src: "/assets/prettiest-college-campuses-georgetown-1592777619.avif",
+    alt: "Georgetown University",
     cls: "top-[35%] right-[24%]",
     w: 100,
     h: 140,
@@ -244,8 +244,8 @@ const HERO_IMAGES = [
     vanishDelay: "8s",
   },
   {
-    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600",
-    alt: "Lecture Hall",
+    src: "/assets/howard-u-1594329564.avif",
+    alt: "Howard University",
     cls: "top-[30%] right-0",
     w: 130,
     h: 100,
@@ -255,8 +255,8 @@ const HERO_IMAGES = [
   },
   // Row 3
   {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600",
-    alt: "Group Study",
+    src: "/assets/hampton-university-1594329567.avif",
+    alt: "Hampton University",
     cls: "bottom-[8%] left-0",
     w: 130,
     h: 120,
@@ -265,8 +265,8 @@ const HERO_IMAGES = [
     vanishDelay: "4s",
   },
   {
-    src: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600",
-    alt: "Team Project",
+    src: "/assets/prettiest-college-campuses-berry-college-1592777599.avif",
+    alt: "Berry College",
     cls: "bottom-[2%] left-[28%]",
     w: 100,
     h: 90,
@@ -275,8 +275,8 @@ const HERO_IMAGES = [
     vanishDelay: "7s",
   },
   {
-    src: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600",
-    alt: "Classroom",
+    src: "/assets/prettiest-college-campuses-christopher-newport-university-1592777622.avif",
+    alt: "Christopher Newport University",
     cls: "bottom-[5%] left-[52%]",
     w: 150,
     h: 130,
@@ -285,8 +285,8 @@ const HERO_IMAGES = [
     vanishDelay: "10s",
   },
   {
-    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600",
-    alt: "High School",
+    src: "/assets/prettiest-college-campuses-elon-university-1592777607.avif",
+    alt: "Elon University",
     cls: "bottom-[0%] right-0",
     w: 110,
     h: 100,
@@ -296,8 +296,8 @@ const HERO_IMAGES = [
   },
   // Floating extras (overlap between rows)
   {
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600",
-    alt: "University Life",
+    src: "/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif",
+    alt: "Notre Dame University",
     cls: "top-[16%] left-[15%]",
     w: 80,
     h: 80,
@@ -306,8 +306,8 @@ const HERO_IMAGES = [
     vanishDelay: "5.5s",
   },
   {
-    src: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600",
-    alt: "Study Time",
+    src: "/assets/prettiest-college-campuses-syracuse-1592777648.avif",
+    alt: "Syracuse University",
     cls: "top-[50%] right-[12%]",
     w: 90,
     h: 85,
@@ -328,25 +328,22 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const [sRes, cRes, tRes, stRes] = await Promise.all([
-          supabase.from("services").select("*").order("display_order"),
-          supabase
-            .from("countries")
-            .select("*")
-            .eq("is_active", true)
-            .order("display_order"),
-          supabase.from("testimonials").select("*").eq("is_featured", true),
-          supabase.from("site_settings").select("*"),
+        const [sData, cData, tData, stData] = await Promise.all([
+          api.fetchServices(),
+          api.fetchCountries(),
+          api.fetchTestimonials(),
+          api.fetchSettings(),
         ]);
-        if (sRes.data?.length) setServices(sRes.data);
-        if (cRes.data?.length) setCountries(cRes.data);
-        if (tRes.data?.length) setTestimonials(tRes.data);
-        if (stRes.data?.length) {
-          const settingsMap = {};
-          stRes.data.forEach((s) => {
-            settingsMap[s.key] = s.value;
-          });
-          setStats((prev) => ({ ...prev, ...settingsMap }));
+        if (sData?.length) setServices(sData);
+        
+        const activeCountries = cData?.filter(c => c.is_active !== false) || [];
+        if (activeCountries.length) setCountries(activeCountries);
+        
+        const featuredTestimonials = tData?.filter(t => t.is_featured) || [];
+        if (featuredTestimonials.length) setTestimonials(featuredTestimonials);
+        
+        if (stData) {
+          setStats((prev) => ({ ...prev, ...stData }));
         }
       } catch (e) {
         // Use fallback data
@@ -410,24 +407,17 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div className="max-w-2xl opacity-0 animate-fadeInUp">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10  text-primary text-xs font-bold uppercase tracking-wider mb-6 animate-popIn animate-delay-300">
-                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                Admissions Open 2025-26
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 greyhome">
-                Transform Your Future with{" "}
-                <span className="text-primary expgbl ">Expert Global</span>{" "}
-                Education
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 dark:text-white greyhome">
+                Connecting to you to{" "}
+                <span className="text-primary expgbl ">lead tomorrow</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
-                Your bridge to {stats.partner_universities} world-class
-                universities and seamless migration pathways. Join{" "}
-                {stats.students_placed} successful students achieving their
-                dreams abroad.
+                Head Educare is one of the premier educational consultancies. Our proven methodology
+                ensures students get into their best-fit schools.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-200">
                 <Link
-                  to="/contact"
+                  to="/freeconsulation"
                   className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/20 hover:-translate-y-1"
                 >
                   <span className="material-symbols-outlined">
@@ -459,7 +449,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <p className="font-bold text-[#0d121b] expgbl">
+                  <p className="font-bold text-[#0d121b] dark:text-white expgbl">
                     Join {stats.students_placed} Alumni
                   </p>
                   <p className="text-gray-500">Trusted by students worldwide</p>

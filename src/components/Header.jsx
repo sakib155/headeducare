@@ -47,7 +47,7 @@ export default function Header({ toggleDarkMode, darkMode }) {
               to="/"
               className="flex items-center gap-2 group cursor-pointer"
             >
-              <img src="/HEAD_horizontal.png" className="h-12 w-40" />
+              <img src="/HEAD_horizontal.png" className="h-14 w-48" />
             </Link>
 
             {/* Desktop Nav */}

@@ -1,19 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../../lib/supabaseClient";
+import { api } from "../../lib/apiClient";
 import { countriesFallback } from "./countriesFallback";
 
 export default function Countries() {
   const [countries, setCountries] = useState(countriesFallback);
 
   useEffect(() => {
-    supabase
-      .from("countries")
-      .select("*")
-      .eq("is_active", true)
-      .order("display_order")
-      .then(({ data }) => {
-        if (data?.length) setCountries(data);
+    api.fetchCountries()
+      .then((data) => {
+        const activeCountries = data?.filter(c => c.is_active !== false) || [];
+        if (activeCountries.length) setCountries(activeCountries);
       })
       .catch(() => {});
   }, []);

@@ -260,7 +260,7 @@ export default function VisaApplication() {
           badge="Student Services"
           title="Secure Your Student Visa with"
           highlight="Expert Guidance"
-          desc="Navigating visa regulations can be complex. Head Edu Care provides end-to-end visa application support, ensuring your documents are perfect, your finances are structured, and you are prepared for any interview."
+          desc="Ace the visa application through our help in the paperwork, financial planning, and visa Interview mock rounds. Applicable for USA, Canada, UK, Ireland, Australia, NZ, Europe, Malaysia and more."
           blobTop={-60}
           blobRight={-80}
         />

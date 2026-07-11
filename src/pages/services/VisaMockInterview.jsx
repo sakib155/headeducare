@@ -32,6 +32,7 @@ import {
   Headphones,
   FileText,
   Smile,
+  Sparkles,
 } from "lucide-react";
 
 /* ─────────────── DATA ─────────────── */
@@ -252,10 +253,28 @@ export default function VisaMockInterview() {
           badge="Student Services"
           title="Ace Your Visa Interview with"
           highlight="Confident Preparation"
-          desc="The visa interview is your moment to shine. Head Edu Care’s mock interview sessions simulate real embassy conditions, helping you articulate your goals clearly, confidently, and convincingly."
+          desc="We offer specialized mock workshop on preparing for interviews so you can communicate with clarity and confidence under pressure. You practice high-probability questions, sharpen examples, and learn how to ask thoughtful questions back."
           blobTop={-50}
           blobRight={-90}
         />
+
+        {/* ── KEY AREAS OF INTERVIEW COACHING ── */}
+        <section className="srv-section" style={{ paddingBottom: 0 }}>
+          <div className="srv-container" style={{ maxWidth: 800 }}>
+            <InfoBox
+              icon={Sparkles}
+              title="Workshop Focus Areas"
+              variant="blue"
+            >
+              <CheckList items={[
+                "Live mock interviews with structured mentor feedback",
+                "High-probability question practice and storytelling drills",
+                "School-specific positioning and talking-point preparation",
+                "Post-interview follow-up and communication guidance"
+              ]} />
+            </InfoBox>
+          </div>
+        </section>
 
         {/* ── SERVICES GRID ── */}
         <section className="srv-section">
