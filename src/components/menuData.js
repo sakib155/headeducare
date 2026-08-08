@@ -60,6 +60,9 @@ export const menuData = [
       },
       { name: "Visa Mock Interview", url: "/services/visa-mock-interview" },
       { name: "US Mentorship", url: "/services/us-mentorship" },
+      { name: "General Documents Checklist", url: "/services/general-documents-checklist" },
+      { name: "Academic Qualifications", url: "/services/academic-qualifications" },
+      { name: "Test Preparation", url: "/services/test-preparation" },
     ],
   },
   {

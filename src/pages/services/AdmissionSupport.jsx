@@ -221,7 +221,7 @@ export default function AdmissionSupport() {
           badge="Student Services"
           title="Unlock Global Opportunities with"
           highlight="Expert Admission Support"
-          desc="We provide one-on-one consulting to help students craft a well-defined application based on interests, ECA, professional experiences and objectives. Our approach focuses on identifying each student’s unique standout factor and developing a structured framework for profile enhancement, ensuring a cohesive and compelling application over time."
+          desc="Our experienced consultants provide personalized one-on-one guidance throughout the university application process. We carefully evaluate each student's academic profile, extracurricular activities, work experience, career objectives, and financial capacity to build a competitive application strategy."
           blobTop={-100}
           blobRight={-40}
         />
@@ -346,12 +346,28 @@ export default function AdmissionSupport() {
         <section className="srv-section-alt">
           <div className="srv-container">
             <div
+              className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 32,
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gap: 24,
               }}
             >
+              <InfoBox
+                icon={Target}
+                title="We Assist Students In"
+                variant="blue"
+              >
+                <CheckList items={[
+                  "University selection",
+                  "Application preparation",
+                  "Document review",
+                  "Scholarship identification",
+                  "Application submission",
+                  "Offer acceptance",
+                  "Enrollment support"
+                ]} />
+              </InfoBox>
               <InfoBox
                 icon={Microscope}
                 title="Profile Evaluation Covers"

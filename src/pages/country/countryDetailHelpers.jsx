@@ -215,3 +215,20 @@ export function VisaDocs({ docs }) {
     </ul>
   );
 }
+
+// ── Scholarships ─────────────────────────────────────────────────────────────
+export function Scholarships({ scholarships }) {
+  if (!scholarships?.length) return <p className="empty">No scholarship data available.</p>;
+  return (
+    <ul className="visa-list">
+      {scholarships.map((s, i) => (
+        <li key={i} className="visa-item" style={{ "--delay": `${i * 0.06}s` }}>
+          <span className="visa-check" style={{ backgroundColor: "var(--green-bg)", color: "var(--green)" }}>
+            <Icon d={icons.check} size={13} />
+          </span>
+          {s}
+        </li>
+      ))}
+    </ul>
+  );
+}

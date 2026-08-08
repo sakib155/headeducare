@@ -33,6 +33,9 @@ import ScholarshipSupport from "./pages/services/ScholarshipSupport";
 import VisaServices from "./pages/services/VisaServices";
 import WillProvide from "./pages/about/we-will-provide";
 import USMentorship from "./pages/services/USMentorship";
+import GeneralDocumentsChecklist from "./pages/services/GeneralDocumentsChecklist";
+import AcademicQualifications from "./pages/services/AcademicQualifications";
+import TestPreparation from "./pages/services/TestPreparation";
 import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
 import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
 import LiberalArtsEducation from "./pages/mentorship/LiberalArtsEducation";
@@ -158,6 +161,18 @@ export default function App() {
         <Route
           path="/services/us-mentorship"
           element={<USMentorship />}
+        />
+        <Route
+          path="/services/general-documents-checklist"
+          element={<GeneralDocumentsChecklist />}
+        />
+        <Route
+          path="/services/academic-qualifications"
+          element={<AcademicQualifications />}
+        />
+        <Route
+          path="/services/test-preparation"
+          element={<TestPreparation />}
         />
 
         {/* USA Mentorship Program */}

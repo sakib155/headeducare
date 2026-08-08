@@ -90,23 +90,16 @@ export default function About() {
             </h1>
             <div className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-6">
               <p>
-                The Head Educare provides students around the world with bespoke admissions counseling
-                services with our unrivaled experience and expertise. For over 10 years, Head Educare has
-                been dedicated to helping students find the schools that will be great fits for them — where
-                they will thrive and be happy.
+                Head Educare is a premier international education consultancy dedicated to helping students gain admission to the world's leading universities. With more than 10 years of experience, we have assisted thousands of students in finding institutions where they can thrive academically, professionally, and personally.
               </p>
               <p>
-                The Head Educare counselors are highly experienced in undergraduate, Postgraduate
-                and Doctoral admission at top institutions in the US, UK, Australia, Canada, NZ, Europe
-                and Malaysia. Our experts serve as mentors and motivators who nurture a student’s
-                development and confidence, while simultaneously demystifying the complex admissions
-                process.
+                Our experienced counselors specialize in Undergraduate, Postgraduate, MBA, and Doctoral admissions across the United States, United Kingdom, Australia, Canada, New Zealand, Ireland, Europe, Malaysia, and South Korea.
               </p>
               <p>
-                The Head Educare also conduct High touch mentorship for elite and liberal arts college
-                admission, that guide students through each phase of the process – from refining college lists
-                and shaping application strategy to developing essays and preparing for interviews – helping
-                them translate their experiences into clear, cohesive, and compelling applications.
+                Beyond admissions counseling, our consultants serve as mentors who guide students through every stage of the application journey. From selecting universities and developing application strategies to writing compelling Statements of Purpose (SOPs), preparing scholarship applications, and conducting visa interview coaching, we ensure every student presents the strongest possible application.
+              </p>
+              <p>
+                At Head Educare, we believe every student deserves personalized guidance, honest advice, and a clear roadmap toward achieving their international education goals.
               </p>
             </div>
           </div>

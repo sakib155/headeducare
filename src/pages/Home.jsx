@@ -408,12 +408,13 @@ export default function Home() {
             {/* Left */}
             <div className="max-w-2xl opacity-0 animate-fadeInUp">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 dark:text-white greyhome">
-                Connecting to you to{" "}
+                Connecting you to{" "}
                 <span className="text-primary expgbl ">lead tomorrow</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
-                Head Educare is one of the premier educational consultancies. Our proven methodology
-                ensures students get into their best-fit schools.
+                Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.
+                <br /><br />
+                Our experienced counselors work closely with every student to understand their academic background, career aspirations, and financial circumstances before designing a personalized study abroad strategy. Whether your destination is the USA, UK, Canada, Australia, New Zealand, Europe, Malaysia, or South Korea, we provide end-to-end support throughout your journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-200">
                 <Link

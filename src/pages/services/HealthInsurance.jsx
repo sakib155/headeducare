@@ -175,7 +175,7 @@ export default function HealthInsurance() {
           badge="Student Services"
           title="Overseas Health Insurance"
           highlight="for Study Abroad Aspirants"
-          desc="If you are contemplating studying abroad, you should be aware that some countries may insist on student health insurance coverage. Even if they don’t, considering the exorbitant medical costs in foreign countries, having student health cover is prudent to avoid financial burdens while studying abroad."
+          desc="Many countries require international students to maintain valid health insurance throughout their studies. Even where it is optional, having comprehensive medical insurance protects students from unexpected healthcare expenses abroad."
           blobTop={-60}
           blobRight={-60}
         />
@@ -198,13 +198,10 @@ export default function HealthInsurance() {
                   highlight="Health Insurance?"
                 />
                 <p className="srv-body" style={{ marginBottom: 20 }}>
-                  If you are contemplating studying abroad, you should be aware that some countries may insist on student health insurance coverage. Even if they don’t, considering the exorbitant medical costs in foreign countries, having student health cover is prudent to avoid financial burdens while studying abroad. These health insurance plans typically cover pre and post-hospitalization expenses, prescription medicines, and the cost of surgeries.
+                  Many countries require international students to maintain valid health insurance throughout their studies. Even where it is optional, having comprehensive medical insurance protects students from unexpected healthcare expenses abroad.
                 </p>
                 <p className="srv-body" style={{ marginBottom: 20 }}>
-                  Students who purchase health plans from foreign countries while studying abroad will pay heavy premiums. Getting coverage under the best health insurance plans in India can be more economical.
-                </p>
-                <p className="srv-body" style={{ marginBottom: 20 }}>
-                  So, students studying abroad or planning to study abroad should have a student health cover to avoid additional financial burdens.
+                  Head Educare assists students in selecting affordable and compliant international student health insurance plans that satisfy university and visa requirements while offering comprehensive medical coverage.
                 </p>
                 <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
                   Get the right student health insurance while studying abroad

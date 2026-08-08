@@ -367,7 +367,7 @@ export default function SOPEssayDrafting() {
           badge="Student Services"
           title="Statement of Purpose &"
           highlight="Common Essay Drafting"
-          desc="The SOP is one of the most critical parts of your application because it helps the admissions committee know your personal interests and experiences. No other part of the application conveys this information to the committee. It can help you explain your sins and give reason that they will not be repeated. It can help you change a reject to an admit. It can also help you change an admit to an admit with funding. Given this importance, we want to ensure YOU get the best. For the same reason, our drafts are written by students who have already graduated from some of the top universities. We guide every draft with practical feedback and fast iterations."
+          desc="Your Statement of Purpose (SOP) is one of the most important components of your university application. Beyond your grades and test scores, it gives the admissions committee an opportunity to understand who you are—your academic interests, personal experiences, career aspirations, motivations, and the journey that has shaped you. Unlike any other application document, your SOP allows you to present your story in your own voice. It provides an opportunity to explain academic gaps, career changes, low grades, study interruptions, or other challenges with honesty and maturity, demonstrating how you have grown from those experiences. A well-crafted SOP can strengthen a borderline application, improve your chances of admission, and even enhance your competitiveness for scholarships and funding opportunities. At Head Educare, we understand the impact that a compelling SOP can make. That's why every statement is developed through a collaborative process involving experienced mentors and graduates from internationally recognized universities. We focus on creating authentic, personalized, and university-specific essays that effectively highlight your strengths, ambitions, and potential."
           blobTop={-50}
           blobRight={-90}
         />
@@ -377,15 +377,20 @@ export default function SOPEssayDrafting() {
           <div className="srv-container" style={{ maxWidth: 800 }}>
             <InfoBox
               icon={Sparkles}
-              title="Key Areas We Guide"
+              title="Our SOP Support Includes"
               variant="blue"
             >
               <CheckList items={[
-                "Personal statement ideation, structure, and revision cycles",
-                "Supplemental strategy to avoid repetitive writing",
-                "Activities and honors wording with stronger clarity and impact",
-                "Final edits for voice, depth, and polish"
+                "Personal statement ideation, planning, and structured drafting",
+                "Multiple revision cycles with detailed mentor feedback",
+                "University-specific customization and supplemental essay strategy",
+                "Activities, achievements, and honors presented with greater clarity and impact",
+                "Academic gap, career transition, or previous refusal explanation (where appropriate)",
+                "Final editing for originality, coherence, tone, depth, and professionalism"
               ]} />
+              <p style={{ marginTop: 20, fontStyle: "italic", color: "var(--srv-text-primary)", fontWeight: 600 }}>
+                We don't just write essays—we help you present your story in a way that is authentic, compelling, and memorable to admissions committees.
+              </p>
             </InfoBox>
           </div>
         </section>

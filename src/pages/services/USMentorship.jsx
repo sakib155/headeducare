@@ -178,27 +178,69 @@ export default function USMentorship() {
           badge="USA Mentorship Program"
           title="Holistic Ivy League & Elite College"
           highlight="Mentorship Support"
-          desc="Our personalized mentoring programs guide students through every stage of the admissions process. With support from highly experienced liberal arts’ graduates and a structured, data-informed approach, we help students develop strong profiles and submit compelling applications."
+          desc="Our exclusive US Mentorship Program provides comprehensive guidance for students aiming to gain admission to competitive American universities. Our mentors work closely with students from profile building to final enrollment, ensuring every application reflects the student's full potential."
           blobTop={-60}
           blobRight={-80}
         />
 
         {/* ── FEATURES CHECKLIST ── */}
         <section className="srv-section" style={{ paddingBottom: 0 }}>
-          <div className="srv-container" style={{ maxWidth: 800 }}>
-            <InfoBox
-              icon={Sparkles}
-              title="US Mentorship Highlights"
-              variant="blue"
+          <div className="srv-container" style={{ maxWidth: 1000 }}>
+            <p className="srv-body" style={{ textAlign: "center", marginBottom: 40, fontSize: 16 }}>
+              Families who partner with Head Educare for the admissions process receive focused, high-touch mentorship designed to guide every step from strategy through submission.
+            </p>
+            <div
+              className="grid-2"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 32,
+              }}
             >
-              <CheckList
-                items={[
-                  "Dedicated, responsive support throughout the process",
-                  "Expert guidance from former admissions officers",
-                  "Holistic guidance in building standout applications",
-                ]}
-              />
-            </InfoBox>
+              <InfoBox
+                icon={Sparkles}
+                title="Stage-Based Mentorship Includes"
+                variant="blue"
+              >
+                <CheckList
+                  items={[
+                    "Unlimited, 1:1 Mentoring",
+                    "College List Strategy",
+                    "Timeline Management and Execution",
+                    "Narrative Development",
+                    "Activities and Application Presentation",
+                    "Essay Strategy and Execution",
+                    "Team-Based Review and Second Reader Insight",
+                    "Interview Preparation and Demonstrated Interest",
+                  ]}
+                />
+              </InfoBox>
+
+              <InfoBox
+                icon={GraduationCap}
+                title="Core Services Offered"
+                variant="green"
+              >
+                <CheckList
+                  items={[
+                    "Academic planning",
+                    "University shortlisting",
+                    "SAT & ACT preparation guidance",
+                    "Advanced Placement (AP) guidance",
+                    "Common Application strategy",
+                    "Coalition Application support",
+                    "Essay brainstorming and review",
+                    "Extracurricular profile development",
+                    "Leadership and community engagement planning",
+                    "Research opportunity guidance",
+                    "Scholarship planning",
+                    "Financial aid strategy",
+                    "Interview preparation",
+                    "Visa preparation",
+                  ]}
+                />
+              </InfoBox>
+            </div>
           </div>
         </section>
 

@@ -41,32 +41,27 @@ export default function EducationLoanSupport() {
     {
       icon: Calculator,
       title: "Loan Eligibility Assessment",
-      desc: "Free evaluation of your financial profile to determine loan amount, interest rates, and suitable lenders.",
-    },
-    {
-      icon: Landmark,
-      title: "Bank & Lender Matching",
-      desc: "Access to 50+ partner banks and NBFCs offering competitive education loan products for study abroad.",
+      desc: "Free evaluation of your financial profile to determine loan eligibility, maximum borrowing amount, and interest rates.",
     },
     {
       icon: FileText,
-      title: "Documentation Assistance",
-      desc: "End-to-end support preparing loan applications, financial statements, and collateral paperwork.",
-    },
-    {
-      icon: Percent,
-      title: "Interest Rate Negotiation",
-      desc: "We help you secure the lowest possible rates and favorable repayment terms through our institutional partnerships.",
+      title: "Financial Documentation",
+      desc: "End-to-end assistance in compiling, drafting, and reviewing all bank-compliant financial documents.",
     },
     {
       icon: ShieldCheck,
-      title: "Application Submission & Tracking",
-      desc: "Professional handling of loan submissions with real-time status updates and follow-up with lenders.",
+      title: "Loan Application Support",
+      desc: "Comprehensive support throughout the loan application process, ensuring quick approvals and hassle-free processing.",
     },
     {
       icon: Handshake,
-      title: "Post-Approval Guidance",
-      desc: "Support with disbursement schedules, forex conversion, and repayment planning after loan sanction.",
+      title: "Sponsor Guidance",
+      desc: "Detailed coaching and support for sponsors regarding the required affidavits and financial proofs.",
+    },
+    {
+      icon: Banknote,
+      title: "Tuition Payment Planning",
+      desc: "Customized planning to structure your tuition fee disbursements and manage forex payments effectively.",
     },
   ];
 
@@ -215,7 +210,7 @@ export default function EducationLoanSupport() {
           title="Secure Your Future with Expert"
           highlight="Education Loan Guidance"
           subtitle="One-stop solution for education loans with trusted partners"
-          desc="We’ve partnered with some of the most trusted financial institutions to offer a one-stop solution for education loans. Head Educare and our partners will help make your study abroad journey convenient and simple."
+          desc="Financing higher education should never become a barrier to achieving your dreams. Head Educare partners with leading financial institutions to help students secure education loans with competitive interest rates and flexible repayment options."
           ctaLabel="Book a Free Consultation"
           ctaLink="/freeconsulation"
           blobTop={-40}

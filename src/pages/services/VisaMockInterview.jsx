@@ -253,7 +253,7 @@ export default function VisaMockInterview() {
           badge="Student Services"
           title="Ace Your Visa Interview with"
           highlight="Confident Preparation"
-          desc="We offer specialized mock workshop on preparing for interviews so you can communicate with clarity and confidence under pressure. You practice high-probability questions, sharpen examples, and learn how to ask thoughtful questions back."
+          desc="Our comprehensive interview preparation program helps students build confidence through realistic interview simulations and personalized feedback."
           blobTop={-50}
           blobRight={-90}
         />
@@ -267,10 +267,12 @@ export default function VisaMockInterview() {
               variant="blue"
             >
               <CheckList items={[
-                "Live mock interviews with structured mentor feedback",
-                "High-probability question practice and storytelling drills",
-                "School-specific positioning and talking-point preparation",
-                "Post-interview follow-up and communication guidance"
+                "Live mock interviews",
+                "University-specific preparation",
+                "Visa interview coaching",
+                "Communication skills enhancement",
+                "Storytelling practice",
+                "Personalized feedback"
               ]} />
             </InfoBox>
           </div>

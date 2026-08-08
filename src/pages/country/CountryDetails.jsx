@@ -10,6 +10,7 @@ import {
   Salaries,
   TopCourses,
   VisaDocs,
+  Scholarships,
 } from "./countryDetailHelpers";
 
 export default function CountryDetails() {
@@ -40,6 +41,7 @@ export default function CountryDetails() {
   const salaries = country.post_study_work_salary;
   const courses = country.top_courses ?? country.popular_courses;
   const visaDocs = country.visa_documents;
+  const scholarships = country.scholarships ?? [];
 
   return (
     <>
@@ -90,6 +92,12 @@ export default function CountryDetails() {
           <SectionCard icon="document" title="Visa Documents Required">
             <VisaDocs docs={visaDocs} />
           </SectionCard>
+
+          {scholarships && scholarships.length > 0 && (
+            <SectionCard icon="money" title="Scholarships & Funding">
+              <Scholarships scholarships={scholarships} />
+            </SectionCard>
+          )}
         </div>
       </div>
     </>
