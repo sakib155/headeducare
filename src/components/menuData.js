@@ -1,34 +1,71 @@
 export const menuData = [
   {
-    title: { name: "About Us", url: "/about" },
+    title: { name: "About", url: "/about" },
     items: [
-      { name: "Our People", url: "/about/our-people" },
-      { name: "We Will Provide", url: "/about/we-will-provide" },
+      { name: "Our Team", url: "/about/our-people" },
+      { name: "What we do", url: "/about/we-will-provide" },
     ],
   },
   {
-    title: { name: "Destination", url: "/allcountries/allcountry" },
+    title: { name: "Country", url: "/allcountries/allcountry" },
     items: [
-      { name: "Study In USA", url: "/destination/usa" },
-      { name: "Study In UK", url: "/destination/uk" },
-      { name: "Study In Canada", url: "/destination/canada" },
-      { name: "Study In Australia", url: "/destination/australia" },
-      { name: "Study In New Zealand", url: "/destination/new-zealand" },
-      { name: "Study In Ireland", url: "/destination/ireland" },
-      { name: "Study In Denmark", url: "/destination/denmark" },
-      { name: "Study In Netherlands", url: "/destination/netherlands" },
-      { name: "Study In Hungary", url: "/destination/hungary" },
-      { name: "Study In Malta", url: "/destination/malta" },
-      { name: "Study In Germany", url: "/destination/germany" },
-      { name: "Study In Finland", url: "/destination/finland" },
-      { name: "Study In Sweden", url: "/destination/sweden" },
-      { name: "Study In Belgium", url: "/destination/belgium" },
-      { name: "Study In Malaysia", url: "/destination/malaysia" },
-      { name: "Study In China", url: "/destination/china" },
+      { name: "UK", url: "/destination/uk", flag: "🇬🇧" },
+      { name: "USA", url: "/destination/usa", flag: "🇺🇸" },
+      { name: "Australia", url: "/destination/australia", flag: "🇦🇺" },
+      { name: "New Zealand", url: "/destination/new-zealand", flag: "🇳🇿" },
+      { name: "Ireland", url: "/destination/ireland", flag: "🇮🇪" },
+      { name: "Canada", url: "/destination/canada", flag: "🇨🇦" },
+      { name: "Malaysia", url: "/destination/malaysia", flag: "🇲🇾" },
+      { name: "South Korea", url: "/destination/korea", flag: "🇰🇷" },
+      {
+        name: "Europe",
+        flag: "🇪🇺",
+        items: [
+          { name: "Finland", url: "/destination/finland", flag: "🇫🇮" },
+          { name: "Hungary", url: "/destination/hungary", flag: "🇭🇺" },
+          { name: "Sweden", url: "/destination/sweden", flag: "🇸🇪" },
+          { name: "Netherlands", url: "/destination/netherlands", flag: "🇳🇱" },
+          { name: "Belgium", url: "/destination/belgium", flag: "🇧🇪" },
+          { name: "Norway", url: "/destination/norway", flag: "🇳🇴" },
+        ],
+      },
     ],
   },
   {
-    title: { name: "Our Services", url: "/services" },
+    title: { name: "Courses", url: "/courses" },
+  },
+  {
+    title: { name: "Study MBBS", url: "/study-mbbs" },
+  },
+  {
+    title: { name: "USA Mentorship", url: "/mentorship" },
+    items: [
+      { name: "Liberal Arts College", url: "/mentorship/liberal-arts-college" },
+      {
+        name: "Elite School Admission",
+        url: "/mentorship/elite-school-admission",
+      },
+      {
+        name: "Masters Mentorship Program",
+        url: "/mentorship/masters-mentorship-program",
+      },
+      {
+        name: "Liberal Arts Education",
+        url: "/mentorship/liberal-arts-education",
+      },
+      { name: "Acceptance Letters", url: "/mentorship/acceptance-letters" },
+      { name: "Strategy Brainstorm", url: "/mentorship/strategy-brainstorm" },
+      { name: "Writing & Application", url: "/mentorship/writing-application" },
+      { name: "College Selection", url: "/mentorship/college-selection" },
+      { name: "Financial Aid", url: "/mentorship/financial-aid" },
+      {
+        name: "Post Graduate Funding",
+        url: "/mentorship/post-graduate-funding",
+      },
+    ],
+  },
+  {
+    title: { name: "Services", url: "/services" },
     items: [
       { name: "Admission Support", url: "/services/admission-support" },
       {
@@ -59,37 +96,9 @@ export const menuData = [
         url: "/services/education-loan-support",
       },
       { name: "Visa Mock Interview", url: "/services/visa-mock-interview" },
-      { name: "US Mentorship", url: "/services/us-mentorship" },
       { name: "General Documents Checklist", url: "/services/general-documents-checklist" },
       { name: "Academic Qualifications", url: "/services/academic-qualifications" },
       { name: "Test Preparation", url: "/services/test-preparation" },
-    ],
-  },
-  {
-    title: { name: "USA Mentorship Program (Bootcamp)", url: "/mentorship" },
-    items: [
-      { name: "Liberal Arts College", url: "/mentorship/liberal-arts-college" },
-      {
-        name: "Elite School Admission",
-        url: "/mentorship/elite-school-admission",
-      },
-      {
-        name: "Masters Mentorship Program",
-        url: "/mentorship/masters-mentorship-program",
-      },
-      {
-        name: "Liberal Arts Education",
-        url: "/mentorship/liberal-arts-education",
-      },
-      { name: "Acceptance Letters", url: "/mentorship/acceptance-letters" },
-      { name: "Strategy Brainstorm", url: "/mentorship/strategy-brainstorm" },
-      { name: "Writing & Application", url: "/mentorship/writing-application" },
-      { name: "College Selection", url: "/mentorship/college-selection" },
-      { name: "Financial Aid", url: "/mentorship/financial-aid" },
-      {
-        name: "Post Graduate Funding",
-        url: "/mentorship/post-graduate-funding",
-      },
     ],
   },
   {

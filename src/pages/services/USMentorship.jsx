@@ -5,8 +5,6 @@ import {
   useReveal,
   PageHero,
   SectionHeader,
-  InfoBox,
-  CheckList,
   CtaBanner,
 } from "./serviceComponents";
 
@@ -68,104 +66,142 @@ export default function USMentorship() {
       <style>
         {BASE_STYLES +
           `
-          .photocard-grid {
+          .mentor-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 32px;
             margin-top: 40px;
           }
-          .photocard {
+          .mentor-card {
             background: var(--srv-bg-card);
             border: 1px solid var(--srv-border);
             border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 36px 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+          }
+          .mentor-card:hover {
+            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            transform: translateY(-4px);
+          }
+          .mentor-card-header {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--srv-border);
           }
-          .photocard:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,91,143,0.12);
-            border-color: rgba(0,91,143,0.2);
-          }
-          .dark .photocard:hover {
-            border-color: rgba(74,131,243,0.3);
-          }
-          .photocard-image-wrap {
-            position: relative;
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background: #e5e7eb;
-          }
-          .photocard-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-          }
-          .photocard:hover .photocard-image {
-            transform: scale(1.04);
-          }
-          .photocard-uni-badge {
-            position: absolute;
-            bottom: 16px;
-            left: 16px;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 700;
-            font-family: Lexend, sans-serif;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          }
-          .photocard-content {
-            padding: 24px;
+          .mentor-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            flex: 1;
-            text-align: left;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
           }
-          .photocard-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--srv-text-primary);
+          .mentor-card-title {
+            font-size: 18px;
+            font-weight: 800;
             font-family: Lexend, sans-serif;
+            line-height: 1.3;
+          }
+          .mentor-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 24px;
+            list-style: none;
+            padding: 0;
             margin: 0;
           }
-          .photocard-major {
-            font-size: 13px;
-            font-weight: 600;
-            color: #005B8F;
+          .mentor-list li {
+            padding: 16px 0;
+            font-size: 14px;
+            color: var(--srv-text-body);
+            font-weight: 400;
+            line-height: 1.5;
+            font-family: Lexend, sans-serif;
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+          }
+          .dark .mentor-list li {
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+          }
+          @media(max-width:768px){
+.profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+          }
+          .profile-card {
+            background: var(--srv-bg-card);
+            border: 1px solid var(--srv-border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+          }
+          .profile-card:hover {
+            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            transform: translateY(-4px);
+          }
+          .profile-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+          }
+          .profile-card-body {
+            padding: 20px 22px 24px;
+          }
+          .profile-card-uni {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: .08em;
+            padding: 4px 12px;
+            border-radius: 99px;
+            margin-bottom: 12px;
+            font-family: Lexend, sans-serif;
           }
-          .dark .photocard-major {
-            color: #4A83F3;
+          .profile-card-name {
+            font-size: 18px;
+            font-weight: 800;
+            font-family: Lexend, sans-serif;
+            color: var(--srv-text-primary);
+            margin-bottom: 2px;
           }
-          .photocard-divider {
+          .profile-card-major {
+            font-size: 13px;
+            color: var(--srv-text-body);
+            font-weight: 400;
+            font-family: Lexend, sans-serif;
+            margin-bottom: 14px;
+          }
+          .profile-card-divider {
             height: 1px;
             background: var(--srv-border);
-            margin: 8px 0;
+            margin-bottom: 14px;
           }
-          .photocard-highlight {
+          .profile-card-stat {
             font-size: 13px;
-            line-height: 1.6;
             color: var(--srv-text-body);
-            font-weight: 300;
+            font-family: Lexend, sans-serif;
+            line-height: 1.6;
           }
-          .photocard-highlight strong {
-            font-weight: 600;
+          .profile-card-stat strong {
             color: var(--srv-text-primary);
+            font-weight: 600;
           }
-          @media(max-width:968px){
-            .photocard-grid {
-              grid-template-columns: repeat(2, 1fr) !important;
-            }
+          @media(max-width: 900px) {
+            .profiles-grid { grid-template-columns: 1fr 1fr; }
           }
-          @media(max-width:640px){
-            .photocard-grid {
+          @media(max-width: 600px) {
+            .profiles-grid { grid-template-columns: 1fr; }
+          }
+          .mentor-grid {
               grid-template-columns: 1fr !important;
             }
           }
@@ -189,21 +225,18 @@ export default function USMentorship() {
             <p className="srv-body" style={{ textAlign: "center", marginBottom: 40, fontSize: 16 }}>
               Families who partner with Head Educare for the admissions process receive focused, high-touch mentorship designed to guide every step from strategy through submission.
             </p>
-            <div
-              className="grid-2"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 32,
-              }}
-            >
-              <InfoBox
-                icon={Sparkles}
-                title="Stage-Based Mentorship Includes"
-                variant="blue"
-              >
-                <CheckList
-                  items={[
+            <div className="mentor-grid">
+              <div className="mentor-card">
+                <div className="mentor-card-header">
+                  <div className="mentor-card-icon" style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}>
+                    <Sparkles size={22} />
+                  </div>
+                  <h3 className="mentor-card-title" style={{ color: "var(--srv-text-primary)" }}>
+                    Stage-Based Mentorship Includes
+                  </h3>
+                </div>
+                <ul className="mentor-list">
+                  {[
                     "Unlimited, 1:1 Mentoring",
                     "College List Strategy",
                     "Timeline Management and Execution",
@@ -212,17 +245,23 @@ export default function USMentorship() {
                     "Essay Strategy and Execution",
                     "Team-Based Review and Second Reader Insight",
                     "Interview Preparation and Demonstrated Interest",
-                  ]}
-                />
-              </InfoBox>
+                  ].map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
 
-              <InfoBox
-                icon={GraduationCap}
-                title="Core Services Offered"
-                variant="green"
-              >
-                <CheckList
-                  items={[
+              <div className="mentor-card">
+                <div className="mentor-card-header">
+                  <div className="mentor-card-icon" style={{ background: "rgba(22,163,74,0.1)", color: "#166534" }}>
+                    <GraduationCap size={22} />
+                  </div>
+                  <h3 className="mentor-card-title" style={{ color: "var(--srv-text-primary)" }}>
+                    Core Services Offered
+                  </h3>
+                </div>
+                <ul className="mentor-list">
+                  {[
                     "Academic planning",
                     "University shortlisting",
                     "SAT & ACT preparation guidance",
@@ -237,9 +276,11 @@ export default function USMentorship() {
                     "Financial aid strategy",
                     "Interview preparation",
                     "Visa preparation",
-                  ]}
-                />
-              </InfoBox>
+                  ].map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -255,40 +296,37 @@ export default function USMentorship() {
               centered={true}
             />
 
-            <div className="photocard-grid srv-reveal">
+            <div className="profiles-grid srv-reveal">
               {studentProfiles.map((p, i) => (
-                <div key={i} className="photocard">
-                  <div className="photocard-image-wrap">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      className="photocard-image"
-                      loading="lazy"
-                    />
+                <div key={i} className="profile-card">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="profile-card-image"
+                    loading="lazy"
+                  />
+                  <div className="profile-card-body">
                     <span
-                      className="photocard-uni-badge"
+                      className="profile-card-uni"
                       style={{
                         backgroundColor: p.uniBg,
                         color: p.uniColor,
-                        border: `1px solid ${p.uniColor}20`,
                       }}
                     >
                       {p.university}
                     </span>
-                  </div>
-                  <div className="photocard-content">
-                    <p className="photocard-name">{p.name}</p>
-                    <p className="photocard-major">{p.major}</p>
-                    <div className="photocard-divider" />
-                    <p className="photocard-highlight">
+                    <div className="profile-card-name">{p.name}</div>
+                    <div className="profile-card-major">{p.major}</div>
+                    <div className="profile-card-divider" />
+                    <div className="profile-card-stat">
                       <strong>Stats:</strong> {p.stats}
-                    </p>
-                    <p className="photocard-highlight">
+                    </div>
+                    <div className="profile-card-stat">
                       <strong>Standout Project:</strong> {p.project}
-                    </p>
-                    <p className="photocard-highlight">
+                    </div>
+                    <div className="profile-card-stat">
                       <strong>Admissions Focus:</strong> {p.impact}
-                    </p>
+                    </div>
                   </div>
                 </div>
               ))}

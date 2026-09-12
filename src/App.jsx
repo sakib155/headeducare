@@ -46,6 +46,8 @@ import CollegeSelection from "./pages/mentorship/CollegeSelection";
 import FinancialAid from "./pages/mentorship/FinancialAid";
 import PostGraduateFunding from "./pages/mentorship/PostGraduateFunding";
 import Admin from "./pages/Admin";
+import Courses from "./pages/Courses";
+import StudyMBBS from "./pages/StudyMBBS";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -163,6 +165,10 @@ export default function App() {
           element={<USMentorship />}
         />
         <Route
+          path="/mentorship"
+          element={<USMentorship />}
+        />
+        <Route
           path="/services/general-documents-checklist"
           element={<GeneralDocumentsChecklist />}
         />
@@ -213,6 +219,8 @@ export default function App() {
           path="/mentorship/post-graduate-funding"
           element={<PostGraduateFunding />}
         />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/study-mbbs" element={<StudyMBBS />} />
       </Routes>
 
       {!isAdminPage && <Footer />}

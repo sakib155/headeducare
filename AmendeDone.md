@@ -1,0 +1,897 @@
+![](data:image/png;base64,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)
+
+### HOME PAGE
+
+#### Slogan (Recommended)
+
+Instead of:
+
+#### Connecting you to lead tomorrow
+
+**![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAOCAIAAABYP4RYAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACBUlEQVR4nO3cTW4cIRCAUShgZiTb9z+er2FNN1QWKJOfbZxMZL23oqEXdYBPVTPz4+PjdrtlZiml1lpKycx9AAAAAAAAAAAAAAC+kp0Kr7Uys7W2L+ecrbV+v9/f39/XWsdxRERE1Fozc8753KEBAAAAAAAAAAAAgE+0tw/33scYx3GMMd7e3l5fX19eXlprmdkvl8ucc4fGuyou37vjZw8PAAAAAAAAAAAAAHya3RZfr9eIOM9zl8OP+8zsc87zPHvvl8vlPM85Z0TsRcfPHBwAAAAAAAAAAAAA+GO/BcQ/q7Xuyznn/uyttev1urcUr7UiYowREf92ZgAAAAAAAAAAAADgkz3C4vJrWxwRrbXe+xhjjPFoift+y8zMbK211mqta63e+7+fHgAAAAAAAAAAAAD4S3Ze3HuPiN0MH8dxv993WxwRPTP3luJa64/iWFgMAAAAAAAAAAAAAF/IY29xRPTed2Hcvyu7It5J8d5bvNaac5ZSbrfbcRzPnB0AAAAAAAAAAAAA+FSPvHifa62ZOedca+1txVFKyczHH6211pqwGAAAAAAAAAAAAAC+jJ+D4YiIiN0TZ+ZeWrzFk8YDAAAAAAAAAAAAAP4v2mIAAAAAAAAAAAAAoBRtMQAAAAAAAAAAAACwaYsBAAAAAAAAAAAAgFK0xQAAAAAAAAAAAADA9g1+zqZEa9RS2AAAAABJRU5ErkJggg==)**
+
+#### Homepage Intro
+
+**Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.**
+
+Our experienced counselors work closely with every student to understand their academic background, career aspirations, and financial circumstances before designing a personalized study abroad strategy. Whether your destination is the USA, UK, Canada, Australia, New Zealand, Europe, Malaysia, or South Korea, we provide end-to-end support throughout your journey.
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADsgAAAAPCAIAAAB8oTzDAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACx0lEQVR4nO3czW7jOBCF0SJVdpRF3v/x8hpJJJKzqInGmN51NxAYOGcRUD8O7P2H29ZaHx8f+77POSOi9x4Ra63WWgAAAAAAAAAAAAAAT2utFREVBl+FcB3GGNu2Pb6cX19f7+/vY4zzPFtrvff6wBjjJ748AAAAAAAAAAAAAPAX9N5/DYu3bdu2rfd+HMfb29u+7/U3IvJ+v48xqjhura211lpzzv8FyAAAAAAAAAAAAADAE6mq+NebmbnWOs/zPM8xRsXDrbWcc57nmZn3+72eSYoBAAAAAAAAAAAA4Nlt23YtFtf6cO+993673eact2+ZWdvG2Xt/eXmpmHjOWa9eu8cAAAAAAAAAAAAAwDOqnri1Vpd13rbtOI66LHPOepQRURlxVcWZGRFzzjoAAAAAAAAAAAAAAM9ozhnfPfHj/dfX10qKa9L4v7B4ztlaa6313q/d4joAAAAAAAAAAAAAAE8qM9daEVFhcdXDNUlcIqIS4t57RGQNGldrPOc8z7O1tu/7eZ4/+0sAAAAAAAAAAAAAgD/XWrsK46st7t/q6VqrR8RaKzPr7r7vmTnG+OnvDwAAAAAAAAAAAAD8vpoovqriqoXje8C4tolba2OMqo2zHtQbNVpcl9u2/dBPAAAAAAAAAAAAAAD+1GMnfEXGpe7XUHElxGutjIi6qE3jiMjMx8IYAAAAAAAAAAAAAHhqj2FxZcQR0VrLzPv93nuPiKxXKyy+PrPWqksAAAAAAAAAAAAA4Nk9hsW1R1zO8zyOo+5kRNxut/M8rynjMcZxHJn5098fAAAAAAAAAAAAAPhNrbXrXBPFj+crMi4RkZ+fn9u21ePb7TbGyMw55+M/AgAAAAAAAAAAAACe12MbPMaopLi1ttYaY/ybGtdKcc0VZ+YYozpjYTEAAAAAAAAAAAAAPK8rCb7mih8L4WuJeK1Vi8X/AOoMjUyppOVRAAAAAElFTkSuQmCC)
+
+### ABOUT US
+
+#### About Head Educare
+
+**Head Educare is a premier international education consultancy dedicated to helping students gain admission to the world's leading universities. With more than 10 years of experience, we have assisted thousands of students in finding institutions where they can thrive academically, professionally, and personally.**
+
+Our experienced counselors specialize in Undergraduate, Postgraduate, MBA, and Doctoral admissions across the United States, United Kingdom, Australia, Canada, New Zealand, Ireland, Europe, Malaysia, and South Korea.
+
+Beyond admissions counseling, our consultants serve as mentors who guide students through every stage of the application journey. From selecting universities and developing application strategies to writing compelling Statements of Purpose (SOPs), preparing scholarship applications, and conducting visa interview coaching, we ensure every student presents the strongest possible application.
+
+At Head Educare, we believe every student deserves personalized guidance, honest advice, and a clear roadmap toward achieving their international education goals.
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD0MAAAAQCAIAAABRSqG7AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACuUlEQVR4nO3cO24jOxAFUP5ahve/UyeWxWZxgoL1BEdvPIEg4JygwSYrqAVc3LrWaq2VUvbetdb8FgAAAAAAAAAAAAAA/s3ee++dge2IyEMa95/McK+1xhgRIc8NAAAAAAAAAAAAAPBrtdbHVPZjjLuUMuacHx8fERERY4zb7TbG0MwNAAAAAAAAAAAAAPBre+/ee611711Kaa0dx3Ecx+VyyYFxHMecc62Vxd3neUbEU3cGAAAAAAAAAAAAAHhtmeTOlu211hjjcrnca7n33iMirtdrRGSMe62VJd7y3AAAAAAAAAAAAAAAv1Nrba1l3fbX19cYY4xRa+2958BoreX/3ru1linvDIA/dXMAAAAAAAAAAAAAgFeV/dqXyyUi5pwZ7K613gdGKSUieu8RERGZ+87D89YGAAAAAAAAAAAAAHhtWchda81DKSUiMsy99/4vyZ3PmeReaz15awAAAAAAAAAAAACAl/UY3c4892Mhd6115NDtdtt7jzHO88y5iHja1gAAAAAAAAAAAAAArywi3t7e1lqttYjYe885j+O4D4x7D3dE5Nxj1hsAAAAAAAAAAAAAgL/Ve89sdmut9z7G+FHLPUop+ZxB76ziznj307YGAAAAAAAAAAAAAHhla61a6967lLK/ZVo7jXwo36HviIiIH3FvAAAAAAAAAAAAAAD+v+zh7r333u/N3L33+8Aopcw5863Wms3cY4zHuDcAAAAAAAAAAAAAAH8lG7fXWud5zjmP41hr5WUpZdRaL5dLlnXnVf32tJUBAAAAAAAAAAAAAF5ZNmvvvbONe3y7D4zr9RoRY4w553meeZst3c9ZGQAAAAAAAAAAAADgxbXW9t4R0XtvrbXWIuJ2ux3HkQN17/35+fn+/p613K21UkpE5AEAAAAAAAAAAAAAgH8x5xxj/Oja/gOQ2l9ohS8guwAAAABJRU5ErkJggg==)
+
+### SERVICES
+
+**![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADsgAAAAPCAIAAAB8oTzDAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACB0lEQVR4nO3cTWrkMBCA0dKPne7O/c+XawRsSVkUYwIzuzDTk/DeSpZlkPcfVY7j6L1HxJyz1rrWKqWstQIAAAAAAAAAAAAA+EFKKRGRwXDGw/GrIh5jlLXWeZ4ZE/fexxi11vwGAAAAAAAAAAAAAPgBMib+vPN7Ntzf39/f3t7O86y1ttaO48gTY4x/fmEAAAAAAAAAAAAA4G8ppZRSXl5eIuI8z9vt9vr6er/fH49HKaXfbrc555wzIj4vWmtPvjgAAAAAAAAAAAAA8AU5kHitdT3WWmutc861Vo4xbq3VWiOi54l93/Pdvu+11uM4ru8BAAAAAAAAAAAAgO8r8+JrsW3bGGOMcWXHqWduvG3beZ4ZHefQ4t77E28PAAAAAAAAAAAAAHzF1RNHRHbCac6ZwfA1wDj3e6219957X2vl7pyztfa8XwAAAAAAAAAAAAAAvmqt9cf1tm2ttbVWa62UkuOK55w9Iq7oOMPiiNj3PXcAAAAAAAAAAAAAgJ8hJxNnSXwNMM6EuLXWI2Lf94jIOcZrrW3bVMUAAAAAAAAAAAAA8N3loOIcPZzrbIavRXbGebg+754AAAAAAAAAAAAAwP9CWAwAAAAAAAAAAAAACIsBAAAAAAAAAAAAAGExAAAAAAAAAAAAABDCYgAAAAAAAAAAAAAghMUAAAAAAAAAAAAAQER8AMp9wOgR2bozAAAAAElFTkSuQmCC)**
+
+#### Application Support
+
+Our experienced consultants provide personalized one-on-one guidance throughout the university application process. We carefully evaluate each student's academic profile, extracurricular activities, work experience, career objectives, and financial capacity to build a competitive application strategy.
+
+We assist students in:
+
+- University selection
+- Application preparation
+- Document review
+- Scholarship identification
+- Application submission
+- Offer acceptance
+- Enrollment support
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD0MAAAAPCAIAAACjyhH1AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB+UlEQVR4nO3cQYpqMRCG0VQSL+5/q87MTaoHQXH46AZF3jkDuRCEWsDHH5m51qq1nufZey+lZGZEFAAAAAAAAAAAAAAAfmun2q21Z6r9qo8xbrdbRIwxjuNYa2VmKUXMDQAAAAAAAAAAAADwF5nZe7/f79frtdbaWrter/up997HGOd5zjkzc/8WJTcAAAAAAAAAAAAAwB/UWkspmXm/31trx3HUWnetnZm9lDLGGGM8PyJCxg0AAAAAAAAAAAAA8Gt7jbvWOuccY7TWWmuZuUvuUkrPzPM8MzMi5pxzztba/udHLwcAAAAAAAAAAAAA+Fav0fZa6zzPMcblcjmOY7/2WmutNSL2dndrrfceEWutTx4OAAAAAAAAAAAAAPC11lq99z3L/Wq/RkTPzDlneUTfc8694B0RH70cAAAAAAAAAAAAAOBb7R3uiMjMtdac83Wlu5TSd7G9F7j3w+65W2ufOhoAAAAAAAAAAAAA4KuttXbDXUrJzHh4xty9vGTctdbnLPdr7g0AAAAAAAAAAAAAwL/bi9u7yt4Nd3kk3fujfvY+AAAAAAAAAAAAAID/kJIbAAAAAAAAAAAAAODdlNwAAAAAAAAAAAAAAO+m5AYAAAAAAAAAAAAAeDclNwAAAAAAAAAAAADAuym5AQAAAAAAAAAAAADe7Qfe4Oa2WrypZwAAAABJRU5ErkJggg==)
+
+#### Statement of Purpose (SOP) & Personal Statement
+
+Your **Statement of Purpose (SOP)** is one of the most important components of your university application. Beyond your grades and test scores, it gives the admissions committee an opportunity to understand who you are—your academic interests, personal experiences, career aspirations, motivations, and the journey that has shaped you.
+
+Unlike any other application document, your SOP allows you to present your story in your own voice. It provides an opportunity to explain academic gaps, career changes, low grades, study interruptions, or other challenges with honesty and maturity, demonstrating how you have grown from those experiences. A well-crafted SOP can strengthen a borderline application, improve your chances of admission, and even enhance your competitiveness for scholarships and funding opportunities.
+
+At **Head Educare**, we understand the impact that a compelling SOP can make. That's why every statement is developed through a collaborative process involving experienced mentors and graduates from internationally recognized universities. We focus on creating authentic,
+
+personalized, and university-specific essays that effectively highlight your strengths, ambitions, and potential.
+
+Our SOP support includes:
+
+- **Personal statement ideation, planning, and structured drafting**
+- **Multiple revision cycles with detailed mentor feedback**
+- **University-specific customization and supplemental essay strategy**
+- **Activities, achievements, and honors presented with greater clarity and impact**
+- **Academic gap, career transition, or previous refusal explanation (where appropriate)**
+- **Final editing for originality, coherence, tone, depth, and professionalism**
+
+We don't just write essays—we help you present your story in a way that is authentic, compelling, and memorable to admissions committees.
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD0MAAAAPCAIAAACjyhH1AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABhUlEQVR4nO3cwW3DMBBFwd0lBfdfpkuwKYo5OEgHlgBl5kTw9At42Bxj9N4jYq2VmXPO1loAAAAAAAAAAAAAAPA11Xs/jmPOOef8+11rXbgJAAAAAAAAAAAAAODe+uv1ej6f+75HRFXNObdte7/fmXn1NgAAAAAAAAAAAACAe+qPx+NzkLuqxhjHcWTmvu+996u3AQAAAAAAAAAAAADcU4+IMUZVZWZmVlVrbds2N7kBAAAAAAAAAAAAAL7k9/D2p+SOiMxca2XmcRyXDgMAAAAAAAAAAAAAuK0eEVVVVXPOtVZEjDEiorV28TQAAAAAAAAAAAAAgJvqn3o7ItZaVdVam3N+LnNfuwwAAAAAAAAAAAAA4K4qMzNzzhkRfw8ZNwAAAAAAAAAAAADA99TVAwAAAAAAAAAAAAAA/h0lNwAAAAAAAAAAAADA2ZTcAAAAAAAAAAAAAABnU3IDAAAAAAAAAAAAAJxNyQ0AAAAAAAAAAAAAcDYlNwAAAAAAAAAAAADA2X4ADa5ZuGdHHUEAAAAASUVORK5CYII=)
+
+#### Visa Assistance
+
+Our visa experts provide complete guidance to maximize your chances of visa approval. We assist with documentation, financial planning, application preparation, and realistic mock interviews for:
+
+- - USA
+    - Canada
+    - UK
+    - Ireland
+    - Australia
+    - New Zealand
+    - Europe
+    - Malaysia
+    - South Korea
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAPCAIAAACTY1f9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACo0lEQVR4nO3cS24cORBF0QgyMlWAtf/teRu2ih8PCAs96J61IbhwzoiZ9QEXcPFy7/3jx4/H47HWiojWWkTsvTMzAAAAAAAAAAAAAIBXtNbae/fez+Ocs7VWHx8f379/n3OOMTKztXaq4jnnl94WAAAAAAAAAAAAAPj/VdV938/ns6re39/f39+/ffvWe997133fc845Z+89M/fee++11meDDAAAAAAAAAAAAAC8jLe3t977GGP9draJI6KttcYYvfe3t7fWWkT03s8BAAAAAAAAAAAAAHgxe++IyMzTDO+955xrrYio1tpJjyNirdVau66rtXZ+AwAAAAAAAAAAAAC8klMVV1Xv/b7v67qqKjP33hURpyQ+YXFVRcRa6xwAAAAAAAAAAAAAgFdyquIxxlksHmM8n8/ee2ut1lqZeerjz/XicwAAAAAAAAAAAAAAXszJhk9MfF3Xfd/3fUfE3rsys/d+dovXWmOMzHw8HmOMr742AAAAAAAAAAAAAPBHZOY5nOni1lpmtjiJcdV5fjweVTXn/NKrAgAAAAAAAAAAAAB/xN47MzPzzBOfGePWWkTUZ3GcmWe6+Dz23r/svgAAAAAAAAAAAADAn3EmiU9bvPeec845M7O1VhFxkuLW2t47Iqrqn5ExAAAAAAAAAAAAAPAyTlIcEa21qrquq6rO+zrfOG1x/J443nufRwAAAAAAAAAAAADglfTeTzAcEWOMj4+P67rOmHFFxHVdY4wTIK+15pzP5/PUxwAAAAAAAAAAAADA3ygz//X9525xZvbfTm1cP3/+7L2fj6/rmnNW1Vrrv/4LAAAAAAAAAAAAAPh7rbU+2+LTDK+1Tl6cZ6v41MdVNec8qbG2GAAAAAAAAAAAAABe1ZwzInrva63W2nn5C0fnKqF9CeMWAAAAAElFTkSuQmCC)
+
+#### Health Insurance
+
+Replace the current India-specific text. Use:
+
+Many countries require international students to maintain valid health insurance throughout their studies. Even where it is optional, having comprehensive medical insurance protects students from unexpected healthcare expenses abroad.
+
+Head Educare assists students in selecting affordable and compliant international student health insurance plans that satisfy university and visa requirements while offering comprehensive medical coverage.
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAOCAIAAABYP4RYAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB00lEQVR4nO3cQY5jIQwFQAz89P2P2tsE7Fmg/poD9CijqGoFmIUP8PSiqvbeY4y11hgjIhoAAAAAAAAAAAAA8KGqKiKqKjPHGH+P5vP5/P7+7r2/Xq85Z2stIjKzqt60LQAAAAAAAAAAAADwr1TVnPMkjL++vq7rGmOckuL5eDzWWpm5987MzDwx5HfvDAAAAAAAAAAAAAD8vohoP+3Fc87H43GCxVU1W2trrb33fei9n69v3hoAAAAAAAAAAAAA+G2ntHjvfQqM11qnt7i1NjPz9XpVVe99rbXWmnO21lQXAwAAAAAAAAAAAMDn6b1HRGZm5lqrqu7k8Dyz3vsYIzOr6rquzHzvxgAAAAAAAAAAAADAv3Bd1xgjItZa/ccZ9fZTUXyajc/rfQAAAAAAAAAAAAAAPskdHq6qzNx7771PN/E8P87lbjPWWwwAAAAAAAAAAAAAH2nv3Xs/yeGIGGPc1cWz/USKT6dxVT2fz4i4c8YAAAAAAAAAAAAAwMc4jcVrrYjove+97/Bwf/duAAAAAAAAAAAAAMB/QbYYAAAAAAAAAAAAAGhNthgAAAAAAAAAAAAAOGSLAQAAAAAAAAAAAIDWZIsBAAAAAAAAAAAAgOMP1DbUvnwhtZ8AAAAASUVORK5CYII=)
+
+#### Student Loan
+
+Financing higher education should never become a barrier to achieving your dreams.
+
+Head Educare partners with leading financial institutions to help students secure education loans with competitive interest rates and flexible repayment options.
+
+Our experts guide students through:
+
+- - Loan eligibility assessment
+    - Financial documentation
+    - Loan application support
+    - Sponsor guidance
+    - Tuition payment planning Partner logos:
+- Prodigy Finance
+- MPOWER Financing
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAPCAIAAACTY1f9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAByUlEQVR4nO3cwW0zOwyFUVJDIem/x/QQx5H4L/RgpAIbeD5nM6MdC/hws7u/v78/Pz+7OyIyMyK6+/wAAAAAAAAAAAAAAG+ibrfb19dXVd3v90de3N1jjFffBgAAAAAAAAAAAAA8z/j4+BhjrLUys6rOXPGc89WHAQAAAAAAAAAAAABPVd398/OTmX+Hirv7bBgDAAAAAAAAAAAAAG+iImLOmZndfQrjvfda629qDAAAAAAAAAAAAAD879VJiiNirbXWOv92iwEAAAAAAAAAAADg3VRm7r0jorvHGJn5yItffRsAAAAAAAAAAAAA8DwjM7t7752ZY4yI2HsLiwEAAAAAAAAAAADg3YyTEc85T2R8XddjuhgAAAAAAAAAAAAAeB/1yIgzc++99z7P67pedxUAAAAAAAAAAAAA8GwVEScpHuO/DeOq+hsZAwAAAAAAAAAAAADvoM7ntMUR0d2Z2d3nCQAAAAAAAAAAAAC8iYqIOefv7293d/fee611v9+r6tW3AQAAAAAAAAAAAADPU7fb7bqu7o6IOedaq6r23pn56tsAAAAAAAAAAAAAgOfJs1V8Rouraq11UmNtMQAAAAAAAAAAAAC8lX+xtqrgjEanVwAAAABJRU5ErkJggg==)
+
+#### Mock Interview
+
+Our comprehensive interview preparation program helps students build confidence through realistic interview simulations and personalized feedback.
+
+Students receive:
+
+- - Live mock interviews
+    - University-specific preparation
+    - Visa interview coaching
+    - Communication skills enhancement
+    - Storytelling practice
+    - Personalized feedback
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD0IAAAAPCAIAAABMCHrLAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACaElEQVR4nO3cTWruOBAF0CpJHrz9rzTDD+unB5WY8GZJQ4c05wyMpJJBC7jcPOestXrve+/WWkRExDknAAAAAAAAAAAAAAD4lszce2dmZlY8OzMjog7HnPPt7a21Nufsvdc/NfvJVwMAAAAAAAAAAAAA/GZVt91aq3j2dV2ttT9//kTEaK29Xq+99957jFE3xLgBAAAAAAAAAAAAAP6Nc84Yo/c+52wfajQy877vvXft68Y5R4wbAAAAAAAAAAAAAODbMvOcc86p0u211hijRq1mEVHp7QpwPylvAAAAAAAAAAAAAAC+qrLZrb0Httdac86nffsjzd1a733vnZm99/rn594MAAAAAAAAAAAAAPC7VTa79z7njIjW2lO3Pfbec87MrJruvXfv/b7vzPzRNwMAAAAAAAAAAAAA/FaZmZn3fVcV91rrc9F2Rbrfm7rPOXX7KesGAAAAAAAAAAAAAOCrzjn7Q3ykup827lbj1lp9r+u673uM8aNvBgAAAAAAAAAAAAD4xaplOyIy89k+hdyjTmv8ZL0jovf+E68FAAAAAAAAAAAAAPj1MrNC23+FuWs6IqLS2621Oh1jfM5zAwAAAAAAAAAAAADwJU+t9hPjfoLdUTHuiKgYd12qcW0BAAAAAAAAAAAAAPiqJ7H917qMiLiua855zjnn7L3XWvd9jzH+02cCAAAAAAAAAAAAAPxf5CefT2o9Xq9X773y3dd1rbXGGHvv5wYAAAAAAAAAAAAAAF+Sma21z6nsatx+n1YDd1VxjzHWWpXqFuMGAAAAAAAAAAAAAPietVYltCOiAtu991pn5j/UBEbLf/OR6wAAAABJRU5ErkJggg==)
+
+### US MENTORSHIP PROGRAM
+
+![](data:image/png;base64,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)
+
+#### US Mentorship Program
+
+Our exclusive US Mentorship Program provides comprehensive guidance for students aiming to gain admission to competitive American universities. Our mentors work closely with students from profile building to final enrollment, ensuring every application reflects the student's full potential.
+
+Services include:
+
+Families who partner with Head Educare for the admissions process receive focused, high-touch mentorship designed to guide every step from strategy through submission. Mentorship in this stage includes:
+
+Unlimited, 1:1 Mentoring
+
+College List Strategy
+
+Timeline Management and Execution
+
+Narrative Development
+
+Activities and Application Presentation
+
+Essay Strategy and Execution
+
+Team-Based Review and Second Reader Insight
+
+Interview Preparation and Demonstrated Interest
+
+- - Academic planning
+    - University shortlisting
+    - SAT & ACT preparation guidance
+    - Advanced Placement (AP) guidance
+    - Common Application strategy
+    - Coalition Application support
+    - Essay brainstorming and review
+    - Extracurricular profile development
+    - Leadership and community engagement planning
+    - Research opportunity guidance
+    - Scholarship planning
+    - Financial aid strategy
+    - Interview preparation
+    - Visa preparation
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADsgAAAAPCAIAAAB8oTzDAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACy0lEQVR4nO3cS27jOhRFUX6uFHUy/+FlGklJJKtxqwQD1UsenmFgrUYg0XJg9TdOXWt9fn4exzHnLKW01kopa61aawEAAAAAAAAAAAAAXtZaq5SSYfBdCOfFGKP3/pgNx69fvz4+PsYY13XVWltr+dkY43mvAAAAAAAAAAAAAAD8SGvt37C4995a672f5/n+/n4cR/4tpcS+72OMLI5rrWuttdacs/f+5FcBAAAAAAAAAAAAAL4rq+J/D7dtm3Ne13We57ZtGQ/XWiNPI2Lf9+u6sjD+/383AAAAAAAAAAAAAPAf6r3fi8W5Ptxaa63dYfG+79u2RURuG0dr7e3tLWPiOWc+eu8eAwAAAAAAAAAAAACvKHviWmve5nXv/TzPvM2t4jlnlsNRSsmMOKviiCilzDnzAgAAAAAAAAAAAAB4RXPO8rcnfjw/jiPPW2v5WF7HnLPWWmttrd27xXkBAAAAAAAAAAAAALyoiMgp4gyLszDOmDjniu+KOA8jB43vHePrumqtx3Fc1/XcNwEAAAAAAAAAAAAAfq7WehfGWRLnRHEOE+ftWutPcRwRrbVMiiNijPHs3w8AAAAAAAAAAAAAfN+9SZxVcdbC5e+AcW4T11rHGFkbR36QT+Rocd723p/0CgAAAAAAAAAAAADATz12wndknPI8h4ozIV5rRSklb3LEuJQSEY+FMQAAAAAAAAAAAADw0h7D4syISym11ojY9721VkqJfDTD4vs7a628BQAAAAAAAAAAAABe3WNYnHvE6bqu8zzzJEop27Zd13VPGY8xzvOMiGf/fgAAAAAAAAAAAADgm2qt93VOFD9e35FxKqXE19dX7z0/3rZtjBERc87HfwQAAAAAAAAAAAAAvK7HNniMkUlxrXWtNcb4kxrnSnHOFUfEGCM7Y2ExAAAAAAAAAAAAALyuOwm+54ofC+F7iXitlYvFvwEBE4dMM5CMuwAAAABJRU5ErkJggg==)
+
+### GENERAL ACADEMIC QUALIFICATIONS
+
+#### Undergraduate Admission (Bangladesh) Qualification Typical Minimum Requirement
+
+SSC Completed
+
+HSC Minimum GPA 3.0–5.0 depending on university A Levels 2–3 A Levels
+
+IB Diploma Accepted
+
+GED Accepted by many universities
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAPCAIAAACTY1f9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABfklEQVR4nO3cwY3jMBBFwe4mhck/TIdgUyTnoMWEIC3gqhPB0w/goXOM0XuPiL13Zs45W2sBAAAAAAAAAAAAAHyZ6r2vteacc86/3733g5sAAAAAAAAAAAAAgPv19/v9er3O84yIqppzHsfx+Xwy8+ltAAAAAAAAAAAAAMB9+s/Pz3W0uKrGGGutzDzPs/f+9DYAAAAAAAAAAAAA4D49IsYYVZWZmVlVrbXjONwtBgAAAAAAAAAAAICv8u848dUWR0Rm7r0zc6316DAAAAAAAAAAAAAA4FY9Iqqqquace++IGGNERGvt4WkAAAAAAAAAAAAAwI361RNHxN67qlprc87revGzywAAAAAAAAAAAACAO1VmZuacMyL+HsJiAAAAAAAAAAAAAPg29fQAAAAAAAAAAAAAAOC/oC0GAAAAAAAAAAAAACK0xQAAAAAAAAAAAADARVsMAAAAAAAAAAAAAERoiwEAAAAAAAAAAACAi7YYAAAAAAAAAAAAAIiI+AWCQlm4JT4EvgAAAABJRU5ErkJggg==)
+
+#### Postgraduate Admission
+
+**Qualification Requirement**
+
+Bachelor's Degree
+
+Minimum CGPA 2.50–3.00/4.00 (higher-ranked universities often require 3.20+)
+
+MBA Some universities require work experience Doctorate Master's Degree plus research proposal
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAPCAIAAACTY1f9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB4ElEQVR4nO3cwWocOxCG0SpJHhu//4N6OUxLqiwEQwhkl3sdJucsmgZ1gx7g48+1VmZmZlVl5lqr9x4AAAAAAAAAAAAAwEvbe7fWzsspiltrLTO/+2IAAAAAAAAAAAAAwP9h732ee++q+vloPB6Pr6+vOWdEvL29PR6P3vsvHwEAAAAAAAAAAAAAryEzxxhVlZkfHx/v7+9jjMysqnG73fbea63MPOnxWuu7LwwAAAAAAAAAAAAA/Ccyc6111ot77ycsHmNExIiI+/3+bIvnnJl5uuNvvjUAAAAAAAAAAAAA8KfdbreIqKq999kmzsxzNCLiDBU/F4tPVawtBgAAAAAAAAAAAIDXc13XKYeras75czY8IuKMGJ/ouLV2Dp71MQAAAAAAAAAAAADwMj4/P3vv13Vd15WZZ8A4Ilpr43zRe6+qM2hssRgAAAAAAAAAAAAAXtVzt/gkxZnZWuu9x9ktrqr7/X5Gi+ec5x+7xQAAAAAAAAAAAADwevbeVTXnPFXx3vs5T9y++24AAAAAAAAAAAAAwF9h/O7gpMcAAAAAAAAAAAAAwD/CbjEAAAAAAAAAAAAAEKEtBgAAAAAAAAAAAAAObTEAAAAAAAAAAAAAEKEtBgAAAAAAAAAAAACOHws2xYwNNKKjAAAAAElFTkSuQmCC)
+
+### STANDARDIZED TESTS
+
+#### Test Purpose
+
+SAT Undergraduate admission (primarily USA) ACT Alternative to SAT
+
+GRE Master's & PhD GMAT MBA
+
+LSAT Law
+
+MCAT Medicine DAT Dentistry OAT Optometry
+
+![](data:image/png;base64,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)
+
+### ENGLISH LANGUAGE TESTS
+
+#### Test Accepted In
+
+**Test Accepted In** IELTS Academic Worldwide TOEFL iBT Worldwide
+
+PTE Academic Worldwide
+
+Duolingo English Test Increasingly accepted Cambridge English Selected universities
+
+![](data:image/png;base64,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)
+
+For a consultancy website, I would avoid making the checklist UK-specific. Instead, create a **"General Documents Checklist"** that covers the documents most commonly required across the USA, UK, Canada, Australia, New Zealand, Ireland, Europe, Malaysia, and South Korea. This gives students a clear idea of what to prepare before meeting with a counselor.
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADskAAAAPCAIAAACTY1f9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACjklEQVR4nO3cXWorORCA0Sqp2iR4/+vLNpJ0S5oHkRCGmbdczDXnPJjWD0YL+Kg8z7P3nplzztbaWisiIiIzAwAAAAAAAAAAAAB4LmutzNy/35u7Jc611nVd+7iqxhittb184IsBAAAAAAAAAAAAgD9hJ8VjjIjovf88qvf397e3t+u6Wmu99/M8d1u8bwMAAAAAAAAAAAAAz+Q4jqo6z/M4jvv9/vr6er/fe++ZWS8vL3POOWdEzDnXWntZVY9+NgAAAAAAAAAAAADwy1prrbX4ioczs/feWltrVURk5u12i4i11j64rmvXxgAAAAAAAAAAAADAM9lzi8cYmRkRezbx/q61VkTs47XWLo7XWsdxPPjVAAAAAAAAAAAAAMBv2/1way0zW2tV1XvPzLVWZWZV7ZJ435hzVtWj3wwAAAAAAAAAAAAA/L7jOG6325xzrbWT4j3DuLVWETHnnHPGV1scEbfb7bquB78aAAAAAAAAAAAAAPht3/FwROykuPe+v2utVVWttTlnZu6D/f3IJwMAAAAAAAAAAAAAf0Zm/qsW3gOM63s3M382yDsyBgAAAAAAAAAAAACeSWttt8VrrbXWGGOMsQcYV3yNNW6trbUioqp+RsYAAAAAAAAAAAAAwNPYSXFEtNaq6jiOqtr7tW/stnhv7QZ5LwEAAAAAAAAAAACAZ9J738FwRFzX9fn5eRzHHmZcEXEcx3VdO0Cec44xzvPc9TEAAAAAAAAAAAAA8DfKzP/c/55bnJn9y66N6+Pjo/e+j4/jGGNU1Zzz//4LAAAAAAAAAAAAAPh7zTm/2+LdDM85d16ce1bxro+raoyxU2NtMQAAAAAAAAAAAAA8qzFGRPTe55yttb35DyO/JyoGxmwGAAAAAElFTkSuQmCC)
+
+#### General Documents Checklist
+
+While document requirements vary by country, university, and programme, international students are generally required to prepare the following documents before starting their study abroad application.
+
+#### Academic Documents
+
+- Academic transcripts and certificates (SSC/O Level, HSC/A Level, Bachelor's, Master's, or equivalent, as applicable); Degree completion certificate or provisional certificate (where applicable)
+- Official grading scale or transcript explanation (if required)
+- For EU Entry all of the transcripts and certificates should be duly Apostilled by MOFA
+
+#### Identity Documents
+
+- Valid passport (minimum validity as required by the destination country)
+- Recent passport-size photographs- (For EU Country)
+
+#### English Language Proficiency
+
+- IELTS Academic
+- TOEFL iBT
+- PTE Academic
+- Duolingo English Test (US/UK/Canada/Ireland)
+- Medium of Instruction (MOI) Certificate (accepted by selected universities)
+
+#### Application Documents
+
+- Statement of Purpose (SOP) / Personal Statement / Motivation Letter
+- Curriculum Vitae (CV) or Résumé
+- **Two or Three Letters of Recommendation (LORs)** (academic and/or professional, depending on the programme)
+- Portfolio (for Architecture, Art, Design, and other creative programmes)
+- Research Proposal (for selected Master's and most PhD programmes)
+
+#### Employment Documents (If Applicable)
+
+- Work Experience Certificate(s)
+- Employment Reference Letter(s)
+- Internship Certificate(s)
+- Professional Licenses or Certifications (if applicable)
+
+#### Financial Documents
+
+- Bank Statement(s)
+- Financial Sponsorship Letter or Affidavit of Support
+- Proof of Income or Salary Certificate/ Trade License
+- Education Loan Approval Letter (if applicable)
+
+Visa application documents:
+
+#### Additional Documents (Where Applicable)
+
+- Standardized test scores (SAT, ACT, GRE, GMAT, etc.)
+- Scholarship or Sponsorship Documents
+- Valid National ID or Birth Certificate (Apostilled Required for EU Country)
+- Medical or Health Insurance Documents (for selected countries)
+- Police Clearance Certificate (where required)
+- Family Certificate duly Apostilled by MOFA (For EU Country)
+
+**Please note:** The exact document requirements vary depending on the destination country, university, and programme. Our experienced counselors will provide you with a personalized document checklist based on your academic profile and chosen study destination.
+
+### DESTINATIONS
+
+![](data:image/jpeg;base64,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) **USA**
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+#### Tuition Fees (Annul)
+
+| UG         | PG         | MBA         | DOCTORATE |
+| ---------- | ---------- | ----------- | --------- |
+| \$ 8k -75k | \$ 8K -80k | \$ 9k -120k | \$9k -35k |
+
+#### English Requirement
+
+| TEST  | UG        | PG        | MBA      | DOCTORATE |
+| ----- | --------- | --------- | -------- | --------- |
+| IELTS | 5.5 – 7.0 | 6.0 – 7.5 | 6.0 -7.5 | 6.0 – 7.5 |
+| TOFEL | 55-95     | 55-105    | 58-105   | 58-105    |
+| PTE   | 47-67     | 52-72     | 56-78    | 56-78     |
+
+**![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADsgAAAAPCAIAAAB8oTzDAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACoUlEQVR4nO3cS24rORBFwSSZKtje//68DRsqkm+Q7YLG3UILfogYCPWRBC7g4Lb7/T7GaK2ttXrve++IiIjWWgAAAAAAAAAAAAAAf5e9d2utPiOiKuK1Vtt7n+dZ7zJzztl7r9tXnxkAAAAAAAAAAAAAeJrH6eE55xjj8W1+fX19fn6e59l7H2Pc7/cKi+ec//tRAQAAAAAAAAAAAIDnq33ichxHRMw539/fPz4+6jMi8u3tba211oqItdbeu24z88XHBwAAAAAAAAAAAACe4TEs7r3vH733zOy9R0RGxNUd773HGL338zwrNQYAAAAAAAAAAAAA/ibHccw511q999ZaFcZrrdx7R0RmzjkrOq53t9vt1WcGAAAAAAAAAAAAAJ6mFovXWpUQ13rxGKO1NsbI1lpmVkZc0fFaKzNffWwAAAAAAAAAAAAA4Dn23q21uj6Oo9ri3ntE1DzxWisjYq211oqfsLi+fZ7n604OAAAAAAAAAAAAADxZLRbvvWuxuFRCPMbIvXdm9t7XWvUoIur6dWcGAAAAAAAAAAAAAP6Ta6W4MuL2o4aKe+91cUXGeQXErbVrujgiqjAGAAAAAAAAAAAAAH6jx064IuNLPa/p4kqI994ZEXXTe6/cODMfC2MAAAAAAAAAAAAA4Fd7DIsrI46I1lpmHsdR08VZX62w+PrN3rtuAQAAAAAAAAAAAIDf7jEsrj3icp7n/X6vJxkRt9vtPM9rynjOeb/fM/PV5wcAAAAAAAAAAAAA/qXW2nVdE8WP11dkXCIiv7+/xxj1+na7zTkzc631+EcAAAAAAAAAAAAAwO/12AbPOSspbq3tveec/6TGtVJcc8WZOeeszlhYDAAAAAAAAAAAAAC/15UEX3PFj4XwtUS8967F4j87Slnl7J3QngAAAABJRU5ErkJggg==)**
+
+#### Document Checklist for Visa Application
+
+- Passport
+- I -20
+- DS -160 Application Confirmation Form
+- SEVIS Payment Confirmation
+- Bank Solvency
+- All academic Transcripts & Certificate
+- English Proficiency Certificate/ SAT/ GRE/ GMAT – if applicable
+
+## Scholarship & Funding
+
+1. **Fulbright Scholarship:** Fully Funded
+2. **Hubert Humphrey Fellowship:** Fully Funded
+3. **University Merit Awards:** Up to 50%
+4. **OEA Scholarships:** Varies
+
+### ![](data:image/jpeg;base64,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) UNITED KINGDOM
+
+#### Documents Checklist for offer Letter
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+#### Tuition Fees (Annul)
+
+| UG       | PG       | MBA       | DOCTORATE |
+| -------- | -------- | --------- | --------- |
+| £10k–38k | £10k–42k | £15k –65k | £12k–28k  |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.5–7.0 | 6.5–7.5 | 6.5–7.5   |
+| TOFEL | 80–95   | 90–100  | 95–105  | 95–105    |
+
+| PTE | 56–65 | 61–70 | 65–76 | 65–76 |
+| --- | ----- | ----- | ----- | ----- |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- CAS Letter
+- Recent Bank Statement
+- All academic Certificate/ Transcripts/ English Proficiency Certificate
+- Tuberculosis Blood (TB) Test
+- Health Surcharge
+- Work Experience Letter
+
+## Scholarship & Funding
+
+1. **Chevening Scholarship:** Fully Funded
+2. **Commonwealth Scholarship:** Fully Funded
+3. **GREAT Scholarship:** £10,000
+4. **University Bursaries:** £2,000–£8,000
+
+#### Australia
+
+Documents Checklist for offer Letter:
+
+- - Professional CV
+    - All Academic Transcripts
+    - All Academic Certificate
+    - English Proficiency Certificate
+    - 2 Recommendation Letter
+    - Work Experience Letter – if applicable
+
+#### Tuition Fees (Annul)-AUD
+
+| UG            | PG            | MBA          | DOCTORATE    |
+| ------------- | ------------- | ------------ | ------------ |
+| AU\$ 20k –50k | AU\$ 22k –55k | AU\$ 30k–70k | AU\$ 25k–45k |
+
+#### English Requirement
+
+| TEST | UG  | PG  | MBA | DOCTORATE |
+| ---- | --- | --- | --- | --------- |
+
+| IELTS | 6.0   | 6.5   | 6.5    | 6.5    |
+| ----- | ----- | ----- | ------ | ------ |
+| TOFEL | 60–79 | 79–94 | 79–100 | 79–100 |
+| PTE   | 50–58 | 58–65 | 58–72  | 58–72  |
+
+#### Documents Checklist for Visa Application
+
+- - Online Application
+    - Valid Passport
+    - Confirmation of Enrollment (CoE)
+    - Recent Bank Statement
+    - Sources of incomes' documents
+    - Tax documentation
+    - All academic Certificate/ Transcripts/ English Proficiency Certificate
+    - Medical Test
+    - Health Surcharge
+    - Work Experience Letter
+    - Police Clearance
+    - Statement of purposes
+
+## Scholarship & Funding
+
+1. **Australia Awards:** Fully Funded
+2. **Endeavour Scholarship:** AUD 272,500
+3. **University Excellence Awards:** 25%–50%
+4. **International Merit Scholarships:** AUD 5,000–15,000
+
+![](data:image/jpeg;base64,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) **CANADA**
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+#### Tuition Fees (Annul)-CAD
+
+| UG            | PG           | MBA         | DOCTORATE   |
+| ------------- | ------------ | ----------- | ----------- |
+| CA\$ 18k –45k | CA\$ 17k–40k | CA\$ 25–80k | CA\$ 7k–25k |
+
+#### English Requirement
+
+| TEST  | UG      | PG     | MBA     | DOCTORATE |
+| ----- | ------- | ------ | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.5    | 6.5–7.0 | 6.5       |
+| TOFEL | 80–90   | 88–100 | 90–105  | 90–105    |
+| PTE   | 58–65   | 60–68  | 65–76   | 65–76     |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Enrollment confirmation
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Police Clearence
+- Statement of purposes
+
+## Scholarship & Funding
+
+1. **Vanier Canada Graduate Scholarships:** CAD 50,000/yr
+2. **Banting Postdoctoral Fellowships:** CAD 70,000/yr
+3. **University of Toronto Award:** Up to 40%
+4. **Provincial Scholarships:** Varies
+
+### ![](data:image/jpeg;base64,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) NEW ZEALAND
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+#### Annul Tuition Fees
+
+| UG                | PG               | MBA              | DOCTORATE                                                                                              |
+| ----------------- | ---------------- | ---------------- | ------------------------------------------------------------------------------------------------------ |
+| **NZ\$** 22k –40k | **NZ\$** 26k–45k | **NZ\$** 35k–60k | **NZ\$** 7k–12k (domestic-equivalent rates at many public universities for international PhD students) |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.0–6.5 | 6.0–6.5 | 6.0–6.5   |
+| TOFEL | 80–90   | 80–90   | 80–90   | 80–90     |
+| PTE   | 50–65   | 50–65   | 50–65   | 50–65     |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+## Scholarship & Funding
+
+- Manaaki New Zealand Scholarships — Fully Funded
+- New Zealand Excellence Awards (NZEA) — NZD 5,000–20,000
+- University International Scholarships — Up to 50%
+- Vice-Chancellor's Scholarships — Varies
+
+![](data:image/png;base64,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) **IRELAND**
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+Annual Tuition Fees
+
+| UG       | PG        | MBA       | DOCTORATE |
+| -------- | --------- | --------- | --------- |
+| €10k–30k | €11k –35k | €15k –38k | €8k –20k  |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.0–6.5 | 6.0–6.5 | 6.0–6.5   |
+| TOFEL | 80–90   | 80–90   | 80–90   | 80–90     |
+| PTE   | 50–65   | 50–65   | 50–65   | 50–65     |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+## Scholarship & Funding
+
+- Government of Ireland International Education Scholarship — Fully Funded + €10,000 Stipend
+- Irish Research Council Scholarships — Fully Funded
+- University Merit Scholarships — Up to 50%
+- International Student Scholarships — Varies
+
+**![](data:image/jpeg;base64,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)![](data:image/jpeg;base64,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)**![](data:image/jpeg;base64,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) ![](data:image/jpeg;base64,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)**EUROPE**
+
+(Country specific pages) Include
+
+#### Finland /Denmark /Belgium /Netherlands
+
+![](data:image/jpeg;base64,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) **Finland**
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+#### Annual Tuition Fees
+
+| UG      | PG       | MBA       | DOCTORATE     |
+| ------- | -------- | --------- | ------------- |
+| €7k–20k | €7k –30k | €15k –38k | Mostly funded |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.0–6.5 | 6.0–6.5 | 6.0–6.5   |
+| TOFEL | 80–95   | 80–95   | 80–95   | 80–95     |
+| PTE   | 58–65   | 58–65   | 58–65   | 58–65     |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate/Apostille
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+## Scholarship & Funding
+
+Finland Scholarship — €5,000 Relocation Grant + Tuition Waiver
+
+- - EDUFI Fellowship — Fully Funded
+    - University Tuition Fee Scholarships — 50%–100% Tuition Waiver
+    - Excellence Scholarships — Varies
+
+#### Denmark
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+| UG       | PG        | MBA       | DOCTORATE     |
+| -------- | --------- | --------- | ------------- |
+| €10k–20k | €10k –30k | €15k –38k | Mostly funded |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.0–6.5 | 6.0–6.5 | 6.0–6.5   |
+
+| TOFEL | 80–95 | 80–95 | 80–95 | 80–95 |
+| ----- | ----- | ----- | ----- | ----- |
+| PTE   | 58–65 | 58–65 | 58–65 | 58–65 |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate/Apostille
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+## Scholarship & Funding
+
+- **Danish Government Scholarships** — **Fully Funded / Full or Partial Tuition Waiver**
+- **Erasmus+ Scholarships** — **Fully Funded**
+- **University Merit Scholarships** — **50%–100% Tuition Waiver**
+- **Nordplus Scholarship** — **Varies**
+
+**Netherland**
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+| UG       | PG        | MBA       | DOCTORATE     |
+| -------- | --------- | --------- | ------------- |
+| €10k–20k | €10k –30k | €15k –38k | Mostly funded |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.0–6.5 | 6.0–6.5 | 6.0–6.5   |
+| TOFEL | 80–95   | 80–95   | 80–95   | 80–95     |
+| PTE   | 58–65   | 58–65   | 58–65   | 58–65     |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate/Apostille
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+## Scholarship & Funding
+
+- **Holland Scholarship** — **€5,000**
+- **Orange Knowledge Programme (OKP)** — **Fully Funded**
+- **University Excellence Scholarships** — **50%–100% Tuition Waiver**
+- **International Merit Scholarships** — **Varies**
+
+**Belgium**
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+| UG      | PG       | MBA      | DOCTORATE     |
+| ------- | -------- | -------- | ------------- |
+| €3k–10k | €3k –15k | €3k –38k | Mostly funded |
+
+**English Requirement**
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 6.0–6.5 | 6.0–6.5 | 6.0–6.5 | 6.0–6.5   |
+| TOFEL | 80–95   | 80–95   | 80–95   | 80–95     |
+| PTE   | 58–65   | 58–65   | 58–65   | 58–65     |
+
+**Documents Checklist for Visa Application**
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate/Apostille
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+## Scholarship & Funding
+
+- - ARES Scholarships — Fully Funded
+    - VLIR-UOS Scholarships — Fully Funded
+    - Master Mind Scholarships — €10,000 + Tuition Waiver
+    - University Excellence Scholarships — Varies
+
+### ![](data:image/jpeg;base64,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) MALAYSIA
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+#### Program Annual Tuition (USD)
+
+| UG       | PG       | MBA      | DOCTORATE |
+| -------- | -------- | -------- | --------- |
+| \$3k–12k | \$3k–15k | \$5k–25k | \$3k–12k  |
+
+#### English Requirement
+
+| TEST  | UG      | PG      | MBA     | DOCTORATE |
+| ----- | ------- | ------- | ------- | --------- |
+| IELTS | 4.5–6.5 | 4.5–6.5 | 5.5–6.5 | 5.5–6.5   |
+| TOFEL | 41–90   | 45–90   | 45–90   | 55–90     |
+| PTE   | 42–60   | 42–60   | 42–60   | 42–60     |
+
+![](data:image/png;base64,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)
+
+## Scholarship & Funding
+
+- Malaysia International Scholarship (MIS) — Fully Funded
+- MTCP Scholarship — Fully Funded
+- University Merit Scholarships — 25%–100% Tuition Waiver
+- International Student Scholarships — Varies
+
+### ![](data:image/jpeg;base64,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) SOUTH KOREA
+
+Documents Checklist for offer Letter:
+
+- Professional CV
+- All Academic Transcripts
+- All Academic Certificate
+- English Proficiency Certificate
+- 2 Recommendation Letter
+- Work Experience Letter – if applicable
+
+**Program Annual Tuition**
+
+### (USD)
+
+| UG       | PG       | MBA      | DOCTORATE |
+| -------- | -------- | -------- | --------- |
+| \$9k–27k | \$8k–35k | \$9k–70k | \$12k–35k |
+
+#### English Requirement
+
+| TEST             | UG      | PG      | MBA     | DOCTORATE |
+| ---------------- | ------- | ------- | ------- | --------- |
+| IELTS            | 5.5–7.0 | 6.0–7.5 | 6.0–7.5 | 6.0–7.5   |
+| TOEFL<br><br>iBT | 55–90   | 70–100  | 80–100  | 80–100    |
+
+| PTE<br><br>Academic | 47–65  | 52–70   | 56–72   | 56–72   |
+| ------------------- | ------ | ------- | ------- | ------- |
+| Duolingo            | 90–120 | 100–125 | 105–130 | 105–130 |
+
+#### Documents Checklist for Visa Application
+
+- Online Application
+- Valid Passport
+- Confirmation of Enrollment (CoE)
+- Recent Bank Statement
+- Sources of incomes' documents
+- Tax documentation
+- All academic Certificate/ Transcripts/ English Proficiency Certificate/Apostille
+- Medical Test
+- Health Surcharge
+- Work Experience Letter
+- Statement of purposes
+
+## Scholarship & Funding
+
+- - Global Korea Scholarship (GKS) — Fully Funded
+    - Korean Government Scholarship Program — Fully Funded
+    - University Excellence Scholarships — 30%–100% Tuition Waiver
+    - International Merit Scholarships — Varies
+
+#### Pearson Test of English (PTE)
+
+Transform your English proficiency with our expert -led coaching programs. We offer comprehensive training for PTE and spoken English with proven teaching methods and personalized guidance. At Head Educare, we believe that every student deserves personalized support and a smarter way to learn.
+
+PTE Coaching Modules
+
+Comprehensive training covering all 4 PTE skills with AI-powered guidance and proven template strategies
+
+- _Speaking Module_
+- _Writing Module_
+- _Reading Module_
+- _Listening Module_
+
+PTE Batches
+
+Regular Batch – Online/ Face to Face
+
+Perfect for students across Bangladesh who want flexible online/Face to Face/ Hybrid learning with AIpowered practice. Instructor led face- to – face courses. Hands -on/ online activities help you apply what
+
+you've learned right away. Get the best PTE Coaching in a convenient format. Fast Track Batch – Online/Face to Face
+
+PTE Fast Tract batch is a face to face, dynamic course designed to quickly prepare you for the exam with coaching in a jiffy. Get the best PTE Coaching in a bite sized format with no compromise in quality.
+
+1:1 One on one Batch
+
+Personalized coaching for guaranteed high scores with exclusive AI optimization.
+
+- Completely personalized sessions
+- Flexible timing & duration
+- Customized AI study plan
+- Unlimited mock tests
+- 24/7 support access
+
+Enroll Now :
+
+Contact Details Address :
+
+# SAT Course
+
+Prepare for the Digital SAT with the world's first fully interactive SAT teaching platform, featuring recorded lessons from top scorers covering every DSAT topic alongside targeted practice and performance insights.
+
+Enroll Now : Contact Details Address :

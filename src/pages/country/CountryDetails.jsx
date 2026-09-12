@@ -9,8 +9,8 @@ import {
   Intakes,
   Salaries,
   TopCourses,
-  VisaDocs,
-  Scholarships,
+  DocumentsTable,
+  ScholarshipTable,
 } from "./countryDetailHelpers";
 
 export default function CountryDetails() {
@@ -25,9 +25,7 @@ export default function CountryDetails() {
     return (
       <>
         <style>{css}</style>
-        <div className="loading-screen">
-          <span>Country not found.</span>
-        </div>
+        <div className="loading-screen">Country not found.</div>
       </>
     );
 
@@ -42,6 +40,7 @@ export default function CountryDetails() {
   const courses = country.top_courses ?? country.popular_courses;
   const visaDocs = country.visa_documents;
   const scholarships = country.scholarships ?? [];
+  const offerDocs = country.offer_letter_documents;
 
   return (
     <>
@@ -61,41 +60,53 @@ export default function CountryDetails() {
           )}
           <div className="hero-overlay" />
           <div className="hero-content">
-            {flag && <span className="hero-flag">{flag}</span>}
+            <div className="hero-badge">
+              <span className="hero-flag">{flag}</span>
+              <span className="hero-badge-text">Study Destination</span>
+            </div>
             <h1 className="hero-title">Study in {name}</h1>
             {desc && <p className="hero-desc">{desc}</p>}
+            <span className="hero-accent" />
           </div>
         </div>
 
         {/* ── content sections ── */}
         <div className="sections">
-          <SectionCard icon="money" title="Tuition Fees">
+          <SectionCard title="Tuition Fees">
             <TuitionFees fees={fees} />
           </SectionCard>
 
-          <SectionCard icon="language" title="Language Requirements">
+          <SectionCard title="Language Requirements">
             <LanguageRequirements reqs={langs} />
           </SectionCard>
 
-          <SectionCard icon="calendar" title="Intake Periods">
+          <SectionCard title="Intake Periods">
             <Intakes intakes={intakes} />
           </SectionCard>
 
-          <SectionCard icon="briefcase" title="Post-Study Work Salaries">
+          <SectionCard title="Post-Study Work Salaries">
             <Salaries salaries={salaries} />
           </SectionCard>
 
-          <SectionCard icon="book" title="Top Courses">
+          <SectionCard title="Top Courses">
             <TopCourses courses={courses} />
           </SectionCard>
 
-          <SectionCard icon="document" title="Visa Documents Required">
-            <VisaDocs docs={visaDocs} />
-          </SectionCard>
+          {offerDocs?.length > 0 && (
+            <SectionCard title="Documents for Offer Letter">
+              <DocumentsTable items={offerDocs} />
+            </SectionCard>
+          )}
 
-          {scholarships && scholarships.length > 0 && (
-            <SectionCard icon="money" title="Scholarships & Funding">
-              <Scholarships scholarships={scholarships} />
+          {visaDocs?.length > 0 && (
+            <SectionCard title="Documents for Visa Application">
+              <DocumentsTable items={visaDocs} />
+            </SectionCard>
+          )}
+
+          {scholarships?.length > 0 && (
+            <SectionCard title="Scholarships & Funding">
+              <ScholarshipTable scholarships={scholarships} />
             </SectionCard>
           )}
         </div>

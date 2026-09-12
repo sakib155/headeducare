@@ -122,17 +122,26 @@ const OurPeople = () => {
   return (
     <section className="mx-auto px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl py-16">
       {/* Section header */}
-      <div className="text-center mb-14">
-        <span className="inline-block text-primary font-semibold text-xs uppercase tracking-widest mb-3">
-          Meet Our Team
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white leading-tight">
-          Expert Counselors at Your Service
-        </h2>
-        <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm max-w-xl mx-auto">
-          Our diverse team brings decades of combined experience from top universities across four continents.
-        </p>
-      </div>
+     <div className="text-center mb-16">
+  <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
+    Meet Our Team
+  </h2>
+
+  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight">
+    <span className="block text-[#0d121b] dark:text-white">
+      Thousands run,{" "}
+      <span className="text-gray-400 dark:text-gray-500">A few finish.</span>
+    </span>
+    <span className="block mt-1 text-[#0d121b] dark:text-white">
+      We make sure,{" "}
+      <span className="text-primary">You rise above.</span>
+    </span>
+  </h3>
+
+  <p className="mt-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400">
+    Choose a mentor & discover your potential.
+  </p>
+</div>
 
       {/* People grid */}
       <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">

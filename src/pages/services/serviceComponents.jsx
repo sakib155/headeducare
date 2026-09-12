@@ -600,21 +600,14 @@ export function CheckList({ items, columns = 1 }) {
         >
           <span
             style={{
-              width: 20,
-              height: 20,
+              width: 6,
+              height: 6,
               borderRadius: "50%",
-              background: "rgba(0,91,143,0.1)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              background: "var(--srv-checklist-color, #005B8F)",
               flexShrink: 0,
-              marginTop: 1,
-              fontSize: 11,
-              color: "#005B8F",
+              marginTop: 7,
             }}
-          >
-            ✓
-          </span>
+          />
           {item}
         </li>
       ))}
@@ -676,6 +669,10 @@ export function InfoBox({ icon: Icon, title, children, variant = "blue" }) {
             fontSize: 16,
             color: v.title,
             fontFamily: "Lexend,sans-serif",
+            textDecoration: "underline",
+            textUnderlineOffset: 4,
+            textDecorationColor: v.title,
+            textDecorationThickness: 2,
           }}
         >
           {title}

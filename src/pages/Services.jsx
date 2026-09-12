@@ -63,16 +63,7 @@ const FALLBACK_SERVICES = [
     detailed_content:
       "We help you find and apply for merit-based, need-based, and country-specific scholarships. Our team assists with scholarship essays, applications, and interview preparation to maximize your chances of funding.",
   },
-  {
-    id: "7",
-    title: "US Mentorship",
-    slug: "us-mentorship",
-    icon: "workspace_premium",
-    description:
-      "Holistic guidance from experienced liberal arts' graduates and former admissions officers to build standout applications.",
-    detailed_content:
-      "Our personalized mentoring programs guide students through every stage of the admissions process. We help students develop strong profiles and submit compelling applications, with support for elite and liberal arts colleges in the US.",
-  },
+  
 ];
 
 const processSteps = [

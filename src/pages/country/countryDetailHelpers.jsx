@@ -1,54 +1,21 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// countryDetailHelpers.jsx
-// Shared icons, utility functions, and sub-components for CountryDetails pages.
-// ─────────────────────────────────────────────────────────────────────────────
-
-// ── inline SVG icon ──────────────────────────────────────────────────────────
-export const Icon = ({ d, size = 18 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={2}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d={d} />
-  </svg>
-);
-
-export const icons = {
-  money: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6",
-  language: "M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6",
-  calendar:
-    "M8 2v4M16 2v4M3 10h18M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z",
-  briefcase: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16M2 9h20",
-  document:
-    "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6",
-  book: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z",
-  check: "M20 6L9 17l-5-5",
-};
-
-// ── helpers ──────────────────────────────────────────────────────────────────
 export const fmt = (n, cur) =>
-  n != null ? `${cur} ${n.toLocaleString()}` : "—";
+  n != null ? `${cur} ${n.toLocaleString()}` : "-";
 
 export const pct = (min, max, cur) =>
   min && max
     ? `${fmt(min, cur)} – ${fmt(max, cur)}`
     : fmt(min ?? max, cur ?? "");
 
-// ── SectionCard ──────────────────────────────────────────────────────────────
-export function SectionCard({ icon, title, children }) {
+export const Icon = ({ d, size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d={d} />
+  </svg>
+);
+
+export function SectionCard({ title, children }) {
   return (
     <div className="section-card">
       <div className="section-header">
-        <span className="section-icon">
-          <Icon d={icons[icon]} size={20} />
-        </span>
         <h2 className="section-title">{title}</h2>
       </div>
       <div className="section-body">{children}</div>
@@ -56,52 +23,61 @@ export function SectionCard({ icon, title, children }) {
   );
 }
 
-// ── TuitionFees ──────────────────────────────────────────────────────────────
+const LEVEL_LABELS = { undergraduate: "UG", postgraduate: "PG", mba: "MBA", doctorate: "Doctorate" };
+
 export function TuitionFees({ fees }) {
   if (!fees) return <p className="empty">No tuition data available.</p>;
+  const levels = ["undergraduate", "postgraduate", "mba", "doctorate"];
   return (
-    <div className="fees-grid">
-      {Object.entries(fees).map(([level, data]) => (
-        <div key={level} className="fee-card">
-          <div className="fee-label">
-            {level.charAt(0).toUpperCase() + level.slice(1)}
-          </div>
-          <div className="fee-range">
-            {pct(data.min, data.max, data.currency)}
-          </div>
-          {data.note && <div className="fee-note">{data.note}</div>}
-        </div>
-      ))}
+    <div className="table-wrap">
+      <table className="data-table tuition-table">
+        <thead>
+          <tr>
+            <th>Program</th>
+            {levels.map((l) => <th key={l}>{LEVEL_LABELS[l]}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span className="badge">Annual Tuition</span></td>
+            {levels.map((l) => {
+              const d = fees[l];
+              return (
+                <td key={l} className="score">
+                  {d ? pct(d.min, d.max, d.currency) : "-"}
+                  {d?.note && <div className="fee-note-inline">{d.note}</div>}
+                </td>
+              );
+            })}
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
 
-// ── LanguageRequirements ─────────────────────────────────────────────────────
 export function LanguageRequirements({ reqs }) {
-  if (!reqs?.length)
-    return <p className="empty">No language data available.</p>;
-  const hasLevel = reqs.some((r) => r.level);
-  const hasMaxScore = reqs.some((r) => r.max_score);
+  if (!reqs?.length) return <p className="empty">No language data available.</p>;
+  const levels = ["Undergraduate", "Postgraduate", "MBA", "Doctorate"];
+  const tests = [...new Set(reqs.map((r) => r.test))];
+  const getScore = (test, level) => {
+    const found = reqs.find((r) => r.test === test && r.level === level);
+    return found ? found.min_score + (found.max_score ? "–" + found.max_score : "") : "-";
+  };
   return (
     <div className="table-wrap">
-      <table className="data-table">
+      <table className="data-table lang-table">
         <thead>
           <tr>
             <th>Test</th>
-            {hasLevel && <th>Level</th>}
-            <th>Min Score</th>
-            {hasMaxScore && <th>Max Score</th>}
+            {levels.map((l) => <th key={l}>{l}</th>)}
           </tr>
         </thead>
         <tbody>
-          {reqs.map((r, i) => (
+          {tests.map((test, i) => (
             <tr key={i}>
-              <td>
-                <span className="badge">{r.test}</span>
-              </td>
-              {hasLevel && <td>{r.level ?? "—"}</td>}
-              <td className="score">{r.min_score}</td>
-              {hasMaxScore && <td className="score">{r.max_score ?? "—"}</td>}
+              <td><span className="badge">{test}</span></td>
+              {levels.map((l) => <td key={l} className="score">{getScore(test, l)}</td>)}
             </tr>
           ))}
         </tbody>
@@ -110,88 +86,54 @@ export function LanguageRequirements({ reqs }) {
   );
 }
 
-// ── Intakes ──────────────────────────────────────────────────────────────────
 export function Intakes({ intakes }) {
-  if (!intakes?.length)
-    return <p className="empty">No intake data available.</p>;
+  if (!intakes?.length) return <p className="empty">No intake data available.</p>;
   return (
     <div className="intakes-grid">
       {intakes.map((intake, i) => (
-        <div
-          key={i}
-          className="intake-card"
-          style={{ "--delay": `${i * 0.08}s` }}
-        >
+        <div key={i} className="intake-card" style={{ "--delay": `${i * 0.08}s` }}>
           <div className="intake-name">{intake.name}</div>
           <div className="intake-term">{intake.term}</div>
           <div className="intake-window">
-            <Icon d={icons.calendar} size={13} />
+            <Icon d="M8 2v4M16 2v4M3 10h18M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z" size={13} />
             <span>{intake.apply_window}</span>
           </div>
-          {intake.start_month && (
-            <div className="intake-start">Starts: {intake.start_month}</div>
-          )}
+          {intake.start_month && <div className="intake-start">Starts: {intake.start_month}</div>}
         </div>
       ))}
     </div>
   );
 }
 
-// ── Salaries ─────────────────────────────────────────────────────────────────
 export function Salaries({ salaries }) {
-  if (!salaries?.length)
-    return <p className="empty">No salary data available.</p>;
-  const maxVal = Math.max(
-    ...salaries.filter((s) => s.max).map((s) => s.max),
-    1,
-  );
+  if (!salaries?.length) return <p className="empty">No salary data available.</p>;
   return (
-    <div className="salary-list">
-      {salaries.map((s, i) => {
-        const hasRange = s.min && s.max;
-        const barPct = hasRange ? Math.round((s.max / maxVal) * 100) : null;
-        return (
-          <div key={i} className="salary-row">
-            <div className="salary-field">{s.field}</div>
-            <div className="salary-right">
-              {hasRange ? (
-                <>
-                  <div className="salary-bar-wrap">
-                    <div
-                      className="salary-bar"
-                      style={{ width: `${barPct}%` }}
-                    />
-                  </div>
-                  <div className="salary-value">
-                    {pct(s.min, s.max, s.currency)}
-                  </div>
-                </>
-              ) : (
-                <span className="salary-note">
-                  {s.note ?? "Data unavailable"}
-                </span>
-              )}
-            </div>
-          </div>
-        );
-      })}
+    <div className="table-wrap">
+      <table className="data-table">
+        <thead>
+          <tr><th>Field</th><th>Annual Salary</th></tr>
+        </thead>
+        <tbody>
+          {salaries.map((s, i) => (
+            <tr key={i}>
+              <td style={{ fontWeight: 600 }}>{s.field}</td>
+              <td className="score">
+                {s.min && s.max ? pct(s.min, s.max, s.currency) : s.note ?? "-"}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-// ── TopCourses ───────────────────────────────────────────────────────────────
 export function TopCourses({ courses }) {
-  if (!courses?.length)
-    return <p className="empty">No course data available.</p>;
+  if (!courses?.length) return <p className="empty">No course data available.</p>;
   return (
     <div className="courses-wrap">
       {courses.map((c, i) => (
-        <span
-          key={i}
-          className="course-chip"
-          style={{ "--delay": `${i * 0.04}s` }}
-        >
-          <Icon d={icons.book} size={13} />
+        <span key={i} className="course-chip" style={{ "--delay": `${i * 0.04}s` }}>
           {c}
         </span>
       ))}
@@ -199,36 +141,47 @@ export function TopCourses({ courses }) {
   );
 }
 
-// ── VisaDocs ─────────────────────────────────────────────────────────────────
-export function VisaDocs({ docs }) {
-  if (!docs?.length) return <p className="empty">No visa data available.</p>;
+export function DocumentsTable({ items }) {
+  if (!items?.length) return null;
   return (
-    <ul className="visa-list">
-      {docs.map((doc, i) => (
-        <li key={i} className="visa-item" style={{ "--delay": `${i * 0.06}s` }}>
-          <span className="visa-check">
-            <Icon d={icons.check} size={13} />
-          </span>
-          {doc}
-        </li>
-      ))}
-    </ul>
+    <div className="table-wrap">
+      <table className="data-table">
+        <thead>
+          <tr><th>Required Documents</th></tr>
+        </thead>
+        <tbody>
+          {items.map((item, i) => <tr key={i}><td>{item}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
-// ── Scholarships ─────────────────────────────────────────────────────────────
-export function Scholarships({ scholarships }) {
+export function ScholarshipTable({ scholarships }) {
   if (!scholarships?.length) return <p className="empty">No scholarship data available.</p>;
+  const splitEntry = (s) => {
+    const colon = s.indexOf(":");
+    if (colon !== -1) return [s.slice(0, colon).trim(), s.slice(colon + 1).trim()];
+    return [s, ""];
+  };
   return (
-    <ul className="visa-list">
-      {scholarships.map((s, i) => (
-        <li key={i} className="visa-item" style={{ "--delay": `${i * 0.06}s` }}>
-          <span className="visa-check" style={{ backgroundColor: "var(--green-bg)", color: "var(--green)" }}>
-            <Icon d={icons.check} size={13} />
-          </span>
-          {s}
-        </li>
-      ))}
-    </ul>
+    <div className="table-wrap">
+      <table className="data-table">
+        <thead>
+          <tr><th>Scholarship / Funding</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          {scholarships.map((s, i) => {
+            const [name, detail] = splitEntry(s);
+            return (
+              <tr key={i}>
+                <td style={{ fontWeight: 600 }}>{name}</td>
+                <td className="score">{detail}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }

@@ -407,10 +407,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div className="max-w-2xl opacity-0 animate-fadeInUp">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 dark:text-white greyhome">
-                Connecting you to{" "}
-                <span className="text-primary expgbl ">lead tomorrow</span>
-              </h1>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900 dark:text-white greyhome max-w-xl text-balance">
+  Connecting you to <span className="text-primary expgbl">lead tomorrow</span>
+</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
                 Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.
                 <br /><br />
