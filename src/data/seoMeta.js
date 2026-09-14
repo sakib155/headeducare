@@ -186,6 +186,26 @@ export const routeMeta = [
     ],
   }),
 
+  meta("/services/common-essay", "Common Essay Drafting", "Expert Common App essay drafting for US university admissions. Stand out with compelling personal statements crafted by experienced mentors.", {
+    keywords: ["Common App essay help", "college essay writing Bangladesh", "US university application essay"],
+  }),
+
+  meta("/services/scholarship-guidance", "Scholarship Guidance", "Fund your dreams with scholarship guidance from Head Educare. Identify and apply for fully funded scholarships, merit awards, and financial aid opportunities.", {
+    keywords: ["scholarships for Bangladeshi students", "fully funded scholarships", "financial aid study abroad", "scholarship application help"],
+  }),
+
+  meta("/services/complete-application-help", "Complete Application Help", "End-to-end application support for Bangladeshi students studying abroad. From university selection to visa processing, we handle everything.", {
+    keywords: ["complete study abroad application", "full admission support Bangladesh", "end to end consultancy"],
+  }),
+
+  meta("/services/financial-documentation", "Financial Documentation", "Secure your visa with perfect financial documentation. Expert guidance on bank statements, sponsor letters, education loans, and financial proof for embassy applications.", {
+    keywords: ["financial docs for visa", "bank statement for study abroad", "education loan Bangladesh", "sponsor letter guidance"],
+  }),
+
+  meta("/services/visa-documentation", "Visa Documentation", "Perfect your visa documentation with expert guidance from Head Educare. Comprehensive checklists, document review, and application support for student visas.", {
+    keywords: ["student visa documents", "visa application checklist", "study visa documentation Bangladesh"],
+  }),
+
   meta("/services/visa-application", "Visa Application", "Secure your student visa with expert guidance. Head Educare assists Bangladeshi students with visa applications for USA, UK, Canada, Australia, and Schengen countries.", {
     keywords: ["student visa Bangladesh", "visa application help Dhaka", "study visa processing", "F1 visa UK visa Canada visa"],
     faq: [
@@ -194,6 +214,94 @@ export const routeMeta = [
       { q: "What documents are needed for a student visa?", a: "Valid passport, CAS/I-20/acceptance letter, financial proofs, English test scores, academic documents, and visa application forms." },
       { q: "Can I work while studying on a student visa?", a: "Most countries allow part-time work (20 hours/week during semesters) on a student visa, subject to specific regulations." },
     ],
+  }),
+
+  meta("/services/quick-appointment", "Quick Appointment", "Get expert guidance in minutes. Book a quick appointment with Head Educare's counselors in Dhaka for personalized study abroad advice.", {
+    keywords: ["quick appointment Dhaka", "urgent study abroad consultation", "fast education counseling"],
+  }),
+
+  meta("/services/health-insurance", "Health Insurance", "Overseas health insurance for Bangladeshi students studying abroad. Comprehensive medical coverage compliant with university and visa requirements.", {
+    keywords: ["student health insurance", "medical insurance study abroad", "overseas health coverage Bangladesh"],
+  }),
+
+  meta("/services/student-accommodation", "Student Accommodation", "Find affordable and trusted student accommodation abroad. Head Educare helps Bangladeshi students secure housing near their university campus.", {
+    keywords: ["student housing abroad", "accommodation for international students", "dormitory booking Bangladesh"],
+  }),
+
+  meta("/services/education-loan-support", "Education Loan", "Secure your future with expert education loan guidance. Head Educare partners with banks and NBFCs to help Bangladeshi students fund their studies abroad.", {
+    keywords: ["education loan Bangladesh", "study abroad loan", "student finance", "bank loan for overseas studies"],
+  }),
+
+  meta("/services/visa-mock-interview", "Visa Mock Interview", "Ace your visa interview with confident preparation. Realistic mock interviews, personalized feedback, and coaching for student visa success.", {
+    keywords: ["visa interview preparation", "mock visa interview Dhaka", "student visa coaching", "embassy interview tips"],
+  }),
+
+  meta("/services/scholarship-support", "Scholarship Support", "Expert scholarship support for Bangladeshi students. Identify, apply, and secure funding for your international education with Head Educare.", {
+    keywords: ["scholarship support Bangladesh", "funding for study abroad", "merit scholarship application", "financial aid guidance"],
+  }),
+
+  meta("/services/visa-services", "Visa Services", "Hassle-free visa services for Bangladeshi students. Complete visa processing support for USA, UK, Canada, Australia, Europe, and Malaysia.", {
+    keywords: ["student visa services", "visa processing Bangladesh", "study abroad visa help", "embassy application support"],
+  }),
+
+  meta("/services/us-mentorship", "US Mentorship Program", "Holistic Ivy League and elite college mentorship for Bangladeshi students. Expert guidance on US university admissions, essays, extracurriculars, and financial aid.", {
+    keywords: ["US university admission Bangladesh", "Ivy League mentorship", "American college application help", "USA study guidance"],
+  }),
+
+  meta("/mentorship", "US Mentorship Program", "Holistic Ivy League and elite college mentorship for Bangladeshi students aspiring to study in the United States.", {
+    keywords: ["US mentorship Bangladesh", "study in USA guidance", "American university application support"],
+  }),
+
+  meta("/services/general-documents-checklist", "Documents Checklist", "Complete documents checklist for Bangladeshi students preparing study abroad applications. Academic, financial, identity, and visa documents.", {
+    keywords: ["study abroad documents checklist", "application documents Bangladesh", "visa required documents", "student paperwork"],
+  }),
+
+  meta("/services/academic-qualifications", "Academic Qualifications", "Academic qualifications and standardized test requirements for Bangladeshi students applying to international universities. GPA, IELTS, TOEFL, SAT, GRE, GMAT.", {
+    keywords: ["academic requirements study abroad", "GPA conversion Bangladesh", "IELTS TOEFL SAT GRE GMAT", "entry requirements universities"],
+  }),
+
+  meta("/services/test-preparation", "Test Preparation", "Transform your performance with expert test preparation. IELTS, TOEFL, PTE, SAT, GRE, and GMAT coaching in Dhaka with proven results.", {
+    keywords: ["IELTS coaching Dhaka", "TOEFL preparation Bangladesh", "SAT training", "PTE coaching", "GRE GMAT classes"],
+  }),
+
+  meta("/mentorship/liberal-arts-college", "Liberal Arts College Admission", "Expert guidance on US liberal arts college admissions for Bangladeshi students. Discover the transformative power of a liberal arts education.", {
+    keywords: ["liberal arts college USA", "US college admission Bangladesh", "liberal arts education benefits"],
+  }),
+
+  meta("/mentorship/liberal-arts-education", "Liberal Arts Education", "Discover the power of a liberal arts education in the USA. Understand the intellectual foundations and career outcomes for Bangladeshi students.", {
+    keywords: ["liberal arts explained", "US education system", "liberal arts career Bangladesh"],
+  }),
+
+  meta("/mentorship/elite-school-admission", "Elite School Admission", "Expert guidance for elite US school and Ivy League admissions. Head Educare mentors Bangladeshi students through competitive application processes.", {
+    keywords: ["Ivy League admission Bangladesh", "Harvard Yale Princeton", "elite US university application", "competitive college admission"],
+  }),
+
+  meta("/mentorship/masters-mentorship-program", "Masters Mentorship", "Tailored mentorship for Bangladeshi students pursuing US graduate programs. Full support from program selection to interview preparation and funding.", {
+    keywords: ["Masters in USA Bangladesh", "graduate school application", "US master's program guidance", "postgraduate admission help"],
+  }),
+
+  meta("/mentorship/acceptance-letters", "Acceptance Letters", "Learn how to evaluate, compare, and respond to US university acceptance letters. Expert guidance on making informed admission decisions.", {
+    keywords: ["college acceptance letter", "US university offer evaluation", "admission decision help Bangladesh"],
+  }),
+
+  meta("/mentorship/strategy-brainstorm", "Strategy Brainstorm", "Collaborative strategy sessions to position your US university application for maximum impact. Stand out to admissions committees.", {
+    keywords: ["application strategy", "US college strategy session", "admissions positioning Bangladesh"],
+  }),
+
+  meta("/mentorship/writing-application", "Writing and Application", "Expert writing and application guidance for US university admissions. Essays, activity descriptions, and application presentation.", {
+    keywords: ["US college essay writing", "application presentation", "Common App activities Bangladesh"],
+  }),
+
+  meta("/mentorship/college-selection", "College Selection", "Multi-dimensional college selection guidance for Bangladeshi students. Academic fit, campus culture, financial aid, and career outcomes analyzed.", {
+    keywords: ["college selection criteria", "US university shortlisting", "best fit university Bangladesh"],
+  }),
+
+  meta("/mentorship/financial-aid", "Financial Aid Guidance", "Comprehensive financial aid guidance for US university admissions. Need-based aid, merit scholarships, and funding strategies for Bangladeshi students.", {
+    keywords: ["US university financial aid", "need based scholarship Bangladesh", "college funding USA", "international student aid"],
+  }),
+
+  meta("/mentorship/post-graduate-funding", "Post Graduate Funding", "Comprehensive guidance on funding US graduate degrees. Fellowships, assistantships, scholarships, and loan strategies for Bangladeshi students.", {
+    keywords: ["graduate school funding", "PhD funding USA", "research assistantship", "teaching assistantship Bangladesh"],
   }),
 ];
 
