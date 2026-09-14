@@ -48,6 +48,7 @@ import PostGraduateFunding from "./pages/mentorship/PostGraduateFunding";
 import Admin from "./pages/Admin";
 import Courses from "./pages/Courses";
 import StudyMBBS from "./pages/StudyMBBS";
+import AutoSeo from "./components/Seo";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -85,142 +86,55 @@ export default function App() {
 
       <Routes>
         <Route path="/admin" element={<Admin />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/about/our-people" element={<OurPeople />} />
-        <Route path="/about/we-will-provide" element={<WillProvide />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/destination/:slug" element={<CountryDetails />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/freeconsulation" element={<FreeConsultation />} />
-        <Route path="/allcountries/allcountry" element={<DestinationPage />} />
-        <Route path="/legal/termsService" element={<TermsServices />} />
-        <Route path="/legal/privacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/legal/refundPolicy" element={<RefundPolicy />} />
-        <Route path="/legal/disclaimer" element={<Disclaimer />} />
+        <Route path="/" element={<AutoSeo><Home /></AutoSeo>} />
+        <Route path="/about" element={<AutoSeo><About /></AutoSeo>} />
+        <Route path="/about/our-people" element={<AutoSeo><OurPeople /></AutoSeo>} />
+        <Route path="/about/we-will-provide" element={<AutoSeo><WillProvide /></AutoSeo>} />
+        <Route path="/services" element={<AutoSeo><Services /></AutoSeo>} />
+        <Route path="/destination/:slug" element={<AutoSeo><CountryDetails /></AutoSeo>} />
+        <Route path="/contact" element={<AutoSeo><Contact /></AutoSeo>} />
+        <Route path="/freeconsulation" element={<AutoSeo><FreeConsultation /></AutoSeo>} />
+        <Route path="/allcountries/allcountry" element={<AutoSeo><DestinationPage /></AutoSeo>} />
+        <Route path="/legal/termsService" element={<AutoSeo><TermsServices /></AutoSeo>} />
+        <Route path="/legal/privacyPolicy" element={<AutoSeo><PrivacyPolicy /></AutoSeo>} />
+        <Route path="/legal/refundPolicy" element={<AutoSeo><RefundPolicy /></AutoSeo>} />
+        <Route path="/legal/disclaimer" element={<AutoSeo><Disclaimer /></AutoSeo>} />
         {/* Services */}
-        <Route
-          path="/services/admission-support"
-          element={<AdmissionSupport />}
-        />
-        <Route
-          path="/services/profile-evaluation"
-          element={<ProfileEvaluation />}
-        />
-        <Route
-          path="/services/sop-essay-drafting"
-          element={<SopEssayDrafting />}
-        />
-        <Route path="/services/common-essay" element={<CommonEssay />} />
-        <Route
-          path="/services/scholarship-guidance"
-          element={<ScholarshipGuidance />}
-        />
-        <Route
-          path="/services/complete-application-help"
-          element={<CompleteApplicationHelp />}
-        />
-        <Route
-          path="/services/financial-documentation"
-          element={<FinancialDocumentation />}
-        />
-        <Route
-          path="/services/visa-documentation"
-          element={<VisaDocumentation />}
-        />
-        <Route
-          path="/services/visa-application"
-          element={<VisaApplication />}
-        />
-        <Route
-          path="/services/quick-appointment"
-          element={<QuickAppointment />}
-        />
-        <Route
-          path="/services/health-insurance"
-          element={<HealthInsurance />}
-        />
-        <Route
-          path="/services/student-accommodation"
-          element={<StudentAccommodation />}
-        />
-        <Route
-          path="/services/education-loan-support"
-          element={<EducationLoanSupport />}
-        />
-        <Route
-          path="/services/visa-mock-interview"
-          element={<VisaMockInterview />}
-        />
-        <Route
-          path="/services/scholarship-support"
-          element={<ScholarshipSupport />}
-        />
-        <Route
-          path="/services/visa-services"
-          element={<VisaServices />}
-        />
-        <Route
-          path="/services/us-mentorship"
-          element={<USMentorship />}
-        />
-        <Route
-          path="/mentorship"
-          element={<USMentorship />}
-        />
-        <Route
-          path="/services/general-documents-checklist"
-          element={<GeneralDocumentsChecklist />}
-        />
-        <Route
-          path="/services/academic-qualifications"
-          element={<AcademicQualifications />}
-        />
-        <Route
-          path="/services/test-preparation"
-          element={<TestPreparation />}
-        />
+        <Route path="/services/admission-support" element={<AutoSeo><AdmissionSupport /></AutoSeo>} />
+        <Route path="/services/profile-evaluation" element={<AutoSeo><ProfileEvaluation /></AutoSeo>} />
+        <Route path="/services/sop-essay-drafting" element={<AutoSeo><SopEssayDrafting /></AutoSeo>} />
+        <Route path="/services/common-essay" element={<AutoSeo><CommonEssay /></AutoSeo>} />
+        <Route path="/services/scholarship-guidance" element={<AutoSeo><ScholarshipGuidance /></AutoSeo>} />
+        <Route path="/services/complete-application-help" element={<AutoSeo><CompleteApplicationHelp /></AutoSeo>} />
+        <Route path="/services/financial-documentation" element={<AutoSeo><FinancialDocumentation /></AutoSeo>} />
+        <Route path="/services/visa-documentation" element={<AutoSeo><VisaDocumentation /></AutoSeo>} />
+        <Route path="/services/visa-application" element={<AutoSeo><VisaApplication /></AutoSeo>} />
+        <Route path="/services/quick-appointment" element={<AutoSeo><QuickAppointment /></AutoSeo>} />
+        <Route path="/services/health-insurance" element={<AutoSeo><HealthInsurance /></AutoSeo>} />
+        <Route path="/services/student-accommodation" element={<AutoSeo><StudentAccommodation /></AutoSeo>} />
+        <Route path="/services/education-loan-support" element={<AutoSeo><EducationLoanSupport /></AutoSeo>} />
+        <Route path="/services/visa-mock-interview" element={<AutoSeo><VisaMockInterview /></AutoSeo>} />
+        <Route path="/services/scholarship-support" element={<AutoSeo><ScholarshipSupport /></AutoSeo>} />
+        <Route path="/services/visa-services" element={<AutoSeo><VisaServices /></AutoSeo>} />
+        <Route path="/services/us-mentorship" element={<AutoSeo><USMentorship /></AutoSeo>} />
+        <Route path="/mentorship" element={<AutoSeo><USMentorship /></AutoSeo>} />
+        <Route path="/services/general-documents-checklist" element={<AutoSeo><GeneralDocumentsChecklist /></AutoSeo>} />
+        <Route path="/services/academic-qualifications" element={<AutoSeo><AcademicQualifications /></AutoSeo>} />
+        <Route path="/services/test-preparation" element={<AutoSeo><TestPreparation /></AutoSeo>} />
 
         {/* USA Mentorship Program */}
-        <Route
-          path="/mentorship/liberal-arts-college"
-          element={<LiberalArtsEducation />}
-        />
-        <Route
-          path="/mentorship/elite-school-admission"
-          element={<EliteSchoolAdmission />}
-        />
-        <Route
-          path="/mentorship/masters-mentorship-program"
-          element={<MastersMentorshipProgram />}
-        />
-        <Route
-          path="/mentorship/liberal-arts-education"
-          element={<LiberalArtsEducation />}
-        />
-        <Route
-          path="/mentorship/acceptance-letters"
-          element={<AcceptanceLetters />}
-        />
-        <Route
-          path="/mentorship/strategy-brainstorm"
-          element={<StrategyBrainstorm />}
-        />
-        <Route
-          path="/mentorship/writing-application"
-          element={<WritingApplication />}
-        />
-        <Route
-          path="/mentorship/college-selection"
-          element={<CollegeSelection />}
-        />
-        <Route path="/mentorship/financial-aid" element={<FinancialAid />} />
-        <Route
-          path="/mentorship/post-graduate-funding"
-          element={<PostGraduateFunding />}
-        />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/study-mbbs" element={<StudyMBBS />} />
+        <Route path="/mentorship/liberal-arts-college" element={<AutoSeo><LiberalArtsEducation /></AutoSeo>} />
+        <Route path="/mentorship/elite-school-admission" element={<AutoSeo><EliteSchoolAdmission /></AutoSeo>} />
+        <Route path="/mentorship/masters-mentorship-program" element={<AutoSeo><MastersMentorshipProgram /></AutoSeo>} />
+        <Route path="/mentorship/liberal-arts-education" element={<AutoSeo><LiberalArtsEducation /></AutoSeo>} />
+        <Route path="/mentorship/acceptance-letters" element={<AutoSeo><AcceptanceLetters /></AutoSeo>} />
+        <Route path="/mentorship/strategy-brainstorm" element={<AutoSeo><StrategyBrainstorm /></AutoSeo>} />
+        <Route path="/mentorship/writing-application" element={<AutoSeo><WritingApplication /></AutoSeo>} />
+        <Route path="/mentorship/college-selection" element={<AutoSeo><CollegeSelection /></AutoSeo>} />
+        <Route path="/mentorship/financial-aid" element={<AutoSeo><FinancialAid /></AutoSeo>} />
+        <Route path="/mentorship/post-graduate-funding" element={<AutoSeo><PostGraduateFunding /></AutoSeo>} />
+        <Route path="/courses" element={<AutoSeo><Courses /></AutoSeo>} />
+        <Route path="/study-mbbs" element={<AutoSeo><StudyMBBS /></AutoSeo>} />
       </Routes>
 
       {!isAdminPage && <Footer />}

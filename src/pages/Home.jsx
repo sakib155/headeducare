@@ -384,7 +384,7 @@ export default function Home() {
             {lightbox > 0 && (
               <button
                 onClick={() => setLightbox(lightbox - 1)}
-                className="absolute left-[-50px] top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur text-white rounded-full flex items-center justify-center hover:bg-white/40 transition-colors"
+                className="absolute -left-12.5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur text-white rounded-full flex items-center justify-center hover:bg-white/40 transition-colors"
               >
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
@@ -392,7 +392,7 @@ export default function Home() {
             {lightbox < HERO_IMAGES.length - 1 && (
               <button
                 onClick={() => setLightbox(lightbox + 1)}
-                className="absolute right-[-50px] top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur text-white rounded-full flex items-center justify-center hover:bg-white/40 transition-colors"
+                className="absolute -right-12.5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur text-white rounded-full flex items-center justify-center hover:bg-white/40 transition-colors"
               >
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
@@ -411,11 +411,9 @@ export default function Home() {
   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.15] tracking-tight text-gray-900 dark:text-white max-w-xl">
     Connecting you to
   </h2>
-  <div className="mt-2 flex items-center gap-3">
-    <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-primary">
-      lead tomorrow
-    </span>
-  </div>
+  <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-primary">
+    lead tomorrow
+  </span>
 </div>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
                 Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.
@@ -456,7 +454,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <p className="font-bold text-[#0d121b] dark:text-white expgbl">
+                  <p className="font-bold text-[#0d121b] dark:text-white">
                     Join {stats.students_placed} Alumni
                   </p>
                   <p className="text-gray-500">Trusted by students worldwide</p>
@@ -555,7 +553,7 @@ export default function Home() {
                 key={i}
                 className={`text-center  ${i < 3 ? "border-r border-white/20" : ""} reveal`}
               >
-                <p className="text-4xl lg:text-5xl font-black mb-1 text-white greyhome ">
+                <p className="text-4xl lg:text-5xl font-black mb-1 text-white">
                   {stat.val}
                 </p>
                 <p className="text-white/80 text-sm font-medium uppercase tracking-wider">
@@ -574,7 +572,7 @@ export default function Home() {
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               Our Expert Services
             </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] expgbl mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] mb-6">
               Tailored Solutions for Your International Career
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
@@ -594,7 +592,7 @@ export default function Home() {
                     {service.icon}
                   </span>
                 </div>
-                <h4 className="text-2xl font-bold mb-4 expgbl">
+                <h4 className="text-2xl font-bold mb-4">
                   {service.title}
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
@@ -722,7 +720,7 @@ export default function Home() {
             </div>
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="reveal">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
                   Ready to Start Your Global Journey?
                 </h2>
                 <p className="text-gray-300 text-normal mb-10">
