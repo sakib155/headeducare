@@ -100,81 +100,14 @@ export default function Header({ toggleDarkMode, darkMode }) {
                       shadow-lg border border-gray-200 dark:border-gray-700
                       transition-all duration-300 overflow-y-auto z-50"
                         style={{
-                          width: section.title.name === "Country" ? "580px" : "250px",
+                          width: "280px",
                           maxHeight: "75vh",
                           opacity: isOpen ? 1 : 0,
                           pointerEvents: isOpen ? "auto" : "none",
                           transform: isOpen ? "translateY(0)" : "translateY(-4px)",
                         }}
                       >
-                        {section.title.name === "Country" ? (
-                          <>
-                            {/* ── Popular Destinations ── */}
-                            <div className="px-5 pt-4 pb-3">
-                              <div className="flex items-center gap-2 mb-3">
-                                <div className="w-1 h-4 rounded-full bg-primary" />
-                                <span className="text-xs font-semibold tracking-wider uppercase text-gray-500 dark:text-gray-400">
-                                  Popular Destinations
-                                </span>
-                              </div>
-                              <div className="grid grid-cols-3 gap-1.5">
-                                {section.items
-                                  .filter((item) => !item.items)
-                                  .map((item) => (
-                                    <Link
-                                      key={item.name}
-                                      to={item.url}
-                                      className="flex items-center gap-2.5 text-sm py-2.5 px-3 rounded-xl transition-all duration-200 hover:bg-primary/5 dark:hover:bg-gray-800 hover:shadow-sm"
-                                    >
-                                      <span className="text-lg leading-none flex-shrink-0">{item.flag}</span>
-                                      <span className="font-medium text-gray-700 dark:text-gray-200 truncate">
-                                        {item.name}
-                                      </span>
-                                    </Link>
-                                  ))}
-                              </div>
-                            </div>
-
-                            {/* ── Divider ── */}
-                            <div className="mx-5 border-t border-gray-100 dark:border-gray-800" />
-
-                            {/* ── European Destinations ── */}
-                            <div className="px-5 pt-3 pb-4">
-                              <div className="flex items-center gap-2 mb-3">
-                                <span className="text-base leading-none">🇪🇺</span>
-                                <span className="text-xs font-semibold tracking-wider uppercase text-gray-500 dark:text-gray-400">
-                                  European Destinations
-                                </span>
-                              </div>
-                              <div className="grid grid-cols-2 gap-1.5">
-                                {section.items
-                                  .find((item) => item.items)
-                                  ?.items.map((sub) => (
-                                    <Link
-                                      key={sub.name}
-                                      to={sub.url}
-                                      className="flex items-center gap-2.5 text-sm py-2 px-3 rounded-xl transition-all duration-200 hover:bg-primary/5 dark:hover:bg-gray-800"
-                                    >
-                                      <span className="text-base leading-none flex-shrink-0">{sub.flag}</span>
-                                      <span className="font-medium text-gray-700 dark:text-gray-200">
-                                        {sub.name}
-                                      </span>
-                                    </Link>
-                                  ))}
-                              </div>
-                            </div>
-
-                            {/* ── View All ── */}
-                            <Link
-                              to="/allcountries/allcountry"
-                              className="block text-center text-xs font-semibold py-3 mx-4 mb-3 rounded-xl bg-primary/5 dark:bg-gray-800 text-primary hover:bg-primary/10 dark:hover:bg-gray-700 transition-colors"
-                            >
-                              View All Countries →
-                            </Link>
-                          </>
-                        ) : (
-                          <div className="py-1">
-                            {section.items.map((item, idx) => {
+                        {section.items.map((item, idx) => {
                               if (item.items) {
                                 return (
                                   <div key={item.name} className="relative group/nested">
@@ -211,8 +144,6 @@ export default function Header({ toggleDarkMode, darkMode }) {
                                 </Link>
                               );
                             })}
-                          </div>
-                        )}
                       </div>
                     )}
                   </div>

@@ -43,7 +43,7 @@ export const MENTOR_STYLES = `
   .mtr-page { font-family:"Lexend",sans-serif; color:#0d121b; }
 
   /* Hero */
-  .mtr-hero { position:relative; padding:96px 0 80px; overflow:hidden; }
+  .mtr-hero { position:relative; padding:120px 0 100px; overflow:hidden; }
   .mtr-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,91,143,0.06) 0%,rgba(74,131,243,0.04) 100%); }
   .mtr-hero-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
 
@@ -124,7 +124,7 @@ export const MENTOR_STYLES = `
 
   /* Responsive */
   @media(max-width:768px){
-    .mtr-hero{ padding:72px 0 60px; }
+    .mtr-hero{ padding:80px 0 64px; }
     .mtr-section,.mtr-section-alt{ padding:60px 0; }
   }
 `;

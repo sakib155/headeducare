@@ -46,28 +46,30 @@ export const countryDetailStyles = `
   ═══════════════════════════════════════════════ */
   .hero {
     position: relative;
-    height: clamp(340px, 54vw, 500px);
+    height: clamp(460px, 52vw, 560px);
     overflow: hidden;
     background: #0b1120;
   }
   .hero-img {
     width: 100%; height: 100%;
-    object-fit: cover; opacity: .4;
-    transform: scale(1.05);
-    transition: opacity 1.2s ease, transform 8s ease;
-    filter: saturate(1.05) brightness(.85);
+    object-fit: cover;
+    animation: heroFadeIn 1.4s ease forwards;
   }
-  .hero-img.loaded { opacity: .48; transform: scale(1); }
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: scale(1.08); }
+    to { opacity: .92; transform: scale(1); }
+  }
   .hero-placeholder {
     position: absolute; inset: 0;
     background: linear-gradient(135deg, #0f1a30 0%, #0b1120 100%);
   }
   .hero-overlay {
     position: absolute; inset: 0; z-index: 2;
-    background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.28) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.15) 50%, transparent 100%);
   }
   .hero-content {
-    position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+    position: absolute; inset: 0; z-index: 3;
+    display: flex; flex-direction: column; justify-content: center;
     padding: clamp(32px, 5vw, 64px) clamp(24px, 6vw, 64px);
     animation: heroUp .6s cubic-bezier(.22,1,.36,1) both;
   }

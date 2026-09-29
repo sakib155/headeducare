@@ -37,6 +37,7 @@ import GeneralDocumentsChecklist from "./pages/services/GeneralDocumentsChecklis
 import AcademicQualifications from "./pages/services/AcademicQualifications";
 import TestPreparation from "./pages/services/TestPreparation";
 import EliteSchoolAdmission from "./pages/mentorship/EliteSchoolAdmission";
+import RussellGroupApplication from "./pages/mentorship/RussellGroupApplication";
 import MastersMentorshipProgram from "./pages/mentorship/MastersMentorshipProgram";
 import LiberalArtsEducation from "./pages/mentorship/LiberalArtsEducation";
 import AcceptanceLetters from "./pages/mentorship/AcceptanceLetters";
@@ -48,6 +49,7 @@ import PostGraduateFunding from "./pages/mentorship/PostGraduateFunding";
 import Admin from "./pages/Admin";
 import Courses from "./pages/Courses";
 import StudyMBBS from "./pages/StudyMBBS";
+import StudyMBBSDetail from "./pages/StudyMBBSDetail";
 import AutoSeo from "./components/Seo";
 
 function ScrollToTop() {
@@ -125,6 +127,7 @@ export default function App() {
         {/* USA Mentorship Program */}
         <Route path="/mentorship/liberal-arts-college" element={<AutoSeo><LiberalArtsEducation /></AutoSeo>} />
         <Route path="/mentorship/elite-school-admission" element={<AutoSeo><EliteSchoolAdmission /></AutoSeo>} />
+        <Route path="/mentorship/russell-group-application" element={<AutoSeo><RussellGroupApplication /></AutoSeo>} />
         <Route path="/mentorship/masters-mentorship-program" element={<AutoSeo><MastersMentorshipProgram /></AutoSeo>} />
         <Route path="/mentorship/liberal-arts-education" element={<AutoSeo><LiberalArtsEducation /></AutoSeo>} />
         <Route path="/mentorship/acceptance-letters" element={<AutoSeo><AcceptanceLetters /></AutoSeo>} />
@@ -135,6 +138,7 @@ export default function App() {
         <Route path="/mentorship/post-graduate-funding" element={<AutoSeo><PostGraduateFunding /></AutoSeo>} />
         <Route path="/courses" element={<AutoSeo><Courses /></AutoSeo>} />
         <Route path="/study-mbbs" element={<AutoSeo><StudyMBBS /></AutoSeo>} />
+        <Route path="/study-mbbs/:slug" element={<AutoSeo><StudyMBBSDetail /></AutoSeo>} />
       </Routes>
 
       {!isAdminPage && <Footer />}

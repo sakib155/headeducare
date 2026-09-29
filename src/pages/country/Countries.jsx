@@ -18,7 +18,7 @@ export default function Countries() {
   return (
     <div>
       {/* HERO */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-blue-50">
+      <section className="py-28 bg-gradient-to-br from-primary/5 to-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-5xl font-black mb-4">Explore Top Countries</h1>
           <p className="text-gray-600">Find your perfect study destination.</p>

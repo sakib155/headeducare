@@ -76,10 +76,13 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Australia Awards: Fully Funded",
-      "Endeavour Scholarship: AUD 272,500",
-      "University Excellence Awards: 25%–50%",
-      "International Merit Scholarships: AUD 5,000–15,000",
+      "Australia Awards Scholarships: PG/PhD - Full - https://www.dfat.gov.au/people-to-people/australia-awards-scholarships",
+      "Australian Government Research Training Program (RTP): PG/PhD - Full - https://www.education.gov.au/research-block-grants/research-training-program",
+      "Australian Development Scholarships (ADS): PG/PhD - Full - https://bangladesh.embassy.gov.au/daca/scholarships.html",
+      "University of Sydney International Academic Excellence Scholarship: UG/PG - Full/Partial - https://www.sydney.edu.au/scholarships",
+      "Bond University ADCO Sports Excellence Scholarship: UG/PG - Full - https://bond.edu.au/scholarship",
+      "ECU Western Australian Premier's University Scholarship: UG/PG/PhD - Full/Partial - Contact us",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -161,10 +164,11 @@ export const countriesFallback = [
       "Work Experience Letter (if applicable)",
     ],
     scholarships: [
-      "Chevening Scholarship: Fully Funded",
-      "Commonwealth Scholarship: Fully Funded",
-      "GREAT Scholarship: £10,000",
-      "University Bursaries: £2,000–£8,000",
+      "Chevening: PG/PhD - Full - https://www.chevening.org",
+      "Commonwealth Scholarships: PG/PhD - Full - https://study-uk.britishcouncil.org/scholarships-funding/commonwealth-scholarships",
+      "Great Scholarships: PG - Partial - https://study-uk.britishcouncil.org/scholarships-funding/great-scholarships",
+      "Clarendon Fund Scholarships: PG/PhD - Full - https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -261,10 +265,14 @@ export const countriesFallback = [
       "English Proficiency Certificate / SAT / GRE / GMAT (if applicable)",
     ],
     scholarships: [
-      "Fulbright Scholarship: Fully Funded",
-      "Hubert Humphrey Fellowship: Fully Funded",
-      "University Merit Awards: Up to 50%",
-      "OEA Scholarships: Varies",
+      "Fulbright Foreign Student Program: PG/PhD - Full - https://foreign.fulbrightonline.org",
+      "Knight-Hennessy Scholars: PG/PhD - Full - https://knight-hennessy.stanford.edu",
+      "AAUW International Fellowships: UG/PG/PhD - Full - https://www.aauw.org/resources/programs/fellowships-grants/",
+      "Humphrey Fellowship: PG/PhD - Full - https://www.humphreyfellowship.org",
+      "Harvard University Scholarships: UG/PG/PhD - Full/Partial - https://college.harvard.edu/financial-aid",
+      "Berea College Scholarships: UG - Full - https://college.harvard.edu/financial-aid",
+      "IEFA (International Education Financial Aid): UG/PG/PhD - Full - iefa.org",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -366,10 +374,11 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Vanier Canada Graduate Scholarships: CAD 50,000/yr",
-      "Banting Postdoctoral Fellowships: CAD 70,000/yr",
-      "University of Toronto Award: Up to 40%",
-      "Provincial Scholarships: Varies",
+      "Vanier Canada Graduate Scholarships (Vanier CGS): PG/PhD - Full - https://vanier.gc.ca/en/eligibility-admissibilite.html",
+      "International Major Entrance Scholarship (UBC): UG - Partial - https://you.ubc.ca/financial-planning/scholarships-awards-international-students/",
+      "International Admission Scholarship (University of Alberta): UG - Partial - https://www.ualberta.ca/en/admissions/tuition-and-scholarships/entrance-scholarships/",
+      "Study in Canada Scholarships (SICS): UG/PG/PhD - Partial - Contact us",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -459,10 +468,12 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Manaaki New Zealand Scholarships: Fully Funded",
-      "New Zealand Excellence Awards (NZEA): NZD 5,000–20,000",
-      "University International Scholarships: Up to 50%",
-      "Vice-Chancellor's Scholarships: Varies",
+      "New Zealand Commonwealth Scholarships: PG/PhD - Full - https://cscuk.fcdo.gov.uk/apply/new-zealand/",
+      "University of Auckland International Student Excellence Scholarship: PhD - Full - https://www.auckland.ac.nz/en/study/scholarships-and-awards/",
+      "University of Waikato International Excellence Scholarship: UG - Partial - https://www.waikato.ac.nz/int/study/scholarships/",
+      "University of Otago International Scholarships: PG/PhD - Full/Partial - https://www.otago.ac.nz/courses/scholarships/",
+      "Auckland University of Technology (AUT) Scholarships: UG/PG - Partial - https://www.aut.ac.nz/study/fees-and-scholarships/",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -671,10 +682,12 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Government of Ireland International Education Scholarship: Fully Funded + €10,000 Stipend",
-      "Irish Research Council Scholarships: Fully Funded",
-      "University Merit Scholarships: Up to 50%",
-      "International Student Scholarships: Varies",
+      "Government of Ireland International Education Scholarship (GOI-IES): PG/PhD - Full - https://hea.ie/policy/internationalisation/goi-ies/",
+      "Government of Ireland Postgraduate Scholarship: PG/PhD - Partial - https://research.ie/funding/goipg/",
+      "UCD Global Excellence Scholarship: UG/PG - Full/Partial - https://www.ucd.ie/global/study-at-ucd/scholarshipsfinances/",
+      "University of Galway International Student Scholarships: UG/PG - Full/Partial - https://www.universityofgalway.ie/internationalscholarships/",
+      "TU Dublin Centenary Scholarship: UG/PG - Partial - https://www.tudublin.ie/connect/tu-dublin-foundation/scholarships/",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1092,10 +1105,11 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Global Korea Scholarship (GKS): Fully Funded",
-      "University Tuition Waivers: 30%–100% Tuition Waiver",
-      "Brain Korea 21 (BK21) Research Grants: Varies",
-      "International Student Support Grants: Varies",
+      "Global Korea Scholarship (GKS): UG/PG/PhD - Full - https://gksscholarship.com/",
+      "GIST Scholarship: PG/PhD - Full - https://www.gist.ac.kr/iadm/html/sub04/0401.html",
+      "KAIST Graduate Scholarship: PG - Full/Partial - https://www.gist.ac.kr/iadm/html/sub04/0401.html",
+      "SNU GSFS: PG - Full - https://oga.snu.ac.kr/scholarship/graduate-scholarship-for-excellent-foreign-students-gsfs/",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1196,10 +1210,10 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Malaysia International Scholarship (MIS): Fully Funded",
-      "Commonwealth Scholarship: Fully Funded",
-      "University Academic Excellence Awards: Up to 50% Tuition Waiver",
-      "Special Country Bursaries: Varies",
+      "Albukhary International University (AIU) Scholarships: UG - Full - https://aiu.edu.my/scholarship/",
+      "Malaysia International Scholarship (MIS): PG/PhD - Full - https://biasiswa.mohe.gov.my/INTER/index.php",
+      "International Graduate Student Scholarship (IGSS): PhD - Full/Partial - https://sgs.upm.edu.my/financial_assistance_scholarships-1893",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1468,11 +1482,11 @@ export const countriesFallback = [
       "Work Experience Letter",
       "Statement of purposes",
     ],
-    scholarships: [
-      "Finland Scholarship: €5,000 Relocation Grant + Tuition Waiver",
-      "EDUFI Fellowship: Fully Funded",
-      "University Tuition Fee Scholarships: 50%–100% Tuition Waiver",
-      "Excellence Scholarships: Varies",
+scholarships: [
+      "Erasmus Mundus Scholarships: Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "Aalto University Scholarships: UG/PG - Partial - https://www.aalto.fi/en/admission-services/scholarships-and-tuition-fees",
+      "University of Eastern Finland (UEF) Scholarships: UG - Partial - https://www.uef.fi/en/tuition-fees-waivers-and-scholarships",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1504,9 +1518,10 @@ export const countriesFallback = [
       { test: "PTE", level: "MBA", min_score: "58", max_score: "65" },
       { test: "PTE", level: "Doctorate", min_score: "58", max_score: "65" },
     ],
-    intakes: [
-      { name: "Autumn", term: "Term 1", apply_window: "January - March" },
-      { name: "Spring", term: "Term 2", apply_window: "August - October" },
+intakes: [
+      { name: "September", term: "Fall Intake", apply_window: "September" },
+      { name: "January", term: "Winter Intake", apply_window: "January" },
+      { name: "May", term: "Spring Intake", apply_window: "May" },
     ],
     post_study_work_salary: [
       { field: "Engineering & Tech", min: 45000, max: 65000, currency: "EUR" },
@@ -1532,10 +1547,11 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Danish Government Scholarships: Fully Funded / Full or Partial Tuition Waiver",
-      "Erasmus+ Scholarships: Fully Funded",
-      "University Merit Scholarships: 50%–100% Tuition Waiver",
-      "Nordplus Scholarship: Varies",
+      "Erasmus Mundus Joint Master's Degrees: PG/PhD - Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "Danish Government Scholarships: PG/PhD - Full - https://studyindenmark.dk/study-options/scholarships",
+      "Aarhus University Scholarships: PG - Full/Partial - https://masters.au.dk/scholarships-and-grants",
+      "University of Southern Denmark (SDU) Scholarships: UG/PG - Full/Partial - https://www.sdu.dk/en/uddannelse/fees_and_funding/scholarships",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1595,10 +1611,10 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "ARES Scholarships: Fully Funded",
-      "VLIR-UOS Scholarships: Fully Funded",
-      "Master Mind Scholarships: €10,000 + Tuition Waiver",
-      "University Excellence Scholarships: Varies",
+      "Erasmus Mundus Joint Masters Scholarships: PG - Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "Master Mind Scholarships: PG - Partial - Contact us",
+      "KU Leuven Science@Leuven Scholarship: PG - Full/Partial - https://www.kuleuven.be/scholarships/",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1658,10 +1674,11 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Holland Scholarship: €5,000",
-      "Orange Knowledge Programme (OKP): Fully Funded",
-      "University Excellence Scholarships: 50%–100% Tuition Waiver",
-      "International Merit Scholarships: Varies",
+      "Erasmus Mundus Joint Masters Scholarships: PG - Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "NL Scholarship (formerly Holland Scholarship): UG/PG - Partial - https://www.studyinnl.org/finances/nl-scholarship",
+      "Maastricht University NL-High Potential Scholarship: PG - Full - https://www.maastrichtuniversity.nl/studeren/toelating-inschrijving/financing-your-studies/scholarships/",
+      "TU Delft Excellence Scholarship (Justus & Louise van Effen): PG/PhD - Full - https://www.tudelft.nl/onderwijs/studievoorlichting/praktische-zaken/scholarships",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1672,7 +1689,7 @@ export const countriesFallback = [
     description: "Hungary offers affordable tuition and living costs, making it a popular European destination. Home to centuries-old universities and a rich cultural heritage.",
     cost_info: "EUR 3,000 – 15,000/year",
     visa_info: "D-Type Student Visa via Hungarian Consulate",
-    image_url: "",
+    image_url: "https://images.unsplash.com/photo-1545259741-0d478f9e23b3?w=800",
     tuition_fees: {
       undergraduate: { min: 3000, max: 12000, currency: "EUR" },
       postgraduate: { min: 3000, max: 15000, currency: "EUR" },
@@ -1709,8 +1726,10 @@ export const countriesFallback = [
       "Tuition Fee Receipt",
     ],
     scholarships: [
-      "Stipendium Hungaricum: Fully Funded",
-      "University Merit Scholarships: 50%–100% Tuition Waiver",
+      "Erasmus Mundus Joint Masters Scholarships: PG - Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "Stipendium Hungaricum: UG/PG/PhD - Full - https://apply.stipendiumhungaricum.hu",
+      "Hungarian Diaspora Scholarship: UG/PG/PhD - Full - https://apply.stipendiumhungaricum.hu",
+      "University-specific Scholarships: UG/PG/PhD - Full - Contact us",
     ],
   },
   {
@@ -1721,7 +1740,7 @@ export const countriesFallback = [
     description: "Sweden is known for its innovative teaching methods, flat hierarchy, and sustainable approach. Home to world-class universities offering numerous English-taught programmes.",
     cost_info: "EUR 8,000 – 18,000/year",
     visa_info: "Residence Permit for Studies via Swedish Migration Agency",
-    image_url: "",
+    image_url: "https://images.unsplash.com/photo-1584957113488-2c58eaa4af76?w=800",
     tuition_fees: {
       undergraduate: { min: 8000, max: 18000, currency: "EUR" },
       postgraduate: { min: 8000, max: 20000, currency: "EUR" },
@@ -1758,8 +1777,11 @@ export const countriesFallback = [
       "Statement of purposes",
     ],
     scholarships: [
-      "Swedish Institute Scholarships: Fully Funded",
-      "University Tuition Fee Scholarships: 25%–100% Tuition Waiver",
+      "Erasmus Mundus Joint Master's Degrees: PG - Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "Lund University Global Scholarship: PG - Partial - https://www.lunduniversity.lu.se/study/admission-degree-studies/scholarships-and-awards/",
+      "Chalmers University of Technology Scholarships: PG - Partial - https://www.chalmers.se/en/education/your-studies/plan-and-conduct-your-studies/scholarships-for-enrolled-students/",
+      "Uppsala University Master's Scholarships: PG - Partial - Contact us",
+      "University Specific Scholarships: UG/PG - Full/Partial - Contact us",
     ],
   },
   {
@@ -1770,7 +1792,7 @@ export const countriesFallback = [
     description: "Norway offers high-quality education with no tuition fees at public universities for all students. Known for its stunning nature, high standard of living, and strong economy.",
     cost_info: "No tuition fees (public universities): living costs ~NOK 120,000/year",
     visa_info: "Student Residence Permit via UDI (Norwegian Directorate of Immigration)",
-    image_url: "",
+    image_url: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=800",
     tuition_fees: {
       undergraduate: { min: 0, max: 0, currency: "NOK", note: "No tuition fees" },
       postgraduate: { min: 0, max: 0, currency: "NOK", note: "No tuition fees" },
@@ -1806,9 +1828,10 @@ export const countriesFallback = [
       "Medical Insurance",
     ],
     scholarships: [
-      "Quota Scheme: Fully Funded (discontinued for new students)",
-      "Erasmus+: Fully Funded",
-      "University Merit Scholarships: Varies",
+      "Erasmus Mundus Joint Masters Scholarships: PG - Full - https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+      "University of Oslo Scholarships: PG/PhD - Full/Partial - Contact us",
+      "Research Council of Norway Scholarships: PhD - Full - https://www.forskningsradet.no/en/financing/what/",
+      "University-specific Scholarships: UG/PG/PhD - Full/Partial - Contact us",
     ],
   },
 ];

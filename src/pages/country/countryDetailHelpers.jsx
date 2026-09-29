@@ -159,24 +159,41 @@ export function DocumentsTable({ items }) {
 
 export function ScholarshipTable({ scholarships }) {
   if (!scholarships?.length) return <p className="empty">No scholarship data available.</p>;
-  const splitEntry = (s) => {
+  const splitScholarship = (s) => {
     const colon = s.indexOf(":");
-    if (colon !== -1) return [s.slice(0, colon).trim(), s.slice(colon + 1).trim()];
-    return [s, ""];
+    if (colon === -1) return { name: s, level: "-", amount: "-", link: "" };
+    const name = s.slice(0, colon).trim();
+    const rest = s.slice(colon + 1).trim();
+    const parts = rest.split(" - ").map((p) => p.trim());
+    return {
+      name,
+      level: parts[0] || "-",
+      amount: parts[1] || "-",
+      link: parts[2] || "",
+    };
   };
   return (
     <div className="table-wrap">
-      <table className="data-table">
+      <table className="data-table" style={{ minWidth: 500 }}>
         <thead>
-          <tr><th>Scholarship / Funding</th><th>Details</th></tr>
+          <tr><th>Scholarship</th><th>Level</th><th>Amount</th><th>Link</th></tr>
         </thead>
         <tbody>
           {scholarships.map((s, i) => {
-            const [name, detail] = splitEntry(s);
+            const { name, level, amount, link } = splitScholarship(s);
+            const isContact = link.toLowerCase().includes("contact");
             return (
               <tr key={i}>
                 <td style={{ fontWeight: 600 }}>{name}</td>
-                <td className="score">{detail}</td>
+                <td className="score">{level}</td>
+                <td className="score">{amount}</td>
+                <td>
+                  {link && !isContact ? (
+                    <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#005B8F", textDecoration: "underline", fontSize: 11, wordBreak: "break-all" }}>{link}</a>
+                  ) : link && isContact ? (
+                    <span style={{ fontSize: 12, color: "#475569" }}>Contact us</span>
+                  ) : "-"}
+                </td>
               </tr>
             );
           })}

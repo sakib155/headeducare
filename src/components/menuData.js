@@ -3,7 +3,6 @@ export const menuData = [
     title: { name: "About", url: "/about" },
     items: [
       { name: "Our Team", url: "/about/our-people" },
-      { name: "What we do", url: "/about/we-will-provide" },
     ],
   },
   {
@@ -17,18 +16,12 @@ export const menuData = [
       { name: "Canada", url: "/destination/canada", flag: "🇨🇦" },
       { name: "Malaysia", url: "/destination/malaysia", flag: "🇲🇾" },
       { name: "South Korea", url: "/destination/korea", flag: "🇰🇷" },
-      {
-        name: "Europe",
-        flag: "🇪🇺",
-        items: [
-          { name: "Finland", url: "/destination/finland", flag: "🇫🇮" },
-          { name: "Hungary", url: "/destination/hungary", flag: "🇭🇺" },
-          { name: "Sweden", url: "/destination/sweden", flag: "🇸🇪" },
-          { name: "Netherlands", url: "/destination/netherlands", flag: "🇳🇱" },
-          { name: "Belgium", url: "/destination/belgium", flag: "🇧🇪" },
-          { name: "Norway", url: "/destination/norway", flag: "🇳🇴" },
-        ],
-      },
+      { name: "Finland", url: "/destination/finland", flag: "🇫🇮" },
+      { name: "Hungary", url: "/destination/hungary", flag: "🇭🇺" },
+      { name: "Sweden", url: "/destination/sweden", flag: "🇸🇪" },
+      { name: "Netherlands", url: "/destination/netherlands", flag: "🇳🇱" },
+      { name: "Belgium", url: "/destination/belgium", flag: "🇧🇪" },
+      { name: "Norway", url: "/destination/norway", flag: "🇳🇴" },
     ],
   },
   {
@@ -36,6 +29,14 @@ export const menuData = [
   },
   {
     title: { name: "Study MBBS", url: "/study-mbbs" },
+    items: [
+      { name: "China", url: "/study-mbbs/china", flag: "🇨🇳" },
+      { name: "Malaysia", url: "/study-mbbs/malaysia", flag: "🇲🇾" },
+      { name: "Hungary", url: "/study-mbbs/hungary", flag: "🇭🇺" },
+      { name: "Russia", url: "/study-mbbs/russia", flag: "🇷🇺" },
+      { name: "Kyrgyzstan", url: "/study-mbbs/kyrgyzstan", flag: "🇰🇬" },
+      { name: "Georgia", url: "/study-mbbs/georgia", flag: "🇬🇪" },
+    ],
   },
   {
     title: { name: "USA Mentorship", url: "/mentorship" },
@@ -44,6 +45,10 @@ export const menuData = [
       {
         name: "Elite School Admission",
         url: "/mentorship/elite-school-admission",
+      },
+      {
+        name: "Russell Group Application",
+        url: "/mentorship/russell-group-application",
       },
       {
         name: "Masters Mentorship Program",

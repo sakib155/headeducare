@@ -271,7 +271,7 @@ export default function WillProvide() {
         <section
           style={{
             position: "relative",
-            padding: "96px 0 80px",
+            padding: "120px 0 100px",
             overflow: "hidden",
             background:
               "linear-gradient(135deg,rgba(0,91,143,0.06) 0%,rgba(74,131,243,0.04) 100%)",
