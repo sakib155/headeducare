@@ -380,6 +380,31 @@ export default function FreeConsultation() {
         </div>
       </section>
 
+      {/* OFFICE / MAP */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-[#0d121b] dark:text-white">
+            Visit Our Office
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-10">
+            Head Educare, Dhaka, Bangladesh. Drop by for a face-to-face
+            consultation with our expert counselors.
+          </p>
+          <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 h-[500px] shadow-lg">
+            <iframe
+              title="Head Educare Location"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=44/16+Head+Educare+West+Panthapath+Dhaka+1205&output=embed"
+              style={{ border: 0 }}
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CONNECT METHODS */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">

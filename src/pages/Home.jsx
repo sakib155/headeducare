@@ -324,6 +324,37 @@ export default function Home() {
   const [stats, setStats] = useState(FALLBACK_STATS);
   const [lightbox, setLightbox] = useState(null); // index of open image
   const containerRef = useReveal();
+  const [leadForm, setLeadForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    country_interest: "",
+    service_interest: "",
+    message: "",
+  });
+  const [leadStatus, setLeadStatus] = useState(null);
+
+  const handleLeadChange = (e) =>
+    setLeadForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+  const handleLeadSubmit = async (e) => {
+    e.preventDefault();
+    setLeadStatus("sending");
+    try {
+      await api.submitLead(leadForm);
+      setLeadStatus("success");
+      setLeadForm({
+        name: "",
+        email: "",
+        phone: "",
+        country_interest: "",
+        service_interest: "",
+        message: "",
+      });
+    } catch {
+      setLeadStatus("error");
+    }
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -729,7 +760,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
-                    to="/contact"
+                    to="/freeconsulation"
                     className="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
                   >
                     Book Free Consultation
@@ -742,12 +773,150 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="hidden lg:block reveal">
-                <img
-                  alt="Students studying"
-                  className="rounded-2xl shadow-2xl"
-                  src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
+              <div className="reveal">
+                <form
+                  onSubmit={handleLeadSubmit}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl"
+                >
+                  <h3 className="text-2xl font-bold text-[#0d121b] dark:text-white mb-2">
+                    Get Free Consultation
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 mb-6 text-sm">
+                    Fill in your details and our counselors will contact you
+                    within 24 hours.
+                  </p>
+
+                  <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        name="name"
+                        value={leadForm.name}
+                        onChange={handleLeadChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        Email *
+                      </label>
+                      <input
+                        name="email"
+                        type="email"
+                        value={leadForm.email}
+                        onChange={handleLeadChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        Phone *
+                      </label>
+                      <input
+                        name="phone"
+                        value={leadForm.phone}
+                        onChange={handleLeadChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="+880 1XXX XXXXXX"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        Country of Interest
+                      </label>
+                      <select
+                        name="country_interest"
+                        value={leadForm.country_interest}
+                        onChange={handleLeadChange}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      >
+                        <option value="">Select country</option>
+                        <option>Australia</option>
+                        <option>United Kingdom</option>
+                        <option>Canada</option>
+                        <option>United States</option>
+                        <option>Germany</option>
+                        <option>Japan</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Service Interest
+                    </label>
+                    <select
+                      name="service_interest"
+                      value={leadForm.service_interest}
+                      onChange={handleLeadChange}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                    >
+                      <option value="">Select service</option>
+                      <option>Study Abroad</option>
+                      <option>Migration Services</option>
+                      <option>Visa Assistance</option>
+                      <option>Test Preparation</option>
+                      <option>Career Counseling</option>
+                      <option>Scholarship Guidance</option>
+                    </select>
+                  </div>
+
+                  <div className="mb-6">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      name="message"
+                      value={leadForm.message}
+                      onChange={handleLeadChange}
+                      rows={3}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                      placeholder="Tell us about your goals or any questions..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={leadStatus === "sending"}
+                    className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 disabled:opacity-50 flex items-center justify-center gap-2"
+                  >
+                    {leadStatus === "sending" ? (
+                      <>
+                        <span className="material-symbols-outlined animate-spin">
+                          progress_activity
+                        </span>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <span className="material-symbols-outlined">event</span>
+                        Submit Request
+                      </>
+                    )}
+                  </button>
+
+                  {leadStatus === "success" && (
+                    <p className="mt-4 text-green-600 font-semibold text-center">
+                      Thank you! We'll contact you within 24 hours.
+                    </p>
+                  )}
+                  {leadStatus === "error" && (
+                    <p className="mt-4 text-red-500 font-semibold text-center">
+                      Something went wrong. Please try again or call us directly.
+                    </p>
+                  )}
+                </form>
               </div>
             </div>
           </div>

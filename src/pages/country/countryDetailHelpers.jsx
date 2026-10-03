@@ -173,32 +173,38 @@ export function ScholarshipTable({ scholarships }) {
     };
   };
   return (
-    <div className="table-wrap">
-      <table className="data-table" style={{ minWidth: 500 }}>
-        <thead>
-          <tr><th>Scholarship</th><th>Level</th><th>Amount</th><th>Link</th></tr>
-        </thead>
-        <tbody>
-          {scholarships.map((s, i) => {
-            const { name, level, amount, link } = splitScholarship(s);
-            const isContact = link.toLowerCase().includes("contact");
-            return (
-              <tr key={i}>
-                <td style={{ fontWeight: 600 }}>{name}</td>
-                <td className="score">{level}</td>
-                <td className="score">{amount}</td>
-                <td>
-                  {link && !isContact ? (
-                    <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#005B8F", textDecoration: "underline", fontSize: 11, wordBreak: "break-all" }}>{link}</a>
-                  ) : link && isContact ? (
-                    <span style={{ fontSize: 12, color: "#475569" }}>Contact us</span>
-                  ) : "-"}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    <div className="scholarship-grid">
+      {scholarships.map((s, i) => {
+        const { name, level, amount, link } = splitScholarship(s);
+        const isContact = link.toLowerCase().includes("contact");
+        const href = isContact ? "http://localhost:5173/freeconsulation" : link;
+        return (
+          <div key={i} className="scholarship-card" style={{ "--delay": `${i * 0.07}s` }}>
+            <div className="scholarship-card-head">
+              <span className="scholarship-icon">
+                <Icon d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5" size={20} />
+              </span>
+              <span className="scholarship-name">{name}</span>
+            </div>
+            <div className="scholarship-row">
+              <div className="scholarship-amount">{amount}</div>
+              {level !== "-" && <span className="scholarship-level">{level}</span>}
+            </div>
+            {href ? (
+              <a
+                className="scholarship-link"
+                href={href}
+                {...(isContact ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                Click here for more information
+                <Icon d="M5 12h14M13 6l6 6-6 6" size={15} />
+              </a>
+            ) : (
+              <span className="scholarship-link scholarship-link-muted">Click here for more information</span>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

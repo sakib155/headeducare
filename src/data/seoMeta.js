@@ -123,10 +123,6 @@ export const routeMeta = [
     },
   }),
 
-  meta("/contact", "Contact Us", "Contact Head Educare in Dhaka, Bangladesh for expert guidance on studying abroad. Call or WhatsApp for a free consultation on university admissions and visas.", {
-    keywords: ["contact Head Educare", "study abroad consultant Dhaka", "education consultancy phone number", "free consultation Bangladesh"],
-  }),
-
   meta("/freeconsulation", "Free Consultation", "Book your free consultation with Head Educare in Dhaka. Our experts will guide you through university selection, applications, scholarships, and visa processes.", {
     keywords: ["free study abroad consultation", "book appointment Dhaka", "education counseling Bangladesh"],
   }),

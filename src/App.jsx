@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import CountryDetails from "./pages/country/CountryDetails";
-import Contact from "./pages/Contact";
 import OurPeople from "./pages/about/our-people";
 import DestinationPage from "./pages/allcountries/allcountry";
 import FreeConsultation from "./pages/FreeConsultations";
@@ -53,10 +52,17 @@ import StudyMBBSDetail from "./pages/StudyMBBSDetail";
 import AutoSeo from "./components/Seo";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -94,7 +100,6 @@ export default function App() {
         <Route path="/about/we-will-provide" element={<AutoSeo><WillProvide /></AutoSeo>} />
         <Route path="/services" element={<AutoSeo><Services /></AutoSeo>} />
         <Route path="/destination/:slug" element={<AutoSeo><CountryDetails /></AutoSeo>} />
-        <Route path="/contact" element={<AutoSeo><Contact /></AutoSeo>} />
         <Route path="/freeconsulation" element={<AutoSeo><FreeConsultation /></AutoSeo>} />
         <Route path="/allcountries/allcountry" element={<AutoSeo><DestinationPage /></AutoSeo>} />
         <Route path="/legal/termsService" element={<AutoSeo><TermsServices /></AutoSeo>} />

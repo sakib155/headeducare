@@ -9,7 +9,7 @@ export const countriesFallback = [
     cost_info: "AUD 20,000 – 50,000/year",
     visa_info: "Student Visa (Subclass 500) via Department of Home Affairs",
     image_url:
-      "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800",
+      "/assets/Australia.jpeg",
     tuition_fees: {
       undergraduate: { min: 20000, max: 50000, currency: "AU$" },
       postgraduate: { min: 22000, max: 55000, currency: "AU$" },
@@ -95,7 +95,7 @@ export const countriesFallback = [
     cost_info: "GBP 10,000 – 38,000/year",
     visa_info: "UK Student Visa via UKVI (formerly Tier 4)",
     image_url:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
+      "/assets/uk.jpeg",
     tuition_fees: {
       undergraduate: { min: 10000, max: 38000, currency: "£" },
       postgraduate: { min: 10000, max: 42000, currency: "£" },
@@ -1122,7 +1122,7 @@ export const countriesFallback = [
     cost_info: "USD 3,500 – 6,000/year",
     visa_info: "Student Pass via Immigration Department of Malaysia (iKad)",
     image_url:
-      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800",
+      "/assets/malaysia.jpeg",
     tuition_fees: {
       undergraduate: { min: 3500, max: 6000, currency: "$" },
       postgraduate: { min: 4000, max: 7000, currency: "$" },

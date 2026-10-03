@@ -3,9 +3,9 @@
 // Update these values to match your cPanel MySQL Database configuration
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'headeduc_headeducare');
-define('DB_USER', 'headeduc');
-define('DB_PASS', '[J:8J4pS0xzd9G');
+define('DB_NAME', 'headedu');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 
 // CORS & Common Headers
 header("Access-Control-Allow-Origin: *");

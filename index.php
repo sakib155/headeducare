@@ -63,11 +63,6 @@ $ROUTES = [
     'keywords' => 'study abroad services, admission consultancy, visa processing Bangladesh, IELTS coaching Dhaka',
     'og_type' => 'website',
   ],
-  '/contact' => [
-    'title' => 'Contact Us | Head Educare',
-    'desc'  => 'Contact Head Educare in Dhaka, Bangladesh for expert guidance on studying abroad. Call or WhatsApp for a free consultation on university admissions and visas.',
-    'keywords' => 'contact Head Educare, study abroad consultant Dhaka, education consultancy phone number, free consultation Bangladesh',
-  ],
   '/freeconsulation' => [
     'title' => 'Free Consultation | Head Educare',
     'desc'  => 'Book your free consultation with Head Educare in Dhaka. Our experts will guide you through university selection, applications, scholarships, and visa processes.',

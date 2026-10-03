@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  to="/freeconsulation"
                   className="hover:text-primary transition-colors"
                 >
                   Contact Us

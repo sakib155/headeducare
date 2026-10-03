@@ -26,6 +26,10 @@ export const menuData = [
   },
   {
     title: { name: "Courses", url: "/courses" },
+    items: [
+      { name: "PTE", url: "/courses#pte" },
+      { name: "SAT", url: "/courses#sat" },
+    ],
   },
   {
     title: { name: "Study MBBS", url: "/study-mbbs" },
@@ -107,6 +111,6 @@ export const menuData = [
     ],
   },
   {
-    title: { name: "Contact Us", url: "/contact" },
+    title: { name: "Contact Us", url: "/freeconsulation" },
   },
 ];

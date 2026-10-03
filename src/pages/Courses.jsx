@@ -375,7 +375,7 @@ export default function Courses() {
         {/* ═══════════════════════════════════════════
            PTE — HERO SECTION
         ════════════════════════════════════════════ */}
-        <section className="srv-section">
+        <section className="srv-section" id="pte">
           <div className="srv-container">
             <div className="srv-reveal" style={{ maxWidth: 800, margin: "0 auto", textAlign: "center", marginBottom: 48 }}>
               <span className="srv-badge" style={{ margin: "0 auto 20px" }}>
@@ -758,7 +758,7 @@ export default function Courses() {
         {/* ═══════════════════════════════════════════
            SAT — HERO SECTION
         ════════════════════════════════════════════ */}
-        <section className="srv-section">
+        <section className="srv-section" id="sat">
           <div className="srv-container">
             <div className="srv-reveal" style={{ textAlign: "center", marginBottom: 48 }}>
               <span className="srv-badge" style={{ margin: "0 auto 20px" }}>

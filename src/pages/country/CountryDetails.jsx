@@ -239,13 +239,8 @@ export default function CountryDetails() {
           )}
           <div className="hero-overlay" />
           <div className="hero-content">
-            <div className="hero-badge">
-              <span className="hero-flag">{flag}</span>
-              <span className="hero-badge-text">Study Destination</span>
-            </div>
             <h1 className="hero-title">Study in {name}</h1>
             {desc && <p className="hero-desc">{desc}</p>}
-            <span className="hero-accent" />
           </div>
         </div>
 
@@ -253,10 +248,6 @@ export default function CountryDetails() {
         {whyData && (
           <div className="ws-section sections">
             <div style={{ maxWidth: 800, margin: "0 auto" }}>
-              <div className="ws-header-row">
-                <span className="ws-badge">Why Study Here</span>
-                <span className="ws-header-line" />
-              </div>
               <h2 className="ws-title">Why Study in {name}?</h2>
               {whyData.points.map((point, i) => (
                 <div key={i} className="ws-point" style={{ animationDelay: `${i * 0.1}s` }}>
@@ -273,24 +264,20 @@ export default function CountryDetails() {
 
         {/* ── CONTENT SECTIONS ── */}
         <div className="sections">
-          <SectionCard title="Tuition Fees">
-            <TuitionFees fees={fees} />
-          </SectionCard>
-
-          <SectionCard title="Language Requirements">
-            <LanguageRequirements reqs={langs} />
+          <SectionCard title="Top Courses">
+            <TopCourses courses={courses} />
           </SectionCard>
 
           <SectionCard title="Intake Periods">
             <Intakes intakes={intakes} />
           </SectionCard>
 
-          <SectionCard title="Post-Study Work Salaries">
-            <Salaries salaries={salaries} />
+          <SectionCard title="Tuition Fees">
+            <TuitionFees fees={fees} />
           </SectionCard>
 
-          <SectionCard title="Top Courses">
-            <TopCourses courses={courses} />
+          <SectionCard title="Language Requirements">
+            <LanguageRequirements reqs={langs} />
           </SectionCard>
 
           {appChecklist && appChecklist.length > 0 && (
@@ -310,6 +297,10 @@ export default function CountryDetails() {
               <DocumentsTable items={visaDocs} />
             </SectionCard>
           )}
+
+          <SectionCard title="Post-Study Work Salaries">
+            <Salaries salaries={salaries} />
+          </SectionCard>
 
           {scholarships?.length > 0 && (
             <SectionCard title="Scholarships & Funding">
