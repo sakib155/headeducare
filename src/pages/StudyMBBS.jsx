@@ -42,7 +42,7 @@ export default function StudyMBBS() {
     <>
       <style>{styles}</style>
       <div className="mbbs-page">
-        <section className="relative py-28 lg:py-36 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
+        <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">Medical Studies</h2>

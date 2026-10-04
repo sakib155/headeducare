@@ -52,7 +52,7 @@ export default function RussellGroupApplication() {
   return (
     <>
       <style>{MENTOR_STYLES + `
-        .rg-hero { position:relative; padding:120px 0 100px; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); }
+        .rg-hero { position:relative; padding:72px 0 56px; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); }
         .rg-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
         .rg-table { width:100%; border-collapse:collapse; margin-top:24px; font-size:14px; border-radius:16px; overflow:hidden; }
         .rg-table th { background:linear-gradient(135deg,#005B8F,#004a78); color:#fff; padding:14px 18px; font-weight:700; font-size:13px; font-family:'Lexend',sans-serif; text-align:left; }

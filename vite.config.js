@@ -5,4 +5,9 @@ import seoDevPlugin from './vite-plugin-seo'
 
 export default defineConfig({
   plugins: [seoDevPlugin(), react(), tailwindcss()],
+  server: {
+    proxy: {
+      '/api': 'http://localhost',
+    },
+  },
 })

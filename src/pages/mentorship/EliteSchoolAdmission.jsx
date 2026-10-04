@@ -15,7 +15,7 @@ export default function EliteSchoolAdmission() {
   return (
     <>
       <style>{MENTOR_STYLES + `
-        .elite-hero { position:relative; padding:120px 0 100px; overflow:hidden; background:linear-gradient(135deg,#e8f4fd 0%,#dbeafe 100%); }
+        .elite-hero { position:relative; padding:72px 0 56px; overflow:hidden; background:linear-gradient(135deg,#e8f4fd 0%,#dbeafe 100%); }
         .elite-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } }
       `}</style>

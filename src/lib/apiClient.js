@@ -287,6 +287,24 @@ export const api = {
     });
   },
 
+  // --- Contacts ---
+  async fetchContacts() {
+    return await request(`${API_BASE}/contacts.php`);
+  },
+
+  async saveContact(contactData) {
+    return await request(`${API_BASE}/contacts.php`, {
+      method: 'POST',
+      body: JSON.stringify(contactData)
+    });
+  },
+
+  async deleteContact(id) {
+    return await request(`${API_BASE}/contacts.php?id=${id}`, {
+      method: 'DELETE'
+    });
+  },
+
   // --- Leads ---
   async submitLead(leadData) {
     // Falls back to logging if API is not running
@@ -295,7 +313,7 @@ export const api = {
         method: 'POST',
         body: JSON.stringify(leadData)
       });
-    } catch (err) {
+    } catch {
       console.warn("Could not send lead to server. Simulating success locally...", leadData);
       return { message: "Mock success", id: Date.now() };
     }

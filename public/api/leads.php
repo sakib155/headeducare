@@ -29,9 +29,9 @@ if ($method === 'POST') {
         exit();
     }
 
-    // Otherwise, create a new lead (public access)
+    // Otherwise, create a new contact + lead (public access)
     $input = json_decode(file_get_contents('php://input'), true);
-    
+
     // Check required fields
     if (empty($input['name']) || empty($input['email']) || empty($input['phone'])) {
         http_response_code(400);
@@ -49,29 +49,46 @@ if ($method === 'POST') {
     $preferred_time = isset($input['preferred_time']) ? trim($input['preferred_time']) : null;
     $message = isset($input['message']) ? trim($input['message']) : null;
 
-    $stmt = $db->prepare("INSERT INTO leads 
-        (name, email, phone, country_interest, service_interest, preferred_contact, preferred_date, preferred_time, message, status) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'new')");
-    
-    $stmt->execute([
-        $name, $email, $phone, $country_interest, $service_interest, 
-        $preferred_contact, $preferred_date, $preferred_time, $message
-    ]);
+    $db->beginTransaction();
+    try {
+        $stmt = $db->prepare("INSERT INTO contacts (name, email, phone, message, source) VALUES (?, ?, ?, ?, 'form')");
+        $stmt->execute([$name, $email, $phone, $message]);
+        $contactId = $db->lastInsertId();
 
-    http_response_code(201);
-    echo json_encode(["message" => "Lead submitted successfully", "id" => $db->lastInsertId()]);
+        $stmt = $db->prepare("INSERT INTO leads
+            (contact_id, country_interest, service_interest, preferred_contact, preferred_date, preferred_time, status)
+            VALUES (?, ?, ?, ?, ?, ?, 'new')");
+        $stmt->execute([
+            $contactId, $country_interest, $service_interest,
+            $preferred_contact, $preferred_date, $preferred_time
+        ]);
+        $leadId = $db->lastInsertId();
+        $db->commit();
+
+        http_response_code(201);
+        echo json_encode(["message" => "Lead submitted successfully", "id" => $leadId]);
+    } catch (Exception $e) {
+        $db->rollBack();
+        http_response_code(500);
+        echo json_encode(["error" => "Failed to save lead"]);
+    }
 
 } elseif ($method === 'GET') {
-    // Admin list of leads
+    // Admin list of leads, joined with their contact
     require_auth();
 
-    $stmt = $db->query("SELECT * FROM leads ORDER BY created_at DESC");
+    $stmt = $db->query("
+        SELECT l.*, c.id AS contact_id, c.name, c.email, c.phone, c.message, c.source
+        FROM leads l
+        JOIN contacts c ON c.id = l.contact_id
+        ORDER BY l.created_at DESC
+    ");
     $leads = $stmt->fetchAll();
 
     echo json_encode($leads);
 
 } elseif ($method === 'DELETE') {
-    // Admin delete lead
+    // Admin delete lead (the contact record remains)
     require_auth();
 
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;

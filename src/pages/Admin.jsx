@@ -10,6 +10,7 @@ export default function Admin() {
 
   // Data States
   const [leads, setLeads] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const [services, setServices] = useState([]);
   const [countries, setCountries] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
@@ -19,6 +20,7 @@ export default function Admin() {
   const [actionLoading, setActionLoading] = useState(false);
   const [leadsFilter, setLeadsFilter] = useState("all");
   const [leadsSearch, setLeadsSearch] = useState("");
+  const [contactsSearch, setContactsSearch] = useState("");
 
   // Modal / Form States
   const [activeModal, setActiveModal] = useState(null); // 'service', 'country', 'testimonial', 'lead_details'
@@ -45,14 +47,16 @@ export default function Admin() {
 
   const loadDashboardData = async () => {
     try {
-      const [leadsData, servicesData, countriesData, testimonialsData, settingsData] = await Promise.all([
+      const [leadsData, contactsData, servicesData, countriesData, testimonialsData, settingsData] = await Promise.all([
         api.fetchLeads().catch(() => []),
+        api.fetchContacts().catch(() => []),
         api.fetchServices(),
         api.fetchCountries(),
         api.fetchTestimonials(),
         api.fetchSettings()
       ]);
       setLeads(leadsData);
+      setContacts(contactsData);
       setServices(servicesData);
       setCountries(countriesData);
       setTestimonials(testimonialsData);
@@ -82,6 +86,7 @@ export default function Admin() {
       setAuth({ loading: false, authenticated: false, user: null });
       // Reset state variables
       setLeads([]);
+      setContacts([]);
     }
   };
 
@@ -101,7 +106,7 @@ export default function Admin() {
     }
   };
 
-  // Lead deleter
+  // Lead deleter (contact record remains)
   const handleDeleteLead = async (id) => {
     if (confirm("Are you sure you want to delete this lead? This cannot be undone.")) {
       setActionLoading(true);
@@ -117,6 +122,40 @@ export default function Admin() {
       } finally {
         setActionLoading(false);
       }
+    }
+  };
+
+  // Contact deleter (removes linked lead too)
+  const handleDeleteContact = async (id) => {
+    if (confirm("Are you sure you want to delete this contact? It will also be removed from Lead Management. This cannot be undone.")) {
+      setActionLoading(true);
+      try {
+        const contact = contacts.find(c => c.id === id);
+        await api.deleteContact(id);
+        setContacts(prev => prev.filter(c => c.id !== id));
+        if (contact?.lead_id) {
+          setLeads(prev => prev.filter(l => l.id !== contact.lead_id));
+        }
+      } catch (err) {
+        alert("Failed to delete contact: " + err.message);
+      } finally {
+        setActionLoading(false);
+      }
+    }
+  };
+
+  // Contact creator (manual add; also creates a 'new' lead)
+  const handleSaveContact = async (data) => {
+    setActionLoading(true);
+    try {
+      await api.saveContact(data);
+      await loadDashboardData();
+      setActiveModal(null);
+      setSelectedItem(null);
+    } catch (err) {
+      alert("Failed to add contact: " + err.message);
+    } finally {
+      setActionLoading(false);
     }
   };
 
@@ -293,6 +332,17 @@ export default function Admin() {
     return matchesStatus && matchesSearch;
   });
 
+  // Filter & Search Contacts
+  const filteredContacts = contacts.filter(c => {
+    const searchLower = contactsSearch.toLowerCase();
+    return (
+      c.name.toLowerCase().includes(searchLower) ||
+      c.email.toLowerCase().includes(searchLower) ||
+      c.phone.includes(searchLower) ||
+      (c.message && c.message.toLowerCase().includes(searchLower))
+    );
+  });
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col md:flex-row">
       {/* SIDEBAR */}
@@ -316,6 +366,7 @@ export default function Admin() {
           <nav className="space-y-1">
             {[
               { id: "overview", label: "Overview", icon: "dashboard" },
+              { id: "contacts", label: "Contacts", icon: "contact_phone", badge: contacts.length },
               { id: "leads", label: "Leads Manager", icon: "contacts", badge: newLeadsCount },
               { id: "services", label: "Services", icon: "school" },
               { id: "countries", label: "Destinations", icon: "public" },
@@ -409,6 +460,139 @@ export default function Admin() {
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB: CONTACTS */}
+        {activeTab === "contacts" && (
+          <div className="space-y-8 animate-fadeIn">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-black text-white">Contacts</h2>
+                <p className="text-slate-400 text-sm mt-1">
+                  Every form submission and manually added person. Each contact
+                  automatically appears in Lead Management.
+                </p>
+              </div>
+
+              <button
+                onClick={() => {
+                  setSelectedItem({ name: "", email: "", phone: "", message: "", country_interest: "", service_interest: "" });
+                  setActiveModal("contact");
+                }}
+                className="bg-primary text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-primary/95 transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-primary/20"
+              >
+                <span className="material-symbols-outlined text-base">add</span>
+                Add Contact
+              </button>
+            </div>
+
+            {/* Search bar */}
+            <div className="relative max-w-md">
+              <span className="material-symbols-outlined absolute left-3 top-3.5 text-slate-500 text-lg">search</span>
+              <input
+                type="text"
+                value={contactsSearch}
+                onChange={(e) => setContactsSearch(e.target.value)}
+                placeholder="Search contacts by name, email, phone, message..."
+                className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+
+            {/* Table */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-800 text-slate-400 text-xs font-bold uppercase tracking-wider bg-slate-900/50">
+                      <th className="p-4 pl-6">Person</th>
+                      <th className="p-4">Contact Info</th>
+                      <th className="p-4">Message</th>
+                      <th className="p-4">Source</th>
+                      <th className="p-4">Lead Status</th>
+                      <th className="p-4">Date</th>
+                      <th className="p-4 pr-6 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800/60 text-sm text-slate-300">
+                    {filteredContacts.length === 0 ? (
+                      <tr>
+                        <td colSpan="7" className="p-8 text-center text-slate-500">
+                          No contacts found.
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredContacts.map(contact => (
+                        <tr key={contact.id} className="hover:bg-slate-800/20 transition-colors">
+                          <td className="p-4 pl-6">
+                            <p className="font-bold text-white text-base">{contact.name}</p>
+                            <span className="text-xs text-slate-500">ID: {contact.id}</span>
+                          </td>
+                          <td className="p-4">
+                            <p className="text-slate-300">{contact.phone}</p>
+                            <p className="text-slate-500 text-xs">{contact.email}</p>
+                          </td>
+                          <td className="p-4 max-w-[220px]">
+                            <p className="text-slate-400 text-xs line-clamp-2">{contact.message || '—'}</p>
+                          </td>
+                          <td className="p-4">
+                            <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                              contact.source === 'manual'
+                                ? "bg-amber-500/10 border border-amber-500/20 text-amber-400"
+                                : "bg-emerald-500/10 border border-emerald-500/20 text-emerald-400"
+                            }`}>
+                              {contact.source === 'manual' ? 'Manual' : 'Form'}
+                            </span>
+                          </td>
+                          <td className="p-4">
+                            {contact.lead_status ? (
+                              <span className={`px-3 py-1.5 rounded-full text-xs font-extrabold text-slate-950 capitalize ${
+                                contact.lead_status === 'new' ? 'bg-emerald-400' :
+                                contact.lead_status === 'contacted' ? 'bg-blue-400' :
+                                contact.lead_status === 'in_progress' ? 'bg-amber-400' :
+                                'bg-purple-400'
+                              }`}>
+                                {contact.lead_status.replace('_', ' ')}
+                              </span>
+                            ) : (
+                              <span className="text-xs text-slate-500">No lead</span>
+                            )}
+                          </td>
+                          <td className="p-4 text-xs text-slate-500">
+                            {new Date(contact.created_at).toLocaleDateString()}
+                          </td>
+                          <td className="p-4 pr-6 text-right space-x-2">
+                            <button
+                              onClick={() => {
+                                if (contact.lead_id) {
+                                  const lead = leads.find(l => l.id === contact.lead_id);
+                                  if (lead) {
+                                    setSelectedItem(lead);
+                                    setActiveModal("lead_details");
+                                  }
+                                }
+                              }}
+                              disabled={!contact.lead_id}
+                              className="text-slate-400 hover:text-white p-1 rounded hover:bg-slate-800 transition-all cursor-pointer disabled:opacity-30"
+                              title="View linked lead"
+                            >
+                              <span className="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                            <button
+                              onClick={() => handleDeleteContact(contact.id)}
+                              disabled={actionLoading}
+                              className="text-red-400 hover:text-red-300 p-1 rounded hover:bg-red-950/20 transition-all cursor-pointer"
+                            >
+                              <span className="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -820,6 +1004,113 @@ export default function Admin() {
             <button onClick={() => setActiveModal(null)} className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors cursor-pointer">
               <span className="material-symbols-outlined">close</span>
             </button>
+
+            {/* MODAL: ADD CONTACT */}
+            {activeModal === "contact" && selectedItem && (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSaveContact(selectedItem);
+                }}
+                className="space-y-6"
+              >
+                <h3 className="text-2xl font-black text-white">Add Contact</h3>
+                <p className="text-slate-400 text-sm -mt-4">
+                  The contact is added to the Contacts list and automatically
+                  becomes a new lead in Lead Management.
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Full Name *</label>
+                    <input
+                      type="text"
+                      required
+                      value={selectedItem.name}
+                      onChange={(e) => setSelectedItem(prev => ({ ...prev, name: e.target.value }))}
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="e.g. John Doe"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email *</label>
+                      <input
+                        type="email"
+                        required
+                        value={selectedItem.email}
+                        onChange={(e) => setSelectedItem(prev => ({ ...prev, email: e.target.value }))}
+                        className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Phone *</label>
+                      <input
+                        type="tel"
+                        required
+                        value={selectedItem.phone}
+                        onChange={(e) => setSelectedItem(prev => ({ ...prev, phone: e.target.value }))}
+                        className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="+880 1XXX XXXXXX"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Country of Interest</label>
+                      <input
+                        type="text"
+                        value={selectedItem.country_interest || ""}
+                        onChange={(e) => setSelectedItem(prev => ({ ...prev, country_interest: e.target.value }))}
+                        className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="e.g. Canada"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Interest</label>
+                      <input
+                        type="text"
+                        value={selectedItem.service_interest || ""}
+                        onChange={(e) => setSelectedItem(prev => ({ ...prev, service_interest: e.target.value }))}
+                        className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="e.g. Study Abroad"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message / Notes</label>
+                    <textarea
+                      rows="3"
+                      value={selectedItem.message || ""}
+                      onChange={(e) => setSelectedItem(prev => ({ ...prev, message: e.target.value }))}
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                      placeholder="Any notes about this contact..."
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-end gap-2 border-t border-slate-850 pt-6">
+                  <button
+                    type="button"
+                    onClick={() => setActiveModal(null)}
+                    className="px-5 py-2.5 bg-slate-800 hover:bg-slate-750 text-white font-bold rounded-xl text-sm transition-colors cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={actionLoading}
+                    className="px-5 py-2.5 bg-primary text-white font-bold rounded-xl text-sm hover:bg-primary/90 transition-all cursor-pointer"
+                  >
+                    Add Contact
+                  </button>
+                </div>
+              </form>
+            )}
 
             {/* MODAL: LEAD DETAILS */}
             {activeModal === "lead_details" && selectedItem && (

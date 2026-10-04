@@ -5,7 +5,7 @@ import {
 
 const styles = `
   .mbbs-page { font-family: 'Lexend', sans-serif; }
-  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); padding:120px 0 100px; }
+  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); padding:72px 0 56px; }
   .dark .mbbs-hero { background:linear-gradient(135deg,#02182a,#0d1f35); }
   .mbbs-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
   .mbbs-section { padding: 80px 0; }

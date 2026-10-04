@@ -376,7 +376,7 @@ export default function Home() {
         if (stData) {
           setStats((prev) => ({ ...prev, ...stData }));
         }
-      } catch (e) {
+      } catch {
         // Use fallback data
       }
     }
@@ -433,7 +433,7 @@ export default function Home() {
       )}
 
       {/* ===== HERO SECTION ===== */}
-      <section className="relative overflow-hidden pt-24 pb-28 lg:pt-32 lg:pb-36 ">
+      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}

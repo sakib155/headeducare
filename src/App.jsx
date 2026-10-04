@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ChatWidget from "./components/ChatWidget";
@@ -100,6 +100,7 @@ export default function App() {
         <Route path="/about/we-will-provide" element={<AutoSeo><WillProvide /></AutoSeo>} />
         <Route path="/services" element={<AutoSeo><Services /></AutoSeo>} />
         <Route path="/destination/:slug" element={<AutoSeo><CountryDetails /></AutoSeo>} />
+        <Route path="/destination/europe" element={<Navigate to="/allcountries/allcountry" replace />} />
         <Route path="/freeconsulation" element={<AutoSeo><FreeConsultation /></AutoSeo>} />
         <Route path="/allcountries/allcountry" element={<AutoSeo><DestinationPage /></AutoSeo>} />
         <Route path="/legal/termsService" element={<AutoSeo><TermsServices /></AutoSeo>} />
@@ -125,6 +126,7 @@ export default function App() {
         <Route path="/services/visa-services" element={<AutoSeo><VisaServices /></AutoSeo>} />
         <Route path="/services/us-mentorship" element={<AutoSeo><USMentorship /></AutoSeo>} />
         <Route path="/mentorship" element={<AutoSeo><USMentorship /></AutoSeo>} />
+        <Route path="/mentorship/usa" element={<AutoSeo><USMentorship /></AutoSeo>} />
         <Route path="/services/general-documents-checklist" element={<AutoSeo><GeneralDocumentsChecklist /></AutoSeo>} />
         <Route path="/services/academic-qualifications" element={<AutoSeo><AcademicQualifications /></AutoSeo>} />
         <Route path="/services/test-preparation" element={<AutoSeo><TestPreparation /></AutoSeo>} />

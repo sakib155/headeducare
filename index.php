@@ -20,19 +20,21 @@ $route = rtrim($uri, '/');
 if ($route === '') $route = '/';
 
 // ── SEO data ────────────────────────────────────────────────────────────────
+$siteUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'headedu.com');
+
 $ROUTES = [
   '/' => [
     'title' => 'Head Educare | Study Abroad Consultant in Bangladesh',
     'desc'  => 'Head Educare is Bangladesh\'s trusted education consultancy helping students pursue higher education across the globe with expert guidance on university selection, scholarships, admissions, and visa processing.',
     'keywords' => 'study abroad from Bangladesh, educational consultancy Bangladesh, Head Educare, study abroad consultancy, admission support Bangladesh, university application help, visa assistance Dhaka',
-    'canonical' => 'https://head educare.com/',
+    'canonical' => $siteUrl . '/',
     'og_type' => 'website',
     'schema' => [
       '@context' => 'https://schema.org',
       '@type' => 'Organization',
       'name' => 'Head Educare',
-      'url' => 'https://head educare.com',
-      'logo' => 'https://head educare.com/HEAD_horizontal.png',
+      'url' => $siteUrl,
+      'logo' => $siteUrl . '/HEAD_horizontal.png',
       'description' => 'Bangladesh\'s trusted education consultancy for international studies.',
       'address' => ['@type' => 'PostalAddress', 'street' => 'House-52, Road-4, Block-C, Banani', 'locality' => 'Dhaka', 'region' => 'Dhaka Division', 'postalCode' => '1213', 'country' => 'Bangladesh'],
       'contactPoint' => ['@type' => 'ContactPoint', 'telephone' => '+8801XXXXXXXXX', 'contactType' => 'customer service'],
@@ -44,7 +46,7 @@ $ROUTES = [
     'title' => 'About Head Educare | Head Educare',
     'desc'  => 'Head Educare is a premier international education consultancy in Bangladesh dedicated to helping students gain admission to the world\'s leading universities with over 10 years of experience.',
     'keywords' => 'about Head Educare, education consultant Dhaka, study abroad agency Bangladesh',
-    'canonical' => 'https://head educare.com/about',
+    'canonical' => $siteUrl . '/about',
     'og_type' => 'website',
   ],
   '/about/our-people' => [
@@ -260,6 +262,16 @@ $ROUTES = [
   ],
 ];
 
+// ── Dynamic route fallbacks (destinations, etc.) ─────────────────────────────
+if (!isset($ROUTES[$route]) && preg_match('#^/destination/([a-z0-9-]+)$#i', $route, $m)) {
+  $label = ucwords(str_replace('-', ' ', $m[1]));
+  $ROUTES[$route] = [
+    'title' => 'Study in ' . $label . ' | Head Educare',
+    'desc'  => 'Explore universities, tuition fees, intake periods, visa requirements, post-study work options and scholarships for studying in ' . $label . ' with Head Educare.',
+    'keywords' => 'study in ' . $label . ', ' . $label . ' student visa, ' . $label . ' universities for Bangladeshi students',
+  ];
+}
+
 // ── Apply SEO meta tags ──────────────────────────────────────────────────────
 $meta = $ROUTES[$route] ?? null;
 
@@ -268,13 +280,12 @@ $html = file_get_contents(__DIR__ . '/index.html');
 if (!$html) { http_response_code(500); die('index.html not found. Run npm run build first.'); }
 
 if ($meta) {
-  $siteUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'headedu.com');
   $fullTitle = $meta['title'];
   $desc = addslashes($meta['desc']);
   $keywords = addslashes($meta['keywords'] ?? '');
   $canonical = $meta['canonical'] ?? $siteUrl . $route;
   $ogType = $meta['og_type'] ?? 'website';
-  $ogImage = $siteUrl . '/og-image.jpg';
+  $ogImage = $siteUrl . '/HEAD_horizontal.png';
 
   // Build all meta tags
   $extraMeta = '
@@ -302,6 +313,7 @@ if ($meta) {
     ]) . '</script>';
 
   $html = str_replace('<title>Head Educare', '<title>' . $fullTitle, $html);
+  $html = preg_replace('/<title>.*?<\/title>/', '<title>' . $fullTitle . '</title>', $html, 1);
   $html = preg_replace('/<meta name="description"[^>]*\/?>/', $extraMeta, $html, 1);
 }
 

@@ -1,5 +1,6 @@
 -- Head Edu Care Database Schema
--- Use this schema to set up your MySQL database on cPanel
+-- Contacts store the person's details. Leads are pipeline opportunities
+-- tied to a contact. Every contact automatically has a lead.
 -- IMPORTANT: Make sure to select your database from the left sidebar in phpMyAdmin BEFORE importing/running this script.
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -9,19 +10,27 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS `leads` (
+CREATE TABLE IF NOT EXISTS `contacts` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `phone` VARCHAR(30) NOT NULL,
+  `message` TEXT DEFAULT NULL,
+  `source` VARCHAR(20) DEFAULT 'form', -- 'form' (website submission) or 'manual' (added by admin)
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `leads` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `contact_id` INT DEFAULT NULL,
   `country_interest` VARCHAR(50) DEFAULT NULL,
   `service_interest` VARCHAR(50) DEFAULT NULL,
   `preferred_contact` VARCHAR(50) DEFAULT NULL,
   `preferred_date` DATE DEFAULT NULL,
   `preferred_time` VARCHAR(50) DEFAULT NULL,
-  `message` TEXT DEFAULT NULL,
   `status` VARCHAR(20) DEFAULT 'new', -- 'new', 'contacted', 'in_progress', 'completed', 'cancelled'
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT `fk_leads_contact` FOREIGN KEY (`contact_id`) REFERENCES `contacts`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `services` (
@@ -72,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `site_settings` (
 -- Seed default admin user. Password is: admin123
 -- (Hash generated using PASSWORD_BCRYPT)
 INSERT INTO `users` (`username`, `password`) VALUES 
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+('admin', '$2y$10$66ipD50wuCcTV42459dWa.Sf137k9wD0ll9TNZWmHH0fSw2n8xD32')
 ON DUPLICATE KEY UPDATE `username` = VALUES(`username`);
 
 -- Seed default services

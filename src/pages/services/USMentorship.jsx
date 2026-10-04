@@ -16,6 +16,8 @@ import {
   Award,
   Zap,
   CheckCircle,
+  Rocket,
+  Target,
 } from "lucide-react";
 
 /* ─────────────── DATA ─────────────── */
@@ -127,81 +129,176 @@ export default function USMentorship() {
           .dark .mentor-list li {
             border-bottom: 1px solid rgba(255,255,255,0.15);
           }
-          @media(max-width:768px){
-.profiles-grid {
+
+          /* ── STUDENT PROFILES ── */
+          .profiles-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 40px;
+            gap: 28px;
+            margin-top: 44px;
           }
           .profile-card {
             background: var(--srv-bg-card);
             border: 1px solid var(--srv-border);
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
           }
           .profile-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
-            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(0,91,143,0.14);
+            transform: translateY(-6px);
+            border-color: rgba(0,91,143,0.35);
+          }
+          .profile-card-image-wrap {
+            position: relative;
+            overflow: hidden;
           }
           .profile-card-image {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
             display: block;
+            transition: transform 0.6s ease;
           }
-          .profile-card-body {
-            padding: 20px 22px 24px;
+          .profile-card:hover .profile-card-image {
+            transform: scale(1.06);
+          }
+          .profile-card-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%);
           }
           .profile-card-uni {
-            display: inline-block;
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: .08em;
-            padding: 4px 12px;
+            letter-spacing: .06em;
+            padding: 6px 14px;
             border-radius: 99px;
-            margin-bottom: 12px;
             font-family: Lexend, sans-serif;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            max-width: calc(100% - 28px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .profile-card-body {
+            padding: 22px 24px 26px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
           }
           .profile-card-name {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 800;
             font-family: Lexend, sans-serif;
             color: var(--srv-text-primary);
-            margin-bottom: 2px;
+            margin-bottom: 3px;
           }
           .profile-card-major {
             font-size: 13px;
             color: var(--srv-text-body);
             font-weight: 400;
             font-family: Lexend, sans-serif;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
+          }
+          .profile-card-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+          }
+          .profile-card-stat-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: Lexend, sans-serif;
+            color: var(--srv-text-primary);
+            background: rgba(0,91,143,0.06);
+            border: 1px solid rgba(0,91,143,0.14);
+            padding: 5px 12px;
+            border-radius: 99px;
+          }
+          .dark .profile-card-stat-chip {
+            background: rgba(96,165,250,0.1);
+            border-color: rgba(96,165,250,0.22);
           }
           .profile-card-divider {
             height: 1px;
             background: var(--srv-border);
+            margin-bottom: 16px;
+          }
+          .profile-card-detail {
+            display: flex;
+            gap: 12px;
             margin-bottom: 14px;
           }
-          .profile-card-stat {
+          .profile-card-detail-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,91,143,0.08);
+            color: #005B8F;
+          }
+          .dark .profile-card-detail-icon {
+            background: rgba(96,165,250,0.12);
+            color: #93c5fd;
+          }
+          .profile-card-detail-copy {
+            min-width: 0;
+          }
+          .profile-card-detail-copy strong {
+            color: var(--srv-text-primary);
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            display: block;
+            margin-bottom: 2px;
+          }
+          .profile-card-detail-copy p {
             font-size: 13px;
             color: var(--srv-text-body);
             font-family: Lexend, sans-serif;
             line-height: 1.6;
+            margin: 0;
           }
-          .profile-card-stat strong {
-            color: var(--srv-text-primary);
-            font-weight: 600;
+          .profile-card-check {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px dashed var(--srv-border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #005B8F;
+            font-family: Lexend, sans-serif;
           }
+          .dark .profile-card-check {
+            color: #93c5fd;
+          }
+
           @media(max-width: 900px) {
             .profiles-grid { grid-template-columns: 1fr 1fr; }
           }
-          @media(max-width: 600px) {
+          @media(max-width: 620px) {
             .profiles-grid { grid-template-columns: 1fr; }
           }
-          .mentor-grid {
+          @media(max-width: 768px) {
+            .mentor-grid {
               grid-template-columns: 1fr !important;
             }
           }
@@ -299,13 +396,14 @@ export default function USMentorship() {
             <div className="profiles-grid srv-reveal">
               {studentProfiles.map((p, i) => (
                 <div key={i} className="profile-card">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="profile-card-image"
-                    loading="lazy"
-                  />
-                  <div className="profile-card-body">
+                  <div className="profile-card-image-wrap">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="profile-card-image"
+                      loading="lazy"
+                    />
+                    <div className="profile-card-image-overlay" />
                     <span
                       className="profile-card-uni"
                       style={{
@@ -315,17 +413,39 @@ export default function USMentorship() {
                     >
                       {p.university}
                     </span>
+                  </div>
+                  <div className="profile-card-body">
                     <div className="profile-card-name">{p.name}</div>
                     <div className="profile-card-major">{p.major}</div>
+                    <div className="profile-card-stats">
+                      {p.stats.split(" | ").map((stat, j) => (
+                        <span key={j} className="profile-card-stat-chip">
+                          {stat}
+                        </span>
+                      ))}
+                    </div>
                     <div className="profile-card-divider" />
-                    <div className="profile-card-stat">
-                      <strong>Stats:</strong> {p.stats}
+                    <div className="profile-card-detail">
+                      <span className="profile-card-detail-icon">
+                        <Rocket size={15} />
+                      </span>
+                      <div className="profile-card-detail-copy">
+                        <strong>Standout Project</strong>
+                        <p>{p.project}</p>
+                      </div>
                     </div>
-                    <div className="profile-card-stat">
-                      <strong>Standout Project:</strong> {p.project}
+                    <div className="profile-card-detail">
+                      <span className="profile-card-detail-icon">
+                        <Target size={15} />
+                      </span>
+                      <div className="profile-card-detail-copy">
+                        <strong>Admissions Focus</strong>
+                        <p>{p.impact}</p>
+                      </div>
                     </div>
-                    <div className="profile-card-stat">
-                      <strong>Admissions Focus:</strong> {p.impact}
+                    <div className="profile-card-check">
+                      <CheckCircle size={15} />
+                      Mentored to {p.university}
                     </div>
                   </div>
                 </div>

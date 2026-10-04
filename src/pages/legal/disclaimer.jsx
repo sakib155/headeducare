@@ -147,7 +147,7 @@ export default function Disclaimer() {
       <div ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative py-28 lg:py-36 overflow-hidden"
+          className="relative py-16 lg:py-20 overflow-hidden"
           style={{
             background:
               "linear-gradient(135deg,rgba(220,38,38,0.04) 0%,rgba(0,91,143,0.04) 100%)",

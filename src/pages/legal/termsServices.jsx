@@ -217,7 +217,7 @@ export default function TermsServices() {
       <div ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative py-28 lg:py-36 overflow-hidden"
+          className="relative py-16 lg:py-20 overflow-hidden"
           style={{
             background:
               "linear-gradient(135deg,rgba(0,91,143,0.05) 0%,rgba(74,131,243,0.03) 100%)",
