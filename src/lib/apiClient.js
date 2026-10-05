@@ -205,6 +205,21 @@ async function request(url, options = {}) {
 }
 
 export const api = {
+  // --- Image upload (auto-resize via /api/upload.php) ---
+  async uploadImage(file, { w = 1920, h = 1080 } = {}) {
+    const fd = new FormData();
+    fd.append("image", file);
+    const res = await fetch(`${API_BASE}/upload.php?w=${w}&h=${h}`, {
+      method: "POST",
+      credentials: "include",
+      body: fd,
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ error: "Upload failed" }));
+      throw new Error(err.error || `Upload error ${res.status}`);
+    }
+    return res.json();
+  },
   // --- Services ---
   async fetchServices() {
     try {

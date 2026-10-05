@@ -107,10 +107,10 @@ export const countryDetailStyles = `
     text-shadow: 0 2px 28px rgba(0,0,0,.45);
   }
   .hero-desc {
-    color: rgba(255,255,255,.7);
+    color: rgba(255,255,255,.95);
     font-size: clamp(.9rem, 1.6vw, 1.05rem);
     max-width: 640px; line-height: 1.75;
-    text-shadow: 0 1px 10px rgba(0,0,0,.3);
+    text-shadow: 0 1px 10px rgba(0,0,0,.45);
   }
   .hero-accent {
     display: block;

@@ -1122,7 +1122,7 @@ export const countriesFallback = [
     cost_info: "USD 3,500 – 6,000/year",
     visa_info: "Student Pass via Immigration Department of Malaysia (iKad)",
     image_url:
-      "/assets/malaysia.jpeg",
+      "/assets/malaysia.jpg",
     tuition_fees: {
       undergraduate: { min: 3500, max: 6000, currency: "$" },
       postgraduate: { min: 4000, max: 7000, currency: "$" },

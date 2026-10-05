@@ -99,14 +99,14 @@ color: #f3f4f6;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 
-  border-bottom: 1px solid rgba(229, 231, 235, 1);
+  border-bottom: 1px solid rgba(8, 15, 49, 1);
 }
 
 .dark .glass-header {
   color: #120104 !important;
   /* Solid background */
   background-color: #080f31 !important;
-  border-bottom: 1px solid rgba(55, 65, 81, 1);
+  border-bottom: 1px solid rgba(8, 15, 49, 1);
 }
 
 /* Force text color for all children in dark mode header */

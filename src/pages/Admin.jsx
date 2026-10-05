@@ -1,5 +1,44 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { api } from "../lib/apiClient";
+
+// Reusable upload button — sends the file to /api/upload.php which
+// auto-resizes it to a uniform resolution and returns the hosted URL.
+function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH = 1080, onUploaded }) {
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
+  const fileRef = useRef(null);
+
+  const handleFile = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setError("");
+    try {
+      const result = await api.uploadImage(file, { w: targetW, h: targetH });
+      if (onUploaded) onUploaded(result.url);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setUploading(false);
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  };
+
+  return (
+    <div className="mt-2">
+      <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleFile} />
+      <button
+        type="button"
+        onClick={() => fileRef.current?.click()}
+        disabled={uploading}
+        className="w-full px-3 py-2 rounded-lg bg-primary/15 text-primary border border-primary/30 text-xs font-bold hover:bg-primary/25 transition-colors disabled:opacity-50"
+      >
+        {uploading ? "Uploading & Resizing..." : label}
+      </button>
+      {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
+    </div>
+  );
+}
 
 export default function Admin() {
   const [auth, setAuth] = useState({ loading: true, authenticated: false, user: null });
@@ -1335,6 +1374,12 @@ export default function Admin() {
                       className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
                       placeholder="https://images.unsplash.com/..."
                     />
+                    <UploadButton
+                      label="Upload Image (auto-resize 1920×1080)"
+                      targetW={1920}
+                      targetH={1080}
+                      onUploaded={(url) => setSelectedItem(prev => ({ ...prev, image_url: url }))}
+                    />
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
@@ -1472,6 +1517,12 @@ export default function Admin() {
                       onChange={(e) => setSelectedItem(prev => ({ ...prev, photo_url: e.target.value }))}
                       className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
                       placeholder="https://images.unsplash.com/..."
+                    />
+                    <UploadButton
+                      label="Upload Photo (auto-resize 400×400)"
+                      targetW={400}
+                      targetH={400}
+                      onUploaded={(url) => setSelectedItem(prev => ({ ...prev, photo_url: url }))}
                     />
                   </div>
 
