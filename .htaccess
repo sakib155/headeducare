@@ -1,5 +1,27 @@
 RewriteEngine On
 
+# ── Security hardening ───────────────────────────────────────────────────────
+# Disable directory listing
+Options -Indexes
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header set X-XSS-Protection "1; mode=block"
+# Content-Security-Policy (basic — adjust as needed for your inline scripts/styles)
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://headeducare.com; frame-ancestors 'self'; form-action 'self'"
+
+# Protect sensitive files
+<FilesMatch "\.(sql|md|sh|log|env|ini|json|lock|zip|pem|key)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(config\.php|db\.php)$">
+  Require all denied
+</FilesMatch>
+
 # Serve static assets directly
 RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|ico|svg|webp|avif|woff2?|ttf|json|xml|txt|pdf)$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/assets/

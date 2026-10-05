@@ -440,10 +440,10 @@ export default function Home() {
             <div className="max-w-2xl opacity-0 animate-fadeInUp">
               <div className="mb-8">
   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.15] tracking-tight text-gray-900 dark:text-white max-w-xl">
-    Connecting you to
+    Higher Education Abroad Destination
   </h2>
   <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-primary">
-    lead tomorrow
+    Educational consultancies
   </span>
 </div>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">

@@ -15,11 +15,10 @@ class Database {
                 ];
                 self::$conn = new PDO($dsn, DB_USER, DB_PASS, $options);
             } catch (PDOException $e) {
-                // Return generic error message to client, don't expose sensitive DB info
+                // Generic error to client — never expose DB internals in production
                 http_response_code(500);
                 echo json_encode([
-                    "error" => "Database connection failed", 
-                    "details" => $e->getMessage() // helpful during setup
+                    "error" => "Database connection failed"
                 ]);
                 exit();
             }

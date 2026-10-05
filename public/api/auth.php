@@ -6,6 +6,26 @@ header('Content-Type: application/json');
 $method = $_SERVER['REQUEST_METHOD'];
 $db = Database::getConnection();
 
+// ── Brute-force protection: max 5 attempts per 15 minutes ───────────────────
+$MAX_ATTEMPTS = 5;
+$LOCKOUT_SECONDS = 900; // 15 minutes
+
+function login_attempts_left() {
+    global $MAX_ATTEMPTS, $LOCKOUT_SECONDS;
+    if (!isset($_SESSION['login_attempts'])) {
+        $_SESSION['login_attempts'] = 0;
+        $_SESSION['login_attempt_time'] = time();
+        return $MAX_ATTEMPTS;
+    }
+    $elapsed = time() - $_SESSION['login_attempt_time'];
+    if ($elapsed > $LOCKOUT_SECONDS) {
+        $_SESSION['login_attempts'] = 0;
+        $_SESSION['login_attempt_time'] = time();
+        return $MAX_ATTEMPTS;
+    }
+    return $MAX_ATTEMPTS - $_SESSION['login_attempts'];
+}
+
 if ($method === 'POST') {
     // Check if logging out
     $action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -13,6 +33,14 @@ if ($method === 'POST') {
         session_unset();
         session_destroy();
         echo json_encode(["message" => "Logged out successfully"]);
+        exit();
+    }
+
+    // Lockout check before processing login
+    $remaining = login_attempts_left();
+    if ($remaining <= 0) {
+        http_response_code(429);
+        echo json_encode(["error" => "Too many failed attempts. Please try again in 15 minutes."]);
         exit();
     }
 
@@ -32,10 +60,13 @@ if ($method === 'POST') {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
-        // Successful login
+        // Successful login — regenerate session ID to prevent fixation
+        session_regenerate_id(true);
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        
+        // Reset attempt counters
+        unset($_SESSION['login_attempts'], $_SESSION['login_attempt_time']);
+
         echo json_encode([
             "message" => "Login successful",
             "user" => [
@@ -44,8 +75,19 @@ if ($method === 'POST') {
             ]
         ]);
     } else {
+        // Failed attempt — increment counter
+        if (!isset($_SESSION['login_attempts'])) {
+            $_SESSION['login_attempts'] = 1;
+            $_SESSION['login_attempt_time'] = time();
+        } else {
+            $_SESSION['login_attempts']++;
+        }
         http_response_code(401);
-        echo json_encode(["error" => "Invalid credentials"]);
+        $left = login_attempts_left();
+        echo json_encode([
+            "error" => "Invalid credentials",
+            "attempts_left" => max($left, 0)
+        ]);
     }
 } elseif ($method === 'GET') {
     // Verify session status

@@ -54,7 +54,7 @@ export default function Header({
   return (
     <div className={`w-full font-sans transition-colors duration-200 ${darkMode ? "dark" : ""}`}>
       {/* Top Announcement Bar */}
-      <div className="bg-primary/10 border-b border-primary/20 py-2.5 px-4 text-xs sm:text-sm font-semibold text-center text-primary flex items-center justify-center flex-wrap gap-2 transition-colors">
+      <div className="bg-primary/10 border-b border-primary/20 py-1 px-4 text-xs sm:text-sm font-semibold text-center text-primary flex items-center justify-center flex-wrap gap-2 transition-colors">
         <span>Fall 2027 Admissions & Elite School Mentorship Applications are now open!</span>
         <a
           href="/freeconsulation"
