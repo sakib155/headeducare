@@ -47,6 +47,16 @@ export default function Admin() {
   const [loginError, setLoginError] = useState("");
   const [activeTab, setActiveTab] = useState("overview");
 
+  // Unread contacts badge — industry standard: shows how many contacts are
+  // new since the admin last opened the Contacts page, clears on open.
+  const LAST_SEEN_CONTACTS_KEY = "headeduc_last_seen_contacts";
+  const [unseenContacts, setUnseenContacts] = useState(0);
+
+  const markContactsSeen = () => {
+    localStorage.setItem(LAST_SEEN_CONTACTS_KEY, String(contacts.length));
+    setUnseenContacts(0);
+  };
+
   // Data States
   const [leads, setLeads] = useState([]);
   const [contacts, setContacts] = useState([]);
@@ -69,6 +79,11 @@ export default function Admin() {
   useEffect(() => {
     checkAuthentication();
   }, []);
+
+  // Keep badge cleared while the admin is actively viewing the Contacts tab
+  useEffect(() => {
+    if (activeTab === "contacts" && contacts.length > 0) markContactsSeen();
+  }, [activeTab, contacts.length]);
 
   const checkAuthentication = async () => {
     try {
@@ -96,6 +111,9 @@ export default function Admin() {
       ]);
       setLeads(leadsData);
       setContacts(contactsData);
+      // Unseen badge = total contacts minus last count the admin viewed
+      const lastSeen = parseInt(localStorage.getItem(LAST_SEEN_CONTACTS_KEY) || "0", 10);
+      setUnseenContacts(Math.max(0, (contactsData?.length || 0) - lastSeen));
       setServices(servicesData);
       setCountries(countriesData);
       setTestimonials(testimonialsData);
@@ -405,7 +423,7 @@ export default function Admin() {
           <nav className="space-y-1">
             {[
               { id: "overview", label: "Overview", icon: "dashboard" },
-              { id: "contacts", label: "Contacts", icon: "contact_phone", badge: contacts.length },
+              { id: "contacts", label: "Contacts", icon: "contact_phone", badge: unseenContacts },
               { id: "leads", label: "Leads Manager", icon: "contacts", badge: newLeadsCount },
               { id: "services", label: "Services", icon: "school" },
               { id: "countries", label: "Destinations", icon: "public" },
@@ -414,7 +432,10 @@ export default function Admin() {
             ].map(tab => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  if (tab.id === "contacts") markContactsSeen();
+                }}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-primary text-white shadow-lg shadow-primary/20"

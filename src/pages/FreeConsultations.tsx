@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { api } from "../lib/apiClient";
 
 type Status = "sending" | "success" | "error" | null;
@@ -7,6 +7,8 @@ type Status = "sending" | "success" | "error" | null;
 export default function FreeConsultation() {
   const navigate = useNavigate();
   const formRef = useRef<HTMLDivElement>(null);
+
+  const [countries, setCountries] = useState<string[]>([]);
 
   const [form, setForm] = useState({
     name: "",
@@ -20,6 +22,18 @@ export default function FreeConsultation() {
     message: "",
   });
   const [status, setStatus] = useState<Status>(null);
+
+  // Load countries from the database (api/countries.php) for the dropdown
+  useEffect(() => {
+    api.fetchCountries()
+      .then((data) => {
+        const names = (Array.isArray(data) ? data : [])
+          .map((c) => c.name)
+          .filter(Boolean);
+        setCountries(names);
+      })
+      .catch(() => setCountries([]));
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -191,12 +205,9 @@ export default function FreeConsultation() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select country</option>
-                      <option>Australia</option>
-                      <option>United Kingdom</option>
-                      <option>Canada</option>
-                      <option>United States</option>
-                      <option>Germany</option>
-                      <option>Japan</option>
+                      {countries.map((c) => (
+                        <option key={c} value={c}>{c}</option>
+                      ))}
                       <option>Other</option>
                     </select>
                   </div>

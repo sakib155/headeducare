@@ -664,7 +664,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {countries.slice(0, 6).map((country, i) => (
+            {countries.slice(0, 8).map((country, i) => (
               <Link
                 to={country.route}
                 key={country.id}
@@ -845,12 +845,9 @@ export default function Home() {
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                       >
                         <option value="">Select country</option>
-                        <option>Australia</option>
-                        <option>United Kingdom</option>
-                        <option>Canada</option>
-                        <option>United States</option>
-                        <option>Germany</option>
-                        <option>Japan</option>
+                        {countries.map((c) => (
+                          <option key={c.name} value={c.name}>{c.name}</option>
+                        ))}
                         <option>Other</option>
                       </select>
                     </div>

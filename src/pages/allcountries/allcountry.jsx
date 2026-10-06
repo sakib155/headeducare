@@ -237,7 +237,15 @@ const css = `
 `;
 
 export default function DestinationPage() {
-  const countries = countriesFallback ?? [];
+  // Only show countries that the agency provides (matches navbar menuData)
+  const ALLOWED_SLUGS = [
+    "uk", "usa", "australia", "new-zealand", "ireland", "canada",
+    "malaysia", "korea", "finland", "hungary", "sweden",
+    "netherlands", "belgium", "norway",
+  ];
+  const countries = (countriesFallback ?? []).filter((c) =>
+    ALLOWED_SLUGS.includes(c.slug ?? c.country?.toLowerCase()),
+  );
 
   return (
     <>
