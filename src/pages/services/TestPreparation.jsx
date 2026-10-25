@@ -207,7 +207,7 @@ export default function TestPreparation() {
                     <span className="srv-badge-dot" style={{ backgroundColor: "#16a34a" }} />
                     Admissions Prep
                   </span>
-                  <h2 style={{ fontSize: clamp(24, "3vw", 36), fontWeight: 900, color: "var(--srv-text-primary)", margin: "10px 0 20px", fontFamily: "Lexend, sans-serif" }}>
+                  <h2 style={{ fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 600, color: "var(--srv-text-primary)", margin: "10px 0 20px", fontFamily: "'Roboto Slab', serif" }}>
                     Digital <span style={{ color: "#204276" }}>SAT Course</span>
                   </h2>
                   <p className="srv-body" style={{ fontSize: 15, lineHeight: 1.8 }}>
