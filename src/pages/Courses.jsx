@@ -497,14 +497,14 @@ export default function Courses() {
                 </div>
               </div>
 
-              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #16a34a" }}>
+              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #2b7bb9" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <BookOpen size={20} color="#16a34a" />
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(43,123,185,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <BookOpen size={20} color="#2b7bb9" />
                   </div>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Reading</h4>
-                    <p style={{ fontSize: 11, color: "#16a34a", fontWeight: 600 }}>29–30 minutes</p>
+                    <p style={{ fontSize: 11, color: "#2b7bb9", fontWeight: 600 }}>29–30 minutes</p>
                   </div>
                 </div>
                 <div className="task-grid">
@@ -512,14 +512,14 @@ export default function Courses() {
                 </div>
               </div>
 
-              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #7c3aed" }}>
+              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #16325c" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(124,58,237,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Headphones size={20} color="#7c3aed" />
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,50,92,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Headphones size={20} color="#16325c" />
                   </div>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Listening</h4>
-                    <p style={{ fontSize: 11, color: "#7c3aed", fontWeight: 600 }}>30–43 minutes</p>
+                    <p style={{ fontSize: 11, color: "#16325c", fontWeight: 600 }}>30–43 minutes</p>
                   </div>
                 </div>
                 <div className="task-grid">
@@ -545,11 +545,11 @@ export default function Courses() {
             <div className="srv-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, maxWidth: 700, margin: "0 auto" }}>
               {[
                 { label: "Score Range", value: "10–90", color: "#204276" },
-                { label: "Content", value: "Assessed", color: "#16a34a" },
-                { label: "Fluency", value: "Assessed", color: "#7c3aed" },
-                { label: "Pronunciation", value: "Assessed", color: "#d97706" },
-                { label: "Grammar", value: "Assessed", color: "#dc2626" },
-                { label: "Vocabulary", value: "Assessed", color: "#0891b2" },
+                { label: "Content", value: "Assessed", color: "#2b7bb9" },
+                { label: "Fluency", value: "Assessed", color: "#16325c" },
+                { label: "Pronunciation", value: "Assessed", color: "#2b7bb9" },
+                { label: "Grammar", value: "Assessed", color: "#204276" },
+                { label: "Vocabulary", value: "Assessed", color: "#2b7bb9" },
               ].map((item, i) => (
                 <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 3, border: "1px solid var(--srv-border)" }}>
                   <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
@@ -587,40 +587,40 @@ export default function Courses() {
                 </ul>
               </div>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <PenTool size={20} color="#16a34a" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(43,123,185,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <PenTool size={20} color="#2b7bb9" />
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Follow a simple structure (Intro → Body → Conclusion)", "Use academic words, however, therefore, moreover", "Keep sentences error-free rather than complex", "Maintain word limit, don't over-write", "Practice Summarize Written Text in 1 sentence"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
-                      <span style={{ color: "#16a34a", flexShrink: 0 }}>✓</span>{t}
+                      <span style={{ color: "#2b7bb9", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(124,58,237,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <BookOpen size={20} color="#7c3aed" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,50,92,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <BookOpen size={20} color="#16325c" />
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Reading Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Learn to skim (quick overview)", "Learn to scan (find specific details)", "Practice 'Re-order Paragraphs' daily", "Improve vocabulary and focus on reading tasks", "Read short academic articles for speed"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
-                      <span style={{ color: "#7c3aed", flexShrink: 0 }}>✓</span>{t}
+                      <span style={{ color: "#16325c", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(245,158,11,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <Headphones size={20} color="#d97706" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(43,123,185,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <Headphones size={20} color="#2b7bb9" />
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Listening Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Take quick notes while listening", "Focus on keywords, not complete sentences", "Repeated practice of 'Fill in the Blanks'", "Listen to podcasts/lectures daily", "Be careful with spelling, it affects score"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
-                      <span style={{ color: "#d97706", flexShrink: 0 }}>✓</span>{t}
+                      <span style={{ color: "#2b7bb9", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>
@@ -721,11 +721,11 @@ export default function Courses() {
               </div>
               <div className="batch-card">
                 <div>
-                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(22,163,74,0.1)", color: "#16a34a", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(43,123,185,0.1)", color: "#2b7bb9", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                     <Zap size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Fast Track Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#16a34a", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face</p>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#2b7bb9", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face</p>
                   <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
                     A dynamic, high-intensity course designed to prepare you quickly for the exam with coaching in a jiffy. Get the best PTE coaching in a bite-sized format with no compromise in quality.
                   </p>
@@ -850,10 +850,10 @@ export default function Courses() {
                   {satReadingTasks.map((t, i) => <div key={i} className="task-chip"><CheckCircle size={14} />{t}</div>)}
                 </div>
               </div>
-              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #16a34a" }}>
+              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #2b7bb9" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Calculator size={20} color="#16a34a" />
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(43,123,185,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Calculator size={20} color="#2b7bb9" />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Math (70 mins)</h4>
                 </div>
@@ -880,10 +880,10 @@ export default function Courses() {
             <div className="srv-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, maxWidth: 700, margin: "0 auto" }}>
               {[
                 { label: "Total Score", value: "400–1600", color: "#204276" },
-                { label: "Reading & Writing", value: "200–800", color: "#16a34a" },
-                { label: "Math", value: "200–800", color: "#7c3aed" },
-                { label: "Negative Marking", value: "None", color: "#d97706" },
-                { label: "Score Validity", value: "5 Years", color: "#dc2626" },
+                { label: "Reading & Writing", value: "200–800", color: "#2b7bb9" },
+                { label: "Math", value: "200–800", color: "#16325c" },
+                { label: "Negative Marking", value: "None", color: "#2b7bb9" },
+                { label: "Score Validity", value: "5 Years", color: "#204276" },
               ].map((item, i) => (
                 <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 3, border: "1px solid var(--srv-border)" }}>
                   <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
@@ -921,27 +921,27 @@ export default function Courses() {
                 </ul>
               </div>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <Calculator size={20} color="#16a34a" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(43,123,185,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <Calculator size={20} color="#2b7bb9" />
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Math Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Memorize formulas (SAT doesn't give formula sheet for all)", "Practice mental math for speed", "Solve official College Board sample papers", "Use the on-screen calculator smartly", "Focus on algebra and word problems, highest weightage"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
-                      <span style={{ color: "#16a34a", flexShrink: 0 }}>✓</span>{t}
+                      <span style={{ color: "#2b7bb9", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(124,58,237,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <Clock size={20} color="#7c3aed" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,50,92,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <Clock size={20} color="#16325c" />
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Time Management Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Don't spend too long on one question", "Mark difficult ones and revisit if time allows", "Take full-length mock tests to build stamina", "Practice adaptive sections to understand scoring patterns"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
-                      <span style={{ color: "#7c3aed", flexShrink: 0 }}>✓</span>{t}
+                      <span style={{ color: "#16325c", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>

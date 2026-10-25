@@ -93,7 +93,7 @@ const documentTypes = [
     icon: TrendingUp,
     title: "Income Tax Returns (ITR)",
     desc: "Critical for verifying the sponsor's ability to generate funds. We help organize IT acknowledgments and salary slips for consistency.",
-    color: "#16a34a",
+    color: "#2b7bb9",
   },
   {
     icon: Home,
@@ -105,13 +105,13 @@ const documentTypes = [
     icon: FileCheck,
     title: "Education Loan Papers",
     desc: "For students using bank loans, we ensure the sanction letter clearly states disbursement terms and meets university/visa conditions.",
-    color: "#d97706",
+    color: "#2b7bb9",
   },
   {
     icon: Briefcase,
     title: "Business Documents",
     desc: "For self-employed sponsors, we organize trade licenses, MOA/AOA, and bank solvency certificates to prove business legitimacy.",
-    color: "#dc2626",
+    color: "#204276",
   },
   {
     icon: Users,

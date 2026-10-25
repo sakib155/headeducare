@@ -155,10 +155,10 @@ export default function Footer() {
                 {status === "sending" ? "Sending…" : "Send"}
               </button>
               {status === "sent" && (
-                <p className="text-sm text-emerald-300">Thank you! Your request has been received.</p>
+                <p className="text-sm text-[#7fb2dd]">Thank you! Your request has been received.</p>
               )}
               {status === "error" && (
-                <p className="text-sm text-red-300">Something went wrong. Please try again or contact us directly.</p>
+                <p className="text-sm text-white">Something went wrong. Please try again or contact us directly.</p>
               )}
             </form>
           </div>

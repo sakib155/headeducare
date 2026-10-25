@@ -712,6 +712,25 @@ color: #1a1a1a;
   z-index: 1;
 }
 
+/* ── Hero heights (measured from reference sites) ──
+   Home hero: 830px desktop (solomonadmissions.com slideshow ≈830px @1440w)
+   Inner-page heroes: 620px desktop / 460px mobile, content centered   */
+.sol-hero {
+  min-height: 830px;
+  display: flex;
+  align-items: center;
+}
+.sol-hero-inner {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .sol-hero { min-height: 640px; }
+  .sol-hero-inner { min-height: 460px; }
+}
+.sol-hero > *, .sol-hero-inner > * { width: 100%; }
+
 /* White icon callout card (icon above title, hover lift) */
 .sol-callout {
   background: #ffffff;

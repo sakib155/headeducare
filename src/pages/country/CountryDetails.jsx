@@ -345,9 +345,9 @@ export default function CountryDetails() {
             <div className="band-inner">
               <p className="band-eyebrow">Get Ready</p>
               <h2 className="band-title">
-                Application <span style={{ color: "#010A1C" }}>checklist</span>
+                Application <span style={{ color: "#7fb2dd" }}>checklist</span>
               </h2>
-              <p className="band-sub" style={{ color: "#1b2a24" }}>
+              <p className="band-sub" style={{ color: "rgba(255,255,255,0.82)" }}>
                 Everything you need to study in {name} — gather these before your counselling session and we'll handle the rest.
               </p>
               <ul className="checklist">

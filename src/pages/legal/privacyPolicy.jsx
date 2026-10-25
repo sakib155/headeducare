@@ -228,7 +228,7 @@ export default function PrivacyPolicy() {
       <div className="pp-root" ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative pt-40 pb-20 overflow-hidden"
+          className="relative pt-40 pb-20 min-h-[620px] max-md:min-h-[460px] flex items-center overflow-hidden"
           style={{
             background:
               "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%)",
@@ -373,7 +373,7 @@ export default function PrivacyPolicy() {
                     <button
                       key={s.id}
                       onClick={() => scrollTo(s.id)}
-                      className="text-left text-xs px-3 py-2 rounded-lg transition-colors hover:bg-blue-50"
+                      className="text-left text-xs px-3 py-2 rounded-lg transition-colors hover:bg-[#eaf1f8]"
                       style={{
                         color: "#6b7280",
                         fontFamily: "'IBM Plex Sans', sans-serif",

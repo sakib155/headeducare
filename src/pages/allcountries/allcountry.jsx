@@ -43,6 +43,8 @@ const css = `
     position: relative;
     margin: 0 -32px 48px;
     padding: 150px 32px 56px;
+    min-height: 620px;
+    justify-content: center;
     background-image:
       linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%),
       url('/assets/prettiest-college-campuses-stanford-university-1592777646.avif');
@@ -213,7 +215,7 @@ const css = `
 
   @media (max-width: 640px) {
     .dp-root { padding: 0 16px 60px; }
-    .dp-header { margin: 0 -16px 40px; padding: 120px 16px 44px; }
+    .dp-header { margin: 0 -16px 40px; padding: 120px 16px 44px; min-height: 460px; }
     .dp-grid { gap: 18px; }
   }
 
@@ -225,7 +227,7 @@ const css = `
     --ink:           #e2e8f0;
     --ink-mid:       #94a3b8;
     --ink-soft:      #64748b;
-    --primary:       #60a5fa;
+    --primary:       #7fb2dd;
     --primary-light: #0d1e40;
     --primary-soft:  #1e3a6e;
     --card-bg:       #0d1e30;

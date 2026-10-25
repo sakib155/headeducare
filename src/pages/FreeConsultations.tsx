@@ -71,7 +71,7 @@ export default function FreeConsultation() {
     <div>
       {/* HERO */}
       <section
-        className="sol-overlay"
+        className="sol-overlay sol-hero-inner"
         style={{
           backgroundImage:
             "url(/assets/prettiest-college-campuses-princeton-1592777643.avif)",
@@ -334,12 +334,12 @@ export default function FreeConsultation() {
                 </button>
 
                 {status === "success" && (
-                  <p className="mt-4 text-green-600 font-semibold text-center">
+                  <p className="mt-4 text-[#2b7bb9] font-semibold text-center">
                     ✓ Booking confirmed! We'll contact you within 24 hours.
                   </p>
                 )}
                 {status === "error" && (
-                  <p className="mt-4 text-red-500 font-semibold text-center">
+                  <p className="mt-4 text-[#16325c] font-semibold text-center">
                     Something went wrong. Please try again or call us directly.
                   </p>
                 )}

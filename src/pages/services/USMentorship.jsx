@@ -350,7 +350,7 @@ export default function USMentorship() {
 
               <div className="mentor-card">
                 <div className="mentor-card-header">
-                  <div className="mentor-card-icon" style={{ background: "rgba(22,163,74,0.1)", color: "#166534" }}>
+                  <div className="mentor-card-icon" style={{ background: "rgba(43,123,185,0.1)", color: "#2b7bb9" }}>
                     <GraduationCap size={22} />
                   </div>
                   <h3 className="mentor-card-title" style={{ color: "var(--srv-text-primary)" }}>

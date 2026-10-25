@@ -9,7 +9,7 @@ import {
 import { financialAidData as d } from "./mentorshipData";
 
 const aidIcons = [DollarSign, Award, Star, Briefcase, BookOpen, GraduationCap];
-const aidColors = ["#204276", "#7c3aed", "#059669", "#d97706", "#0891b2", "#dc2626"];
+const aidColors = ["#204276", "#16325c", "#2b7bb9", "#2b7bb9", "#2b7bb9", "#204276"];
 
 export default function FinancialAid() {
   const containerRef = useReveal();

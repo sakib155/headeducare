@@ -169,11 +169,11 @@ export default function TestPreparation() {
               {/* Fast Track */}
               <div className="batch-card">
                 <div>
-                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(22,163,74,0.1)", color: "#16a34a", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(43,123,185,0.1)", color: "#2b7bb9", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                     <Zap size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Fast Track Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#16a34a", textTransform: "uppercase" }}>Online / Face to Face</p>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#2b7bb9", textTransform: "uppercase" }}>Online / Face to Face</p>
                   <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
                     A dynamic, high-intensity course designed to prepare you quickly for the exam. Get targeted coaching in a bite-sized format with no compromise in syllabus quality.
                   </p>
@@ -204,7 +204,7 @@ export default function TestPreparation() {
               <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "center" }}>
                 <div>
                   <span className="srv-badge">
-                    <span className="srv-badge-dot" style={{ backgroundColor: "#16a34a" }} />
+                    <span className="srv-badge-dot" style={{ backgroundColor: "#2b7bb9" }} />
                     Admissions Prep
                   </span>
                   <h2 style={{ fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 600, color: "var(--srv-text-primary)", margin: "10px 0 20px", fontFamily: "'Roboto Slab', serif" }}>

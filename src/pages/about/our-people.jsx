@@ -106,10 +106,10 @@ const people = [
 
 const roleStyle = {
   "Founder & CEO": "bg-[#204276] text-white",
-  "Creative Director": "bg-[#0e7490] text-white",
-  "Senior Team Lead, Creative": "bg-[#7c3aed] text-white",
-  "Team Lead, Creative": "bg-[#0284c7] text-white",
-  "Associate, Consulting Team": "bg-[#059669] text-white",
+  "Creative Director": "bg-[#2b7bb9] text-white",
+  "Senior Team Lead, Creative": "bg-[#16325c] text-white",
+  "Team Lead, Creative": "bg-[#2b7bb9] text-white",
+  "Associate, Consulting Team": "bg-[#2b7bb9] text-white",
 };
 
 const getRoleStyle = (role) =>
@@ -123,7 +123,7 @@ const OurPeople = () => {
     <div>
       {/* Hero band */}
       <section
-        className="sol-overlay"
+        className="sol-overlay sol-hero-inner"
         style={{
           backgroundImage:
             "url(/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif)",

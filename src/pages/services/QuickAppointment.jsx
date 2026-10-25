@@ -92,7 +92,7 @@ const appointmentTypes = [
     icon: Phone,
     title: "Voice Call",
     desc: "A focused audio call for quick queries, status updates, or urgent clarifications. Efficient and straight to the point.",
-    color: "#16a34a",
+    color: "#2b7bb9",
   },
   {
     icon: MessageSquare,
@@ -104,13 +104,13 @@ const appointmentTypes = [
     icon: MapPin,
     title: "In-Person Visit",
     desc: "Visit our Dhaka office for a comprehensive session. Bring all your documents for a physical review and personalized roadmap planning.",
-    color: "#d97706",
+    color: "#2b7bb9",
   },
   {
     icon: Users,
     title: "Group Webinar",
     desc: "Join our free weekly webinars on specific topics like 'UK Visa Rules 2026' or 'Scholarship Hunting'. Great for general awareness.",
-    color: "#dc2626",
+    color: "#204276",
   },
   {
     icon: Clock,

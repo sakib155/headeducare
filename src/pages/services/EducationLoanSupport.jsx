@@ -362,7 +362,7 @@ export default function EducationLoanSupport() {
               <div className="flex flex-col gap-6">
                 {/* Prodigy Card */}
                 <div style={{ background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 16, padding: 24, textAlign: "left" }}>
-                  <div style={{ background: "#e0f2fe", color: "#0284c7", padding: "6px 16px", borderRadius: 8, fontWeight: 900, fontSize: 16, display: "inline-block", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
+                  <div style={{ background: "#e0f2fe", color: "#2b7bb9", padding: "6px 16px", borderRadius: 8, fontWeight: 900, fontSize: 16, display: "inline-block", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
                     Prodigy Finance
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>Collateral-Free Grad Loans</h4>
@@ -372,7 +372,7 @@ export default function EducationLoanSupport() {
                 </div>
                 {/* MPOWER Card */}
                 <div style={{ background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 16, padding: 24, textAlign: "left" }}>
-                  <div style={{ background: "#dcfce7", color: "#16a34a", padding: "6px 16px", borderRadius: 8, fontWeight: 900, fontSize: 16, display: "inline-block", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
+                  <div style={{ background: "#dcfce7", color: "#2b7bb9", padding: "6px 16px", borderRadius: 8, fontWeight: 900, fontSize: 16, display: "inline-block", marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>
                     MPOWER Financing
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>No Co-signer Student Loans</h4>

@@ -106,14 +106,14 @@ function useReveal() {
 
 const severityConfig = {
   high: {
-    color: "#dc2626",
-    bg: "rgba(220,38,38,0.06)",
-    border: "rgba(220,38,38,0.15)",
-    badge: "rgba(220,38,38,0.1)",
+    color: "#204276",
+    bg: "rgba(32,66,118,0.06)",
+    border: "rgba(32,66,118,0.15)",
+    badge: "rgba(32,66,118,0.1)",
     label: "Critical",
   },
   medium: {
-    color: "#d97706",
+    color: "#2b7bb9",
     bg: "rgba(217,119,6,0.06)",
     border: "rgba(217,119,6,0.15)",
     badge: "rgba(217,119,6,0.1)",
@@ -165,7 +165,7 @@ export default function Disclaimer() {
       <div className="dis-root" ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative pt-40 pb-20 overflow-hidden"
+          className="relative pt-40 pb-20 min-h-[620px] max-md:min-h-[460px] flex items-center overflow-hidden"
           style={{
             background:
               "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%)",
@@ -173,20 +173,20 @@ export default function Disclaimer() {
         >
           <div
             className="absolute bottom-0 right-0 w-96 h-96 rounded-full"
-            style={{ background: "rgba(220,38,38,0.05)", filter: "blur(80px)" }}
+            style={{ background: "rgba(32,66,118,0.05)", filter: "blur(80px)" }}
           />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl dis-reveal">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
-                style={{ background: "rgba(220,38,38,0.1)", color: "#dc2626" }}
+                style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}
               >
                 <span
                   style={{
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "#dc2626",
+                    background: "#204276",
                     flexShrink: 0,
                     display: "inline-block",
                   }}
@@ -232,11 +232,11 @@ export default function Disclaimer() {
           <div
             className="dis-reveal rounded-2xl p-6 mb-12 flex gap-4 items-start"
             style={{
-              background: "rgba(220,38,38,0.05)",
-              border: "1px solid rgba(220,38,38,0.15)",
+              background: "rgba(32,66,118,0.05)",
+              border: "1px solid rgba(32,66,118,0.15)",
             }}
           >
-            <AlertTriangleIcon className="h-40 w-44  text-red-500" />
+            <AlertTriangleIcon className="h-40 w-44  text-[#204276]" />
             <div>
               <p
                 className="font-black text-base mb-2 text-primary"

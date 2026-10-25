@@ -79,7 +79,7 @@ export default function About() {
     <div>
       {/* Hero — overlay band */}
       <section
-        className="sol-overlay"
+        className="sol-overlay sol-hero-inner"
         style={{
           backgroundImage:
             "url(/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif)",

@@ -74,7 +74,8 @@ export const BASE_STYLES = `
   .srv-reveal:nth-child(6){transition-delay:.40s}
   .srv-page { font-family:"IBM Plex Sans",sans-serif; color:var(--srv-text-primary); background:var(--srv-bg-page); }
   .srv-page h1, .srv-page h2, .srv-page h3, .srv-page h4 { font-family:"Roboto Slab",serif; }
-  .srv-hero { position:relative; padding:150px 0 64px; overflow:hidden; background-size:cover; background-position:center; }
+  .srv-hero { position:relative; padding:150px 0 64px; min-height:620px; display:flex; align-items:center; overflow:hidden; background-size:cover; background-position:center; }
+  .srv-hero > .srv-container { width:100%; }
   .srv-hero::before { content:''; position:absolute; inset:0; background:var(--srv-hero-bg); }
   .srv-hero > * { position:relative; z-index:1; }
   .srv-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; background:var(--srv-badge-bg); color:#7fb2dd; border:1px solid rgba(127,178,221,0.35); font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
@@ -100,7 +101,7 @@ export const BASE_STYLES = `
   .dark .srv-cta-btn-ghost:hover { background:rgba(127,178,221,0.1); }
   .srv-divider { height:1px; background:rgba(32,66,118,0.12); margin:0; }
   .dark .srv-divider { background:rgba(127,178,221,0.15); }
-  @media(max-width:768px){ .srv-hero{ padding:120px 0 48px; } .srv-section,.srv-section-alt{ padding:60px 0; } }
+  @media(max-width:768px){ .srv-hero{ padding:120px 0 48px; min-height:460px; } .srv-section,.srv-section-alt{ padding:60px 0; } }
 `;
 
 /* ─────────────────────────────────────────────
@@ -623,14 +624,14 @@ export function InfoBox({ icon: Icon, title, children, variant = "blue" }) {
       title: isDark ? "#7fb2dd" : "#204276",
     },
     green: {
-      bg: isDark ? "rgba(22,163,74,0.18)" : "rgba(22,163,74,0.05)",
-      border: isDark ? "rgba(22,163,74,0.3)" : "rgba(22,163,74,0.15)",
-      title: isDark ? "#4ade80" : "#166534",
+      bg: isDark ? "rgba(43,123,185,0.18)" : "rgba(43,123,185,0.05)",
+      border: isDark ? "rgba(43,123,185,0.3)" : "rgba(43,123,185,0.15)",
+      title: isDark ? "#7fb2dd" : "#2b7bb9",
     },
     amber: {
-      bg: isDark ? "rgba(245,158,11,0.15)" : "rgba(245,158,11,0.06)",
-      border: isDark ? "rgba(245,158,11,0.3)" : "rgba(245,158,11,0.2)",
-      title: isDark ? "#fbbf24" : "#92400e",
+      bg: isDark ? "rgba(43,123,185,0.15)" : "rgba(43,123,185,0.06)",
+      border: isDark ? "rgba(43,123,185,0.3)" : "rgba(43,123,185,0.2)",
+      title: isDark ? "#7fb2dd" : "#16325c",
     },
   };
 

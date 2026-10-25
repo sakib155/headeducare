@@ -96,7 +96,7 @@ const interviewTypes = [
     icon: Target,
     title: "Australian GTE Assessment",
     desc: "Often a written statement, but sometimes an interview. Proves you are a 'Genuine Temporary Entrant' and not using student visas for migration.",
-    color: "#16a34a",
+    color: "#2b7bb9",
   },
   {
     icon: Users,
@@ -108,13 +108,13 @@ const interviewTypes = [
     icon: Mic,
     title: "Scholarship Interviews",
     desc: "For awards like Chevening or Fulbright. These are deep-dive leadership interviews assessing your potential impact on your home country.",
-    color: "#d97706",
+    color: "#2b7bb9",
   },
   {
     icon: Headphones,
     title: "Pre-Departure Orientation",
     desc: "Not a visa interview, but a prep session for life abroad. Covers cultural norms, academic expectations, and settling-in tips.",
-    color: "#dc2626",
+    color: "#204276",
   },
 ];
 

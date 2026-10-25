@@ -9,19 +9,19 @@ export const countryDetailStyles = `
 
   /* ── gostudyin-style design tokens ── */
   .cd-root {
-    --gs-navy:   #020F30;
-    --gs-deep:   #010A1C;
-    --gs-cherry: #F7003B;
-    --gs-cherry-h: #FA557C;
-    --gs-cobalt: #2017CE;
-    --gs-cobalt-h: #6A64DE;
-    --gs-ice:    #00DAFF;
-    --gs-mint:   #ABF970;
-    --gs-lav:    #B5B2EF;
-    --gs-pine:   #163033;
-    --gs-charcoal: #565F75;
+    --gs-navy:   #0f203c;
+    --gs-deep:   #0f203c;
+    --gs-cherry: #204276;
+    --gs-cherry-h: #000000;
+    --gs-cobalt: #204276;
+    --gs-cobalt-h: #16325c;
+    --gs-ice:    #7fb2dd;
+    --gs-mint:   #7fb2dd;
+    --gs-lav:    #c9d8ea;
+    --gs-pine:   #16325c;
+    --gs-charcoal: #475569;
 
-    --ink:         #020F30;
+    --ink:         #0f203c;
     --ink-soft:    #565F75;
     --ink-xsoft:   #8a94a6;
     --band-light:  #F8F9FA;
@@ -29,10 +29,10 @@ export const countryDetailStyles = `
     --card:        #ffffff;
     --border:      #DEE2E6;
     --border-soft: #E9ECEF;
-    --accent:      #2017CE;
-    --accent-mid:  #00DAFF;
-    --accent-bg:   #EEF0FF;
-    --accent-glow: rgba(32,23,206,.12);
+    --accent:      #204276;
+    --accent-mid:  #2b7bb9;
+    --accent-bg:   #eaf1f8;
+    --accent-glow: rgba(32,66,118,.12);
     --radius-sm:   8px;
     --radius:      12px;
     --radius-lg:   12px;
@@ -54,9 +54,10 @@ export const countryDetailStyles = `
   ═══════════════════════════════════════════════ */
   .hero {
     position: relative;
-    height: clamp(480px, 56vw, 620px);
+    height: 100vh;
+    min-height: 640px;
     overflow: hidden;
-    background: var(--gs-navy);
+    background: #0f203c;
   }
   .hero-img {
     width: 100%; height: 100%;
@@ -69,7 +70,7 @@ export const countryDetailStyles = `
   }
   .hero-placeholder {
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, #061638 0%, #020F30 100%);
+    background: linear-gradient(135deg, #16325c 0%, #0f203c 100%);
   }
   .hero-overlay {
     position: absolute; inset: 0; z-index: 2;
@@ -159,7 +160,7 @@ export const countryDetailStyles = `
   .band-white { background: var(--band-white); }
   .band-deep  { background: var(--gs-deep); }
   .band-navy  { background: var(--gs-navy); }
-  .band-mint  { background: var(--gs-mint); }
+  .band-mint  { background: #16325c; }
 
   .band-eyebrow {
     font-size: .78rem; font-weight: 700; letter-spacing: .14em;
@@ -201,8 +202,8 @@ export const countryDetailStyles = `
     flex-shrink: 0;
     width: 44px; height: 44px; border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    background: rgba(171,249,112,.14);
-    border: 1px solid rgba(171,249,112,.35);
+    background: rgba(127,178,221,.14);
+    border: 1px solid rgba(127,178,221,.4);
     color: var(--gs-mint);
     font-family: 'Roboto Slab', serif; font-weight: 600; font-size: 1.05rem;
   }
@@ -336,7 +337,7 @@ export const countryDetailStyles = `
   .band-deep .data-table th { color: #fff; border-bottom-color: rgba(255,255,255,.35); }
   .band-deep .data-table td { color: rgba(255,255,255,.85); border-bottom-color: rgba(255,255,255,.12); }
   .band-deep .data-table tbody tr:hover td { background: rgba(255,255,255,.04); }
-  .band-deep .data-table .score { color: var(--gs-mint); }
+  .band-deep .data-table .score { color: #7fb2dd; }
   .band-deep .data-table td:first-child { color: #fff; }
 
   /* ═══════════════════════════════════════════════
@@ -349,10 +350,10 @@ export const countryDetailStyles = `
   }
   .check-item {
     display: flex; align-items: flex-start; gap: 12px;
-    font-size: .98rem; color: var(--gs-deep); line-height: 1.6;
+    font-size: .98rem; color: #ffffff; line-height: 1.6;
     font-weight: 500;
   }
-  .check-item svg { flex-shrink: 0; margin-top: 2px; color: var(--gs-deep); }
+  .check-item svg { flex-shrink: 0; margin-top: 2px; color: #7fb2dd; }
 
   /* checklist on light band (visa docs) — cobalt checks */
   .checklist-on-light .check-item { color: var(--ink); }
@@ -441,6 +442,7 @@ export const countryDetailStyles = `
      RESPONSIVE
   ═══════════════════════════════════════════════ */
   @media (max-width: 768px) {
+    .hero { height: 88vh; min-height: 560px; }
     .why-grid { grid-template-columns: 1fr; }
     .why-item:nth-last-child(2) { border-bottom: 1px solid rgba(255,255,255,.14); }
     .why-item:last-child { border-bottom: none; }
@@ -464,32 +466,32 @@ export const countryDetailStyles = `
     --card:        #0d1e30;
     --border:      #1e3050;
     --border-soft: #162840;
-    --accent:      #00DAFF;
+    --accent:      #7fb2dd;
     --accent-bg:   #0d1e40;
-    --accent-glow: rgba(0,218,255,.15);
+    --accent-glow: rgba(127,178,221,.15);
   }
   .dark .cd-root .band-deep { background: #000; }
   .dark .cd-root .band-navy { background: #01081a; }
   .dark .cd-root .data-table th { color: var(--ink); }
-  .dark .cd-root .badge { color: var(--accent); border-color: var(--accent); }
-  .dark .cd-root .score { color: var(--accent); }
+  .dark .cd-root .badge { color: #7fb2dd; border-color: #7fb2dd; }
+  .dark .cd-root .score { color: #7fb2dd; }
   .dark .cd-root .intake-card { background: var(--band-white); }
-  .dark .cd-root .course-chip { background: var(--band-white); color: var(--accent); border-color: var(--border); }
-  .dark .cd-root .course-chip:hover { background: var(--accent); color: #01081a; border-color: var(--accent); }
+  .dark .cd-root .course-chip { background: var(--band-white); color: #7fb2dd; border-color: var(--border); }
+  .dark .cd-root .course-chip:hover { background: #7fb2dd; color: #0f203c; border-color: #7fb2dd; }
   .dark .cd-root .scholarship-card { background: var(--band-white); border-color: var(--border); }
-  .dark .cd-root .scholarship-icon { background: rgba(0,218,255,.12); color: var(--accent); }
-  .dark .cd-root .scholarship-amount { color: var(--accent); }
-  .dark .cd-root .scholarship-level { color: var(--accent); border-color: var(--accent); }
-  .dark .cd-root .scholarship-link { color: var(--accent); }
-  .dark .cd-root .intake-term { color: var(--accent); }
+  .dark .cd-root .scholarship-icon { background: rgba(127,178,221,.14); color: #7fb2dd; }
+  .dark .cd-root .scholarship-amount { color: #7fb2dd; }
+  .dark .cd-root .scholarship-level { color: #7fb2dd; border-color: #7fb2dd; }
+  .dark .cd-root .scholarship-link { color: #7fb2dd; }
+  .dark .cd-root .intake-term { color: #7fb2dd; }
   .dark .cd-root .checklist-on-light .check-item { color: var(--ink); }
-  .dark .cd-root .checklist-on-light .check-item svg { color: var(--accent); }
-  .dark .cd-root .band-mint { background: var(--gs-mint); }
+  .dark .cd-root .checklist-on-light .check-item svg { color: #7fb2dd; }
+  .dark .cd-root .band-mint { background: #16325c; }
   .dark .cd-root .band-mint .band-title,
-  .dark .cd-root .band-mint .band-eyebrow { color: var(--gs-deep) !important; }
-  .dark .cd-root .band-mint .check-item,
-  .dark .cd-root .band-mint .check-item svg { color: var(--gs-deep); }
+  .dark .cd-root .band-mint .band-eyebrow { color: #ffffff !important; }
+  .dark .cd-root .band-mint .check-item { color: #ffffff; }
+  .dark .cd-root .band-mint .check-item svg { color: #7fb2dd; }
   .dark .cd-root .band-title { color: #f1f5f9; }
-  .dark .cd-root .band-title span { color: var(--accent); }
-  .dark .cd-root .band-light .band-eyebrow { color: var(--accent); }
+  .dark .cd-root .band-title span { color: #7fb2dd; }
+  .dark .cd-root .band-light .band-eyebrow { color: #7fb2dd; }
 `;

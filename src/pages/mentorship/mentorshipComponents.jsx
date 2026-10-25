@@ -44,7 +44,8 @@ export const MENTOR_STYLES = `
   .mtr-page h1, .mtr-page h2, .mtr-page h3, .mtr-page h4, .mtr-page h5 { font-family:"Roboto Slab",serif !important; }
 
   /* Hero */
-  .mtr-hero { position:relative; padding:150px 0 64px; overflow:hidden; }
+  .mtr-hero { position:relative; padding:150px 0 64px; min-height:620px; display:flex; align-items:center; overflow:hidden; }
+  .mtr-hero > .mtr-container { width:100%; }
   .mtr-hero-bg { position:absolute; inset:0; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)); }
   .mtr-hero .mtr-h1, .mtr-hero .mtr-lead { color:#ffffff; }
   .mtr-hero .mtr-h1 span { color:#7fb2dd; }
@@ -101,14 +102,14 @@ export const MENTOR_STYLES = `
 
   /* InfoBox variants */
   .dark .mtr-infobox-blue { background:rgba(32,66,118,0.3) !important; border-color:rgba(127,178,221,0.3) !important; }
-  .dark .mtr-infobox-green { background:rgba(22,163,74,0.1) !important; border-color:rgba(22,163,74,0.25) !important; }
-  .dark .mtr-infobox-amber { background:rgba(245,158,11,0.1) !important; border-color:rgba(245,158,11,0.25) !important; }
+  .dark .mtr-infobox-green { background:rgba(43,123,185,0.1) !important; border-color:rgba(43,123,185,0.25) !important; }
+  .dark .mtr-infobox-amber { background:rgba(43,123,185,0.1) !important; border-color:rgba(43,123,185,0.25) !important; }
   .dark .mtr-infobox-blue .mtr-infobox-title,
   .dark .mtr-infobox-blue .mtr-infobox-icon > svg { color:#7fb2dd !important; }
   .dark .mtr-infobox-green .mtr-infobox-title,
-  .dark .mtr-infobox-green .mtr-infobox-icon > svg { color:#4ade80 !important; }
+  .dark .mtr-infobox-green .mtr-infobox-icon > svg { color:#7fb2dd !important; }
   .dark .mtr-infobox-amber .mtr-infobox-title,
-  .dark .mtr-infobox-amber .mtr-infobox-icon > svg { color:#fcd34d !important; }
+  .dark .mtr-infobox-amber .mtr-infobox-icon > svg { color:#7fb2dd !important; }
 
   /* Layout components */
   .dark .mtr-vtl-title { color:#ffffff !important; }
@@ -127,7 +128,7 @@ export const MENTOR_STYLES = `
 
   /* Responsive */
   @media(max-width:768px){
-    .mtr-hero{ padding:120px 0 48px; }
+    .mtr-hero{ padding:120px 0 48px; min-height:460px; }
     .mtr-section,.mtr-section-alt{ padding:60px 0; }
   }
 `;
@@ -634,8 +635,8 @@ export function MentorCheckList({ items, columns = 1 }) {
 export function MentorInfoBox({ icon: Icon, title, children, variant = "blue" }) {
   const variants = {
     blue: { bg: "rgba(32,66,118,0.05)", border: "rgba(32,66,118,0.15)", title: "#204276" },
-    green: { bg: "rgba(22,163,74,0.05)", border: "rgba(22,163,74,0.15)", title: "#166534" },
-    amber: { bg: "rgba(245,158,11,0.06)", border: "rgba(245,158,11,0.2)", title: "#92400e" },
+    green: { bg: "rgba(43,123,185,0.05)", border: "rgba(43,123,185,0.15)", title: "#2b7bb9" },
+    amber: { bg: "rgba(43,123,185,0.06)", border: "rgba(43,123,185,0.2)", title: "#16325c" },
   };
   const v = variants[variant];
   return (
@@ -958,7 +959,7 @@ export function MentorAccentCard({ title, desc, accent = "#204276", icon }) {
    TIER VISUAL BARS  (college list tiers comparison)
 ───────────────────────────────────────────── */
 export function MentorTierBars({ tiers }) {
-  const colors = ["#ef4444", "#f59e0b", "#22c55e"];
+  const colors = ["#204276", "#2b7bb9", "#2b7bb9"];
   const widths = ["40%", "65%", "90%"];
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>

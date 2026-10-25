@@ -72,7 +72,7 @@ const essayTypes = [
   {
     icon: Award,
     title: "Scholarship Essays",
-    color: "#16a34a",
+    color: "#2b7bb9",
     desc: "Scholarship bodies look for leadership, community impact, and alignment with their mission. We craft essays that speak directly to what each funder values most.",
   },
   {
@@ -84,13 +84,13 @@ const essayTypes = [
   {
     icon: BookOpen,
     title: "Motivation Letters",
-    color: "#d97706",
+    color: "#2b7bb9",
     desc: "Used widely in European institutions, motivation letters present your academic ambitions and professional goals in a concise, targeted format suited to each program.",
   },
   {
     icon: Layers,
     title: "Supplemental Essays",
-    color: "#dc2626",
+    color: "#204276",
     desc: "Many universities, particularly in the USA, require multiple short essays on topics like diversity, challenges overcome, or community contributions. We handle them all.",
   },
 ];
@@ -232,9 +232,9 @@ const essayPromptTypes = [
   },
   {
     label: "Why This Field of Study?",
-    color: "#16a34a",
-    bg: "rgba(22,163,74,0.07)",
-    border: "rgba(22,163,74,0.18)",
+    color: "#2b7bb9",
+    bg: "rgba(43,123,185,0.07)",
+    border: "rgba(43,123,185,0.18)",
     desc: "Tests the depth and sincerity of your academic interest. The strongest answers trace back to a specific moment or experience that sparked the passion.",
   },
   {
@@ -246,16 +246,16 @@ const essayPromptTypes = [
   },
   {
     label: "A Challenge You Overcame",
-    color: "#d97706",
+    color: "#2b7bb9",
     bg: "rgba(217,119,6,0.07)",
     border: "rgba(217,119,6,0.18)",
     desc: "Looks for resilience, reflection, and growth. The challenge itself matters less than what you learned from it and how it shaped your direction.",
   },
   {
     label: "Leadership or Impact",
-    color: "#dc2626",
-    bg: "rgba(220,38,38,0.07)",
-    border: "rgba(220,38,38,0.18)",
+    color: "#204276",
+    bg: "rgba(32,66,118,0.07)",
+    border: "rgba(32,66,118,0.18)",
     desc: "Scholarship and graduate programs frequently ask this. The best answers focus on a specific initiative, its measurable outcome, and your personal role.",
   },
   {

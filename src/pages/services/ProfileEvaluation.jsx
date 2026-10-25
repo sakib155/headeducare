@@ -103,7 +103,7 @@ const outcomeAreas = [
   {
     icon: TrendingUp,
     type: "Admission Probability",
-    color: "#16a34a",
+    color: "#2b7bb9",
     desc: "An honest probability assessment for each shortlisted university, so your final list is strategically balanced and maximises your offers.",
   },
   {
@@ -115,13 +115,13 @@ const outcomeAreas = [
   {
     icon: BarChart2,
     type: "Profile Gap Analysis",
-    color: "#d97706",
+    color: "#2b7bb9",
     desc: "Areas where your profile falls short of target requirements, and a concrete action plan to address each gap before applying.",
   },
   {
     icon: Lightbulb,
     type: "Strategic Action Plan",
-    color: "#dc2626",
+    color: "#204276",
     desc: "A personalised step-by-step roadmap: what to do, in what order, and by when, so your application is submitted at peak competitiveness.",
   },
 ];
@@ -192,9 +192,9 @@ const strengthIndicators = [
 const profileBands = [
   {
     band: "Strong Profile",
-    color: "#16a34a",
-    bg: "rgba(22,163,74,0.08)",
-    border: "rgba(22,163,74,0.2)",
+    color: "#2b7bb9",
+    bg: "rgba(43,123,185,0.08)",
+    border: "rgba(43,123,185,0.2)",
     desc: "Competitive for top-ranked institutions, merit scholarships, and SDS fast-track programs. Multiple strong offers expected.",
     indicators: "CGPA 3.5+, IELTS 7.0+, relevant experience",
   },
@@ -208,7 +208,7 @@ const profileBands = [
   },
   {
     band: "Developing Profile",
-    color: "#d97706",
+    color: "#2b7bb9",
     bg: "rgba(217,119,6,0.07)",
     border: "rgba(217,119,6,0.2)",
     desc: "Requires targeted improvements before applying. Our gap analysis identifies exactly what to address and in what timeframe.",

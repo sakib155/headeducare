@@ -21,67 +21,67 @@ const refundTable = [
     service: "Initial Consultation",
     fee: "Non-refundable",
     condition: "Once session is conducted",
-    color: "#ef4444",
+    color: "#204276",
   },
   {
     service: "Study Abroad – Full Package",
     fee: "50% refundable",
     condition: "Cancelled before application submission",
-    color: "#f59e0b",
+    color: "#2b7bb9",
   },
   {
     service: "Study Abroad – Full Package",
     fee: "Non-refundable",
     condition: "After application submitted to university",
-    color: "#ef4444",
+    color: "#204276",
   },
   {
     service: "Visa Assistance",
     fee: "50% refundable",
     condition: "Cancelled before document preparation starts",
-    color: "#f59e0b",
+    color: "#2b7bb9",
   },
   {
     service: "Visa Assistance",
     fee: "Non-refundable",
     condition: "After documents prepared/submitted",
-    color: "#ef4444",
+    color: "#204276",
   },
   {
     service: "Test Preparation",
     fee: "75% refundable",
     condition: "Cancelled 7+ days before first class",
-    color: "#22c55e",
+    color: "#2b7bb9",
   },
   {
     service: "Test Preparation",
     fee: "50% refundable",
     condition: "Cancelled within 7 days of start",
-    color: "#f59e0b",
+    color: "#2b7bb9",
   },
   {
     service: "Test Preparation",
     fee: "Non-refundable",
     condition: "After first class attended",
-    color: "#ef4444",
+    color: "#204276",
   },
   {
     service: "Migration Services",
     fee: "Case-by-case",
     condition: "Assessed based on work completed",
-    color: "#3b82f6",
+    color: "#204276",
   },
   {
     service: "Scholarship Guidance",
     fee: "Non-refundable",
     condition: "Once shortlisting & research completed",
-    color: "#ef4444",
+    color: "#204276",
   },
   {
     service: "Career Counseling",
     fee: "Non-refundable",
     condition: "Once session is conducted",
-    color: "#ef4444",
+    color: "#204276",
   },
 ];
 
@@ -202,7 +202,7 @@ export default function RefundPolicy() {
       <div className="rp-root" ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative pt-40 pb-20 overflow-hidden"
+          className="relative pt-40 pb-20 min-h-[620px] max-md:min-h-[460px] flex items-center overflow-hidden"
           style={{
             background:
               "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%)",
@@ -273,7 +273,7 @@ export default function RefundPolicy() {
               border: "1px solid rgba(32,66,118,0.12)",
             }}
           >
-            <Lightbulb className="text-blue-900 h-40 w-44" />
+            <Lightbulb className="text-[#204276] h-40 w-44" />
             <div>
               <h3
                 className="text-xl font-black mb-2"
@@ -320,22 +320,22 @@ export default function RefundPolicy() {
             <div className="flex flex-wrap gap-4 mb-6">
               {[
                 {
-                  color: "#22c55e",
+                  color: "#2b7bb9",
                   bg: "rgba(34,197,94,0.1)",
                   label: "Full/High Refund",
                 },
                 {
-                  color: "#f59e0b",
-                  bg: "rgba(245,158,11,0.1)",
+                  color: "#2b7bb9",
+                  bg: "rgba(43,123,185,0.1)",
                   label: "Partial Refund",
                 },
                 {
-                  color: "#ef4444",
+                  color: "#204276",
                   bg: "rgba(239,68,68,0.1)",
                   label: "Non-Refundable",
                 },
                 {
-                  color: "#3b82f6",
+                  color: "#204276",
                   bg: "rgba(59,130,246,0.1)",
                   label: "Case-by-Case",
                 },

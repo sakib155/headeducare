@@ -106,7 +106,7 @@ const services = [
   },
   {
     icon: FileCheck,
-    color: "#0e7490",
+    color: "#2b7bb9",
     title: "Visa Services",
     slug: "/services/visa-services",
     summary:
@@ -120,7 +120,7 @@ const services = [
   },
   {
     icon: Award,
-    color: "#7c3aed",
+    color: "#16325c",
     title: "Scholarship Guidance",
     slug: "/services/scholarship-support",
     summary:
@@ -134,7 +134,7 @@ const services = [
   },
   {
     icon: Home,
-    color: "#059669",
+    color: "#2b7bb9",
     title: "Student Accommodation",
     slug: "/services/student-accommodation",
     summary:
@@ -148,7 +148,7 @@ const services = [
   },
   {
     icon: HeartPulse,
-    color: "#dc2626",
+    color: "#204276",
     title: "Health Insurance",
     slug: "/services/health-insurance",
     summary:
@@ -162,7 +162,7 @@ const services = [
   },
   {
     icon: Globe,
-    color: "#d97706",
+    color: "#2b7bb9",
     title: "Migration Services",
     slug: "/services/migration",
     summary:
@@ -273,6 +273,9 @@ export default function WillProvide() {
           style={{
             position: "relative",
             padding: "150px 0 80px",
+            minHeight: 620,
+            display: "flex",
+            alignItems: "center",
             overflow: "hidden",
             background:
               "linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%)",
@@ -294,7 +297,7 @@ export default function WillProvide() {
           />
           <div
             className="wp-container"
-            style={{ position: "relative", zIndex: 1 }}
+            style={{ position: "relative", zIndex: 1, width: "100%" }}
           >
             <div className="wp-reveal" style={{ maxWidth: 700 }}>
               <span className="wp-badge">

@@ -30,12 +30,12 @@ const styles = `
 `;
 
 const destinations = [
-  { name: "China", slug: "china", flag: "🇨🇳", color: "#dc2626" },
+  { name: "China", slug: "china", flag: "🇨🇳", color: "#204276" },
   { name: "Malaysia", slug: "malaysia", flag: "🇲🇾", color: "#204276" },
-  { name: "Hungary", slug: "hungary", flag: "🇭🇺", color: "#16a34a" },
-  { name: "Russia", slug: "russia", flag: "🇷🇺", color: "#1d4ed8" },
-  { name: "Kyrgyzstan", slug: "kyrgyzstan", flag: "🇰🇬", color: "#d97706" },
-  { name: "Georgia", slug: "georgia", flag: "🇬🇪", color: "#7c3aed" },
+  { name: "Hungary", slug: "hungary", flag: "🇭🇺", color: "#2b7bb9" },
+  { name: "Russia", slug: "russia", flag: "🇷🇺", color: "#204276" },
+  { name: "Kyrgyzstan", slug: "kyrgyzstan", flag: "🇰🇬", color: "#2b7bb9" },
+  { name: "Georgia", slug: "georgia", flag: "🇬🇪", color: "#16325c" },
 ];
 
 export default function StudyMBBS() {
@@ -44,7 +44,7 @@ export default function StudyMBBS() {
       <style>{styles}</style>
       <div className="mbbs-page">
         <section
-          className="sol-overlay"
+          className="sol-overlay sol-hero-inner"
           style={{
             backgroundImage:
               "url(/assets/prettiest-college-campuses-m-i-t-1592777642.avif)",

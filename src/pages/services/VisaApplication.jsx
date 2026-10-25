@@ -99,7 +99,7 @@ const visaSteps = [
     icon: Briefcase,
     title: "Financial Structuring",
     desc: "We help organize bank statements, loans, and sponsor papers to show a clear, legitimate source of funds.",
-    color: "#16a34a",
+    color: "#2b7bb9",
   },
   {
     icon: FileCheck,
@@ -111,13 +111,13 @@ const visaSteps = [
     icon: MessageSquare,
     title: "Interview Coaching",
     desc: "Intensive mock sessions to build your confidence and ensure you can articulate your study goals clearly.",
-    color: "#d97706",
+    color: "#2b7bb9",
   },
   {
     icon: Award,
     title: "Visa Grant & Travel",
     desc: "We verify your visa grant letter, guide you on ticket booking, and provide a comprehensive pre-departure briefing.",
-    color: "#dc2626",
+    color: "#204276",
   },
 ];
 

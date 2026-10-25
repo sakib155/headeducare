@@ -103,7 +103,7 @@ const scholarshipTypes = [
     icon: Globe,
     title: "Government Scholarships",
     desc: "Fully funded awards by foreign governments (e.g., Chevening, DAAD) to attract international talent. Often include airfare and living stipends.",
-    color: "#16a34a",
+    color: "#2b7bb9",
   },
   {
     icon: GraduationCap,
@@ -115,13 +115,13 @@ const scholarshipTypes = [
     icon: Briefcase,
     title: "Corporate & Private Grants",
     desc: "Funded by private organizations, NGOs, or corporations. Often tied to specific fields of study like engineering, medicine, or development.",
-    color: "#d97706",
+    color: "#2b7bb9",
   },
   {
     icon: BookOpen,
     title: "Research Fellowships",
     desc: "For PhD and Masters by Research students. Covers research costs, lab fees, and provides a monthly stipend in exchange for academic output.",
-    color: "#dc2626",
+    color: "#204276",
   },
 ];
 

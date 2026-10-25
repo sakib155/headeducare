@@ -126,7 +126,7 @@ export default function Header({
                   aria-label="Toggle dark mode"
                 >
                   {darkMode ? (
-                    <Sun className="w-4.5 h-4.5 text-amber-400" />
+                    <Sun className="w-4.5 h-4.5 text-[#7fb2dd]" />
                   ) : (
                     <Moon className={`w-4.5 h-4.5 ${atTop ? "" : ""}`} />
                   )}

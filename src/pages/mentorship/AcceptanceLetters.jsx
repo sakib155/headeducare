@@ -8,7 +8,7 @@ import {
 } from "./mentorshipComponents";
 import { acceptanceLettersData as d } from "./mentorshipData";
 
-const decisionColors = ["#2563eb", "#16a34a", "#16a34a", "#f59e0b", "#6366f1", "#78716c"];
+const decisionColors = ["#204276", "#2b7bb9", "#2b7bb9", "#2b7bb9", "#6366f1", "#78716c"];
 const decisionBadges = ["Standard", "Binding", "Non-Binding", "Keep Options Open", "Still in Review", "Conditions Apply"];
 const decisionIcons = [Mail, CheckCircle, Clock, AlertCircle, Calendar, HelpCircle];
 

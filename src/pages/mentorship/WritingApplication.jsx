@@ -9,7 +9,7 @@ import {
 import { writingApplicationData as d } from "./mentorshipData";
 
 const essayIcons = [FileText, BookOpen, School, GraduationCap, PenTool, MessageCircle];
-const essayAccents = ["#204276", "#7c3aed", "#059669", "#d97706", "#dc2626", "#0891b2"];
+const essayAccents = ["#204276", "#16325c", "#2b7bb9", "#2b7bb9", "#204276", "#2b7bb9"];
 
 export default function WritingApplication() {
   const containerRef = useReveal();

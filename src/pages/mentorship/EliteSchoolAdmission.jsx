@@ -15,9 +15,9 @@ export default function EliteSchoolAdmission() {
   return (
     <>
       <style>{MENTOR_STYLES + `
-        .elite-hero { position:relative; padding:150px 0 64px; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%); }
+        .elite-hero { position:relative; padding:150px 0 64px; min-height:620px; display:flex; align-items:center; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%); }
         .elite-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
-        @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .elite-hero{ padding:120px 0 48px; } }
+        @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .elite-hero{ padding:120px 0 48px; min-height:460px; } }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
 

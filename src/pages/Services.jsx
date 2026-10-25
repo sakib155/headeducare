@@ -118,7 +118,7 @@ export default function Services() {
     <div>
       {/* Hero — overlay band */}
       <section
-        className="sol-overlay"
+        className="sol-overlay sol-hero-inner"
         style={{
           backgroundImage:
             "url(/assets/prettiest-college-campuses-dartmouth-college-1592777600.avif)",

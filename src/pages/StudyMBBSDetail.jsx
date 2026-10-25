@@ -6,7 +6,8 @@ import {
 const styles = `
   .mbbs-page { font-family: 'IBM Plex Sans', sans-serif; }
   .mbbs-page h1, .mbbs-page h2, .mbbs-page h3 { font-family: 'Roboto Slab', serif; }
-  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)); padding:150px 0 64px; }
+  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)); padding:150px 0 64px; min-height:620px; display:flex; align-items:center; }
+  .mbbs-hero > .mbbs-container { width:100%; }
   .dark .mbbs-hero { background:linear-gradient(rgba(10,20,38,0.94), rgba(13,26,48,0.9)); }
   .mbbs-hero .mbbs-h1 { color:#ffffff !important; }
   .mbbs-hero .mbbs-h1 span { color:#7fb2dd; }
@@ -34,7 +35,7 @@ const styles = `
   .mbbs-checklist li { display: flex; align-items: center; gap: 10px; padding: 10px 0; font-size: 14px; color: #4b5563; font-weight: 400; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .dark .mbbs-checklist li { color: #9ca3af; border-color: rgba(255,255,255,0.08); }
   .mbbs-checklist li:last-child { border: none; }
-  .mbbs-checklist li svg { width: 18px; height: 18px; color: #16a34a; flex-shrink: 0; }
+  .mbbs-checklist li svg { width: 18px; height: 18px; color: #2b7bb9; flex-shrink: 0; }
   .mbbs-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #204276; color: #fff; padding: 14px 28px; border-radius: 3px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all .2s; }
   .mbbs-cta-btn:hover { background: #16325c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(32,66,118,0.25); }
   .mbbs-back { display:inline-flex; align-items:center; gap:6px; color:#204276; font-size:14px; font-weight:600; text-decoration:none; margin-bottom:24px; }
@@ -42,7 +43,7 @@ const styles = `
   .mbbs-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 40px; background: rgba(32,66,118,0.1); color: #204276; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
   .dark .mbbs-badge { background: rgba(74,131,243,0.15); color: #7fb2dd; }
   .mbbs-highlight-box { background: linear-gradient(135deg, #204276, #0f203c); border-radius: 3px; padding: 36px; color: #fff; }
-  @media(max-width:768px) { .mbbs-hero { padding:120px 0 48px; } .mbbs-section { padding: 48px 0; } .mbbs-section-alt { padding: 48px 0; } }
+  @media(max-width:768px) { .mbbs-hero { padding:120px 0 48px; min-height:460px; } .mbbs-section { padding: 48px 0; } .mbbs-section-alt { padding: 48px 0; } }
 `;
 
 const chinaUniversities = [

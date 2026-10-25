@@ -380,7 +380,7 @@ export default function Home() {
 
       {/* ===== HERO SECTION — full-bleed photo + navy overlay, dual-color H1 ===== */}
       <section
-        className="sol-overlay"
+        className="sol-overlay sol-hero"
         style={{
           backgroundImage:
             "url(/assets/prettiest-college-campuses-stanford-university-1592777646.avif)",
@@ -605,7 +605,7 @@ export default function Home() {
                   {[...Array(5)].map((_, j) => (
                     <span
                       key={j}
-                      className="material-symbols-outlined text-yellow-400 text-lg"
+                      className="material-symbols-outlined text-[#7fb2dd] text-lg"
                       style={{ fontVariationSettings: "'FILL' 1" }}
                     >
                       star
@@ -801,12 +801,12 @@ export default function Home() {
                 </button>
 
                 {leadStatus === "success" && (
-                  <p className="mt-4 text-green-600 font-semibold text-center">
+                  <p className="mt-4 text-[#2b7bb9] font-semibold text-center">
                     Thank you! We'll contact you within 24 hours.
                   </p>
                 )}
                 {leadStatus === "error" && (
-                  <p className="mt-4 text-red-500 font-semibold text-center">
+                  <p className="mt-4 text-[#16325c] font-semibold text-center">
                     Something went wrong. Please try again or call us directly.
                   </p>
                 )}
@@ -839,7 +839,7 @@ export default function Home() {
             <div className="p-6">
               {testimonialStatus === "success" ? (
                 <div className="text-center py-10">
-                  <span className="material-symbols-outlined text-5xl text-green-500 mb-4 block">
+                  <span className="material-symbols-outlined text-5xl text-[#2b7bb9] mb-4 block">
                     verified
                   </span>
                   <p className="text-lg font-bold text-[#1a1a1a] mb-2">
@@ -933,11 +933,11 @@ export default function Home() {
                       Auto-resized to 400×400 (square). JPG, PNG, or WEBP up to 15 MB.
                     </p>
                     {testimonialPhotoWarn && (
-                      <p className="text-amber-500 text-xs mt-1">{testimonialPhotoWarn}</p>
+                      <p className="text-[#2b7bb9] text-xs mt-1">{testimonialPhotoWarn}</p>
                     )}
                   </div>
                   {testimonialStatus === "error" && (
-                    <p className="mb-4 text-red-500 font-semibold text-sm">{testimonialMsg}</p>
+                    <p className="mb-4 text-[#16325c] font-semibold text-sm">{testimonialMsg}</p>
                   )}
                   <button
                     type="submit"

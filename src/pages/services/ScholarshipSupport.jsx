@@ -106,7 +106,7 @@ const scholarshipTypes = [
   {
     icon: Globe,
     type: "Government Scholarships",
-    color: "#16a34a",
+    color: "#2b7bb9",
     desc: "Fully or partially funded awards offered by host country governments, including Chevening, Australia Awards, DAAD, Fulbright, and MEXT.",
   },
   {
@@ -118,13 +118,13 @@ const scholarshipTypes = [
   {
     icon: FlaskConical,
     type: "Research Fellowships",
-    color: "#dc2626",
+    color: "#204276",
     desc: "Funding for postgraduate researchers and doctoral candidates, often tied to a specific supervisor or research project. Proposal quality is critical.",
   },
   {
     icon: BadgeDollarSign,
     type: "Country-Specific Awards",
-    color: "#d97706",
+    color: "#2b7bb9",
     desc: "Scholarships specifically for Bangladeshi students, including Commonwealth Scholarships, ICCR (India), and bilateral government agreements.",
   },
 ];
@@ -436,8 +436,8 @@ export default function ScholarshipSupport() {
                         <span
                           className="schol-badge-pill"
                           style={{
-                            background: "rgba(22,163,74,0.12)",
-                            color: "#16a34a",
+                            background: "rgba(43,123,185,0.12)",
+                            color: "#2b7bb9",
                           }}
                         >
                           {row.coverage}

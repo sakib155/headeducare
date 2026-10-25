@@ -93,7 +93,7 @@ const documentTypes = [
     icon: TrendingUp,
     title: "Income Verification",
     desc: "Proof that your sponsor earns enough to support you. Includes salary certificates, pay slips, and Income Tax Returns (ITR).",
-    color: "#16a34a",
+    color: "#2b7bb9",
   },
   {
     icon: Home,
@@ -105,13 +105,13 @@ const documentTypes = [
     icon: Users,
     title: "Sponsorship Affidavits",
     desc: "Legal notarized documents where sponsors formally declare their financial responsibility for your tuition and living costs.",
-    color: "#d97706",
+    color: "#2b7bb9",
   },
   {
     icon: Briefcase,
     title: "Business Records",
     desc: "For business-owning families: Trade licenses, chamber memberships, and audited balance sheets to prove business legitimacy.",
-    color: "#dc2626",
+    color: "#204276",
   },
   {
     icon: Stamp,
