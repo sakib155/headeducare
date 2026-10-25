@@ -1,16 +1,15 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMergedCountries, slugOf } from "../../lib/countryData";
 import { countriesFallback } from "./countriesFallback";
 import { countryDetailStyles as css } from "./Countrydetailstyles";
 import {
-  SectionCard,
   TuitionFees,
   LanguageRequirements,
   Intakes,
   Salaries,
   TopCourses,
-  DocumentsTable,
   ScholarshipTable,
 } from "./countryDetailHelpers";
 
@@ -23,7 +22,6 @@ const whyStudyContent = {
       { title: "Flexibility", desc: "The US education system excels for its flexibility in course selection and institution transfer. This unique feature allows students to switch courses, colleges or universities seamlessly, setting it apart from other countries." },
       { title: "Career Opportunities", desc: "With a strong job market and post-study work options, the USA opens doors to promising careers." },
     ],
-    color: "#204276",
   },
   uk: {
     points: [
@@ -32,7 +30,6 @@ const whyStudyContent = {
       { title: "Fifteen of the World's Top 100 Universities", desc: "The UK is home to fifteen universities that rank amongst the top 100 universities in the world according to the QS World Ranking. The prestigious universities in the UK provide students with a rich academic tradition and access to innovative research across various disciplines." },
       { title: "Career Opportunities", desc: "Take advantage of a wide range of career opportunities as a graduate from a highly sought after course in the UK." },
     ],
-    color: "#1d4ed8",
   },
   australia: {
     points: [
@@ -41,7 +38,6 @@ const whyStudyContent = {
       { title: "Post-Study Work up to 6 Years", desc: "Students who have completed their degree in Australia are eligible for post-study work visa ranging from 2 to 4 years. Those studying in regional areas can obtain a visa for up to 6 years." },
       { title: "Nine of the World's Top 100 Universities", desc: "Australia is home to nine universities that rank amongst the top 100 universities in the world, offering world-class education and research opportunities." },
     ],
-    color: "#e11d48",
   },
   canada: {
     points: [
@@ -51,7 +47,6 @@ const whyStudyContent = {
       { title: "Working Hours", desc: "When you study in Canada, you get the opportunity to work for 24 hours per week during your ongoing course, and 40 hours per week during vacations." },
       { title: "Safe Place to Study", desc: "Being a land of immigrants, Canada is known for being a safe and inclusive country, making it an ideal place for international students to study and live." },
     ],
-    color: "#dc2626",
   },
   "new-zealand": {
     points: [
@@ -59,7 +54,6 @@ const whyStudyContent = {
       { title: "Best of Both Worlds Qualification", desc: "Coupled with lower costs and international recognition, New Zealand essentially offers the Best of Both Worlds. Qualifications have a reputation for being both practical and modern." },
       { title: "Migration and Job Search Opportunity", desc: "Students are given a visa to search for a job after completion of their course and have a good opportunity to immigrate. They also get 2-3 years of post-study work visa." },
     ],
-    color: "#16a34a",
   },
   ireland: {
     points: [
@@ -68,7 +62,6 @@ const whyStudyContent = {
       { title: "Work Part-Time, 20 Hours Per Week", desc: "Ireland allows its students to gain work experience by working part time for 20 hours per week, enhancing your resume." },
       { title: "Excellent Wages: €8-9 Per Hour", desc: "Good wages in Ireland attract students by offering opportunities for gaining work experience related to their field of study." },
     ],
-    color: "#d97706",
   },
   malaysia: {
     points: [
@@ -77,7 +70,6 @@ const whyStudyContent = {
       { title: "Safe and Welcoming Environment", desc: "Malaysia is known for its hospitality and welcoming environment, creating a safe atmosphere for international students." },
       { title: "Top-Notch Education", desc: "Universities in Malaysia offer accredited courses that have global recognition, ensuring high-quality education." },
     ],
-    color: "#7c3aed",
   },
   korea: {
     points: [
@@ -86,7 +78,6 @@ const whyStudyContent = {
       { title: "Affordability", desc: "Compared to other popular study destinations, tuition fees and the cost of living in South Korea are relatively affordable. Many universities offer scholarships." },
       { title: "Post Graduation Opportunities", desc: "South Korea's strong economy and global corporations (Samsung, Hyundai, LG) provide opportunities for students to gain international work experience after graduation." },
     ],
-    color: "#0891b2",
   },
   denmark: {
     points: [
@@ -96,7 +87,6 @@ const whyStudyContent = {
       { title: "Work Opportunities", desc: "Non-EU/EEA students can work up to 20 hours per week during the academic year and full-time during summer months." },
       { title: "Dependent Allowed", desc: "Dependents can accompany the main applicant if studying in a state-approved higher educational program. Spouse gets a full-time work permit." },
     ],
-    color: "#0d9488",
   },
   finland: {
     points: [
@@ -105,7 +95,6 @@ const whyStudyContent = {
       { title: "Scholarships Available", desc: "Most universities offer automatic merit-based scholarships covering 50% to 100% of tuition fees. Doctoral programs are completely free regardless of nationality." },
       { title: "Post-Study Work Pathway", desc: "Graduates can apply for a post-graduation residence permit valid for up to two years to look for work or start a business." },
     ],
-    color: "#2563eb",
   },
   sweden: {
     points: [
@@ -115,7 +104,6 @@ const whyStudyContent = {
       { title: "Work Opportunities", desc: "International students can work part-time during their studies to gain practical experience and help support living expenses." },
       { title: "Dependent Allowed", desc: "Dependents can accompany the main applicant if studying in a state-approved higher educational program." },
     ],
-    color: "#1d4ed8",
   },
   norway: {
     points: [
@@ -124,7 +112,6 @@ const whyStudyContent = {
       { title: "Work Opportunities and Career Growth", desc: "Students can work part-time for up to 20 hours per week. After graduation, international students can apply for a job seeker visa for up to 12 months." },
       { title: "Dependent Allowed", desc: "Dependents can accompany the main applicant in state-approved higher educational programs." },
     ],
-    color: "#dc2626",
   },
   hungary: {
     points: [
@@ -133,7 +120,6 @@ const whyStudyContent = {
       { title: "Low Tuition and Living Costs", desc: "Standard tuition fees are budget-friendly compared to Western Europe, and monthly living expenses typically range from €400 to €700." },
       { title: "Work While Studying", desc: "International students from non-EU countries can work up to 20 hours per week during the academic semester and full-time during holidays." },
     ],
-    color: "#16a34a",
   },
   netherlands: {
     points: [
@@ -143,7 +129,6 @@ const whyStudyContent = {
       { title: "Post-Study Work Opportunities", desc: "Graduates can apply for an Orientation Year (zoekjaar) visa, giving you up to one full year to find a job or start a business." },
       { title: "Less Language Barrier", desc: "About 95% of the Dutch population speaks English, making daily life and studying very easy for international students." },
     ],
-    color: "#d97706",
   },
   belgium: {
     points: [
@@ -152,7 +137,6 @@ const whyStudyContent = {
       { title: "Affordable Tuition Fees", desc: "You can get a high-quality education in English with tuition fees lower than other traditional destinations." },
       { title: "Post-Study Options", desc: "International graduates can apply for a 12-month search-year visa to find a job or start a business without a separate work permit." },
     ],
-    color: "#7c3aed",
   },
 };
 
@@ -172,30 +156,12 @@ const applicationChecklists = {
   belgium: ["Passport", "Professional CV", "All Academic Transcripts and Certificates", "English Proficiency Certificate", "Job Experience Letter - if applicable", "Statement of Purpose (SOP)", "2/3 Academic/ Professional Recommendation Letter"],
 };
 
-const whyStudyStyles = `
-  .ws-section { padding: 48px 0 32px; }
-  .ws-header-row { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
-  .ws-header-line { flex: 1; height: 2px; background: linear-gradient(90deg, var(--border), transparent); }
-  .ws-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 40px; background: var(--accent-bg); color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-  .ws-title { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: var(--ink); line-height: 1.15; margin-bottom: 40px; letter-spacing: -.02em; }
-
-  .ws-point { display: flex; gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--border-soft); animation: fadeUp .5s cubic-bezier(.22,1,.36,1) both; }
-  .ws-point:last-child { border-bottom: none; }
-
-  .ws-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 900; font-size: 1rem; color: #fff; margin-top: 2px; }
-
-  .ws-point-content { flex: 1; min-width: 0; }
-  .ws-point-title { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -.01em; line-height: 1.3; }
-  .ws-point-desc { font-size: .92rem; color: var(--ink-soft); line-height: 1.8; font-weight: 400; max-width: 720px; }
-
-  .dark .ws-point-title { color: #e2e8f0; }
-  .dark .ws-badge { background: rgba(96,165,250,0.15); color: #60a5fa; }
-
-  @media(max-width:640px) {
-    .ws-point { flex-direction: column; gap: 12px; }
-    .ws-num { width: 32px; height: 32px; font-size: .85rem; }
-  }
-`;
+const CheckSquare = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="3" />
+    <path d="M8.5 12.5l2.5 2.5 4.5-5" />
+  </svg>
+);
 
 export default function CountryDetails() {
   const { slug } = useParams();
@@ -250,9 +216,9 @@ export default function CountryDetails() {
 
   return (
     <>
-      <style>{css + whyStudyStyles}</style>
+      <style>{css}</style>
       <div className="cd-root">
-        {/* ── hero ── */}
+        {/* ── HERO — full-bleed photo, left-aligned, cherry CTA ── */}
         <div className="hero">
           {imgUrl ? (
             <img src={imgUrl} alt={name} className="hero-img" />
@@ -261,74 +227,233 @@ export default function CountryDetails() {
           )}
           <div className="hero-overlay" />
           <div className="hero-content">
-            <h1 className="hero-title">Study in {name}</h1>
+            <span className="hero-badge">
+              <span className="hero-flag">{flag}</span>
+              <span className="hero-badge-text">Study Destination</span>
+            </span>
+            <h1 className="hero-title">
+              Study in <em>{name}</em>
+            </h1>
             {desc && <p className="hero-desc">{desc}</p>}
+            <div className="hero-actions">
+              <Link to="/freeconsulation" className="gs-btn-cherry">
+                Book Free Consultation
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+              <a href="#why-study" className="gs-btn-outline-light">
+                Why {name}?
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* ── WHY STUDY SECTION ── */}
-        {whyData && (
-          <div className="ws-section sections">
-            <div style={{ maxWidth: 800, margin: "0 auto" }}>
-              <h2 className="ws-title">Why Study in {name}?</h2>
-              {whyData.points.map((point, i) => (
-                <div key={i} className="ws-point" style={{ animationDelay: `${i * 0.1}s` }}>
-                  <div className="ws-num" style={{ background: "#204276" }}>{i + 1}</div>
-                  <div className="ws-point-content">
-                    <h3 className="ws-point-title" style={{ color: "#204276" }}>{point.title}</h3>
-                    <p className="ws-point-desc">{point.desc}</p>
+        {/* ── WHY STUDY — deep navy band, mint accents ── */}
+        {whyData && whyData.points.length > 0 && (
+          <div className="band band-deep" id="why-study">
+            <div className="band-inner">
+              <p className="band-eyebrow">Why Choose Us</p>
+              <h2 className="band-title">
+                Why choose <span>{name}</span> for your studies?
+              </h2>
+              <p className="band-sub">
+                Everything you need to know about building your future in {name} — guided by our expert counsellors at every step.
+              </p>
+              <div className="why-grid">
+                {whyData.points.map((point, i) => (
+                  <div key={i} className="why-item">
+                    <span className="why-num">{String(i + 1).padStart(2, "0")}</span>
+                    <div>
+                      <h3 className="why-title">{point.title}</h3>
+                      <p className="why-desc">{point.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         )}
 
-        {/* ── CONTENT SECTIONS ── */}
-        <div className="sections">
-          <SectionCard title="Top Courses">
-            <TopCourses courses={courses} />
-          </SectionCard>
+        {/* ── TOP COURSES — light band, flat cobalt chips ── */}
+        {courses?.length > 0 && (
+          <div className="band band-light">
+            <div className="band-inner">
+              <p className="band-eyebrow">Study Options</p>
+              <h2 className="band-title">
+                Popular <span>courses</span> in {name}
+              </h2>
+              <p className="band-sub">
+                Explore the programmes international students choose most — from foundation pathways to doctoral research.
+              </p>
+              <TopCourses courses={courses} />
+            </div>
+          </div>
+        )}
 
-          <SectionCard title="Intake Periods">
-            <Intakes intakes={intakes} />
-          </SectionCard>
+        {/* ── INTAKE PERIODS — white band, lavender cards ── */}
+        {intakes?.length > 0 && (
+          <div className="band band-white">
+            <div className="band-inner">
+              <p className="band-eyebrow">Key Dates</p>
+              <h2 className="band-title">
+                Upcoming <span>intakes</span>
+              </h2>
+              <p className="band-sub">
+                Plan ahead — application windows close months before classes begin.
+              </p>
+              <Intakes intakes={intakes} />
+            </div>
+          </div>
+        )}
 
-          <SectionCard title="Tuition Fees">
-            <TuitionFees fees={fees} />
-          </SectionCard>
+        {/* ── TUITION FEES — light band, editorial table ── */}
+        {fees && (
+          <div className="band band-light">
+            <div className="band-inner">
+              <p className="band-eyebrow">Cost of Study</p>
+              <h2 className="band-title">
+                Annual <span>tuition fees</span>
+              </h2>
+              <p className="band-sub">
+                Indicative yearly tuition by study level. Our counsellors can help you find scholarships and funding options.
+              </p>
+              <TuitionFees fees={fees} />
+            </div>
+          </div>
+        )}
 
-          <SectionCard title="Language Requirements">
-            <LanguageRequirements reqs={langs} />
-          </SectionCard>
+        {/* ── LANGUAGE REQUIREMENTS — white band ── */}
+        {langs?.length > 0 && (
+          <div className="band band-white">
+            <div className="band-inner">
+              <p className="band-eyebrow">Entry Requirements</p>
+              <h2 className="band-title">
+                English <span>language requirements</span>
+              </h2>
+              <p className="band-sub">
+                Minimum scores by study level. Not sure you meet them? Ask us about pathway options.
+              </p>
+              <LanguageRequirements reqs={langs} />
+            </div>
+          </div>
+        )}
 
-          {appChecklist && appChecklist.length > 0 && (
-            <SectionCard title="Application Checklist">
-              <DocumentsTable items={appChecklist} />
-            </SectionCard>
-          )}
+        {/* ── APPLICATION CHECKLIST — signature mint band ── */}
+        {appChecklist && appChecklist.length > 0 && (
+          <div className="band band-mint">
+            <div className="band-inner">
+              <p className="band-eyebrow">Get Ready</p>
+              <h2 className="band-title">
+                Application <span style={{ color: "#010A1C" }}>checklist</span>
+              </h2>
+              <p className="band-sub" style={{ color: "#1b2a24" }}>
+                Everything you need to study in {name} — gather these before your counselling session and we'll handle the rest.
+              </p>
+              <ul className="checklist">
+                {appChecklist.map((item, i) => (
+                  <li key={i} className="check-item">
+                    <CheckSquare />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
 
-          {offerDocs?.length > 0 && (
-            <SectionCard title="Documents for Offer Letter">
-              <DocumentsTable items={offerDocs} />
-            </SectionCard>
-          )}
+        {/* ── DOCUMENTS FOR OFFER LETTER — light checklist ── */}
+        {offerDocs?.length > 0 && (
+          <div className="band band-light">
+            <div className="band-inner">
+              <p className="band-eyebrow">Step One</p>
+              <h2 className="band-title">
+                Documents for your <span>offer letter</span>
+              </h2>
+              <p className="band-sub">Provide these to receive a conditional or unconditional offer from your chosen university.</p>
+              <ul className="checklist checklist-on-light">
+                {offerDocs.map((item, i) => (
+                  <li key={i} className="check-item">
+                    <CheckSquare />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
 
-          {visaDocs?.length > 0 && (
-            <SectionCard title="Documents for Visa Application">
-              <DocumentsTable items={visaDocs} />
-            </SectionCard>
-          )}
+        {/* ── DOCUMENTS FOR VISA — white checklist ── */}
+        {visaDocs?.length > 0 && (
+          <div className="band band-white">
+            <div className="band-inner">
+              <p className="band-eyebrow">Step Two</p>
+              <h2 className="band-title">
+                Documents for your <span>visa application</span>
+              </h2>
+              <p className="band-sub">Our visa specialists prepare and review every document before lodgement.</p>
+              <ul className="checklist checklist-on-light">
+                {visaDocs.map((item, i) => (
+                  <li key={i} className="check-item">
+                    <CheckSquare />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
 
-          <SectionCard title="Post-Study Work Salaries">
-            <Salaries salaries={salaries} />
-          </SectionCard>
+        {/* ── POST-STUDY WORK SALARIES — deep navy band ── */}
+        {salaries?.length > 0 && (
+          <div className="band band-deep">
+            <div className="band-inner">
+              <p className="band-eyebrow">After Graduation</p>
+              <h2 className="band-title">
+                Post-study work <span>salaries</span>
+              </h2>
+              <p className="band-sub">What graduates can expect to earn in {name} by field.</p>
+              <Salaries salaries={salaries} />
+            </div>
+          </div>
+        )}
 
-          {scholarships?.length > 0 && (
-            <SectionCard title="Scholarships & Funding">
+        {/* ── SCHOLARSHIPS — light band, lavender cards ── */}
+        {scholarships?.length > 0 && (
+          <div className="band band-light">
+            <div className="band-inner">
+              <p className="band-eyebrow">Funding</p>
+              <h2 className="band-title">
+                Find <span>scholarships</span> to help fund your studies
+              </h2>
+              <p className="band-sub">From university merit awards to government grants — we help you apply.</p>
               <ScholarshipTable scholarships={scholarships} />
-            </SectionCard>
-          )}
+            </div>
+          </div>
+        )}
+
+        {/* ── FINAL CTA — navy band, mint accent, cherry button ── */}
+        <div className="band band-navy final-cta">
+          <div className="band-inner">
+            <p className="band-eyebrow">Next Step</p>
+            <h2 className="band-title">
+              Take the <span>first step</span> towards studying in {name}!
+            </h2>
+            <p className="band-sub">
+              Book a free counselling session — our experts will map out your admission, visa and funding plan for {name}.
+            </p>
+            <div className="hero-actions">
+              <Link to="/freeconsulation" className="gs-btn-cherry">
+                Book Free Consultation
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+              <Link to="/allcountries/allcountry" className="gs-btn-outline-light">
+                Explore Other Destinations
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
