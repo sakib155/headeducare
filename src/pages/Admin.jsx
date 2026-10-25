@@ -1,11 +1,29 @@
 import { useState, useEffect, useRef } from "react";
 import { api } from "../lib/apiClient";
 
-// Reusable upload button — sends the file to /api/upload.php which
+// Read image dimensions client-side (no upload needed) for size/ratio validation
+function getImageDimensions(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      resolve({ width: img.naturalWidth, height: img.naturalHeight });
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("Could not read image dimensions"));
+    };
+    img.src = url;
+  });
+}
+
+// Reusable upload button, sends the file to /api/upload.php which
 // auto-resizes it to a uniform resolution and returns the hosted URL.
 function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH = 1080, onUploaded }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
+  const [warning, setWarning] = useState("");
   const fileRef = useRef(null);
 
   const handleFile = async (e) => {
@@ -13,9 +31,32 @@ function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH 
     if (!file) return;
     setUploading(true);
     setError("");
+    setWarning("");
+
+    // Client-side size/aspect validation, warn before uploading
+    try {
+      const { width, height } = await getImageDimensions(file);
+      const srcRatio = width / height;
+      const targetRatio = targetW / targetH;
+      const ratioDiff = Math.abs(srcRatio - targetRatio) / targetRatio;
+      const tooSmall = width < targetW || height < targetH;
+
+      let warn = "";
+      if (tooSmall) {
+        warn = `Warning: image is ${width}×${height}, smaller than ${targetW}×${targetH}. It will be upscaled and may look soft/blurry.`;
+      } else if (ratioDiff > 0.15) {
+        warn = `Warning: image ratio is ${width}:${height}, target is ${targetW}:${targetH}. It will be cropped significantly. Use a similar-ratio image for best results.`;
+      }
+      if (warn) setWarning(warn);
+    } catch {
+      // dimension check failed, still allow upload, server handles it
+    }
+
     try {
       const result = await api.uploadImage(file, { w: targetW, h: targetH });
       if (onUploaded) onUploaded(result.url);
+      // Show server-side warning if client-side check didn't produce one
+      if (!warning && result.warning) setWarning(`Warning: ${result.warning}`);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -35,6 +76,7 @@ function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH 
       >
         {uploading ? "Uploading & Resizing..." : label}
       </button>
+      {warning && <p className="text-amber-400 text-xs mt-1">{warning}</p>}
       {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
     </div>
   );
@@ -47,7 +89,7 @@ export default function Admin() {
   const [loginError, setLoginError] = useState("");
   const [activeTab, setActiveTab] = useState("overview");
 
-  // Unread contacts badge — industry standard: shows how many contacts are
+  // Unread contacts badge, industry standard: shows how many contacts are
   // new since the admin last opened the Contacts page, clears on open.
   const LAST_SEEN_CONTACTS_KEY = "headeduc_last_seen_contacts";
   const [unseenContacts, setUnseenContacts] = useState(0);
@@ -595,7 +637,7 @@ export default function Admin() {
                             <p className="text-slate-500 text-xs">{contact.email}</p>
                           </td>
                           <td className="p-4 max-w-[220px]">
-                            <p className="text-slate-400 text-xs line-clamp-2">{contact.message || '—'}</p>
+                            <p className="text-slate-400 text-xs line-clamp-2">{contact.message || '-'}</p>
                           </td>
                           <td className="p-4">
                             <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${

@@ -12,7 +12,7 @@ Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 Header set X-XSS-Protection "1; mode=block"
 # Content-Security-Policy (basic — adjust as needed for your inline scripts/styles)
-Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://headeducare.com; frame-ancestors 'self'; form-action 'self'"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://headeducare.com; frame-src https://maps.google.com https://www.google.com; frame-ancestors 'self'; form-action 'self'"
 
 # Protect sensitive files
 <FilesMatch "\.(sql|md|sh|log|env|ini|json|lock|zip|pem|key)$">

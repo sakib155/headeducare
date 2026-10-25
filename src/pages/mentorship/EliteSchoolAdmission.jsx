@@ -1,4 +1,4 @@
-/* ── Elite School Admission — Premium dark hero, horizontal process arrows, 2-col feature grid ── */
+/* ── Elite School Admission, Premium dark hero, horizontal process arrows, 2-col feature grid ── */
 import { Target, PenTool, MessageCircle, FileText, Star, Search } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -21,7 +21,7 @@ export default function EliteSchoolAdmission() {
       `}</style>
       <div className="mtr-page" ref={containerRef}>
 
-        {/* Premium dark hero — visually distinct from every other page */}
+        {/* Premium dark hero, visually distinct from every other page */}
         <section className="elite-hero">
           <div className="elite-blob" style={{ width: 500, height: 500, background: "rgba(0,91,143,0.12)", top: -150, right: -100 }} />
           <div className="elite-blob" style={{ width: 300, height: 300, background: "rgba(96,165,250,0.15)", bottom: -80, left: -60 }} />
@@ -69,7 +69,7 @@ export default function EliteSchoolAdmission() {
 
         <div className="mtr-divider" />
 
-        {/* 2-col feature cards — different density from other pages */}
+        {/* 2-col feature cards, different density from other pages */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
             <MentorSectionHeader {...d.whatIsSection} />
@@ -90,7 +90,7 @@ export default function EliteSchoolAdmission() {
               label="Target Institutions"
               title="Elite Universities Our"
               highlight="Students Access"
-              body="Our mentors have guided students to successful admission at every institution on this list — including several with acceptance rates below 5%."
+              body="Our mentors have guided students to successful admission at every institution on this list, including several with acceptance rates below 5%."
             />
             <MentorTagList tags={d.eliteSchools} />
           </div>

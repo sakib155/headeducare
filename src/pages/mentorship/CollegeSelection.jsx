@@ -1,4 +1,4 @@
-/* ── College Selection — Alternating feature rows + visual tier bars + FAQ ── */
+/* ── College Selection, Alternating feature rows + visual tier bars + FAQ ── */
 import { BookOpen, Target, DollarSign, Globe, Users, Compass } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -18,7 +18,7 @@ export default function CollegeSelection() {
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Alternating left/right rows — maximally different from icon-card grids */}
+        {/* Alternating left/right rows, maximally different from icon-card grids */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.selectionSection} />
@@ -28,7 +28,7 @@ export default function CollegeSelection() {
 
         <div className="mtr-divider" />
 
-        {/* Visual tier bars — completely unique visual element */}
+        {/* Visual tier bars, completely unique visual element */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>

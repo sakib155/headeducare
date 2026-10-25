@@ -1,4 +1,4 @@
-/* ── Financial Aid — Color-border cards + school badge strip + FAQ ── */
+/* ── Financial Aid, Color-border cards + school badge strip + FAQ ── */
 import { DollarSign, Award, Star, Briefcase, BookOpen, GraduationCap } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -27,7 +27,7 @@ export default function FinancialAid() {
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Aid types as color-bordered cards — visually distinct from icon grids */}
+        {/* Aid types as color-bordered cards, visually distinct from icon grids */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.aidTypes} />
@@ -47,14 +47,14 @@ export default function FinancialAid() {
 
         <div className="mtr-divider" />
 
-        {/* Need-blind schools — badge treatment, not plain tags */}
+        {/* Need-blind schools, badge treatment, not plain tags */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
             <MentorSectionHeader
               label="Most Generous Schools"
               title="Need-Blind &"
               highlight="Most Generous Universities"
-              body="These elite institutions meet 100% of demonstrated financial need for international students — making world-class education genuinely accessible regardless of family income."
+              body="These elite institutions meet 100% of demonstrated financial need for international students, making world-class education genuinely accessible regardless of family income."
             />
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 64, alignItems: "start" }}>
               <div className="fa-school-grid mtr-reveal">

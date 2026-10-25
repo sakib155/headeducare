@@ -87,7 +87,7 @@ const factors = [
   {
     icon: Wallet,
     title: "Budget & Inclusions",
-    desc: "Compare total costs and what's included — utilities, internet, furnishings — to avoid hidden expenses beyond the advertised rate.",
+    desc: "Compare total costs and what's included, utilities, internet, furnishings, to avoid hidden expenses beyond the advertised rate.",
   },
   {
     icon: Building,
@@ -175,11 +175,11 @@ const howItWorks = [
 const faqs = [
   {
     q: "What kind of accommodation options can I find through University Living and Casita?",
-    a: "Both platforms offer verified student housing near major universities — ranging from shared apartments and studios to ensuite rooms and private flats — based on your preferences and budget.",
+    a: "Both platforms offer verified student housing near major universities, ranging from shared apartments and studios to ensuite rooms and private flats, based on your preferences and budget.",
   },
   {
     q: "Can I compare prices and facilities before booking?",
-    a: "Yes! Both University Living and Casita allow you to filter by price, location, amenities, and room types — making it easy to compare and choose what suits you best.",
+    a: "Yes! Both University Living and Casita allow you to filter by price, location, amenities, and room types, making it easy to compare and choose what suits you best.",
   },
   {
     q: "Is it safe to book accommodation through these platforms?",
@@ -187,11 +187,11 @@ const faqs = [
   },
   {
     q: "How early should I book my student accommodation?",
-    a: "It's best to book as early as possible — ideally right after receiving your offer letter. Early booking gives you more choices, better deals, and peace of mind before your journey.",
+    a: "It's best to book as early as possible, ideally right after receiving your offer letter. Early booking gives you more choices, better deals, and peace of mind before your journey.",
   },
   {
     q: "Can Head Edu Care help me choose the right accommodation?",
-    a: "Yes. Our counsellors guide you on choosing housing based on your study location, lifestyle, and budget — ensuring a smooth transition abroad.",
+    a: "Yes. Our counsellors guide you on choosing housing based on your study location, lifestyle, and budget, ensuring a smooth transition abroad.",
   },
 ];
 
@@ -217,7 +217,7 @@ export default function StudentAccommodation() {
           badge="Student Services"
           title="Find Affordable and Trusted"
           highlight="Student Accommodations"
-          desc="Unlock a seamless home-finding experience — from browsing verified listings to moving in with confidence, Head Edu Care guides you to the right accommodation anywhere in the world."
+          desc="Unlock a seamless home-finding experience, from browsing verified listings to moving in with confidence, Head Edu Care guides you to the right accommodation anywhere in the world."
           blobTop={-40}
           blobRight={-100}
         />
@@ -305,7 +305,7 @@ export default function StudentAccommodation() {
               label="Housing Options"
               title="Types of Student"
               highlight="Accommodation"
-              body="From private studios to shared flats and university halls — find the option that fits your lifestyle and budget."
+              body="From private studios to shared flats and university halls, find the option that fits your lifestyle and budget."
             />
             <div
               className="grid-3"
@@ -358,7 +358,7 @@ export default function StudentAccommodation() {
               label="Decision Guide"
               title="Factors to Consider Before"
               highlight="Finalising Accommodation"
-              body="Here are the key factors every student should evaluate — priorities vary, so weigh each against your personal needs."
+              body="Here are the key factors every student should evaluate, priorities vary, so weigh each against your personal needs."
             />
             <div
               style={{

@@ -95,7 +95,7 @@ const services = [
     title: "Admission Support",
     slug: "/services/admission-support",
     summary:
-      "End-to-end university application guidance — from shortlisting and SOP writing to submission and offer negotiation.",
+      "End-to-end university application guidance, from shortlisting and SOP writing to submission and offer negotiation.",
     highlights: [
       "University shortlisting",
       "SOP & essay writing",
@@ -151,7 +151,7 @@ const services = [
     title: "Health Insurance",
     slug: "/services/health-insurance",
     summary:
-      "Navigate compulsory and optional health cover requirements for each country — so you're protected from day one.",
+      "Navigate compulsory and optional health cover requirements for each country, so you're protected from day one.",
     highlights: [
       "OSHC / OVHC (Australia)",
       "NHS guidance (UK)",
@@ -192,7 +192,7 @@ const steps = [
     step: 3,
     icon: PenTool,
     title: "Application & documents",
-    desc: "SOPs, forms, visa docs, and scholarship essays — prepared and refined by our specialists.",
+    desc: "SOPs, forms, visa docs, and scholarship essays, prepared and refined by our specialists.",
   },
   {
     step: 4,
@@ -218,7 +218,7 @@ const commitments = [
   {
     icon: Users,
     title: "Personalised counseling",
-    desc: "Every student gets a dedicated advisor — no cookie-cutter plans.",
+    desc: "Every student gets a dedicated advisor, no cookie-cutter plans.",
   },
   {
     icon: ShieldCheck,
@@ -233,7 +233,7 @@ const commitments = [
   {
     icon: Plane,
     title: "End-to-end support",
-    desc: "From first consultation to post-arrival settlement — we're with you throughout.",
+    desc: "From first consultation to post-arrival settlement, we're with you throughout.",
   },
 ];
 
@@ -304,7 +304,7 @@ export default function WillProvide() {
                 Everything We Will <span>Provide for Your Global Journey</span>
               </h1>
               <p className="wp-lead" style={{ marginBottom: 36 }}>
-                From your first consultation to your first day on campus — Head
+                From your first consultation to your first day on campus, Head
                 Edu Care offers a full suite of student services designed to
                 make studying abroad seamless, affordable, and successful.
               </p>
@@ -371,7 +371,7 @@ export default function WillProvide() {
                 Six Core Services, <span>One Trusted Partner</span>
               </h2>
               <p className="wp-body" style={{ marginTop: 12 }}>
-                Every service we offer is built around one goal — getting you to
+                Every service we offer is built around one goal, getting you to
                 the right institution, in the right country, with everything in
                 place before you arrive.
               </p>
@@ -728,7 +728,7 @@ export default function WillProvide() {
                 }}
               >
                 Book a free consultation with one of our expert counselors today
-                — your global education story starts here.
+               , your global education story starts here.
               </p>
               <div
                 style={{

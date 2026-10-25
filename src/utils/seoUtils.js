@@ -40,7 +40,7 @@ export function generateOrganizationSchema() {
     description: "Premier international education consultancy helping students pursue higher education across the globe.",
     sameAs: [
       "https://facebook.com/headedu",
-      "https://wa.me/8801XXXXXXXXX",
+      "https://wa.me/8801910833888",
     ],
   };
 }

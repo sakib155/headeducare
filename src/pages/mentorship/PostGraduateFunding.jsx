@@ -1,4 +1,4 @@
-/* ── Post Graduate Funding — Large 2-col funding cards + vertical timeline + FAQ ── */
+/* ── Post Graduate Funding, Large 2-col funding cards + vertical timeline + FAQ ── */
 import { BookOpen, Microscope, Award, DollarSign, GraduationCap, Globe } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -23,7 +23,7 @@ export default function PostGraduateFunding() {
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* 2-col large funding cards — more layout space per item vs cramped 3-col */}
+        {/* 2-col large funding cards, more layout space per item vs cramped 3-col */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.fundingSection} />
@@ -43,7 +43,7 @@ export default function PostGraduateFunding() {
 
         <div className="mtr-divider" />
 
-        {/* Vertical timeline — action plan from brainstorm to submission */}
+        {/* Vertical timeline, action plan from brainstorm to submission */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
             <div className="pgf-timeline-wrap">

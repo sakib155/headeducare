@@ -1,5 +1,5 @@
 export default function ChatWidget() {
-  const whatsappNumber = "8801XXXXXXXXX";
+  const whatsappNumber = "8801910833888";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (

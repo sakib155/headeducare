@@ -1,4 +1,4 @@
-/* ── Writing & Application — Accent-top essay cards + vertical timeline process (NO FAQ) ── */
+/* ── Writing & Application, Accent-top essay cards + vertical timeline process (NO FAQ) ── */
 import { FileText, BookOpen, School, GraduationCap, PenTool, MessageCircle } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -25,7 +25,7 @@ export default function WritingApplication() {
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Accent-top cards — each essay type has its own color */}
+        {/* Accent-top cards, each essay type has its own color */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.essayTypes} />

@@ -1,4 +1,4 @@
-/* ── Masters — 3-col icon cards + VERTICAL TIMELINE process (not step-card grid) ── */
+/* ── Masters, 3-col icon cards + VERTICAL TIMELINE process (not step-card grid) ── */
 import { Search, PenTool, BookOpen, Microscope, FileText, DollarSign } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -37,7 +37,7 @@ export default function MastersMentorshipProgram() {
 
         <div className="mtr-divider" />
 
-        {/* Vertical timeline — completely different from card grid */}
+        {/* Vertical timeline, completely different from card grid */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
             <div className="masters-grid">

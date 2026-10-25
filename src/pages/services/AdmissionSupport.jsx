@@ -54,7 +54,7 @@ const services = [
   {
     icon: FileText,
     title: "Application Preparation",
-    desc: "We prepare all application components — forms, academic documents, work experience records — with meticulous attention to each institution's requirements.",
+    desc: "We prepare all application components, forms, academic documents, work experience records, with meticulous attention to each institution's requirements.",
   },
   {
     icon: PenTool,
@@ -117,7 +117,7 @@ const process = [
     step: 3,
     icon: Target,
     title: "University Shortlisting",
-    desc: "A curated list of universities — target, moderate, and safe — is prepared based on your profile, program interest, and financial capacity.",
+    desc: "A curated list of universities, target, moderate, and safe, is prepared based on your profile, program interest, and financial capacity.",
   },
   {
     step: 4,
@@ -153,7 +153,7 @@ const levels = [
   {
     icon: BookOpen,
     level: "Postgraduate (Master's)",
-    desc: "Specialised one to two year programs with strong career outcomes. SOP and research statement quality is critical — we excel at both.",
+    desc: "Specialised one to two year programs with strong career outcomes. SOP and research statement quality is critical, we excel at both.",
   },
   {
     icon: Microscope,
@@ -233,7 +233,7 @@ export default function AdmissionSupport() {
               label="Services"
               title="Comprehensive Admission"
               highlight="Support Services"
-              body="End-to-end support covering every aspect of your university application — so nothing is left to chance."
+              body="End-to-end support covering every aspect of your university application, so nothing is left to chance."
             />
             <div
               style={{
@@ -300,7 +300,7 @@ export default function AdmissionSupport() {
               label="How It Works"
               title="Our 6-Step Admission"
               highlight="Support Process"
-              body="A structured, transparent process that takes you from profile evaluation to enrolled student — step by step."
+              body="A structured, transparent process that takes you from profile evaluation to enrolled student, step by step."
             />
             <div
               style={{

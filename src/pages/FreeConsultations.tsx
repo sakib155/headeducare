@@ -371,8 +371,9 @@ export default function FreeConsultation() {
                 </h4>
                 <div className="space-y-3">
                   {[
-                    { icon: "call", label: "+880 1XXX XXXXXX" },
-                    { icon: "chat", label: "WhatsApp available" },
+                    { icon: "call", label: "+8801910 833 888" },
+                    { icon: "call", label: "+8801909 833 888" },
+                    { icon: "chat", label: "WhatsApp: 01910 833 888" },
                     { icon: "mail", label: "info@headeducare.com" },
                   ].map((c, i) => (
                     <div key={i} className="flex items-center gap-3">

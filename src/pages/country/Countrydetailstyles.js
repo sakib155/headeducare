@@ -42,7 +42,7 @@ export const countryDetailStyles = `
   }
 
   /* ═══════════════════════════════════════════════
-     HERO — modern panoramic
+     HERO, modern panoramic
   ═══════════════════════════════════════════════ */
   .hero {
     position: relative;
@@ -57,7 +57,7 @@ export const countryDetailStyles = `
   }
   @keyframes heroFadeIn {
     from { opacity: 0; transform: scale(1.08); }
-    to { opacity: .92; transform: scale(1); }
+    to { opacity: .85; transform: scale(1); }
   }
   .hero-placeholder {
     position: absolute; inset: 0;
@@ -65,7 +65,7 @@ export const countryDetailStyles = `
   }
   .hero-overlay {
     position: absolute; inset: 0; z-index: 2;
-    background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.15) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.3) 100%);
   }
   .hero-content {
     position: absolute; inset: 0; z-index: 3;
@@ -164,7 +164,7 @@ export const countryDetailStyles = `
   }
 
   /* ═══════════════════════════════════════════════
-     TABLES — Google Docs style
+     TABLES, Google Docs style
   ═══════════════════════════════════════════════ */
   .table-wrap {
     overflow-x: auto;
@@ -224,7 +224,7 @@ export const countryDetailStyles = `
   .lang-table { min-width: 480px; }
 
   /* ═══════════════════════════════════════════════
-     INTAKES — card grid
+     INTAKES, card grid
   ═══════════════════════════════════════════════ */
   .intakes-grid {
     display: grid;
@@ -294,7 +294,7 @@ export const countryDetailStyles = `
   }
 
   /* ═══════════════════════════════════════════════
-     SCHOLARSHIPS — card grid
+     SCHOLARSHIPS, card grid
   ═══════════════════════════════════════════════ */
   .scholarship-grid {
     display: grid;

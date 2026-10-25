@@ -86,7 +86,7 @@ const services = [
   {
     icon: Handshake,
     title: "Award Negotiation & Acceptance",
-    desc: "When you receive an award, we help you evaluate, compare, and where possible negotiate conditions — including deferrals or partial award top-ups.",
+    desc: "When you receive an award, we help you evaluate, compare, and where possible negotiate conditions, including deferrals or partial award top-ups.",
   },
 ];
 
@@ -107,7 +107,7 @@ const scholarshipTypes = [
     icon: Globe,
     type: "Government Scholarships",
     color: "#16a34a",
-    desc: "Fully or partially funded awards offered by host country governments — including Chevening, Australia Awards, DAAD, Fulbright, and MEXT.",
+    desc: "Fully or partially funded awards offered by host country governments, including Chevening, Australia Awards, DAAD, Fulbright, and MEXT.",
   },
   {
     icon: Landmark,
@@ -125,7 +125,7 @@ const scholarshipTypes = [
     icon: BadgeDollarSign,
     type: "Country-Specific Awards",
     color: "#d97706",
-    desc: "Scholarships specifically for Bangladeshi students — including Commonwealth Scholarships, ICCR (India), and bilateral government agreements.",
+    desc: "Scholarships specifically for Bangladeshi students, including Commonwealth Scholarships, ICCR (India), and bilateral government agreements.",
   },
 ];
 
@@ -211,7 +211,7 @@ const process = [
     step: 2,
     icon: Search,
     title: "Scholarship Mapping",
-    desc: "We identify the scholarships you are realistically eligible for — ranked by funding value, competition level, and alignment with your profile.",
+    desc: "We identify the scholarships you are realistically eligible for, ranked by funding value, competition level, and alignment with your profile.",
   },
   {
     step: 3,
@@ -223,7 +223,7 @@ const process = [
     step: 4,
     icon: FileText,
     title: "Document & Essay Preparation",
-    desc: "Our writers and counselors co-create your scholarship essays, format your CV, and guide your referees — tailored to each funder's expectations.",
+    desc: "Our writers and counselors co-create your scholarship essays, format your CV, and guide your referees, tailored to each funder's expectations.",
   },
   {
     step: 5,
@@ -242,7 +242,7 @@ const process = [
 const faqs = [
   {
     q: "Can I apply for multiple scholarships at the same time?",
-    a: "Yes — and we recommend it. Most scholarships are highly competitive, so applying to multiple relevant awards significantly improves your chances of success. We manage timelines and document requirements across all applications simultaneously.",
+    a: "Yes, and we recommend it. Most scholarships are highly competitive, so applying to multiple relevant awards significantly improves your chances of success. We manage timelines and document requirements across all applications simultaneously.",
   },
   {
     q: "Do I need a university offer before applying for a scholarship?",
@@ -254,7 +254,7 @@ const faqs = [
   },
   {
     q: "Can working professionals apply for scholarships?",
-    a: "Absolutely. Many scholarships — especially at the postgraduate level — actively favour candidates with professional experience. Government scholarships like Chevening specifically target leaders and professionals with demonstrated impact in their field.",
+    a: "Absolutely. Many scholarships, especially at the postgraduate level, actively favour candidates with professional experience. Government scholarships like Chevening specifically target leaders and professionals with demonstrated impact in their field.",
   },
   {
     q: "How long does a scholarship application take to prepare?",
@@ -262,7 +262,7 @@ const faqs = [
   },
   {
     q: "What if my scholarship application is unsuccessful?",
-    a: "Rejection is part of the process — even strong candidates face it. We will review feedback where available, identify alternative scholarships, and help you reapply in the next intake cycle with a stronger application.",
+    a: "Rejection is part of the process, even strong candidates face it. We will review feedback where available, identify alternative scholarships, and help you reapply in the next intake cycle with a stronger application.",
   },
 ];
 
@@ -306,7 +306,7 @@ export default function ScholarshipSupport() {
           badge="Student Services"
           title="Fund Your Future with"
           highlight="Expert Scholarship Support"
-          desc="From identifying the right scholarship to writing a winning essay and tracking deadlines — our experienced counselors help Bangladeshi students secure funding at top institutions worldwide."
+          desc="From identifying the right scholarship to writing a winning essay and tracking deadlines, our experienced counselors help Bangladeshi students secure funding at top institutions worldwide."
           blobTop={-100}
           blobRight={-40}
         />
@@ -318,7 +318,7 @@ export default function ScholarshipSupport() {
               label="Services"
               title="Comprehensive Scholarship"
               highlight="Support Services"
-              body="End-to-end support covering every stage of your scholarship journey — so you can focus on your goals, not the paperwork."
+              body="End-to-end support covering every stage of your scholarship journey, so you can focus on your goals, not the paperwork."
             />
             <div
               style={{
@@ -343,7 +343,7 @@ export default function ScholarshipSupport() {
               label="Scholarship Types"
               title="Types of Scholarships"
               highlight="We Support"
-              body="There is a scholarship for every profile — academic excellence, financial need, research potential, or national partnerships. We help you find the right fit."
+              body="There is a scholarship for every profile, academic excellence, financial need, research potential, or national partnerships. We help you find the right fit."
             />
             <div
               style={{
@@ -461,7 +461,7 @@ export default function ScholarshipSupport() {
               label="How It Works"
               title="Our 6-Step Scholarship"
               highlight="Application Process"
-              body="A structured, transparent process that takes you from profile evaluation to confirmed award — step by step."
+              body="A structured, transparent process that takes you from profile evaluation to confirmed award, step by step."
             />
             <div
               style={{
@@ -567,7 +567,7 @@ export default function ScholarshipSupport() {
                 {
                   icon: BookOpen,
                   title: "Craft a Clear Narrative",
-                  desc: "Your essay should tell a compelling story — why this field, why this country, and how this scholarship connects your past to your future goals.",
+                  desc: "Your essay should tell a compelling story, why this field, why this country, and how this scholarship connects your past to your future goals.",
                 },
                 {
                   icon: CheckCircle,

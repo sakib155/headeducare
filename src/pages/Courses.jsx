@@ -86,10 +86,10 @@ export default function Courses() {
   const whySat = [
     { icon: Target, title: "4000+ Universities", desc: "Accepted by 4000+ universities worldwide" },
     { icon: Clock, title: "Shorter Format", desc: "Digital format with shorter test time (2 hours)" },
-    { icon: Brain, title: "Adaptive Testing", desc: "Adaptive testing — difficulty adjusts based on your performance" },
+    { icon: Brain, title: "Adaptive Testing", desc: "Adaptive testing, difficulty adjusts based on your performance" },
     { icon: BarChart3, title: "Faster Results", desc: "Faster results delivered within days" },
     { icon: GraduationCap, title: "Scholarships", desc: "Scholarships available for high-score students" },
-    { icon: Sparkles, title: "Digital Format", desc: "New Digital SAT format — shorter, smarter, easier" },
+    { icon: Sparkles, title: "Digital Format", desc: "New Digital SAT format, shorter, smarter, easier" },
   ];
 
   const pteSpeakingTasks = [
@@ -373,7 +373,7 @@ export default function Courses() {
         />
 
         {/* ═══════════════════════════════════════════
-           PTE — HERO SECTION
+           PTE, HERO SECTION
         ════════════════════════════════════════════ */}
         <section className="srv-section" id="pte">
           <div className="srv-container">
@@ -389,7 +389,7 @@ export default function Courses() {
                 The Pearson Test of English (PTE) Academic is a globally recognized English language test for non-native English speakers. Developed and conducted by Pearson, PTE is a computerized test that evaluates your ability to comprehend and use English in academic and real-world contexts. For study, work, or immigration, take the PTE test for a genuine assessment of your English communication skills.
               </p>
               <p className="srv-body" style={{ fontSize: 15, lineHeight: 1.9, marginTop: 12 }}>
-                The PTE Academic is accepted by thousands of universities across the UK, Canada, Australia, USA, Europe, and more — known for its fast results, AI-based scoring, and fully computer-based format.
+                The PTE Academic is accepted by thousands of universities across the UK, Canada, Australia, USA, Europe, and more, known for its fast results, AI-based scoring, and fully computer-based format.
               </p>
             </div>
           </div>
@@ -428,7 +428,7 @@ export default function Courses() {
               label="Exam Format"
               title="PTE Exam"
               highlight="Structure"
-              body="Total time: 2 hours — fully computer-based with AI scoring."
+              body="Total time: 2 hours, fully computer-based with AI scoring."
               centered={true}
             />
             <div className="srv-reveal" style={{ overflowX: "auto" }}>
@@ -467,7 +467,7 @@ export default function Courses() {
         </section>
 
         {/* ═══════════════════════════════════════════
-           PTE SYLLABUS — TASKS
+           PTE SYLLABUS, TASKS
         ════════════════════════════════════════════ */}
         <section className="srv-section-alt">
           <div className="srv-container">
@@ -592,7 +592,7 @@ export default function Courses() {
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {["Follow a simple structure (Intro → Body → Conclusion)", "Use academic words — however, therefore, moreover", "Keep sentences error-free rather than complex", "Maintain word limit — don't over-write", "Practice Summarize Written Text in 1 sentence"].map((t, i) => (
+                  {["Follow a simple structure (Intro → Body → Conclusion)", "Use academic words, however, therefore, moreover", "Keep sentences error-free rather than complex", "Maintain word limit, don't over-write", "Practice Summarize Written Text in 1 sentence"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
                       <span style={{ color: "#16a34a", flexShrink: 0 }}>✓</span>{t}
                     </li>
@@ -618,7 +618,7 @@ export default function Courses() {
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Listening Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {["Take quick notes while listening", "Focus on keywords, not complete sentences", "Repeated practice of 'Fill in the Blanks'", "Listen to podcasts/lectures daily", "Be careful with spelling — it affects score"].map((t, i) => (
+                  {["Take quick notes while listening", "Focus on keywords, not complete sentences", "Repeated practice of 'Fill in the Blanks'", "Listen to podcasts/lectures daily", "Be careful with spelling, it affects score"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
                       <span style={{ color: "#d97706", flexShrink: 0 }}>✓</span>{t}
                     </li>
@@ -630,7 +630,7 @@ export default function Courses() {
         </section>
 
         {/* ═══════════════════════════════════════════
-           PTE — WHY HEAD EDUCARE
+           PTE, WHY HEAD EDUCARE
         ════════════════════════════════════════════ */}
         <section className="srv-section" style={{ background: "linear-gradient(135deg, #005B8F08, #4A83F305)" }}>
           <div className="srv-container">
@@ -748,7 +748,7 @@ export default function Courses() {
               </div>
             </div>
             <div className="enroll-box srv-reveal">
-              <span><Phone /> Contact: +880 1XXXXXXXXX</span>
+              <span><Phone /> Contact: +8801910 833 888</span>
               <span><Mail /> Email: info@headeducare.com</span>
               <span><MapPin /> Address: Dhaka, Bangladesh</span>
             </div>
@@ -756,7 +756,7 @@ export default function Courses() {
         </section>
 
         {/* ═══════════════════════════════════════════
-           SAT — HERO SECTION
+           SAT, HERO SECTION
         ════════════════════════════════════════════ */}
         <section className="srv-section" id="sat">
           <div className="srv-container">
@@ -769,7 +769,7 @@ export default function Courses() {
                 What is the <span>SAT?</span>
               </h2>
               <p className="srv-body" style={{ fontSize: 15, lineHeight: 1.9, maxWidth: 700, margin: "16px auto 0" }}>
-                The SAT (Scholastic Assessment Test) is a globally recognized entrance test for students planning to pursue undergraduate studies abroad, especially in the USA, Canada, UK, Europe, and top international universities. In 2024–2025, SAT moved entirely to a Digital SAT format — shorter, smarter, and easier to manage.
+                The SAT (Scholastic Assessment Test) is a globally recognized entrance test for students planning to pursue undergraduate studies abroad, especially in the USA, Canada, UK, Europe, and top international universities. In 2024–2025, SAT moved entirely to a Digital SAT format, shorter, smarter, and easier to manage.
               </p>
             </div>
           </div>
@@ -913,7 +913,7 @@ export default function Courses() {
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Reading & Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {["Read the questions first, then skim the passage", "Look for keywords and transition words", "Practice grammar rules: subject–verb agreement, modifiers", "Focus on evidence-based questions — find the exact line", "Build vocabulary through daily reading"].map((t, i) => (
+                  {["Read the questions first, then skim the passage", "Look for keywords and transition words", "Practice grammar rules: subject–verb agreement, modifiers", "Focus on evidence-based questions, find the exact line", "Build vocabulary through daily reading"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
                       <span style={{ color: "#005B8F", flexShrink: 0 }}>✓</span>{t}
                     </li>
@@ -926,7 +926,7 @@ export default function Courses() {
                 </div>
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Math Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {["Memorize formulas (SAT doesn't give formula sheet for all)", "Practice mental math for speed", "Solve official College Board sample papers", "Use the on-screen calculator smartly", "Focus on algebra and word problems — highest weightage"].map((t, i) => (
+                  {["Memorize formulas (SAT doesn't give formula sheet for all)", "Practice mental math for speed", "Solve official College Board sample papers", "Use the on-screen calculator smartly", "Focus on algebra and word problems, highest weightage"].map((t, i) => (
                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
                       <span style={{ color: "#16a34a", flexShrink: 0 }}>✓</span>{t}
                     </li>
@@ -951,7 +951,7 @@ export default function Courses() {
         </section>
 
         {/* ═══════════════════════════════════════════
-           SAT — WHY HEAD EDUCARE
+           SAT, WHY HEAD EDUCARE
         ════════════════════════════════════════════ */}
         <section className="srv-section-alt" style={{ background: "linear-gradient(135deg, rgba(0,91,143,0.04), rgba(74,131,243,0.02))" }}>
           <div className="srv-container">
@@ -976,7 +976,7 @@ export default function Courses() {
         </section>
 
         {/* ═══════════════════════════════════════════
-           SAT COURSE — CTA SECTION
+           SAT COURSE, CTA SECTION
         ════════════════════════════════════════════ */}
         <section className="srv-section">
           <div className="srv-container">
@@ -1003,7 +1003,7 @@ export default function Courses() {
               </div>
             </div>
             <div className="enroll-box srv-reveal" style={{ marginTop: 24 }}>
-              <span><Phone /> Contact: +880 1XXXXXXXXX</span>
+              <span><Phone /> Contact: +8801910 833 888</span>
               <span><Mail /> Email: info@headeducare.com</span>
               <span><MapPin /> Address: Dhaka, Bangladesh</span>
             </div>

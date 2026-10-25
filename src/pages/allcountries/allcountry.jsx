@@ -1,4 +1,5 @@
-import { countriesFallback } from "../country/countriesFallback";
+import { useState, useEffect } from "react";
+import { fetchMergedCountries } from "../../lib/countryData";
 
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap');
@@ -241,11 +242,15 @@ export default function DestinationPage() {
   const ALLOWED_SLUGS = [
     "uk", "usa", "australia", "new-zealand", "ireland", "canada",
     "malaysia", "korea", "finland", "hungary", "sweden",
-    "netherlands", "belgium", "norway",
+    "netherlands", "belgium", "norway", "denmark",
   ];
-  const countries = (countriesFallback ?? []).filter((c) =>
-    ALLOWED_SLUGS.includes(c.slug ?? c.country?.toLowerCase()),
-  );
+  // Unified data source: live DB (admin panel) on top, fallback underneath.
+  // Images edited in the admin panel appear here automatically.
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    fetchMergedCountries(ALLOWED_SLUGS).then((merged) => setCountries(merged));
+  }, []);
 
   return (
     <>
@@ -254,12 +259,11 @@ export default function DestinationPage() {
         <div className="dp-inner">
           {/* ── header ── */}
           <header className="dp-header">
-            <span className="dp-eyebrow">Study Abroad</span>
             <h1 className="dp-title">
               Explore <em>Destinations</em>
             </h1>
             <p className="dp-subtitle">
-              Discover the world's best countries to study in — from tuition
+              Discover the world's best countries to study in, from tuition
               costs to visa requirements, all in one place.
             </p>
           </header>

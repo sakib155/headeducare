@@ -367,7 +367,7 @@ export default function EducationLoanSupport() {
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>Collateral-Free Grad Loans</h4>
                   <p className="srv-body" style={{ fontSize: 13, margin: 0 }}>
-                    Access funding for top business, engineering, law, and medical schools. No co-signer or collateral needed — approved based on your future career potential.
+                    Access funding for top business, engineering, law, and medical schools. No co-signer or collateral needed, approved based on your future career potential.
                   </p>
                 </div>
                 {/* MPOWER Card */}
@@ -426,7 +426,7 @@ export default function EducationLoanSupport() {
         {/* CTA BANNER */}
         <CtaBanner
           title="Ready to Fund Your Education?"
-          desc="Get a free loan eligibility assessment from our financial advisors — no obligation, just clear guidance."
+          desc="Get a free loan eligibility assessment from our financial advisors, no obligation, just clear guidance."
           label="Book a Free Consultation"
           link="/freeconsulation"
         />

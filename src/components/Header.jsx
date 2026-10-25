@@ -8,7 +8,6 @@ import {
   Sun,
   Moon,
   GraduationCap,
-  ArrowRight
 } from "lucide-react";
 import { menuData } from "./menuData";
 
@@ -52,18 +51,17 @@ export default function Header({
   };
 
   return (
-    <div className={`w-full font-sans transition-colors duration-200 ${darkMode ? "dark" : ""}`}>
-      {/* Top Announcement Bar */}
-      <div className="bg-primary/10 border-b border-primary/20 py-1 px-4 text-xs sm:text-sm font-semibold text-center text-primary flex items-center justify-center flex-wrap gap-2 transition-colors">
-        <span>Fall 2027 Admissions & Elite School Mentorship Applications are now open!</span>
-        <a
-          href="/freeconsulation"
-          className="inline-flex items-center gap-1 font-bold underline hover:opacity-85 transition-opacity ml-1"
-        >
-          Book Free Review <ArrowRight className="w-3.5 h-3.5" />
-        </a>
-      </div>
-
+    <>
+      <style>{`
+        .menu-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,91,143,.45) transparent; }
+        .menu-scroll::-webkit-scrollbar { width: 6px; }
+        .menu-scroll::-webkit-scrollbar-track { background: transparent; }
+        .menu-scroll::-webkit-scrollbar-thumb { background: rgba(0,91,143,.35); border-radius: 8px; }
+        .menu-scroll::-webkit-scrollbar-thumb:hover { background: rgba(0,91,143,.55); }
+        .dark .menu-scroll { scrollbar-color: rgba(96,165,250,.4) transparent; }
+        .dark .menu-scroll::-webkit-scrollbar-thumb { background: rgba(96,165,250,.35); }
+      `}</style>
+      <div className={`w-full font-sans transition-colors duration-200 ${darkMode ? "dark" : ""}`}>
       {/* Header */}
       <header
         className={`glass-header sticky top-0 z-40 w-full transition-all duration-300 ${
@@ -92,18 +90,22 @@ export default function Header({
                 const isOpen = openMenu === section.title.name;
                 const hasItems = section.items && section.items.length > 0;
                 const isActive = currentPath === section.title.url;
+                // Only long menus without nested flyouts get an internal scroll area —
+                // menus with nested flyouts stay overflow-visible so submenus are never clipped.
+                const hasNested = section.items?.some((item) => item.items);
+                const needsScroll = !hasNested && (section.items?.length || 0) > 9;
 
                 if (isContact) {
                   return (
                     <a
                       key={section.title.name}
-                      href="https://wa.me/8801XXXXXXXXX"
+                      href="https://wa.me/8801910833888"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto inline-flex items-center gap-2 whitespace-nowrap shrink-0 text-sm font-semibold transition-all duration-200 bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-primary/90 shadow-sm shadow-primary/25 hover:shadow-md active:scale-95"
                     >
                       <Phone className="w-4 h-4 shrink-0" />
-                      <span>+880 1XXXXXXXXX</span>
+                      <span>+8801910 833 888</span>
                     </a>
                   );
                 }
@@ -154,7 +156,14 @@ export default function Header({
                         }}
                       >
                         <div className="bg-white dark:bg-[#01091c] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-1.5 overflow-visible">
-                          {/* Each row is strictly line-by-line (all rows: text-base, font-medium) */}
+                          <div
+                            className={
+                              needsScroll
+                                ? "max-h-[min(70vh,600px)] overflow-y-auto overscroll-contain menu-scroll rounded-xl"
+                                : ""
+                            }
+                          >
+                            {/* Each row is strictly line-by-line (all rows: text-base, font-medium) */}
                           {section.items.map((item, idx) => {
                             const isSubOpen = openNestedSub === item.name;
 
@@ -186,7 +195,7 @@ export default function Header({
                                       width: item.name === "USA Mentorship" ? "310px" : "230px",
                                     }}
                                   >
-                                    <div className="bg-white dark:bg-[#01091c] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-1.5">
+                                    <div className="bg-white dark:bg-[#01091c] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
                                       {item.items.map((sub, sIdx) => (
                                         <a
                                           key={sub.name}
@@ -218,6 +227,7 @@ export default function Header({
                               </a>
                             );
                           })}
+                          </div>
                         </div>
                       </div>
                     )}
@@ -292,13 +302,13 @@ export default function Header({
                     <div key={section.title.name} className="pt-4">
                      <a
   key={section.title.name}
-  href="https://wa.me/8801XXXXXXXXX"
+  href="https://wa.me/8801910833888"
   target="_blank"
   rel="noopener noreferrer"
   className="ml-auto inline-flex items-center gap-2 whitespace-nowrap shrink-0 text-sm font-semibold transition-all duration-200 bg-primary text-white px-5 py-3.5 rounded-lg hover:bg-primary/90 shadow-sm shadow-primary/25 hover:shadow-md active:scale-95"
 >
   <Phone className="w-4 h-4 shrink-0" />
-  <span>+880 1XXXXXXXXX</span>
+  <span>+8801910 833 888</span>
 </a>
                     </div>
                   );
@@ -404,5 +414,6 @@ export default function Header({
         </div>
       )}
     </div>
+    </>
   );
 }

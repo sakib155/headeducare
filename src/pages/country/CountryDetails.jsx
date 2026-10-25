@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { fetchMergedCountries, slugOf } from "../../lib/countryData";
 import { countriesFallback } from "./countriesFallback";
 import { countryDetailStyles as css } from "./Countrydetailstyles";
 import {
@@ -63,14 +65,14 @@ const whyStudyContent = {
     points: [
       { title: "Internationally Recognized Qualifications", desc: "Universities in Ireland are recognized globally, thereby enhancing career prospects both domestically and internationally. Employers value Ireland's rigorous education system." },
       { title: "Post-Study Work Visa for up to 2 Years", desc: "In Ireland, post-study work visas are available for international students for a duration of up to two years upon completion of their studies." },
-      { title: "Work Part-Time — 20 Hours Per Week", desc: "Ireland allows its students to gain work experience by working part time for 20 hours per week, enhancing your resume." },
+      { title: "Work Part-Time, 20 Hours Per Week", desc: "Ireland allows its students to gain work experience by working part time for 20 hours per week, enhancing your resume." },
       { title: "Excellent Wages: €8-9 Per Hour", desc: "Good wages in Ireland attract students by offering opportunities for gaining work experience related to their field of study." },
     ],
     color: "#d97706",
   },
   malaysia: {
     points: [
-      { title: "Dual Degree", desc: "Universities in Malaysia allow students to study locally while earning two graduation certificates — one from a Malaysian university and another from an affiliated international partner university in the UK, Australia, or Europe." },
+      { title: "Dual Degree", desc: "Universities in Malaysia allow students to study locally while earning two graduation certificates, one from a Malaysian university and another from an affiliated international partner university in the UK, Australia, or Europe." },
       { title: "Affordable Cost of Studying", desc: "International students who choose to study in Malaysia can benefit from its affordable tuition fees as compared to other nations." },
       { title: "Safe and Welcoming Environment", desc: "Malaysia is known for its hospitality and welcoming environment, creating a safe atmosphere for international students." },
       { title: "Top-Notch Education", desc: "Universities in Malaysia offer accredited courses that have global recognition, ensuring high-quality education." },
@@ -197,18 +199,38 @@ const whyStudyStyles = `
 
 export default function CountryDetails() {
   const { slug } = useParams();
+  // Live DB (admin panel) data merged over the static fallback — so an image
+  // uploaded in the admin panel updates the hero here automatically.
+  const [merged, setMerged] = useState(null);
 
-  const country = countriesFallback.find(
+  useEffect(() => {
+    let active = true;
+    fetchMergedCountries()
+      .then((list) => {
+        if (!active || !Array.isArray(list)) return;
+        const match = list.find((c) => slugOf(c) === slug);
+        if (match) setMerged(match);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [slug]);
+
+  const fallbackCountry = countriesFallback.find(
     (c) => (c.slug ?? c.country?.toLowerCase()) === slug?.toLowerCase(),
   );
 
-  if (!country)
+  if (!fallbackCountry)
     return (
       <>
         <style>{css}</style>
         <div className="loading-screen">Country not found.</div>
       </>
     );
+
+  // Merged (DB on top) when available, otherwise the static fallback
+  const country = merged || fallbackCountry;
 
   const name = country.name ?? country.country;
   const flag = country.flag_url ?? "";

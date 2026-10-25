@@ -59,13 +59,13 @@ const essayTypes = [
     icon: FileText,
     title: "Statement of Purpose (SOP)",
     color: "#005B8F",
-    desc: "The most critical document in your application — a compelling SOP articulates your academic journey, career goals, and why this specific program is the right next step for you.",
+    desc: "The most critical document in your application, a compelling SOP articulates your academic journey, career goals, and why this specific program is the right next step for you.",
   },
   {
     icon: Users,
     title: "Personal Statement",
     color: "#4A83F3",
-    desc: "Required by UK, Australian, and many US universities — this essay reveals who you are beyond your grades, highlighting your motivations, values, and personal growth.",
+    desc: "Required by UK, Australian, and many US universities, this essay reveals who you are beyond your grades, highlighting your motivations, values, and personal growth.",
   },
   {
     icon: Award,
@@ -89,7 +89,7 @@ const essayTypes = [
     icon: Layers,
     title: "Supplemental Essays",
     color: "#dc2626",
-    desc: "Many universities — particularly in the USA — require multiple short essays on topics like diversity, challenges overcome, or community contributions. We handle them all.",
+    desc: "Many universities, particularly in the USA, require multiple short essays on topics like diversity, challenges overcome, or community contributions. We handle them all.",
   },
 ];
 
@@ -97,7 +97,7 @@ const writingServices = [
   {
     icon: Search,
     title: "Deep Discovery Session",
-    desc: "Before writing a single word, we conduct a structured interview to uncover your academic story, key experiences, motivations, and goals — the raw material of a powerful essay.",
+    desc: "Before writing a single word, we conduct a structured interview to uncover your academic story, key experiences, motivations, and goals, the raw material of a powerful essay.",
   },
   {
     icon: Target,
@@ -107,22 +107,22 @@ const writingServices = [
   {
     icon: PenTool,
     title: "Expert Draft Writing",
-    desc: "Our experienced writers craft a compelling first draft that is authentically yours — not templated, not generic — built from your unique story and goals.",
+    desc: "Our experienced writers craft a compelling first draft that is authentically yours, not templated, not generic, built from your unique story and goals.",
   },
   {
     icon: RefreshCcw,
     title: "Unlimited Revision Rounds",
-    desc: "You review every draft. We refine until the essay reflects your voice perfectly. There are no limits on revision rounds — we iterate until you are satisfied.",
+    desc: "You review every draft. We refine until the essay reflects your voice perfectly. There are no limits on revision rounds, we iterate until you are satisfied.",
   },
   {
     icon: ShieldCheck,
     title: "Plagiarism & AI Detection Review",
-    desc: "Every final essay is checked using industry-standard tools to ensure 100% originality. Universities increasingly screen submissions — your essay will pass every check.",
+    desc: "Every final essay is checked using industry-standard tools to ensure 100% originality. Universities increasingly screen submissions, your essay will pass every check.",
   },
   {
     icon: Clock,
     title: "Deadline-Safe Delivery",
-    desc: "We track every university deadline and build in buffer time. No rushed final drafts — your essay reaches you complete, polished, and ready for submission with time to spare.",
+    desc: "We track every university deadline and build in buffer time. No rushed final drafts, your essay reaches you complete, polished, and ready for submission with time to spare.",
   },
 ];
 
@@ -130,7 +130,7 @@ const whatMakesGreat = [
   {
     icon: Star,
     title: "A Clear, Honest Narrative",
-    desc: "The best essays tell a true story — with a beginning, turning point, and direction. Admissions readers can spot exaggeration; authenticity makes you memorable.",
+    desc: "The best essays tell a true story, with a beginning, turning point, and direction. Admissions readers can spot exaggeration; authenticity makes you memorable.",
   },
   {
     icon: Target,
@@ -140,7 +140,7 @@ const whatMakesGreat = [
   {
     icon: Lightbulb,
     title: "Alignment with the Program",
-    desc: "Your essay must demonstrate you researched the program — faculty, research focus, teaching method — and can articulate why it is the right fit for your goals.",
+    desc: "Your essay must demonstrate you researched the program, faculty, research focus, teaching method, and can articulate why it is the right fit for your goals.",
   },
   {
     icon: AlignLeft,
@@ -150,7 +150,7 @@ const whatMakesGreat = [
   {
     icon: Users,
     title: "Your Voice, Not a Template",
-    desc: "Recycled essay templates are recognisable immediately. Your essay must sound like you — not like a hundred other applicants who used the same structure.",
+    desc: "Recycled essay templates are recognisable immediately. Your essay must sound like you, not like a hundred other applicants who used the same structure.",
   },
   {
     icon: CheckCircle,
@@ -170,13 +170,13 @@ const process = [
     step: 2,
     icon: Search,
     title: "Discovery Interview",
-    desc: "Our writer conducts a structured session to extract your story — academic background, defining moments, career goals, and what makes you different.",
+    desc: "Our writer conducts a structured session to extract your story, academic background, defining moments, career goals, and what makes you different.",
   },
   {
     step: 3,
     icon: FileText,
     title: "Outline & Structure Review",
-    desc: "Before writing begins, we share a clear essay outline for your approval — so there are no surprises in the draft and the narrative direction is agreed.",
+    desc: "Before writing begins, we share a clear essay outline for your approval, so there are no surprises in the draft and the narrative direction is agreed.",
   },
   {
     step: 4,
@@ -194,14 +194,14 @@ const process = [
     step: 6,
     icon: ShieldCheck,
     title: "Final Review & Delivery",
-    desc: "The final essay is proofread, formatted, and checked for plagiarism and AI detection before being handed to you — ready to submit.",
+    desc: "The final essay is proofread, formatted, and checked for plagiarism and AI detection before being handed to you, ready to submit.",
   },
 ];
 
 const doList = [
   "Start your essay at least 6–8 weeks before your deadline",
-  "Share real, specific experiences — not general claims",
-  "Explain your 'why' — not just what you have done, but what it means",
+  "Share real, specific experiences, not general claims",
+  "Explain your 'why', not just what you have done, but what it means",
   "Research the program and mention specific faculty or modules",
   "Maintain a consistent, professional but personal tone throughout",
   "Follow all word count and formatting requirements exactly",
@@ -214,10 +214,10 @@ const dontList = [
   "Do not repeat information already covered in your CV or transcript",
   "Do not use AI-generated text without expert human review and rewriting",
   "Do not use the same essay for every university without tailoring",
-  "Do not exaggerate or fabricate achievements — it is easily detected",
+  "Do not exaggerate or fabricate achievements, it is easily detected",
   "Do not exceed the specified word limit under any circumstance",
   "Do not submit without a thorough proofread for grammar and tone",
-  "Do not wait until the last week — rushed essays are weak essays",
+  "Do not wait until the last week, rushed essays are weak essays",
 ];
 
 const essayPromptTypes = [
@@ -226,7 +226,7 @@ const essayPromptTypes = [
     color: "#005B8F",
     bg: "rgba(0,91,143,0.07)",
     border: "rgba(0,91,143,0.18)",
-    desc: "Requires you to demonstrate genuine knowledge of the institution — specific programs, faculty, research labs, or culture — and articulate a clear fit.",
+    desc: "Requires you to demonstrate genuine knowledge of the institution, specific programs, faculty, research labs, or culture, and articulate a clear fit.",
   },
   {
     label: "Why This Field of Study?",
@@ -240,7 +240,7 @@ const essayPromptTypes = [
     color: "#9333ea",
     bg: "rgba(147,51,234,0.07)",
     border: "rgba(147,51,234,0.18)",
-    desc: "Open-ended prompts that invite your personal story. The key is choosing one defining thread — not listing everything — and developing it with depth.",
+    desc: "Open-ended prompts that invite your personal story. The key is choosing one defining thread, not listing everything, and developing it with depth.",
   },
   {
     label: "A Challenge You Overcame",
@@ -261,26 +261,26 @@ const essayPromptTypes = [
     color: "#0F6E56",
     bg: "rgba(15,110,86,0.07)",
     border: "rgba(15,110,86,0.18)",
-    desc: "Common in US applications — 150–250 word prompts on diversity, community, or goals. Conciseness and precision are critical; every word must earn its place.",
+    desc: "Common in US applications, 150–250 word prompts on diversity, community, or goals. Conciseness and precision are critical; every word must earn its place.",
   },
 ];
 
 const faqs = [
   {
     q: "Is it ethical to get help writing my university essay?",
-    a: "Yes — seeking guidance, coaching, and professional editing is a widely accepted and legitimate part of the application process. Our role is to help you articulate your own authentic story, experiences, and goals in the most compelling way possible. We do not fabricate content — every essay is built entirely from what you tell us about yourself.",
+    a: "Yes, seeking guidance, coaching, and professional editing is a widely accepted and legitimate part of the application process. Our role is to help you articulate your own authentic story, experiences, and goals in the most compelling way possible. We do not fabricate content, every essay is built entirely from what you tell us about yourself.",
   },
   {
     q: "Will my essay sound like me, or like a professional writer?",
-    a: "Your essay will sound like the best version of you. Our writers begin with a discovery interview to understand your voice, story, and personality. The essay is then crafted to reflect how you think and express yourself — refined for clarity, not replaced by someone else's voice.",
+    a: "Your essay will sound like the best version of you. Our writers begin with a discovery interview to understand your voice, story, and personality. The essay is then crafted to reflect how you think and express yourself, refined for clarity, not replaced by someone else's voice.",
   },
   {
     q: "How many universities can you write essays for?",
-    a: "We can write essays for as many universities as you are applying to. Each essay is individually tailored — we do not reuse or lightly edit the same base draft for multiple institutions.",
+    a: "We can write essays for as many universities as you are applying to. Each essay is individually tailored, we do not reuse or lightly edit the same base draft for multiple institutions.",
   },
   {
     q: "What if I have a very tight deadline?",
-    a: "We handle urgent timelines. Let us know your deadline in your first session and we will structure the process to deliver a polished essay in time. That said, the best essays take time — we always recommend starting at least 6–8 weeks before submission.",
+    a: "We handle urgent timelines. Let us know your deadline in your first session and we will structure the process to deliver a polished essay in time. That said, the best essays take time, we always recommend starting at least 6–8 weeks before submission.",
   },
   {
     q: "Do you help with research proposals for PhD applications?",
@@ -288,11 +288,11 @@ const faqs = [
   },
   {
     q: "Will my essay pass plagiarism and AI detection checks?",
-    a: "Yes. Every final essay is run through industry-standard plagiarism and AI detection tools before delivery. All content is original and written by human experts. Institutions are increasingly using detection software — we ensure your submission passes every check.",
+    a: "Yes. Every final essay is run through industry-standard plagiarism and AI detection tools before delivery. All content is original and written by human experts. Institutions are increasingly using detection software, we ensure your submission passes every check.",
   },
   {
     q: "Can you help with word limit reduction without losing impact?",
-    a: "Absolutely. Trimming a strong essay to fit a tight word limit is one of the most skilled parts of the process. We can edit any existing essay for word count while preserving — and often strengthening — its core message.",
+    a: "Absolutely. Trimming a strong essay to fit a tight word limit is one of the most skilled parts of the process. We can edit any existing essay for word count while preserving, and often strengthening, its core message.",
   },
 ];
 
@@ -412,7 +412,7 @@ export default function CommonEssay() {
               label="Essay Types"
               title="Every Essay Format,"
               highlight="Expertly Crafted"
-              body="Different universities, countries, and scholarships require different essay formats. We write every type — tailored to each institution's specific expectations and culture."
+              body="Different universities, countries, and scholarships require different essay formats. We write every type, tailored to each institution's specific expectations and culture."
             />
             <div
               className="grid-3"
@@ -477,7 +477,7 @@ export default function CommonEssay() {
               label="Our Services"
               title="End-to-End Essay"
               highlight="Writing Support"
-              body="From the blank page to the final submission-ready document — our team handles every stage of the essay writing process with expertise, care, and integrity."
+              body="From the blank page to the final submission-ready document, our team handles every stage of the essay writing process with expertise, care, and integrity."
             />
             <div
               className="grid-3"
@@ -501,7 +501,7 @@ export default function CommonEssay() {
               label="Prompt Guide"
               title="Common Essay Prompts"
               highlight="& How We Approach Them"
-              body="Every prompt type demands a different strategy. Our writers know what admissions readers are really looking for — and build each essay to answer the deeper question behind the prompt."
+              body="Every prompt type demands a different strategy. Our writers know what admissions readers are really looking for, and build each essay to answer the deeper question behind the prompt."
             />
             <div
               className="grid-3"
@@ -577,7 +577,7 @@ export default function CommonEssay() {
               label="How It Works"
               title="Our 6-Step Essay"
               highlight="Writing Process"
-              body="A structured, collaborative process — from discovery to final delivery — that ensures your essay is authentically yours and strategically compelling."
+              body="A structured, collaborative process, from discovery to final delivery, that ensures your essay is authentically yours and strategically compelling."
             />
             <div
               className="grid-3"
@@ -628,7 +628,7 @@ export default function CommonEssay() {
               label="Essay Guidelines"
               title="The Essential Essay"
               highlight="Dos and Don'ts"
-              body="Small decisions in your essay — the opening line, the level of specificity, the closing paragraph — have an outsized impact on how you are perceived."
+              body="Small decisions in your essay, the opening line, the level of specificity, the closing paragraph, have an outsized impact on how you are perceived."
             />
             <div
               className="grid-2"

@@ -1,4 +1,4 @@
-/* ── Liberal Arts Education — Pull quote hero, alternating pillar rows, career grid (NO stats strip, NO FAQ) ── */
+/* ── Liberal Arts Education, Pull quote hero, alternating pillar rows, career grid (NO stats strip, NO FAQ) ── */
 import { Brain, MessageCircle, BookOpen, Globe, Compass, Microscope } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -29,7 +29,7 @@ export default function LiberalArtsEducation() {
 
         <MentorHero {...d.hero} />
 
-        {/* Philosophy section with pull quote — editorial feel */}
+        {/* Philosophy section with pull quote, editorial feel */}
         <section className="mtr-section">
           <div className="mtr-container">
             <div style={{ maxWidth: 800 }}>
@@ -66,7 +66,7 @@ export default function LiberalArtsEducation() {
 
         <div className="mtr-divider" />
 
-        {/* Career grid — visually distinct from tag cloud */}
+        {/* Career grid, visually distinct from tag cloud */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader

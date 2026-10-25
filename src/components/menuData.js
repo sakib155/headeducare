@@ -21,6 +21,7 @@ export const menuData = [
         name: "Europe",
         url: "/destination/europe",
         items: [
+          { name: "Denmark", url: "/destination/denmark" },
           { name: "Finland", url: "/destination/finland" },
           { name: "Hungary", url: "/destination/hungary" },
           { name: "Sweden", url: "/destination/sweden" },

@@ -177,7 +177,7 @@ export function ScholarshipTable({ scholarships }) {
       {scholarships.map((s, i) => {
         const { name, level, amount, link } = splitScholarship(s);
         const isContact = link.toLowerCase().includes("contact");
-        const href = isContact ? "http://localhost:5173/freeconsulation" : link;
+        const href = isContact ? "/freeconsulation" : link;
         return (
           <div key={i} className="scholarship-card" style={{ "--delay": `${i * 0.07}s` }}>
             <div className="scholarship-card-head">

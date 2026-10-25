@@ -63,7 +63,7 @@ const whatWeAssess = [
   {
     icon: Languages,
     title: "English Proficiency",
-    desc: "Your IELTS, TOEFL, or PTE scores are evaluated against the requirements of each target country and program — along with a timeline for improvement if needed.",
+    desc: "Your IELTS, TOEFL, or PTE scores are evaluated against the requirements of each target country and program, along with a timeline for improvement if needed.",
   },
   {
     icon: Briefcase,
@@ -92,37 +92,37 @@ const outcomeAreas = [
     icon: Map,
     type: "Country Suitability",
     color: "#005B8F",
-    desc: "Which countries are the best match for your profile, budget, and career aspirations — including visa success likelihood and post-study work rights.",
+    desc: "Which countries are the best match for your profile, budget, and career aspirations, including visa success likelihood and post-study work rights.",
   },
   {
     icon: BookOpen,
     type: "Program Recommendations",
     color: "#4A83F3",
-    desc: "Specific programs and degrees aligned with your academic background and career direction — at reach, match, and safety institutions.",
+    desc: "Specific programs and degrees aligned with your academic background and career direction, at reach, match, and safety institutions.",
   },
   {
     icon: TrendingUp,
     type: "Admission Probability",
     color: "#16a34a",
-    desc: "An honest probability assessment for each shortlisted university — so your final list is strategically balanced and maximises your offers.",
+    desc: "An honest probability assessment for each shortlisted university, so your final list is strategically balanced and maximises your offers.",
   },
   {
     icon: Award,
     type: "Scholarship Potential",
     color: "#9333ea",
-    desc: "Scholarships you are realistically eligible for — government, university-funded, and need-based — ranked by value and competition level.",
+    desc: "Scholarships you are realistically eligible for, government, university-funded, and need-based, ranked by value and competition level.",
   },
   {
     icon: BarChart2,
     type: "Profile Gap Analysis",
     color: "#d97706",
-    desc: "Areas where your profile falls short of target requirements — and a concrete action plan to address each gap before applying.",
+    desc: "Areas where your profile falls short of target requirements, and a concrete action plan to address each gap before applying.",
   },
   {
     icon: Lightbulb,
     type: "Strategic Action Plan",
     color: "#dc2626",
-    desc: "A personalised step-by-step roadmap: what to do, in what order, and by when — so your application is submitted at peak competitiveness.",
+    desc: "A personalised step-by-step roadmap: what to do, in what order, and by when, so your application is submitted at peak competitiveness.",
   },
 ];
 
@@ -149,7 +149,7 @@ const process = [
     step: 4,
     icon: BarChart2,
     title: "Evaluation Report Delivered",
-    desc: "You receive a written profile evaluation report — covering strengths, gaps, country suitability, program shortlist, and scholarship prospects.",
+    desc: "You receive a written profile evaluation report, covering strengths, gaps, country suitability, program shortlist, and scholarship prospects.",
   },
   {
     step: 5,
@@ -169,7 +169,7 @@ const documentsToSubmit = [
   "SSC and HSC transcripts and certificates",
   "Undergraduate / postgraduate transcripts (if applicable)",
   "English proficiency test scores (IELTS / TOEFL / PTE)",
-  "Standardised test scores (GRE / GMAT / SAT — if taken)",
+  "Standardised test scores (GRE / GMAT / SAT, if taken)",
   "Curriculum Vitae (CV or Résumé)",
   "Work or internship experience certificates",
   "Extracurricular or achievement certificates",
@@ -219,7 +219,7 @@ const profileBands = [
 const faqs = [
   {
     q: "What is a profile evaluation and why do I need one?",
-    a: "A profile evaluation is a structured, expert review of your academic, financial, and personal profile against the requirements of universities and countries you want to apply to. It identifies where you stand, what your realistic options are, and what you need to do to maximise your chances — before you invest time and money in applications.",
+    a: "A profile evaluation is a structured, expert review of your academic, financial, and personal profile against the requirements of universities and countries you want to apply to. It identifies where you stand, what your realistic options are, and what you need to do to maximise your chances, before you invest time and money in applications.",
   },
   {
     q: "Is the profile evaluation session free?",
@@ -231,7 +231,7 @@ const faqs = [
   },
   {
     q: "What if my profile has gaps or weaknesses?",
-    a: "A gap analysis is one of the most valuable outputs of your evaluation. We identify specific weaknesses — such as a low IELTS score, limited work experience, or missing documents — and provide a concrete action plan to address each one within a realistic timeline.",
+    a: "A gap analysis is one of the most valuable outputs of your evaluation. We identify specific weaknesses, such as a low IELTS score, limited work experience, or missing documents, and provide a concrete action plan to address each one within a realistic timeline.",
   },
   {
     q: "Can I get a profile evaluation before my IELTS test?",
@@ -243,7 +243,7 @@ const faqs = [
   },
   {
     q: "Does Head Edu Care evaluate profiles for all study levels?",
-    a: "Yes — we evaluate profiles for Foundation / Pathway programs, Undergraduate (Bachelor's), Postgraduate (Master's), PhD and research programs, and MBA programs across all major study destinations.",
+    a: "Yes, we evaluate profiles for Foundation / Pathway programs, Undergraduate (Bachelor's), Postgraduate (Master's), PhD and research programs, and MBA programs across all major study destinations.",
   },
 ];
 
@@ -321,7 +321,7 @@ export default function ProfileEvaluation() {
           badge="Student Services"
           title="Know Exactly Where You Stand with a"
           highlight="Free Profile Evaluation"
-          desc="Before you apply anywhere, get a complete expert assessment of your academic profile, finances, and career goals — so every application decision is informed, strategic, and confident."
+          desc="Before you apply anywhere, get a complete expert assessment of your academic profile, finances, and career goals, so every application decision is informed, strategic, and confident."
           blobTop={-60}
           blobRight={-80}
         />
@@ -333,7 +333,7 @@ export default function ProfileEvaluation() {
               label="What We Review"
               title="Every Dimension of Your"
               highlight="Academic Profile"
-              body="Our counselors look beyond grades. We evaluate the complete picture of who you are as an applicant — so the advice you receive is accurate, honest, and actionable."
+              body="Our counselors look beyond grades. We evaluate the complete picture of who you are as an applicant, so the advice you receive is accurate, honest, and actionable."
             />
             <div
               className="grid-3"
@@ -425,7 +425,7 @@ export default function ProfileEvaluation() {
               label="Evaluation Outcomes"
               title="What Your Evaluation"
               highlight="Report Covers"
-              body="After your session, you receive a written report across six key areas — each with specific findings and recommended next steps personalised to your profile."
+              body="After your session, you receive a written report across six key areas, each with specific findings and recommended next steps personalised to your profile."
             />
             <div
               className="grid-3"

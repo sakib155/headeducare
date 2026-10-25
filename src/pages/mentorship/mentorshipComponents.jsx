@@ -25,7 +25,7 @@ export function useReveal(cls = "mtr-visible") {
 }
 
 /* ─────────────────────────────────────────────
-   BASE STYLES — injected once per page
+   BASE STYLES, injected once per page
 ───────────────────────────────────────────── */
 export const MENTOR_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;900&display=swap');
@@ -895,7 +895,7 @@ export function MentorPullQuote({ quote, author, role }) {
       {author && (
         <div>
           <span style={{ fontWeight: 700, fontSize: 13, color: "#005B8F", fontFamily: "Lexend,sans-serif" }}>{author}</span>
-          {role && <span style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}> — {role}</span>}
+          {role && <span style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}>, {role}</span>}
         </div>
       )}
     </div>
@@ -924,7 +924,7 @@ export function MentorAlertBanner({ icon: Icon, label, value, sub, color = "#005
 }
 
 /* ─────────────────────────────────────────────
-   ACCENT TOP CARD  (colored top strip card — for essays / aid)
+   ACCENT TOP CARD  (colored top strip card, for essays / aid)
 ───────────────────────────────────────────── */
 export function MentorAccentCard({ title, desc, accent = "#005B8F", icon }) {
   const Icon = icon;

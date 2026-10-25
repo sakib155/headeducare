@@ -129,7 +129,7 @@ export default function Services() {
               Global Journey
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Comprehensive support at every stage — from selecting the right
+              Comprehensive support at every stage, from selecting the right
               university to landing in your dream country.
             </p>
           </div>

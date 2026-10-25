@@ -2,7 +2,7 @@
    mentorshipData.js
    Central data store for the USA Mentorship (Bootcamp) section.
    Each page imports only what it needs from this file.
-   Pattern mirrors menuData.js — plain JS objects, no JSX.
+   Pattern mirrors menuData.js, plain JS objects, no JSX.
 ───────────────────────────────────────────────────────────────── */
 
 /* Navigation list shared by MentorProgramNav on every page */
@@ -147,7 +147,7 @@ export const eliteSchoolAdmissionData = {
   faqs: [
     {
       q: "What GPA and test scores do I need for elite US universities?",
-      a: "Most elite universities admit students with GPAs of 3.9+ (unweighted) and SAT scores above 1500 or ACT above 34. However, admissions are holistic — extracurriculars, essays, and recommendation letters are equally critical.",
+      a: "Most elite universities admit students with GPAs of 3.9+ (unweighted) and SAT scores above 1500 or ACT above 34. However, admissions are holistic, extracurriculars, essays, and recommendation letters are equally critical.",
     },
     {
       q: "When should I start preparing for elite school applications?",
@@ -159,7 +159,7 @@ export const eliteSchoolAdmissionData = {
     },
     {
       q: "How important are extracurricular activities for elite admissions?",
-      a: "Extremely important. Elite universities seek students who demonstrate depth of commitment, leadership, and impact — not just a long list of activities. Quality over quantity is key.",
+      a: "Extremely important. Elite universities seek students who demonstrate depth of commitment, leadership, and impact, not just a long list of activities. Quality over quantity is key.",
     },
   ],
 };
@@ -170,7 +170,7 @@ export const mastersMentorshipData = {
     badge: "USA Mentorship Program",
     title: "Excel in Your",
     highlight: "Masters Application",
-    desc: "Tailored mentorship for students pursuing graduate programs at top US universities — from program selection and SOP writing to interview preparation and funding strategies.",
+    desc: "Tailored mentorship for students pursuing graduate programs at top US universities, from program selection and SOP writing to interview preparation and funding strategies.",
   },
   stats: [
     { value: "500+", label: "Masters Placements" },
@@ -182,7 +182,7 @@ export const mastersMentorshipData = {
     label: "Program Overview",
     title: "Our Masters",
     highlight: "Mentorship Approach",
-    body: "Applying for a Masters degree in the US is highly competitive. Our structured mentorship program pairs you with an experienced mentor who guides every stage of the process — from shortlisting programs to negotiating offers.",
+    body: "Applying for a Masters degree in the US is highly competitive. Our structured mentorship program pairs you with an experienced mentor who guides every stage of the process, from shortlisting programs to negotiating offers.",
   },
   features: [
     {
@@ -258,7 +258,7 @@ export const liberalArtsEducationData = {
     badge: "USA Mentorship Program",
     title: "The Philosophy of",
     highlight: "Liberal Arts Education",
-    desc: "Explore the intellectual foundations, pedagogical approach, and transformative outcomes of a liberal arts education — one of America's most distinctive and enduring academic traditions.",
+    desc: "Explore the intellectual foundations, pedagogical approach, and transformative outcomes of a liberal arts education, one of America's most distinctive and enduring academic traditions.",
   },
   stats: [
     { value: "400+", label: "Years of Liberal Arts Tradition" },
@@ -325,7 +325,7 @@ export const acceptanceLettersData = {
     badge: "USA Mentorship Program",
     title: "Understanding Your",
     highlight: "Acceptance Letters",
-    desc: "Learn how to evaluate, compare, and respond to US university acceptance letters — making informed decisions about your most important academic choice.",
+    desc: "Learn how to evaluate, compare, and respond to US university acceptance letters, making informed decisions about your most important academic choice.",
   },
   stats: [
     { value: "3–8", label: "Average Offers Received by Our Students" },
@@ -409,7 +409,7 @@ export const strategyBrainstormData = {
     label: "Our Process",
     title: "How We Build",
     highlight: "Your Winning Strategy",
-    body: "Our strategy brainstorm process is a collaborative, structured journey that helps you see yourself the way admissions offices do — and position your application for maximum impact.",
+    body: "Our strategy brainstorm process is a collaborative, structured journey that helps you see yourself the way admissions offices do, and position your application for maximum impact.",
   },
   steps: [
     {
@@ -418,7 +418,7 @@ export const strategyBrainstormData = {
     },
     {
       title: "Core Narrative Development",
-      desc: "We help you identify the central thread that ties your experiences together — the story that no other applicant can tell.",
+      desc: "We help you identify the central thread that ties your experiences together, the story that no other applicant can tell.",
     },
     {
       title: "School List Building",
@@ -430,7 +430,7 @@ export const strategyBrainstormData = {
     },
     {
       title: "Differentiation Strategy",
-      desc: "We identify ways to stand out — unique essay angles, impactful activity descriptions, and areas where additional achievements can strengthen your file.",
+      desc: "We identify ways to stand out, unique essay angles, impactful activity descriptions, and areas where additional achievements can strengthen your file.",
     },
     {
       title: "Risk Assessment",
@@ -476,7 +476,7 @@ export const writingApplicationData = {
   essays: [
     {
       title: "Common App Personal Statement",
-      desc: "Your 650-word main essay submitted to all Common App schools. It should reveal who you are beyond grades and test scores — your values, experiences, and growth.",
+      desc: "Your 650-word main essay submitted to all Common App schools. It should reveal who you are beyond grades and test scores, your values, experiences, and growth.",
     },
     {
       title: "Coalition App Essay",
@@ -520,7 +520,7 @@ export const writingApplicationData = {
     },
     {
       q: "Can I reuse essays across different schools?",
-      a: "The personal statement is used across all Common App schools. However, supplemental essays — especially 'Why This School' — must be tailored specifically to each institution. Generic supplementals hurt applications significantly.",
+      a: "The personal statement is used across all Common App schools. However, supplemental essays, especially 'Why This School', must be tailored specifically to each institution. Generic supplementals hurt applications significantly.",
     },
     {
       q: "Is it acceptable to get help with my essays?",
@@ -547,7 +547,7 @@ export const collegeSelectionData = {
     label: "Our Methodology",
     title: "How We Find Your",
     highlight: "Best-Fit Colleges",
-    body: "We use a multi-dimensional framework to evaluate colleges across academic, cultural, financial, and career-outcome dimensions — ensuring every school on your list is a place where you can genuinely succeed and be happy.",
+    body: "We use a multi-dimensional framework to evaluate colleges across academic, cultural, financial, and career-outcome dimensions, ensuring every school on your list is a place where you can genuinely succeed and be happy.",
   },
   selectionFactors: [
     {
@@ -564,7 +564,7 @@ export const collegeSelectionData = {
     },
     {
       title: "Campus Culture & Environment",
-      desc: "Urban vs. rural, large vs. small, collaborative vs. competitive — we help you understand which campus environment will bring out your best.",
+      desc: "Urban vs. rural, large vs. small, collaborative vs. competitive, we help you understand which campus environment will bring out your best.",
     },
     {
       title: "Career & Graduate Outcomes",
@@ -619,7 +619,7 @@ export const financialAidData = {
   aidCategories: [
     {
       title: "Need-Based Institutional Grants",
-      desc: "Universities award grants based on demonstrated financial need. These are gifts — they do not need to be repaid. Top schools with large endowments can be remarkably generous.",
+      desc: "Universities award grants based on demonstrated financial need. These are gifts, they do not need to be repaid. Top schools with large endowments can be remarkably generous.",
     },
     {
       title: "Merit Scholarships",
@@ -673,7 +673,7 @@ export const postGraduateFundingData = {
     badge: "USA Mentorship Program",
     title: "Fund Your",
     highlight: "Graduate Education",
-    desc: "Comprehensive guidance on funding your US graduate degree — from fellowships and assistantships to external scholarships and loan strategies for international students.",
+    desc: "Comprehensive guidance on funding your US graduate degree, from fellowships and assistantships to external scholarships and loan strategies for international students.",
   },
   stats: [
     { value: "70%", label: "STEM PhD Students Fully Funded" },
@@ -698,7 +698,7 @@ export const postGraduateFundingData = {
     },
     {
       title: "University Fellowships",
-      desc: "Competitive merit awards granted by universities to exceptional incoming graduate students. No work requirement — pure academic achievement recognition.",
+      desc: "Competitive merit awards granted by universities to exceptional incoming graduate students. No work requirement, pure academic achievement recognition.",
     },
     {
       title: "Fulbright Program",
@@ -725,7 +725,7 @@ export const postGraduateFundingData = {
   faqs: [
     {
       q: "Is it possible to get a fully-funded PhD in the USA?",
-      a: "Yes. In most STEM fields, fully funded PhDs — covering tuition and providing a living stipend through TA or RA positions — are the norm rather than the exception. In humanities and social sciences, funding is competitive but widely available at top programs.",
+      a: "Yes. In most STEM fields, fully funded PhDs, covering tuition and providing a living stipend through TA or RA positions, are the norm rather than the exception. In humanities and social sciences, funding is competitive but widely available at top programs.",
     },
     {
       q: "Can international students receive US government fellowships?",

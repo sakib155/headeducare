@@ -138,7 +138,7 @@ const process = [
     step: 3,
     icon: FileText,
     title: "Structuring & Formatting",
-    desc: "We guide you on how to present the data—translating local bank formats into internationally accepted standards.",
+    desc: "We guide you on how to present the data-translating local bank formats into internationally accepted standards.",
   },
   {
     step: 4,

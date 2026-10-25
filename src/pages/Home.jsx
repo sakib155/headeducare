@@ -1,6 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { api } from "../lib/apiClient";
+import { api, FALLBACK_COUNTRIES } from "../lib/apiClient";
+import { fetchMergedCountries } from "../lib/countryData";
+
+// Read image dimensions client-side for upload size/ratio validation
+function getImageDimensions(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      resolve({ width: img.naturalWidth, height: img.naturalHeight });
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("Could not read image dimensions"));
+    };
+    img.src = url;
+  });
+}
 
 /* ===== Fallback data (used when Supabase is not configured) ===== */
 const FALLBACK_SERVICES = [
@@ -45,64 +63,6 @@ const FALLBACK_SERVICES = [
     icon: "emoji_events",
     description:
       "Identify and apply for scholarships to reduce your financial burden and study at top institutions.",
-  },
-];
-
-const FALLBACK_COUNTRIES = [
-  {
-    id: "1",
-    name: "Australia",
-    flag_url: "🇦🇺",
-    route: "/destination/australia",
-    image_url:
-      "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800",
-    description:
-      "World-class education with excellent post-study work opportunities.",
-  },
-  {
-    id: "2",
-    name: "United Kingdom",
-    flag_url: "🇬🇧",
-    route: "/destination/uk",
-    image_url:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
-    description: "Home to the most prestigious universities in the world.",
-  },
-  {
-    id: "3",
-    name: "Canada",
-    flag_url: "🇨🇦",
-    route: "/destination/canada",
-    image_url:
-      "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800",
-    description: "Affordable education with excellent immigration pathways.",
-  },
-  {
-    id: "4",
-    name: "United States",
-    flag_url: "🇺🇸",
-    route: "/destination/usa",
-    image_url:
-      "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?q=80&w=1186&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800",
-    description: "World leader in higher education and research.",
-  },
-  {
-    id: "5",
-    name: "Germany",
-    flag_url: "🇩🇪",
-    route: "/destination/germany",
-    image_url:
-      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800",
-    description: "Tuition-free public universities with strong programs.",
-  },
-  {
-    id: "6",
-    name: "Japan",
-    flag_url: "🇯🇵",
-    route: "/destination/japan",
-    image_url:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800",
-    description: "Cutting-edge technology education with scholarships.",
   },
 ];
 
@@ -165,17 +125,30 @@ function useReveal() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 },
     );
     const el = ref.current;
-    if (el) {
-      const revealEls = el.querySelectorAll(".reveal");
-      revealEls.forEach((el) => observer.observe(el));
-    }
-    return () => observer.disconnect();
+    if (!el) return () => observer.disconnect();
+
+    const observeAll = () => {
+      el.querySelectorAll(".reveal:not(.visible)").forEach((node) =>
+        observer.observe(node),
+      );
+    };
+    observeAll();
+
+    // Re-observe when async data loads swap in new DOM nodes (e.g. countries)
+    const mo = new MutationObserver(observeAll);
+    mo.observe(el, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mo.disconnect();
+    };
   }, []);
   return ref;
 }
@@ -334,6 +307,93 @@ export default function Home() {
   });
   const [leadStatus, setLeadStatus] = useState(null);
 
+  // ── Give Testimonial modal ──
+  const [showTestimonialModal, setShowTestimonialModal] = useState(false);
+  const [testimonialForm, setTestimonialForm] = useState({
+    student_name: "",
+    university: "",
+    country: "",
+    quote: "",
+    photo: null,
+  });
+  const [testimonialStatus, setTestimonialStatus] = useState(null); // sending | success | error
+  const [testimonialMsg, setTestimonialMsg] = useState("");
+  const [testimonialPhotoWarn, setTestimonialPhotoWarn] = useState("");
+  const testimonialFileRef = useRef(null);
+
+  const handleTestimonialChange = (e) =>
+    setTestimonialForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+  // Client-side photo size/ratio validation before submit
+  const handleTestimonialPhoto = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setTestimonialPhotoWarn("");
+    setTestimonialForm((prev) => ({ ...prev, photo: file }));
+    try {
+      const { width, height } = await getImageDimensions(file);
+      const targetRatio = 400 / 400; // 1:1 avatar
+      const srcRatio = width / height;
+      const ratioDiff = Math.abs(srcRatio - targetRatio) / targetRatio;
+      if (width < 400 || height < 400) {
+        setTestimonialPhotoWarn(
+          `Warning: photo is ${width}×${height}, smaller than 400×400. It will be upscaled and may look soft.`,
+        );
+      } else if (ratioDiff > 0.2) {
+        setTestimonialPhotoWarn(
+          "Warning: photo will be cropped to a square (400×400). For best results use a square image.",
+        );
+      }
+    } catch {
+      // dimension check failed, server will still validate
+    }
+  };
+
+  const handleTestimonialSubmit = async (e) => {
+    e.preventDefault();
+    if (!testimonialForm.student_name || !testimonialForm.university || !testimonialForm.country || !testimonialForm.quote) {
+      setTestimonialMsg("Please fill in your name, university, country, and review.");
+      setTestimonialStatus("error");
+      return;
+    }
+    setTestimonialStatus("sending");
+    setTestimonialMsg("");
+    try {
+      // Read the selected photo as a base64 data-URL (if any)
+      const photoBase64 = await new Promise((resolve) => {
+        const file = testimonialForm.photo;
+        if (!file) return resolve("");
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => resolve("");
+        reader.readAsDataURL(file);
+      });
+
+      const payload = {
+        student_name: testimonialForm.student_name,
+        university: testimonialForm.university,
+        country: testimonialForm.country,
+        quote: testimonialForm.quote,
+        photo_base64: photoBase64,
+      };
+      const res = await fetch("/api/submit_testimonial.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ error: "Submission failed" }));
+      if (!res.ok) throw new Error(data.error || "Submission failed");
+      setTestimonialStatus("success");
+      setTestimonialMsg("Thank you! Your review has been submitted and is awaiting approval.");
+      setTestimonialForm({ student_name: "", university: "", country: "", quote: "", photo: null });
+      if (testimonialFileRef.current) testimonialFileRef.current.value = "";
+      setTestimonialPhotoWarn("");
+    } catch (err) {
+      setTestimonialStatus("error");
+      setTestimonialMsg(err.message);
+    }
+  };
+
   const handleLeadChange = (e) =>
     setLeadForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
@@ -361,7 +421,7 @@ export default function Home() {
       try {
         const [sData, cData, tData, stData] = await Promise.all([
           api.fetchServices(),
-          api.fetchCountries(),
+          fetchMergedCountries(),
           api.fetchTestimonials(),
           api.fetchSettings(),
         ]);
@@ -370,8 +430,12 @@ export default function Home() {
         const activeCountries = cData?.filter(c => c.is_active !== false) || [];
         if (activeCountries.length) setCountries(activeCountries);
         
-        const featuredTestimonials = tData?.filter(t => t.is_featured) || [];
-        if (featuredTestimonials.length) setTestimonials(featuredTestimonials);
+        const featuredTestimonials = Array.isArray(tData)
+          ? tData.filter((t) => t.is_featured)
+          : [];
+        // Always take the API result (even empty = "no testimonials").
+        // The fallback only kicks in when the API itself fails/returns fallback.
+        setTestimonials(featuredTestimonials);
         
         if (stData) {
           setStats((prev) => ({ ...prev, ...stData }));
@@ -439,10 +503,6 @@ export default function Home() {
             {/* Left */}
             <div className="max-w-2xl opacity-0 animate-fadeInUp">
               <div className="mb-8">
-  <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-[0.2em]">
-    Educational Consultancy
-  </span>
-
   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-gray-900 dark:text-white">
     Higher Education
     <span className="block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-500">
@@ -664,7 +724,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {countries.slice(0, 8).map((country, i) => (
+            {countries.slice(0, 6).map((country, i) => (
               <Link
                 to={country.route}
                 key={country.id}
@@ -702,8 +762,23 @@ export default function Home() {
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black title_header mb-6">
               What Our Students Say
             </h3>
+            <button
+              type="button"
+              onClick={() => setShowTestimonialModal(true)}
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5"
+            >
+              <span className="material-symbols-outlined text-lg">rate_review</span>
+              Give Testimonial
+            </button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {testimonials.length === 0 && (
+              <div className="md:col-span-2 lg:col-span-4 text-center py-16 text-gray-500 dark:text-gray-400">
+                <span className="material-symbols-outlined text-5xl mb-4 block opacity-40">rate_review</span>
+                <p className="text-lg font-medium">No student reviews yet.</p>
+                <p className="text-sm mt-1">Be the first to share your experience!</p>
+              </div>
+            )}
             {testimonials.map((t, i) => (
               <div
                 key={t.id}
@@ -923,6 +998,143 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== GIVE TESTIMONIAL MODAL ===== */}
+      {showTestimonialModal && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowTestimonialModal(false)}
+          />
+          <div className="relative bg-white dark:bg-[#01091c] w-full max-w-lg rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between p-6 pb-0">
+              <h4 className="text-xl font-black text-[#0d121b] dark:text-white">
+                Share Your Experience
+              </h4>
+              <button
+                type="button"
+                onClick={() => setShowTestimonialModal(false)}
+                className="p-2 rounded-lg text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div className="p-6">
+              {testimonialStatus === "success" ? (
+                <div className="text-center py-10">
+                  <span className="material-symbols-outlined text-5xl text-green-500 mb-4 block">
+                    verified
+                  </span>
+                  <p className="text-lg font-bold text-[#0d121b] dark:text-white mb-2">
+                    Thank you for your review!
+                  </p>
+                  <p className="text-sm text-gray-500 mb-6">
+                    Your testimonial has been submitted and will appear on our
+                    website after review.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowTestimonialModal(false);
+                      setTestimonialStatus(null);
+                      setTestimonialMsg("");
+                    }}
+                    className="bg-primary text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleTestimonialSubmit}>
+                  <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        Your Name *
+                      </label>
+                      <input
+                        name="student_name"
+                        value={testimonialForm.student_name}
+                        onChange={handleTestimonialChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="e.g. Rahim Ahmed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        University *
+                      </label>
+                      <input
+                        name="university"
+                        value={testimonialForm.university}
+                        onChange={handleTestimonialChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="e.g. University of Melbourne"
+                      />
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Country *
+                    </label>
+                    <input
+                      name="country"
+                      value={testimonialForm.country}
+                      onChange={handleTestimonialChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="e.g. Australia"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Your Review *
+                    </label>
+                    <textarea
+                      name="quote"
+                      value={testimonialForm.quote}
+                      onChange={handleTestimonialChange}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                      placeholder="Tell us about your study abroad experience..."
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Your Photo (optional)
+                    </label>
+                    <input
+                      ref={testimonialFileRef}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleTestimonialPhoto}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm text-gray-600 dark:text-gray-300 file:mr-3 file:px-4 file:py-2 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:font-bold file:cursor-pointer"
+                    />
+                    <p className="text-xs text-gray-400 mt-1">
+                      Auto-resized to 400×400 (square). JPG, PNG, or WEBP up to 15 MB.
+                    </p>
+                    {testimonialPhotoWarn && (
+                      <p className="text-amber-400 text-xs mt-1">{testimonialPhotoWarn}</p>
+                    )}
+                  </div>
+                  {testimonialStatus === "error" && (
+                    <p className="mb-4 text-red-500 font-semibold text-sm">{testimonialMsg}</p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={testimonialStatus === "sending"}
+                    className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 disabled:opacity-50"
+                  >
+                    {testimonialStatus === "sending" ? "Submitting..." : "Submit Review"}
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

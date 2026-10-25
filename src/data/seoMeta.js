@@ -4,7 +4,7 @@ const SITE = {
   logo: "/HEAD_horizontal.png",
   ogImage: "/og-image.jpg",
   twitter: "@head_educare",
-  phone: "+8801XXXXXXXXX",
+  phone: "+8801910 833 888",
   address: {
     street: "House-52, Road-4, Block-C, Banani",
     locality: "Dhaka",

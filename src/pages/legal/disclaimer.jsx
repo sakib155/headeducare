@@ -32,7 +32,7 @@ const disclaimers = [
     summary:
       "Country, university, and immigration information is provided in good faith but may change without notice.",
     detail:
-      "All information provided by Head Edu Care — including details about universities, tuition fees, visa requirements, immigration pathways, scholarship opportunities, language test requirements, and intake deadlines — is compiled from publicly available sources and our professional experience. This information is provided in good faith and is believed to be accurate at the time of communication. However, policies, fees, entry requirements, and immigration rules change frequently and without prior notice. Clients are strongly advised to independently verify all critical information directly with the relevant university, embassy, or government authority before making any decision. Head Edu Care accepts no liability for decisions made based on information that has subsequently changed.",
+      "All information provided by Head Edu Care, including details about universities, tuition fees, visa requirements, immigration pathways, scholarship opportunities, language test requirements, and intake deadlines, is compiled from publicly available sources and our professional experience. This information is provided in good faith and is believed to be accurate at the time of communication. However, policies, fees, entry requirements, and immigration rules change frequently and without prior notice. Clients are strongly advised to independently verify all critical information directly with the relevant university, embassy, or government authority before making any decision. Head Edu Care accepts no liability for decisions made based on information that has subsequently changed.",
   },
   {
     id: "not-legal-advice",
@@ -72,7 +72,7 @@ const disclaimers = [
     summary:
       "Tuition fees, cost of living, and salary figures are approximate and subject to change.",
     detail:
-      "All financial figures provided — including tuition fees, cost of living estimates, scholarship amounts, and post-study salary ranges — are approximate and based on publicly available data and industry research at the time of publication. Actual costs and earnings will vary based on institution, location, program, year of study, individual lifestyle, currency exchange rates, and market conditions. These figures are provided for general guidance only and should not be the sole basis for financial planning. Clients are advised to consult the official websites of institutions and conduct independent financial planning before committing to any program.",
+      "All financial figures provided, including tuition fees, cost of living estimates, scholarship amounts, and post-study salary ranges, are approximate and based on publicly available data and industry research at the time of publication. Actual costs and earnings will vary based on institution, location, program, year of study, individual lifestyle, currency exchange rates, and market conditions. These figures are provided for general guidance only and should not be the sole basis for financial planning. Clients are advised to consult the official websites of institutions and conduct independent financial planning before committing to any program.",
   },
   {
     id: "website",
@@ -272,7 +272,7 @@ export default function Disclaimer() {
               className="text-xs flex items-center"
               style={{ color: "#9ca3af", fontFamily: "Lexend, sans-serif" }}
             >
-              — severity indicators
+             , severity indicators
             </span>
           </div>
 

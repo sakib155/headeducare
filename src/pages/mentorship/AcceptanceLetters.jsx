@@ -1,4 +1,4 @@
-/* ── Acceptance Letters — Color-coded decision cards + alert banner + checklist split + FAQ ── */
+/* ── Acceptance Letters, Color-coded decision cards + alert banner + checklist split + FAQ ── */
 import { Mail, CheckCircle, Clock, AlertCircle, Calendar, HelpCircle } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -23,7 +23,7 @@ export default function AcceptanceLetters() {
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Color-coded decision type cards — each with a distinct accent color */}
+        {/* Color-coded decision type cards, each with a distinct accent color */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.typesSection} />
@@ -51,7 +51,7 @@ export default function AcceptanceLetters() {
               icon={Calendar}
               color="#005B8F"
               label="National Decision Day (USA)"
-              value="May 1 — Mark Your Calendar"
+              value="May 1, Mark Your Calendar"
               sub="All enrolled deposits must be submitted to your chosen school by May 1. Holding multiple deposits after this date violates the NACAC agreement."
             />
           </div>

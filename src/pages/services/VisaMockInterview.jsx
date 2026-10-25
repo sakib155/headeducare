@@ -55,7 +55,7 @@ const services = [
   {
     icon: MessageSquare,
     title: "Realistic Simulation",
-    desc: "We mimic the actual embassy environment — timed questions, professional demeanor, and unexpected follow-ups to test your readiness.",
+    desc: "We mimic the actual embassy environment, timed questions, professional demeanor, and unexpected follow-ups to test your readiness.",
   },
   {
     icon: Brain,
@@ -129,7 +129,7 @@ const process = [
     step: 2,
     icon: BookOpen,
     title: "Strategy Session",
-    desc: "We define your 'key messages' — the 3-4 core points you must convey regardless of the question asked.",
+    desc: "We define your 'key messages', the 3-4 core points you must convey regardless of the question asked.",
   },
   {
     step: 3,
@@ -190,7 +190,7 @@ const faqs = [
   },
   {
     q: "What if I don't know the answer to a question?",
-    a: "It's okay to pause. We teach you how to handle unknown questions gracefully — either by admitting you don't know but offering related info, or by asking for clarification.",
+    a: "It's okay to pause. We teach you how to handle unknown questions gracefully, either by admitting you don't know but offering related info, or by asking for clarification.",
   },
   {
     q: "Do you help with technical questions for my major?",

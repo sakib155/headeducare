@@ -1,4 +1,4 @@
-/* ── Strategy Brainstorm — Process arrows + side-by-side insight boxes + 2-col checklist (NO FAQ) ── */
+/* ── Strategy Brainstorm, Process arrows + side-by-side insight boxes + 2-col checklist (NO FAQ) ── */
 import { Search, BookOpen, Target, Calendar, Zap, Shield } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -19,7 +19,7 @@ export default function StrategyBrainstorm() {
         <MentorHero {...d.hero} />
         <MentorStatsStrip stats={d.stats} />
 
-        {/* Horizontal arrow process — the entire workflow visible at a glance */}
+        {/* Horizontal arrow process, the entire workflow visible at a glance */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.processSection} />
@@ -49,7 +49,7 @@ export default function StrategyBrainstorm() {
 
         <div className="mtr-divider" />
 
-        {/* What’s included — 2-col checklist */}
+        {/* What’s included, 2-col checklist */}
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader

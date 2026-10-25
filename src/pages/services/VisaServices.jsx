@@ -93,7 +93,7 @@ const whyChoose = [
   {
     icon: Award,
     title: "Decades of Experience",
-    desc: "Thousands of successful student visas processed — consistently high approval rates across all major study destinations.",
+    desc: "Thousands of successful student visas processed, consistently high approval rates across all major study destinations.",
   },
   {
     icon: Globe,
@@ -108,7 +108,7 @@ const whyChoose = [
   {
     icon: RefreshCcw,
     title: "End-to-End Support",
-    desc: "From initial counseling through to landing in your study country — we are with you at every stage of the journey.",
+    desc: "From initial counseling through to landing in your study country, we are with you at every stage of the journey.",
   },
   {
     icon: ClipboardList,
@@ -118,7 +118,7 @@ const whyChoose = [
   {
     icon: Search,
     title: "Pre-Submission Review",
-    desc: "Every document is proofread, corrected, and finalized by our team before submission — nothing goes in unchecked.",
+    desc: "Every document is proofread, corrected, and finalized by our team before submission, nothing goes in unchecked.",
   },
 ];
 
@@ -127,7 +127,7 @@ const process = [
     step: 1,
     icon: Compass,
     title: "Free Eligibility Assessment",
-    desc: "Initial visa pathway planning session — we evaluate your profile, admission offer, and financial documentation to map the best route.",
+    desc: "Initial visa pathway planning session, we evaluate your profile, admission offer, and financial documentation to map the best route.",
   },
   {
     step: 2,
@@ -139,7 +139,7 @@ const process = [
     step: 3,
     icon: Pencil,
     title: "Document Preparation & Review",
-    desc: "Our experts proofread, correct, and finalize every document before submission — all forms checked for accuracy and compliance.",
+    desc: "Our experts proofread, correct, and finalize every document before submission, all forms checked for accuracy and compliance.",
   },
   {
     step: 4,
@@ -224,7 +224,7 @@ export default function VisaServices() {
           badge="Student Services"
           title="Hassle-Free Visa Services"
           highlight="for Your Study Abroad Journey"
-          desc="Expert guidance and seamless support for your student visa application — from eligibility assessment to post-approval briefing. Trusted by thousands of Bangladeshi students."
+          desc="Expert guidance and seamless support for your student visa application, from eligibility assessment to post-approval briefing. Trusted by thousands of Bangladeshi students."
           blobTop={-80}
           blobRight={-60}
         />
@@ -461,7 +461,7 @@ export default function VisaServices() {
 
         <CtaBanner
           title="Our Experts Are Waiting to Help You"
-          desc="Take the first step towards your dream study destination — let our visa specialists handle the complexity."
+          desc="Take the first step towards your dream study destination, let our visa specialists handle the complexity."
         />
       </div>
     </>

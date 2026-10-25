@@ -158,7 +158,7 @@ export default function StudyMBBSDetail() {
                       return (
                         <div key={i} className="mbbs-chip">
                           <span style={{ fontWeight: 700, fontSize: 13 }}>{num}. {uni[0]}</span>
-                          <small>{uni[1]} — {uni[2]} seats</small>
+                          <small>{uni[1]}, {uni[2]} seats</small>
                         </div>
                       );
                     }
@@ -206,7 +206,7 @@ export default function StudyMBBSDetail() {
                 Ready to Start Your Medical Journey?
               </h2>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 520, margin: "0 auto 28px" }}>
-                Book a free consultation with our experts today — we'll guide you through every step of the MBBS admission process.
+                Book a free consultation with our experts today, we'll guide you through every step of the MBBS admission process.
               </p>
               <Link to="/freeconsulation" className="mbbs-cta-btn" style={{ background: "#fff", color: "#005B8F" }}>
                 Book Free Consultation <ChevronRight size={18} />

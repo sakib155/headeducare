@@ -17,7 +17,7 @@ const sections = [
       },
       {
         subtitle: "Communication Records",
-        text: "We retain records of your communications with us — including emails, WhatsApp messages, phone call notes, and consultation session summaries — to provide consistent and informed service across all interactions.",
+        text: "We retain records of your communications with us, including emails, WhatsApp messages, phone call notes, and consultation session summaries, to provide consistent and informed service across all interactions.",
       },
     ],
   },

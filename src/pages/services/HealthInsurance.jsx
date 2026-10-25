@@ -33,7 +33,7 @@ const coverageItems = [
   {
     icon: Hospital,
     title: "Hospitalisation Cover",
-    desc: "Pre and post-hospitalisation expenses fully covered — from admission to discharge and follow-up care.",
+    desc: "Pre and post-hospitalisation expenses fully covered, from admission to discharge and follow-up care.",
   },
   {
     icon: Pill,
@@ -48,7 +48,7 @@ const coverageItems = [
   {
     icon: Ambulance,
     title: "Emergency & Accidents",
-    desc: "Immediate coverage for accidental injuries — minor or major — so healthcare is never delayed.",
+    desc: "Immediate coverage for accidental injuries, minor or major, so healthcare is never delayed.",
   },
   {
     icon: Dna,
@@ -68,7 +68,7 @@ const planTypes = [
     mandatory: true,
     icon: GraduationCap,
     who: "International students on a student visa",
-    desc: "OSHC is a mandatory health insurance plan designed specifically for international students studying abroad. It provides complete coverage for hospitalisation, prescription medicines, and medical emergencies — ensuring you have access to quality healthcare in your host country throughout your course duration.",
+    desc: "OSHC is a mandatory health insurance plan designed specifically for international students studying abroad. It provides complete coverage for hospitalisation, prescription medicines, and medical emergencies, ensuring you have access to quality healthcare in your host country throughout your course duration.",
     features: [
       "Pre & post-hospitalisation",
       "Prescription medicines",
@@ -160,7 +160,7 @@ const faqs = [
   },
   {
     q: "When is the best time to buy a health insurance plan?",
-    a: "Purchase your health cover immediately after receiving your offer letter — ideally before or alongside your visa application. This ensures compliance with visa conditions and gives you peace of mind from day one.",
+    a: "Purchase your health cover immediately after receiving your offer letter, ideally before or alongside your visa application. This ensures compliance with visa conditions and gives you peace of mind from day one.",
   },
 ];
 

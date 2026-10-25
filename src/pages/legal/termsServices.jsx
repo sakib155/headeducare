@@ -47,7 +47,7 @@ const sections = [
     content: [
       {
         subtitle: "Accuracy of Information",
-        text: "You agree to provide truthful, accurate, complete, and current information at all times. Providing false, misleading, or fraudulent information — including in visa applications, university applications, or financial documents — may result in immediate termination of our services, forfeiture of fees paid, and referral to the relevant authorities.",
+        text: "You agree to provide truthful, accurate, complete, and current information at all times. Providing false, misleading, or fraudulent information, including in visa applications, university applications, or financial documents, may result in immediate termination of our services, forfeiture of fees paid, and referral to the relevant authorities.",
       },
       {
         subtitle: "Cooperation & Responsiveness",
@@ -85,7 +85,7 @@ const sections = [
     content: [
       {
         subtitle: "Ownership",
-        text: "All content on our website — including text, graphics, logos, icons, images, audio clips, and software — is the property of Head Edu Care or its content suppliers and is protected by applicable intellectual property laws. Unauthorised reproduction, distribution, or modification of any content is prohibited.",
+        text: "All content on our website, including text, graphics, logos, icons, images, audio clips, and software, is the property of Head Edu Care or its content suppliers and is protected by applicable intellectual property laws. Unauthorised reproduction, distribution, or modification of any content is prohibited.",
       },
       {
         subtitle: "Limited Licence",

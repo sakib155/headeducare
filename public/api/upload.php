@@ -112,11 +112,23 @@ $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' :
 $host = $_SERVER['HTTP_HOST'] ?? 'headeducare.com';
 $url = $scheme . '://' . $host . '/uploads/' . $name;
 
+// Server-side size/ratio warning (same rules as the client-side check)
+$warning = null;
+$srcRatio = $srcW / $srcH;
+$targetRatio = $targetW / $targetH;
+$ratioDiff = abs($srcRatio - $targetRatio) / $targetRatio;
+if ($srcW < $targetW || $srcH < $targetH) {
+    $warning = "Image is {$srcW}x{$srcH} — smaller than {$targetW}x{$targetH}. It will be upscaled and may look soft/blurry.";
+} elseif ($ratioDiff > 0.15) {
+    $warning = "Image ratio is {$srcW}:{$srcH}, target is {$targetW}:{$targetH}. It will be cropped significantly.";
+}
+
 echo json_encode([
     "url" => $url,
     "width" => $targetW,
     "height" => $targetH,
     "original_width" => $srcW,
     "original_height" => $srcH,
+    "warning" => $warning,
     "message" => "Image resized to {$targetW}x{$targetH}"
 ]);

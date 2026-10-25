@@ -273,7 +273,7 @@ export default function RefundPolicy() {
               >
                 Head Edu Care invests significant time, expertise, and resources
                 from the moment your engagement begins. Refund eligibility is
-                based on the stage of service completion — the earlier a
+                based on the stage of service completion, the earlier a
                 cancellation is made, the greater the refundable portion. We are
                 always willing to discuss your situation and find the most
                 equitable resolution.

@@ -1,4 +1,4 @@
-/* ── Liberal Arts College — Editorial layout: no stats strip, alternating feature rows, pull quote ── */
+/* ── Liberal Arts College, Editorial layout: no stats strip, alternating feature rows, pull quote ── */
 import { BookOpen, Users, DollarSign, Microscope, Home, Network } from "lucide-react";
 import {
   MENTOR_STYLES, useReveal,
@@ -36,7 +36,7 @@ export default function LiberalArtsCollege() {
                 <p className="mtr-subtitle">What Makes Them Different</p>
                 <h2 className="mtr-h2">Small Colleges,<br /><span>Big Outcomes</span></h2>
                 <MentorPullQuote
-                  quote="Liberal arts colleges produce leaders. Their graduates go on to run companies, write laws, and shape culture — not despite their broad education, but because of it."
+                  quote="Liberal arts colleges produce leaders. Their graduates go on to run companies, write laws, and shape culture, not despite their broad education, but because of it."
                   author="US News & World Report"
                 />
                 <p className="mtr-body">Small, undergraduate-focused institutions where teaching comes first. Students explore broadly before specialising, gaining the versatility that modern careers demand.</p>
@@ -57,7 +57,7 @@ export default function LiberalArtsCollege() {
 
         <div className="mtr-divider" />
 
-        {/* Alternating feature rows — clearly distinct from card grids */}
+        {/* Alternating feature rows, clearly distinct from card grids */}
         <section className="mtr-section-alt">
           <div className="mtr-container">
             <MentorSectionHeader {...d.whatIsSection} />
@@ -74,7 +74,7 @@ export default function LiberalArtsCollege() {
               label="Notable Institutions"
               title="Top Liberal Arts"
               highlight="Colleges in the USA"
-              body="Schools our students successfully gain admission to — consistently ranked among the world's finest."
+              body="Schools our students successfully gain admission to, consistently ranked among the world's finest."
             />
             <MentorTagList tags={d.topColleges} />
           </div>
