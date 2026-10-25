@@ -213,7 +213,7 @@ export default function VisaServices() {
         {BASE_STYLES +
           `
         .visa-country-card { background:var(--srv-bg-card); border:1px solid var(--srv-border); border-radius:16px; padding:20px 22px; transition:all .22s; }
-        .visa-country-card:hover { border-color:rgba(0,91,143,0.25); box-shadow:0 4px 20px rgba(0,91,143,0.08); transform:translateY(-2px); }
+        .visa-country-card:hover { border-color:rgba(32,66,118,0.25); box-shadow:0 4px 20px rgba(32,66,118,0.08); transform:translateY(-2px); }
         .dark .visa-country-card:hover { border-color:rgba(74,131,243,0.35); }
         .interview-row { display:grid; grid-template-columns:auto 1fr 2fr; gap:16px; align-items:center; padding:16px 20px; border-radius:12px; background:var(--srv-bg-alt); border:1px solid var(--srv-border); margin-bottom:8px; }
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } .interview-row{ grid-template-columns:auto 1fr; } .interview-row span:last-child{ grid-column:1/-1; } }
@@ -294,7 +294,7 @@ export default function VisaServices() {
                       marginBottom: 14,
                     }}
                   >
-                    {v.icon && <v.icon size={24} color="#005B8F" />}
+                    {v.icon && <v.icon size={24} color="#204276" />}
                     <h4
                       style={{
                         fontWeight: 700,
@@ -313,10 +313,10 @@ export default function VisaServices() {
                         key={j}
                         style={{
                           padding: "5px 12px",
-                          background: "rgba(0,91,143,0.07)",
+                          background: "rgba(32,66,118,0.07)",
                           borderRadius: 8,
                           fontSize: 12,
-                          color: "#005B8F",
+                          color: "#204276",
                           fontWeight: 600,
                           fontFamily: "Lexend,sans-serif",
                         }}

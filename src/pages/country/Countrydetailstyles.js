@@ -1,5 +1,5 @@
 export const countryDetailStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Outfit:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap');
 
   .cd-root *, .cd-root *::before, .cd-root *::after {
     box-sizing: border-box;
@@ -16,10 +16,10 @@ export const countryDetailStyles = `
     --card:        #ffffff;
     --border:      #e2e8f0;
     --border-soft: #f1f5f9;
-    --accent:      #1e40af;
-    --accent-mid:  #2563eb;
-    --accent-bg:   #eef2ff;
-    --accent-glow: rgba(30,64,175,.12);
+    --accent:      #204276;
+    --accent-mid:  #2b7bb9;
+    --accent-bg:   #eaf1f8;
+    --accent-glow: rgba(32,66,118,.14);
     --green:       #16a34a;
     --radius-sm:   8px;
     --radius:      14px;
@@ -28,7 +28,7 @@ export const countryDetailStyles = `
     --shadow:      0 4px 20px rgba(0,0,0,.07);
     --shadow-lg:   0 8px 32px rgba(0,0,0,.1);
     --transition:  .25s cubic-bezier(.4,0,.2,1);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     background: var(--surface);
     color: var(--ink);
     min-height: 100vh;
@@ -98,7 +98,7 @@ export const countryDetailStyles = `
     letter-spacing: .12em; color: rgba(255,255,255,.8);
   }
   .hero-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: clamp(2.4rem, 5.8vw, 3.8rem);
     font-weight: 900;
     color: #fff; line-height: 1.06;
@@ -115,7 +115,7 @@ export const countryDetailStyles = `
   .hero-accent {
     display: block;
     width: 60px; height: 4px;
-    background: linear-gradient(90deg, var(--accent-mid), #60a5fa);
+    background: linear-gradient(90deg, var(--accent), #2b7bb9);
     border-radius: 99px;
     margin-top: 18px;
   }
@@ -152,7 +152,7 @@ export const countryDetailStyles = `
     border-bottom: 1px solid var(--border-soft);
   }
   .section-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1rem; font-weight: 700;
     color: var(--ink); letter-spacing: -.01em;
   }
@@ -246,7 +246,7 @@ export const countryDetailStyles = `
     box-shadow: 0 6px 20px var(--accent-glow);
   }
   .intake-name {
-    font-family: 'Fraunces', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.05rem; font-weight: 700;
     color: var(--ink);
   }
@@ -327,7 +327,7 @@ export const countryDetailStyles = `
     border-radius: 10px;
   }
   .scholarship-name {
-    font-family: 'Fraunces', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.02rem; font-weight: 700;
     color: var(--ink);
     letter-spacing: -.01em;
@@ -337,7 +337,7 @@ export const countryDetailStyles = `
     display: flex; align-items: center; justify-content: space-between; gap: 10px;
   }
   .scholarship-amount {
-    font-family: 'Fraunces', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.25rem; font-weight: 900;
     color: var(--accent);
   }

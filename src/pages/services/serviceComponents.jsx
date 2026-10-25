@@ -21,28 +21,28 @@ export function useReveal(cls = "srv-visible") {
 }
 
 /* ─────────────────────────────────────────────
-   BASE STYLES injected once
+   BASE STYLES injected once — Solomon design system
 ───────────────────────────────────────────── */
 export const BASE_STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap');
 
   /* ── CSS variables: light mode defaults ── */
   :root {
-    --srv-text-primary: #0d121b;
+    --srv-text-primary: #1a1a1a;
     --srv-text-body: #6b7280;
     --srv-text-muted: #4b5563;
     --srv-bg-page: #ffffff;
     --srv-bg-card: #ffffff;
-    --srv-bg-alt: #f6f6f8;
-    --srv-border: rgba(0,0,0,0.06);
-    --srv-border-faq: rgba(0,0,0,0.07);
-    --srv-faq-border-open: rgba(0,91,143,0.25);
-    --srv-hero-bg: linear-gradient(135deg,rgba(0,91,143,0.06) 0%,rgba(74,131,243,0.04) 100%);
-    --srv-badge-bg: rgba(0,91,143,0.1);
+    --srv-bg-alt: #f2f2f2;
+    --srv-border: #e3e6eb;
+    --srv-border-faq: #e3e6eb;
+    --srv-faq-border-open: rgba(32,66,118,0.45);
+    --srv-hero-bg: linear-gradient(rgba(15,32,60,0.82), rgba(20,42,78,0.78));
+    --srv-badge-bg: rgba(43,123,185,0.12);
     --srv-checklist-color: #4b5563;
     --srv-country-tag-bg: #ffffff;
-    --srv-country-tag-border: rgba(0,91,143,0.15);
-    --srv-country-tag-color: #005B8F;
+    --srv-country-tag-border: rgba(32,66,118,0.25);
+    --srv-country-tag-color: #204276;
     --srv-icon-bg-opacity: 15;
   }
 
@@ -51,18 +51,18 @@ export const BASE_STYLES = `
     --srv-text-primary: #f1f1f1;
     --srv-text-body: #9ca3af;
     --srv-text-muted: #9ca3af;
-    --srv-bg-page: #01091c;
-    --srv-bg-card: #0d1f35;
-    --srv-bg-alt: #02182a;
+    --srv-bg-page: #0d1626;
+    --srv-bg-card: #13203a;
+    --srv-bg-alt: #0a1220;
     --srv-border: rgba(255,255,255,0.08);
     --srv-border-faq: rgba(255,255,255,0.08);
-    --srv-faq-border-open: rgba(74,131,243,0.35);
-    --srv-hero-bg: linear-gradient(135deg,rgba(0,91,143,0.12) 0%,rgba(74,131,243,0.08) 100%);
-    --srv-badge-bg: rgba(74,131,243,0.15);
+    --srv-faq-border-open: rgba(127,178,221,0.45);
+    --srv-hero-bg: linear-gradient(rgba(10,20,38,0.9), rgba(13,26,48,0.88));
+    --srv-badge-bg: rgba(127,178,221,0.15);
     --srv-checklist-color: #9ca3af;
-    --srv-country-tag-bg: #0d1f35;
-    --srv-country-tag-border: rgba(74,131,243,0.25);
-    --srv-country-tag-color: #4A83F3;
+    --srv-country-tag-bg: #13203a;
+    --srv-country-tag-border: rgba(127,178,221,0.3);
+    --srv-country-tag-color: #7fb2dd;
   }
 
   .srv-reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
@@ -72,35 +72,34 @@ export const BASE_STYLES = `
   .srv-reveal:nth-child(4){transition-delay:.24s}
   .srv-reveal:nth-child(5){transition-delay:.32s}
   .srv-reveal:nth-child(6){transition-delay:.40s}
-  .srv-page { font-family:"Lexend",sans-serif; color:var(--srv-text-primary); background:var(--srv-bg-page); }
-  .srv-hero { position:relative; padding:72px 0 56px; overflow:hidden; }
-  .srv-hero-bg { position:absolute; inset:0; background:var(--srv-hero-bg); }
-  .srv-hero-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
-  .srv-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:40px; background:var(--srv-badge-bg); color:#005B8F; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
-  .dark .srv-badge { color:#4A83F3; }
-  .srv-badge-dot { width:6px; height:6px; border-radius:50%; background:#005B8F; flex-shrink:0; }
-  .dark .srv-badge-dot { background:#4A83F3; }
-  .srv-h1 { font-size:clamp(36px,5vw,64px); font-weight:900; line-height:1.08; color:var(--srv-text-primary); margin-bottom:20px; font-family:"Lexend",sans-serif; }
-  .srv-h1 span { color:#005B8F; }
-  .dark .srv-h1 span { color:#4A83F3; }
-  .srv-lead { font-size:17px; color:var(--srv-text-body); line-height:1.75; font-weight:300; max-width:580px; }
+  .srv-page { font-family:"IBM Plex Sans",sans-serif; color:var(--srv-text-primary); background:var(--srv-bg-page); }
+  .srv-page h1, .srv-page h2, .srv-page h3, .srv-page h4 { font-family:"Roboto Slab",serif; }
+  .srv-hero { position:relative; padding:72px 0 56px; overflow:hidden; background-size:cover; background-position:center; }
+  .srv-hero::before { content:''; position:absolute; inset:0; background:var(--srv-hero-bg); }
+  .srv-hero > * { position:relative; z-index:1; }
+  .srv-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; background:var(--srv-badge-bg); color:#7fb2dd; border:1px solid rgba(127,178,221,0.35); font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
+  .dark .srv-badge { color:#7fb2dd; }
+  .srv-badge-dot { width:6px; height:6px; border-radius:50%; background:#7fb2dd; flex-shrink:0; }
+  .srv-h1 { font-size:clamp(34px,4.5vw,56px); font-weight:600; line-height:1.12; color:#ffffff; margin-bottom:20px; font-family:"Roboto Slab",serif; }
+  .srv-h1 span { color:#7fb2dd; }
+  .srv-lead { font-size:17px; color:rgba(255,255,255,0.88); line-height:1.75; font-weight:300; max-width:580px; }
   .srv-section { padding:88px 0; }
   .srv-section-alt { padding:88px 0; background:var(--srv-bg-alt); }
-  .srv-h2 { font-size:clamp(24px,3vw,40px); font-weight:900; color:var(--srv-text-primary); margin-bottom:12px; font-family:"Lexend",sans-serif; }
-  .srv-h2 span { color:#005B8F; }
-  .dark .srv-h2 span { color:#4A83F3; }
-  .srv-subtitle { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#005B8F; margin-bottom:10px; font-family:"Lexend",sans-serif; }
-  .dark .srv-subtitle { color:#4A83F3; }
+  .srv-h2 { font-size:clamp(24px,3vw,38px); font-weight:600; color:var(--srv-text-primary); margin-bottom:12px; font-family:"Roboto Slab",serif; }
+  .srv-h2 span { color:#204276; }
+  .dark .srv-h2 span { color:#7fb2dd; }
+  .srv-subtitle { font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#2b7bb9; margin-bottom:10px; font-family:"Oswald",sans-serif; }
+  .dark .srv-subtitle { color:#7fb2dd; }
   .srv-body { font-size:15px; color:var(--srv-text-body); line-height:1.8; font-weight:300; }
   .srv-container { max-width:1200px; margin:0 auto; padding:0 20px; }
-  .srv-cta-btn { display:inline-flex; align-items:center; gap:8px; background:#005B8F; color:#fff; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:none; cursor:pointer; }
-  .srv-cta-btn:hover { background:#004a78; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,91,143,0.25); }
-  .srv-cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#005B8F; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:2px solid rgba(0,91,143,0.25); cursor:pointer; }
-  .dark .srv-cta-btn-ghost { color:#4A83F3; border-color:rgba(74,131,243,0.3); }
-  .srv-cta-btn-ghost:hover { background:rgba(0,91,143,0.06); transform:translateY(-2px); }
-  .dark .srv-cta-btn-ghost:hover { background:rgba(74,131,243,0.1); }
-  .srv-divider { height:1px; background:rgba(0,91,143,0.08); margin:0; }
-  .dark .srv-divider { background:rgba(74,131,243,0.12); }
+  .srv-cta-btn { display:inline-flex; align-items:center; gap:8px; background:#204276; color:#fff; padding:14px 28px; border-radius:3px; font-weight:700; font-size:15px; text-decoration:none; transition:all .25s; font-family:"Roboto",sans-serif; border:none; cursor:pointer; }
+  .srv-cta-btn:hover { background:#000000; transform:translateY(-1px); box-shadow:0 10px 24px -10px rgba(0,0,0,0.5); }
+  .srv-cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#204276; padding:14px 28px; border-radius:3px; font-weight:700; font-size:15px; text-decoration:none; transition:all .25s; font-family:"Roboto",sans-serif; border:2px solid rgba(32,66,118,0.4); cursor:pointer; }
+  .dark .srv-cta-btn-ghost { color:#7fb2dd; border-color:rgba(127,178,221,0.4); }
+  .srv-cta-btn-ghost:hover { background:rgba(32,66,118,0.06); transform:translateY(-2px); }
+  .dark .srv-cta-btn-ghost:hover { background:rgba(127,178,221,0.1); }
+  .srv-divider { height:1px; background:rgba(32,66,118,0.12); margin:0; }
+  .dark .srv-divider { background:rgba(127,178,221,0.15); }
   @media(max-width:768px){ .srv-hero{ padding:56px 0 44px; } .srv-section,.srv-section-alt{ padding:60px 0; } }
 `;
 
@@ -115,22 +114,9 @@ export function PageHero({
   desc,
   ctaLabel = "Book a Free Consultation",
   ctaLink = "/freeconsulation",
-  blobTop,
-  blobRight,
 }) {
   return (
     <section className="srv-hero">
-      <div className="srv-hero-bg" />
-      <div
-        className="srv-hero-blob"
-        style={{
-          width: 400,
-          height: 400,
-          background: "rgba(0,91,143,0.07)",
-          top: blobTop ?? -80,
-          right: blobRight ?? -80,
-        }}
-      />
       <div
         className="srv-container"
         style={{ position: "relative", zIndex: 1 }}
@@ -196,6 +182,7 @@ export function SectionHeader({
       <h2 className="srv-h2">
         {title} {highlight && <span>{highlight}</span>}
       </h2>
+      {centered && <hr className="sol-separator" style={{ marginTop: 14 }} />}
       {body && (
         <p className="srv-body" style={{ marginTop: 12 }}>
           {body}
@@ -212,7 +199,7 @@ export function IconCard({
   icon,
   title,
   desc,
-  accent = "#005B8F",
+  accent = "#204276",
   style = {},
 }) {
   const Icon = icon;
@@ -222,13 +209,14 @@ export function IconCard({
       style={{
         background: "var(--srv-bg-card)",
         border: "1px solid var(--srv-border)",
-        borderRadius: 20,
+        borderTop: `3px solid ${accent}`,
+        borderRadius: 3,
         padding: "32px 28px",
         transition: "all .25s",
         ...style,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,91,143,0.1)";
+        e.currentTarget.style.boxShadow = "0 14px 34px -18px rgba(32,66,118,0.35)";
         e.currentTarget.style.transform = "translateY(-4px)";
       }}
       onMouseLeave={(e) => {
@@ -240,8 +228,9 @@ export function IconCard({
         style={{
           width: 52,
           height: 52,
-          background: `${accent}15`,
-          borderRadius: 14,
+          background: accent,
+          color: "#ffffff",
+          borderRadius: 3,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -253,11 +242,11 @@ export function IconCard({
       </div>
       <h4
         style={{
-          fontWeight: 700,
+          fontWeight: 600,
           fontSize: 16,
           color: "var(--srv-text-primary)",
           marginBottom: 8,
-          fontFamily: "Lexend,sans-serif",
+          fontFamily: '"Roboto Slab",serif',
         }}
       >
         {title}
@@ -280,13 +269,13 @@ export function StepCard({ step, icon, title, desc }) {
       style={{
         background: "var(--srv-bg-card)",
         border: "1px solid var(--srv-border)",
-        borderRadius: 20,
+        borderRadius: 3,
         padding: "32px 28px",
         position: "relative",
         transition: "all .25s",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,91,143,0.1)";
+        e.currentTarget.style.boxShadow = "0 14px 34px -18px rgba(32,66,118,0.35)";
         e.currentTarget.style.transform = "translateY(-4px)";
       }}
       onMouseLeave={(e) => {
@@ -301,30 +290,30 @@ export function StepCard({ step, icon, title, desc }) {
           left: 20,
           width: 36,
           height: 36,
-          background: "#005B8F",
+          background: "#204276",
           color: "#fff",
-          borderRadius: "50%",
+          borderRadius: 3,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontWeight: 900,
-          fontSize: 14,
-          fontFamily: "Lexend,sans-serif",
+          fontWeight: 600,
+          fontSize: 15,
+          fontFamily: '"Oswald",sans-serif',
         }}
       >
         {step}
       </div>
       <div style={{ marginTop: 8 }}>
-        <span style={{ display: "block", marginBottom: 12 }}>
+        <span style={{ display: "block", marginBottom: 12, color: "#204276" }}>
           <Icon size={28} />
         </span>
         <h4
           style={{
-            fontWeight: 700,
+            fontWeight: 600,
             fontSize: 15,
             color: "var(--srv-text-primary)",
             marginBottom: 8,
-            fontFamily: "Lexend,sans-serif",
+            fontFamily: '"Roboto Slab",serif',
           }}
         >
           {title}
@@ -350,7 +339,7 @@ export function FAQ({ items }) {
           className="srv-reveal"
           style={{
             border: `1px solid ${open === i ? "var(--srv-faq-border-open)" : "var(--srv-border-faq)"}`,
-            borderRadius: 16,
+            borderRadius: 3,
             overflow: "hidden",
             transition: "border .2s",
             background: "var(--srv-bg-card)",
@@ -373,10 +362,10 @@ export function FAQ({ items }) {
           >
             <span
               style={{
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: 15,
                 color: "var(--srv-text-primary)",
-                fontFamily: "Lexend,sans-serif",
+                fontFamily: '"Roboto Slab",serif',
                 lineHeight: 1.4,
               }}
             >
@@ -385,7 +374,7 @@ export function FAQ({ items }) {
             <span
               style={{
                 fontSize: 20,
-                color: "#005B8F",
+                color: "#204276",
                 flexShrink: 0,
                 transform: open === i ? "rotate(45deg)" : "none",
                 transition: "transform .2s",
@@ -413,7 +402,7 @@ export function FAQ({ items }) {
 ───────────────────────────────────────────── */
 export function StatsStrip({ stats }) {
   return (
-    <section style={{ background: "#005B8F", padding: "56px 0" }}>
+    <section style={{ background: "linear-gradient(135deg,#0f203c 0%,#16325c 100%)", padding: "56px 0" }}>
       <div className="srv-container">
         <div
           style={{
@@ -438,9 +427,9 @@ export function StatsStrip({ stats }) {
               <p
                 style={{
                   fontSize: 44,
-                  fontWeight: 900,
+                  fontWeight: 600,
                   color: "#fff",
-                  fontFamily: "Lexend,sans-serif",
+                  fontFamily: '"Oswald",sans-serif',
                   lineHeight: 1,
                 }}
               >
@@ -451,10 +440,10 @@ export function StatsStrip({ stats }) {
                   fontSize: 12,
                   color: "rgba(255,255,255,0.75)",
                   textTransform: "uppercase",
-                  letterSpacing: ".08em",
+                  letterSpacing: ".12em",
                   marginTop: 8,
-                  fontFamily: "Lexend,sans-serif",
-                  fontWeight: 600,
+                  fontFamily: '"Oswald",sans-serif',
+                  fontWeight: 500,
                 }}
               >
                 {s.label}
@@ -480,7 +469,7 @@ export function CtaBanner({
     <section
       style={{
         padding: "80px 0",
-        background: "linear-gradient(135deg,#005B8F 0%,#004270 100%)",
+        background: "linear-gradient(135deg,#204276 0%,#0f203c 100%)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -515,9 +504,9 @@ export function CtaBanner({
           <h2
             style={{
               fontSize: 36,
-              fontWeight: 900,
+              fontWeight: 600,
               color: "#fff",
-              fontFamily: "Lexend,sans-serif",
+              fontFamily: '"Roboto Slab",serif',
               marginBottom: 14,
               lineHeight: 1.15,
             }}
@@ -532,7 +521,7 @@ export function CtaBanner({
               fontWeight: 300,
               maxWidth: 520,
               margin: "0 auto 32px",
-              fontFamily: "Lexend,sans-serif",
+              fontFamily: '"IBM Plex Sans",sans-serif',
             }}
           >
             {desc}
@@ -543,21 +532,25 @@ export function CtaBanner({
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "#fff",
-              color: "#005B8F",
+              background: "#ffffff",
+              color: "#204276",
               padding: "14px 32px",
-              borderRadius: 12,
+              borderRadius: 3,
               fontWeight: 700,
               fontSize: 15,
               textDecoration: "none",
-              transition: "all .2s",
-              fontFamily: "Lexend,sans-serif",
+              transition: "all .25s",
+              fontFamily: '"Roboto",sans-serif',
             }}
             onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#000000";
+              e.currentTarget.style.color = "#ffffff";
               e.currentTarget.style.transform = "translateY(-2px)";
               e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.15)";
             }}
             onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#ffffff";
+              e.currentTarget.style.color = "#204276";
               e.currentTarget.style.transform = "none";
               e.currentTarget.style.boxShadow = "none";
             }}
@@ -594,7 +587,7 @@ export function CheckList({ items, columns = 1 }) {
             gap: 10,
             fontSize: 14,
             color: "var(--srv-checklist-color)",
-            fontFamily: "Lexend,sans-serif",
+            fontFamily: '"IBM Plex Sans",sans-serif',
             fontWeight: 400,
           }}
         >
@@ -603,7 +596,7 @@ export function CheckList({ items, columns = 1 }) {
               width: 6,
               height: 6,
               borderRadius: "50%",
-              background: "var(--srv-checklist-color, #005B8F)",
+              background: "#204276",
               flexShrink: 0,
               marginTop: 7,
             }}
@@ -625,9 +618,9 @@ export function InfoBox({ icon: Icon, title, children, variant = "blue" }) {
 
   const variants = {
     blue: {
-      bg: isDark ? "rgba(0,91,143,0.18)" : "rgba(0,91,143,0.05)",
-      border: isDark ? "rgba(74,131,243,0.25)" : "rgba(0,91,143,0.15)",
-      title: isDark ? "#4A83F3" : "#005B8F",
+      bg: isDark ? "rgba(32,66,118,0.3)" : "rgba(32,66,118,0.05)",
+      border: isDark ? "rgba(127,178,221,0.3)" : "rgba(32,66,118,0.2)",
+      title: isDark ? "#7fb2dd" : "#204276",
     },
     green: {
       bg: isDark ? "rgba(22,163,74,0.18)" : "rgba(22,163,74,0.05)",
@@ -649,7 +642,7 @@ export function InfoBox({ icon: Icon, title, children, variant = "blue" }) {
       style={{
         background: v.bg,
         border: `1px solid ${v.border}`,
-        borderRadius: 20,
+        borderRadius: 3,
         padding: "28px 32px",
       }}
     >
@@ -665,10 +658,10 @@ export function InfoBox({ icon: Icon, title, children, variant = "blue" }) {
 
         <h4
           style={{
-            fontWeight: 700,
+            fontWeight: 600,
             fontSize: 16,
             color: v.title,
-            fontFamily: "Lexend,sans-serif",
+            fontFamily: '"Roboto Slab",serif',
             textDecoration: "underline",
             textUnderlineOffset: 4,
             textDecorationColor: v.title,
@@ -695,13 +688,14 @@ export function CountryTags({ countries }) {
           key={i}
           style={{
             padding: "7px 16px",
-            borderRadius: 40,
+            borderRadius: 3,
             background: "var(--srv-country-tag-bg)",
             border: "1px solid var(--srv-country-tag-border)",
             fontSize: 13,
             fontWeight: 600,
-            color: "var(--srv-country-tag-color, #005B8F)",
-            fontFamily: "Lexend,sans-serif",
+            color: "var(--srv-country-tag-color, #204276)",
+            fontFamily: '"Oswald",sans-serif',
+            letterSpacing: ".03em",
           }}
         >
           {c.flag} {c.name}

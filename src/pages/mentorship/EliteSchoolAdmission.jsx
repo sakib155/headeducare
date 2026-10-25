@@ -23,21 +23,21 @@ export default function EliteSchoolAdmission() {
 
         {/* Premium dark hero, visually distinct from every other page */}
         <section className="elite-hero">
-          <div className="elite-blob" style={{ width: 500, height: 500, background: "rgba(0,91,143,0.12)", top: -150, right: -100 }} />
+          <div className="elite-blob" style={{ width: 500, height: 500, background: "rgba(32,66,118,0.12)", top: -150, right: -100 }} />
           <div className="elite-blob" style={{ width: 300, height: 300, background: "rgba(96,165,250,0.15)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>
             <div className="mtr-reveal" style={{ maxWidth: 700 }}>
-              <span className="mtr-badge" style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}>
-                <span className="mtr-badge-dot" style={{ background: "#005B8F" }} />
+              <span className="mtr-badge" style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}>
+                <span className="mtr-badge-dot" style={{ background: "#204276" }} />
                 USA Mentorship Program
               </span>
               <h1 className="mtr-h1" style={{ color: "#0f172a" }}>
-                {d.hero.title} <span style={{ color: "#005B8F" }}>{d.hero.highlight}</span>
+                {d.hero.title} <span style={{ color: "#204276" }}>{d.hero.highlight}</span>
               </h1>
               <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
                 {d.hero.desc}
               </p>
-              <Link to="/freeconsulation" className="mtr-cta-btn" style={{ background: "#005B8F", color: "#fff" }}>
+              <Link to="/freeconsulation" className="mtr-cta-btn" style={{ background: "#204276", color: "#fff" }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8 6l6 6-6 6" /></svg>
                 Book a Free Consultation
               </Link>

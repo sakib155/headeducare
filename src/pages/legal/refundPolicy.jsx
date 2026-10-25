@@ -172,12 +172,12 @@ export default function RefundPolicy() {
       <style>{`
         .rp-reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
         .rp-reveal.rp-visible { opacity:1; transform:none; }
-        .rp-table-row { display:grid; grid-template-columns:1fr auto auto; gap:16px; align-items:center; padding:16px 20px; border-radius:12px; margin-bottom:8px; background:#f6f6f8; border:1px solid rgba(0,0,0,0.05); transition:box-shadow .2s; }
-        .rp-table-row:hover { box-shadow:0 2px 12px rgba(0,91,143,0.08); }
-        .rp-badge { padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700; font-family:"Lexend",sans-serif; white-space:nowrap; }
-        .rp-step { display:flex; gap:20px; align-items:flex-start; padding:24px 28px; border-radius:16px; background:#f6f6f8; border:1px solid rgba(0,0,0,0.05); margin-bottom:12px; transition:all .2s; }
-        .rp-step:hover { box-shadow:0 4px 20px rgba(0,91,143,0.08); transform:translateX(4px); }
-        .rp-step-num { font-size:28px; font-weight:900; color:rgba(0,91,143,0.15); font-family:"Lexend",sans-serif; flex-shrink:0; line-height:1; }
+        .rp-table-row { display:grid; grid-template-columns:1fr auto auto; gap:16px; align-items:center; padding:16px 20px; border-radius:12px; margin-bottom:8px; background:#f2f2f2; border:1px solid rgba(0,0,0,0.05); transition:box-shadow .2s; }
+        .rp-table-row:hover { box-shadow:0 2px 12px rgba(32,66,118,0.08); }
+        .rp-badge { padding:4px 12px; border-radius:3px; font-size:12px; font-weight:700; font-family:"IBM Plex Sans",sans-serif; white-space:nowrap; }
+        .rp-step { display:flex; gap:20px; align-items:flex-start; padding:24px 28px; border-radius:3px; background:#f2f2f2; border:1px solid rgba(0,0,0,0.05); margin-bottom:12px; transition:all .2s; }
+        .rp-step:hover { box-shadow:0 4px 20px rgba(32,66,118,0.08); transform:translateX(4px); }
+        .rp-step-num { font-size:28px; font-weight:900; color:rgba(32,66,118,0.15); font-family:"IBM Plex Sans",sans-serif; flex-shrink:0; line-height:1; }
         @media(max-width:640px) { .rp-table-row { grid-template-columns:1fr; } .rp-badge { width:fit-content; } }
       `}</style>
 
@@ -187,25 +187,25 @@ export default function RefundPolicy() {
           className="relative py-16 lg:py-20 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg,rgba(0,91,143,0.05) 0%,rgba(74,131,243,0.03) 100%)",
+              "linear-gradient(135deg,rgba(32,66,118,0.05) 0%,rgba(74,131,243,0.03) 100%)",
           }}
         >
           <div
             className="absolute top-0 right-0 w-96 h-96 rounded-full"
-            style={{ background: "rgba(0,91,143,0.06)", filter: "blur(80px)" }}
+            style={{ background: "rgba(32,66,118,0.06)", filter: "blur(80px)" }}
           />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl rp-reveal">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
-                style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}
+                style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}
               >
                 <span
                   style={{
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "#005B8F",
+                    background: "#204276",
                     flexShrink: 0,
                     display: "inline-block",
                   }}
@@ -214,15 +214,15 @@ export default function RefundPolicy() {
               </div>
               <h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
-                Refund <span style={{ color: "#005B8F" }}>Policy</span>
+                Refund <span style={{ color: "#204276" }}>Policy</span>
               </h1>
               <p
                 className="text-lg leading-relaxed mb-6"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -232,7 +232,7 @@ export default function RefundPolicy() {
               </p>
               <div
                 className="flex flex-wrap gap-6 text-sm"
-                style={{ color: "#6b7280", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" /> Effective: January 1, 2025
@@ -251,15 +251,15 @@ export default function RefundPolicy() {
           <div
             className="rp-reveal rounded-2xl p-8 flex gap-5 items-start"
             style={{
-              background: "rgba(0,91,143,0.04)",
-              border: "1px solid rgba(0,91,143,0.12)",
+              background: "rgba(32,66,118,0.04)",
+              border: "1px solid rgba(32,66,118,0.12)",
             }}
           >
             <Lightbulb className="text-blue-900 h-40 w-44" />
             <div>
               <h3
                 className="text-xl font-black mb-2"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 Our Guiding Principle
               </h3>
@@ -267,7 +267,7 @@ export default function RefundPolicy() {
                 className="text-base leading-relaxed"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -286,13 +286,13 @@ export default function RefundPolicy() {
             <div className="mb-10">
               <p
                 className="text-sm font-bold uppercase tracking-widest mb-2"
-                style={{ color: "#005B8F", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 Refund Schedule
               </p>
               <h2
                 className="text-3xl font-black"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 Service-by-Service Breakdown
               </h2>
@@ -338,7 +338,7 @@ export default function RefundPolicy() {
                   />
                   <span
                     className="text-xs font-semibold"
-                    style={{ color: l.color, fontFamily: "Lexend, sans-serif" }}
+                    style={{ color: l.color, fontFamily: "'IBM Plex Sans', sans-serif" }}
                   >
                     {l.label}
                   </span>
@@ -352,7 +352,7 @@ export default function RefundPolicy() {
               style={{
                 gridTemplateColumns: "1fr auto auto",
                 color: "#9ca3af",
-                fontFamily: "Lexend, sans-serif",
+                fontFamily: "'IBM Plex Sans', sans-serif",
               }}
             >
               <span>Service</span>
@@ -364,7 +364,7 @@ export default function RefundPolicy() {
               <div key={i} className="rp-table-row">
                 <span
                   className="text-sm font-semibold"
-                  style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   {row.service}
                 </span>
@@ -376,7 +376,7 @@ export default function RefundPolicy() {
                 </span>
                 <span
                   className="text-xs"
-                  style={{ color: "#6b7280", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   {row.condition}
                 </span>
@@ -389,13 +389,13 @@ export default function RefundPolicy() {
             <div className="mb-10">
               <p
                 className="text-sm font-bold uppercase tracking-widest mb-2"
-                style={{ color: "#005B8F", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 Process
               </p>
               <h2
                 className="text-3xl font-black mb-4"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 How to Request a Refund
               </h2>
@@ -403,7 +403,7 @@ export default function RefundPolicy() {
                 className="text-base leading-relaxed"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -425,8 +425,8 @@ export default function RefundPolicy() {
                     <h4
                       className="font-bold text-base"
                       style={{
-                        color: "#0d121b",
-                        fontFamily: "Lexend, sans-serif",
+                        color: "#1a1a1a",
+                        fontFamily: "'IBM Plex Sans', sans-serif",
                       }}
                     >
                       {step.title}
@@ -436,7 +436,7 @@ export default function RefundPolicy() {
                     className="text-sm leading-relaxed"
                     style={{
                       color: "#6b7280",
-                      fontFamily: "Lexend, sans-serif",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                       fontWeight: 300,
                     }}
                   >
@@ -452,13 +452,13 @@ export default function RefundPolicy() {
             <div className="mb-10">
               <p
                 className="text-sm text-primary font-bold uppercase tracking-widest mb-2"
-                style={{ fontFamily: "Lexend, sans-serif" }}
+                style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 Important
               </p>
               <h2
                 className="text-3xl font-black mb-4"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 When Refunds Do Not Apply
               </h2>
@@ -466,7 +466,7 @@ export default function RefundPolicy() {
                 className="text-base leading-relaxed"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -490,7 +490,7 @@ export default function RefundPolicy() {
                     <h4
                       className="font-bold text-sm text-primary"
                       style={{
-                        fontFamily: "Lexend, sans-serif",
+                        fontFamily: "'IBM Plex Sans', sans-serif",
                       }}
                     >
                       {item.title}
@@ -500,7 +500,7 @@ export default function RefundPolicy() {
                     className="text-sm leading-relaxed"
                     style={{
                       color: "#6b7280",
-                      fontFamily: "Lexend, sans-serif",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                       fontWeight: 300,
                     }}
                   >
@@ -517,13 +517,13 @@ export default function RefundPolicy() {
               <div
                 className="p-8 rounded-2xl"
                 style={{
-                  background: "rgba(0,91,143,0.05)",
-                  border: "1px solid rgba(0,91,143,0.12)",
+                  background: "rgba(32,66,118,0.05)",
+                  border: "1px solid rgba(32,66,118,0.12)",
                 }}
               >
                 <h3
                   className="text-lg font-black mb-3"
-                  style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Dispute Resolution
                 </h3>
@@ -531,7 +531,7 @@ export default function RefundPolicy() {
                   className="text-sm leading-relaxed mb-4"
                   style={{
                     color: "#6b7280",
-                    fontFamily: "Lexend, sans-serif",
+                    fontFamily: "'IBM Plex Sans', sans-serif",
                     fontWeight: 300,
                   }}
                 >
@@ -545,26 +545,26 @@ export default function RefundPolicy() {
               <div
                 className="p-8 rounded-2xl"
                 style={{
-                  background: "rgba(0,91,143,0.05)",
-                  border: "1px solid rgba(0,91,143,0.12)",
+                  background: "rgba(32,66,118,0.05)",
+                  border: "1px solid rgba(32,66,118,0.12)",
                 }}
               >
                 <h3
                   className="text-lg font-black mb-3"
-                  style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Contact for Refunds
                 </h3>
                 <div
                   className="space-y-2 text-sm"
-                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   <p style={{ color: "#6b7280", fontWeight: 300 }}>
                     Submit your refund request to:
                   </p>
                   <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-[#005B8F]" />
-                    <p style={{ color: "#005B8F", fontWeight: 600 }}>
+                    <Mail className="h-4 w-4 text-[#204276]" />
+                    <p style={{ color: "#204276", fontWeight: 600 }}>
                       info@headeducare.com
                     </p>
                   </div>

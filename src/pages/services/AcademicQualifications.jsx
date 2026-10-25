@@ -44,7 +44,7 @@ export default function AcademicQualifications() {
             font-family: Lexend, sans-serif;
           }
           .qual-table th {
-            background: #005B8F;
+            background: #204276;
             color: white;
             text-align: left;
             padding: 14px 20px;
@@ -61,7 +61,7 @@ export default function AcademicQualifications() {
             font-size: 14px;
           }
           .qual-table tr:hover {
-            background: rgba(0,91,143,0.02);
+            background: rgba(32,66,118,0.02);
           }
           .dark .qual-table tr:hover {
             background: rgba(255,255,255,0.01);
@@ -83,7 +83,7 @@ export default function AcademicQualifications() {
             transition: all 0.25s;
           }
           .test-card:hover {
-            box-shadow: 0 6px 20px rgba(0,91,143,0.08);
+            box-shadow: 0 6px 20px rgba(32,66,118,0.08);
             transform: translateY(-2px);
           }
           @media(max-width:768px){
@@ -115,7 +115,7 @@ export default function AcademicQualifications() {
             />
 
             <div className="srv-reveal" style={{ overflowX: "auto", background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 20, padding: 12 }}>
-              <h3 style={{ margin: "16px 20px 8px", fontWeight: 700, fontSize: 18, color: "#005B8F" }}>Undergraduate Admission</h3>
+              <h3 style={{ margin: "16px 20px 8px", fontWeight: 700, fontSize: 18, color: "#204276" }}>Undergraduate Admission</h3>
               <table className="qual-table">
                 <thead>
                   <tr>
@@ -147,7 +147,7 @@ export default function AcademicQualifications() {
                 </tbody>
               </table>
 
-              <h3 style={{ margin: "32px 20px 8px", fontWeight: 700, fontSize: 18, color: "#005B8F" }}>Postgraduate Admission</h3>
+              <h3 style={{ margin: "32px 20px 8px", fontWeight: 700, fontSize: 18, color: "#204276" }}>Postgraduate Admission</h3>
               <table className="qual-table" style={{ marginBottom: 16 }}>
                 <thead>
                   <tr>
@@ -191,7 +191,7 @@ export default function AcademicQualifications() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {standardizedTests.map((t, idx) => (
                     <div key={idx} className="test-card">
-                      <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(0,91,143,0.1)", color: "#005B8F", display: "flex", alignItems: "center", justifyCenter: "center", shrink: 0, fontWeight: 700, fontSize: 12, justifyContent: "center" }}>
+                      <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(32,66,118,0.1)", color: "#204276", display: "flex", alignItems: "center", justifyCenter: "center", shrink: 0, fontWeight: 700, fontSize: 12, justifyContent: "center" }}>
                         {t.name}
                       </div>
                       <div>

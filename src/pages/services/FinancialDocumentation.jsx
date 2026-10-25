@@ -87,7 +87,7 @@ const documentTypes = [
     icon: Banknote,
     title: "Personal/Sponsor Savings",
     desc: "The primary proof of funds. We ensure your bank certificates and statements meet the specific format and age requirements of the embassy.",
-    color: "#005B8F",
+    color: "#204276",
   },
   {
     icon: TrendingUp,
@@ -117,7 +117,7 @@ const documentTypes = [
     icon: Users,
     title: "Affidavit of Support",
     desc: "Legal notarized documents where sponsors formally declare their commitment to fund your education and living expenses abroad.",
-    color: "#4A83F3",
+    color: "#7fb2dd",
   },
 ];
 
@@ -227,7 +227,7 @@ export default function FinancialDocumentation() {
             transition: all .25s;
           }
           .doc-type-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .doc-type-header {

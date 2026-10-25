@@ -91,13 +91,13 @@ const scholarshipTypes = [
     icon: Star,
     title: "Merit-Based Scholarships",
     desc: "Awarded for academic excellence, high GPAs, or outstanding test scores. These are competitive but cover significant portions of tuition.",
-    color: "#005B8F",
+    color: "#204276",
   },
   {
     icon: Users,
     title: "Need-Based Grants",
     desc: "Designed for students with financial constraints. Requires detailed proof of income and assets to demonstrate genuine financial need.",
-    color: "#4A83F3",
+    color: "#7fb2dd",
   },
   {
     icon: Globe,
@@ -235,7 +235,7 @@ export default function ScholarshipGuide() {
             transition: all .25s;
           }
           .schol-type-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .schol-type-header {

@@ -36,9 +36,9 @@ export default function Header({
     }, 220);
   };
 
-  // Listen to scroll to apply subtle shadow
+  // Listen to scroll to shrink the header (Solomon-style sticky shrink)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 15);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -53,121 +53,136 @@ export default function Header({
   return (
     <>
       <style>{`
-        .menu-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,91,143,.45) transparent; }
+        .menu-scroll { scrollbar-width: thin; scrollbar-color: rgba(32,66,118,.45) transparent; }
         .menu-scroll::-webkit-scrollbar { width: 6px; }
         .menu-scroll::-webkit-scrollbar-track { background: transparent; }
-        .menu-scroll::-webkit-scrollbar-thumb { background: rgba(0,91,143,.35); border-radius: 8px; }
-        .menu-scroll::-webkit-scrollbar-thumb:hover { background: rgba(0,91,143,.55); }
-        .dark .menu-scroll { scrollbar-color: rgba(96,165,250,.4) transparent; }
-        .dark .menu-scroll::-webkit-scrollbar-thumb { background: rgba(96,165,250,.35); }
+        .menu-scroll::-webkit-scrollbar-thumb { background: rgba(32,66,118,.35); border-radius: 8px; }
+        .menu-scroll::-webkit-scrollbar-thumb:hover { background: rgba(32,66,118,.55); }
+        .dark .menu-scroll { scrollbar-color: rgba(127,178,221,.4) transparent; }
+        .dark .menu-scroll::-webkit-scrollbar-thumb { background: rgba(127,178,221,.35); }
       `}</style>
       <div className={`w-full font-sans transition-colors duration-200 ${darkMode ? "dark" : ""}`}>
       {/* Header */}
       <header
         className={`glass-header sticky top-0 z-40 w-full transition-all duration-300 ${
-          scrolled ? "shadow-lg" : ""
+          scrolled ? "shadow-md" : ""
         }`}
       >
+        {/* ── Top row: logo + phone CTA ── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-28">
-            {/* Logo (fixed width removed -> no dead space after the image) */}
+          <div
+            className={`flex items-center justify-between transition-all duration-300 ${
+              scrolled ? "py-2" : "py-3.5"
+            }`}
+          >
+            {/* Logo */}
             <a
               href="/"
               className="flex items-center gap-2 group cursor-pointer shrink-0 focus:outline-none"
             >
-              <div className="h-14 flex items-center">
+              <div className={`flex items-center transition-all duration-300 ${scrolled ? "h-10" : "h-13"}`}>
                 <img src="/HEAD_horizontal.png" alt="Head Educare" className="h-full w-auto object-contain" />
               </div>
             </a>
 
-            {/* Desktop Nav
-                - flex-1 + ml-6: starts close to the logo and uses the free space
-                - gap-0.5 (NOT space-x-*): space-x overrides ml-auto on the contact button
-                - mr-3: small breathing room before the dark-mode toggle */}
-            <nav className="hidden xl:flex flex-1 items-center ml-6 mr-3 gap-0.5">
-              {menuData.map((section) => {
-                const isContact = section.title.name === "Contact Us";
-                const isOpen = openMenu === section.title.name;
-                const hasItems = section.items && section.items.length > 0;
-                const isActive = currentPath === section.title.url;
-                // Only long menus without nested flyouts get an internal scroll area —
-                // menus with nested flyouts stay overflow-visible so submenus are never clipped.
-                const hasNested = section.items?.some((item) => item.items);
-                const needsScroll = !hasNested && (section.items?.length || 0) > 9;
+            {/* Right side: dark-mode toggle + phone CTA */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <a
+                href="https://wa.me/8801910833888"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-2 whitespace-nowrap shrink-0 sol-btn !py-2.5 !px-5 text-sm"
+              >
+                <Phone className="w-4 h-4 shrink-0" />
+                <span className="tracking-wide">+8801910 833 888</span>
+              </a>
 
-                if (isContact) {
-                  return (
-                    <a
-                      key={section.title.name}
-                      href="https://wa.me/8801910833888"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-auto inline-flex items-center gap-2 whitespace-nowrap shrink-0 text-sm font-semibold transition-all duration-200 bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-primary/90 shadow-sm shadow-primary/25 hover:shadow-md active:scale-95"
-                    >
-                      <Phone className="w-4 h-4 shrink-0" />
-                      <span>+8801910 833 888</span>
-                    </a>
-                  );
-                }
+              <button
+                type="button"
+                onClick={toggleDarkMode}
+                className="w-9 h-9 rounded-sm border border-gray-200 flex items-center justify-center text-[#204276] hover:bg-[#f2f2f2] transition-colors focus:outline-none"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <Sun className="w-4.5 h-4.5 text-amber-400" /> : <Moon className="w-4.5 h-4.5" />}
+              </button>
 
-                return (
-                  <div
-                    key={section.title.name}
-                    className="relative shrink-0"
-                    onMouseEnter={() => handleMenuEnter(section.title.name)}
-                    onMouseLeave={handleMenuLeave}
+              <button
+                type="button"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="xl:hidden w-9 h-9 rounded-sm bg-[#204276] flex items-center justify-center text-white hover:bg-black transition-colors focus:outline-none"
+                aria-label="Toggle mobile menu"
+              >
+                {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Nav row: Oswald uppercase links with dropdowns ── */}
+        <div className="hidden xl:block border-t border-gray-100 bg-white">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-1">
+            {menuData.map((section) => {
+              const isContact = section.title.name === "Contact Us";
+              const isOpen = openMenu === section.title.name;
+              const hasItems = section.items && section.items.length > 0;
+              const isActive = currentPath === section.title.url;
+              const hasNested = section.items?.some((item) => item.items);
+              const needsScroll = !hasNested && (section.items?.length || 0) > 9;
+
+              if (isContact) {
+                return null;
+              }
+
+              return (
+                <div
+                  key={section.title.name}
+                  className="relative shrink-0"
+                  onMouseEnter={() => handleMenuEnter(section.title.name)}
+                  onMouseLeave={handleMenuLeave}
+                >
+                  <a
+                    href={section.title.url}
+                    className={`relative flex items-center gap-1.5 whitespace-nowrap px-4 py-3 text-[15px] uppercase tracking-wide transition-colors duration-150 border-b-2 ${
+                      isActive || isOpen
+                        ? "text-[#204276] border-[#204276]"
+                        : "text-gray-600 border-transparent hover:text-[#2b7bb9]"
+                    }`}
+                    style={{ fontFamily: '"Oswald", sans-serif', fontWeight: 500 }}
                   >
-                    {/* Top Level Nav Button: bigger text, always one line */}
-                    <a
-                      href={section.title.url}
-                      className={`relative flex items-center gap-1.5 whitespace-nowrap shrink-0 px-2.5 py-2 text-base font-semibold rounded-md transition-colors duration-150 ${
-                        isActive || isOpen
-                          ? "text-primary-light"
-                          : "text-white hover:text-primary-light"
-                      }`}
-                    >
-                      <span className="whitespace-nowrap">{section.title.name}</span>
-                      {hasItems && (
-                        <ChevronDown
-                          className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
-                            isOpen ? "rotate-180 text-primary-light" : "text-white/60"
-                          }`}
-                        />
-                      )}
-                      {/* Active indicator underline */}
-                      <span
-                        className={`absolute bottom-0 left-2 right-2 h-[2px] bg-primary-light transition-all duration-200 ${
-                          isOpen || isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                    <span className="whitespace-nowrap">{section.title.name}</span>
+                    {hasItems && (
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-[#204276]" : "text-gray-400"
                         }`}
                       />
-                    </a>
+                    )}
+                  </a>
 
-                    {/* Dropdown */}
-                    {hasItems && isOpen && (
-                      <div
-                        className="absolute left-0 top-full pt-1.5 z-50 animate-in fade-in duration-150"
-                        style={{
-                          width:
-                            section.title.name === "Services"
-                              ? "380px"
-                              : section.title.name === "Elite School Mentorship"
-                              ? "290px"
-                              : "260px",
-                        }}
-                      >
-                        <div className="bg-white dark:bg-[#01091c] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-1.5 overflow-visible">
-                          <div
-                            className={
-                              needsScroll
-                                ? "max-h-[min(70vh,600px)] overflow-y-auto overscroll-contain menu-scroll rounded-xl"
-                                : ""
-                            }
-                          >
-                            {/* Each row is strictly line-by-line (all rows: text-base, font-medium) */}
+                  {/* Dropdown */}
+                  {hasItems && isOpen && (
+                    <div
+                      className="absolute left-0 top-full pt-1 z-50"
+                      style={{
+                        width:
+                          section.title.name === "Services"
+                            ? "380px"
+                            : section.title.name === "Elite School Mentorship"
+                            ? "290px"
+                            : "260px",
+                      }}
+                    >
+                      <div className="bg-white shadow-2xl border-t-2 border-[#204276] py-1.5 overflow-visible">
+                        <div
+                          className={
+                            needsScroll
+                              ? "max-h-[min(70vh,600px)] overflow-y-auto overscroll-contain menu-scroll"
+                              : ""
+                          }
+                        >
                           {section.items.map((item, idx) => {
                             const isSubOpen = openNestedSub === item.name;
 
-                            // Items with nested sub-flyout (Europe or USA Mentorship)
                             if (item.items) {
                               return (
                                 <div
@@ -176,17 +191,16 @@ export default function Header({
                                   onMouseEnter={() => setOpenNestedSub(item.name)}
                                 >
                                   <div
-                                    className={`flex items-center justify-between text-base py-2.5 px-4 font-medium cursor-pointer transition-colors duration-150 border-b border-gray-100 dark:border-gray-800/80 ${
+                                    className={`flex items-center justify-between py-2.5 px-4 cursor-pointer transition-colors duration-150 border-b border-gray-100 ${
                                       isSubOpen
-                                        ? "bg-primary/10 text-primary dark:text-primary"
-                                        : "text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/70 hover:text-primary"
+                                        ? "bg-[#f2f2f2] text-[#204276]"
+                                        : "text-gray-700 hover:bg-[#f2f2f2] hover:text-[#204276]"
                                     }`}
                                   >
                                     <span className="truncate">{item.name}</span>
-                                    <ChevronRight className="w-4 h-4 shrink-0 text-gray-400 group-hover/nested:text-primary group-hover/nested:translate-x-0.5 transition-transform" />
+                                    <ChevronRight className="w-4 h-4 shrink-0 text-gray-400 group-hover/nested:text-[#204276] group-hover/nested:translate-x-0.5 transition-transform" />
                                   </div>
 
-                                  {/* Line-by-Line Nested Submenu */}
                                   <div
                                     className={`absolute left-[99%] top-0 pl-1.5 z-50 transition-all duration-150 ${
                                       isSubOpen ? "opacity-100 visible translate-x-0" : "opacity-0 invisible pointer-events-none -translate-x-1"
@@ -195,14 +209,14 @@ export default function Header({
                                       width: item.name === "USA Mentorship" ? "310px" : "230px",
                                     }}
                                   >
-                                    <div className="bg-white dark:bg-[#01091c] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
+                                    <div className="bg-white shadow-2xl border-t-2 border-[#204276] py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
                                       {item.items.map((sub, sIdx) => (
                                         <a
                                           key={sub.name}
                                           href={sub.url}
-                                          className={`flex items-center text-base py-2.5 px-4 font-medium transition-colors duration-150 border-b border-gray-50 dark:border-gray-800/50 ${
+                                          className={`flex items-center py-2.5 px-4 transition-colors duration-150 border-b border-gray-50 ${
                                             sIdx === item.items.length - 1 ? "border-b-0" : ""
-                                          } text-gray-700 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:text-primary`}
+                                          } text-gray-700 hover:bg-[#f2f2f2] hover:text-[#204276]`}
                                         >
                                           <span className="truncate">{sub.name}</span>
                                         </a>
@@ -213,50 +227,27 @@ export default function Header({
                               );
                             }
 
-                            // Standard single line-by-line item
                             return (
                               <a
                                 key={item.name}
                                 href={item.url}
-                                className={`flex items-center justify-between text-base py-2.5 px-4 font-medium transition-colors duration-150 border-b border-gray-100 dark:border-gray-800/80 ${
+                                className={`flex items-center justify-between py-2.5 px-4 transition-colors duration-150 border-b border-gray-100 ${
                                   idx === section.items.length - 1 ? "border-b-0" : ""
-                                } text-gray-800 dark:text-gray-200 hover:bg-primary/10 hover:text-primary dark:hover:text-primary`}
+                                } text-gray-700 hover:bg-[#f2f2f2] hover:text-[#204276]`}
                                 onMouseEnter={() => setOpenNestedSub(null)}
                               >
                                 <span className="truncate">{item.name}</span>
                               </a>
                             );
                           })}
-                          </div>
                         </div>
                       </div>
-                    )}
-                  </div>
-                );
-              })}
-            </nav>
-
-            {/* Right Side */}
-            <div className="flex items-center gap-2 sm:gap-3">
-              <button
-                type="button"
-                onClick={toggleDarkMode}
-                className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none"
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="xl:hidden w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none"
-                aria-label="Toggle mobile menu"
-              >
-                {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </div>
-          </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
         </div>
       </header>
 
@@ -270,21 +261,21 @@ export default function Header({
           />
 
           {/* Drawer Panel */}
-          <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white dark:bg-[#01091c] shadow-2xl flex flex-col z-50 overflow-hidden">
+          <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white shadow-2xl flex flex-col z-50 overflow-hidden">
             {/* Drawer Header */}
-            <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
+            <div className="p-4 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+                <div className="w-8 h-8 bg-[#204276] flex items-center justify-center text-white">
                   <GraduationCap className="w-5 h-5" />
                 </div>
-                <span className="font-extrabold text-base tracking-tight text-gray-900 dark:text-white">
-                  HEAD<span className="text-primary">EDUCARE</span>
+                <span className="font-extrabold text-base tracking-tight text-gray-900">
+                  HEAD<span className="text-[#2b7bb9]">EDUCARE</span>
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-2 text-gray-500 hover:bg-gray-100"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -300,16 +291,15 @@ export default function Header({
                 if (isContact) {
                   return (
                     <div key={section.title.name} className="pt-4">
-                     <a
-  key={section.title.name}
-  href="https://wa.me/8801910833888"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="ml-auto inline-flex items-center gap-2 whitespace-nowrap shrink-0 text-sm font-semibold transition-all duration-200 bg-primary text-white px-5 py-3.5 rounded-lg hover:bg-primary/90 shadow-sm shadow-primary/25 hover:shadow-md active:scale-95"
->
-  <Phone className="w-4 h-4 shrink-0" />
-  <span>+8801910 833 888</span>
-</a>
+                      <a
+                        href="https://wa.me/8801910833888"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sol-btn"
+                      >
+                        <Phone className="w-4 h-4 shrink-0" />
+                        <span>+8801910 833 888</span>
+                      </a>
                     </div>
                   );
                 }
@@ -320,7 +310,8 @@ export default function Header({
                       key={section.title.name}
                       href={section.title.url}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-2.5 px-3 text-sm font-semibold text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="block py-2.5 px-3 text-sm font-semibold text-gray-900 rounded-sm hover:bg-[#f2f2f2] hover:text-[#204276]"
+                      style={{ fontFamily: '"Oswald", sans-serif' }}
                     >
                       {section.title.name}
                     </a>
@@ -328,21 +319,21 @@ export default function Header({
                 }
 
                 return (
-                  <div key={section.title.name} className="border-b border-gray-100 dark:border-gray-800/80 pb-1">
+                  <div key={section.title.name} className="border-b border-gray-100 pb-1">
                     <button
                       type="button"
                       onClick={() => toggleMobileItem(section.title.name)}
-                      className="w-full flex items-center justify-between py-2.5 px-3 text-left font-semibold text-sm text-gray-900 dark:text-white hover:text-primary transition-colors"
+                      className="w-full flex items-center justify-between py-2.5 px-3 text-left font-semibold text-sm text-gray-900 hover:text-[#204276] transition-colors uppercase tracking-wide"
+                      style={{ fontFamily: '"Oswald", sans-serif' }}
                     >
                       <span>{section.title.name}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 text-gray-400 ${
-                          isExpanded ? "rotate-180 text-primary" : ""
+                          isExpanded ? "rotate-180 text-[#204276]" : ""
                         }`}
                       />
                     </button>
 
-                    {/* Expanded Mobile Section */}
                     {isExpanded && (
                       <div className="pl-3 pr-1 pb-2 space-y-1">
                         {section.items.map((item) => {
@@ -354,24 +345,24 @@ export default function Header({
                                 <button
                                   type="button"
                                   onClick={() => toggleMobileItem(item.name)}
-                                  className="w-full flex items-center justify-between py-2 px-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/70 text-xs font-bold text-gray-900 dark:text-white"
+                                  className="w-full flex items-center justify-between py-2 px-2.5 bg-[#f2f2f2] text-xs font-bold text-gray-900"
                                 >
                                   <span>{item.name}</span>
                                   <ChevronDown
                                     className={`w-3.5 h-3.5 transition-transform ${
-                                      isSubExpanded ? "rotate-180 text-primary" : "text-gray-400"
+                                      isSubExpanded ? "rotate-180 text-[#204276]" : "text-gray-400"
                                     }`}
                                   />
                                 </button>
 
                                 {isSubExpanded && (
-                                  <div className="pl-3 py-1 space-y-1 border-l-2 border-primary/30 ml-2 mt-1">
+                                  <div className="pl-3 py-1 space-y-1 border-l-2 border-[#204276]/30 ml-2 mt-1">
                                     {item.items.map((sub) => (
                                       <a
                                         key={sub.name}
                                         href={sub.url}
                                         onClick={() => setMobileOpen(false)}
-                                        className="block py-1.5 px-2 text-xs text-gray-700 dark:text-gray-300 hover:text-primary"
+                                        className="block py-1.5 px-2 text-xs text-gray-700 hover:text-[#204276]"
                                       >
                                         {sub.name}
                                       </a>
@@ -387,7 +378,7 @@ export default function Header({
                               key={item.name}
                               href={item.url}
                               onClick={() => setMobileOpen(false)}
-                              className="block py-2 px-2.5 text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-primary rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50"
+                              className="block py-2 px-2.5 text-xs font-medium text-gray-700 hover:text-[#204276] rounded-sm hover:bg-[#f2f2f2]"
                             >
                               {item.name}
                             </a>
@@ -401,10 +392,10 @@ export default function Header({
             </div>
 
             {/* Mobile Footer CTA */}
-            <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#020b1f]">
+            <div className="p-4 border-t border-gray-200 bg-[#f2f2f2]">
               <a
                 href="/freeconsulation"
-                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-primary text-white text-xs font-bold shadow-md hover:bg-primary/90 transition-colors"
+                className="w-full inline-flex items-center justify-center py-3 px-4 sol-btn text-sm"
                 onClick={() => setMobileOpen(false)}
               >
                 Book Free Consultation

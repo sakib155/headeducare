@@ -87,13 +87,13 @@ const visaSteps = [
     icon: Search,
     title: "Eligibility Assessment",
     desc: "We evaluate your academic profile, financial background, and gap years to determine your visa success probability before starting.",
-    color: "#005B8F",
+    color: "#204276",
   },
   {
     icon: Target,
     title: "Document Collection",
     desc: "You provide raw documents; we create a customized checklist based on your specific country and university requirements.",
-    color: "#4A83F3",
+    color: "#7fb2dd",
   },
   {
     icon: Briefcase,
@@ -231,7 +231,7 @@ export default function VisaApplication() {
             transition: all .25s;
           }
           .visa-step-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .visa-step-header {

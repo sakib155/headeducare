@@ -22,7 +22,8 @@ import {
 /* ─── design tokens matching serviceComponents ─── */
 const BASE_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;900&display=swap');
-  .wp-page { font-family:"Lexend",sans-serif; color:#0d121b; }
+  .wp-page { font-family:"IBM Plex Sans",sans-serif; color:#1a1a1a; }
+  .wp-page h1, .wp-page h2, .wp-page h3, .wp-page h4 { font-family:"Roboto Slab",serif !important; }
   .wp-reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
   .wp-reveal.wp-visible { opacity:1; transform:none; }
   .wp-reveal:nth-child(2){transition-delay:.08s}
@@ -31,36 +32,36 @@ const BASE_STYLES = `
   .wp-reveal:nth-child(5){transition-delay:.32s}
   .wp-reveal:nth-child(6){transition-delay:.40s}
   .wp-container { max-width:1200px; margin:0 auto; padding:0 20px; }
-  .wp-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:40px; background:rgba(0,91,143,0.1); color:#005B8F; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
-  .wp-badge-dot { width:6px; height:6px; border-radius:50%; background:#005B8F; flex-shrink:0; }
-  .wp-h1 { font-size:clamp(36px,5vw,64px); font-weight:900; line-height:1.08; color:#0d121b; margin-bottom:20px; }
-  .wp-h1 span { color:#005B8F; }
-  .wp-h2 { font-size:clamp(24px,3vw,40px); font-weight:900; color:#0d121b; margin-bottom:12px; }
-  .wp-h2 span { color:#005B8F; }
-  .wp-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#005B8F; margin-bottom:10px; }
+  .wp-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(43,123,185,0.12); color:#204276; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
+  .wp-badge-dot { width:6px; height:6px; border-radius:50%; background:#204276; flex-shrink:0; }
+  .wp-h1 { font-size:clamp(36px,5vw,64px); font-weight:600; line-height:1.08; color:#1a1a1a; margin-bottom:20px; }
+  .wp-h1 span { color:#204276; }
+  .wp-h2 { font-size:clamp(24px,3vw,40px); font-weight:600; color:#1a1a1a; margin-bottom:12px; }
+  .wp-h2 span { color:#204276; }
+  .wp-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#204276; margin-bottom:10px; }
   .wp-lead { font-size:17px; color:#6b7280; line-height:1.75; font-weight:300; max-width:580px; }
   .wp-body { font-size:15px; color:#6b7280; line-height:1.8; font-weight:300; }
   .wp-section { padding:88px 0; }
-  .wp-section-alt { padding:88px 0; background:#f6f6f8; }
-  .wp-divider { height:1px; background:rgba(0,91,143,0.08); }
-  .wp-cta-btn { display:inline-flex; align-items:center; gap:8px; background:#005B8F; color:#fff; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:none; cursor:pointer; }
-  .wp-cta-btn:hover { background:#004a78; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,91,143,0.25); }
-  .wp-cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#005B8F; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:2px solid rgba(0,91,143,0.25); cursor:pointer; }
-  .wp-cta-btn-ghost:hover { background:rgba(0,91,143,0.06); transform:translateY(-2px); }
+  .wp-section-alt { padding:88px 0; background:#f2f2f2; }
+  .wp-divider { height:1px; background:rgba(32,66,118,0.08); }
+  .wp-cta-btn { display:inline-flex; align-items:center; gap:8px; background:#204276; color:#fff; padding:14px 28px; border-radius:3px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:none; cursor:pointer; }
+  .wp-cta-btn:hover { background:#16325c; transform:translateY(-2px); box-shadow:0 8px 24px rgba(32,66,118,0.25); }
+  .wp-cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#204276; padding:14px 28px; border-radius:3px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:2px solid rgba(32,66,118,0.25); cursor:pointer; }
+  .wp-cta-btn-ghost:hover { background:rgba(32,66,118,0.06); transform:translateY(-2px); }
   /* service card */
-  .svc-card { background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:20px; padding:32px 28px; transition:all .25s; display:flex; flex-direction:column; }
-  .svc-card:hover { box-shadow:0 8px 32px rgba(0,91,143,0.1); transform:translateY(-4px); border-color:rgba(0,91,143,0.15); }
-  .svc-icon-wrap { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; flex-shrink:0; }
+  .svc-card { background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:32px 28px; transition:all .25s; display:flex; flex-direction:column; }
+  .svc-card:hover { box-shadow:0 8px 32px rgba(32,66,118,0.1); transform:translateY(-4px); border-color:rgba(32,66,118,0.15); }
+  .svc-icon-wrap { width:52px; height:52px; border-radius:3px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; flex-shrink:0; }
   /* step card */
-  .step-card { background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:20px; padding:32px 28px 28px; position:relative; transition:all .25s; }
-  .step-card:hover { box-shadow:0 8px 32px rgba(0,91,143,0.1); transform:translateY(-4px); }
-  .step-num { position:absolute; top:-14px; left:20px; width:36px; height:36px; background:#005B8F; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:14px; font-family:"Lexend",sans-serif; }
+  .step-card { background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:32px 28px 28px; position:relative; transition:all .25s; }
+  .step-card:hover { box-shadow:0 8px 32px rgba(32,66,118,0.1); transform:translateY(-4px); }
+  .step-num { position:absolute; top:-14px; left:20px; width:36px; height:36px; background:#204276; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:14px; font-family:"Lexend",sans-serif; }
   /* country pill */
-  .c-pill { padding:7px 16px; border-radius:40px; background:#fff; border:1px solid rgba(0,91,143,0.15); font-size:13px; font-weight:600; color:#005B8F; }
+  .c-pill { padding:7px 16px; border-radius:3px; background:#fff; border:1px solid rgba(32,66,118,0.15); font-size:13px; font-weight:600; color:#204276; }
   /* commitment chip */
-  .commit-chip { display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:16px; padding:20px 22px; }
+  .commit-chip { display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:20px 22px; }
   /* stats strip */
-  .stats-strip { background:linear-gradient(135deg,#005B8F 0%,#004270 100%); padding:48px 0; }
+  .stats-strip { background:linear-gradient(135deg,#204276 0%,#0f203c 100%); padding:48px 0; }
   /* grid helpers */
   .g2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
   .g3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -91,7 +92,7 @@ function useReveal() {
 const services = [
   {
     icon: GraduationCap,
-    color: "#005B8F",
+    color: "#204276",
     title: "Admission Support",
     slug: "/services/admission-support",
     summary:
@@ -274,7 +275,7 @@ export default function WillProvide() {
             padding: "120px 0 100px",
             overflow: "hidden",
             background:
-              "linear-gradient(135deg,rgba(0,91,143,0.06) 0%,rgba(74,131,243,0.04) 100%)",
+              "linear-gradient(135deg,rgba(32,66,118,0.06) 0%,rgba(74,131,243,0.04) 100%)",
           }}
         >
           {/* blob */}
@@ -284,7 +285,7 @@ export default function WillProvide() {
               width: 480,
               height: 480,
               borderRadius: "50%",
-              background: "rgba(0,91,143,0.07)",
+              background: "rgba(32,66,118,0.07)",
               filter: "blur(80px)",
               top: -120,
               right: -80,
@@ -392,7 +393,7 @@ export default function WillProvide() {
                       style={{
                         fontWeight: 700,
                         fontSize: 17,
-                        color: "#0d121b",
+                        color: "#1a1a1a",
                         marginBottom: 10,
                       }}
                     >
@@ -497,7 +498,7 @@ export default function WillProvide() {
                       style={{
                         width: 44,
                         height: 44,
-                        background: "rgba(0,91,143,0.08)",
+                        background: "rgba(32,66,118,0.08)",
                         borderRadius: 12,
                         display: "flex",
                         alignItems: "center",
@@ -506,13 +507,13 @@ export default function WillProvide() {
                         marginTop: 8,
                       }}
                     >
-                      <Icon size={22} color="#005B8F" />
+                      <Icon size={22} color="#204276" />
                     </div>
                     <h4
                       style={{
                         fontWeight: 700,
                         fontSize: 15,
-                        color: "#0d121b",
+                        color: "#1a1a1a",
                         marginBottom: 8,
                       }}
                     >
@@ -535,7 +536,7 @@ export default function WillProvide() {
                       style={{
                         width: 44,
                         height: 44,
-                        background: "rgba(0,91,143,0.08)",
+                        background: "rgba(32,66,118,0.08)",
                         borderRadius: 12,
                         display: "flex",
                         alignItems: "center",
@@ -544,13 +545,13 @@ export default function WillProvide() {
                         marginTop: 8,
                       }}
                     >
-                      <Icon size={22} color="#005B8F" />
+                      <Icon size={22} color="#204276" />
                     </div>
                     <h4
                       style={{
                         fontWeight: 700,
                         fontSize: 15,
-                        color: "#0d121b",
+                        color: "#1a1a1a",
                         marginBottom: 8,
                       }}
                     >
@@ -634,7 +635,7 @@ export default function WillProvide() {
                       style={{
                         width: 48,
                         height: 48,
-                        background: "rgba(0,91,143,0.08)",
+                        background: "rgba(32,66,118,0.08)",
                         borderRadius: 12,
                         display: "flex",
                         alignItems: "center",
@@ -642,14 +643,14 @@ export default function WillProvide() {
                         flexShrink: 0,
                       }}
                     >
-                      <Icon size={22} color="#005B8F" />
+                      <Icon size={22} color="#204276" />
                     </div>
                     <div>
                       <h4
                         style={{
                           fontWeight: 700,
                           fontSize: 15,
-                          color: "#0d121b",
+                          color: "#1a1a1a",
                           marginBottom: 6,
                         }}
                       >
@@ -670,7 +671,7 @@ export default function WillProvide() {
         <section
           style={{
             padding: "80px 0",
-            background: "linear-gradient(135deg,#005B8F 0%,#004270 100%)",
+            background: "linear-gradient(135deg,#204276 0%,#0f203c 100%)",
             position: "relative",
             overflow: "hidden",
           }}
@@ -745,7 +746,7 @@ export default function WillProvide() {
                     alignItems: "center",
                     gap: 8,
                     background: "#fff",
-                    color: "#005B8F",
+                    color: "#204276",
                     padding: "14px 32px",
                     borderRadius: 12,
                     fontWeight: 700,

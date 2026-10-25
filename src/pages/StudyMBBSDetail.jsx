@@ -4,38 +4,39 @@ import {
 } from "lucide-react";
 
 const styles = `
-  .mbbs-page { font-family: 'Lexend', sans-serif; }
+  .mbbs-page { font-family: 'IBM Plex Sans', sans-serif; }
+  .mbbs-page h1, .mbbs-page h2, .mbbs-page h3 { font-family: 'Roboto Slab', serif; }
   .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); padding:72px 0 56px; }
   .dark .mbbs-hero { background:linear-gradient(135deg,#02182a,#0d1f35); }
   .mbbs-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
   .mbbs-section { padding: 80px 0; }
-  .mbbs-section-alt { padding: 80px 0; background: #f6f6f8; }
+  .mbbs-section-alt { padding: 80px 0; background: #f2f2f2; }
   .dark .mbbs-section-alt { background: #02182a; }
-  .mbbs-h1 { font-size: clamp(36px,5vw,56px); font-weight: 900; line-height: 1.08; margin-bottom: 20px; font-family: 'Lexend',sans-serif; }
-  .mbbs-h2 { font-size: clamp(24px,3vw,36px); font-weight: 900; margin-bottom: 12px; font-family: 'Lexend',sans-serif; }
-  .mbbs-h2 span { color: #005B8F; }
+  .mbbs-h1 { font-size: clamp(36px,5vw,56px); font-weight: 600; line-height: 1.08; margin-bottom: 20px; font-family: 'Roboto Slab',serif; }
+  .mbbs-h2 { font-size: clamp(24px,3vw,36px); font-weight: 600; margin-bottom: 12px; font-family: 'Roboto Slab',serif; }
+  .mbbs-h2 span { color: #204276; }
   .mbbs-body { font-size: 15px; color: #6b7280; line-height: 1.8; font-weight: 300; }
   .dark .mbbs-body { color: #9ca3af; }
   .mbbs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-  .mbbs-chip { padding: 10px 14px; border-radius: 12px; background: #fff; border: 1px solid rgba(0,91,143,0.12); font-size: 13px; font-weight: 600; color: #0d121b; transition: all .2s; display: flex; flex-direction: column; }
+  .mbbs-chip { padding: 10px 14px; border-radius: 3px; background: #fff; border: 1px solid rgba(32,66,118,0.12); font-size: 13px; font-weight: 600; color: #1a1a1a; transition: all .2s; display: flex; flex-direction: column; }
   .mbbs-chip small { font-size: 11px; font-weight: 400; color: #6b7280; margin-top: 4px; }
   .dark .mbbs-chip { background: #0d1f35; border-color: rgba(255,255,255,0.08); color: #f1f1f1; }
   .dark .mbbs-chip small { color: #9ca3af; }
-  .mbbs-feature-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 20px; padding: 28px; transition: all .25s; }
-  .mbbs-feature-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,91,143,0.1); }
+  .mbbs-feature-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 3px; padding: 28px; transition: all .25s; }
+  .mbbs-feature-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(32,66,118,0.1); }
   .dark .mbbs-feature-card { background: #0d1f35; border-color: rgba(255,255,255,0.06); }
   .mbbs-checklist { list-style: none; padding: 0; margin: 0; }
   .mbbs-checklist li { display: flex; align-items: center; gap: 10px; padding: 10px 0; font-size: 14px; color: #4b5563; font-weight: 400; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .dark .mbbs-checklist li { color: #9ca3af; border-color: rgba(255,255,255,0.08); }
   .mbbs-checklist li:last-child { border: none; }
   .mbbs-checklist li svg { width: 18px; height: 18px; color: #16a34a; flex-shrink: 0; }
-  .mbbs-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #005B8F; color: #fff; padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all .2s; }
-  .mbbs-cta-btn:hover { background: #004a78; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,91,143,0.25); }
-  .mbbs-back { display:inline-flex; align-items:center; gap:6px; color:#005B8F; font-size:14px; font-weight:600; text-decoration:none; margin-bottom:24px; }
+  .mbbs-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #204276; color: #fff; padding: 14px 28px; border-radius: 3px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all .2s; }
+  .mbbs-cta-btn:hover { background: #16325c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(32,66,118,0.25); }
+  .mbbs-back { display:inline-flex; align-items:center; gap:6px; color:#204276; font-size:14px; font-weight:600; text-decoration:none; margin-bottom:24px; }
   .mbbs-back:hover { text-decoration:underline; }
-  .mbbs-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 40px; background: rgba(0,91,143,0.1); color: #005B8F; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
-  .dark .mbbs-badge { background: rgba(74,131,243,0.15); color: #4A83F3; }
-  .mbbs-highlight-box { background: linear-gradient(135deg, #005B8F, #004270); border-radius: 20px; padding: 36px; color: #fff; }
+  .mbbs-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 40px; background: rgba(32,66,118,0.1); color: #204276; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
+  .dark .mbbs-badge { background: rgba(74,131,243,0.15); color: #7fb2dd; }
+  .mbbs-highlight-box { background: linear-gradient(135deg, #204276, #0f203c); border-radius: 3px; padding: 36px; color: #fff; }
   @media(max-width:768px) { .mbbs-section { padding: 48px 0; } .mbbs-section-alt { padding: 48px 0; } }
 `;
 
@@ -117,7 +118,7 @@ export default function StudyMBBSDetail() {
               <span style={{ fontSize: 48 }}>{data.flag}</span>
               <div>
                 <span className="mbbs-badge">Medical Studies</span>
-                <h1 className="mbbs-h1" style={{ color: "#0d121b" }}>MBBS in <span>{data.name}</span></h1>
+                <h1 className="mbbs-h1" style={{ color: "#1a1a1a" }}>MBBS in <span>{data.name}</span></h1>
               </div>
             </div>
             {data.intro && <p className="mbbs-body" style={{ fontSize: 16, maxWidth: 700 }}>{data.intro}</p>}
@@ -130,10 +131,10 @@ export default function StudyMBBSDetail() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
                 {data.sections.map((s, i) => (
                   <div key={i} className="mbbs-feature-card">
-                    <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                      <s.icon size={22} color="#005B8F" />
+                    <div style={{ width: 44, height: 44, borderRadius: 3, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                      <s.icon size={22} color="#204276" />
                     </div>
-                    <h4 style={{ fontWeight: 700, fontSize: 16, color: "#0d121b", marginBottom: 8 }}>{s.title}</h4>
+                    <h4 style={{ fontWeight: 700, fontSize: 16, color: "#1a1a1a", marginBottom: 8 }}>{s.title}</h4>
                     <p className="mbbs-body" style={{ fontSize: 14 }}>{s.desc}</p>
                   </div>
                 ))}
@@ -145,10 +146,10 @@ export default function StudyMBBSDetail() {
         {data.hasUniversityTable && (
           <section className={slug === "hungary" ? "mbbs-section" : "mbbs-section-alt"}>
             <div className="mbbs-container">
-              <div style={{ background: "#fff", borderRadius: 20, border: "1px solid rgba(0,0,0,0.06)", padding: 32 }}>
+              <div style={{ background: "#fff", borderRadius: 3, border: "1px solid rgba(0,0,0,0.06)", padding: 32 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <Award size={28} color="#005B8F" />
-                  <h3 style={{ fontWeight: 900, fontSize: 20, color: "#0d121b", fontFamily: "'Lexend',sans-serif" }}>{data.universityTableTitle}</h3>
+                  <Award size={28} color="#204276" />
+                  <h3 style={{ fontWeight: 600, fontSize: 20, color: "#1a1a1a", fontFamily: "'Roboto Slab',serif" }}>{data.universityTableTitle}</h3>
                 </div>
                 {data.universityTableNote && <p className="mbbs-body" style={{ fontSize: 14, marginBottom: 24 }}>{data.universityTableNote}</p>}
                 <div className="mbbs-grid">
@@ -178,8 +179,8 @@ export default function StudyMBBSDetail() {
           <div className="mbbs-container">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
               <div className="mbbs-feature-card">
-                <FileText size={24} color="#005B8F" style={{ marginBottom: 14 }} />
-                <h4 style={{ fontWeight: 700, fontSize: 16, color: "#0d121b", marginBottom: 14 }}>Application Checklist</h4>
+                <FileText size={24} color="#204276" style={{ marginBottom: 14 }} />
+                <h4 style={{ fontWeight: 700, fontSize: 16, color: "#1a1a1a", marginBottom: 14 }}>Application Checklist</h4>
                 <ul className="mbbs-checklist">
                   {data.checklist.map((item, i) => (
                     <li key={i}><CheckCircle size={16} /> {item}</li>
@@ -187,8 +188,8 @@ export default function StudyMBBSDetail() {
                 </ul>
               </div>
               <div className="mbbs-feature-card">
-                <FileText size={24} color="#005B8F" style={{ marginBottom: 14 }} />
-                <h4 style={{ fontWeight: 700, fontSize: 16, color: "#0d121b", marginBottom: 14 }}>Visa Related Information</h4>
+                <FileText size={24} color="#204276" style={{ marginBottom: 14 }} />
+                <h4 style={{ fontWeight: 700, fontSize: 16, color: "#1a1a1a", marginBottom: 14 }}>Visa Related Information</h4>
                 <ul className="mbbs-checklist">
                   {data.visaDocs.map((item, i) => (
                     <li key={i}><CheckCircle size={16} /> {item}</li>
@@ -202,13 +203,13 @@ export default function StudyMBBSDetail() {
         <section className="mbbs-section">
           <div className="mbbs-container text-center">
             <div className="mbbs-highlight-box">
-              <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, marginBottom: 14, fontFamily: "'Lexend',sans-serif" }}>
+              <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 600, marginBottom: 14, fontFamily: "'Roboto Slab',serif" }}>
                 Ready to Start Your Medical Journey?
               </h2>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 520, margin: "0 auto 28px" }}>
                 Book a free consultation with our experts today, we'll guide you through every step of the MBBS admission process.
               </p>
-              <Link to="/freeconsulation" className="mbbs-cta-btn" style={{ background: "#fff", color: "#005B8F" }}>
+              <Link to="/freeconsulation" className="mbbs-cta-btn" style={{ background: "#fff", color: "#204276" }}>
                 Book Free Consultation <ChevronRight size={18} />
               </Link>
             </div>

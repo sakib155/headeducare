@@ -83,7 +83,7 @@ export default function USMentorship() {
             transition: all 0.3s ease;
           }
           .mentor-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .mentor-card-header {
@@ -148,9 +148,9 @@ export default function USMentorship() {
             flex-direction: column;
           }
           .profile-card:hover {
-            box-shadow: 0 18px 50px rgba(0,91,143,0.14);
+            box-shadow: 0 18px 50px rgba(32,66,118,0.14);
             transform: translateY(-6px);
-            border-color: rgba(0,91,143,0.35);
+            border-color: rgba(32,66,118,0.35);
           }
           .profile-card-image-wrap {
             position: relative;
@@ -222,8 +222,8 @@ export default function USMentorship() {
             font-weight: 600;
             font-family: Lexend, sans-serif;
             color: var(--srv-text-primary);
-            background: rgba(0,91,143,0.06);
-            border: 1px solid rgba(0,91,143,0.14);
+            background: rgba(32,66,118,0.06);
+            border: 1px solid rgba(32,66,118,0.14);
             padding: 5px 12px;
             border-radius: 99px;
           }
@@ -249,8 +249,8 @@ export default function USMentorship() {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0,91,143,0.08);
-            color: #005B8F;
+            background: rgba(32,66,118,0.08);
+            color: #204276;
           }
           .dark .profile-card-detail-icon {
             background: rgba(96,165,250,0.12);
@@ -284,7 +284,7 @@ export default function USMentorship() {
             gap: 8px;
             font-size: 12px;
             font-weight: 700;
-            color: #005B8F;
+            color: #204276;
             font-family: Lexend, sans-serif;
           }
           .dark .profile-card-check {
@@ -325,7 +325,7 @@ export default function USMentorship() {
             <div className="mentor-grid">
               <div className="mentor-card">
                 <div className="mentor-card-header">
-                  <div className="mentor-card-icon" style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}>
+                  <div className="mentor-card-icon" style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}>
                     <Sparkles size={22} />
                   </div>
                   <h3 className="mentor-card-title" style={{ color: "var(--srv-text-primary)" }}>

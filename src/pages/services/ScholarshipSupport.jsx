@@ -94,13 +94,13 @@ const scholarshipTypes = [
   {
     icon: Star,
     type: "Merit-Based Scholarships",
-    color: "#005B8F",
+    color: "#204276",
     desc: "Awarded for outstanding academic achievement, standardised test scores, or exceptional talent in a particular field. Highly competitive and prestigious.",
   },
   {
     icon: Users,
     type: "Need-Based Scholarships",
-    color: "#4A83F3",
+    color: "#7fb2dd",
     desc: "Designed for students who demonstrate financial need. Often combined with merit criteria and require detailed financial documentation.",
   },
   {
@@ -277,19 +277,19 @@ export default function ScholarshipSupport() {
         {BASE_STYLES +
           `
         .schol-type-card { border-radius:20px; overflow:hidden; border:1px solid var(--srv-border); background:var(--srv-bg-card); transition:all .25s; }
-        .schol-type-card:hover { box-shadow:0 8px 32px rgba(0,91,143,0.1); transform:translateY(-4px); border-color:rgba(0,91,143,0.2); }
+        .schol-type-card:hover { box-shadow:0 8px 32px rgba(32,66,118,0.1); transform:translateY(-4px); border-color:rgba(32,66,118,0.2); }
         .dark .schol-type-card:hover { border-color:rgba(74,131,243,0.3); }
         .schol-type-header { padding:20px 24px; display:flex; align-items:center; gap:12px; }
         .schol-type-body { padding:16px 24px 22px; }
 
-        .schol-table { width:100%; border-collapse:collapse; border-radius:16px; overflow:hidden; border:1px solid rgba(0,91,143,0.1); }
+        .schol-table { width:100%; border-collapse:collapse; border-radius:16px; overflow:hidden; border:1px solid rgba(32,66,118,0.1); }
         .dark .schol-table { border-color:rgba(74,131,243,0.15); }
-        .schol-table thead tr { background:#005B8F; }
+        .schol-table thead tr { background:#204276; }
         .schol-table thead th { padding:14px 18px; color:#fff; font-size:12px; font-weight:700; text-align:left; letter-spacing:.06em; text-transform:uppercase; font-family:Lexend,sans-serif; }
-        .schol-table tbody tr { border-bottom:1px solid rgba(0,91,143,0.06); transition:background .15s; background:var(--srv-bg-card); }
+        .schol-table tbody tr { border-bottom:1px solid rgba(32,66,118,0.06); transition:background .15s; background:var(--srv-bg-card); }
         .dark .schol-table tbody tr { border-bottom-color:rgba(74,131,243,0.08); }
         .schol-table tbody tr:last-child { border-bottom:none; }
-        .schol-table tbody tr:hover { background:rgba(0,91,143,0.03); }
+        .schol-table tbody tr:hover { background:rgba(32,66,118,0.03); }
         .dark .schol-table tbody tr:hover { background:rgba(74,131,243,0.06); }
         .schol-table tbody td { padding:14px 18px; font-size:14px; color:var(--srv-text-body); font-family:Lexend,sans-serif; }
         .schol-table tbody td:first-child { font-weight:700; color:var(--srv-text-primary); }
@@ -414,7 +414,7 @@ export default function ScholarshipSupport() {
                         >
                           <Award
                             size={15}
-                            color="#005B8F"
+                            color="#204276"
                             style={{ flexShrink: 0 }}
                           />
                           {row.name}
@@ -425,8 +425,8 @@ export default function ScholarshipSupport() {
                         <span
                           className="schol-badge-pill"
                           style={{
-                            background: "rgba(0,91,143,0.12)",
-                            color: "#4A83F3",
+                            background: "rgba(32,66,118,0.12)",
+                            color: "#7fb2dd",
                           }}
                         >
                           {row.level}

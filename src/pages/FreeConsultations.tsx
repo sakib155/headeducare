@@ -70,21 +70,29 @@ export default function FreeConsultation() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative py-24 overflow-hidden bg-blue-50 greyhomelightbg">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-[#0d121b] greyhome mb-6">
-            Book Your <span className="text-primary">Free Consultation</span>
+      <section
+        className="sol-overlay"
+        style={{
+          backgroundImage:
+            "url(/assets/prettiest-college-campuses-princeton-1592777643.avif)",
+        }}
+      >
+        <div className="max-w-6xl mx-auto px-4 py-24 text-center">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-6">
+            Book Your <span className="text-[#7fb2dd]">Free Consultation</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+          <hr className="sol-separator sol-separator-light" />
+          <p className="text-lg text-white/85 max-w-2xl mx-auto mb-8 mt-6">
             Talk to our expert counselors and get a personalized roadmap for
             your study abroad or migration journey.
           </p>
 
           <button
             onClick={scrollToForm}
-            className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-primary/90"
+            className="sol-btn-light text-lg"
           >
             Book Free Consultation
+            <span className="material-symbols-outlined">arrow_downward</span>
           </button>
         </div>
       </section>
@@ -92,7 +100,7 @@ export default function FreeConsultation() {
       {/* HOW IT WORKS */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-14 text-[#0d121b] dark:text-white">
+          <h2 className="text-3xl font-bold text-center mb-14 text-[#1a1a1a] dark:text-white">
             How It Works
           </h2>
 
@@ -116,12 +124,12 @@ export default function FreeConsultation() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border border-gray-100 text-center"
+                className="p-8 rounded-sm border border-gray-100 text-center"
               >
                 <div className="text-primary text-3xl font-black mb-4">
                   {item.step}
                 </div>
-                <h3 className="font-bold text-xl mb-2 text-[#0d121b] greyhome">
+                <h3 className="font-bold text-xl mb-2 text-[#1a1a1a] greyhome">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
@@ -139,9 +147,9 @@ export default function FreeConsultation() {
             <div className="lg:col-span-3" ref={formRef}>
               <form
                 onSubmit={handleSubmit}
-                className="bg-background-light dark:bg-gray-800 p-8 sm:p-10 rounded-2xl border border-gray-100 dark:border-gray-700"
+                className="bg-background-light dark:bg-gray-800 p-8 sm:p-10 rounded-sm border border-gray-100 dark:border-gray-700"
               >
-                <h3 className="text-2xl font-bold text-[#0d121b] dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-2">
                   Book Your Free Consultation
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-8 text-sm">
@@ -159,7 +167,7 @@ export default function FreeConsultation() {
                       value={form.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="Your full name"
                     />
                   </div>
@@ -173,7 +181,7 @@ export default function FreeConsultation() {
                       value={form.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -190,7 +198,7 @@ export default function FreeConsultation() {
                       value={form.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="+880 1XXX XXXXXX"
                     />
                   </div>
@@ -202,7 +210,7 @@ export default function FreeConsultation() {
                       name="country_interest"
                       value={form.country_interest}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select country</option>
                       {countries.map((c) => (
@@ -223,7 +231,7 @@ export default function FreeConsultation() {
                       name="service_interest"
                       value={form.service_interest}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select service</option>
                       <option>Study Abroad</option>
@@ -242,7 +250,7 @@ export default function FreeConsultation() {
                       name="preferred_contact"
                       value={form.preferred_contact}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select method</option>
                       <option>Phone Call</option>
@@ -265,7 +273,7 @@ export default function FreeConsultation() {
                       value={form.preferred_date}
                       onChange={handleChange}
                       min={new Date().toISOString().split("T")[0]}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -276,7 +284,7 @@ export default function FreeConsultation() {
                       name="preferred_time"
                       value={form.preferred_time}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select time slot</option>
                       <option>9:00 AM – 10:00 AM</option>
@@ -300,7 +308,7 @@ export default function FreeConsultation() {
                     value={form.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     placeholder="Tell us about your goals, current situation, or any questions..."
                   />
                 </div>
@@ -308,7 +316,7 @@ export default function FreeConsultation() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full sol-btn justify-center text-lg disabled:opacity-50"
                 >
                   {status === "sending" ? (
                     <>
@@ -340,8 +348,8 @@ export default function FreeConsultation() {
 
             {/* Side info */}
             <div className="lg:col-span-2 flex flex-col gap-6 justify-start pt-2">
-              <div className="p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
-                <h4 className="font-bold text-lg text-[#0d121b] dark:text-white mb-4">
+              <div className="p-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                <h4 className="font-bold text-lg text-[#1a1a1a] dark:text-white mb-4">
                   What You'll Get
                 </h4>
                 <ul className="space-y-3">
@@ -365,8 +373,8 @@ export default function FreeConsultation() {
                 </ul>
               </div>
 
-              <div className="p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
-                <h4 className="font-bold text-lg text-[#0d121b] dark:text-white mb-4">
+              <div className="p-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                <h4 className="font-bold text-lg text-[#1a1a1a] dark:text-white mb-4">
                   Contact Us Directly
                 </h4>
                 <div className="space-y-3">
@@ -395,14 +403,14 @@ export default function FreeConsultation() {
       {/* OFFICE / MAP */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-4 text-[#0d121b] dark:text-white">
+          <h2 className="text-3xl font-bold text-center mb-4 text-[#1a1a1a] dark:text-white">
             Visit Our Office
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-10">
             Head Educare, Dhaka, Bangladesh. Drop by for a face-to-face
             consultation with our expert counselors.
           </p>
-          <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 h-[500px] shadow-lg">
+          <div className="rounded-sm overflow-hidden border border-gray-100 dark:border-gray-700 h-[500px] shadow-lg">
             <iframe
               title="Head Educare Location"
               width="100%"
@@ -420,7 +428,7 @@ export default function FreeConsultation() {
       {/* CONNECT METHODS */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-14 text-[#0d121b] dark:text-white">
+          <h2 className="text-3xl font-bold text-center mb-14 text-[#1a1a1a] dark:text-white">
             Choose How You Want to Connect
           </h2>
 
@@ -444,12 +452,12 @@ export default function FreeConsultation() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border border-gray-100 text-center"
+                className="p-8 rounded-sm border border-gray-100 text-center"
               >
                 <span className="material-symbols-outlined text-primary text-4xl mb-4 block">
                   {item.icon}
                 </span>
-                <h3 className="font-bold text-xl mb-2 text-[#0d121b] greyhome">
+                <h3 className="font-bold text-xl mb-2 text-[#1a1a1a] greyhome">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
@@ -460,19 +468,21 @@ export default function FreeConsultation() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 greyhomelightbg text-white text-center">
-        <h2 className="text-3xl sm:text-4xl font-black mb-6">
+      <section className="sol-dark-strip py-24 text-center">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-white">
           Ready to Start Your Journey?
         </h2>
-        <p className="mb-8 text-lg opacity-90">
+        <hr className="sol-separator sol-separator-light" />
+        <p className="mb-8 text-lg opacity-90 text-white mt-6">
           Book your free consultation today and take the first step.
         </p>
 
         <button
           onClick={scrollToForm}
-          className="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-gray-100"
+          className="sol-btn-light text-lg"
         >
           Get Free Consultation
+          <span className="material-symbols-outlined">arrow_upward</span>
         </button>
       </section>
     </div>

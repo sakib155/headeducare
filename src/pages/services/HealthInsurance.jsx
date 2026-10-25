@@ -266,7 +266,7 @@ export default function HealthInsurance() {
                         style={{
                           fontWeight: 900,
                           fontSize: 22,
-                          color: "#005B8F",
+                          color: "#204276",
                           fontFamily: "Lexend,sans-serif",
                           lineHeight: 1,
                         }}
@@ -333,8 +333,8 @@ export default function HealthInsurance() {
                           position: "absolute",
                           top: 20,
                           right: 20,
-                          background: "rgba(0,91,143,0.1)",
-                          color: "#005B8F",
+                          background: "rgba(32,66,118,0.1)",
+                          color: "#204276",
                           fontSize: 11,
                           fontWeight: 700,
                           padding: "4px 12px",
@@ -363,7 +363,7 @@ export default function HealthInsurance() {
                           style={{
                             fontSize: 11,
                             fontWeight: 700,
-                            color: "#005B8F",
+                            color: "#204276",
                             letterSpacing: ".08em",
                             textTransform: "uppercase",
                             fontFamily: "Lexend,sans-serif",

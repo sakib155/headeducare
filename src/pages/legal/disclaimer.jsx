@@ -120,10 +120,10 @@ const severityConfig = {
     label: "Important",
   },
   low: {
-    color: "#005B8F",
-    bg: "rgba(0,91,143,0.04)",
-    border: "rgba(0,91,143,0.1)",
-    badge: "rgba(0,91,143,0.08)",
+    color: "#204276",
+    bg: "rgba(32,66,118,0.04)",
+    border: "rgba(32,66,118,0.1)",
+    badge: "rgba(32,66,118,0.08)",
     label: "Note",
   },
 };
@@ -136,12 +136,12 @@ export default function Disclaimer() {
       <style>{`
         .dis-reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
         .dis-reveal.dis-visible { opacity:1; transform:none; }
-        .dis-card { border-radius:20px; overflow:hidden; margin-bottom:20px; transition:box-shadow .25s; }
+        .dis-card { border-radius:3px; overflow:hidden; margin-bottom:20px; transition:box-shadow .25s; }
         .dis-card:hover { box-shadow:0 6px 30px rgba(0,0,0,0.07); }
         .dis-card-header { display:flex; align-items:flex-start; gap:16px; padding:24px 28px; cursor:pointer; }
         .dis-card-body { padding:0 28px 24px; }
-        .dis-card-body p { font-size:14px; line-height:1.8; color:#6b7280; font-family:"Lexend",sans-serif; font-weight:300; }
-        .dis-summary { font-size:13px; color:#9ca3af; font-family:"Lexend",sans-serif; margin-top:4px; }
+        .dis-card-body p { font-size:14px; line-height:1.8; color:#6b7280; font-family:"IBM Plex Sans",sans-serif; font-weight:300; }
+        .dis-summary { font-size:13px; color:#9ca3af; font-family:"IBM Plex Sans",sans-serif; margin-top:4px; }
       `}</style>
 
       <div ref={containerRef}>
@@ -150,7 +150,7 @@ export default function Disclaimer() {
           className="relative py-16 lg:py-20 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg,rgba(220,38,38,0.04) 0%,rgba(0,91,143,0.04) 100%)",
+              "linear-gradient(135deg,rgba(220,38,38,0.04) 0%,rgba(32,66,118,0.04) 100%)",
           }}
         >
           <div
@@ -177,7 +177,7 @@ export default function Disclaimer() {
               </div>
               <h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span style={{ color: "#dc2626" }}>Disclaimer</span>
               </h1>
@@ -185,7 +185,7 @@ export default function Disclaimer() {
                 className="text-lg leading-relaxed mb-6"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -195,7 +195,7 @@ export default function Disclaimer() {
               </p>
               <div
                 className="flex flex-wrap gap-6 text-sm"
-                style={{ color: "#6b7280", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" /> Effective: January 1, 2025
@@ -222,7 +222,7 @@ export default function Disclaimer() {
             <div>
               <p
                 className="font-black text-base mb-2 text-primary"
-                style={{ fontFamily: "Lexend, sans-serif" }}
+                style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 Read Before Using Our Services
               </p>
@@ -230,7 +230,7 @@ export default function Disclaimer() {
                 className="text-sm leading-relaxed"
                 style={{
                   color: "#7f1d1d",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -253,7 +253,7 @@ export default function Disclaimer() {
                 style={{
                   background: val.badge,
                   color: val.color,
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                 }}
               >
                 <span
@@ -270,7 +270,7 @@ export default function Disclaimer() {
             ))}
             <span
               className="text-xs flex items-center"
-              style={{ color: "#9ca3af", fontFamily: "Lexend, sans-serif" }}
+              style={{ color: "#9ca3af", fontFamily: "'IBM Plex Sans', sans-serif" }}
             >
              , severity indicators
             </span>
@@ -297,8 +297,8 @@ export default function Disclaimer() {
                       <h3
                         className="font-black text-lg"
                         style={{
-                          color: "#0d121b",
-                          fontFamily: "Lexend, sans-serif",
+                          color: "#1a1a1a",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         {item.title}
@@ -308,7 +308,7 @@ export default function Disclaimer() {
                         style={{
                           background: conf.badge,
                           color: conf.color,
-                          fontFamily: "Lexend, sans-serif",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         {conf.label}
@@ -335,13 +335,13 @@ export default function Disclaimer() {
           <div
             className="dis-reveal rounded-2xl p-8 mt-8"
             style={{
-              background: "rgba(0,91,143,0.05)",
-              border: "1px solid rgba(0,91,143,0.12)",
+              background: "rgba(32,66,118,0.05)",
+              border: "1px solid rgba(32,66,118,0.12)",
             }}
           >
             <h3
               className="text-lg font-black mb-3"
-              style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+              style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
             >
               Questions About These Disclaimers?
             </h3>
@@ -349,7 +349,7 @@ export default function Disclaimer() {
               className="text-sm leading-relaxed mb-5"
               style={{
                 color: "#6b7280",
-                fontFamily: "Lexend, sans-serif",
+                fontFamily: "'IBM Plex Sans', sans-serif",
                 fontWeight: 300,
               }}
             >
@@ -359,47 +359,47 @@ export default function Disclaimer() {
             </p>
             <div
               className="grid sm:grid-cols-3 gap-4 text-sm"
-              style={{ fontFamily: "Lexend, sans-serif" }}
+              style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}
             >
               <div
                 className="p-4 rounded-xl bg-white"
-                style={{ border: "1px solid rgba(0,91,143,0.1)" }}
+                style={{ border: "1px solid rgba(32,66,118,0.1)" }}
               >
                 <p
                   className="text-xs font-bold uppercase tracking-wider mb-1"
-                  style={{ color: "#005B8F" }}
+                  style={{ color: "#204276" }}
                 >
                   Email
                 </p>
-                <p style={{ color: "#0d121b", fontWeight: 600 }}>
+                <p style={{ color: "#1a1a1a", fontWeight: 600 }}>
                   info@headeducare.com
                 </p>
               </div>
               <div
                 className="p-4 rounded-xl bg-white"
-                style={{ border: "1px solid rgba(0,91,143,0.1)" }}
+                style={{ border: "1px solid rgba(32,66,118,0.1)" }}
               >
                 <p
                   className="text-xs font-bold uppercase tracking-wider mb-1"
-                  style={{ color: "#005B8F" }}
+                  style={{ color: "#204276" }}
                 >
                   Office
                 </p>
-                <p style={{ color: "#0d121b", fontWeight: 600 }}>
+                <p style={{ color: "#1a1a1a", fontWeight: 600 }}>
                   West Panthapath, Dhaka
                 </p>
               </div>
               <div
                 className="p-4 rounded-xl bg-white"
-                style={{ border: "1px solid rgba(0,91,143,0.1)" }}
+                style={{ border: "1px solid rgba(32,66,118,0.1)" }}
               >
                 <p
                   className="text-xs font-bold uppercase tracking-wider mb-1"
-                  style={{ color: "#005B8F" }}
+                  style={{ color: "#204276" }}
                 >
                   Hours
                 </p>
-                <p style={{ color: "#0d121b", fontWeight: 600 }}>
+                <p style={{ color: "#1a1a1a", fontWeight: 600 }}>
                   Sun–Thu: 10AM–7PM
                 </p>
               </div>
@@ -409,7 +409,7 @@ export default function Disclaimer() {
           {/* Effective date footer */}
           <p
             className="text-xs text-center mt-10"
-            style={{ color: "#9ca3af", fontFamily: "Lexend, sans-serif" }}
+            style={{ color: "#9ca3af", fontFamily: "'IBM Plex Sans', sans-serif" }}
           >
             This disclaimer was last updated on March 15, 2025. Head Edu Care
             reserves the right to update this disclaimer at any time.

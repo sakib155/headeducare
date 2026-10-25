@@ -23,7 +23,7 @@ const whyStudyContent = {
       { title: "Flexibility", desc: "The US education system excels for its flexibility in course selection and institution transfer. This unique feature allows students to switch courses, colleges or universities seamlessly, setting it apart from other countries." },
       { title: "Career Opportunities", desc: "With a strong job market and post-study work options, the USA opens doors to promising careers." },
     ],
-    color: "#005B8F",
+    color: "#204276",
   },
   uk: {
     points: [
@@ -273,9 +273,9 @@ export default function CountryDetails() {
               <h2 className="ws-title">Why Study in {name}?</h2>
               {whyData.points.map((point, i) => (
                 <div key={i} className="ws-point" style={{ animationDelay: `${i * 0.1}s` }}>
-                  <div className="ws-num" style={{ background: "#005B8F" }}>{i + 1}</div>
+                  <div className="ws-num" style={{ background: "#204276" }}>{i + 1}</div>
                   <div className="ws-point-content">
-                    <h3 className="ws-point-title" style={{ color: "#005B8F" }}>{point.title}</h3>
+                    <h3 className="ws-point-title" style={{ color: "#204276" }}>{point.title}</h3>
                     <p className="ws-point-desc">{point.desc}</p>
                   </div>
                 </div>

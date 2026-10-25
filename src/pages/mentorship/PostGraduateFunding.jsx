@@ -8,7 +8,7 @@ import {
 import { postGraduateFundingData as d } from "./mentorshipData";
 
 const fundingIcons = [BookOpen, Microscope, Award, DollarSign, GraduationCap, Globe];
-const fundingColors = ["#005B8F", "#7c3aed", "#059669", "#d97706", "#0891b2", "#dc2626"];
+const fundingColors = ["#204276", "#7c3aed", "#059669", "#d97706", "#0891b2", "#dc2626"];
 
 export default function PostGraduateFunding() {
   const containerRef = useReveal();

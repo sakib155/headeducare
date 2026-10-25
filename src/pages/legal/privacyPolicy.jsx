@@ -190,19 +190,19 @@ export default function PrivacyPolicy() {
       <style>{`
         .pp-reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
         .pp-reveal.pp-visible { opacity:1; transform:none; }
-        .pp-nav-link { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; cursor:pointer; transition:all .2s; font-size:13px; font-family:"Lexend",sans-serif; font-weight:400; color:#6b7280; border:none; background:none; text-align:left; width:100%; }
-        .pp-nav-link:hover { background:rgba(0,91,143,0.06); color:#005B8F; }
-        .pp-nav-link.active { background:rgba(0,91,143,0.1); color:#005B8F; font-weight:600; }
-        .pp-nav-link.active .pp-nav-dot { background:#005B8F; }
+        .pp-nav-link { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:3px; cursor:pointer; transition:all .2s; font-size:13px; font-family:"IBM Plex Sans",sans-serif; font-weight:400; color:#6b7280; border:none; background:none; text-align:left; width:100%; }
+        .pp-nav-link:hover { background:rgba(32,66,118,0.06); color:#204276; }
+        .pp-nav-link.active { background:rgba(32,66,118,0.1); color:#204276; font-weight:600; }
+        .pp-nav-link.active .pp-nav-dot { background:#204276; }
         .pp-nav-dot { width:6px; height:6px; border-radius:50%; background:#d1d5db; flex-shrink:0; transition:background .2s; }
         .pp-section { scroll-margin-top: 100px; }
-        .pp-section-icon { width:48px; height:48px; background:rgba(0,91,143,0.08); border-radius:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-        .pp-section-icon svg { width:22px; height:22px; stroke:#005B8F; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-        .pp-card { background:#f6f6f8; border:1px solid rgba(0,0,0,0.06); border-radius:16px; padding:28px 32px; margin-bottom:16px; transition:box-shadow .2s; }
-        .pp-card:hover { box-shadow:0 4px 20px rgba(0,91,143,0.08); }
-        .pp-subtitle { font-size:14px; font-weight:700; color:#005B8F; margin-bottom:8px; font-family:"Lexend",sans-serif; }
-        .pp-body { font-size:15px; color:#4b5563; line-height:1.75; font-family:"Lexend",sans-serif; font-weight:300; }
-        .pp-divider { height:1px; background:rgba(0,91,143,0.08); margin:40px 0; }
+        .pp-section-icon { width:48px; height:48px; background:rgba(32,66,118,0.08); border-radius:3px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .pp-section-icon svg { width:22px; height:22px; stroke:#204276; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .pp-card { background:#f2f2f2; border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:28px 32px; margin-bottom:16px; transition:box-shadow .2s; }
+        .pp-card:hover { box-shadow:0 4px 20px rgba(32,66,118,0.08); }
+        .pp-subtitle { font-size:14px; font-weight:700; color:#204276; margin-bottom:8px; font-family:"IBM Plex Sans",sans-serif; }
+        .pp-body { font-size:15px; color:#4b5563; line-height:1.75; font-family:"IBM Plex Sans",sans-serif; font-weight:300; }
+        .pp-divider { height:1px; background:rgba(32,66,118,0.08); margin:40px 0; }
         @media(max-width:1024px){ .pp-sidebar{ display:none; } }
         @media(min-width:1024px){ .pp-mobile-toc{ display:none; } }
       `}</style>
@@ -213,25 +213,25 @@ export default function PrivacyPolicy() {
           className="relative py-16 lg:py-20 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg,rgba(0,91,143,0.05) 0%,rgba(74,131,243,0.04) 100%)",
+              "linear-gradient(135deg,rgba(32,66,118,0.05) 0%,rgba(74,131,243,0.04) 100%)",
           }}
         >
           <div
             className="absolute top-0 right-0 w-96 h-96 rounded-full"
-            style={{ background: "rgba(0,91,143,0.06)", filter: "blur(80px)" }}
+            style={{ background: "rgba(32,66,118,0.06)", filter: "blur(80px)" }}
           />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl pp-reveal">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
-                style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}
+                style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}
               >
                 <span
                   style={{
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "#005B8F",
+                    background: "#204276",
                     flexShrink: 0,
                     display: "inline-block",
                   }}
@@ -240,15 +240,15 @@ export default function PrivacyPolicy() {
               </div>
               <h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
-                Privacy <span style={{ color: "#005B8F" }}>Policy</span>
+                Privacy <span style={{ color: "#204276" }}>Policy</span>
               </h1>
               <p
                 className="text-lg leading-relaxed mb-6"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -258,7 +258,7 @@ export default function PrivacyPolicy() {
               </p>
               <div
                 className="flex flex-wrap gap-6 text-sm"
-                style={{ color: "#6b7280", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" /> Effective: January 1, 2025
@@ -286,7 +286,7 @@ export default function PrivacyPolicy() {
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-4 px-2"
-                  style={{ color: "#005B8F", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   On this page
                 </p>
@@ -311,8 +311,8 @@ export default function PrivacyPolicy() {
                   <p
                     className="text-xs font-bold mb-2"
                     style={{
-                      color: "#0d121b",
-                      fontFamily: "Lexend, sans-serif",
+                      color: "#1a1a1a",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                     }}
                   >
                     Questions?
@@ -321,14 +321,14 @@ export default function PrivacyPolicy() {
                     className="text-xs leading-relaxed"
                     style={{
                       color: "#6b7280",
-                      fontFamily: "Lexend, sans-serif",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                     }}
                   >
                     Contact us at
                     <br />
                     <a
                       href="mailto:info@headeducare.com"
-                      style={{ color: "#005B8F", fontWeight: 600 }}
+                      style={{ color: "#204276", fontWeight: 600 }}
                     >
                       info@headeducare.com
                     </a>
@@ -346,7 +346,7 @@ export default function PrivacyPolicy() {
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-4"
-                  style={{ color: "#005B8F", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Contents
                 </p>
@@ -358,7 +358,7 @@ export default function PrivacyPolicy() {
                       className="text-left text-xs px-3 py-2 rounded-lg transition-colors hover:bg-blue-50"
                       style={{
                         color: "#6b7280",
-                        fontFamily: "Lexend, sans-serif",
+                        fontFamily: "'IBM Plex Sans', sans-serif",
                       }}
                     >
                       {s.title}
@@ -384,8 +384,8 @@ export default function PrivacyPolicy() {
                       <p
                         className="text-xs font-bold uppercase tracking-widest mb-1"
                         style={{
-                          color: "#005B8F",
-                          fontFamily: "Lexend, sans-serif",
+                          color: "#204276",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         Section {String(idx + 1).padStart(2, "0")}
@@ -393,8 +393,8 @@ export default function PrivacyPolicy() {
                       <h2
                         className="text-2xl font-black"
                         style={{
-                          color: "#0d121b",
-                          fontFamily: "Lexend, sans-serif",
+                          color: "#1a1a1a",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         {section.title}
@@ -417,13 +417,13 @@ export default function PrivacyPolicy() {
               <div
                 className="pp-reveal rounded-2xl p-8"
                 style={{
-                  background: "rgba(0,91,143,0.05)",
-                  border: "1px solid rgba(0,91,143,0.12)",
+                  background: "rgba(32,66,118,0.05)",
+                  border: "1px solid rgba(32,66,118,0.12)",
                 }}
               >
                 <h3
                   className="text-lg font-bold mb-2"
-                  style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Contact Our Privacy Team
                 </h3>
@@ -431,7 +431,7 @@ export default function PrivacyPolicy() {
                   className="text-sm leading-relaxed mb-4"
                   style={{
                     color: "#6b7280",
-                    fontFamily: "Lexend, sans-serif",
+                    fontFamily: "'IBM Plex Sans', sans-serif",
                     fontWeight: 300,
                   }}
                 >
@@ -440,11 +440,11 @@ export default function PrivacyPolicy() {
                 </p>
                 <div
                   className="flex flex-wrap gap-4 text-sm"
-                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
-                  <div style={{ fontFamily: "Lexend, sans-serif" }}>
+                  <div style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
                     <span
-                      style={{ color: "#005B8F", fontWeight: 600 }}
+                      style={{ color: "#204276", fontWeight: 600 }}
                       className="flex items-center gap-2"
                     >
                       <MailCheck className="h-4 w-4" /> info@headeducare.com

@@ -28,7 +28,7 @@ export function useReveal(cls = "mtr-visible") {
    BASE STYLES, injected once per page
 ───────────────────────────────────────────── */
 export const MENTOR_STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap');
 
   /* Reveal animation */
   .mtr-reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
@@ -40,68 +40,69 @@ export const MENTOR_STYLES = `
   .mtr-reveal:nth-child(6){transition-delay:.40s}
 
   /* Page base */
-  .mtr-page { font-family:"Lexend",sans-serif; color:#0d121b; }
+  .mtr-page { font-family:"IBM Plex Sans",sans-serif; color:#1a1a1a; }
+  .mtr-page h1, .mtr-page h2, .mtr-page h3, .mtr-page h4, .mtr-page h5 { font-family:"Roboto Slab",serif !important; }
 
   /* Hero */
   .mtr-hero { position:relative; padding:72px 0 56px; overflow:hidden; }
-  .mtr-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,91,143,0.06) 0%,rgba(74,131,243,0.04) 100%); }
+  .mtr-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,rgba(32,66,118,0.06) 0%,rgba(43,123,185,0.05) 100%); }
   .mtr-hero-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
 
   /* Badge */
-  .mtr-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:40px; background:rgba(0,91,143,0.1); color:#005B8F; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
-  .mtr-badge-dot { width:6px; height:6px; border-radius:50%; background:#005B8F; flex-shrink:0; }
+  .mtr-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(43,123,185,0.12); color:#204276; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif !important; }
+  .mtr-badge-dot { width:6px; height:6px; border-radius:50%; background:#2b7bb9; flex-shrink:0; }
 
   /* Typography */
-  .mtr-h1 { font-size:clamp(36px,5vw,64px); font-weight:900; line-height:1.08; color:#0d121b; margin-bottom:20px; font-family:"Lexend",sans-serif; }
-  .mtr-h1 span { color:#005B8F; }
-  .mtr-h2 { font-size:clamp(24px,3vw,40px); font-weight:900; color:#0d121b; margin-bottom:12px; font-family:"Lexend",sans-serif; }
-  .mtr-h2 span { color:#005B8F; }
+  .mtr-h1 { font-size:clamp(34px,4.5vw,56px); font-weight:600; line-height:1.12; color:#1a1a1a; margin-bottom:20px; font-family:"Roboto Slab",serif; }
+  .mtr-h1 span { color:#204276; }
+  .mtr-h2 { font-size:clamp(24px,3vw,38px); font-weight:600; color:#1a1a1a; margin-bottom:12px; font-family:"Roboto Slab",serif; }
+  .mtr-h2 span { color:#204276; }
   .mtr-lead { font-size:17px; color:#6b7280; line-height:1.75; font-weight:300; max-width:580px; }
-  .mtr-subtitle { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#005B8F; margin-bottom:10px; font-family:"Lexend",sans-serif; }
+  .mtr-subtitle { font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#2b7bb9; margin-bottom:10px; font-family:"Oswald",sans-serif !important; }
   .mtr-body { font-size:15px; color:#6b7280; line-height:1.8; font-weight:300; }
 
   /* Layout */
   .mtr-container { max-width:1200px; margin:0 auto; padding:0 20px; }
   .mtr-section { padding:88px 0; }
-  .mtr-section-alt { padding:88px 0; background:#f6f6f8; }
-  .mtr-divider { height:1px; background:rgba(0,91,143,0.08); margin:0; }
+  .mtr-section-alt { padding:88px 0; background:#f2f2f2; }
+  .mtr-divider { height:1px; background:rgba(32,66,118,0.12); margin:0; }
 
   /* Buttons */
-  .mtr-cta-btn { display:inline-flex; align-items:center; gap:8px; background:#005B8F; color:#fff; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:none; cursor:pointer; }
-  .mtr-cta-btn:hover { background:#004a78; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,91,143,0.25); }
-  .mtr-cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#005B8F; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:all .2s; font-family:"Lexend",sans-serif; border:2px solid rgba(0,91,143,0.25); cursor:pointer; }
-  .mtr-cta-btn-ghost:hover { background:rgba(0,91,143,0.06); transform:translateY(-2px); }
+  .mtr-cta-btn { display:inline-flex; align-items:center; gap:8px; background:#204276; color:#fff; padding:14px 28px; border-radius:3px; font-weight:700; font-size:15px; text-decoration:none; transition:all .25s; font-family:"Roboto",sans-serif !important; border:none; cursor:pointer; }
+  .mtr-cta-btn:hover { background:#000000; transform:translateY(-1px); box-shadow:0 10px 24px -10px rgba(0,0,0,0.5); }
+  .mtr-cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#204276; padding:14px 28px; border-radius:3px; font-weight:700; font-size:15px; text-decoration:none; transition:all .25s; font-family:"Roboto",sans-serif !important; border:2px solid rgba(32,66,118,0.4); cursor:pointer; }
+  .mtr-cta-btn-ghost:hover { background:rgba(32,66,118,0.06); transform:translateY(-2px); }
 
   /* Dark mode  */
   .dark .mtr-page { color:#f1f1f1; }
-  .dark .mtr-hero-bg { background:linear-gradient(135deg,rgba(0,91,143,0.12) 0%,rgba(74,131,243,0.08) 100%); }
+  .dark .mtr-hero-bg { background:linear-gradient(135deg,rgba(32,66,118,0.3) 0%,rgba(43,123,185,0.15) 100%); }
   .dark .mtr-h1 { color:#ffffff; }
   .dark .mtr-h2 { color:#ffffff; }
   .dark .mtr-lead { color:#9ca3af; }
   .dark .mtr-body { color:#9ca3af; }
-  .dark .mtr-badge { background:rgba(0,91,143,0.25); color:#60a5fa; }
-  .dark .mtr-badge-dot { background:#60a5fa; }
-  .dark .mtr-section-alt { background:#02182a; }
+  .dark .mtr-badge { background:rgba(127,178,221,0.2); color:#7fb2dd; }
+  .dark .mtr-badge-dot { background:#7fb2dd; }
+  .dark .mtr-section-alt { background:#0a1220; }
 
   /* Cards */
-  .dark .mtr-icon-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
-  .dark .mtr-step-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-icon-card { background:#13203a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-step-card { background:#13203a !important; border-color:rgba(255,255,255,0.06) !important; }
   .dark .mtr-card-title { color:#ffffff !important; }
   .dark .mtr-checklist-item { color:#d1d5db !important; }
-  .dark .mtr-tag { background:#02182a !important; color:#f1f1f1 !important; border-color:rgba(96,165,250,0.2) !important; }
-  .dark .mtr-prog-nav { background:#01091c !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-tag { background:#13203a !important; color:#f1f1f1 !important; border-color:rgba(127,178,221,0.25) !important; }
+  .dark .mtr-prog-nav { background:#0d1626 !important; border-color:rgba(255,255,255,0.06) !important; }
 
   /* FAQ */
-  .mtr-faq-q { color:#0d121b; }
+  .mtr-faq-q { color:#1a1a1a; }
   .dark .mtr-faq-q { color:#ffffff !important; }
   .dark .mtr-faq-item { border-color:rgba(255,255,255,0.1) !important; }
 
   /* InfoBox variants */
-  .dark .mtr-infobox-blue { background:rgba(0,91,143,0.15) !important; border-color:rgba(0,91,143,0.3) !important; }
+  .dark .mtr-infobox-blue { background:rgba(32,66,118,0.3) !important; border-color:rgba(127,178,221,0.3) !important; }
   .dark .mtr-infobox-green { background:rgba(22,163,74,0.1) !important; border-color:rgba(22,163,74,0.25) !important; }
   .dark .mtr-infobox-amber { background:rgba(245,158,11,0.1) !important; border-color:rgba(245,158,11,0.25) !important; }
   .dark .mtr-infobox-blue .mtr-infobox-title,
-  .dark .mtr-infobox-blue .mtr-infobox-icon > svg { color:#60a5fa !important; }
+  .dark .mtr-infobox-blue .mtr-infobox-icon > svg { color:#7fb2dd !important; }
   .dark .mtr-infobox-green .mtr-infobox-title,
   .dark .mtr-infobox-green .mtr-infobox-icon > svg { color:#4ade80 !important; }
   .dark .mtr-infobox-amber .mtr-infobox-title,
@@ -109,14 +110,14 @@ export const MENTOR_STYLES = `
 
   /* Layout components */
   .dark .mtr-vtl-title { color:#ffffff !important; }
-  .dark .mtr-proc-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-proc-card { background:#13203a !important; border-color:rgba(255,255,255,0.06) !important; }
   .dark .mtr-proc-title { color:#ffffff !important; }
   .dark .mtr-alt-title { color:#ffffff !important; }
   @media(max-width:640px){ .mtr-alt-row { flex-direction:column !important; } }
-  .dark .mtr-color-card { background:#02182a !important; }
+  .dark .mtr-color-card { background:#13203a !important; }
   .dark .mtr-cc-title { color:#ffffff !important; }
   .dark .mtr-pq-text { color:#e5e7eb !important; }
-  .dark .mtr-accent-card { background:#02182a !important; border-color:rgba(255,255,255,0.06) !important; }
+  .dark .mtr-accent-card { background:#13203a !important; border-color:rgba(255,255,255,0.06) !important; }
   .dark .mtr-ac-title { color:#ffffff !important; }
   .dark .mtr-tier-title { color:#ffffff !important; }
   .dark .mtr-tier-track { background:rgba(255,255,255,0.12) !important; }
@@ -151,7 +152,7 @@ export function MentorHero({
         style={{
           width: 400,
           height: 400,
-          background: "rgba(0,91,143,0.07)",
+          background: "rgba(32,66,118,0.07)",
           top: blobTop ?? -80,
           right: blobRight ?? -80,
         }}
@@ -215,7 +216,7 @@ export function MentorSectionHeader({ label, title, highlight, body, centered = 
 /* ─────────────────────────────────────────────
    ICON CARD
 ───────────────────────────────────────────── */
-export function MentorIconCard({ icon, title, desc, accent = "#005B8F", style = {} }) {
+export function MentorIconCard({ icon, title, desc, accent = "#204276", style = {} }) {
   const Icon = icon;
   return (
     <div
@@ -223,13 +224,13 @@ export function MentorIconCard({ icon, title, desc, accent = "#005B8F", style = 
       style={{
         background: "#fff",
         border: "1px solid rgba(0,0,0,0.06)",
-        borderRadius: 20,
+        borderRadius: 3,
         padding: "32px 28px",
         transition: "all .25s",
         ...style,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,91,143,0.1)";
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(32,66,118,0.1)";
         e.currentTarget.style.transform = "translateY(-4px)";
       }}
       onMouseLeave={(e) => {
@@ -256,7 +257,7 @@ export function MentorIconCard({ icon, title, desc, accent = "#005B8F", style = 
         style={{
           fontWeight: 700,
           fontSize: 16,
-          color: "#0d121b",
+          color: "#1a1a1a",
           marginBottom: 8,
           fontFamily: "Lexend,sans-serif",
         }}
@@ -282,13 +283,13 @@ export function MentorStepCard({ step, icon, title, desc }) {
       style={{
         background: "#fff",
         border: "1px solid rgba(0,0,0,0.06)",
-        borderRadius: 20,
+        borderRadius: 3,
         padding: "32px 28px",
         position: "relative",
         transition: "all .25s",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,91,143,0.1)";
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(32,66,118,0.1)";
         e.currentTarget.style.transform = "translateY(-4px)";
       }}
       onMouseLeave={(e) => {
@@ -303,7 +304,7 @@ export function MentorStepCard({ step, icon, title, desc }) {
           left: 20,
           width: 36,
           height: 36,
-          background: "#005B8F",
+          background: "#204276",
           color: "#fff",
           borderRadius: "50%",
           display: "flex",
@@ -317,14 +318,14 @@ export function MentorStepCard({ step, icon, title, desc }) {
         {step}
       </div>
       <div style={{ marginTop: 8 }}>
-        <span style={{ display: "block", marginBottom: 12, color: "#005B8F" }}>
+        <span style={{ display: "block", marginBottom: 12, color: "#204276" }}>
           <Icon size={28} />
         </span>
         <h4
           style={{
             fontWeight: 700,
             fontSize: 15,
-            color: "#0d121b",
+            color: "#1a1a1a",
             marginBottom: 8,
             fontFamily: "Lexend,sans-serif",
           }}
@@ -352,7 +353,7 @@ export function MentorFAQ({ items }) {
           key={i}
           className="mtr-reveal mtr-faq-item"
           style={{
-            border: `1px solid ${open === i ? "rgba(0,91,143,0.25)" : "rgba(0,0,0,0.07)"}`,
+            border: `1px solid ${open === i ? "rgba(32,66,118,0.25)" : "rgba(0,0,0,0.07)"}`,
             borderRadius: 16,
             overflow: "hidden",
             transition: "border .2s",
@@ -387,7 +388,7 @@ export function MentorFAQ({ items }) {
             <span
               style={{
                 fontSize: 20,
-                color: "#005B8F",
+                color: "#204276",
                 flexShrink: 0,
                 transform: open === i ? "rotate(45deg)" : "none",
                 transition: "transform .2s",
@@ -415,7 +416,7 @@ export function MentorFAQ({ items }) {
 ───────────────────────────────────────────── */
 export function MentorStatsStrip({ stats }) {
   return (
-    <section style={{ background: "#005B8F", padding: "56px 0" }}>
+    <section style={{ background: "#204276", padding: "56px 0" }}>
       <div className="mtr-container">
         <div
           style={{
@@ -482,7 +483,7 @@ export function MentorCtaBanner({
     <section
       style={{
         padding: "80px 0",
-        background: "linear-gradient(135deg,#005B8F 0%,#004270 100%)",
+        background: "linear-gradient(135deg,#204276 0%,#0f203c 100%)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -546,7 +547,7 @@ export function MentorCtaBanner({
               alignItems: "center",
               gap: 8,
               background: "#fff",
-              color: "#005B8F",
+              color: "#204276",
               padding: "14px 32px",
               borderRadius: 12,
               fontWeight: 700,
@@ -606,14 +607,14 @@ export function MentorCheckList({ items, columns = 1 }) {
               width: 20,
               height: 20,
               borderRadius: "50%",
-              background: "rgba(0,91,143,0.1)",
+              background: "rgba(32,66,118,0.1)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               flexShrink: 0,
               marginTop: 1,
               fontSize: 11,
-              color: "#005B8F",
+              color: "#204276",
             }}
           >
             ✓
@@ -630,7 +631,7 @@ export function MentorCheckList({ items, columns = 1 }) {
 ───────────────────────────────────────────── */
 export function MentorInfoBox({ icon: Icon, title, children, variant = "blue" }) {
   const variants = {
-    blue: { bg: "rgba(0,91,143,0.05)", border: "rgba(0,91,143,0.15)", title: "#005B8F" },
+    blue: { bg: "rgba(32,66,118,0.05)", border: "rgba(32,66,118,0.15)", title: "#204276" },
     green: { bg: "rgba(22,163,74,0.05)", border: "rgba(22,163,74,0.15)", title: "#166534" },
     amber: { bg: "rgba(245,158,11,0.06)", border: "rgba(245,158,11,0.2)", title: "#92400e" },
   };
@@ -641,7 +642,7 @@ export function MentorInfoBox({ icon: Icon, title, children, variant = "blue" })
       style={{
         background: v.bg,
         border: `1px solid ${v.border}`,
-        borderRadius: 20,
+        borderRadius: 3,
         padding: "28px 32px",
       }}
     >
@@ -678,10 +679,10 @@ export function MentorTagList({ tags }) {
             padding: "7px 16px",
             borderRadius: 40,
             background: "#fff",
-            border: "1px solid rgba(0,91,143,0.15)",
+            border: "1px solid rgba(32,66,118,0.15)",
             fontSize: 13,
             fontWeight: 600,
-            color: "#0d121b",
+            color: "#1a1a1a",
             fontFamily: "Lexend,sans-serif",
           }}
         >
@@ -699,7 +700,7 @@ export function MentorProgramNav({ pages, current }) {
   return (
     <nav
       style={{
-        background: "#f6f6f8",
+        background: "#f2f2f2",
         borderBottom: "1px solid rgba(0,0,0,0.06)",
         padding: "0 20px",
         overflowX: "auto",
@@ -727,9 +728,9 @@ export function MentorProgramNav({ pages, current }) {
               textDecoration: "none",
               borderBottom:
                 p.url === current
-                  ? "2px solid #005B8F"
+                  ? "2px solid #204276"
                   : "2px solid transparent",
-              color: p.url === current ? "#005B8F" : "#6b7280",
+              color: p.url === current ? "#204276" : "#6b7280",
               whiteSpace: "nowrap",
               transition: "color .2s",
             }}
@@ -751,7 +752,7 @@ export function MentorVerticalTimeline({ steps }) {
       {/* connector line */}
       <div style={{
         position: "absolute", left: 17, top: 18, bottom: 18,
-        width: 2, background: "rgba(0,91,143,0.15)",
+        width: 2, background: "rgba(32,66,118,0.15)",
       }} />
       {steps.map((s, i) => (
         <div key={i} className="mtr-reveal" style={{ display: "flex", gap: 24, marginBottom: i < steps.length - 1 ? 40 : 0, position: "relative" }}>
@@ -759,13 +760,13 @@ export function MentorVerticalTimeline({ steps }) {
           <div style={{
             position: "absolute", left: -48,
             width: 36, height: 36, borderRadius: "50%",
-            background: "#005B8F", color: "#fff",
+            background: "#204276", color: "#fff",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontWeight: 900, fontSize: 14, fontFamily: "Lexend,sans-serif",
             flexShrink: 0, zIndex: 1,
           }}>{i + 1}</div>
           <div>
-            <h4 className="mtr-vtl-title" style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, fontFamily: "Lexend,sans-serif", color: "#0d121b" }}>{s.title}</h4>
+            <h4 className="mtr-vtl-title" style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, fontFamily: "Lexend,sans-serif", color: "#1a1a1a" }}>{s.title}</h4>
             <p className="mtr-body" style={{ fontSize: 14 }}>{s.desc}</p>
           </div>
         </div>
@@ -784,22 +785,22 @@ export function MentorProcessArrows({ steps }) {
         <React.Fragment key={i}>
           <div className="mtr-reveal mtr-proc-card" style={{
             flex: "1 1 160px", minWidth: 140,
-            background: "#fff", border: "1px solid rgba(0,91,143,0.1)",
+            background: "#fff", border: "1px solid rgba(32,66,118,0.1)",
             borderRadius: 16, padding: "24px 20px", textAlign: "center",
             position: "relative",
           }}>
             <div style={{
               width: 36, height: 36, borderRadius: "50%",
-              background: "rgba(0,91,143,0.1)", color: "#005B8F",
+              background: "rgba(32,66,118,0.1)", color: "#204276",
               display: "flex", alignItems: "center", justifyContent: "center",
               fontWeight: 900, fontSize: 14, fontFamily: "Lexend,sans-serif",
               margin: "0 auto 12px",
             }}>{i + 1}</div>
-            <h5 className="mtr-proc-title" style={{ fontWeight: 700, fontSize: 13, color: "#0d121b", fontFamily: "Lexend,sans-serif", lineHeight: 1.4 }}>{s.title}</h5>
+            <h5 className="mtr-proc-title" style={{ fontWeight: 700, fontSize: 13, color: "#1a1a1a", fontFamily: "Lexend,sans-serif", lineHeight: 1.4 }}>{s.title}</h5>
             {s.desc && <p className="mtr-body" style={{ fontSize: 12, marginTop: 6 }}>{s.desc}</p>}
           </div>
           {i < steps.length - 1 && (
-            <div style={{ display: "flex", alignItems: "center", padding: "0 4px", color: "#005B8F", fontSize: 20, fontWeight: 300, flexShrink: 0 }}>→</div>
+            <div style={{ display: "flex", alignItems: "center", padding: "0 4px", color: "#204276", fontSize: 20, fontWeight: 300, flexShrink: 0 }}>→</div>
           )}
         </React.Fragment>
       ))}
@@ -824,20 +825,20 @@ export function MentorAlternatingFeatures({ features, icons }) {
             {/* Icon panel */}
             <div style={{
               flexShrink: 0, width: 240, height: 180,
-              background: `rgba(0,91,143,${0.04 + (i * 0.02)})`,
+              background: `rgba(32,66,118,${0.04 + (i * 0.02)})`,
               borderRadius: 24,
               display: "flex", alignItems: "center", justifyContent: "center",
-              border: "1px solid rgba(0,91,143,0.08)",
+              border: "1px solid rgba(32,66,118,0.08)",
             }}>
-              {Icon && <Icon size={56} color="#005B8F" strokeWidth={1.25} />}
+              {Icon && <Icon size={56} color="#204276" strokeWidth={1.25} />}
               {!Icon && (
-                <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#005B8F", opacity: 0.15 }} />
+                <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#204276", opacity: 0.15 }} />
               )}
             </div>
             {/* Text */}
             <div style={{ flex: 1 }}>
               <p className="mtr-subtitle" style={{ marginBottom: 8 }}>0{i + 1}</p>
-              <h3 className="mtr-alt-title" style={{ fontWeight: 700, fontSize: 22, color: "#0d121b", fontFamily: "Lexend,sans-serif", marginBottom: 12, lineHeight: 1.3 }}>{f.title}</h3>
+              <h3 className="mtr-alt-title" style={{ fontWeight: 700, fontSize: 22, color: "#1a1a1a", fontFamily: "Lexend,sans-serif", marginBottom: 12, lineHeight: 1.3 }}>{f.title}</h3>
               <p className="mtr-body" style={{ fontSize: 15 }}>{f.desc}</p>
             </div>
           </div>
@@ -850,7 +851,7 @@ export function MentorAlternatingFeatures({ features, icons }) {
 /* ─────────────────────────────────────────────
    COLOR BORDER CARD  (left accent border, for decision types / aid types)
 ───────────────────────────────────────────── */
-export function MentorColorCard({ title, desc, accentColor = "#005B8F", icon, badge }) {
+export function MentorColorCard({ title, desc, accentColor = "#204276", icon, badge }) {
   const Icon = icon;
   return (
     <div className="mtr-reveal mtr-color-card" style={{
@@ -866,7 +867,7 @@ export function MentorColorCard({ title, desc, accentColor = "#005B8F", icon, ba
     >
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
         {Icon && <Icon size={18} color={accentColor} />}
-        <h4 className="mtr-cc-title" style={{ fontWeight: 700, fontSize: 15, color: "#0d121b", fontFamily: "Lexend,sans-serif" }}>{title}</h4>
+        <h4 className="mtr-cc-title" style={{ fontWeight: 700, fontSize: 15, color: "#1a1a1a", fontFamily: "Lexend,sans-serif" }}>{title}</h4>
         {badge && (
           <span style={{ marginLeft: "auto", fontSize: 10, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase", color: accentColor, background: `${accentColor}15`, padding: "3px 8px", borderRadius: 20 }}>{badge}</span>
         )}
@@ -882,11 +883,11 @@ export function MentorColorCard({ title, desc, accentColor = "#005B8F", icon, ba
 export function MentorPullQuote({ quote, author, role }) {
   return (
     <div className="mtr-reveal" style={{
-      borderLeft: "4px solid #005B8F",
+      borderLeft: "4px solid #204276",
       paddingLeft: 32, margin: "40px 0",
     }}>
       <p style={{
-        fontSize: "clamp(18px,2.5vw,26px)", fontWeight: 300, color: "#0d121b",
+        fontSize: "clamp(18px,2.5vw,26px)", fontWeight: 300, color: "#1a1a1a",
         fontFamily: "Lexend,sans-serif", lineHeight: 1.6, fontStyle: "italic",
         marginBottom: author ? 16 : 0,
       }} className="mtr-pq-text">
@@ -894,7 +895,7 @@ export function MentorPullQuote({ quote, author, role }) {
       </p>
       {author && (
         <div>
-          <span style={{ fontWeight: 700, fontSize: 13, color: "#005B8F", fontFamily: "Lexend,sans-serif" }}>{author}</span>
+          <span style={{ fontWeight: 700, fontSize: 13, color: "#204276", fontFamily: "Lexend,sans-serif" }}>{author}</span>
           {role && <span style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}>, {role}</span>}
         </div>
       )}
@@ -905,7 +906,7 @@ export function MentorPullQuote({ quote, author, role }) {
 /* ─────────────────────────────────────────────
    DEADLINE / ALERT BANNER
 ───────────────────────────────────────────── */
-export function MentorAlertBanner({ icon: Icon, label, value, sub, color = "#005B8F" }) {
+export function MentorAlertBanner({ icon: Icon, label, value, sub, color = "#204276" }) {
   return (
     <div className="mtr-reveal mtr-alert-banner" style={{
       background: `${color}10`,
@@ -926,11 +927,11 @@ export function MentorAlertBanner({ icon: Icon, label, value, sub, color = "#005
 /* ─────────────────────────────────────────────
    ACCENT TOP CARD  (colored top strip card, for essays / aid)
 ───────────────────────────────────────────── */
-export function MentorAccentCard({ title, desc, accent = "#005B8F", icon }) {
+export function MentorAccentCard({ title, desc, accent = "#204276", icon }) {
   const Icon = icon;
   return (
     <div className="mtr-reveal mtr-accent-card" style={{
-      borderRadius: 20, overflow: "hidden",
+      borderRadius: 3, overflow: "hidden",
       border: "1px solid rgba(0,0,0,0.06)",
       background: "#fff", transition: "all .25s",
     }}
@@ -944,7 +945,7 @@ export function MentorAccentCard({ title, desc, accent = "#005B8F", icon }) {
             <Icon size={22} />
           </div>
         )}
-        <h4 className="mtr-ac-title" style={{ fontWeight: 700, fontSize: 15, color: "#0d121b", fontFamily: "Lexend,sans-serif", marginBottom: 8 }}>{title}</h4>
+        <h4 className="mtr-ac-title" style={{ fontWeight: 700, fontSize: 15, color: "#1a1a1a", fontFamily: "Lexend,sans-serif", marginBottom: 8 }}>{title}</h4>
         <p className="mtr-body" style={{ fontSize: 14 }}>{desc}</p>
       </div>
     </div>
@@ -964,7 +965,7 @@ export function MentorTierBars({ tiers }) {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 10 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ width: 12, height: 12, borderRadius: "50%", background: colors[i], display: "inline-block", flexShrink: 0 }} />
-              <span className="mtr-tier-title" style={{ fontWeight: 700, fontSize: 17, color: "#0d121b", fontFamily: "Lexend,sans-serif" }}>{t.tier}</span>
+              <span className="mtr-tier-title" style={{ fontWeight: 700, fontSize: 17, color: "#1a1a1a", fontFamily: "Lexend,sans-serif" }}>{t.tier}</span>
               <span style={{ fontSize: 12, color: colors[i], fontWeight: 700, fontFamily: "Lexend,sans-serif", background: `${colors[i]}15`, padding: "2px 10px", borderRadius: 20 }}>{t.count} schools</span>
             </div>
           </div>

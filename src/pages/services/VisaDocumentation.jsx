@@ -87,7 +87,7 @@ const documentTypes = [
     icon: Banknote,
     title: "Financial Evidence",
     desc: "The core of your visa application. Includes bank statements, fixed deposit receipts, and loan sanction letters showing liquid funds.",
-    color: "#005B8F",
+    color: "#204276",
   },
   {
     icon: TrendingUp,
@@ -117,7 +117,7 @@ const documentTypes = [
     icon: Stamp,
     title: "Legal & Identity Papers",
     desc: "Passports, birth certificates, marriage certificates (for spouse visas), and police clearance certificates.",
-    color: "#4A83F3",
+    color: "#7fb2dd",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function VisaDocumentation() {
             transition: all .25s;
           }
           .doc-type-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .doc-type-header {

@@ -9,7 +9,7 @@ import {
 import { financialAidData as d } from "./mentorshipData";
 
 const aidIcons = [DollarSign, Award, Star, Briefcase, BookOpen, GraduationCap];
-const aidColors = ["#005B8F", "#7c3aed", "#059669", "#d97706", "#0891b2", "#dc2626"];
+const aidColors = ["#204276", "#7c3aed", "#059669", "#d97706", "#0891b2", "#dc2626"];
 
 export default function FinancialAid() {
   const containerRef = useReveal();
@@ -20,8 +20,8 @@ export default function FinancialAid() {
         .fa-school-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
         @media(max-width:768px){ .fa-grid{ grid-template-columns:1fr !important; } .fa-school-grid{ grid-template-columns:1fr 1fr !important; } }
         .fa-school-badge { background:#f0f7ff; border:1px solid #c8dfee; border-radius:12px; padding:14px 18px;
-          font-family:Lexend,sans-serif; font-size:13px; font-weight:600; color:#005B8F; text-align:center; }
-        .dark .fa-school-badge { background:#021e2f; border-color:rgba(0,91,143,0.3); color:#60a9d4; }
+          font-family:Lexend,sans-serif; font-size:13px; font-weight:600; color:#204276; text-align:center; }
+        .dark .fa-school-badge { background:#021e2f; border-color:rgba(32,66,118,0.3); color:#60a9d4; }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
         <MentorHero {...d.hero} />

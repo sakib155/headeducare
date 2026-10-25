@@ -41,7 +41,7 @@ const providers = [
     name: "University Living",
     tagline: "65,000+ Properties across 640 Cities Globally",
     icon: MapPin,
-    color: "#005B8F",
+    color: "#204276",
     features: [
       "Safe & verified listings only",
       "100% verified property listings",
@@ -58,7 +58,7 @@ const providers = [
     name: "Casita",
     tagline: "Properties in 400+ Cities across 60+ Countries",
     icon: Globe,
-    color: "#4A83F3",
+    color: "#7fb2dd",
     features: [
       "Properties in 60+ countries",
       "Wide range of room types",
@@ -204,9 +204,9 @@ export default function StudentAccommodation() {
         {BASE_STYLES +
           `
         .provider-card { border-radius:24px; overflow:hidden; border:1px solid var(--srv-border); background:var(--srv-bg-card); transition:all .25s; }
-        .provider-card:hover { box-shadow:0 12px 40px rgba(0,91,143,0.12); transform:translateY(-4px); }
+        .provider-card:hover { box-shadow:0 12px 40px rgba(32,66,118,0.12); transform:translateY(-4px); }
         .room-chip { padding:14px 18px; border-radius:14px; background:var(--srv-bg-alt); border:1px solid var(--srv-border); transition:all .2s; cursor:default; }
-        .room-chip:hover { background:var(--srv-bg-card); border-color:rgba(0,91,143,0.2); box-shadow:0 4px 16px rgba(0,91,143,0.08); }
+        .room-chip:hover { background:var(--srv-bg-card); border-color:rgba(32,66,118,0.2); box-shadow:0 4px 16px rgba(32,66,118,0.08); }
         .dark .room-chip:hover { border-color:rgba(74,131,243,0.3); }
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
         @media(max-width:480px){ .grid-3{ grid-template-columns:1fr !important; } }

@@ -78,18 +78,18 @@ export default function TestPreparation() {
             justify-content: space-between;
           }
           .batch-card:hover {
-            box-shadow: 0 10px 30px rgba(0,91,143,0.1);
+            box-shadow: 0 10px 30px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .batch-price {
             font-size: 24px;
             font-weight: 900;
-            color: #005B8F;
+            color: #204276;
             margin: 16px 0;
             font-family: Lexend, sans-serif;
           }
           .sat-section {
-            background: linear-gradient(135deg, rgba(0,91,143,0.04) 0%, rgba(74,131,243,0.02) 100%);
+            background: linear-gradient(135deg, rgba(32,66,118,0.04) 0%, rgba(74,131,243,0.02) 100%);
             border-radius: 30px;
             padding: 60px 48px;
             border: 1px solid var(--srv-border);
@@ -155,11 +155,11 @@ export default function TestPreparation() {
               {/* Regular */}
               <div className="batch-card">
                 <div>
-                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(0,91,143,0.1)", color: "#005B8F", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(32,66,118,0.1)", color: "#204276", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                     <Laptop size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Regular Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#005B8F", textTransform: "uppercase" }}>Online / Face to Face / Hybrid</p>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#204276", textTransform: "uppercase" }}>Online / Face to Face / Hybrid</p>
                   <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
                     Perfect for students across Bangladesh wanting flexible learning with AI-powered practice. Instructor-led sessions with interactive exercises to apply what you learn immediately.
                   </p>
@@ -208,14 +208,14 @@ export default function TestPreparation() {
                     Admissions Prep
                   </span>
                   <h2 style={{ fontSize: clamp(24, "3vw", 36), fontWeight: 900, color: "var(--srv-text-primary)", margin: "10px 0 20px", fontFamily: "Lexend, sans-serif" }}>
-                    Digital <span style={{ color: "#005B8F" }}>SAT Course</span>
+                    Digital <span style={{ color: "#204276" }}>SAT Course</span>
                   </h2>
                   <p className="srv-body" style={{ fontSize: 15, lineHeight: 1.8 }}>
                     Prepare for the Digital SAT with the world’s first fully interactive SAT teaching platform, featuring recorded lessons from top scorers covering every DSAT topic alongside targeted practice and performance insights.
                   </p>
                 </div>
                 <div style={{ background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 20, padding: 28, textAlign: "center" }}>
-                  <GraduationCap size={44} style={{ color: "#005B8F", margin: "0 auto 16px" }} />
+                  <GraduationCap size={44} style={{ color: "#204276", margin: "0 auto 16px" }} />
                   <h4 style={{ fontWeight: 700, fontSize: 16, color: "var(--srv-text-primary)", marginBottom: 8 }}>Ready to Excel?</h4>
                   <p className="srv-body" style={{ fontSize: 13, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
                   <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 13, padding: "10px 20px" }}>Enroll Now</a>

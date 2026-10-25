@@ -49,7 +49,7 @@ export default function AcceptanceLetters() {
           <div className="mtr-container">
             <MentorAlertBanner
               icon={Calendar}
-              color="#005B8F"
+              color="#204276"
               label="National Decision Day (USA)"
               value="May 1, Mark Your Calendar"
               sub="All enrolled deposits must be submitted to your chosen school by May 1. Holding multiple deposits after this date violates the NACAC agreement."

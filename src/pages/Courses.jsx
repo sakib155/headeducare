@@ -169,20 +169,20 @@ export default function Courses() {
           .batch-card {
             background: var(--srv-bg-card);
             border: 1px solid var(--srv-border);
-            border-radius: 20px;
+            border-radius: 3px;
             padding: 32px 28px;
             transition: all 0.25s;
             display: flex;
             flex-direction: column;
           }
           .batch-card:hover {
-            box-shadow: 0 10px 30px rgba(0,91,143,0.1);
+            box-shadow: 0 10px 30px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .enroll-box {
             background: var(--srv-bg-card);
             border: 1px solid var(--srv-border);
-            border-radius: 20px;
+            border-radius: 3px;
             padding: 28px 24px;
             margin-top: 24px;
             display: flex;
@@ -201,12 +201,12 @@ export default function Courses() {
           .enroll-box span svg {
             width: 18px;
             height: 18px;
-            color: #005B8F;
+            color: #204276;
             flex-shrink: 0;
           }
           .sat-section {
-            background: linear-gradient(135deg, rgba(0,91,143,0.04) 0%, rgba(74,131,243,0.02) 100%);
-            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(32,66,118,0.04) 0%, rgba(74,131,243,0.02) 100%);
+            border-radius: 3px;
             padding: 60px 48px;
             border: 1px solid var(--srv-border);
             margin-top: 40px;
@@ -214,7 +214,7 @@ export default function Courses() {
           .sat-card {
             background: var(--srv-bg-card);
             border: 1px solid var(--srv-border);
-            border-radius: 20px;
+            border-radius: 3px;
             padding: 28px;
             text-align: center;
           }
@@ -247,14 +247,14 @@ export default function Courses() {
           .exam-table th {
             text-align: left;
             padding: 14px 18px;
-            background: linear-gradient(135deg, #005B8F, #004a78);
+            background: linear-gradient(135deg, #204276, #16325c);
             color: #fff;
             font-weight: 700;
             font-size: 13px;
             font-family: Lexend, sans-serif;
           }
-          .exam-table th:first-child { border-radius: 12px 0 0 0; }
-          .exam-table th:last-child { border-radius: 0 12px 0 0; }
+          .exam-table th:first-child { border-radius: 3px 0 0 0; }
+          .exam-table th:last-child { border-radius: 0 3px 0 0; }
           .exam-table td {
             padding: 14px 18px;
             border-bottom: 1px solid var(--srv-border);
@@ -263,7 +263,7 @@ export default function Courses() {
             font-size: 13px;
           }
           .exam-table tr:hover td {
-            background: rgba(0,91,143,0.03);
+            background: rgba(32,66,118,0.03);
           }
           .task-grid {
             display: grid;
@@ -275,9 +275,9 @@ export default function Courses() {
             align-items: center;
             gap: 10px;
             padding: 12px 16px;
-            background: linear-gradient(135deg, rgba(0,91,143,0.06), rgba(74,131,243,0.04));
-            border: 1px solid rgba(0,91,143,0.1);
-            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(32,66,118,0.06), rgba(74,131,243,0.04));
+            border: 1px solid rgba(32,66,118,0.1);
+            border-radius: 3px;
             font-size: 13px;
             color: var(--srv-text-primary);
             font-family: Lexend, sans-serif;
@@ -285,36 +285,36 @@ export default function Courses() {
             transition: all 0.2s;
           }
           .task-chip:hover {
-            background: linear-gradient(135deg, rgba(0,91,143,0.12), rgba(74,131,243,0.08));
+            background: linear-gradient(135deg, rgba(32,66,118,0.12), rgba(74,131,243,0.08));
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,91,143,0.1);
+            box-shadow: 0 4px 12px rgba(32,66,118,0.1);
           }
           .task-chip svg {
             width: 18px;
             height: 18px;
-            color: #005B8F;
+            color: #204276;
             flex-shrink: 0;
           }
           .tip-card {
             background: linear-gradient(135deg, #f0f7ff, #e8f2fe);
-            border: 1px solid rgba(0,91,143,0.12);
-            border-radius: 16px;
+            border: 1px solid rgba(32,66,118,0.12);
+            border-radius: 3px;
             padding: 24px;
             transition: all 0.25s;
           }
           .tip-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,91,143,0.12);
+            box-shadow: 0 8px 24px rgba(32,66,118,0.12);
           }
           .dark .tip-card {
-            background: linear-gradient(135deg, rgba(0,91,143,0.12), rgba(74,131,243,0.08));
+            background: linear-gradient(135deg, rgba(32,66,118,0.12), rgba(74,131,243,0.08));
           }
           .vibrant-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 4px 14px;
-            border-radius: 40px;
+            border-radius: 3px;
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.08em;
@@ -329,20 +329,20 @@ export default function Courses() {
           .why-card {
             text-align: center;
             padding: 28px 20px;
-            border-radius: 20px;
+            border-radius: 3px;
             border: 1px solid var(--srv-border);
             background: var(--srv-bg-card);
             transition: all 0.25s;
           }
           .why-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,91,143,0.1);
-            border-color: rgba(0,91,143,0.2);
+            box-shadow: 0 10px 30px rgba(32,66,118,0.1);
+            border-color: rgba(32,66,118,0.2);
           }
           .why-card svg {
             width: 32px;
             height: 32px;
-            color: #005B8F;
+            color: #204276;
             margin-bottom: 12px;
           }
           @media(max-width:968px){
@@ -411,7 +411,7 @@ export default function Courses() {
               {whyPte.map((item, i) => (
                 <div key={i} className="why-card">
                   <item.icon />
-                  <h4 style={{ fontWeight: 700, fontSize: 14, color: "var(--srv-text-primary)", marginBottom: 6, fontFamily: "Lexend,sans-serif" }}>{item.title}</h4>
+                  <h4 style={{ fontWeight: 700, fontSize: 14, color: "var(--srv-text-primary)", marginBottom: 6, fontFamily: "'Roboto Slab',serif" }}>{item.title}</h4>
                   <p className="srv-body" style={{ fontSize: 12 }}>{item.desc}</p>
                 </div>
               ))}
@@ -480,19 +480,19 @@ export default function Courses() {
             />
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
-              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #005B8F" }}>
+              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #204276" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Mic size={20} color="#005B8F" />
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Mic size={20} color="#204276" />
                   </div>
                   <div>
-                    <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>Speaking & Writing</h4>
-                    <p style={{ fontSize: 11, color: "#005B8F", fontWeight: 600 }}>54–67 minutes</p>
+                    <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Speaking & Writing</h4>
+                    <p style={{ fontSize: 11, color: "#204276", fontWeight: 600 }}>54–67 minutes</p>
                   </div>
                 </div>
                 <div className="task-grid">
                   {pteSpeakingTasks.map((t, i) => <div key={i} className="task-chip"><CheckCircle size={14} />{t}</div>)}
-                  <div style={{ width: "100%", height: 1, background: "rgba(0,91,143,0.08)", margin: "4px 0" }} />
+                  <div style={{ width: "100%", height: 1, background: "rgba(32,66,118,0.08)", margin: "4px 0" }} />
                   {pteWritingTasks.map((t, i) => <div key={i} className="task-chip"><Pencil size={14} />{t}</div>)}
                 </div>
               </div>
@@ -503,7 +503,7 @@ export default function Courses() {
                     <BookOpen size={20} color="#16a34a" />
                   </div>
                   <div>
-                    <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>Reading</h4>
+                    <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Reading</h4>
                     <p style={{ fontSize: 11, color: "#16a34a", fontWeight: 600 }}>29–30 minutes</p>
                   </div>
                 </div>
@@ -518,7 +518,7 @@ export default function Courses() {
                     <Headphones size={20} color="#7c3aed" />
                   </div>
                   <div>
-                    <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>Listening</h4>
+                    <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Listening</h4>
                     <p style={{ fontSize: 11, color: "#7c3aed", fontWeight: 600 }}>30–43 minutes</p>
                   </div>
                 </div>
@@ -533,7 +533,7 @@ export default function Courses() {
         {/* ═══════════════════════════════════════════
            PTE SCORING
         ════════════════════════════════════════════ */}
-        <section className="srv-section" style={{ background: "linear-gradient(135deg, rgba(0,91,143,0.03), rgba(74,131,243,0.02))" }}>
+        <section className="srv-section" style={{ background: "linear-gradient(135deg, rgba(32,66,118,0.03), rgba(74,131,243,0.02))" }}>
           <div className="srv-container">
             <SectionHeader
               label="Scoring"
@@ -544,16 +544,16 @@ export default function Courses() {
             />
             <div className="srv-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, maxWidth: 700, margin: "0 auto" }}>
               {[
-                { label: "Score Range", value: "10–90", color: "#005B8F" },
+                { label: "Score Range", value: "10–90", color: "#204276" },
                 { label: "Content", value: "Assessed", color: "#16a34a" },
                 { label: "Fluency", value: "Assessed", color: "#7c3aed" },
                 { label: "Pronunciation", value: "Assessed", color: "#d97706" },
                 { label: "Grammar", value: "Assessed", color: "#dc2626" },
                 { label: "Vocabulary", value: "Assessed", color: "#0891b2" },
               ].map((item, i) => (
-                <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 16, border: "1px solid var(--srv-border)" }}>
+                <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 3, border: "1px solid var(--srv-border)" }}>
                   <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
-                  <p style={{ fontSize: 20, fontWeight: 900, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>{item.value}</p>
+                  <p style={{ fontSize: 20, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item.value}</p>
                 </div>
               ))}
             </div>
@@ -574,14 +574,14 @@ export default function Courses() {
             />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <Mic size={20} color="#005B8F" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <Mic size={20} color="#204276" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Speaking Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Speaking Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Start with short, clear sentences", "Maintain natural pace; don't be too fast", "Don't pause too much; it lowers fluency score", "Use fillers carefully (well, actually)", "Practice with PTE mock tests for pronunciation"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
-                      <span style={{ color: "#005B8F", flexShrink: 0 }}>✓</span>{t}
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                      <span style={{ color: "#204276", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>
@@ -590,10 +590,10 @@ export default function Courses() {
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                   <PenTool size={20} color="#16a34a" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Writing Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Follow a simple structure (Intro → Body → Conclusion)", "Use academic words, however, therefore, moreover", "Keep sentences error-free rather than complex", "Maintain word limit, don't over-write", "Practice Summarize Written Text in 1 sentence"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#16a34a", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -603,10 +603,10 @@ export default function Courses() {
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(124,58,237,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                   <BookOpen size={20} color="#7c3aed" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Reading Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Reading Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Learn to skim (quick overview)", "Learn to scan (find specific details)", "Practice 'Re-order Paragraphs' daily", "Improve vocabulary and focus on reading tasks", "Read short academic articles for speed"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#7c3aed", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -616,10 +616,10 @@ export default function Courses() {
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(245,158,11,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                   <Headphones size={20} color="#d97706" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Listening Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Listening Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Take quick notes while listening", "Focus on keywords, not complete sentences", "Repeated practice of 'Fill in the Blanks'", "Listen to podcasts/lectures daily", "Be careful with spelling, it affects score"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#d97706", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -632,7 +632,7 @@ export default function Courses() {
         {/* ═══════════════════════════════════════════
            PTE, WHY HEAD EDUCARE
         ════════════════════════════════════════════ */}
-        <section className="srv-section" style={{ background: "linear-gradient(135deg, #005B8F08, #4A83F305)" }}>
+        <section className="srv-section" style={{ background: "linear-gradient(135deg, #20427608, #7fb2dd05)" }}>
           <div className="srv-container">
             <SectionHeader
               label="Why Choose Us"
@@ -644,20 +644,20 @@ export default function Courses() {
             <div className="srv-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
               {pteHeadEducare.map((item, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "16px 20px", background: "var(--srv-bg-card)", borderRadius: 14, border: "1px solid var(--srv-border)" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <CheckCircle size={16} color="#005B8F" />
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <CheckCircle size={16} color="#204276" />
                   </div>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>{item}</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="srv-reveal" style={{ marginTop: 32, padding: "28px 32px", background: "linear-gradient(135deg, #005B8F, #004270)", borderRadius: 20, color: "#fff" }}>
-              <h4 style={{ fontWeight: 900, fontSize: 18, marginBottom: 12, fontFamily: "Lexend,sans-serif" }}>Class & Fee Structure</h4>
+            <div className="srv-reveal" style={{ marginTop: 32, padding: "28px 32px", background: "linear-gradient(135deg, #204276, #0f203c)", borderRadius: 3, color: "#fff" }}>
+              <h4 style={{ fontWeight: 600, fontSize: 18, marginBottom: 12, fontFamily: "'Roboto Slab',serif" }}>Class & Fee Structure</h4>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 24 }}>
                 <div>
                   <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.7)", marginBottom: 4 }}>PTE Course</p>
-                  <p style={{ fontSize: 24, fontWeight: 900 }}>10,000 BDT</p>
+                  <p style={{ fontSize: 24, fontWeight: 600 }}>10,000 BDT</p>
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", marginTop: 4 }}>15 classes (30 hours including mock tests)</p>
                 </div>
                 <div style={{ width: 1, background: "rgba(255,255,255,0.2)" }} />
@@ -706,11 +706,11 @@ export default function Courses() {
             <div className="batches-grid srv-reveal">
               <div className="batch-card">
                 <div>
-                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(0,91,143,0.1)", color: "#005B8F", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(32,66,118,0.1)", color: "#204276", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                     <Laptop size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Regular Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#005B8F", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face / Hybrid</p>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#204276", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face / Hybrid</p>
                   <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
                     Perfect for students across Bangladesh who want flexible online, face-to-face, or hybrid learning with AI-powered practice. Instructor-led sessions with hands-on activities to apply what you've learned right away.
                   </p>
@@ -762,7 +762,7 @@ export default function Courses() {
           <div className="srv-container">
             <div className="srv-reveal" style={{ textAlign: "center", marginBottom: 48 }}>
               <span className="srv-badge" style={{ margin: "0 auto 20px" }}>
-                <span className="srv-badge-dot" style={{ background: "#005B8F" }} />
+                <span className="srv-badge-dot" style={{ background: "#204276" }} />
                 SAT
               </span>
               <h2 className="srv-h2" style={{ fontSize: "clamp(28px,4vw,42px)" }}>
@@ -791,7 +791,7 @@ export default function Courses() {
               {whySat.map((item, i) => (
                 <div key={i} className="why-card">
                   <item.icon />
-                  <h4 style={{ fontWeight: 700, fontSize: 14, color: "var(--srv-text-primary)", marginBottom: 6, fontFamily: "Lexend,sans-serif" }}>{item.title}</h4>
+                  <h4 style={{ fontWeight: 700, fontSize: 14, color: "var(--srv-text-primary)", marginBottom: 6, fontFamily: "'Roboto Slab',serif" }}>{item.title}</h4>
                   <p className="srv-body" style={{ fontSize: 12 }}>{item.desc}</p>
                 </div>
               ))}
@@ -839,12 +839,12 @@ export default function Courses() {
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, marginTop: 40 }}>
-              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #005B8F" }}>
+              <div className="tip-card srv-reveal" style={{ borderTop: "4px solid #204276" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <FileText size={20} color="#005B8F" />
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <FileText size={20} color="#204276" />
                   </div>
-                  <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>Reading & Writing (64 mins, 54 questions)</h4>
+                  <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Reading & Writing (64 mins, 54 questions)</h4>
                 </div>
                 <div className="task-grid">
                   {satReadingTasks.map((t, i) => <div key={i} className="task-chip"><CheckCircle size={14} />{t}</div>)}
@@ -855,7 +855,7 @@ export default function Courses() {
                   <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Calculator size={20} color="#16a34a" />
                   </div>
-                  <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>Math (70 mins)</h4>
+                  <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Math (70 mins)</h4>
                 </div>
                 <div className="task-grid">
                   {satMathTasks.map((t, i) => <div key={i} className="task-chip"><CheckCircle size={14} />{t}</div>)}
@@ -879,15 +879,15 @@ export default function Courses() {
             />
             <div className="srv-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, maxWidth: 700, margin: "0 auto" }}>
               {[
-                { label: "Total Score", value: "400–1600", color: "#005B8F" },
+                { label: "Total Score", value: "400–1600", color: "#204276" },
                 { label: "Reading & Writing", value: "200–800", color: "#16a34a" },
                 { label: "Math", value: "200–800", color: "#7c3aed" },
                 { label: "Negative Marking", value: "None", color: "#d97706" },
                 { label: "Score Validity", value: "5 Years", color: "#dc2626" },
               ].map((item, i) => (
-                <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 16, border: "1px solid var(--srv-border)" }}>
+                <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 3, border: "1px solid var(--srv-border)" }}>
                   <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
-                  <p style={{ fontSize: 20, fontWeight: 900, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>{item.value}</p>
+                  <p style={{ fontSize: 20, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item.value}</p>
                 </div>
               ))}
             </div>
@@ -908,14 +908,14 @@ export default function Courses() {
             />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
               <div className="tip-card srv-reveal">
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <BookMarked size={20} color="#005B8F" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <BookMarked size={20} color="#204276" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Reading & Writing Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Reading & Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Read the questions first, then skim the passage", "Look for keywords and transition words", "Practice grammar rules: subject–verb agreement, modifiers", "Focus on evidence-based questions, find the exact line", "Build vocabulary through daily reading"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
-                      <span style={{ color: "#005B8F", flexShrink: 0 }}>✓</span>{t}
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                      <span style={{ color: "#204276", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
                 </ul>
@@ -924,10 +924,10 @@ export default function Courses() {
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(22,163,74,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                   <Calculator size={20} color="#16a34a" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Math Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Math Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Memorize formulas (SAT doesn't give formula sheet for all)", "Practice mental math for speed", "Solve official College Board sample papers", "Use the on-screen calculator smartly", "Focus on algebra and word problems, highest weightage"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#16a34a", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -937,10 +937,10 @@ export default function Courses() {
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(124,58,237,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                   <Clock size={20} color="#7c3aed" />
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "Lexend,sans-serif" }}>Time Management Tips</h4>
+                <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Time Management Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Don't spend too long on one question", "Mark difficult ones and revisit if time allows", "Take full-length mock tests to build stamina", "Practice adaptive sections to understand scoring patterns"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "Lexend,sans-serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#7c3aed", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -953,7 +953,7 @@ export default function Courses() {
         {/* ═══════════════════════════════════════════
            SAT, WHY HEAD EDUCARE
         ════════════════════════════════════════════ */}
-        <section className="srv-section-alt" style={{ background: "linear-gradient(135deg, rgba(0,91,143,0.04), rgba(74,131,243,0.02))" }}>
+        <section className="srv-section-alt" style={{ background: "linear-gradient(135deg, rgba(32,66,118,0.04), rgba(74,131,243,0.02))" }}>
           <div className="srv-container">
             <SectionHeader
               label="Why Choose Us"
@@ -965,10 +965,10 @@ export default function Courses() {
             <div className="srv-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
               {satHeadEducare.map((item, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "16px 20px", background: "var(--srv-bg-card)", borderRadius: 14, border: "1px solid var(--srv-border)" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(0,91,143,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <CheckCircle size={16} color="#005B8F" />
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <CheckCircle size={16} color="#204276" />
                   </div>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "Lexend,sans-serif" }}>{item}</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -984,18 +984,18 @@ export default function Courses() {
               <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "center" }}>
                 <div>
                   <span className="srv-badge">
-                    <span className="srv-badge-dot" style={{ backgroundColor: "#005B8F" }} />
+                    <span className="srv-badge-dot" style={{ backgroundColor: "#204276" }} />
                     Admissions Prep
                   </span>
-                  <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "var(--srv-text-primary)", margin: "10px 0 20px", fontFamily: "Lexend, sans-serif" }}>
-                    Digital <span style={{ color: "#005B8F" }}>SAT Course</span>
+                  <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 600, color: "var(--srv-text-primary)", margin: "10px 0 20px", fontFamily: "Lexend, sans-serif" }}>
+                    Digital <span style={{ color: "#204276" }}>SAT Course</span>
                   </h2>
                   <p className="srv-body" style={{ fontSize: 15, lineHeight: 1.8 }}>
                     Prepare for the Digital SAT with the world's first fully interactive SAT teaching platform, featuring recorded lessons from top scorers covering every DSAT topic alongside targeted practice and performance insights.
                   </p>
                 </div>
                 <div className="sat-card">
-                  <GraduationCap size={44} style={{ color: "#005B8F", margin: "0 auto 16px" }} />
+                  <GraduationCap size={44} style={{ color: "#204276", margin: "0 auto 16px" }} />
                   <h4 style={{ fontWeight: 700, fontSize: 16, color: "var(--srv-text-primary)", marginBottom: 8 }}>Ready to Excel?</h4>
                   <p className="srv-body" style={{ fontSize: 13, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
                   <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 13, padding: "10px 20px" }}>Enroll Now</a>

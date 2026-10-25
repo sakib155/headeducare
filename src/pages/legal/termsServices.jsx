@@ -202,14 +202,14 @@ export default function TermsServices() {
       <style>{`
         .ts-reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
         .ts-reveal.ts-visible { opacity:1; transform:none; }
-        .ts-nav-link { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; cursor:pointer; transition:all .2s; font-size:13px; font-family:"Lexend",sans-serif; font-weight:400; color:#6b7280; border:none; background:none; text-align:left; width:100%; }
-        .ts-nav-link:hover { background:rgba(0,91,143,0.06); color:#005B8F; }
-        .ts-nav-link.active { background:rgba(0,91,143,0.1); color:#005B8F; font-weight:600; }
-        .ts-nav-link.active .ts-dot { background:#005B8F; }
+        .ts-nav-link { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:3px; cursor:pointer; transition:all .2s; font-size:13px; font-family:"IBM Plex Sans",sans-serif; font-weight:400; color:#6b7280; border:none; background:none; text-align:left; width:100%; }
+        .ts-nav-link:hover { background:rgba(32,66,118,0.06); color:#204276; }
+        .ts-nav-link.active { background:rgba(32,66,118,0.1); color:#204276; font-weight:600; }
+        .ts-nav-link.active .ts-dot { background:#204276; }
         .ts-dot { width:6px; height:6px; border-radius:50%; background:#d1d5db; flex-shrink:0; transition:background .2s; }
         .ts-section { scroll-margin-top:100px; }
-        .ts-card { background:#f6f6f8; border:1px solid rgba(0,0,0,0.06); border-radius:16px; padding:28px 32px; margin-bottom:16px; transition:box-shadow .2s; }
-        .ts-card:hover { box-shadow:0 4px 20px rgba(0,91,143,0.08); }
+        .ts-card { background:#f2f2f2; border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:28px 32px; margin-bottom:16px; transition:box-shadow .2s; }
+        .ts-card:hover { box-shadow:0 4px 20px rgba(32,66,118,0.08); }
         @media(max-width:1024px){ .ts-sidebar{ display:none; } }
         @media(min-width:1024px){ .ts-mobile-toc{ display:none; } }
       `}</style>
@@ -220,25 +220,25 @@ export default function TermsServices() {
           className="relative py-16 lg:py-20 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg,rgba(0,91,143,0.05) 0%,rgba(74,131,243,0.03) 100%)",
+              "linear-gradient(135deg,rgba(32,66,118,0.05) 0%,rgba(74,131,243,0.03) 100%)",
           }}
         >
           <div
             className="absolute bottom-0 left-0 w-96 h-96 rounded-full"
-            style={{ background: "rgba(0,91,143,0.06)", filter: "blur(80px)" }}
+            style={{ background: "rgba(32,66,118,0.06)", filter: "blur(80px)" }}
           />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl ts-reveal">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
-                style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}
+                style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}
               >
                 <span
                   style={{
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "#005B8F",
+                    background: "#204276",
                     flexShrink: 0,
                     display: "inline-block",
                   }}
@@ -247,15 +247,15 @@ export default function TermsServices() {
               </div>
               <h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-                style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
-                Terms of <span style={{ color: "#005B8F" }}>Service</span>
+                Terms of <span style={{ color: "#204276" }}>Service</span>
               </h1>
               <p
                 className="text-lg leading-relaxed mb-6"
                 style={{
                   color: "#6b7280",
-                  fontFamily: "Lexend, sans-serif",
+                  fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
@@ -266,7 +266,7 @@ export default function TermsServices() {
               </p>
               <div
                 className="flex flex-wrap gap-6 text-sm"
-                style={{ color: "#6b7280", fontFamily: "Lexend, sans-serif" }}
+                style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" /> Effective: January 1, 2025
@@ -294,7 +294,7 @@ export default function TermsServices() {
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-4 px-2"
-                  style={{ color: "#005B8F", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Contents
                 </p>
@@ -319,8 +319,8 @@ export default function TermsServices() {
                   <p
                     className="text-xs font-bold mb-2"
                     style={{
-                      color: "#0d121b",
-                      fontFamily: "Lexend, sans-serif",
+                      color: "#1a1a1a",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                     }}
                   >
                     Legal Queries?
@@ -329,12 +329,12 @@ export default function TermsServices() {
                     className="text-xs leading-relaxed"
                     style={{
                       color: "#6b7280",
-                      fontFamily: "Lexend, sans-serif",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                     }}
                   >
                     <a
                       href="mailto:info@headeducare.com"
-                      style={{ color: "#005B8F", fontWeight: 600 }}
+                      style={{ color: "#204276", fontWeight: 600 }}
                     >
                       info@headeducare.com
                     </a>
@@ -352,7 +352,7 @@ export default function TermsServices() {
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-4"
-                  style={{ color: "#005B8F", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Jump to section
                 </p>
@@ -364,8 +364,8 @@ export default function TermsServices() {
                       className="text-left text-xs px-3 py-2 rounded-lg"
                       style={{
                         color: "#6b7280",
-                        fontFamily: "Lexend, sans-serif",
-                        background: "#f6f6f8",
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        background: "#f2f2f2",
                       }}
                     >
                       {s.title}
@@ -388,7 +388,7 @@ export default function TermsServices() {
                     className="font-bold text-sm mb-1"
                     style={{
                       color: "#92400e",
-                      fontFamily: "Lexend, sans-serif",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                     }}
                   >
                     Important Notice
@@ -397,7 +397,7 @@ export default function TermsServices() {
                     className="text-sm leading-relaxed"
                     style={{
                       color: "#78350f",
-                      fontFamily: "Lexend, sans-serif",
+                      fontFamily: "'IBM Plex Sans', sans-serif",
                       fontWeight: 300,
                     }}
                   >
@@ -421,7 +421,7 @@ export default function TermsServices() {
                       style={{
                         width: 48,
                         height: 48,
-                        background: "rgba(0,91,143,0.08)",
+                        background: "rgba(32,66,118,0.08)",
                         borderRadius: 14,
                         display: "flex",
                         alignItems: "center",
@@ -434,7 +434,7 @@ export default function TermsServices() {
                         style={{
                           width: 22,
                           height: 22,
-                          stroke: "#005B8F",
+                          stroke: "#204276",
                           fill: "none",
                           strokeWidth: 1.8,
                           strokeLinecap: "round",
@@ -448,8 +448,8 @@ export default function TermsServices() {
                       <p
                         className="text-xs font-bold uppercase tracking-widest mb-1"
                         style={{
-                          color: "#005B8F",
-                          fontFamily: "Lexend, sans-serif",
+                          color: "#204276",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         Section {String(idx + 1).padStart(2, "0")}
@@ -457,8 +457,8 @@ export default function TermsServices() {
                       <h2
                         className="text-2xl font-black"
                         style={{
-                          color: "#0d121b",
-                          fontFamily: "Lexend, sans-serif",
+                          color: "#1a1a1a",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         {section.title}
@@ -471,8 +471,8 @@ export default function TermsServices() {
                       <p
                         className="text-sm font-bold mb-2"
                         style={{
-                          color: "#005B8F",
-                          fontFamily: "Lexend, sans-serif",
+                          color: "#204276",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                         }}
                       >
                         {item.subtitle}
@@ -481,7 +481,7 @@ export default function TermsServices() {
                         className="text-sm leading-relaxed"
                         style={{
                           color: "#4b5563",
-                          fontFamily: "Lexend, sans-serif",
+                          fontFamily: "'IBM Plex Sans', sans-serif",
                           fontWeight: 300,
                           lineHeight: 1.75,
                         }}
@@ -495,7 +495,7 @@ export default function TermsServices() {
                     <div
                       style={{
                         height: 1,
-                        background: "rgba(0,91,143,0.08)",
+                        background: "rgba(32,66,118,0.08)",
                         margin: "40px 0",
                       }}
                     />
@@ -507,13 +507,13 @@ export default function TermsServices() {
               <div
                 className="ts-reveal rounded-2xl p-8"
                 style={{
-                  background: "rgba(0,91,143,0.05)",
-                  border: "1px solid rgba(0,91,143,0.12)",
+                  background: "rgba(32,66,118,0.05)",
+                  border: "1px solid rgba(32,66,118,0.12)",
                 }}
               >
                 <h3
                   className="text-lg font-bold mb-2"
-                  style={{ color: "#0d121b", fontFamily: "Lexend, sans-serif" }}
+                  style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Have questions about these terms?
                 </h3>
@@ -521,16 +521,16 @@ export default function TermsServices() {
                   className="text-sm leading-relaxed mb-4"
                   style={{
                     color: "#6b7280",
-                    fontFamily: "Lexend, sans-serif",
+                    fontFamily: "'IBM Plex Sans', sans-serif",
                     fontWeight: 300,
                   }}
                 >
                   Our team is happy to clarify any provisions before you engage
                   our services.
                 </p>
-                <div style={{ fontFamily: "Lexend, sans-serif" }}>
+                <div style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
                   <span
-                    style={{ color: "#005B8F", fontWeight: 600 }}
+                    style={{ color: "#204276", fontWeight: 600 }}
                     className="flex items-center gap-2"
                   >
                     <MailCheck className="h-4 w-4" /> info@headeducare.com

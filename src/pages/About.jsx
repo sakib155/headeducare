@@ -77,18 +77,22 @@ export default function About() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Hero — overlay band */}
+      <section
+        className="sol-overlay"
+        style={{
+          backgroundImage:
+            "url(/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="max-w-4xl">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              About Us
-            </h2>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
-              About <span className="text-primary">Head Educare</span>
+            <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">About Us</h2>
+            <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-8 leading-tight">
+              About <span className="text-[#7fb2dd]">Head Educare</span>
             </h1>
-            <div className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-6">
+            <hr className="sol-separator-left sol-separator-light" />
+            <div className="text-base text-white/85 leading-relaxed space-y-5 mt-8">
               <p>
                 Head Educare is a premier international education consultancy dedicated to helping students gain admission to the world's leading universities. With more than 10 years of experience, we have assisted thousands of students in finding institutions where they can thrive academically, professionally, and personally.
               </p>
@@ -107,9 +111,9 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white dark:bg-background-dark">
+      <section className="py-20 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: "visibility",
@@ -127,19 +131,16 @@ export default function About() {
                 text: "Integrity, student-first approach, excellence in service delivery, and continuous innovation in education consulting for every student we serve.",
               },
             ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-background-light dark:bg-gray-800 p-10 rounded-2xl border border-gray-100 dark:border-gray-700"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+              <div key={i} className="sol-callout !text-left">
+                <div className="w-14 h-14 bg-[#204276] flex items-center justify-center text-white mb-6">
                   <span className="material-symbols-outlined text-3xl">
                     {item.icon}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#0d121b] dark:text-white">
+                <h3 className="text-xl font-semibold mb-3 text-[#1a1a1a]">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {item.text}
                 </p>
               </div>
@@ -149,18 +150,17 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-background-light dark:bg-background-dark/50">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              Our Journey
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white">
+            <h2 className="sol-eyebrow text-sm mb-3">Our Journey</h2>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
               Milestones That Define Us
             </h3>
+            <hr className="sol-separator" />
           </div>
           <div className="relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#204276]/20 -translate-x-1/2 hidden md:block" />
             <div className="space-y-10">
               {milestones.map((m, i) => (
                 <div
@@ -170,17 +170,17 @@ export default function About() {
                   <div
                     className={`md:w-1/2 ${i % 2 === 0 ? "md:text-right md:pr-10" : "md:text-left md:pl-10"}`}
                   >
-                    <span className="text-primary font-black text-2xl">
+                    <span className="sol-stat-number text-3xl">
                       {m.year}
                     </span>
-                    <h4 className="text-xl font-bold text-[#0d121b] dark:text-white mt-1">
+                    <h4 className="text-xl font-semibold text-[#1a1a1a] mt-1">
                       {m.title}
                     </h4>
-                    <p className="text-gray-600 dark:text-gray-400 mt-2">
+                    <p className="text-gray-500 mt-2">
                       {m.desc}
                     </p>
                   </div>
-                  <div className="w-5 h-5 bg-primary rounded-full border-4 border-white dark:border-background-dark shadow-lg z-10 shrink-0 hidden md:block" />
+                  <div className="w-5 h-5 bg-[#204276] rounded-full border-4 border-white shadow-lg z-10 shrink-0 hidden md:block" />
                   <div className="md:w-1/2" />
                 </div>
               ))}
@@ -188,43 +188,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Team */}
-      {/* <section className="py-20 bg-white dark:bg-background-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              Meet Our Team
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white">
-              Expert Counselors at Your Service
-            </h3>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member) => (
-              <div key={member.id} className="group text-center">
-                <div className="relative mb-6 rounded-2xl overflow-hidden aspect-[3/4]">
-                  <img
-                    src={member.photo_url}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <h4 className="text-lg font-bold text-[#0d121b] dark:text-white">
-                  {member.name}
-                </h4>
-                <p className="text-primary font-semibold text-sm mb-2">
-                  {member.role}
-                </p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 }

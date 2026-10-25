@@ -105,7 +105,7 @@ const people = [
 ];
 
 const roleStyle = {
-  "Founder & CEO": "bg-[#005B8F] text-white",
+  "Founder & CEO": "bg-[#204276] text-white",
   "Creative Director": "bg-[#0e7490] text-white",
   "Senior Team Lead, Creative": "bg-[#7c3aed] text-white",
   "Team Lead, Creative": "bg-[#0284c7] text-white",
@@ -123,22 +123,23 @@ const OurPeople = () => {
     <section className="mx-auto px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl py-16">
       {/* Section header */}
      <div className="text-center mb-16">
-  <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
+  <h2 className="sol-eyebrow text-sm mb-3">
     Meet Our Team
   </h2>
 
-  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight">
-    <span className="block text-[#0d121b] dark:text-white">
+  <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
+    <span className="block text-[#1a1a1a] dark:text-white">
       Thousands run,{" "}
       <span className="text-gray-400 dark:text-gray-500">A few finish.</span>
     </span>
-    <span className="block mt-1 text-[#0d121b] dark:text-white">
+    <span className="block mt-1 text-[#1a1a1a] dark:text-white">
       We make sure,{" "}
-      <span className="text-primary">You rise above.</span>
+      <span className="text-[#204276] dark:text-[#7fb2dd]">You rise above.</span>
     </span>
   </h3>
+  <hr className="sol-separator" />
 
-  <p className="mt-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400">
+  <p className="mt-6 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400">
     Choose a mentor & discover your potential.
   </p>
 </div>
@@ -148,7 +149,7 @@ const OurPeople = () => {
         {people.map((person, index) => (
           <div
             key={index}
-            className="group flex flex-col items-center bg-white dark:bg-[#0d1f3c] rounded-2xl border border-gray-100 dark:border-gray-700/60 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+            className="group flex flex-col items-center bg-white dark:bg-[#0d1f3c] rounded-sm border border-gray-200 dark:border-gray-700/60 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
           >
             {/* Photo area */}
             <div className="w-full aspect-square overflow-hidden bg-gray-50 dark:bg-[#091628]">

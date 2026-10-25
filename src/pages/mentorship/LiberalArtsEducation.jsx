@@ -16,11 +16,11 @@ export default function LiberalArtsEducation() {
       <style>{MENTOR_STYLES + `
         .lae-stats { display:flex; gap:32px; flex-wrap:wrap; margin-top:32px; }
         .lae-stat-item { display:flex; flex-direction:column; }
-        .lae-stat-val { font-size:28px; font-weight:900; color:#005B8F; font-family:Lexend,sans-serif; line-height:1; }
+        .lae-stat-val { font-size:28px; font-weight:900; color:#204276; font-family:Lexend,sans-serif; line-height:1; }
         .lae-stat-lbl { font-size:11px; color:#9ca3af; font-family:Lexend,sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
         .career-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-        .career-item { padding:16px; background:#fff; border:1px solid rgba(0,91,143,0.1); border-radius:12px; display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; color:#0d121b; font-family:Lexend,sans-serif; }
-        .career-dot { width:8px; height:8px; border-radius:50%; background:#005B8F; flex-shrink:0; }
+        .career-item { padding:16px; background:#fff; border:1px solid rgba(32,66,118,0.1); border-radius:12px; display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; color:#1a1a1a; font-family:Lexend,sans-serif; }
+        .career-dot { width:8px; height:8px; border-radius:50%; background:#204276; flex-shrink:0; }
         .dark .career-item { background:#02182a; border-color:rgba(255,255,255,0.06); color:#f1f1f1; }
         @media(max-width:768px){ .career-grid{ grid-template-columns:1fr 1fr !important; } }
         @media(max-width:480px){ .career-grid{ grid-template-columns:1fr !important; } }

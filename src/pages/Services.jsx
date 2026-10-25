@@ -116,19 +116,23 @@ export default function Services() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Hero — overlay band */}
+      <section
+        className="sol-overlay"
+        style={{
+          backgroundImage:
+            "url(/assets/prettiest-college-campuses-dartmouth-college-1592777600.avif)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="max-w-3xl">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              What We Offer
-            </h2>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d121b] dark:text-white mb-6 leading-tight">
-              Expert <span className="text-primary">Services</span> for Your
+            <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">What We Offer</h2>
+            <h1 className="text-4xl sm:text-5xl font-semibold text-white leading-tight">
+              Expert <span className="text-[#7fb2dd]">Services</span> for Your
               Global Journey
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <hr className="sol-separator-left sol-separator-light mt-6" />
+            <p className="text-lg text-white/85 leading-relaxed mt-8">
               Comprehensive support at every stage, from selecting the right
               university to landing in your dream country.
             </p>
@@ -137,29 +141,29 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white dark:bg-background-dark">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, i) => (
               <div
                 key={service.id}
-                className="bg-background-light dark:bg-gray-800 p-10 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:-translate-y-1 transition-all group"
+                className="sol-card p-9 group"
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 shrink-0 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  <div className="w-14 h-14 shrink-0 bg-[#204276] flex items-center justify-center text-white transition-colors group-hover:bg-black">
                     <span className="material-symbols-outlined text-3xl">
                       {service.icon}
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3 text-[#0d121b] dark:text-white">
+                    <h3 className="text-xl font-semibold mb-3 text-[#1a1a1a]">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                    <p className="text-gray-500 leading-relaxed mb-4">
                       {service.description}
                     </p>
                     {service.detailed_content && (
-                      <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed">
+                      <p className="text-gray-400 text-sm leading-relaxed">
                         {service.detailed_content}
                       </p>
                     )}
@@ -172,40 +176,40 @@ export default function Services() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-background-light dark:bg-background-dark/50">
+      <section className="py-24 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              The Process
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-black text-[#0d121b] dark:text-white mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="sol-eyebrow text-sm mb-3">The Process</h2>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
               How It Works
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
+            <hr className="sol-separator" />
+            <p className="text-gray-500 text-lg mt-6">
               Our streamlined 6-step process makes your journey from inquiry to
               departure smooth and stress-free.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {processSteps.map((step, i) => (
               <div
                 key={i}
-                className="relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
+                className="relative bg-white p-8 pt-10 border border-[#e3e6eb] hover:shadow-lg transition-shadow"
               >
-                <div className="absolute -top-4 -left-2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-black text-lg shadow-lg">
+                <div
+                  className="absolute -top-4 left-6 w-9 h-9 bg-[#204276] text-white flex items-center justify-center font-bold text-lg shadow-md"
+                  style={{ fontFamily: '"Oswald", sans-serif' }}
+                >
                   {i + 1}
                 </div>
-                <div className="mt-4">
-                  <span className="material-symbols-outlined text-primary text-3xl mb-4 block">
-                    {step.icon}
-                  </span>
-                  <h4 className="text-lg font-bold mb-2 text-[#0d121b] dark:text-white">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    {step.desc}
-                  </p>
-                </div>
+                <span className="material-symbols-outlined text-[#204276] text-3xl mb-4 block">
+                  {step.icon}
+                </span>
+                <h4 className="text-lg font-semibold mb-2 text-[#1a1a1a]">
+                  {step.title}
+                </h4>
+                <p className="text-gray-500 text-sm">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -213,20 +217,19 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary">
+      <section className="sol-dark-strip py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+          <hr className="sol-separator sol-separator-light" />
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto mt-6">
             Book a free consultation today and let our experts craft the perfect
             plan for your academic future.
           </p>
-          <Link
-            to="/freeconsulation"
-            className="inline-flex bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
-          >
+          <Link to="/freeconsulation" className="sol-btn-light text-lg">
             Book Free Consultation
+            <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
         </div>
       </section>

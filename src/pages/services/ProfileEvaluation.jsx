@@ -91,13 +91,13 @@ const outcomeAreas = [
   {
     icon: Map,
     type: "Country Suitability",
-    color: "#005B8F",
+    color: "#204276",
     desc: "Which countries are the best match for your profile, budget, and career aspirations, including visa success likelihood and post-study work rights.",
   },
   {
     icon: BookOpen,
     type: "Program Recommendations",
-    color: "#4A83F3",
+    color: "#7fb2dd",
     desc: "Specific programs and degrees aligned with your academic background and career direction, at reach, match, and safety institutions.",
   },
   {
@@ -200,9 +200,9 @@ const profileBands = [
   },
   {
     band: "Good Profile",
-    color: "#005B8F",
-    bg: "rgba(0,91,143,0.07)",
-    border: "rgba(0,91,143,0.18)",
+    color: "#204276",
+    bg: "rgba(32,66,118,0.07)",
+    border: "rgba(32,66,118,0.18)",
     desc: "Eligible for a wide range of quality institutions and some partial scholarships. Strong results with the right strategy.",
     indicators: "CGPA 3.0–3.5, IELTS 6.5, some experience",
   },
@@ -265,7 +265,7 @@ export default function ProfileEvaluation() {
             transition: all .25s;
           }
           .outcome-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .outcome-card-header {

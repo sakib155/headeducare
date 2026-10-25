@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchMergedCountries } from "../../lib/countryData";
 
 const css = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
   /* ── design tokens (scoped to .dp-root, not :root) ── */
   .dp-root {
@@ -10,14 +10,14 @@ const css = `
     --ink:           #0f1720;
     --ink-mid:       #4b5b67;
     --ink-soft:      #7b8b97;
-    --primary:       #005B8F;
+    --primary:       #204276;
     --primary-light: #e6f3fa;
     --primary-soft:  #cce7f5;
     --card-bg:       #ffffff;
     --border:        #d9e8f2;
     --radius:        16px;
 
-    font-family: 'Outfit', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     background: var(--cream);
     min-height: 100vh;
     padding: 56px 32px 80px;
@@ -46,7 +46,7 @@ const css = `
     gap: 10px;
   }
   .dp-eyebrow {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: .72rem; font-weight: 600;
     letter-spacing: .18em; text-transform: uppercase;
     color: var(--primary);
@@ -58,7 +58,7 @@ const css = `
     background: var(--primary);
   }
   .dp-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 700; line-height: 1;
     color: var(--ink);
@@ -154,7 +154,7 @@ const css = `
     flex: 1;
   }
   .dp-name {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.45rem; font-weight: 700;
     color: var(--ink); line-height: 1.1;
     letter-spacing: -.01em;
@@ -200,7 +200,7 @@ const css = `
     text-align: center;
     padding: 80px 0;
     color: var(--ink-soft);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.4rem; font-style: italic;
   }
 
@@ -213,7 +213,7 @@ const css = `
      DARK MODE  (.dark class on <html>)
   ═══════════════════════════════════════════ */
   .dark .dp-root {
-    --cream:         #01091c;
+    --cream:         #0d1626;
     --ink:           #e2e8f0;
     --ink-mid:       #94a3b8;
     --ink-soft:      #64748b;

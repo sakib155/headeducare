@@ -154,140 +154,19 @@ function useReveal() {
 }
 
 const HERO_IMAGES = [
-  // Row 1 - varied sizes
-  {
-    src: "/assets/prettiest-college-campuses-princeton-1592777643.avif",
-    alt: "Princeton University",
-    cls: "top-0 left-0",
-    w: 160,
-    h: 140,
-    delay: "0s",
-    dur: "5s",
-    vanishDelay: "0s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-stanford-university-1592777646.avif",
-    alt: "Stanford University",
-    cls: "top-0 left-[55%]",
-    w: 90,
-    h: 110,
-    delay: "1.5s",
-    dur: "4.5s",
-    vanishDelay: "6s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-m-i-t-1592777642.avif",
-    alt: "MIT",
-    cls: "top-[10px] right-0",
-    w: 140,
-    h: 120,
-    delay: "0.3s",
-    dur: "5.5s",
-    vanishDelay: "9s",
-  },
-  // Row 2
-  {
-    src: "/assets/prettiest-college-campuses-dartmouth-college-1592777600.avif",
-    alt: "Dartmouth College",
-    cls: "top-[32%] left-[2%]",
-    w: 110,
-    h: 130,
-    delay: "0.4s",
-    dur: "5.5s",
-    vanishDelay: "2s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif",
-    alt: "University of Chicago",
-    cls: "top-[28%] left-[26%]",
-    w: 150,
-    h: 110,
-    delay: "1.2s",
-    dur: "6.5s",
-    vanishDelay: "5s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-georgetown-1592777619.avif",
-    alt: "Georgetown University",
-    cls: "top-[35%] right-[24%]",
-    w: 100,
-    h: 140,
-    delay: "2s",
-    dur: "4s",
-    vanishDelay: "8s",
-  },
-  {
-    src: "/assets/howard-u-1594329564.avif",
-    alt: "Howard University",
-    cls: "top-[30%] right-0",
-    w: 130,
-    h: 100,
-    delay: "1.8s",
-    dur: "5.2s",
-    vanishDelay: "1s",
-  },
-  // Row 3
-  {
-    src: "/assets/hampton-university-1594329567.avif",
-    alt: "Hampton University",
-    cls: "bottom-[8%] left-0",
-    w: 130,
-    h: 120,
-    delay: "0.6s",
-    dur: "4.8s",
-    vanishDelay: "4s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-berry-college-1592777599.avif",
-    alt: "Berry College",
-    cls: "bottom-[2%] left-[28%]",
-    w: 100,
-    h: 90,
-    delay: "1s",
-    dur: "5.8s",
-    vanishDelay: "7s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-christopher-newport-university-1592777622.avif",
-    alt: "Christopher Newport University",
-    cls: "bottom-[5%] left-[52%]",
-    w: 150,
-    h: 130,
-    delay: "0.2s",
-    dur: "6.2s",
-    vanishDelay: "10s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-elon-university-1592777607.avif",
-    alt: "Elon University",
-    cls: "bottom-[0%] right-0",
-    w: 110,
-    h: 100,
-    delay: "1.4s",
-    dur: "4.6s",
-    vanishDelay: "2.5s",
-  },
-  // Floating extras (overlap between rows)
-  {
-    src: "/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif",
-    alt: "Notre Dame University",
-    cls: "top-[16%] left-[15%]",
-    w: 80,
-    h: 80,
-    delay: "0.9s",
-    dur: "5.3s",
-    vanishDelay: "5.5s",
-  },
-  {
-    src: "/assets/prettiest-college-campuses-syracuse-1592777648.avif",
-    alt: "Syracuse University",
-    cls: "top-[50%] right-[12%]",
-    w: 90,
-    h: 85,
-    delay: "1.6s",
-    dur: "4.2s",
-    vanishDelay: "8.5s",
-  },
+  { src: "/assets/prettiest-college-campuses-princeton-1592777643.avif", alt: "Princeton University" },
+  { src: "/assets/prettiest-college-campuses-stanford-university-1592777646.avif", alt: "Stanford University" },
+  { src: "/assets/prettiest-college-campuses-m-i-t-1592777642.avif", alt: "MIT" },
+  { src: "/assets/prettiest-college-campuses-dartmouth-college-1592777600.avif", alt: "Dartmouth College" },
+  { src: "/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif", alt: "University of Chicago" },
+  { src: "/assets/prettiest-college-campuses-georgetown-1592777619.avif", alt: "Georgetown University" },
+  { src: "/assets/howard-u-1594329564.avif", alt: "Howard University" },
+  { src: "/assets/hampton-university-1594329567.avif", alt: "Hampton University" },
+  { src: "/assets/prettiest-college-campuses-berry-college-1592777599.avif", alt: "Berry College" },
+  { src: "/assets/prettiest-college-campuses-christopher-newport-university-1592777622.avif", alt: "Christopher Newport University" },
+  { src: "/assets/prettiest-college-campuses-elon-university-1592777607.avif", alt: "Elon University" },
+  { src: "/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif", alt: "Notre Dame University" },
+  { src: "/assets/prettiest-college-campuses-syracuse-1592777648.avif", alt: "Syracuse University" },
 ];
 
 export default function Home() {
@@ -447,6 +326,9 @@ export default function Home() {
     fetchData();
   }, []);
 
+  const leadInputCls =
+    "w-full px-4 py-3 rounded-sm border border-gray-200 bg-white text-[#1a1a1a] focus:ring-2 focus:ring-[#204276] focus:border-transparent";
+
   return (
     <div ref={containerRef}>
       {/* ===== LIGHTBOX MODAL ===== */}
@@ -463,7 +345,7 @@ export default function Home() {
             <img
               src={HERO_IMAGES[lightbox].src}
               alt={HERO_IMAGES[lightbox].alt}
-              className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+              className="max-w-full max-h-[85vh] object-contain shadow-2xl"
             />
             <p className="text-center text-white text-lg font-bold mt-4">
               {HERO_IMAGES[lightbox].alt}
@@ -496,162 +378,82 @@ export default function Home() {
         </div>
       )}
 
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-24 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left */}
-            <div className="max-w-2xl opacity-0 animate-fadeInUp">
-              <div className="mb-8">
-  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-gray-900 dark:text-white">
-    Higher Education
-    <span className="block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-500">
-      Abroad Destination
-    </span>
-  </h1>
-</div>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-light animate-fadeInUp animate-delay-100">
-                Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.
-                <br /><br />
-                Our experienced counselors work closely with every student to understand their academic background, career aspirations, and financial circumstances before designing a personalized study abroad strategy. Whether your destination is the USA, UK, Canada, Australia, New Zealand, Europe, Malaysia, or South Korea, we provide end-to-end support throughout your journey.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-200">
-                <Link
-                  to="/freeconsulation"
-                  className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/20 hover:-translate-y-1"
-                >
-                  <span className="material-symbols-outlined">
-                    event_available
-                  </span>
-                  Free Consultation
-                </Link>
-                <Link
-                  to="/services"
-                  className="bg-gray-100 dark:bg-gray-800 text-[#0d121b] dark:text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-all flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 hover:-translate-y-1"
-                >
-                  <span className="material-symbols-outlined">search</span>
-                  Our Services
-                </Link>
-              </div>
-              <div className="mt-12 flex items-center gap-6 animate-fadeInUp animate-delay-300">
-                <div className="flex -space-x-3">
-                  {[
-                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
-                    "https://images.unsplash.com/photo-1672857994550-154578be9f41?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
-                  ].map((src, i) => (
-                    <img
-                      key={i}
-                      alt="Student"
-                      className="h-12 w-12 rounded-full border-4 border-white dark:border-background-dark object-cover hover:z-10 transition-transform hover:scale-110"
-                      src={src}
-                    />
-                  ))}
-                </div>
-                <div className="text-sm">
-                  <p className="font-bold text-[#0d121b] dark:text-white">
-                    Join {stats.students_placed} Alumni
-                  </p>
-                  <p className="text-gray-500">Trusted by students worldwide</p>
-                </div>
-              </div>
+      {/* ===== HERO SECTION — full-bleed photo + navy overlay, dual-color H1 ===== */}
+      <section
+        className="sol-overlay"
+        style={{
+          backgroundImage:
+            "url(/assets/prettiest-college-campuses-stanford-university-1592777646.avif)",
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white opacity-0 animate-fadeInUp"
+            style={{ fontFamily: '"Roboto Slab", serif' }}
+          >
+            Higher Education
+            <span className="block pb-2 text-[#7fb2dd]">Abroad Destination</span>
+          </h1>
+
+          <p className="mt-8 text-white/90 text-lg leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
+            Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.
+          </p>
+          <p className="mt-4 text-white/75 leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
+            Our experienced counselors work closely with every student to understand their academic background, career aspirations, and financial circumstances before designing a personalized study abroad strategy. Whether your destination is the USA, UK, Canada, Australia, New Zealand, Europe, Malaysia, or South Korea, we provide end-to-end support throughout your journey.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fadeInUp animate-delay-200">
+            <Link to="/freeconsulation" className="sol-btn justify-center text-lg">
+              Free Consultation
+              <span className="material-symbols-outlined">arrow_forward</span>
+            </Link>
+            <Link to="/services" className="sol-btn-light justify-center text-lg">
+              Our Services
+              <span className="material-symbols-outlined">arrow_forward</span>
+            </Link>
+          </div>
+
+          <div className="mt-12 flex items-center justify-center gap-6 opacity-0 animate-fadeInUp animate-delay-300">
+            <div className="flex -space-x-3">
+              {[
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+                "https://images.unsplash.com/photo-1672857994550-154578be9f41?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
+              ].map((src, i) => (
+                <img
+                  key={i}
+                  alt="Student"
+                  className="h-12 w-12 rounded-full border-4 border-white/70 object-cover"
+                  src={src}
+                />
+              ))}
             </div>
-
-            {/* Right - Animated Image Mosaic */}
-            <div className="relative opacity-0 animate-slideInRight animate-delay-200">
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse animate-delay-500" />
-
-              {/* Mosaic Grid */}
-              <div className="relative h-[420px] sm:h-[480px] lg:h-[540px] w-full">
-                {HERO_IMAGES.map((img, i) => (
-                  <div
-                    key={i}
-                    onClick={() => setLightbox(i)}
-                    className={`absolute ${img.cls} mosaic-img rounded-2xl overflow-hidden shadow-xl border-2 border-white/60 dark:border-gray-700/60 cursor-pointer`}
-                    style={{
-                      width: img.w,
-                      height: img.h,
-                      animation: `heroFloat ${img.dur} ease-in-out infinite ${img.delay}, heroVanish 12s ease-in-out infinite ${img.vanishDelay}`,
-                      zIndex: 10 - i,
-                    }}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-full object-cover transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 transition-opacity duration-300 mosaic-overlay" />
-                    <div className="absolute bottom-3 left-3 right-3 text-white opacity-0 translate-y-2 transition-all duration-300 mosaic-label">
-                      <p className="text-xs font-bold drop-shadow-lg">
-                        {img.alt}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-
-                {/* Floating stats badge */}
-                <div
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 flex items-center gap-4"
-                  style={{
-                    animation: "heroFloat 4s ease-in-out infinite 0.5s",
-                  }}
-                >
-                  <div className="text-center">
-                    <p className="text-xl font-black text-primary">
-                      {stats.countries_count || "50+"}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">
-                      Countries
-                    </p>
-                  </div>
-                  <div className="w-px h-8 bg-gray-200 dark:bg-gray-700" />
-                  <div className="text-center">
-                    <p className="text-xl font-black text-primary">
-                      {stats.partner_universities}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">
-                      Universities
-                    </p>
-                  </div>
-                  <div className="w-px h-8 bg-gray-200 dark:bg-gray-700" />
-                  <div className="text-center">
-                    <p className="text-xl font-black text-primary">
-                      {stats.visa_success_rate}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">
-                      Success
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="text-sm text-left">
+              <p className="font-bold text-white">Join {stats.students_placed} Alumni</p>
+              <p className="text-white/70">Trusted by students worldwide</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== STATS BANNER ===== */}
-      <section className="bg-primary  py-12 relative overflow-hidden">
+      {/* ===== STATS BAND — dark navy strip with big Oswald numbers ===== */}
+      <section className="sol-dark-strip py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              {
-                val: stats.partner_universities,
-                label: "Partner Universities",
-              },
+              { val: stats.partner_universities, label: "Partner Universities" },
               { val: stats.visa_success_rate, label: "Visa Success Rate" },
               { val: stats.students_placed, label: "Students Placed" },
               { val: stats.years_experience, label: "Years Experience" },
             ].map((stat, i) => (
               <div
                 key={i}
-                className={`text-center  ${i < 3 ? "border-r border-white/20" : ""} reveal`}
+                className={`text-center ${i < 3 ? "md:border-r md:border-white/20" : ""} reveal`}
               >
-                <p className="text-4xl lg:text-5xl font-black mb-1 text-white">
+                <p className="sol-stat-number !text-white text-4xl lg:text-5xl mb-1">
                   {stat.val}
                 </p>
-                <p className="text-white/80 text-sm font-medium uppercase tracking-wider">
+                <p className="text-white/75 text-xs font-medium uppercase tracking-widest" style={{ fontFamily: '"Oswald", sans-serif' }}>
                   {stat.label}
                 </p>
               </div>
@@ -660,47 +462,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES SECTION ===== */}
-      <section className="py-24 ">
+      {/* ===== CAMPUS GALLERY STRIP (opens lightbox) ===== */}
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              Our Expert Services
-            </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d121b] mb-6">
+          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-3">
+            {HERO_IMAGES.slice(0, 7).map((img, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setLightbox(i)}
+                className="sol-gallery-item h-24 sm:h-28 reveal"
+                style={{ transitionDelay: `${i * 60}ms` }}
+                aria-label={img.alt}
+              >
+                <img src={img.src} alt={img.alt} loading="lazy" />
+                <span className="sol-gallery-caption text-xs font-semibold">{img.alt}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SERVICES SECTION — icon callout grid ===== */}
+      <section className="py-24 bg-[#f2f2f2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14 reveal">
+            <h2 className="sol-eyebrow text-sm mb-3">Our Expert Services</h2>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
               Tailored Solutions for Your International Career
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
+            <hr className="sol-separator" />
+            <p className="text-gray-500 text-lg mt-6">
               We provide end-to-end support for your education and migration
               journey, ensuring a smooth transition to your new life abroad.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 6).map((service, i) => (
               <div
                 key={service.id}
-                className="service-card   p-10 rounded-2xl shadow-sm border border-gray-100  group reveal"
+                className="sol-callout reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors group-hover:scale-110 transform">
-                  <span className="material-symbols-outlined text-4xl">
+                <div className="w-14 h-14 mx-auto bg-[#204276] flex items-center justify-center text-white mb-5">
+                  <span className="material-symbols-outlined text-3xl">
                     {service.icon}
                   </span>
                 </div>
-                <h4 className="text-2xl font-bold mb-4">
+                <h4 className="text-xl font-semibold mb-3 text-[#1a1a1a]">
                   {service.title}
                 </h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   {service.description}
                 </p>
                 <Link
                   to="/services"
-                  className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all"
+                  className="inline-flex items-center gap-1.5 text-[#2b7bb9] font-bold text-sm hover:text-[#204276] transition-colors"
                 >
-                  Learn More{" "}
-                  <span className="material-symbols-outlined ml-1">
-                    arrow_forward
-                  </span>
+                  Learn More
+                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
                 </Link>
               </div>
             ))}
@@ -708,17 +528,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== STUDY DESTINATIONS ===== */}
-      <section className="py-24 ">
+      {/* ===== STUDY DESTINATIONS — gallery tiles with hover overlay captions ===== */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-            <h2 className="text-primary  font-bold text-sm uppercase tracking-widest mb-3">
-              Study Destinations
-            </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black title_header mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-14 reveal">
+            <h2 className="sol-eyebrow text-sm mb-3">Study Destinations</h2>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
               Explore Top Countries
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
+            <hr className="sol-separator" />
+            <p className="text-gray-500 text-lg mt-6">
               Discover the best study destinations in the world and find the
               perfect fit for your academic journey.
             </p>
@@ -728,24 +547,22 @@ export default function Home() {
               <Link
                 to={country.route}
                 key={country.id}
-                className="country-card relative group rounded-2xl overflow-hidden h-72 reveal cursor-pointer"
+                className="sol-gallery-item h-72 reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <img
                   src={country.image_url}
                   alt={country.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
                 />
-                <div className="overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-                  <span className="text-3xl mb-2 block">
-                    {country.flag_url}
-                  </span>
-                  <h4 className="text-2xl font-bold ">{country.name}</h4>
-                  <p className="country-info text-sm text-white/80 mt-1">
-                    {country.description}
-                  </p>
-                </div>
+                <span className="sol-gallery-caption">
+                  <span className="text-3xl mb-2">{country.flag_url}</span>
+                  <span className="text-2xl font-semibold font-[Roboto_Slab]">{country.name}</span>
+                  <span className="text-sm text-white/85 mt-2">{country.description}</span>
+                </span>
+                <span className="absolute bottom-0 left-0 right-0 p-5 text-white z-10 bg-gradient-to-t from-black/70 to-transparent">
+                  <span className="text-xl font-semibold">{country.name}</span>
+                </span>
               </Link>
             ))}
           </div>
@@ -753,19 +570,18 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="py-24 ">
+      <section className="py-24 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
-              Success Stories
-            </h2>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black title_header mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-14 reveal">
+            <h2 className="sol-eyebrow text-sm mb-3">Success Stories</h2>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
               What Our Students Say
             </h3>
+            <hr className="sol-separator" />
             <button
               type="button"
               onClick={() => setShowTestimonialModal(true)}
-              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5"
+              className="sol-btn mt-8 text-sm"
             >
               <span className="material-symbols-outlined text-lg">rate_review</span>
               Give Testimonial
@@ -773,7 +589,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.length === 0 && (
-              <div className="md:col-span-2 lg:col-span-4 text-center py-16 text-gray-500 dark:text-gray-400">
+              <div className="md:col-span-2 lg:col-span-4 text-center py-16 text-gray-500">
                 <span className="material-symbols-outlined text-5xl mb-4 block opacity-40">rate_review</span>
                 <p className="text-lg font-medium">No student reviews yet.</p>
                 <p className="text-sm mt-1">Be the first to share your experience!</p>
@@ -782,7 +598,7 @@ export default function Home() {
             {testimonials.map((t, i) => (
               <div
                 key={t.id}
-                className=" p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-shadow reveal"
+                className="sol-card p-8 reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-1 mb-4">
@@ -796,17 +612,17 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 italic">
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 italic">
                   "{t.quote}"
                 </p>
                 <div className="flex items-center gap-3">
                   <img
                     src={t.photo_url}
                     alt={t.student_name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-[#204276]/20"
                   />
                   <div>
-                    <p className="font-bold text-sm text-[#0d121b] dark:text-white">
+                    <p className="font-bold text-sm text-[#1a1a1a]">
                       {t.student_name}
                     </p>
                     <p className="text-xs text-gray-500">
@@ -820,180 +636,181 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== CTA SECTION ===== */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-[#005B8F] rounded-[2rem] p-12 lg:p-20 overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px]" />
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-[120px]" />
-            </div>
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-              <div className="reveal">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
-                  Ready to Start Your Global Journey?
-                </h2>
-                <p className="text-gray-300 text-normal mb-10">
-                  Our expert counselors are waiting to help you choose the right
-                  path for your academic and professional growth.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    to="/freeconsulation"
-                    className="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl hover:-translate-y-1"
-                  >
-                    Book Free Consultation
-                  </Link>
-                  <Link
-                    to="/countries"
-                    className="border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-colors hover:-translate-y-1"
-                  >
-                    Browse Destinations
-                  </Link>
-                </div>
-              </div>
-              <div className="reveal">
-                <form
-                  onSubmit={handleLeadSubmit}
-                  className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl"
+      {/* ===== CTA SECTION — overlay band with lead form ===== */}
+      <section
+        className="sol-overlay"
+        style={{
+          backgroundImage:
+            "url(/assets/prettiest-college-campuses-georgetown-1592777619.avif)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="reveal">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
+                Ready to Start Your Global Journey?
+              </h2>
+              <hr className="sol-separator-left sol-separator-light" />
+              <p className="text-white/85 mt-6 mb-10 leading-relaxed">
+                Our expert counselors are waiting to help you choose the right
+                path for your academic and professional growth.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/freeconsulation" className="sol-btn-light text-lg">
+                  Book Free Consultation
+                  <span className="material-symbols-outlined">arrow_forward</span>
+                </Link>
+                <Link
+                  to="/allcountries/allcountry"
+                  className="inline-flex items-center gap-2 border-2 border-white/70 text-white px-8 py-3.5 font-bold text-lg hover:bg-white/10 transition-colors"
+                  style={{ fontFamily: '"Roboto", sans-serif', borderRadius: 3 }}
                 >
-                  <h3 className="text-2xl font-bold text-[#0d121b] dark:text-white mb-2">
-                    Get Free Consultation
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-6 text-sm">
-                    Fill in your details and our counselors will contact you
-                    within 24 hours.
-                  </p>
+                  Browse Destinations
+                </Link>
+              </div>
+            </div>
+            <div className="reveal">
+              <form
+                onSubmit={handleLeadSubmit}
+                className="bg-white p-8 shadow-2xl"
+                style={{ borderTop: "3px solid #204276" }}
+              >
+                <h3 className="text-2xl font-semibold text-[#1a1a1a] mb-2">
+                  Get Free Consultation
+                </h3>
+                <p className="text-gray-500 mb-6 text-sm">
+                  Fill in your details and our counselors will contact you
+                  within 24 hours.
+                </p>
 
-                  <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        name="name"
-                        value={leadForm.name}
-                        onChange={handleLeadChange}
-                        required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                        Email *
-                      </label>
-                      <input
-                        name="email"
-                        type="email"
-                        value={leadForm.email}
-                        onChange={handleLeadChange}
-                        required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                        Phone *
-                      </label>
-                      <input
-                        name="phone"
-                        value={leadForm.phone}
-                        onChange={handleLeadChange}
-                        required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="+880 1XXX XXXXXX"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                        Country of Interest
-                      </label>
-                      <select
-                        name="country_interest"
-                        value={leadForm.country_interest}
-                        onChange={handleLeadChange}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                      >
-                        <option value="">Select country</option>
-                        {countries.map((c) => (
-                          <option key={c.name} value={c.name}>{c.name}</option>
-                        ))}
-                        <option>Other</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                      Service Interest
+                <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name *
                     </label>
-                    <select
-                      name="service_interest"
-                      value={leadForm.service_interest}
+                    <input
+                      name="name"
+                      value={leadForm.name}
                       onChange={handleLeadChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                    >
-                      <option value="">Select service</option>
-                      <option>Study Abroad</option>
-                      <option>Migration Services</option>
-                      <option>Visa Assistance</option>
-                      <option>Test Preparation</option>
-                      <option>Career Counseling</option>
-                      <option>Scholarship Guidance</option>
-                    </select>
-                  </div>
-
-                  <div className="mb-6">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={leadForm.message}
-                      onChange={handleLeadChange}
-                      rows={3}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                      placeholder="Tell us about your goals or any questions..."
+                      required
+                      className={leadInputCls}
+                      placeholder="Your full name"
                     />
                   </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      value={leadForm.email}
+                      onChange={handleLeadChange}
+                      required
+                      className={leadInputCls}
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={leadStatus === "sending"}
-                    className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 disabled:opacity-50 flex items-center justify-center gap-2"
+                <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Phone *
+                    </label>
+                    <input
+                      name="phone"
+                      value={leadForm.phone}
+                      onChange={handleLeadChange}
+                      required
+                      className={leadInputCls}
+                      placeholder="+880 1XXX XXXXXX"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Country of Interest
+                    </label>
+                    <select
+                      name="country_interest"
+                      value={leadForm.country_interest}
+                      onChange={handleLeadChange}
+                      className={leadInputCls}
+                    >
+                      <option value="">Select country</option>
+                      {countries.map((c) => (
+                        <option key={c.name} value={c.name}>{c.name}</option>
+                      ))}
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Service Interest
+                  </label>
+                  <select
+                    name="service_interest"
+                    value={leadForm.service_interest}
+                    onChange={handleLeadChange}
+                    className={leadInputCls}
                   >
-                    {leadStatus === "sending" ? (
-                      <>
-                        <span className="material-symbols-outlined animate-spin">
-                          progress_activity
-                        </span>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <span className="material-symbols-outlined">event</span>
-                        Submit Request
-                      </>
-                    )}
-                  </button>
+                    <option value="">Select service</option>
+                    <option>Study Abroad</option>
+                    <option>Migration Services</option>
+                    <option>Visa Assistance</option>
+                    <option>Test Preparation</option>
+                    <option>Career Counseling</option>
+                    <option>Scholarship Guidance</option>
+                  </select>
+                </div>
 
-                  {leadStatus === "success" && (
-                    <p className="mt-4 text-green-600 font-semibold text-center">
-                      Thank you! We'll contact you within 24 hours.
-                    </p>
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={leadForm.message}
+                    onChange={handleLeadChange}
+                    rows={3}
+                    className={`${leadInputCls} resize-none`}
+                    placeholder="Tell us about your goals or any questions..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={leadStatus === "sending"}
+                  className="w-full sol-btn justify-center text-lg disabled:opacity-50"
+                >
+                  {leadStatus === "sending" ? (
+                    <>
+                      <span className="material-symbols-outlined animate-spin">
+                        progress_activity
+                      </span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Submit Request
+                      <span className="material-symbols-outlined">arrow_forward</span>
+                    </>
                   )}
-                  {leadStatus === "error" && (
-                    <p className="mt-4 text-red-500 font-semibold text-center">
-                      Something went wrong. Please try again or call us directly.
-                    </p>
-                  )}
-                </form>
-              </div>
+                </button>
+
+                {leadStatus === "success" && (
+                  <p className="mt-4 text-green-600 font-semibold text-center">
+                    Thank you! We'll contact you within 24 hours.
+                  </p>
+                )}
+                {leadStatus === "error" && (
+                  <p className="mt-4 text-red-500 font-semibold text-center">
+                    Something went wrong. Please try again or call us directly.
+                  </p>
+                )}
+              </form>
             </div>
           </div>
         </div>
@@ -1006,15 +823,15 @@ export default function Home() {
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setShowTestimonialModal(false)}
           />
-          <div className="relative bg-white dark:bg-[#01091c] w-full max-w-lg rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-white w-full max-w-lg shadow-2xl border-t-[3px] border-[#204276] max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between p-6 pb-0">
-              <h4 className="text-xl font-black text-[#0d121b] dark:text-white">
+              <h4 className="text-xl font-semibold text-[#1a1a1a]">
                 Share Your Experience
               </h4>
               <button
                 type="button"
                 onClick={() => setShowTestimonialModal(false)}
-                className="p-2 rounded-lg text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-2 text-gray-400 hover:bg-gray-100"
               >
                 <span className="material-symbols-outlined">close</span>
               </button>
@@ -1025,7 +842,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-5xl text-green-500 mb-4 block">
                     verified
                   </span>
-                  <p className="text-lg font-bold text-[#0d121b] dark:text-white mb-2">
+                  <p className="text-lg font-bold text-[#1a1a1a] mb-2">
                     Thank you for your review!
                   </p>
                   <p className="text-sm text-gray-500 mb-6">
@@ -1039,7 +856,7 @@ export default function Home() {
                       setTestimonialStatus(null);
                       setTestimonialMsg("");
                     }}
-                    className="bg-primary text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700"
+                    className="sol-btn text-sm"
                   >
                     Close
                   </button>
@@ -1048,7 +865,7 @@ export default function Home() {
                 <form onSubmit={handleTestimonialSubmit}>
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
                         Your Name *
                       </label>
                       <input
@@ -1056,12 +873,12 @@ export default function Home() {
                         value={testimonialForm.student_name}
                         onChange={handleTestimonialChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className={leadInputCls}
                         placeholder="e.g. Rahim Ahmed"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
                         University *
                       </label>
                       <input
@@ -1069,13 +886,13 @@ export default function Home() {
                         value={testimonialForm.university}
                         onChange={handleTestimonialChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className={leadInputCls}
                         placeholder="e.g. University of Melbourne"
                       />
                     </div>
                   </div>
                   <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Country *
                     </label>
                     <input
@@ -1083,12 +900,12 @@ export default function Home() {
                       value={testimonialForm.country}
                       onChange={handleTestimonialChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className={leadInputCls}
                       placeholder="e.g. Australia"
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Your Review *
                     </label>
                     <textarea
@@ -1097,12 +914,12 @@ export default function Home() {
                       onChange={handleTestimonialChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#0d121b] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                      className={`${leadInputCls} resize-none`}
                       placeholder="Tell us about your study abroad experience..."
                     />
                   </div>
                   <div className="mb-5">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Your Photo (optional)
                     </label>
                     <input
@@ -1110,13 +927,13 @@ export default function Home() {
                       type="file"
                       accept="image/*"
                       onChange={handleTestimonialPhoto}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm text-gray-600 dark:text-gray-300 file:mr-3 file:px-4 file:py-2 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:font-bold file:cursor-pointer"
+                      className="w-full px-4 py-3 border border-gray-200 bg-white text-sm text-gray-600 file:mr-3 file:px-4 file:py-2 file:border-0 file:bg-[#204276]/10 file:text-[#204276] file:font-bold file:cursor-pointer"
                     />
                     <p className="text-xs text-gray-400 mt-1">
                       Auto-resized to 400×400 (square). JPG, PNG, or WEBP up to 15 MB.
                     </p>
                     {testimonialPhotoWarn && (
-                      <p className="text-amber-400 text-xs mt-1">{testimonialPhotoWarn}</p>
+                      <p className="text-amber-500 text-xs mt-1">{testimonialPhotoWarn}</p>
                     )}
                   </div>
                   {testimonialStatus === "error" && (
@@ -1125,7 +942,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={testimonialStatus === "sending"}
-                    className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 disabled:opacity-50"
+                    className="w-full sol-btn justify-center disabled:opacity-50"
                   >
                     {testimonialStatus === "sending" ? "Submitting..." : "Submit Review"}
                   </button>

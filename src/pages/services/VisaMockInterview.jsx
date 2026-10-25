@@ -84,13 +84,13 @@ const interviewTypes = [
     icon: Globe,
     title: "US F1 Visa Interview",
     desc: "Short (2-3 mins), high-pressure interviews at the US Embassy. Focuses on intent to return, funding, and academic clarity. Requires crisp, confident answers.",
-    color: "#005B8F",
+    color: "#204276",
   },
   {
     icon: BookOpen,
     title: "UK Credibility Interview",
     desc: "Conducted by university admissions teams or UKVI. Focuses on why you chose this specific course, university, and how it fits your career history.",
-    color: "#4A83F3",
+    color: "#7fb2dd",
   },
   {
     icon: Target,
@@ -224,7 +224,7 @@ export default function VisaMockInterview() {
             transition: all .25s;
           }
           .interview-type-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .interview-type-header {

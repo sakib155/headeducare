@@ -60,13 +60,13 @@ const essayTypes = [
   {
     icon: FileText,
     title: "Statement of Purpose (SOP)",
-    color: "#005B8F",
+    color: "#204276",
     desc: "The most critical document in your application, a compelling SOP articulates your academic journey, career goals, and why this specific program is the right next step for you.",
   },
   {
     icon: Users,
     title: "Personal Statement",
-    color: "#4A83F3",
+    color: "#7fb2dd",
     desc: "Required by UK, Australian, and many US universities, this essay reveals who you are beyond your grades, highlighting your motivations, values, and personal growth.",
   },
   {
@@ -225,9 +225,9 @@ const dontList = [
 const essayPromptTypes = [
   {
     label: "Why This University?",
-    color: "#005B8F",
-    bg: "rgba(0,91,143,0.07)",
-    border: "rgba(0,91,143,0.18)",
+    color: "#204276",
+    bg: "rgba(32,66,118,0.07)",
+    border: "rgba(32,66,118,0.18)",
     desc: "Requires you to demonstrate genuine knowledge of the institution, specific programs, faculty, research labs, or culture, and articulate a clear fit.",
   },
   {
@@ -316,7 +316,7 @@ export default function SOPEssayDrafting() {
             transition: all .25s;
           }
           .essay-type-card:hover {
-            box-shadow: 0 12px 40px rgba(0,91,143,0.1);
+            box-shadow: 0 12px 40px rgba(32,66,118,0.1);
             transform: translateY(-4px);
           }
           .essay-type-header {

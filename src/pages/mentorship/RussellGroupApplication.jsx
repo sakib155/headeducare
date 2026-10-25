@@ -55,26 +55,26 @@ export default function RussellGroupApplication() {
         .rg-hero { position:relative; padding:72px 0 56px; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); }
         .rg-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
         .rg-table { width:100%; border-collapse:collapse; margin-top:24px; font-size:14px; border-radius:16px; overflow:hidden; }
-        .rg-table th { background:linear-gradient(135deg,#005B8F,#004a78); color:#fff; padding:14px 18px; font-weight:700; font-size:13px; font-family:'Lexend',sans-serif; text-align:left; }
+        .rg-table th { background:linear-gradient(135deg,#204276,#16325c); color:#fff; padding:14px 18px; font-weight:700; font-size:13px; font-family:'Lexend',sans-serif; text-align:left; }
         .rg-table td { padding:12px 18px; border-bottom:1px solid rgba(0,0,0,0.06); color:#4b5563; font-family:'Lexend',sans-serif; font-size:13px; }
-        .rg-table tr:hover td { background:rgba(0,91,143,0.03); }
-        .rg-table .rank { font-weight:900; color:#005B8F; font-size:15px; }
+        .rg-table tr:hover td { background:rgba(32,66,118,0.03); }
+        .rg-table .rank { font-weight:900; color:#204276; font-size:15px; }
         .dark .rg-table td { color:#9ca3af; border-color:rgba(255,255,255,0.08); }
         @media(max-width:768px){ .rg-table { font-size:12px; } }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
         {/* Hero */}
         <section className="rg-hero">
-          <div className="rg-blob" style={{ width: 500, height: 500, background: "rgba(0,91,143,0.1)", top: -150, right: -100 }} />
+          <div className="rg-blob" style={{ width: 500, height: 500, background: "rgba(32,66,118,0.1)", top: -150, right: -100 }} />
           <div className="rg-blob" style={{ width: 300, height: 300, background: "rgba(96,165,250,0.12)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>
             <div className="mtr-reveal" style={{ maxWidth: 700 }}>
-              <span className="mtr-badge" style={{ background: "rgba(0,91,143,0.1)", color: "#005B8F" }}>
-                <span className="mtr-badge-dot" style={{ background: "#005B8F" }} />
+              <span className="mtr-badge" style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}>
+                <span className="mtr-badge-dot" style={{ background: "#204276" }} />
                 Russell Group Application
               </span>
               <h1 className="mtr-h1" style={{ color: "#0f172a" }}>
-                Russell Group <span style={{ color: "#005B8F" }}>University Application</span>
+                Russell Group <span style={{ color: "#204276" }}>University Application</span>
               </h1>
               <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
                 Expert guidance for applying to the prestigious Russell Group Universities in the UK. Our expert team gives you a decisive advantage in this competitive admission process.
