@@ -386,7 +386,7 @@ export default function Home() {
             "url(/assets/prettiest-college-campuses-stanford-university-1592777646.avif)",
         }}
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24 lg:pt-48 lg:pb-32 text-center">
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white opacity-0 animate-fadeInUp"
             style={{ fontFamily: '"Roboto Slab", serif' }}

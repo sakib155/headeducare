@@ -179,33 +179,51 @@ export default function RefundPolicy() {
         .rp-step:hover { box-shadow:0 4px 20px rgba(32,66,118,0.08); transform:translateX(4px); }
         .rp-step-num { font-size:28px; font-weight:900; color:rgba(32,66,118,0.15); font-family:"IBM Plex Sans",sans-serif; flex-shrink:0; line-height:1; }
         @media(max-width:640px) { .rp-table-row { grid-template-columns:1fr; } .rp-badge { width:fit-content; } }
-      `}</style>
+      
+        /* Dark mode */
+        .dark .rp-root { background:#0d1626; }
+        .dark .rp-root h1, .dark .rp-root h2, .dark .rp-root h3, .dark .rp-root h4 { color:#f1f1f1 !important; }
+        .dark .rp-root p { color:#9ca3af !important; }
+        .dark .rp-root .rp-card, .dark .rp-root .rp-summary, .dark .rp-root .rp-step,
+        .dark .rp-root .rp-table-row { background:#13203a; border-color:rgba(255,255,255,0.08); }
+        .dark .rp-root .rp-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.4); }
+        .dark .rp-root .rp-subtitle { color:#7fb2dd !important; }
+        .dark .rp-root .rp-body { color:#9ca3af !important; }
+        .dark .rp-root .rp-section-icon { background:rgba(127,178,221,0.15); }
+        .dark .rp-root .rp-section-icon svg { stroke:#7fb2dd; }
+        .dark .rp-root .rp-nav-link { color:#9ca3af; }
+        .dark .rp-root .rp-nav-link:hover { background:rgba(127,178,221,0.1); color:#7fb2dd; }
+        .dark .rp-root .rp-nav-link.active { background:rgba(127,178,221,0.18); color:#7fb2dd; }
+        .dark .rp-root .rp-nav-dot { background:#9ca3af; }
+        .dark .rp-root .rp-divider { background:rgba(127,178,221,0.15); }
+        .dark .rp-root .bg-white { background:#13203a !important; border-color:rgba(255,255,255,0.1) !important; }
+    `}</style>
 
-      <div ref={containerRef}>
+      <div className="rp-root" ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative py-16 lg:py-20 overflow-hidden"
+          className="relative pt-40 pb-20 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg,rgba(32,66,118,0.05) 0%,rgba(74,131,243,0.03) 100%)",
+              "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%)",
           }}
         >
           <div
             className="absolute top-0 right-0 w-96 h-96 rounded-full"
-            style={{ background: "rgba(32,66,118,0.06)", filter: "blur(80px)" }}
+            style={{ background: "rgba(255,255,255,0.05)", filter: "blur(80px)" }}
           />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl rp-reveal">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
-                style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}
+                style={{ background: "rgba(127,178,221,0.18)", color: "#7fb2dd" }}
               >
                 <span
                   style={{
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "#204276",
+                    background: "#7fb2dd",
                     flexShrink: 0,
                     display: "inline-block",
                   }}
@@ -213,15 +231,15 @@ export default function RefundPolicy() {
                 Legal Document
               </div>
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-6"
+                style={{ color: "#ffffff", fontFamily: "'Roboto Slab', serif" }}
               >
-                Refund <span style={{ color: "#204276" }}>Policy</span>
+                Refund <span style={{ color: "#7fb2dd" }}>Policy</span>
               </h1>
               <p
                 className="text-lg leading-relaxed mb-6"
                 style={{
-                  color: "#6b7280",
+                  color: "rgba(255,255,255,0.85)",
                   fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
@@ -232,7 +250,7 @@ export default function RefundPolicy() {
               </p>
               <div
                 className="flex flex-wrap gap-6 text-sm"
-                style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
+                style={{ color: "rgba(255,255,255,0.75)", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" /> Effective: January 1, 2025

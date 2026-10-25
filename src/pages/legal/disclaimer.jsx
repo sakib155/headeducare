@@ -142,15 +142,33 @@ export default function Disclaimer() {
         .dis-card-body { padding:0 28px 24px; }
         .dis-card-body p { font-size:14px; line-height:1.8; color:#6b7280; font-family:"IBM Plex Sans",sans-serif; font-weight:300; }
         .dis-summary { font-size:13px; color:#9ca3af; font-family:"IBM Plex Sans",sans-serif; margin-top:4px; }
-      `}</style>
+      
+        /* Dark mode */
+        .dark .dis-root { background:#0d1626; }
+        .dark .dis-root h1, .dark .dis-root h2, .dark .dis-root h3, .dark .dis-root h4 { color:#f1f1f1 !important; }
+        .dark .dis-root p { color:#9ca3af !important; }
+        .dark .dis-root .dis-card, .dark .dis-root .dis-summary, .dark .dis-root .dis-step,
+        .dark .dis-root .dis-table-row { background:#13203a; border-color:rgba(255,255,255,0.08); }
+        .dark .dis-root .dis-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.4); }
+        .dark .dis-root .dis-subtitle { color:#7fb2dd !important; }
+        .dark .dis-root .dis-body { color:#9ca3af !important; }
+        .dark .dis-root .dis-section-icon { background:rgba(127,178,221,0.15); }
+        .dark .dis-root .dis-section-icon svg { stroke:#7fb2dd; }
+        .dark .dis-root .dis-nav-link { color:#9ca3af; }
+        .dark .dis-root .dis-nav-link:hover { background:rgba(127,178,221,0.1); color:#7fb2dd; }
+        .dark .dis-root .dis-nav-link.active { background:rgba(127,178,221,0.18); color:#7fb2dd; }
+        .dark .dis-root .dis-nav-dot { background:#9ca3af; }
+        .dark .dis-root .dis-divider { background:rgba(127,178,221,0.15); }
+        .dark .dis-root .bg-white { background:#13203a !important; border-color:rgba(255,255,255,0.1) !important; }
+    `}</style>
 
-      <div ref={containerRef}>
+      <div className="dis-root" ref={containerRef}>
         {/* Hero */}
         <section
-          className="relative py-16 lg:py-20 overflow-hidden"
+          className="relative pt-40 pb-20 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg,rgba(220,38,38,0.04) 0%,rgba(32,66,118,0.04) 100%)",
+              "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%)",
           }}
         >
           <div
@@ -176,15 +194,15 @@ export default function Disclaimer() {
                 Legal Notice
               </div>
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-                style={{ color: "#1a1a1a", fontFamily: "'IBM Plex Sans', sans-serif" }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-6"
+                style={{ color: "#ffffff", fontFamily: "'Roboto Slab', serif" }}
               >
-                <span style={{ color: "#dc2626" }}>Disclaimer</span>
+                <span style={{ color: "#7fb2dd" }}>Disclaimer</span>
               </h1>
               <p
                 className="text-lg leading-relaxed mb-6"
                 style={{
-                  color: "#6b7280",
+                  color: "rgba(255,255,255,0.85)",
                   fontFamily: "'IBM Plex Sans', sans-serif",
                   fontWeight: 300,
                 }}
@@ -195,7 +213,7 @@ export default function Disclaimer() {
               </p>
               <div
                 className="flex flex-wrap gap-6 text-sm"
-                style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
+                style={{ color: "rgba(255,255,255,0.75)", fontFamily: "'IBM Plex Sans', sans-serif" }}
               >
                 <span className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" /> Effective: January 1, 2025

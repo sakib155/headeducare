@@ -85,7 +85,7 @@ export default function About() {
             "url(/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 lg:pt-44 lg:pb-24">
           <div className="max-w-4xl">
             <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">About Us</h2>
             <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-8 leading-tight">

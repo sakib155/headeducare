@@ -32,8 +32,8 @@ const BASE_STYLES = `
   .wp-reveal:nth-child(5){transition-delay:.32s}
   .wp-reveal:nth-child(6){transition-delay:.40s}
   .wp-container { max-width:1200px; margin:0 auto; padding:0 20px; }
-  .wp-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(43,123,185,0.12); color:#204276; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
-  .wp-badge-dot { width:6px; height:6px; border-radius:50%; background:#204276; flex-shrink:0; }
+  .wp-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(127,178,221,0.18); color:#7fb2dd; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
+  .wp-badge-dot { width:6px; height:6px; border-radius:50%; background:#7fb2dd; flex-shrink:0; }
   .wp-h1 { font-size:clamp(36px,5vw,64px); font-weight:600; line-height:1.08; color:#1a1a1a; margin-bottom:20px; }
   .wp-h1 span { color:#204276; }
   .wp-h2 { font-size:clamp(24px,3vw,40px); font-weight:600; color:#1a1a1a; margin-bottom:12px; }
@@ -272,10 +272,10 @@ export default function WillProvide() {
         <section
           style={{
             position: "relative",
-            padding: "120px 0 100px",
+            padding: "150px 0 80px",
             overflow: "hidden",
             background:
-              "linear-gradient(135deg,rgba(32,66,118,0.06) 0%,rgba(74,131,243,0.04) 100%)",
+              "linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%)",
           }}
         >
           {/* blob */}
@@ -285,7 +285,7 @@ export default function WillProvide() {
               width: 480,
               height: 480,
               borderRadius: "50%",
-              background: "rgba(32,66,118,0.07)",
+              background: "rgba(255,255,255,0.05)",
               filter: "blur(80px)",
               top: -120,
               right: -80,
@@ -301,10 +301,10 @@ export default function WillProvide() {
                 <span className="wp-badge-dot" />
                 About Head Edu Care
               </span>
-              <h1 className="wp-h1">
-                Everything We Will <span>Provide for Your Global Journey</span>
+              <h1 className="wp-h1" style={{ color: "#ffffff" }}>
+                Everything We Will <span style={{ color: "#7fb2dd" }}>Provide for Your Global Journey</span>
               </h1>
-              <p className="wp-lead" style={{ marginBottom: 36 }}>
+              <p className="wp-lead" style={{ marginBottom: 36, color: "rgba(255,255,255,0.88)" }}>
                 From your first consultation to your first day on campus, Head
                 Edu Care offers a full suite of student services designed to
                 make studying abroad seamless, affordable, and successful.

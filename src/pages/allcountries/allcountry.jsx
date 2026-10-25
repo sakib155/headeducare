@@ -20,7 +20,7 @@ const css = `
     font-family: 'IBM Plex Sans', sans-serif;
     background: var(--cream);
     min-height: 100vh;
-    padding: 56px 32px 80px;
+    padding: 0 32px 80px;
     position: relative;
   }
 
@@ -40,7 +40,14 @@ const css = `
 
   /* ── header ── */
   .dp-header {
-    margin-bottom: 56px;
+    position: relative;
+    margin: 0 -32px 48px;
+    padding: 150px 32px 56px;
+    background-image:
+      linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%),
+      url('/assets/prettiest-college-campuses-stanford-university-1592777646.avif');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -61,14 +68,14 @@ const css = `
     font-family: 'Roboto Slab', serif;
     font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 700; line-height: 1;
-    color: var(--ink);
+    color: #ffffff;
     letter-spacing: -.01em;
   }
   .dp-title em {
-    font-style: italic; color: var(--primary);
+    font-style: italic; color: #7fb2dd;
   }
   .dp-subtitle {
-    font-size: .95rem; color: var(--ink-mid);
+    font-size: .95rem; color: rgba(255,255,255,0.85);
     font-weight: 300; margin-top: 4px;
     max-width: 480px; line-height: 1.6;
   }
@@ -205,7 +212,8 @@ const css = `
   }
 
   @media (max-width: 640px) {
-    .dp-root { padding: 36px 16px 60px; }
+    .dp-root { padding: 0 16px 60px; }
+    .dp-header { margin: 0 -16px 40px; padding: 120px 16px 44px; }
     .dp-grid { gap: 18px; }
   }
 
@@ -226,9 +234,9 @@ const css = `
     color: var(--ink);
   }
 
-  .dark .dp-root .dp-title { color: var(--ink); }
-  .dark .dp-root .dp-title em { color: var(--primary); }
-  .dark .dp-root .dp-subtitle { color: var(--ink-mid); }
+  .dark .dp-root .dp-title { color: #ffffff; }
+  .dark .dp-root .dp-title em { color: #7fb2dd; }
+  .dark .dp-root .dp-subtitle { color: rgba(255,255,255,0.85); }
   .dark .dp-root .dp-eyebrow { color: var(--primary); }
   .dark .dp-root .dp-eyebrow::after { background: var(--primary); }
   .dark .dp-root .dp-card:hover { box-shadow: 0 20px 56px rgba(0,0,0,.45); }

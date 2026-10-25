@@ -1,5 +1,5 @@
 export const countryDetailStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Roboto+Slab:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap');
 
   .cd-root *, .cd-root *::before, .cd-root *::after {
     box-sizing: border-box;
@@ -8,27 +8,27 @@ export const countryDetailStyles = `
   }
 
   .cd-root {
-    --ink:         #0b1120;
+    --ink:         #020F30;
     --ink-soft:    #475569;
     --ink-xsoft:   #94a3b8;
-    --surface:     #f8fafc;
-    --surface-2:   #f1f5f9;
+    --surface:     #F8F9FA;
+    --surface-2:   #E9ECEF;
     --card:        #ffffff;
-    --border:      #e2e8f0;
-    --border-soft: #f1f5f9;
-    --accent:      #204276;
-    --accent-mid:  #2b7bb9;
-    --accent-bg:   #eaf1f8;
-    --accent-glow: rgba(32,66,118,.14);
+    --border:      #DEE2E6;
+    --border-soft: #E9ECEF;
+    --accent:      #2017CE;
+    --accent-mid:  #00DAFF;
+    --accent-bg:   #EEF0FF;
+    --accent-glow: rgba(32,23,206,.12);
     --green:       #16a34a;
     --radius-sm:   8px;
-    --radius:      14px;
-    --radius-lg:   20px;
+    --radius:      12px;
+    --radius-lg:   12px;
     --shadow-sm:   0 1px 3px rgba(0,0,0,.06);
     --shadow:      0 4px 20px rgba(0,0,0,.07);
     --shadow-lg:   0 8px 32px rgba(0,0,0,.1);
     --transition:  .25s cubic-bezier(.4,0,.2,1);
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'DM Sans', 'IBM Plex Sans', sans-serif;
     background: var(--surface);
     color: var(--ink);
     min-height: 100vh;
@@ -48,7 +48,7 @@ export const countryDetailStyles = `
     position: relative;
     height: clamp(460px, 52vw, 560px);
     overflow: hidden;
-    background: #0b1120;
+    background: #020F30;
   }
   .hero-img {
     width: 100%; height: 100%;
@@ -61,7 +61,7 @@ export const countryDetailStyles = `
   }
   .hero-placeholder {
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, #0f1a30 0%, #0b1120 100%);
+    background: linear-gradient(135deg, #061638 0%, #020F30 100%);
   }
   .hero-overlay {
     position: absolute; inset: 0; z-index: 2;
@@ -100,7 +100,7 @@ export const countryDetailStyles = `
   .hero-title {
     font-family: 'Roboto Slab', serif;
     font-size: clamp(2.4rem, 5.8vw, 3.8rem);
-    font-weight: 900;
+    font-weight: 600;
     color: #fff; line-height: 1.06;
     letter-spacing: -.025em;
     margin-bottom: 14px;
@@ -115,7 +115,7 @@ export const countryDetailStyles = `
   .hero-accent {
     display: block;
     width: 60px; height: 4px;
-    background: linear-gradient(90deg, var(--accent), #2b7bb9);
+    background: linear-gradient(90deg, #2017CE, #00DAFF);
     border-radius: 99px;
     margin-top: 18px;
   }
@@ -338,7 +338,7 @@ export const countryDetailStyles = `
   }
   .scholarship-amount {
     font-family: 'Roboto Slab', serif;
-    font-size: 1.25rem; font-weight: 900;
+    font-size: 1.25rem; font-weight: 600;
     color: var(--accent);
   }
   .scholarship-level {
@@ -396,10 +396,10 @@ export const countryDetailStyles = `
     --card:        #0d1e30;
     --border:      #1e3050;
     --border-soft: #162840;
-    --accent:      #60a5fa;
-    --accent-mid:  #3b82f6;
+    --accent:      #00DAFF;
+    --accent-mid:  #7fb2dd;
     --accent-bg:   #0d1e40;
-    --accent-glow: rgba(96,165,250,.15);
+    --accent-glow: rgba(0,218,255,.15);
     --green:       #4ade80;
   }
   .dark .cd-root .hero { background: #000; }

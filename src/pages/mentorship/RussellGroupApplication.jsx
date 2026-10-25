@@ -52,7 +52,8 @@ export default function RussellGroupApplication() {
   return (
     <>
       <style>{MENTOR_STYLES + `
-        .rg-hero { position:relative; padding:72px 0 56px; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); }
+        .rg-hero { position:relative; padding:150px 0 64px; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%); }
+        @media(max-width:768px){ .rg-hero{ padding:120px 0 48px; } }
         .rg-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
         .rg-table { width:100%; border-collapse:collapse; margin-top:24px; font-size:14px; border-radius:16px; overflow:hidden; }
         .rg-table th { background:linear-gradient(135deg,#204276,#16325c); color:#fff; padding:14px 18px; font-weight:700; font-size:13px; font-family:'Lexend',sans-serif; text-align:left; }
@@ -65,18 +66,18 @@ export default function RussellGroupApplication() {
       <div className="mtr-page" ref={containerRef}>
         {/* Hero */}
         <section className="rg-hero">
-          <div className="rg-blob" style={{ width: 500, height: 500, background: "rgba(32,66,118,0.1)", top: -150, right: -100 }} />
-          <div className="rg-blob" style={{ width: 300, height: 300, background: "rgba(96,165,250,0.12)", bottom: -80, left: -60 }} />
+          <div className="rg-blob" style={{ width: 500, height: 500, background: "rgba(255,255,255,0.06)", top: -150, right: -100 }} />
+          <div className="rg-blob" style={{ width: 300, height: 300, background: "rgba(127,178,221,0.1)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>
             <div className="mtr-reveal" style={{ maxWidth: 700 }}>
-              <span className="mtr-badge" style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}>
-                <span className="mtr-badge-dot" style={{ background: "#204276" }} />
+              <span className="mtr-badge" style={{ background: "rgba(127,178,221,0.18)", color: "#7fb2dd" }}>
+                <span className="mtr-badge-dot" style={{ background: "#7fb2dd" }} />
                 Russell Group Application
               </span>
-              <h1 className="mtr-h1" style={{ color: "#0f172a" }}>
-                Russell Group <span style={{ color: "#204276" }}>University Application</span>
+              <h1 className="mtr-h1" style={{ color: "#ffffff" }}>
+                Russell Group <span style={{ color: "#7fb2dd" }}>University Application</span>
               </h1>
-              <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
+              <p style={{ fontSize: 17, color: "rgba(255,255,255,0.85)", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
                 Expert guidance for applying to the prestigious Russell Group Universities in the UK. Our expert team gives you a decisive advantage in this competitive admission process.
               </p>
               <Link to="/freeconsulation" className="mtr-cta-btn">

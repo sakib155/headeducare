@@ -77,7 +77,7 @@ export default function FreeConsultation() {
             "url(/assets/prettiest-college-campuses-princeton-1592777643.avif)",
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 py-24 text-center">
+        <div className="max-w-6xl mx-auto px-4 pt-40 pb-24 text-center">
           <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-6">
             Book Your <span className="text-[#7fb2dd]">Free Consultation</span>
           </h1>

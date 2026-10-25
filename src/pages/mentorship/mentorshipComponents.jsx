@@ -44,8 +44,10 @@ export const MENTOR_STYLES = `
   .mtr-page h1, .mtr-page h2, .mtr-page h3, .mtr-page h4, .mtr-page h5 { font-family:"Roboto Slab",serif !important; }
 
   /* Hero */
-  .mtr-hero { position:relative; padding:72px 0 56px; overflow:hidden; }
-  .mtr-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,rgba(32,66,118,0.06) 0%,rgba(43,123,185,0.05) 100%); }
+  .mtr-hero { position:relative; padding:150px 0 64px; overflow:hidden; }
+  .mtr-hero-bg { position:absolute; inset:0; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)); }
+  .mtr-hero .mtr-h1, .mtr-hero .mtr-lead { color:#ffffff; }
+  .mtr-hero .mtr-h1 span { color:#7fb2dd; }
   .mtr-hero-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
 
   /* Badge */
@@ -125,7 +127,7 @@ export const MENTOR_STYLES = `
 
   /* Responsive */
   @media(max-width:768px){
-    .mtr-hero{ padding:56px 0 44px; }
+    .mtr-hero{ padding:120px 0 48px; }
     .mtr-section,.mtr-section-alt{ padding:60px 0; }
   }
 `;

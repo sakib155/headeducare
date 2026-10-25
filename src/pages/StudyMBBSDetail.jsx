@@ -6,8 +6,13 @@ import {
 const styles = `
   .mbbs-page { font-family: 'IBM Plex Sans', sans-serif; }
   .mbbs-page h1, .mbbs-page h2, .mbbs-page h3 { font-family: 'Roboto Slab', serif; }
-  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(135deg,#f0f7ff 0%,#e8f2fe 100%); padding:72px 0 56px; }
-  .dark .mbbs-hero { background:linear-gradient(135deg,#02182a,#0d1f35); }
+  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)); padding:150px 0 64px; }
+  .dark .mbbs-hero { background:linear-gradient(rgba(10,20,38,0.94), rgba(13,26,48,0.9)); }
+  .mbbs-hero .mbbs-h1 { color:#ffffff !important; }
+  .mbbs-hero .mbbs-h1 span { color:#7fb2dd; }
+  .mbbs-hero .mbbs-body { color:rgba(255,255,255,0.85); }
+  .mbbs-hero .mbbs-back { color:#7fb2dd; }
+  .mbbs-hero .mbbs-badge { background:rgba(127,178,221,0.18); color:#7fb2dd; border:1px solid rgba(127,178,221,0.35); border-radius:3px; }
   .mbbs-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
   .mbbs-section { padding: 80px 0; }
   .mbbs-section-alt { padding: 80px 0; background: #f2f2f2; }
@@ -37,7 +42,7 @@ const styles = `
   .mbbs-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 40px; background: rgba(32,66,118,0.1); color: #204276; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
   .dark .mbbs-badge { background: rgba(74,131,243,0.15); color: #7fb2dd; }
   .mbbs-highlight-box { background: linear-gradient(135deg, #204276, #0f203c); border-radius: 3px; padding: 36px; color: #fff; }
-  @media(max-width:768px) { .mbbs-section { padding: 48px 0; } .mbbs-section-alt { padding: 48px 0; } }
+  @media(max-width:768px) { .mbbs-hero { padding:120px 0 48px; } .mbbs-section { padding: 48px 0; } .mbbs-section-alt { padding: 48px 0; } }
 `;
 
 const chinaUniversities = [

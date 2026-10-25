@@ -120,29 +120,39 @@ const degrees = (person) =>
 
 const OurPeople = () => {
   return (
-    <section className="mx-auto px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl py-16">
+    <div>
+      {/* Hero band */}
+      <section
+        className="sol-overlay"
+        style={{
+          backgroundImage:
+            "url(/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-16 text-center">
+          <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">Meet Our Team</h2>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-white">
+            Thousands run, <span className="text-white/60">A few finish.</span>
+            <span className="block mt-1">
+              We make sure, <span className="text-[#7fb2dd]">You rise above.</span>
+            </span>
+          </h1>
+          <hr className="sol-separator sol-separator-light" />
+          <p className="mt-6 text-sm sm:text-base font-medium text-white/80">
+            Choose a mentor & discover your potential.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto px-4 md:px-8 lg:px-10 xl:px-10 max-w-7xl py-16">
       {/* Section header */}
-     <div className="text-center mb-16">
-  <h2 className="sol-eyebrow text-sm mb-3">
-    Meet Our Team
-  </h2>
-
-  <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
-    <span className="block text-[#1a1a1a] dark:text-white">
-      Thousands run,{" "}
-      <span className="text-gray-400 dark:text-gray-500">A few finish.</span>
-    </span>
-    <span className="block mt-1 text-[#1a1a1a] dark:text-white">
-      We make sure,{" "}
-      <span className="text-[#204276] dark:text-[#7fb2dd]">You rise above.</span>
-    </span>
-  </h3>
-  <hr className="sol-separator" />
-
-  <p className="mt-6 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400">
-    Choose a mentor & discover your potential.
-  </p>
-</div>
+    <div className="text-center mb-16">
+      <h2 className="sol-eyebrow text-sm mb-3">Our Mentors</h2>
+      <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#1a1a1a] dark:text-white">
+        Meet the people behind <span className="text-[#204276] dark:text-[#7fb2dd]">your success</span>
+      </h3>
+      <hr className="sol-separator" />
+    </div>
 
       {/* People grid */}
       <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -164,7 +174,7 @@ const OurPeople = () => {
             <div className="w-full flex flex-col p-4 gap-1.5">
               {/* Role badge */}
               <span
-                className={`self-start text-[10px] font-semibold px-2 py-0.5 rounded-full ${getRoleStyle(person.role)}`}
+                className={`self-start text-[10px] font-semibold px-2 py-0.5 rounded-sm ${getRoleStyle(person.role)}`}
               >
                 {person.role}
               </span>
@@ -193,7 +203,8 @@ const OurPeople = () => {
           </div>
         ))}
       </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

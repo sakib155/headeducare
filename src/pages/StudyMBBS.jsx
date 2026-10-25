@@ -43,14 +43,20 @@ export default function StudyMBBS() {
     <>
       <style>{styles}</style>
       <div className="mbbs-page">
-        <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-background-dark dark:to-surface-dark overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 className="text-primary font-bold text-sm uppercase tracking-widest mb-3">Medical Studies</h2>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#1a1a1a] dark:text-white mb-6">
+        <section
+          className="sol-overlay"
+          style={{
+            backgroundImage:
+              "url(/assets/prettiest-college-campuses-m-i-t-1592777642.avif)",
+          }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 text-center">
+            <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">Medical Studies</h2>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6">
               Study MBBS Abroad
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <hr className="sol-separator sol-separator-light" />
+            <p className="text-lg text-white/85 max-w-2xl mx-auto mt-6">
               Pursue your dream of becoming a doctor at leading medical universities around the world.
             </p>
           </div>

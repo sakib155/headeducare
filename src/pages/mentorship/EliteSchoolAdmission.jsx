@@ -15,26 +15,26 @@ export default function EliteSchoolAdmission() {
   return (
     <>
       <style>{MENTOR_STYLES + `
-        .elite-hero { position:relative; padding:72px 0 56px; overflow:hidden; background:linear-gradient(135deg,#e8f4fd 0%,#dbeafe 100%); }
+        .elite-hero { position:relative; padding:150px 0 64px; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%); }
         .elite-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
-        @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } }
+        @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .elite-hero{ padding:120px 0 48px; } }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
 
         {/* Premium dark hero, visually distinct from every other page */}
         <section className="elite-hero">
-          <div className="elite-blob" style={{ width: 500, height: 500, background: "rgba(32,66,118,0.12)", top: -150, right: -100 }} />
-          <div className="elite-blob" style={{ width: 300, height: 300, background: "rgba(96,165,250,0.15)", bottom: -80, left: -60 }} />
+          <div className="elite-blob" style={{ width: 500, height: 500, background: "rgba(255,255,255,0.06)", top: -150, right: -100 }} />
+          <div className="elite-blob" style={{ width: 300, height: 300, background: "rgba(127,178,221,0.1)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>
             <div className="mtr-reveal" style={{ maxWidth: 700 }}>
-              <span className="mtr-badge" style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}>
-                <span className="mtr-badge-dot" style={{ background: "#204276" }} />
+              <span className="mtr-badge" style={{ background: "rgba(127,178,221,0.18)", color: "#7fb2dd" }}>
+                <span className="mtr-badge-dot" style={{ background: "#7fb2dd" }} />
                 USA Mentorship Program
               </span>
-              <h1 className="mtr-h1" style={{ color: "#0f172a" }}>
-                {d.hero.title} <span style={{ color: "#204276" }}>{d.hero.highlight}</span>
+              <h1 className="mtr-h1" style={{ color: "#ffffff" }}>
+                {d.hero.title} <span style={{ color: "#7fb2dd" }}>{d.hero.highlight}</span>
               </h1>
-              <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
+              <p style={{ fontSize: 17, color: "rgba(255,255,255,0.85)", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
                 {d.hero.desc}
               </p>
               <Link to="/freeconsulation" className="mtr-cta-btn" style={{ background: "#204276", color: "#fff" }}>
