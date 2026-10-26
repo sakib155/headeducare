@@ -287,13 +287,14 @@ export default function FreeConsultation() {
                       className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select time slot</option>
-                      <option>9:00 AM – 10:00 AM</option>
-                      <option>10:00 AM – 11:00 AM</option>
-                      <option>11:00 AM – 12:00 PM</option>
-                      <option>1:00 PM – 2:00 PM</option>
-                      <option>2:00 PM – 3:00 PM</option>
-                      <option>3:00 PM – 4:00 PM</option>
-                      <option>4:00 PM – 5:00 PM</option>
+                      <option>10:30 AM – 11:30 AM</option>
+                      <option>11:30 AM – 12:30 PM</option>
+                      <option>12:30 PM – 1:30 PM</option>
+                      <option>1:30 PM – 2:30 PM</option>
+                      <option>2:30 PM – 3:30 PM</option>
+                      <option>3:30 PM – 4:30 PM</option>
+                      <option>4:30 PM – 5:30 PM</option>
+                      <option>5:30 PM – 6:30 PM</option>
                     </select>
                   </div>
                 </div>
@@ -407,7 +408,8 @@ export default function FreeConsultation() {
             Visit Our Office
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-10">
-            Head Educare, Dhaka, Bangladesh. Drop by for a face-to-face
+            44/16, 3rd Floor, West Panthapath, Dhaka -1205.
+            Visiting hour: 10:30 AM to 6:30 PM — drop by for a face-to-face
             consultation with our expert counselors.
           </p>
           <div className="rounded-sm overflow-hidden border border-gray-100 dark:border-gray-700 h-[500px] shadow-lg">

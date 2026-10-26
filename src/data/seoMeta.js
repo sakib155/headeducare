@@ -6,10 +6,10 @@ const SITE = {
   twitter: "@head_educare",
   phone: "+8801910 833 888",
   address: {
-    street: "House-52, Road-4, Block-C, Banani",
+    street: "44/16, 3rd Floor, West Panthapath",
     locality: "Dhaka",
     region: "Dhaka Division",
-    postalCode: "1213",
+    postalCode: "1205",
     country: "Bangladesh",
   },
 };

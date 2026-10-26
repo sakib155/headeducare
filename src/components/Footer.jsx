@@ -81,9 +81,9 @@ export default function Footer() {
                   <Clock className="w-4 h-4" /> Office
                 </h5>
                 <p className="text-white/85 font-medium">
-                  House-52, Road-4, Block-C, Banani, Dhaka 1213
+                  44/16, 3rd Floor, West Panthapath, Dhaka -1205
                 </p>
-                <p className="text-white/70 text-sm mt-1">Sat – Thu, 9:00 AM – 6:00 PM</p>
+                <p className="text-white/70 text-sm mt-1">Visiting hour: 10:30 AM to 6:30 PM</p>
                 <hr className="border-white/20 mt-4" />
               </div>
             </div>
