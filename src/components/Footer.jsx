@@ -11,7 +11,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <Link to="/" className="inline-block mb-5">
-                <img src="/HEAD_horizontal_white.png" alt="Head Educare" className="h-10 w-auto" />
+                <img src="/HEAD_horizontal.png" alt="Head Educare" className="h-10 w-auto" />
               </Link>
               <p className="text-white/70 text-sm leading-relaxed mb-6">
                 Premier education and migration consultancy providing professional

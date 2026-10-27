@@ -93,16 +93,7 @@ export default function Header({
                   <img
                     src="/HEAD_horizontal.png"
                     alt="Head Educare"
-                    className={`h-full w-auto object-contain ${
-                      atTop || darkMode ? "hidden" : "block"
-                    }`}
-                  />
-                  <img
-                    src="/HEAD_horizontal_white.png"
-                    alt="Head Educare"
-                    className={`h-full w-auto object-contain ${
-                      atTop || darkMode ? "block" : "hidden"
-                    }`}
+                    className="h-full w-auto object-contain"
                   />
                 </div>
               </a>
