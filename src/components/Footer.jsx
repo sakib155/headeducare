@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
-              <Link to="/" className="inline-block mb-5 bg-white px-3 py-2">
+              <Link to="/" className="inline-block mb-5">
                 <img src="/HEAD_horizontal.png" alt="Head Educare" className="h-10 w-auto" />
               </Link>
               <p className="text-white/70 text-sm leading-relaxed mb-6">

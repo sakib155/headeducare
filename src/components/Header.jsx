@@ -88,7 +88,7 @@ export default function Header({
                 <div
                   className={`flex items-center transition-all duration-300 ${
                     solid ? "h-10" : "h-13"
-                  } ${atTop ? "bg-white/95 rounded-sm px-2.5 py-1 shadow-sm" : ""}`}
+                  }`}
                 >
                   <img
                     src="/HEAD_horizontal.png"
