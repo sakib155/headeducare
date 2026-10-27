@@ -50,7 +50,7 @@ export const countryDetailStyles = `
   }
 
   /* ═══════════════════════════════════════════════
-     HERO — full-bleed photo, left-aligned, cherry CTA
+     HERO - full-bleed photo, left-aligned, cherry CTA
   ═══════════════════════════════════════════════ */
   .hero {
     position: relative;
@@ -152,7 +152,7 @@ export const countryDetailStyles = `
   .gs-btn-outline-light:hover { background: #fff; color: var(--gs-deep); }
 
   /* ═══════════════════════════════════════════════
-     SECTION BANDS — full-bleed alternating
+     SECTION BANDS - full-bleed alternating
   ═══════════════════════════════════════════════ */
   .band { padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 32px); }
   .band-inner { max-width: 1200px; margin: 0 auto; }
@@ -186,7 +186,7 @@ export const countryDetailStyles = `
   .band-deep .band-sub, .band-navy .band-sub { color: rgba(255,255,255,.75); }
 
   /* ═══════════════════════════════════════════════
-     WHY STUDY — numbered 2-col grid on deep navy
+     WHY STUDY - numbered 2-col grid on deep navy
   ═══════════════════════════════════════════════ */
   .why-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -215,7 +215,7 @@ export const countryDetailStyles = `
   .why-desc { font-size: .92rem; color: rgba(255,255,255,.72); line-height: 1.75; }
 
   /* ═══════════════════════════════════════════════
-     COURSE CHIPS — white cards, cobalt, flat
+     COURSE CHIPS - white cards, cobalt, flat
   ═══════════════════════════════════════════════ */
   .courses-wrap { display: flex; flex-wrap: wrap; gap: 12px; }
   .course-chip {
@@ -239,7 +239,7 @@ export const countryDetailStyles = `
   }
 
   /* ═══════════════════════════════════════════════
-     INTAKES — flat lavender-border cards
+     INTAKES - flat lavender-border cards
   ═══════════════════════════════════════════════ */
   .intakes-grid {
     display: grid;
@@ -274,7 +274,7 @@ export const countryDetailStyles = `
   .intake-start { font-size: .78rem; color: var(--ink-xsoft); margin-top: 2px; }
 
   /* ═══════════════════════════════════════════════
-     TABLES — flat, gostudyin editorial style
+     TABLES - flat, gostudyin editorial style
   ═══════════════════════════════════════════════ */
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .table-wrap table { margin: 0; }
@@ -341,7 +341,7 @@ export const countryDetailStyles = `
   .band-deep .data-table td:first-child { color: #fff; }
 
   /* ═══════════════════════════════════════════════
-     CHECKLIST — mint band, check-squares
+     CHECKLIST - mint band, check-squares
   ═══════════════════════════════════════════════ */
   .checklist {
     list-style: none; padding: 0; margin: 0;
@@ -355,12 +355,12 @@ export const countryDetailStyles = `
   }
   .check-item svg { flex-shrink: 0; margin-top: 2px; color: #7fb2dd; }
 
-  /* checklist on light band (visa docs) — cobalt checks */
+  /* checklist on light band (visa docs) - cobalt checks */
   .checklist-on-light .check-item { color: var(--ink); }
   .checklist-on-light .check-item svg { color: var(--gs-cobalt); }
 
   /* ═══════════════════════════════════════════════
-     SCHOLARSHIPS — white flat cards, lavender borders
+     SCHOLARSHIPS - white flat cards, lavender borders
   ═══════════════════════════════════════════════ */
   .scholarship-grid {
     display: grid;
@@ -455,7 +455,7 @@ export const countryDetailStyles = `
   }
 
   /* ═══════════════════════════════════════════════
-     DARK MODE — light bands flip, saturated stay
+     DARK MODE - light bands flip, saturated stay
   ═══════════════════════════════════════════════ */
   .dark .cd-root {
     --ink:         #e2e8f0;

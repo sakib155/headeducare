@@ -77,7 +77,7 @@ export default function About() {
 
   return (
     <div>
-      {/* Hero — overlay band */}
+      {/* Hero - overlay band */}
       <section
         className="sol-overlay sol-hero-inner"
         style={{

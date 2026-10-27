@@ -65,7 +65,7 @@ export default function Header({
         .dark .menu-scroll::-webkit-scrollbar-thumb { background: rgba(127,178,221,.35); }
       `}</style>
       <div className={`w-full font-sans ${darkMode ? "dark" : ""}`}>
-        {/* Header — fixed so it overlays the dark hero, solid after scroll */}
+        {/* Header - fixed so it overlays the dark hero, solid after scroll */}
         <header
           className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
             solid

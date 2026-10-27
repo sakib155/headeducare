@@ -168,7 +168,7 @@ const CheckSquare = ({ size = 22 }) => (
 
 export default function CountryDetails() {
   const { slug } = useParams();
-  // Live DB (admin panel) data merged over the static fallback — so an image
+  // Live DB (admin panel) data merged over the static fallback - so an image
   // uploaded in the admin panel updates the hero here automatically.
   const [merged, setMerged] = useState(null);
 
@@ -240,7 +240,7 @@ export default function CountryDetails() {
         </Helmet>
       )}
       <div className="cd-root">
-        {/* ── HERO — full-bleed photo, left-aligned, cherry CTA ── */}
+        {/* ── HERO - full-bleed photo, left-aligned, cherry CTA ── */}
         <div className="hero">
           {imgUrl ? (
             <img src={imgUrl} alt={name} className="hero-img" />
@@ -271,7 +271,7 @@ export default function CountryDetails() {
           </div>
         </div>
 
-        {/* ── WHY STUDY — deep navy band, mint accents ── */}
+        {/* ── WHY STUDY - deep navy band, mint accents ── */}
         {whyData && whyData.points.length > 0 && (
           <div className="band band-deep" id="why-study">
             <div className="band-inner">
@@ -280,7 +280,7 @@ export default function CountryDetails() {
                 Why choose <span>{name}</span> for your studies?
               </h2>
               <p className="band-sub">
-                Everything you need to know about building your future in {name} — guided by our expert counsellors at every step.
+                Everything you need to know about building your future in {name} - guided by our expert counsellors at every step.
               </p>
               <div className="why-grid">
                 {whyData.points.map((point, i) => (
@@ -297,7 +297,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── TOP COURSES — light band, flat cobalt chips ── */}
+        {/* ── TOP COURSES - light band, flat cobalt chips ── */}
         {courses?.length > 0 && (
           <div className="band band-light">
             <div className="band-inner">
@@ -306,14 +306,14 @@ export default function CountryDetails() {
                 Popular <span>courses</span> in {name}
               </h2>
               <p className="band-sub">
-                Explore the programmes international students choose most — from foundation pathways to doctoral research.
+                Explore the programmes international students choose most - from foundation pathways to doctoral research.
               </p>
               <TopCourses courses={courses} />
             </div>
           </div>
         )}
 
-        {/* ── INTAKE PERIODS — white band, lavender cards ── */}
+        {/* ── INTAKE PERIODS - white band, lavender cards ── */}
         {intakes?.length > 0 && (
           <div className="band band-white">
             <div className="band-inner">
@@ -322,14 +322,14 @@ export default function CountryDetails() {
                 Upcoming <span>intakes</span>
               </h2>
               <p className="band-sub">
-                Plan ahead — application windows close months before classes begin.
+                Plan ahead - application windows close months before classes begin.
               </p>
               <Intakes intakes={intakes} />
             </div>
           </div>
         )}
 
-        {/* ── TUITION FEES — light band, editorial table ── */}
+        {/* ── TUITION FEES - light band, editorial table ── */}
         {fees && (
           <div className="band band-light">
             <div className="band-inner">
@@ -345,7 +345,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── LANGUAGE REQUIREMENTS — white band ── */}
+        {/* ── LANGUAGE REQUIREMENTS - white band ── */}
         {langs?.length > 0 && (
           <div className="band band-white">
             <div className="band-inner">
@@ -361,7 +361,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── APPLICATION CHECKLIST — signature mint band ── */}
+        {/* ── APPLICATION CHECKLIST - signature mint band ── */}
         {appChecklist && appChecklist.length > 0 && (
           <div className="band band-mint">
             <div className="band-inner">
@@ -370,7 +370,7 @@ export default function CountryDetails() {
                 Application <span style={{ color: "#7fb2dd" }}>checklist</span>
               </h2>
               <p className="band-sub" style={{ color: "rgba(255,255,255,0.82)" }}>
-                Everything you need to study in {name} — gather these before your counselling session and we'll handle the rest.
+                Everything you need to study in {name} - gather these before your counselling session and we'll handle the rest.
               </p>
               <ul className="checklist">
                 {appChecklist.map((item, i) => (
@@ -384,7 +384,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── DOCUMENTS FOR OFFER LETTER — light checklist ── */}
+        {/* ── DOCUMENTS FOR OFFER LETTER - light checklist ── */}
         {offerDocs?.length > 0 && (
           <div className="band band-light">
             <div className="band-inner">
@@ -405,7 +405,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── DOCUMENTS FOR VISA — white checklist ── */}
+        {/* ── DOCUMENTS FOR VISA - white checklist ── */}
         {visaDocs?.length > 0 && (
           <div className="band band-white">
             <div className="band-inner">
@@ -426,7 +426,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── POST-STUDY WORK SALARIES — deep navy band ── */}
+        {/* ── POST-STUDY WORK SALARIES - deep navy band ── */}
         {salaries?.length > 0 && (
           <div className="band band-deep">
             <div className="band-inner">
@@ -440,7 +440,7 @@ export default function CountryDetails() {
           </div>
         )}
 
-        {/* ── SCHOLARSHIPS — light band, lavender cards ── */}
+        {/* ── SCHOLARSHIPS - light band, lavender cards ── */}
         {scholarships?.length > 0 && (
           <div className="band band-light">
             <div className="band-inner">
@@ -448,13 +448,13 @@ export default function CountryDetails() {
               <h2 className="band-title">
                 Find <span>scholarships</span> to help fund your studies
               </h2>
-              <p className="band-sub">From university merit awards to government grants — we help you apply.</p>
+              <p className="band-sub">From university merit awards to government grants - we help you apply.</p>
               <ScholarshipTable scholarships={scholarships} />
             </div>
           </div>
         )}
 
-        {/* ── FAQ — light band, SEO FAQPage schema ── */}
+        {/* ── FAQ - light band, SEO FAQPage schema ── */}
         {faqs.length > 0 && (
           <FaqSection
             variant="light"
@@ -462,11 +462,11 @@ export default function CountryDetails() {
             eyebrow="Common Questions"
             title="Frequently Asked"
             titleAccent="Questions"
-            subtitle={`Everything students ask us about studying in ${name} — answered by our expert counselors.`}
+            subtitle={`Everything students ask us about studying in ${name} - answered by our expert counselors.`}
           />
         )}
 
-        {/* ── FINAL CTA — navy band, mint accent, cherry button ── */}
+        {/* ── FINAL CTA - navy band, mint accent, cherry button ── */}
         <div className="band band-navy final-cta">
           <div className="band-inner">
             <p className="band-eyebrow">Next Step</p>
@@ -474,7 +474,7 @@ export default function CountryDetails() {
               Take the <span>first step</span> towards studying in {name}!
             </h2>
             <p className="band-sub">
-              Book a free counselling session — our experts will map out your admission, visa and funding plan for {name}.
+              Book a free counselling session - our experts will map out your admission, visa and funding plan for {name}.
             </p>
             <div className="hero-actions">
               <Link to="/freeconsulation" className="gs-btn-cherry">

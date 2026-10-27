@@ -380,7 +380,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* ===== HERO SECTION — full-bleed photo + navy overlay, dual-color H1 ===== */}
+      {/* ===== HERO SECTION - full-bleed photo + navy overlay, dual-color H1 ===== */}
       <section
         className="sol-overlay sol-hero"
         style={{
@@ -438,7 +438,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== STATS BAND — dark navy strip with big Oswald numbers ===== */}
+      {/* ===== STATS BAND - dark navy strip with big Oswald numbers ===== */}
       <section className="sol-dark-strip py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -485,7 +485,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES SECTION — icon callout grid ===== */}
+      {/* ===== SERVICES SECTION - icon callout grid ===== */}
       <section className="py-24 bg-[#f2f2f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
@@ -530,7 +530,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== STUDY DESTINATIONS — gallery tiles with hover overlay captions ===== */}
+      {/* ===== STUDY DESTINATIONS - gallery tiles with hover overlay captions ===== */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
@@ -648,7 +648,7 @@ export default function Home() {
         subtitle="Everything students ask us before starting their study abroad journey with Head Educare."
       />
 
-      {/* ===== CTA SECTION — overlay band with lead form ===== */}
+      {/* ===== CTA SECTION - overlay band with lead form ===== */}
       <section
         className="sol-overlay"
         style={{

@@ -409,7 +409,7 @@ export default function FreeConsultation() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-10">
             44/16, 3rd Floor, West Panthapath, Dhaka -1205.
-            Visiting hour: 10:30 AM to 6:30 PM — drop by for a face-to-face
+            Visiting hour: 10:30 AM to 6:30 PM - drop by for a face-to-face
             consultation with our expert counselors.
           </p>
           <div className="rounded-sm overflow-hidden border border-gray-100 dark:border-gray-700 h-[500px] shadow-lg">

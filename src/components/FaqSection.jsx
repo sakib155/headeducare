@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-/* Reusable FAQ accordion — self-contained styles (no page CSS dependency),
+/* Reusable FAQ accordion - self-contained styles (no page CSS dependency),
    brand palette only. JSON-LD is emitted by AutoSeo (home) / Helmet
    (country pages); this component renders the visible UI. */
 

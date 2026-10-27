@@ -21,7 +21,7 @@ export function useReveal(cls = "srv-visible") {
 }
 
 /* ─────────────────────────────────────────────
-   BASE STYLES injected once — Solomon design system
+   BASE STYLES injected once - Solomon design system
 ───────────────────────────────────────────── */
 export const BASE_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap');
