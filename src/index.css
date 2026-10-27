@@ -731,6 +731,16 @@ color: #1a1a1a;
 }
 .sol-hero > *, .sol-hero-inner > * { width: 100%; }
 
+/* Dark mode: white cards become dark panels */
+.dark .sol-card {
+  background: #0d1e30;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.dark .sol-callout {
+  background: #0d1e30;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 /* White icon callout card (icon above title, hover lift) */
 .sol-callout {
   background: #ffffff;

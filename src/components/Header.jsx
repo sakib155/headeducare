@@ -155,7 +155,7 @@ export default function Header({
           {/* ── Nav row: Oswald uppercase links with dropdowns ── */}
           <div
             className={`hidden xl:block border-t ${
-              atTop ? "border-white/20 bg-transparent" : "border-gray-100 bg-white"
+              atTop ? "border-white/20 bg-transparent" : "border-gray-100 bg-white dark:bg-[#0f203c] dark:border-white/10"
             }`}
           >
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-1">
@@ -218,7 +218,7 @@ export default function Header({
                               : "260px",
                         }}
                       >
-                        <div className="bg-white shadow-2xl border-t-2 border-[#204276] py-1.5 overflow-visible">
+                        <div className="bg-white dark:bg-[#0f203c] shadow-2xl border-t-2 border-[#204276] dark:border-[#7fb2dd] py-1.5 overflow-visible">
                           <div
                             className={
                               needsScroll
@@ -237,10 +237,10 @@ export default function Header({
                                     onMouseEnter={() => setOpenNestedSub(item.name)}
                                   >
                                     <div
-                                      className={`flex items-center justify-between py-2.5 px-4 cursor-pointer transition-colors duration-150 border-b border-gray-100 ${
+                                      className={`flex items-center justify-between py-2.5 px-4 cursor-pointer transition-colors duration-150 border-b border-gray-100 dark:border-white/10 ${
                                         isSubOpen
                                           ? "bg-[#f2f2f2] text-[#204276]"
-                                          : "text-gray-700 hover:bg-[#f2f2f2] hover:text-[#204276]"
+                                          : "text-gray-700 hover:bg-[#f2f2f2] hover:text-[#204276] dark:text-gray-200 dark:hover:bg-white/10 dark:hover:text-[#7fb2dd]"
                                       }`}
                                     >
                                       <span className="truncate">{item.name}</span>
@@ -258,12 +258,12 @@ export default function Header({
                                           item.name === "USA Mentorship" ? "310px" : "230px",
                                       }}
                                     >
-                                      <div className="bg-white shadow-2xl border-t-2 border-[#204276] py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
+                                      <div className="bg-white dark:bg-[#0f203c] shadow-2xl border-t-2 border-[#204276] dark:border-[#7fb2dd] py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
                                         {item.items.map((sub, sIdx) => (
                                           <a
                                             key={sub.name}
                                             href={sub.url}
-                                            className={`flex items-center py-2.5 px-4 transition-colors duration-150 border-b border-gray-50 ${
+                                            className={`flex items-center py-2.5 px-4 transition-colors duration-150 border-b border-gray-50 dark:border-white/5 ${
                                               sIdx === item.items.length - 1
                                                 ? "border-b-0"
                                                 : ""
@@ -282,7 +282,7 @@ export default function Header({
                                 <a
                                   key={item.name}
                                   href={item.url}
-                                  className={`flex items-center justify-between py-2.5 px-4 transition-colors duration-150 border-b border-gray-100 ${
+                                  className={`flex items-center justify-between py-2.5 px-4 transition-colors duration-150 border-b border-gray-100 dark:border-white/10 ${
                                     idx === section.items.length - 1 ? "border-b-0" : ""
                                   } text-gray-700 hover:bg-[#f2f2f2] hover:text-[#204276]`}
                                   onMouseEnter={() => setOpenNestedSub(null)}
@@ -312,28 +312,28 @@ export default function Header({
             />
 
             {/* Drawer Panel */}
-            <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white shadow-2xl flex flex-col z-50 overflow-hidden">
+            <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white dark:bg-[#0f203c] shadow-2xl flex flex-col z-50 overflow-hidden">
               {/* Drawer Header */}
-              <div className="p-4 border-b border-gray-200 flex items-center justify-between">
+              <div className="p-4 border-b border-gray-200 dark:border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#204276] flex items-center justify-center text-white">
                     <GraduationCap className="w-5 h-5" />
                   </div>
-                  <span className="font-extrabold text-base tracking-tight text-gray-900">
+                  <span className="font-extrabold text-base tracking-tight text-gray-900 dark:text-white">
                     HEAD<span className="text-[#2b7bb9]">EDUCARE</span>
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={() => setMobileOpen(false)}
-                  className="p-2 text-gray-500 hover:bg-gray-100"
+                  className="p-2 text-gray-500 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Line by line mobile items */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-1">
+              <div className="flex-1 overflow-y-auto p-4 space-y-1 dark:bg-[#0f203c]">
                 {menuData.map((section) => {
                   const isContact = section.title.name === "Contact Us";
                   const hasItems = section.items && section.items.length > 0;
@@ -361,7 +361,7 @@ export default function Header({
                         key={section.title.name}
                         href={section.title.url}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-2.5 px-3 text-sm font-semibold text-gray-900 rounded-sm hover:bg-[#f2f2f2] hover:text-[#204276]"
+                        className="block py-2.5 px-3 text-sm font-semibold text-gray-900 dark:text-white rounded-sm hover:bg-[#f2f2f2] hover:text-[#204276] dark:hover:bg-white/10 dark:hover:text-[#7fb2dd]"
                         style={{ fontFamily: '"Oswald", sans-serif' }}
                       >
                         {section.title.name}
@@ -370,11 +370,11 @@ export default function Header({
                   }
 
                   return (
-                    <div key={section.title.name} className="border-b border-gray-100 pb-1">
+                    <div key={section.title.name} className="border-b border-gray-100 dark:border-white/10 pb-1">
                       <button
                         type="button"
                         onClick={() => toggleMobileItem(section.title.name)}
-                        className="w-full flex items-center justify-between py-2.5 px-3 text-left font-semibold text-sm text-gray-900 hover:text-[#204276] transition-colors uppercase tracking-wide"
+                        className="w-full flex items-center justify-between py-2.5 px-3 text-left font-semibold text-sm text-gray-900 dark:text-white hover:text-[#204276] dark:hover:text-[#7fb2dd] transition-colors uppercase tracking-wide"
                         style={{ fontFamily: '"Oswald", sans-serif' }}
                       >
                         <span>{section.title.name}</span>
@@ -396,7 +396,7 @@ export default function Header({
                                   <button
                                     type="button"
                                     onClick={() => toggleMobileItem(item.name)}
-                                    className="w-full flex items-center justify-between py-2 px-2.5 bg-[#f2f2f2] text-xs font-bold text-gray-900"
+                                    className="w-full flex items-center justify-between py-2 px-2.5 bg-[#f2f2f2] dark:bg-white/10 text-xs font-bold text-gray-900 dark:text-white"
                                   >
                                     <span>{item.name}</span>
                                     <ChevronDown
@@ -415,7 +415,7 @@ export default function Header({
                                           key={sub.name}
                                           href={sub.url}
                                           onClick={() => setMobileOpen(false)}
-                                          className="block py-1.5 px-2 text-xs text-gray-700 hover:text-[#204276]"
+                                          className="block py-1.5 px-2 text-xs text-gray-700 dark:text-gray-300 hover:text-[#204276]"
                                         >
                                           {sub.name}
                                         </a>
@@ -431,7 +431,7 @@ export default function Header({
                                 key={item.name}
                                 href={item.url}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-2 px-2.5 text-xs font-medium text-gray-700 hover:text-[#204276] rounded-sm hover:bg-[#f2f2f2]"
+                                className="block py-2 px-2.5 text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-[#204276] rounded-sm hover:bg-[#f2f2f2] dark:hover:bg-white/10"
                               >
                                 {item.name}
                               </a>
@@ -445,7 +445,7 @@ export default function Header({
               </div>
 
               {/* Mobile Footer CTA */}
-              <div className="p-4 border-t border-gray-200 bg-[#f2f2f2]">
+              <div className="p-4 border-t border-gray-200 dark:border-white/10 bg-[#f2f2f2] dark:bg-[#0d1626]">
                 <a
                   href="/freeconsulation"
                   className="w-full inline-flex items-center justify-center py-3 px-4 sol-btn text-sm"

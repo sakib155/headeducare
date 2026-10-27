@@ -465,7 +465,7 @@ export default function Home() {
       </section>
 
       {/* ===== CAMPUS GALLERY STRIP (opens lightbox) ===== */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-white dark:bg-[#0d1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-3">
             {HERO_IMAGES.slice(0, 7).map((img, i) => (
@@ -490,11 +490,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
             <h2 className="sol-eyebrow text-sm mb-3">Our Expert Services</h2>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a] dark:text-white">
               Tailored Solutions for Your International Career
             </h3>
             <hr className="sol-separator" />
-            <p className="text-gray-500 text-lg mt-6">
+            <p className="text-gray-500 dark:text-gray-400 text-lg mt-6">
               We provide end-to-end support for your education and migration
               journey, ensuring a smooth transition to your new life abroad.
             </p>
@@ -511,10 +511,10 @@ export default function Home() {
                     {service.icon}
                   </span>
                 </div>
-                <h4 className="text-xl font-semibold mb-3 text-[#1a1a1a]">
+                <h4 className="text-xl font-semibold mb-3 text-[#1a1a1a] dark:text-white">
                   {service.title}
                 </h4>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
                   {service.description}
                 </p>
                 <Link
@@ -531,15 +531,15 @@ export default function Home() {
       </section>
 
       {/* ===== STUDY DESTINATIONS - gallery tiles with hover overlay captions ===== */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-[#0d1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
             <h2 className="sol-eyebrow text-sm mb-3">Study Destinations</h2>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a] dark:text-white">
               Explore Top Countries
             </h3>
             <hr className="sol-separator" />
-            <p className="text-gray-500 text-lg mt-6">
+            <p className="text-gray-500 dark:text-gray-400 text-lg mt-6">
               Discover the best study destinations in the world and find the
               perfect fit for your academic journey.
             </p>
@@ -576,7 +576,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
             <h2 className="sol-eyebrow text-sm mb-3">Success Stories</h2>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a] dark:text-white">
               What Our Students Say
             </h3>
             <hr className="sol-separator" />
@@ -614,7 +614,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6 italic">
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 italic">
                   "{t.quote}"
                 </p>
                 <div className="flex items-center gap-3">
@@ -624,10 +624,10 @@ export default function Home() {
                     className="w-12 h-12 rounded-full object-cover border-2 border-[#204276]/20"
                   />
                   <div>
-                    <p className="font-bold text-sm text-[#1a1a1a]">
+                    <p className="font-bold text-sm text-[#1a1a1a] dark:text-white">
                       {t.student_name}
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
                       {t.university}, {t.country}
                     </p>
                   </div>
