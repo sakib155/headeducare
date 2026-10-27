@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import FaqSection from "../components/FaqSection";
+import { homeFaqs } from "../data/faqData";
 import { api, FALLBACK_COUNTRIES } from "../lib/apiClient";
 import { fetchMergedCountries } from "../lib/countryData";
 
@@ -635,6 +637,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== FAQ SECTION ===== */}
+      <FaqSection
+        variant="deep"
+        items={homeFaqs}
+        eyebrow="Common Questions"
+        title="Frequently Asked"
+        titleAccent="Questions"
+        subtitle="Everything students ask us before starting their study abroad journey with Head Educare."
+      />
 
       {/* ===== CTA SECTION — overlay band with lead form ===== */}
       <section

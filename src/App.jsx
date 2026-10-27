@@ -50,6 +50,7 @@ import Courses from "./pages/Courses";
 import StudyMBBS from "./pages/StudyMBBS";
 import StudyMBBSDetail from "./pages/StudyMBBSDetail";
 import AutoSeo from "./components/Seo";
+import { homeFaqs } from "./data/faqData";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -94,7 +95,7 @@ export default function App() {
 
       <Routes>
         <Route path="/admin" element={<Admin />} />
-        <Route path="/" element={<AutoSeo><Home /></AutoSeo>} />
+        <Route path="/" element={<AutoSeo faqItems={homeFaqs}><Home /></AutoSeo>} />
         <Route path="/about" element={<AutoSeo><About /></AutoSeo>} />
         <Route path="/about/our-people" element={<AutoSeo><OurPeople /></AutoSeo>} />
         <Route path="/about/we-will-provide" element={<AutoSeo><WillProvide /></AutoSeo>} />

@@ -1,4 +1,7 @@
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import FaqSection from "../../components/FaqSection";
+import { countryFaqs } from "../../data/faqData";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMergedCountries, slugOf } from "../../lib/countryData";
@@ -212,11 +215,30 @@ export default function CountryDetails() {
   const offerDocs = country.offer_letter_documents;
   const slugLower = slug?.toLowerCase() || "";
   const whyData = whyStudyContent[slugLower];
+  const faqs = countryFaqs[slugLower] || [];
+
+  const faqSchema =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }
+      : null;
   const appChecklist = applicationChecklists[slugLower];
 
   return (
     <>
       <style>{css}</style>
+      {faqSchema && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        </Helmet>
+      )}
       <div className="cd-root">
         {/* ── HERO — full-bleed photo, left-aligned, cherry CTA ── */}
         <div className="hero">
@@ -430,6 +452,18 @@ export default function CountryDetails() {
               <ScholarshipTable scholarships={scholarships} />
             </div>
           </div>
+        )}
+
+        {/* ── FAQ — light band, SEO FAQPage schema ── */}
+        {faqs.length > 0 && (
+          <FaqSection
+            variant="light"
+            items={faqs}
+            eyebrow="Common Questions"
+            title="Frequently Asked"
+            titleAccent="Questions"
+            subtitle={`Everything students ask us about studying in ${name} — answered by our expert counselors.`}
+          />
         )}
 
         {/* ── FINAL CTA — navy band, mint accent, cherry button ── */}
