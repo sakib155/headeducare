@@ -202,7 +202,6 @@ export default function CountryDetails() {
   const country = merged || fallbackCountry;
 
   const name = country.name ?? country.country;
-  const flag = country.flag_url ?? "";
   const desc = country.description ?? "";
   const imgUrl = country.image_url;
   const fees = country.tuition_fees;
@@ -249,10 +248,6 @@ export default function CountryDetails() {
           )}
           <div className="hero-overlay" />
           <div className="hero-content">
-            <span className="hero-badge">
-              <span className="hero-flag">{flag}</span>
-              <span className="hero-badge-text">Study Destination</span>
-            </span>
             <h1 className="hero-title">
               Study in <em>{name}</em>
             </h1>
@@ -457,7 +452,7 @@ export default function CountryDetails() {
         {/* ── FAQ - light band, SEO FAQPage schema ── */}
         {faqs.length > 0 && (
           <FaqSection
-            variant="light"
+            variant="deep"
             items={faqs}
             eyebrow="Common Questions"
             title="Frequently Asked"

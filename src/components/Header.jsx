@@ -218,7 +218,7 @@ export default function Header({
                               : "260px",
                         }}
                       >
-                        <div className="bg-white dark:bg-[#0f203c] shadow-2xl border-t-2 border-[#204276] dark:border-[#7fb2dd] py-1.5 overflow-visible">
+                        <div className="bg-white dark:bg-[#13233f] shadow-2xl border-t-2 border-[#204276] dark:border-[#7fb2dd] py-1.5 overflow-visible">
                           <div
                             className={
                               needsScroll
@@ -239,8 +239,8 @@ export default function Header({
                                     <div
                                       className={`flex items-center justify-between py-2.5 px-4 cursor-pointer transition-colors duration-150 border-b border-gray-100 dark:border-white/10 ${
                                         isSubOpen
-                                          ? "bg-[#eaf1f8] text-[#204276] dark:bg-[#7fb2dd]/15 dark:text-[#7fb2dd]"
-                                          : "text-gray-700 hover:bg-[#eaf1f8] hover:text-[#204276] dark:text-gray-200 dark:hover:bg-[#7fb2dd]/15 dark:hover:text-[#7fb2dd]"
+                                          ? "bg-[#dfe9f5] text-[#204276] dark:bg-[#7fb2dd]/20 dark:text-[#7fb2dd]"
+                                          : "text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276] dark:text-gray-200 dark:hover:bg-[#7fb2dd]/20 dark:hover:text-[#7fb2dd]"
                                       }`}
                                     >
                                       <span className="truncate">{item.name}</span>
@@ -258,7 +258,7 @@ export default function Header({
                                           item.name === "USA Mentorship" ? "310px" : "230px",
                                       }}
                                     >
-                                      <div className="bg-white dark:bg-[#0f203c] shadow-2xl border-t-2 border-[#204276] dark:border-[#7fb2dd] py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
+                                      <div className="bg-white dark:bg-[#13233f] shadow-2xl border-t-2 border-[#204276] dark:border-[#7fb2dd] py-1.5 max-h-[60vh] overflow-y-auto overscroll-contain menu-scroll">
                                         {item.items.map((sub, sIdx) => (
                                           <a
                                             key={sub.name}
@@ -267,7 +267,7 @@ export default function Header({
                                               sIdx === item.items.length - 1
                                                 ? "border-b-0"
                                                 : ""
-                                            } text-gray-700 hover:bg-[#eaf1f8] hover:text-[#204276]`}
+                                            } text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276]`}
                                           >
                                             <span className="truncate">{sub.name}</span>
                                           </a>
@@ -284,7 +284,7 @@ export default function Header({
                                   href={item.url}
                                   className={`flex items-center justify-between py-2.5 px-4 transition-colors duration-150 border-b border-gray-100 dark:border-white/10 ${
                                     idx === section.items.length - 1 ? "border-b-0" : ""
-                                  } text-gray-700 hover:bg-[#eaf1f8] hover:text-[#204276]`}
+                                  } text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276]`}
                                   onMouseEnter={() => setOpenNestedSub(null)}
                                 >
                                   <span className="truncate">{item.name}</span>
@@ -361,7 +361,7 @@ export default function Header({
                         key={section.title.name}
                         href={section.title.url}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-2.5 px-3 text-sm font-semibold text-gray-900 dark:text-white rounded-sm hover:bg-[#eaf1f8] hover:text-[#204276] dark:hover:bg-[#7fb2dd]/15 dark:hover:text-[#7fb2dd]"
+                        className="block py-2.5 px-3 text-sm font-semibold text-gray-900 dark:text-white rounded-sm hover:bg-[#dfe9f5] hover:text-[#204276] dark:hover:bg-[#7fb2dd]/20 dark:hover:text-[#7fb2dd]"
                         style={{ fontFamily: '"Oswald", sans-serif' }}
                       >
                         {section.title.name}
@@ -396,7 +396,7 @@ export default function Header({
                                   <button
                                     type="button"
                                     onClick={() => toggleMobileItem(item.name)}
-                                    className="w-full flex items-center justify-between py-2 px-2.5 bg-[#eaf1f8] dark:bg-[#7fb2dd]/15 text-xs font-bold text-gray-900 dark:text-white"
+                                    className="w-full flex items-center justify-between py-2 px-2.5 bg-[#dfe9f5] dark:bg-[#7fb2dd]/20 text-xs font-bold text-gray-900 dark:text-white"
                                   >
                                     <span>{item.name}</span>
                                     <ChevronDown
@@ -431,7 +431,7 @@ export default function Header({
                                 key={item.name}
                                 href={item.url}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-2 px-2.5 text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-[#204276] rounded-sm hover:bg-[#eaf1f8] dark:hover:bg-[#7fb2dd]/15"
+                                className="block py-2 px-2.5 text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-[#204276] rounded-sm hover:bg-[#dfe9f5] dark:hover:bg-[#7fb2dd]/20"
                               >
                                 {item.name}
                               </a>
