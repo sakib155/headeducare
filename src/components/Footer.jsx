@@ -1,174 +1,13 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Phone, Mail, Clock } from "lucide-react";
-import { api } from "../lib/apiClient";
-
-const initialForm = {
-  name: "",
-  email: "",
-  phone: "",
-  country_interest: "",
-  service_interest: "",
-  message: "",
-};
 
 export default function Footer() {
-  const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState(null); // null | "sending" | "sent" | "error"
-
-  const handleChange = (e) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      await api.submitLead(form);
-      setStatus("sent");
-      setForm(initialForm);
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  const inputCls =
-    "w-full bg-white/10 border border-white/25 text-white placeholder-white/60 px-3.5 py-2.5 text-sm focus:outline-none focus:border-white/70 focus:bg-white/15 transition-colors";
-
   return (
     <footer className="w-full">
-      {/* ── Row A: Schedule a Free Consultation (dark overlay band with triangle divider) ── */}
-      <svg className="sol-triangle bg-white" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
-        <polygon points="0,0 100,0 50,10" />
-      </svg>
-      <div className="sol-overlay" style={{ backgroundImage: "url(/assets/prettiest-college-campuses-georgetown.avif)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h2 className="text-3xl md:text-4xl text-white text-center font-semibold">
-            Schedule a Free Consultation
-          </h2>
-          <hr className="sol-separator sol-separator-light" />
-
-          <div className="grid md:grid-cols-2 gap-12 mt-12">
-            {/* Left: intro + contact labels */}
-            <div className="text-white">
-              <p className="leading-relaxed text-white/85 mb-10">
-                Book a free one-on-one session with our expert counselors and get a
-                personalized roadmap for your studies abroad — university selection,
-                scholarships, admissions, visas, and more.
-              </p>
-
-              <div className="mb-7">
-                <h5 className="sol-label text-white flex items-center gap-2 mb-2">
-                  <Phone className="w-4 h-4" /> Phone
-                </h5>
-                <a href="tel:+8801910833888" className="text-white hover:text-white/75 transition-colors font-medium">
-                  +880 1910 833 888
-                </a>
-                <hr className="border-white/20 mt-4" />
-              </div>
-
-              <div className="mb-7">
-                <h5 className="sol-label text-white flex items-center gap-2 mb-2">
-                  <Mail className="w-4 h-4" /> Email
-                </h5>
-                <a href="mailto:info@headeducare.com" className="text-white hover:text-white/75 transition-colors font-medium">
-                  info@headeducare.com
-                </a>
-                <hr className="border-white/20 mt-4" />
-              </div>
-
-              <div>
-                <h5 className="sol-label text-white flex items-center gap-2 mb-2">
-                  <Clock className="w-4 h-4" /> Office
-                </h5>
-                <p className="text-white/85 font-medium">
-                  44/16, 3rd Floor, West Panthapath, Dhaka -1205
-                </p>
-                <p className="text-white/70 text-sm mt-1">Visiting hour: 10:30 AM to 6:30 PM</p>
-                <hr className="border-white/20 mt-4" />
-              </div>
-            </div>
-
-            {/* Right: consultation form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Full Name *"
-                  value={form.name}
-                  onChange={handleChange}
-                  className={inputCls}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Email *"
-                  value={form.email}
-                  onChange={handleChange}
-                  className={inputCls}
-                />
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  placeholder="Phone *"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className={inputCls}
-                />
-                <input
-                  type="text"
-                  name="country_interest"
-                  placeholder="Country of Interest"
-                  value={form.country_interest}
-                  onChange={handleChange}
-                  className={inputCls}
-                />
-              </div>
-              <select
-                name="service_interest"
-                value={form.service_interest}
-                onChange={handleChange}
-                className={`${inputCls} [&>option]:text-gray-900`}
-              >
-                <option value="">Service of Interest</option>
-                <option value="Study Abroad">Study Abroad</option>
-                <option value="Migration Services">Migration Services</option>
-                <option value="Visa Assistance">Visa Assistance</option>
-                <option value="Test Preparation">Test Preparation</option>
-                <option value="Career Counseling">Career Counseling</option>
-                <option value="Scholarship Guidance">Scholarship Guidance</option>
-              </select>
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Message"
-                value={form.message}
-                onChange={handleChange}
-                className={inputCls}
-              />
-              <button type="submit" disabled={status === "sending"} className="sol-btn-light">
-                {status === "sending" ? "Sending…" : "Send"}
-              </button>
-              {status === "sent" && (
-                <p className="text-sm text-[#7fb2dd]">Thank you! Your request has been received.</p>
-              )}
-              {status === "error" && (
-                <p className="text-sm text-white">Something went wrong. Please try again or contact us directly.</p>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Row B: link columns ── */}
+      {/* ── Link columns ── */}
       <div className="bg-[#0f203c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <Link to="/" className="inline-block mb-5 bg-white px-3 py-2">
@@ -210,6 +49,34 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold text-white mb-4">Contact</h4>
+              <hr className="sol-separator-left !w-10 !h-px bg-white/40 mb-5" />
+              <ul className="space-y-4 text-sm text-white/70">
+                <li className="flex items-start gap-2.5">
+                  <Phone size={15} className="mt-0.5 shrink-0 text-[#7fb2dd]" />
+                  <a href="tel:+8801910833888" className="hover:text-white transition-colors">
+                    +880 1910 833 888
+                  </a>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Mail size={15} className="mt-0.5 shrink-0 text-[#7fb2dd]" />
+                  <a href="mailto:info@headeducare.com" className="hover:text-white transition-colors">
+                    info@headeducare.com
+                  </a>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Clock size={15} className="mt-0.5 shrink-0 text-[#7fb2dd]" />
+                  <span>
+                    44/16, 3rd Floor, West Panthapath, Dhaka -1205
+                    <br />
+                    <span className="text-white/50">Visiting hour: 10:30 AM to 6:30 PM</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
             {/* Quick Links */}
             <div>
               <h4 className="font-semibold text-white mb-4">Quick Links</h4>
@@ -249,7 +116,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Row C: copyright bar ── */}
+        {/* ── Copyright bar ── */}
         <div className="border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white/60">
