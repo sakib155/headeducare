@@ -9,5 +9,7 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost',
     },
+    allowedHosts: ['.trycloudflare.com'],
   },
+
 })
