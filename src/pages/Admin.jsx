@@ -1438,9 +1438,9 @@ export default function Admin() {
                       placeholder="https://images.unsplash.com/..."
                     />
                     <UploadButton
-                      label="Upload Image (auto-resize 1920×1080)"
-                      targetW={1920}
-                      targetH={1080}
+                      label="Upload Image (auto-resize 2560×1440)"
+                      targetW={2560}
+                      targetH={1440}
                       onUploaded={(url) => setSelectedItem(prev => ({ ...prev, image_url: url }))}
                     />
                   </div>

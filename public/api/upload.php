@@ -21,8 +21,8 @@ if ($method !== 'POST') {
 }
 
 // ── Target resolution (default 1920x1080) ──────────────────────────────────
-$targetW = isset($_GET['w']) ? max(1, intval($_GET['w'])) : 1920;
-$targetH = isset($_GET['h']) ? max(1, intval($_GET['h'])) : 1080;
+$targetW = isset($_GET['w']) ? max(1, intval($_GET['w'])) : 2560;
+$targetH = isset($_GET['h']) ? max(1, intval($_GET['h'])) : 1440;
 
 // ── Validate upload ─────────────────────────────────────────────────────────
 if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
