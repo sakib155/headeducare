@@ -56,6 +56,18 @@ const FAQ_STYLES = `
   .dark .faq-section--light .faq-item:hover .faq-q { color: #7fb2dd; }
 
   .faq-item { border-bottom: 1px solid transparent; }
+  .faq-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
   .faq-q {
     font-family: "Roboto Slab", serif; font-weight: 600;
     font-size: 1.05rem; line-height: 1.35; text-align: left;
@@ -100,7 +112,7 @@ export default function FaqSection({
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer bg-transparent border-none"
+                    className="faq-btn"
                     aria-expanded={isOpen}
                   >
                     <span className="faq-q">{item.q}</span>
