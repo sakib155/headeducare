@@ -218,7 +218,6 @@ export default function AdmissionSupport() {
       </style>
       <div className="srv-page" ref={containerRef}>
         <PageHero
-          badge="Student Services"
           title="Unlock Global Opportunities with"
           highlight="Expert Admission Support"
           desc="Our experienced consultants provide personalized one-on-one guidance throughout the university application process. We carefully evaluate each student's academic profile, extracurricular activities, work experience, career objectives, and financial capacity to build a competitive application strategy."

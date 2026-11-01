@@ -252,7 +252,6 @@ export default function QuickAppointments() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Expert Guidance in"
           highlight="Minutes, Not Days"
           desc="Don't wait weeks for answers. Book a quick appointment with Head Edu Care's expert counselors for instant clarity on admissions, visas, scholarships, and study abroad planning."

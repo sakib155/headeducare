@@ -261,7 +261,6 @@ export default function ScholarshipGuide() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Fund Your Dreams with"
           highlight="Global Scholarships"
           desc="Studying abroad is an investment. Head Edu Care helps you secure merit-based awards, government grants, and university discounts to reduce your financial burden and maximize your value."

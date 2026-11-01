@@ -257,7 +257,6 @@ export default function VisaDocumentation() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Perfect Your Visa"
           highlight="Documentation"
           desc="Financial documentation is the #1 reason for student visa rejections. Head Edu Care ensures your bank statements, sponsorship papers, and fund sources are structured perfectly to meet strict embassy requirements."

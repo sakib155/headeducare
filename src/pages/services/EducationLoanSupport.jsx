@@ -206,7 +206,6 @@ export default function EducationLoanSupport() {
       <div className="srv-page" ref={containerRef}>
         {/* HERO */}
         <PageHero
-          badge="Student Services"
           title="Secure Your Future with Expert"
           highlight="Education Loan Guidance"
           subtitle="One-stop solution for education loans with trusted partners"

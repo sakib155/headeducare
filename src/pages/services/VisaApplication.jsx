@@ -257,7 +257,6 @@ export default function VisaApplication() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Secure Your Student Visa with"
           highlight="Expert Guidance"
           desc="Ace the visa application through our help in the paperwork, financial planning, and visa Interview mock rounds. Applicable for USA, Canada, UK, Ireland, Australia, NZ, Europe, Malaysia and more."

@@ -211,7 +211,6 @@ export default function ApplicationHelp() {
       <div className="srv-page" ref={containerRef}>
         {/* HERO */}
         <PageHero
-          badge="Student Services"
           title="Complete Application Support for Your"
           highlight="Study Abroad Journey"
           subtitle="From shortlisting to enrollment, we handle the complexity"

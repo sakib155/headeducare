@@ -172,7 +172,6 @@ export default function HealthInsurance() {
       <style>{BASE_STYLES}</style>
       <div className="srv-page" ref={containerRef}>
         <PageHero
-          badge="Student Services"
           title="Overseas Health Insurance"
           highlight="for Study Abroad Aspirants"
           desc="Many countries require international students to maintain valid health insurance throughout their studies. Even where it is optional, having comprehensive medical insurance protects students from unexpected healthcare expenses abroad."

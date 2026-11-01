@@ -379,7 +379,6 @@ export default function CommonEssay() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Statement of Purpose &"
           highlight="Common Essay Drafting"
           desc="The SOP is one of the most critical parts of your application because it helps the admissions committee know your personal interests and experiences. No other part of the application conveys this information to the committee. It can help you explain your sins and give reason that they will not be repeated. It can help you change a reject to an admit. It can also help you change an admit to an admit with funding. Given this importance, we want to ensure YOU get the best. For the same reason, our drafts are written by students who have already graduated from some of the top universities. We guide every draft with practical feedback and fast iterations."

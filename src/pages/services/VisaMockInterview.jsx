@@ -250,7 +250,6 @@ export default function VisaMockInterview() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Ace Your Visa Interview with"
           highlight="Confident Preparation"
           desc="Our comprehensive interview preparation program helps students build confidence through realistic interview simulations and personalized feedback."

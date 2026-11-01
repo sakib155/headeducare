@@ -123,10 +123,12 @@ export function PageHero({
         style={{ position: "relative", zIndex: 1 }}
       >
         <div className="srv-reveal" style={{ maxWidth: 680 }}>
-          <span className="srv-badge">
-            <span className="srv-badge-dot" />
-            {badge}
-          </span>
+          {badge && (
+            <span className="srv-badge">
+              <span className="srv-badge-dot" />
+              {badge}
+            </span>
+          )}
           <h1 className="srv-h1">
             {title} <span>{highlight}</span>
             {subtitle ? (

@@ -364,7 +364,6 @@ export default function SOPEssayDrafting() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Statement of Purpose &"
           highlight="Common Essay Drafting"
           desc="Your Statement of Purpose (SOP) is one of the most important components of your university application. Beyond your grades and test scores, it gives the admissions committee an opportunity to understand who you are-your academic interests, personal experiences, career aspirations, motivations, and the journey that has shaped you. Unlike any other application document, your SOP allows you to present your story in your own voice. It provides an opportunity to explain academic gaps, career changes, low grades, study interruptions, or other challenges with honesty and maturity, demonstrating how you have grown from those experiences. A well-crafted SOP can strengthen a borderline application, improve your chances of admission, and even enhance your competitiveness for scholarships and funding opportunities. At Head Educare, we understand the impact that a compelling SOP can make. That's why every statement is developed through a collaborative process involving experienced mentors and graduates from internationally recognized universities. We focus on creating authentic, personalized, and university-specific essays that effectively highlight your strengths, ambitions, and potential."

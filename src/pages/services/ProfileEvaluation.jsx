@@ -318,7 +318,6 @@ export default function ProfileEvaluation() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="Student Services"
           title="Know Exactly Where You Stand with a"
           highlight="Free Profile Evaluation"
           desc="Before you apply anywhere, get a complete expert assessment of your academic profile, finances, and career goals, so every application decision is informed, strategic, and confident."

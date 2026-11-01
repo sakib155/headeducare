@@ -214,7 +214,6 @@ export default function StudentAccommodation() {
       </style>
       <div className="srv-page" ref={containerRef}>
         <PageHero
-          badge="Student Services"
           title="Find Affordable and Trusted"
           highlight="Student Accommodations"
           desc="Unlock a seamless home-finding experience, from browsing verified listings to moving in with confidence, Head Edu Care guides you to the right accommodation anywhere in the world."

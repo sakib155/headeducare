@@ -303,7 +303,6 @@ export default function ScholarshipSupport() {
       <div className="srv-page" ref={containerRef}>
         {/* HERO */}
         <PageHero
-          badge="Student Services"
           title="Fund Your Future with"
           highlight="Expert Scholarship Support"
           desc="From identifying the right scholarship to writing a winning essay and tracking deadlines, our experienced counselors help Bangladeshi students secure funding at top institutions worldwide."

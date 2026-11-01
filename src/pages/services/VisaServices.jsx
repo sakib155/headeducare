@@ -221,7 +221,6 @@ export default function VisaServices() {
       </style>
       <div className="srv-page" ref={containerRef}>
         <PageHero
-          badge="Student Services"
           title="Hassle-Free Visa Services"
           highlight="for Your Study Abroad Journey"
           desc="Expert guidance and seamless support for your student visa application, from eligibility assessment to post-approval briefing. Trusted by thousands of Bangladeshi students."
