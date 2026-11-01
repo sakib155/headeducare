@@ -267,7 +267,7 @@ export default function Header({
                                               sIdx === item.items.length - 1
                                                 ? "border-b-0"
                                                 : ""
-                                            } text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276]`}
+                                            } text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276] dark:text-gray-200 dark:hover:bg-[#7fb2dd]/20 dark:hover:text-[#7fb2dd]`}
                                           >
                                             <span className="truncate">{sub.name}</span>
                                           </a>
@@ -284,7 +284,7 @@ export default function Header({
                                   href={item.url}
                                   className={`flex items-center justify-between py-2.5 px-4 transition-colors duration-150 border-b border-gray-100 dark:border-white/10 ${
                                     idx === section.items.length - 1 ? "border-b-0" : ""
-                                  } text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276]`}
+                                  } text-gray-700 hover:bg-[#dfe9f5] hover:text-[#204276] dark:text-gray-200 dark:hover:bg-[#7fb2dd]/20 dark:hover:text-[#7fb2dd]`}
                                   onMouseEnter={() => setOpenNestedSub(null)}
                                 >
                                   <span className="truncate">{item.name}</span>
