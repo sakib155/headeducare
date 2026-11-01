@@ -71,10 +71,6 @@ export default function RussellGroupApplication() {
           <div className="rg-blob" style={{ width: 300, height: 300, background: "rgba(127,178,221,0.1)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>
             <div className="mtr-reveal" style={{ maxWidth: 700 }}>
-              <span className="mtr-badge" style={{ background: "rgba(127,178,221,0.18)", color: "#7fb2dd" }}>
-                <span className="mtr-badge-dot" style={{ background: "#7fb2dd" }} />
-                Russell Group Application
-              </span>
               <h1 className="mtr-h1" style={{ color: "#ffffff" }}>
                 Russell Group <span style={{ color: "#7fb2dd" }}>University Application</span>
               </h1>

@@ -113,7 +113,6 @@ export default function TestPreparation() {
 
       <div className="srv-page" ref={containerRef}>
         <PageHero
-          badge="Coaching Programs"
           title="Transform Your Performance with"
           highlight="Expert test preparation"
           desc="We offer comprehensive training for PTE and Spoken English, alongside Digital SAT coaching, combining proven teaching methods with personalized guidance and AI-powered learning systems."

@@ -364,7 +364,6 @@ export default function Courses() {
 
       <div className="srv-page" ref={containerRef}>
         <PageHero
-          badge="Coaching Programs"
           title="Transform Your English & SAT"
           highlight="Performance with Expert Coaching"
           desc="We offer comprehensive training for PTE Academic and Digital SAT, combining proven teaching methods with personalized guidance and AI-powered learning systems."
