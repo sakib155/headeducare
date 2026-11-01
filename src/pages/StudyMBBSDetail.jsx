@@ -119,11 +119,9 @@ export default function StudyMBBSDetail() {
       <div className="mbbs-page">
         <section className="mbbs-hero">
           <div className="mbbs-container" style={{ position: "relative", zIndex: 1 }}>
-            <Link to="/study-mbbs" className="mbbs-back">← Back to All Destinations</Link>
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
               <span style={{ fontSize: 48 }}>{data.flag}</span>
               <div>
-                <span className="mbbs-badge">Medical Studies</span>
                 <h1 className="mbbs-h1" style={{ color: "#1a1a1a" }}>MBBS in <span>{data.name}</span></h1>
               </div>
             </div>
