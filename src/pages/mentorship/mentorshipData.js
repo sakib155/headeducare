@@ -22,7 +22,6 @@ export const mentorPages = [
 /* ── 1. Liberal Arts College ────────────────────────────────── */
 export const liberalArtsCollegeData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Discover the Power of",
     highlight: "Liberal Arts Colleges",
     desc: "Understand what makes US liberal arts colleges unique and why they are an outstanding choice for students seeking a broad, flexible, and transformative undergraduate education.",
@@ -94,7 +93,6 @@ export const liberalArtsCollegeData = {
 /* ── 2. Elite School Admission ──────────────────────────────── */
 export const eliteSchoolAdmissionData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Navigate Elite",
     highlight: "School Admission",
     desc: "Expert guidance to help high-achieving students gain admission to the most selective universities in the United States, including Ivy League and equivalent institutions.",
@@ -167,7 +165,6 @@ export const eliteSchoolAdmissionData = {
 /* ── 3. Masters Mentorship Program ─────────────────────────── */
 export const mastersMentorshipData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Excel in Your",
     highlight: "Masters Application",
     desc: "Tailored mentorship for students pursuing graduate programs at top US universities, from program selection and SOP writing to interview preparation and funding strategies.",
@@ -255,7 +252,6 @@ export const mastersMentorshipData = {
 /* ── 4. Liberal Arts Education ──────────────────────────────── */
 export const liberalArtsEducationData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "The Philosophy of",
     highlight: "Liberal Arts Education",
     desc: "Explore the intellectual foundations, pedagogical approach, and transformative outcomes of a liberal arts education, one of America's most distinctive and enduring academic traditions.",
@@ -322,7 +318,6 @@ export const liberalArtsEducationData = {
 /* ── 5. Acceptance Letters ──────────────────────────────────── */
 export const acceptanceLettersData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Understanding Your",
     highlight: "Acceptance Letters",
     desc: "Learn how to evaluate, compare, and respond to US university acceptance letters, making informed decisions about your most important academic choice.",
@@ -394,7 +389,6 @@ export const acceptanceLettersData = {
 /* ── 6. Strategy Brainstorm ─────────────────────────────────── */
 export const strategyBrainstormData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Build Your",
     highlight: "Application Strategy",
     desc: "A winning US college application begins with a crystal-clear strategy. Our structured brainstorming sessions help you identify your strengths, clarify your narrative, and map a path to your dream schools.",
@@ -456,7 +450,6 @@ export const strategyBrainstormData = {
 /* ── 7. Writing & Application ───────────────────────────────── */
 export const writingApplicationData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Master Your",
     highlight: "Essays & Applications",
     desc: "Exceptional writing is the greatest differentiator in US college applications. Our expert writing coaches help you craft essays that are authentic, compelling, and memorable.",
@@ -532,7 +525,6 @@ export const writingApplicationData = {
 /* ── 8. College Selection ───────────────────────────────────── */
 export const collegeSelectionData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Find Your",
     highlight: "Perfect College Fit",
     desc: "Choosing the right US college is one of the most consequential decisions of your life. Our evidence-based college selection methodology helps you find the school where you will truly thrive.",
@@ -599,7 +591,6 @@ export const collegeSelectionData = {
 /* ── 9. Financial Aid ───────────────────────────────────────── */
 export const financialAidData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Unlock US",
     highlight: "Financial Aid",
     desc: "US universities offer billions of dollars in financial aid each year. Learn how to find, apply for, and maximise financial aid as an international student applying to American colleges.",
@@ -670,7 +661,6 @@ export const financialAidData = {
 /* ── 10. Post Graduate Funding ──────────────────────────────── */
 export const postGraduateFundingData = {
   hero: {
-    badge: "USA Mentorship Program",
     title: "Fund Your",
     highlight: "Graduate Education",
     desc: "Comprehensive guidance on funding your US graduate degree, from fellowships and assistantships to external scholarships and loan strategies for international students.",
