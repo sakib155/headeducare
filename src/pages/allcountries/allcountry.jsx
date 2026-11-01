@@ -266,9 +266,9 @@ export default function DestinationPage() {
     <>
       <style>{css}</style>
       <div className="dp-root">
-        <div className="dp-inner">
-          {/* ── header ── */}
-          <header className="dp-header">
+        {/* ── header (full-bleed, direct child of dp-root) ── */}
+        <header className="dp-header">
+          <div className="dp-inner">
             <h1 className="dp-title">
               Explore <em>Destinations</em>
             </h1>
@@ -276,8 +276,10 @@ export default function DestinationPage() {
               Discover the world's best countries to study in, from tuition
               costs to visa requirements, all in one place.
             </p>
-          </header>
+          </div>
+        </header>
 
+        <div className="dp-inner">
           {/* ── grid ── */}
           <div className="dp-grid">
             {countries.length === 0 && (
