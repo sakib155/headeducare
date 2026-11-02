@@ -68,9 +68,6 @@ export const menuData = [
       { name: "China", url: "/study-mbbs/china" },
       { name: "Malaysia", url: "/study-mbbs/malaysia" },
       { name: "Hungary", url: "/study-mbbs/hungary" },
-      { name: "Russia", url: "/study-mbbs/russia" },
-      { name: "Kyrgyzstan", url: "/study-mbbs/kyrgyzstan" },
-      { name: "Georgia", url: "/study-mbbs/georgia" },
     ],
   },
   {

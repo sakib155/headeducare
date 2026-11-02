@@ -135,8 +135,8 @@ export const routeMeta = [
     keywords: ["SAT coaching Dhaka", "PTE preparation Bangladesh", "IELTS coaching", "English language test training"],
   }),
 
-  meta("/study-mbbs", "Study MBBS Abroad", "Pursue your dream of becoming a doctor with Head Educare. MBBS programs in Hungary, Russia, Kyrgyzstan, Malaysia, and Georgia for Bangladeshi students at affordable tuition.", {
-    keywords: ["MBBS abroad for Bangladeshi students", "study medicine overseas", "medical school admission Bangladesh", "MBBS Hungary Russia"],
+  meta("/study-mbbs", "Study MBBS Abroad", "Pursue your dream of becoming a doctor with Head Educare. MBBS programs in China, Malaysia, and Hungary for Bangladeshi students at affordable tuition.", {
+    keywords: ["MBBS abroad for Bangladeshi students", "study medicine overseas", "medical school admission Bangladesh", "MBBS China Malaysia Hungary"],
   }),
 
   meta("/legal/termsService", "Terms of Service", "Terms and conditions for using Head Educare services and website. Read our service agreement, payment terms, and client obligations.", {
