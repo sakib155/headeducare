@@ -48,11 +48,9 @@ export default function StudyMBBS() {
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
-            <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">Medical Studies</h2>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6">
               Study MBBS Abroad
             </h1>
-            <hr className="sol-separator-left sol-separator-light" />
             <p className="text-lg text-white/85 max-w-2xl mt-6">
               Pursue your dream of becoming a doctor at leading medical universities around the world.
             </p>
