@@ -8,7 +8,7 @@ export default function AutoSeo({ children, faqItems, extraKeywords }) {
   const { pathname } = useLocation();
 
   const route = pathname.replace(/\/$/, "") || "/";
-  const pageMeta = routesLookup[route];
+  const pageMeta = routesLookup[route] || routesLookup[route.replace(/\/[^/]+$/, "")];
 
   const title = pageMeta?.title || siteConfig.name;
   const desc = pageMeta?.name?.description || "";

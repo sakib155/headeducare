@@ -58,7 +58,7 @@ export const menuData = [
   {
     title: { name: "Courses", url: "/courses" },
     items: [
-      { name: "PTE Academic", url: "/courses#pte" },
+      { name: "PTE Academic", url: "/courses/pte" },
       { name: "Digital SAT", url: "/courses#sat" },
     ],
   },

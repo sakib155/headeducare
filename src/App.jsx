@@ -145,6 +145,7 @@ export default function App() {
         <Route path="/mentorship/financial-aid" element={<AutoSeo><FinancialAid /></AutoSeo>} />
         <Route path="/mentorship/post-graduate-funding" element={<AutoSeo><PostGraduateFunding /></AutoSeo>} />
         <Route path="/courses" element={<AutoSeo><Courses /></AutoSeo>} />
+        <Route path="/courses/pte" element={<AutoSeo><Courses /></AutoSeo>} />
         <Route path="/study-mbbs" element={<AutoSeo><StudyMBBS /></AutoSeo>} />
         <Route path="/study-mbbs/:slug" element={<AutoSeo><StudyMBBSDetail /></AutoSeo>} />
       </Routes>
