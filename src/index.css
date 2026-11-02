@@ -824,6 +824,12 @@ color: #1a1a1a;
   font-size: 0.85rem;
 }
 
+/* Gold CTA strip (logo accent color) */
+.sol-gold-strip {
+  background: #e0c040;
+  color: #0f203c;
+}
+
 /* Dark reviews strip */
 .sol-dark-strip {
   background: linear-gradient(135deg, #0f203c 0%, #16325c 100%);

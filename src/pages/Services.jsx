@@ -216,17 +216,17 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="sol-dark-strip py-20">
+      <section className="sol-gold-strip py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-[#0f203c] mb-6">
             Ready to Get Started?
           </h2>
-          <hr className="sol-separator sol-separator-light" />
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto mt-6">
+          <hr className="sol-separator" />
+          <p className="text-[#0f203c]/80 text-lg mb-10 max-w-2xl mx-auto mt-6">
             Book a free consultation today and let our experts craft the perfect
             plan for your academic future.
           </p>
-          <Link to="/freeconsulation" className="sol-btn-light text-lg">
+          <Link to="/freeconsulation" className="sol-btn text-lg">
             Book Free Consultation
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>

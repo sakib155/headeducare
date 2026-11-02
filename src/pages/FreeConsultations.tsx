@@ -80,7 +80,7 @@ export default function FreeConsultation() {
           <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-6">
             Book Your <span className="text-[#7fb2dd]">Free Consultation</span>
           </h1>
-          <hr className="sol-separator sol-separator-light" />
+          <hr className="sol-separator" />
           <p className="text-lg text-white/85 max-w-2xl mx-auto mb-8 mt-6">
             Talk to our expert counselors and get a personalized roadmap for
             your study abroad or migration journey.
@@ -88,7 +88,7 @@ export default function FreeConsultation() {
 
           <button
             onClick={scrollToForm}
-            className="sol-btn-light text-lg"
+            className="sol-btn text-lg"
           >
             Book Free Consultation
             <span className="material-symbols-outlined">arrow_downward</span>
@@ -469,12 +469,12 @@ export default function FreeConsultation() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="sol-dark-strip py-24 text-center">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-white">
+      <section className="sol-gold-strip py-24 text-center">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-[#0f203c]">
           Ready to Start Your Journey?
         </h2>
         <hr className="sol-separator sol-separator-light" />
-        <p className="mb-8 text-lg opacity-90 text-white mt-6">
+        <p className="mb-8 text-lg text-[#0f203c]/80 mt-6">
           Book your free consultation today and take the first step.
         </p>
 

@@ -475,7 +475,7 @@ export function CtaBanner({
     <section
       style={{
         padding: "80px 0",
-        background: "linear-gradient(135deg,#204276 0%,#0f203c 100%)",
+        background: "#E0C040",
         position: "relative",
         overflow: "hidden",
       }}
@@ -488,7 +488,7 @@ export function CtaBanner({
           width: 400,
           height: 400,
           borderRadius: "50%",
-          background: "rgba(255,255,255,0.04)",
+          background: "rgba(15,32,60,0.06)",
         }}
       />
       <div
@@ -499,7 +499,7 @@ export function CtaBanner({
           width: 300,
           height: 300,
           borderRadius: "50%",
-          background: "rgba(255,255,255,0.03)",
+          background: "rgba(15,32,60,0.05)",
         }}
       />
       <div
@@ -511,7 +511,7 @@ export function CtaBanner({
             style={{
               fontSize: 36,
               fontWeight: 600,
-              color: "#fff",
+              color: "#0f203c",
               fontFamily: '"Roboto Slab",serif',
               marginBottom: 14,
               lineHeight: 1.15,
@@ -522,7 +522,7 @@ export function CtaBanner({
           <p
             style={{
               fontSize: 16,
-              color: "rgba(255,255,255,0.8)",
+              color: "rgba(15,32,60,0.8)",
               marginBottom: 32,
               fontWeight: 300,
               maxWidth: 520,
@@ -538,8 +538,8 @@ export function CtaBanner({
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "#ffffff",
-              color: "#204276",
+              background: "#204276",
+              color: "#ffffff",
               padding: "14px 32px",
               borderRadius: 3,
               fontWeight: 700,

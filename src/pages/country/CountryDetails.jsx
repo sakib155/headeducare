@@ -462,7 +462,7 @@ export default function CountryDetails() {
         )}
 
         {/* ── FINAL CTA - navy band, mint accent, cherry button ── */}
-        <div className="band band-navy final-cta">
+        <div className="band band-gold final-cta">
           <div className="band-inner">
             <p className="band-eyebrow">Next Step</p>
             <h2 className="band-title">
@@ -478,7 +478,7 @@ export default function CountryDetails() {
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </Link>
-              <Link to="/allcountries/allcountry" className="gs-btn-outline-light">
+              <Link to="/allcountries/allcountry" className="gs-btn-outline-navy">
                 Explore Other Destinations
               </Link>
             </div>

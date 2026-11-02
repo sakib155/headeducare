@@ -81,14 +81,14 @@ export default function StudyMBBS() {
 
         <section className="mbbs-section">
           <div className="mbbs-container text-center">
-            <div className="mbbs-highlight-box">
-              <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 600, marginBottom: 14, fontFamily: "'Roboto Slab',serif" }}>
+            <div className="mbbs-highlight-box" style={{ background: "#E0C040", color: "#0f203c" }}>
+              <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 600, marginBottom: 14, color: "#0f203c", fontFamily: "'Roboto Slab',serif" }}>
                 Ready to Start Your Medical Journey?
               </h2>
-              <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 520, margin: "0 auto 28px" }}>
+              <p style={{ fontSize: 16, color: "rgba(15,32,60,0.8)", marginBottom: 28, maxWidth: 520, margin: "0 auto 28px" }}>
                 Book a free consultation with our experts today, we'll guide you through every step of the MBBS admission process.
               </p>
-              <Link to="/freeconsulation" className="mbbs-cta-btn" style={{ background: "#fff", color: "#204276" }}>
+              <Link to="/freeconsulation" className="mbbs-cta-btn">
                 Book Free Consultation →
               </Link>
             </div>

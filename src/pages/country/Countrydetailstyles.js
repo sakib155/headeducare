@@ -160,6 +160,18 @@ export const countryDetailStyles = `
   .band-white { background: var(--band-white); }
   .band-deep  { background: var(--gs-deep); }
   .band-navy  { background: var(--gs-navy); }
+  .band-gold  { background: #E0C040; }
+  .band-gold .band-eyebrow { color: #0f203c; }
+  .band-gold .band-title { color: #0f203c; }
+  .band-gold .band-title span { color: #204276; }
+  .band-gold .band-sub { color: rgba(15,32,60,0.82); }
+  .dark .cd-root .band-gold { background: #E0C040; }
+  .dark .cd-root .band-gold .band-eyebrow,
+  .dark .cd-root .band-gold .band-title { color: #0f203c !important; }
+  .dark .cd-root .band-gold .band-title span { color: #204276; }
+  .dark .cd-root .band-gold .band-sub { color: rgba(15,32,60,0.82) !important; }
+  .gs-btn-outline-navy { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#0f203c; border:1px solid rgba(15,32,60,0.6); border-radius:12px; padding:15px 24px; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; text-decoration:none; transition:all .25s; }
+  .gs-btn-outline-navy:hover { background:#0f203c; color:#E0C040; }
   .band-mint  { background: #16325c; }
 
   .band-eyebrow {
