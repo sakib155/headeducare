@@ -87,11 +87,9 @@ export default function About() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 lg:pt-44 lg:pb-24">
           <div className="max-w-4xl">
-            <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">About Us</h2>
             <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-8 leading-tight">
               About <span className="text-[#7fb2dd]">Head Educare</span>
             </h1>
-            <hr className="sol-separator-left sol-separator-light" />
             <div className="text-base text-white/85 leading-relaxed space-y-5 mt-8">
               <p>
                 Head Educare is a premier international education consultancy dedicated to helping students gain admission to the world's leading universities. With more than 10 years of experience, we have assisted thousands of students in finding institutions where they can thrive academically, professionally, and personally.

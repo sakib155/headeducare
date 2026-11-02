@@ -56,7 +56,7 @@ const malaysiaUnis = [
 
 const countryData = {
   china: {
-    image: "/assets/howard-u-1594329564.avif",
+    image: "/assets/china-great-wall.jpg",
     flag: "🇨🇳", name: "China",
     intro: "Studying Clinical Medicine (MBBS) in China offers a highly affordable and globally recognized medical education, making it a top choice for students from Bangladesh, Pakistan, India, and across Africa and Asia. The language of instruction at BM&DC-recognized institutions is entirely English, since they are designated by the Ministry of Education.",
     sections: [
