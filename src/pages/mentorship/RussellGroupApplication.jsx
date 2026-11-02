@@ -52,7 +52,7 @@ export default function RussellGroupApplication() {
   return (
     <>
       <style>{MENTOR_STYLES + `
-        .rg-hero { position:relative; padding:150px 0 64px; min-height:620px; display:flex; align-items:center; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%); }
+        .rg-hero { position:relative; padding:150px 0 64px; min-height:620px; display:flex; align-items:center; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url('/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif') center/cover; }
         .rg-hero > .mtr-container { width:100%; }
         @media(max-width:768px){ .rg-hero{ padding:120px 0 48px; min-height:460px; } }
         .rg-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }

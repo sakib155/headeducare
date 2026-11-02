@@ -278,7 +278,7 @@ export default function WillProvide() {
             alignItems: "center",
             overflow: "hidden",
             background:
-              "linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%)",
+              "linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url(/assets/prettiest-college-campuses-berry-college-1592777599.avif) center/cover",
           }}
         >
           {/* blob */}

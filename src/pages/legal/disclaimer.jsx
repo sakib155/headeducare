@@ -168,7 +168,7 @@ export default function Disclaimer() {
           className="relative pt-40 pb-20 min-h-[620px] max-md:min-h-[460px] flex items-center overflow-hidden"
           style={{
             background:
-              "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%)",
+              "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%), url(/assets/prettiest-college-campuses-berry-college-1592777599.avif) center/cover",
           }}
         >
           <div

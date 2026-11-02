@@ -136,7 +136,10 @@ export const MENTOR_STYLES = `
 /* ─────────────────────────────────────────────
    PAGE HERO
 ───────────────────────────────────────────── */
+const MENTOR_HERO_IMAGE = "/assets/prettiest-college-campuses-university-of-missouri-1592777652.avif";
+
 export function MentorHero({
+  image = MENTOR_HERO_IMAGE,
   badge,
   title,
   highlight,
@@ -149,7 +152,14 @@ export function MentorHero({
 }) {
   return (
     <section className="mtr-hero">
-      <div className="mtr-hero-bg" />
+      <div
+        className="mtr-hero-bg"
+        style={{
+          backgroundImage: `linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       <div
         className="mtr-hero-blob"
         style={{

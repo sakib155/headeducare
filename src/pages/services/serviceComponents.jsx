@@ -107,7 +107,10 @@ export const BASE_STYLES = `
 /* ─────────────────────────────────────────────
    PAGE HERO
 ───────────────────────────────────────────── */
+const PAGE_HERO_IMAGE = "/assets/prettiest-college-campuses-san-diego-state-university-1592777643.avif";
+
 export function PageHero({
+  image = PAGE_HERO_IMAGE,
   badge,
   title,
   highlight,
@@ -117,7 +120,10 @@ export function PageHero({
   ctaLink = "/freeconsulation",
 }) {
   return (
-    <section className="srv-hero">
+    <section
+      className="srv-hero"
+      style={{ backgroundImage: `url(${image})` }}
+    >
       <div
         className="srv-container"
         style={{ position: "relative", zIndex: 1 }}

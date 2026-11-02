@@ -6,9 +6,9 @@ import {
 const styles = `
   .mbbs-page { font-family: 'IBM Plex Sans', sans-serif; }
   .mbbs-page h1, .mbbs-page h2, .mbbs-page h3 { font-family: 'Roboto Slab', serif; }
-  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)); padding:150px 0 64px; min-height:620px; display:flex; align-items:center; }
+  .mbbs-hero { position:relative; overflow:hidden; background:linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url('/assets/howard-u-1594329564.avif') center/cover; padding:150px 0 64px; min-height:620px; display:flex; align-items:center; }
   .mbbs-hero > .mbbs-container { width:100%; }
-  .dark .mbbs-hero { background:linear-gradient(rgba(10,20,38,0.94), rgba(13,26,48,0.9)); }
+  .dark .mbbs-hero { background:linear-gradient(rgba(10,20,38,0.94), rgba(13,26,48,0.9)), url('/assets/howard-u-1594329564.avif') center/cover; }
   .mbbs-hero .mbbs-h1 { color:#ffffff !important; }
   .mbbs-hero .mbbs-h1 span { color:#7fb2dd; }
   .mbbs-hero .mbbs-body { color:rgba(255,255,255,0.85); }
