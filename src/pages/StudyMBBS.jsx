@@ -33,9 +33,6 @@ const destinations = [
   { name: "China", slug: "china", flag: "🇨🇳", color: "#204276" },
   { name: "Malaysia", slug: "malaysia", flag: "🇲🇾", color: "#204276" },
   { name: "Hungary", slug: "hungary", flag: "🇭🇺", color: "#2b7bb9" },
-  { name: "Russia", slug: "russia", flag: "🇷🇺", color: "#204276" },
-  { name: "Kyrgyzstan", slug: "kyrgyzstan", flag: "🇰🇬", color: "#2b7bb9" },
-  { name: "Georgia", slug: "georgia", flag: "🇬🇪", color: "#16325c" },
 ];
 
 export default function StudyMBBS() {

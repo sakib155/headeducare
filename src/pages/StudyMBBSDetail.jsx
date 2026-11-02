@@ -56,6 +56,7 @@ const malaysiaUnis = [
 
 const countryData = {
   china: {
+    image: "/assets/howard-u-1594329564.avif",
     flag: "🇨🇳", name: "China",
     intro: "Studying Clinical Medicine (MBBS) in China offers a highly affordable and globally recognized medical education, making it a top choice for students from Bangladesh, Pakistan, India, and across Africa and Asia. The language of instruction at BM&DC-recognized institutions is entirely English, since they are designated by the Ministry of Education.",
     sections: [
@@ -74,6 +75,7 @@ const countryData = {
     visaDocs: ["JW201 or JW202 admission form", "University Admission Notice", "Valid Passport", "Physical examination record", "Academic transcripts & certificates", "English proficiency certificate", "Proof of sufficient funds"],
   },
   malaysia: {
+    image: "/assets/malaysia.jpg",
     flag: "🇲🇾", name: "Malaysia",
     intro: "",
     sections: [
@@ -87,6 +89,7 @@ const countryData = {
     visaDocs: ["Application form", "One recent photograph", "EVAL", "Offer letter", "Bank statement", "Family certificate"],
   },
   hungary: {
+    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920",
     flag: "🇭🇺", name: "Hungary",
     intro: "Study MBBS in Hungary for an experience that extends far beyond textbooks and lectures. The Schengen country is home to one of the world's best healthcare and medical education systems. Hungarian medical universities are known for offering a supportive environment for foreign students. MBBS in Hungary is NMC, WHO, and FAIMER approved and the medium of teaching is English to ensure better learning of sessions. The country offers quality medical education at a highly affordable tuition fee.",
     sections: [
@@ -117,7 +120,14 @@ export default function StudyMBBSDetail() {
     <>
       <style>{styles}</style>
       <div className="mbbs-page">
-        <section className="mbbs-hero">
+        <section
+          className="mbbs-hero"
+          style={{
+            backgroundImage: `linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url(${data.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="mbbs-container" style={{ position: "relative", zIndex: 1 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
               <span style={{ fontSize: 48 }}>{data.flag}</span>
