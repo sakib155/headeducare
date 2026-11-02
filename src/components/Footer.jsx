@@ -119,11 +119,11 @@ export default function Footer() {
         {/* ── Copyright bar ── */}
         <div className="border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-white/60">
+            <p className="text-sm text-white/60">
               © {new Date().getFullYear()} Head Edu Care. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <p className="text-xs text-white/60 hidden sm:block">Trusted by students worldwide</p>
+              <p className="text-sm text-white/60 hidden sm:block">Trusted by students worldwide</p>
               <div className="flex -space-x-2.5">
                 {["us", "gb", "ca", "au", "in", "de", "fr"].map((countryCode, i) => (
                   <img

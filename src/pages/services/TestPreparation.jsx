@@ -158,8 +158,8 @@ export default function TestPreparation() {
                     <Laptop size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Regular Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#204276", textTransform: "uppercase" }}>Online / Face to Face / Hybrid</p>
-                  <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#204276", textTransform: "uppercase" }}>Online / Face to Face / Hybrid</p>
+                  <p className="srv-body" style={{ fontSize: 14, marginTop: 12 }}>
                     Perfect for students across Bangladesh wanting flexible learning with AI-powered practice. Instructor-led sessions with interactive exercises to apply what you learn immediately.
                   </p>
                 </div>
@@ -172,8 +172,8 @@ export default function TestPreparation() {
                     <Zap size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Fast Track Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#2b7bb9", textTransform: "uppercase" }}>Online / Face to Face</p>
-                  <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#2b7bb9", textTransform: "uppercase" }}>Online / Face to Face</p>
+                  <p className="srv-body" style={{ fontSize: 14, marginTop: 12 }}>
                     A dynamic, high-intensity course designed to prepare you quickly for the exam. Get targeted coaching in a bite-sized format with no compromise in syllabus quality.
                   </p>
                 </div>
@@ -186,7 +186,7 @@ export default function TestPreparation() {
                     <Users size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>1:1 One-on-One</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#9333ea", textTransform: "uppercase" }}>Personalised Mentoring</p>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#9333ea", textTransform: "uppercase" }}>Personalised Mentoring</p>
                   <div style={{ marginTop: 12 }}>
                     <CheckList items={oneOnOneFeatures} />
                   </div>
@@ -216,8 +216,8 @@ export default function TestPreparation() {
                 <div style={{ background: "var(--srv-bg-card)", border: "1px solid var(--srv-border)", borderRadius: 20, padding: 28, textAlign: "center" }}>
                   <GraduationCap size={44} style={{ color: "#204276", margin: "0 auto 16px" }} />
                   <h4 style={{ fontWeight: 700, fontSize: 16, color: "var(--srv-text-primary)", marginBottom: 8 }}>Ready to Excel?</h4>
-                  <p className="srv-body" style={{ fontSize: 13, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
-                  <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 13, padding: "10px 20px" }}>Enroll Now</a>
+                  <p className="srv-body" style={{ fontSize: 14, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
+                  <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 14, padding: "10px 20px" }}>Enroll Now</a>
                 </div>
               </div>
             </div>

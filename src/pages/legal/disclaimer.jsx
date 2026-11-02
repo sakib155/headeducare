@@ -143,7 +143,7 @@ export default function Disclaimer() {
         .dis-card-header { display:flex; align-items:flex-start; gap:16px; padding:24px 28px; cursor:pointer; }
         .dis-card-body { padding:0 28px 24px; }
         .dis-card-body p { font-size:14px; line-height:1.8; color:#6b7280; font-family:"IBM Plex Sans",sans-serif; font-weight:300; }
-        .dis-summary { font-size:13px; color:#9ca3af; font-family:"IBM Plex Sans",sans-serif; margin-top:4px; }
+        .dis-summary { font-size: 14px; color:#9ca3af; font-family:"IBM Plex Sans",sans-serif; margin-top:4px; }
       
         /* Dark mode */
         .dark .dis-root { background:#0d1626; }
@@ -179,7 +179,7 @@ export default function Disclaimer() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl dis-reveal">
               <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-6"
                 style={{ background: "rgba(32,66,118,0.1)", color: "#204276" }}
               >
                 <span
@@ -268,7 +268,7 @@ export default function Disclaimer() {
             {Object.entries(severityConfig).map(([key, val]) => (
               <div
                 key={key}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold"
                 style={{
                   background: val.badge,
                   color: val.color,
@@ -288,7 +288,7 @@ export default function Disclaimer() {
               </div>
             ))}
             <span
-              className="text-xs flex items-center"
+              className="text-sm flex items-center"
               style={{ color: "#9ca3af", fontFamily: "'IBM Plex Sans', sans-serif" }}
             >
              , severity indicators
@@ -323,7 +323,7 @@ export default function Disclaimer() {
                         {item.title}
                       </h3>
                       <span
-                        className="text-xs font-bold px-2 py-0.5 rounded-full"
+                        className="text-sm font-bold px-2 py-0.5 rounded-full"
                         style={{
                           background: conf.badge,
                           color: conf.color,
@@ -385,7 +385,7 @@ export default function Disclaimer() {
                 style={{ border: "1px solid rgba(32,66,118,0.1)" }}
               >
                 <p
-                  className="text-xs font-bold uppercase tracking-wider mb-1"
+                  className="text-sm font-bold uppercase tracking-wider mb-1"
                   style={{ color: "#204276" }}
                 >
                   Email
@@ -399,7 +399,7 @@ export default function Disclaimer() {
                 style={{ border: "1px solid rgba(32,66,118,0.1)" }}
               >
                 <p
-                  className="text-xs font-bold uppercase tracking-wider mb-1"
+                  className="text-sm font-bold uppercase tracking-wider mb-1"
                   style={{ color: "#204276" }}
                 >
                   Office
@@ -413,7 +413,7 @@ export default function Disclaimer() {
                 style={{ border: "1px solid rgba(32,66,118,0.1)" }}
               >
                 <p
-                  className="text-xs font-bold uppercase tracking-wider mb-1"
+                  className="text-sm font-bold uppercase tracking-wider mb-1"
                   style={{ color: "#204276" }}
                 >
                   Hours
@@ -427,7 +427,7 @@ export default function Disclaimer() {
 
           {/* Effective date footer */}
           <p
-            className="text-xs text-center mt-10"
+            className="text-sm text-center mt-10"
             style={{ color: "#9ca3af", fontFamily: "'IBM Plex Sans', sans-serif" }}
           >
             This disclaimer was last updated on March 15, 2025. Head Edu Care

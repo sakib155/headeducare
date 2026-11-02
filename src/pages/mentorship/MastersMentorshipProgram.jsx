@@ -26,7 +26,7 @@ export default function MastersMentorshipProgram() {
         <section className="mtr-section">
           <div className="mtr-container">
             <MentorSectionHeader {...d.whatIsSection} />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }} className="grid-3">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }} className="grid-3">
               {d.features.map((f, i) => {
                 const Icon = featureIcons[i] || Search;
                 return <MentorIconCard key={i} icon={Icon} title={f.title} desc={f.desc} />;

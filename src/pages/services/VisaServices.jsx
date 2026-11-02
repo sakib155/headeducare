@@ -240,7 +240,7 @@ export default function VisaServices() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -314,7 +314,7 @@ export default function VisaServices() {
                           padding: "5px 12px",
                           background: "rgba(32,66,118,0.07)",
                           borderRadius: 8,
-                          fontSize: 12,
+                          fontSize: 14,
                           color: "#204276",
                           fontWeight: 600,
                           fontFamily: "Lexend,sans-serif",
@@ -344,7 +344,7 @@ export default function VisaServices() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -404,7 +404,7 @@ export default function VisaServices() {
                 </span>
                 <span
                   style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     color: "var(--srv-text-body)",
                     fontFamily: "Lexend,sans-serif",
                     fontWeight: 300,

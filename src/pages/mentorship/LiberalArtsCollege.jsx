@@ -18,7 +18,7 @@ export default function LiberalArtsCollege() {
         .lac-stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
         .lac-stat { background:#fff; border:1px solid rgba(32,66,118,0.1); border-radius:16px; padding:24px; text-align:center; }
         .lac-stat-num { font-size:36px; font-weight:900; color:#204276; font-family:Lexend,sans-serif; line-height:1; }
-        .lac-stat-label { font-size:12px; color:#6b7280; font-family:Lexend,sans-serif; margin-top:6px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+        .lac-stat-label { font-size: 14px; color:#6b7280; font-family:Lexend,sans-serif; margin-top:6px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
         .dark .lac-stat { background:#02182a; border-color:rgba(255,255,255,0.06); }
         @media(max-width:768px){
           .lac-intro { grid-template-columns:1fr !important; gap:32px; }

@@ -455,7 +455,7 @@ export default function Home() {
                 <p className="sol-stat-number !text-white text-4xl lg:text-5xl mb-1">
                   {stat.val}
                 </p>
-                <p className="text-white/75 text-xs font-medium uppercase tracking-widest" style={{ fontFamily: '"Oswald", sans-serif' }}>
+                <p className="text-white/75 text-sm font-medium uppercase tracking-widest" style={{ fontFamily: '"Oswald", sans-serif' }}>
                   {stat.label}
                 </p>
               </div>
@@ -478,7 +478,7 @@ export default function Home() {
                 aria-label={img.alt}
               >
                 <img src={img.src} alt={img.alt} loading="lazy" />
-                <span className="sol-gallery-caption text-xs font-semibold">{img.alt}</span>
+                <span className="sol-gallery-caption text-sm font-semibold">{img.alt}</span>
               </button>
             ))}
           </div>
@@ -627,7 +627,7 @@ export default function Home() {
                     <p className="font-bold text-sm text-[#1a1a1a] dark:text-white">
                       {t.student_name}
                     </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
                       {t.university}, {t.country}
                     </p>
                   </div>
@@ -938,11 +938,11 @@ export default function Home() {
                       onChange={handleTestimonialPhoto}
                       className="w-full px-4 py-3 border border-gray-200 bg-white text-sm text-gray-600 file:mr-3 file:px-4 file:py-2 file:border-0 file:bg-[#204276]/10 file:text-[#204276] file:font-bold file:cursor-pointer"
                     />
-                    <p className="text-xs text-gray-400 mt-1">
+                    <p className="text-sm text-gray-400 mt-1">
                       Auto-resized to 400×400 (square). JPG, PNG, or WEBP up to 15 MB.
                     </p>
                     {testimonialPhotoWarn && (
-                      <p className="text-[#2b7bb9] text-xs mt-1">{testimonialPhotoWarn}</p>
+                      <p className="text-[#2b7bb9] text-sm mt-1">{testimonialPhotoWarn}</p>
                     )}
                   </div>
                   {testimonialStatus === "error" && (

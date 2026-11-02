@@ -343,7 +343,7 @@ export default function CommonEssay() {
             gap: 7px;
             padding: 5px 14px;
             border-radius: 40px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             font-family: Lexend, sans-serif;
             margin-bottom: 14px;
@@ -417,7 +417,6 @@ export default function CommonEssay() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -456,7 +455,7 @@ export default function CommonEssay() {
                       </h4>
                     </div>
                     <div className="essay-type-body">
-                      <p className="srv-body" style={{ fontSize: 13 }}>
+                      <p className="srv-body" style={{ fontSize: 14 }}>
                         {e.desc}
                       </p>
                     </div>
@@ -482,7 +481,6 @@ export default function CommonEssay() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -506,7 +504,6 @@ export default function CommonEssay() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 18,
               }}
             >
@@ -528,7 +525,7 @@ export default function CommonEssay() {
                   </div>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: "var(--srv-text-body)",
                       lineHeight: 1.75,
                       fontFamily: "Lexend,sans-serif",
@@ -558,7 +555,6 @@ export default function CommonEssay() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -582,7 +578,6 @@ export default function CommonEssay() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -600,7 +595,6 @@ export default function CommonEssay() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
                 marginTop: 20,
               }}
@@ -633,7 +627,6 @@ export default function CommonEssay() {
               className="grid-2"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
                 gap: 32,
               }}
             >

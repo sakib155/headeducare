@@ -146,7 +146,7 @@ export default function GeneralDocumentsChecklist() {
               </InfoBox>
             </div>
 
-            <p className="srv-body" style={{ marginTop: 40, textAlign: "center", fontSize: 13, color: "var(--srv-text-muted)" }}>
+            <p className="srv-body" style={{ marginTop: 40, textAlign: "center", fontSize: 14, color: "var(--srv-text-muted)" }}>
               Please note: The exact document requirements vary depending on the destination country, university, and programme. Our experienced counselors will provide you with a personalized document checklist based on your academic profile and chosen study destination.
             </p>
           </div>

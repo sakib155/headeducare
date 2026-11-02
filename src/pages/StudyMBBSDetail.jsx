@@ -25,8 +25,8 @@ const styles = `
   .mbbs-body { font-size: 15px; color: #6b7280; line-height: 1.8; font-weight: 300; }
   .dark .mbbs-body { color: #9ca3af; }
   .mbbs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-  .mbbs-chip { padding: 10px 14px; border-radius: 3px; background: #fff; border: 1px solid rgba(32,66,118,0.12); font-size: 13px; font-weight: 600; color: #1a1a1a; transition: all .2s; display: flex; flex-direction: column; }
-  .mbbs-chip small { font-size: 11px; font-weight: 400; color: #6b7280; margin-top: 4px; }
+  .mbbs-chip { padding: 10px 14px; border-radius: 3px; background: #fff; border: 1px solid rgba(32,66,118,0.12); font-size: 14px; font-weight: 600; color: #1a1a1a; transition: all .2s; display: flex; flex-direction: column; }
+  .mbbs-chip small { font-size: 14px; font-weight: 400; color: #6b7280; margin-top: 4px; }
   .dark .mbbs-chip { background: #0d1f35; border-color: rgba(255,255,255,0.08); color: #f1f1f1; }
   .dark .mbbs-chip small { color: #9ca3af; }
   .mbbs-feature-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 3px; padding: 28px; transition: all .25s; }
@@ -41,7 +41,7 @@ const styles = `
   .mbbs-cta-btn:hover { background: #16325c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(32,66,118,0.25); }
   .mbbs-back { display:inline-flex; align-items:center; gap:6px; color:#204276; font-size:14px; font-weight:600; text-decoration:none; margin-bottom:24px; }
   .mbbs-back:hover { text-decoration:underline; }
-  .mbbs-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 40px; background: rgba(32,66,118,0.1); color: #204276; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
+  .mbbs-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 40px; background: rgba(32,66,118,0.1); color: #204276; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
   .dark .mbbs-badge { background: rgba(74,131,243,0.15); color: #7fb2dd; }
   .mbbs-highlight-box { background: linear-gradient(135deg, #204276, #0f203c); border-radius: 3px; padding: 36px; color: #fff; }
   @media(max-width:768px) { .mbbs-hero { padding:120px 0 48px; min-height:460px; } .mbbs-section { padding: 48px 0; } .mbbs-section-alt { padding: 48px 0; } }
@@ -174,14 +174,14 @@ export default function StudyMBBSDetail() {
                     if (Array.isArray(uni)) {
                       return (
                         <div key={i} className="mbbs-chip">
-                          <span style={{ fontWeight: 700, fontSize: 13 }}>{num}. {uni[0]}</span>
+                          <span style={{ fontWeight: 700, fontSize: 14 }}>{num}. {uni[0]}</span>
                           <small>{uni[1]}, {uni[2]} seats</small>
                         </div>
                       );
                     }
                     return (
                       <div key={i} className="mbbs-chip">
-                        <span style={{ fontWeight: 700, fontSize: 12 }}>{num}. {uni}</span>
+                        <span style={{ fontWeight: 700, fontSize: 14 }}>{num}. {uni}</span>
                       </div>
                     );
                   })}

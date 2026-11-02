@@ -237,7 +237,7 @@ export default function AdmissionSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -262,7 +262,7 @@ export default function AdmissionSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -304,7 +304,7 @@ export default function AdmissionSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -321,7 +321,7 @@ export default function AdmissionSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
                 marginTop: 20,
               }}
@@ -348,7 +348,6 @@ export default function AdmissionSupport() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr",
                 gap: 24,
               }}
             >

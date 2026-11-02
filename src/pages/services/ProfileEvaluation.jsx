@@ -294,7 +294,7 @@ export default function ProfileEvaluation() {
             gap: 7px;
             padding: 5px 14px;
             border-radius: 40px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             font-family: Lexend, sans-serif;
             margin-bottom: 14px;
@@ -338,7 +338,6 @@ export default function ProfileEvaluation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -364,7 +363,6 @@ export default function ProfileEvaluation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -402,7 +400,7 @@ export default function ProfileEvaluation() {
                   </p>
                   <p
                     style={{
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: b.color,
                       fontFamily: "Lexend,sans-serif",
@@ -430,7 +428,6 @@ export default function ProfileEvaluation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -469,7 +466,7 @@ export default function ProfileEvaluation() {
                       </h4>
                     </div>
                     <div className="outcome-card-body">
-                      <p className="srv-body" style={{ fontSize: 13 }}>
+                      <p className="srv-body" style={{ fontSize: 14 }}>
                         {o.desc}
                       </p>
                     </div>
@@ -495,7 +492,6 @@ export default function ProfileEvaluation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -513,7 +509,6 @@ export default function ProfileEvaluation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
                 marginTop: 20,
               }}
@@ -538,7 +533,6 @@ export default function ProfileEvaluation() {
               className="grid-2"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
                 gap: 32,
               }}
             >

@@ -32,13 +32,13 @@ const BASE_STYLES = `
   .wp-reveal:nth-child(5){transition-delay:.32s}
   .wp-reveal:nth-child(6){transition-delay:.40s}
   .wp-container { max-width:1200px; margin:0 auto; padding:0 20px; }
-  .wp-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(127,178,221,0.18); color:#7fb2dd; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
+  .wp-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(127,178,221,0.18); color:#7fb2dd; font-size: 14px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
   .wp-badge-dot { width:6px; height:6px; border-radius:50%; background:#7fb2dd; flex-shrink:0; }
   .wp-h1 { font-size:clamp(36px,5vw,64px); font-weight:600; line-height:1.08; color:#1a1a1a; margin-bottom:20px; }
   .wp-h1 span { color:#204276; }
   .wp-h2 { font-size:clamp(24px,3vw,40px); font-weight:600; color:#1a1a1a; margin-bottom:12px; }
   .wp-h2 span { color:#204276; }
-  .wp-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#204276; margin-bottom:10px; }
+  .wp-label { font-size: 14px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#204276; margin-bottom:10px; }
   .wp-lead { font-size:17px; color:#6b7280; line-height:1.75; font-weight:300; max-width:580px; }
   .wp-body { font-size:15px; color:#6b7280; line-height:1.8; font-weight:300; }
   .wp-section { padding:88px 0; }
@@ -57,7 +57,7 @@ const BASE_STYLES = `
   .step-card:hover { box-shadow:0 8px 32px rgba(32,66,118,0.1); transform:translateY(-4px); }
   .step-num { position:absolute; top:-14px; left:20px; width:36px; height:36px; background:#204276; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:14px; font-family:"Lexend",sans-serif; }
   /* country pill */
-  .c-pill { padding:7px 16px; border-radius:3px; background:#fff; border:1px solid rgba(32,66,118,0.15); font-size:13px; font-weight:600; color:#204276; }
+  .c-pill { padding:7px 16px; border-radius:3px; background:#fff; border:1px solid rgba(32,66,118,0.15); font-size: 14px; font-weight:600; color:#204276; }
   /* commitment chip */
   .commit-chip { display:flex; align-items:flex-start; gap:12px; background:#fff; border:1px solid rgba(0,0,0,0.06); border-radius:3px; padding:20px 22px; }
   /* stats strip */
@@ -350,7 +350,7 @@ export default function WillProvide() {
                   </p>
                   <p
                     style={{
-                      fontSize: 12,
+                      fontSize: 14,
                       color: "rgba(255,255,255,0.75)",
                       textTransform: "uppercase",
                       letterSpacing: ".08em",
@@ -429,7 +429,7 @@ export default function WillProvide() {
                             display: "flex",
                             alignItems: "center",
                             gap: 8,
-                            fontSize: 13,
+                            fontSize: 14,
                             color: "#4b5563",
                           }}
                         >
@@ -442,7 +442,7 @@ export default function WillProvide() {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              fontSize: 10,
+                              fontSize: 14,
                               color: s.color,
                               flexShrink: 0,
                             }}
@@ -459,7 +459,7 @@ export default function WillProvide() {
                         display: "inline-flex",
                         alignItems: "center",
                         gap: 6,
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: 700,
                         color: s.color,
                         textDecoration: "none",

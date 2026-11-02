@@ -43,6 +43,7 @@ export function BackgroundsProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useBackground(key) {
   return useContext(BackgroundsContext).getBackground(key);
 }

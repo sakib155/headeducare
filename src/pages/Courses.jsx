@@ -225,7 +225,7 @@ export default function Courses() {
           }
           .feature-list li {
             padding: 12px 0;
-            font-size: 13px;
+            font-size: 14px;
             color: var(--srv-text-body);
             font-weight: 400;
             line-height: 1.5;
@@ -250,7 +250,7 @@ export default function Courses() {
             background: linear-gradient(135deg, #204276, #16325c);
             color: #fff;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 14px;
             font-family: Lexend, sans-serif;
           }
           .exam-table th:first-child { border-radius: 3px 0 0 0; }
@@ -260,7 +260,7 @@ export default function Courses() {
             border-bottom: 1px solid var(--srv-border);
             color: var(--srv-text-body);
             font-family: Lexend, sans-serif;
-            font-size: 13px;
+            font-size: 14px;
           }
           .exam-table tr:hover td {
             background: rgba(32,66,118,0.03);
@@ -278,7 +278,7 @@ export default function Courses() {
             background: linear-gradient(135deg, rgba(32,66,118,0.06), rgba(74,131,243,0.04));
             border: 1px solid rgba(32,66,118,0.1);
             border-radius: 3px;
-            font-size: 13px;
+            font-size: 14px;
             color: var(--srv-text-primary);
             font-family: Lexend, sans-serif;
             font-weight: 500;
@@ -315,7 +315,7 @@ export default function Courses() {
             gap: 6px;
             padding: 4px 14px;
             border-radius: 3px;
-            font-size: 11px;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -357,7 +357,7 @@ export default function Courses() {
             .sat-section {
               padding: 32px 24px;
             }
-            .exam-table { font-size: 12px; }
+            .exam-table { font-size: 14px; }
           }
         `}
       </style>
@@ -411,7 +411,7 @@ export default function Courses() {
                 <div key={i} className="why-card">
                   <item.icon />
                   <h4 style={{ fontWeight: 700, fontSize: 14, color: "var(--srv-text-primary)", marginBottom: 6, fontFamily: "'Roboto Slab',serif" }}>{item.title}</h4>
-                  <p className="srv-body" style={{ fontSize: 12 }}>{item.desc}</p>
+                  <p className="srv-body" style={{ fontSize: 14 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -486,7 +486,7 @@ export default function Courses() {
                   </div>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Speaking & Writing</h4>
-                    <p style={{ fontSize: 11, color: "#204276", fontWeight: 600 }}>54–67 minutes</p>
+                    <p style={{ fontSize: 14, color: "#204276", fontWeight: 600 }}>54–67 minutes</p>
                   </div>
                 </div>
                 <div className="task-grid">
@@ -503,7 +503,7 @@ export default function Courses() {
                   </div>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Reading</h4>
-                    <p style={{ fontSize: 11, color: "#2b7bb9", fontWeight: 600 }}>29–30 minutes</p>
+                    <p style={{ fontSize: 14, color: "#2b7bb9", fontWeight: 600 }}>29–30 minutes</p>
                   </div>
                 </div>
                 <div className="task-grid">
@@ -518,7 +518,7 @@ export default function Courses() {
                   </div>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>Listening</h4>
-                    <p style={{ fontSize: 11, color: "#16325c", fontWeight: 600 }}>30–43 minutes</p>
+                    <p style={{ fontSize: 14, color: "#16325c", fontWeight: 600 }}>30–43 minutes</p>
                   </div>
                 </div>
                 <div className="task-grid">
@@ -551,7 +551,7 @@ export default function Courses() {
                 { label: "Vocabulary", value: "Assessed", color: "#2b7bb9" },
               ].map((item, i) => (
                 <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 3, border: "1px solid var(--srv-border)" }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
+                  <p style={{ fontSize: 14, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
                   <p style={{ fontSize: 20, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item.value}</p>
                 </div>
               ))}
@@ -579,7 +579,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Speaking Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Start with short, clear sentences", "Maintain natural pace; don't be too fast", "Don't pause too much; it lowers fluency score", "Use fillers carefully (well, actually)", "Practice with PTE mock tests for pronunciation"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#204276", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -592,7 +592,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Follow a simple structure (Intro → Body → Conclusion)", "Use academic words, however, therefore, moreover", "Keep sentences error-free rather than complex", "Maintain word limit, don't over-write", "Practice Summarize Written Text in 1 sentence"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#2b7bb9", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -605,7 +605,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Reading Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Learn to skim (quick overview)", "Learn to scan (find specific details)", "Practice 'Re-order Paragraphs' daily", "Improve vocabulary and focus on reading tasks", "Read short academic articles for speed"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#16325c", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -618,7 +618,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Listening Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Take quick notes while listening", "Focus on keywords, not complete sentences", "Repeated practice of 'Fill in the Blanks'", "Listen to podcasts/lectures daily", "Be careful with spelling, it affects score"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#2b7bb9", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -646,7 +646,7 @@ export default function Courses() {
                   <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <CheckCircle size={16} color="#204276" />
                   </div>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item}</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -655,15 +655,15 @@ export default function Courses() {
               <h4 style={{ fontWeight: 600, fontSize: 18, marginBottom: 12, fontFamily: "'Roboto Slab',serif" }}>Class & Fee Structure</h4>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 24 }}>
                 <div>
-                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.7)", marginBottom: 4 }}>PTE Course</p>
+                  <p style={{ fontSize: 14, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.7)", marginBottom: 4 }}>PTE Course</p>
                   <p style={{ fontSize: 24, fontWeight: 600 }}>10,000 BDT</p>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", marginTop: 4 }}>15 classes (30 hours including mock tests)</p>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", marginTop: 4 }}>15 classes (30 hours including mock tests)</p>
                 </div>
                 <div style={{ width: 1, background: "rgba(255,255,255,0.2)" }} />
                 <div>
-                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.7)", marginBottom: 4 }}>Also Available</p>
+                  <p style={{ fontSize: 14, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.7)", marginBottom: 4 }}>Also Available</p>
                   <p style={{ fontSize: 16, fontWeight: 600 }}>Customizable classes & Crash course</p>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", marginTop: 4 }}>Flexible options to suit your schedule and budget</p>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", marginTop: 4 }}>Flexible options to suit your schedule and budget</p>
                 </div>
               </div>
             </div>
@@ -709,8 +709,8 @@ export default function Courses() {
                     <Laptop size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Regular Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#204276", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face / Hybrid</p>
-                  <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#204276", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face / Hybrid</p>
+                  <p className="srv-body" style={{ fontSize: 14, marginTop: 12 }}>
                     Perfect for students across Bangladesh who want flexible online, face-to-face, or hybrid learning with AI-powered practice. Instructor-led sessions with hands-on activities to apply what you've learned right away.
                   </p>
                   <ul className="feature-list">
@@ -724,8 +724,8 @@ export default function Courses() {
                     <Zap size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>Fast Track Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#2b7bb9", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face</p>
-                  <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#2b7bb9", textTransform: "uppercase", letterSpacing: "0.05em" }}>Online / Face to Face</p>
+                  <p className="srv-body" style={{ fontSize: 14, marginTop: 12 }}>
                     A dynamic, high-intensity course designed to prepare you quickly for the exam with coaching in a jiffy. Get the best PTE coaching in a bite-sized format with no compromise in quality.
                   </p>
                 </div>
@@ -736,8 +736,8 @@ export default function Courses() {
                     <Users size={20} />
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 18, color: "var(--srv-text-primary)", margin: "0 0 10px" }}>1:1 One-on-One Batch</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#9333ea", textTransform: "uppercase", letterSpacing: "0.05em" }}>Personalized Coaching</p>
-                  <p className="srv-body" style={{ fontSize: 13, marginTop: 12 }}>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#9333ea", textTransform: "uppercase", letterSpacing: "0.05em" }}>Personalized Coaching</p>
+                  <p className="srv-body" style={{ fontSize: 14, marginTop: 12 }}>
                     Personalized coaching for guaranteed high scores with exclusive AI optimization. Completely tailored to your needs.
                   </p>
                   <ul className="feature-list">
@@ -791,7 +791,7 @@ export default function Courses() {
                 <div key={i} className="why-card">
                   <item.icon />
                   <h4 style={{ fontWeight: 700, fontSize: 14, color: "var(--srv-text-primary)", marginBottom: 6, fontFamily: "'Roboto Slab',serif" }}>{item.title}</h4>
-                  <p className="srv-body" style={{ fontSize: 12 }}>{item.desc}</p>
+                  <p className="srv-body" style={{ fontSize: 14 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -885,7 +885,7 @@ export default function Courses() {
                 { label: "Score Validity", value: "5 Years", color: "#204276" },
               ].map((item, i) => (
                 <div key={i} style={{ textAlign: "center", padding: "20px", background: "var(--srv-bg-card)", borderRadius: 3, border: "1px solid var(--srv-border)" }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
+                  <p style={{ fontSize: 14, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: item.color, marginBottom: 8 }}>{item.label}</p>
                   <p style={{ fontSize: 20, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item.value}</p>
                 </div>
               ))}
@@ -913,7 +913,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Reading & Writing Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Read the questions first, then skim the passage", "Look for keywords and transition words", "Practice grammar rules: subject–verb agreement, modifiers", "Focus on evidence-based questions, find the exact line", "Build vocabulary through daily reading"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#204276", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -926,7 +926,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Math Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Memorize formulas (SAT doesn't give formula sheet for all)", "Practice mental math for speed", "Solve official College Board sample papers", "Use the on-screen calculator smartly", "Focus on algebra and word problems, highest weightage"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#2b7bb9", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -939,7 +939,7 @@ export default function Courses() {
                 <h4 style={{ fontWeight: 700, fontSize: 15, color: "var(--srv-text-primary)", marginBottom: 10, fontFamily: "'Roboto Slab',serif" }}>Time Management Tips</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {["Don't spend too long on one question", "Mark difficult ones and revisit if time allows", "Take full-length mock tests to build stamina", "Practice adaptive sections to understand scoring patterns"].map((t, i) => (
-                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
+                    <li key={i} style={{ display: "flex", gap: 8, fontSize: 14, color: "var(--srv-text-body)", padding: "6px 0", fontFamily: "'Roboto Slab',serif" }}>
                       <span style={{ color: "#16325c", flexShrink: 0 }}>✓</span>{t}
                     </li>
                   ))}
@@ -967,7 +967,7 @@ export default function Courses() {
                   <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(32,66,118,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <CheckCircle size={16} color="#204276" />
                   </div>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item}</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: "var(--srv-text-primary)", fontFamily: "'Roboto Slab',serif" }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -996,8 +996,8 @@ export default function Courses() {
                 <div className="sat-card">
                   <GraduationCap size={44} style={{ color: "#204276", margin: "0 auto 16px" }} />
                   <h4 style={{ fontWeight: 700, fontSize: 16, color: "var(--srv-text-primary)", marginBottom: 8 }}>Ready to Excel?</h4>
-                  <p className="srv-body" style={{ fontSize: 13, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
-                  <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 13, padding: "10px 20px" }}>Enroll Now</a>
+                  <p className="srv-body" style={{ fontSize: 14, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
+                  <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 14, padding: "10px 20px" }}>Enroll Now</a>
                 </div>
               </div>
             </div>

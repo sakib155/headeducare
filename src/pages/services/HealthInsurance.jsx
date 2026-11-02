@@ -275,7 +275,7 @@ export default function HealthInsurance() {
 
                       <p
                         style={{
-                          fontSize: 12,
+                          fontSize: 14,
                           color: "#9ca3af",
                           fontFamily: "Lexend,sans-serif",
                           marginTop: 4,
@@ -334,7 +334,7 @@ export default function HealthInsurance() {
                           right: 20,
                           background: "rgba(32,66,118,0.1)",
                           color: "#204276",
-                          fontSize: 11,
+                          fontSize: 14,
                           fontWeight: 700,
                           padding: "4px 12px",
                           borderRadius: 20,
@@ -360,7 +360,7 @@ export default function HealthInsurance() {
                       <div>
                         <span
                           style={{
-                            fontSize: 11,
+                            fontSize: 14,
                             fontWeight: 700,
                             color: "#204276",
                             letterSpacing: ".08em",
@@ -387,7 +387,7 @@ export default function HealthInsurance() {
 
                     <p
                       style={{
-                        fontSize: 12,
+                        fontSize: 14,
                         color: "#9ca3af",
                         marginBottom: 14,
                       }}
@@ -422,7 +422,7 @@ export default function HealthInsurance() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >

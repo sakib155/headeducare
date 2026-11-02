@@ -230,7 +230,7 @@ export default function EducationLoanSupport() {
               className="srv-reveal"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -262,7 +262,7 @@ export default function EducationLoanSupport() {
               className="srv-reveal"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -280,7 +280,7 @@ export default function EducationLoanSupport() {
               className="srv-reveal"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
                 marginTop: 24,
               }}
@@ -345,7 +345,7 @@ export default function EducationLoanSupport() {
               body="We connect you with globally recognized educational lenders offering unsecured, collateral-free study loans."
               centered={true}
             />
-            <div className="grid-2 srv-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40, alignItems: "center" }}>
+            <div className="grid-2 srv-reveal" style={{ display: "grid", gap: 32, marginTop: 40, alignItems: "center" }}>
               <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700/60 aspect-[4/3] relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" 
@@ -355,7 +355,7 @@ export default function EducationLoanSupport() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white text-left">
                   <p className="text-lg font-bold">Unsecured Funding Solutions</p>
-                  <p className="text-xs text-white/80">Tailored for global graduate students</p>
+                  <p className="text-sm text-white/80">Tailored for global graduate students</p>
                 </div>
               </div>
               <div className="flex flex-col gap-6">
@@ -365,7 +365,7 @@ export default function EducationLoanSupport() {
                     Prodigy Finance
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>Collateral-Free Grad Loans</h4>
-                  <p className="srv-body" style={{ fontSize: 13, margin: 0 }}>
+                  <p className="srv-body" style={{ fontSize: 14, margin: 0 }}>
                     Access funding for top business, engineering, law, and medical schools. No co-signer or collateral needed, approved based on your future career potential.
                   </p>
                 </div>
@@ -375,7 +375,7 @@ export default function EducationLoanSupport() {
                     MPOWER Financing
                   </div>
                   <h4 style={{ fontWeight: 700, fontSize: 15, marginBottom: 8, color: "var(--srv-text-primary)" }}>No Co-signer Student Loans</h4>
-                  <p className="srv-body" style={{ fontSize: 13, margin: 0 }}>
+                  <p className="srv-body" style={{ fontSize: 14, margin: 0 }}>
                     Fixed-rate educational loans up to $100,000 for international students in the US and Canada. Build your US credit history and get free career support.
                   </p>
                 </div>

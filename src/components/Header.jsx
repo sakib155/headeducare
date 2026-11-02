@@ -396,7 +396,7 @@ export default function Header({
                                   <button
                                     type="button"
                                     onClick={() => toggleMobileItem(item.name)}
-                                    className="w-full flex items-center justify-between py-2 px-2.5 bg-[#dfe9f5] dark:bg-[#7fb2dd]/20 text-xs font-bold text-gray-900 dark:text-white"
+                                    className="w-full flex items-center justify-between py-2 px-2.5 bg-[#dfe9f5] dark:bg-[#7fb2dd]/20 text-sm font-bold text-gray-900 dark:text-white"
                                   >
                                     <span>{item.name}</span>
                                     <ChevronDown
@@ -415,7 +415,7 @@ export default function Header({
                                           key={sub.name}
                                           href={sub.url}
                                           onClick={() => setMobileOpen(false)}
-                                          className="block py-1.5 px-2 text-xs text-gray-700 dark:text-gray-300 hover:text-[#204276]"
+                                          className="block py-1.5 px-2 text-sm text-gray-700 dark:text-gray-300 hover:text-[#204276]"
                                         >
                                           {sub.name}
                                         </a>
@@ -431,7 +431,7 @@ export default function Header({
                                 key={item.name}
                                 href={item.url}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-2 px-2.5 text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-[#204276] rounded-sm hover:bg-[#dfe9f5] dark:hover:bg-[#7fb2dd]/20"
+                                className="block py-2 px-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#204276] rounded-sm hover:bg-[#dfe9f5] dark:hover:bg-[#7fb2dd]/20"
                               >
                                 {item.name}
                               </a>

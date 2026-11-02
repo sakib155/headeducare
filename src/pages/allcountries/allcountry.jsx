@@ -57,7 +57,7 @@ const css = `
   }
   .dp-eyebrow {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: .72rem; font-weight: 600;
+    font-size: 0.875rem; font-weight: 600;
     letter-spacing: .18em; text-transform: uppercase;
     color: var(--primary);
     display: flex; align-items: center; gap: 10px;
@@ -170,7 +170,7 @@ const css = `
     letter-spacing: -.01em;
   }
   .dp-desc {
-    font-size: .83rem; color: var(--ink-mid);
+    font-size: 0.875rem; color: var(--ink-mid);
     line-height: 1.65; font-weight: 300;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -187,7 +187,7 @@ const css = `
     border-top: 1px solid var(--border);
   }
   .dp-cta-text {
-    font-size: .75rem; font-weight: 600;
+    font-size: 0.875rem; font-weight: 600;
     letter-spacing: .1em; text-transform: uppercase;
     color: var(--primary);
   }

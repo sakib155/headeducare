@@ -18,9 +18,9 @@ const styles = `
   .mbbs-body { font-size: 15px; color: #6b7280; line-height: 1.8; font-weight: 300; }
   .dark .mbbs-body { color: #9ca3af; }
   .mbbs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-  .mbbs-chip { padding: 10px 14px; border-radius: 3px; background: #fff; border: 1px solid rgba(32,66,118,0.12); font-size: 13px; font-weight: 600; color: #1a1a1a; transition: all .2s; display: flex; flex-direction: column; }
+  .mbbs-chip { padding: 10px 14px; border-radius: 3px; background: #fff; border: 1px solid rgba(32,66,118,0.12); font-size: 14px; font-weight: 600; color: #1a1a1a; transition: all .2s; display: flex; flex-direction: column; }
   .mbbs-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(32,66,118,0.1); border-color: rgba(32,66,118,0.3); }
-  .mbbs-chip small { font-size: 11px; font-weight: 400; color: #6b7280; margin-top: 4px; }
+  .mbbs-chip small { font-size: 14px; font-weight: 400; color: #6b7280; margin-top: 4px; }
   .dark .mbbs-chip { background: #0d1f35; border-color: rgba(255,255,255,0.08); color: #f1f1f1; }
   .dark .mbbs-chip small { color: #9ca3af; }
   .mbbs-highlight-box { background: linear-gradient(135deg, #204276, #0f203c); border-radius: 3px; padding: 36px; color: #fff; }

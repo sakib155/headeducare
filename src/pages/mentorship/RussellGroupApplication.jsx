@@ -59,12 +59,12 @@ export default function RussellGroupApplication() {
         @media(max-width:768px){ .rg-hero{ padding:120px 0 48px; min-height:460px; } }
         .rg-blob { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; }
         .rg-table { width:100%; border-collapse:collapse; margin-top:24px; font-size:14px; border-radius:16px; overflow:hidden; }
-        .rg-table th { background:linear-gradient(135deg,#204276,#16325c); color:#fff; padding:14px 18px; font-weight:700; font-size:13px; font-family:'Lexend',sans-serif; text-align:left; }
-        .rg-table td { padding:12px 18px; border-bottom:1px solid rgba(0,0,0,0.06); color:#4b5563; font-family:'Lexend',sans-serif; font-size:13px; }
+        .rg-table th { background:linear-gradient(135deg,#204276,#16325c); color:#fff; padding:14px 18px; font-weight:700; font-size: 14px; font-family:'Lexend',sans-serif; text-align:left; }
+        .rg-table td { padding:12px 18px; border-bottom:1px solid rgba(0,0,0,0.06); color:#4b5563; font-family:'Lexend',sans-serif; font-size: 14px; }
         .rg-table tr:hover td { background:rgba(32,66,118,0.03); }
         .rg-table .rank { font-weight:900; color:#204276; font-size:15px; }
         .dark .rg-table td { color:#9ca3af; border-color:rgba(255,255,255,0.08); }
-        @media(max-width:768px){ .rg-table { font-size:12px; } }
+        @media(max-width:768px){ .rg-table { font-size: 14px; } }
       `}</style>
       <div className="mtr-page" ref={containerRef}>
         {/* Hero */}

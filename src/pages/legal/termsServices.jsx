@@ -204,7 +204,7 @@ export default function TermsServices() {
       <style>{`
         .ts-reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
         .ts-reveal.ts-visible { opacity:1; transform:none; }
-        .ts-nav-link { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:3px; cursor:pointer; transition:all .2s; font-size:13px; font-family:"IBM Plex Sans",sans-serif; font-weight:400; color:#6b7280; border:none; background:none; text-align:left; width:100%; }
+        .ts-nav-link { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:3px; cursor:pointer; transition:all .2s; font-size: 14px; font-family:"IBM Plex Sans",sans-serif; font-weight:400; color:#6b7280; border:none; background:none; text-align:left; width:100%; }
         .ts-nav-link:hover { background:rgba(32,66,118,0.06); color:#204276; }
         .ts-nav-link.active { background:rgba(32,66,118,0.1); color:#204276; font-weight:600; }
         .ts-nav-link.active .ts-dot { background:#204276; }
@@ -249,7 +249,7 @@ export default function TermsServices() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl ts-reveal">
               <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-6"
                 style={{ background: "rgba(127,178,221,0.18)", color: "#7fb2dd" }}
               >
                 <span
@@ -312,7 +312,7 @@ export default function TermsServices() {
                 style={{ borderColor: "rgba(0,0,0,0.07)" }}
               >
                 <p
-                  className="text-xs font-bold uppercase tracking-widest mb-4 px-2"
+                  className="text-sm font-bold uppercase tracking-widest mb-4 px-2"
                   style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Contents
@@ -336,7 +336,7 @@ export default function TermsServices() {
                 />
                 <div className="px-2">
                   <p
-                    className="text-xs font-bold mb-2"
+                    className="text-sm font-bold mb-2"
                     style={{
                       color: "#1a1a1a",
                       fontFamily: "'IBM Plex Sans', sans-serif",
@@ -345,7 +345,7 @@ export default function TermsServices() {
                     Legal Queries?
                   </p>
                   <p
-                    className="text-xs leading-relaxed"
+                    className="text-sm leading-relaxed"
                     style={{
                       color: "#6b7280",
                       fontFamily: "'IBM Plex Sans', sans-serif",
@@ -370,7 +370,7 @@ export default function TermsServices() {
                 style={{ borderColor: "rgba(0,0,0,0.07)" }}
               >
                 <p
-                  className="text-xs font-bold uppercase tracking-widest mb-4"
+                  className="text-sm font-bold uppercase tracking-widest mb-4"
                   style={{ color: "#204276", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   Jump to section
@@ -380,7 +380,7 @@ export default function TermsServices() {
                     <button
                       key={s.id}
                       onClick={() => scrollTo(s.id)}
-                      className="text-left text-xs px-3 py-2 rounded-lg"
+                      className="text-left text-sm px-3 py-2 rounded-lg"
                       style={{
                         color: "#6b7280",
                         fontFamily: "'IBM Plex Sans', sans-serif",
@@ -465,7 +465,7 @@ export default function TermsServices() {
                     </div>
                     <div>
                       <p
-                        className="text-xs font-bold uppercase tracking-widest mb-1"
+                        className="text-sm font-bold uppercase tracking-widest mb-1"
                         style={{
                           color: "#204276",
                           fontFamily: "'IBM Plex Sans', sans-serif",

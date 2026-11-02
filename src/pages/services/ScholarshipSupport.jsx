@@ -285,7 +285,7 @@ export default function ScholarshipSupport() {
         .schol-table { width:100%; border-collapse:collapse; border-radius:16px; overflow:hidden; border:1px solid rgba(32,66,118,0.1); }
         .dark .schol-table { border-color:rgba(74,131,243,0.15); }
         .schol-table thead tr { background:#204276; }
-        .schol-table thead th { padding:14px 18px; color:#fff; font-size:12px; font-weight:700; text-align:left; letter-spacing:.06em; text-transform:uppercase; font-family:Lexend,sans-serif; }
+        .schol-table thead th { padding:14px 18px; color:#fff; font-size: 14px; font-weight:700; text-align:left; letter-spacing:.06em; text-transform:uppercase; font-family:Lexend,sans-serif; }
         .schol-table tbody tr { border-bottom:1px solid rgba(32,66,118,0.06); transition:background .15s; background:var(--srv-bg-card); }
         .dark .schol-table tbody tr { border-bottom-color:rgba(74,131,243,0.08); }
         .schol-table tbody tr:last-child { border-bottom:none; }
@@ -293,11 +293,11 @@ export default function ScholarshipSupport() {
         .dark .schol-table tbody tr:hover { background:rgba(74,131,243,0.06); }
         .schol-table tbody td { padding:14px 18px; font-size:14px; color:var(--srv-text-body); font-family:Lexend,sans-serif; }
         .schol-table tbody td:first-child { font-weight:700; color:var(--srv-text-primary); }
-        .schol-badge-pill { display:inline-block; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700; font-family:Lexend,sans-serif; }
+        .schol-badge-pill { display:inline-block; padding:3px 10px; border-radius:20px; font-size: 14px; font-weight:700; font-family:Lexend,sans-serif; }
 
         @media(max-width:768px){ .grid-2{ grid-template-columns:1fr !important; } .grid-3{ grid-template-columns:1fr 1fr !important; } }
         @media(max-width:480px){ .grid-3{ grid-template-columns:1fr !important; } }
-        @media(max-width:900px){ .schol-table { font-size:12px; } .schol-table td,.schol-table th { padding:10px 12px; } }
+        @media(max-width:900px){ .schol-table { font-size: 14px; } .schol-table td,.schol-table th { padding:10px 12px; } }
       `}
       </style>
       <div className="srv-page" ref={containerRef}>
@@ -322,7 +322,7 @@ export default function ScholarshipSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -347,7 +347,7 @@ export default function ScholarshipSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -465,7 +465,7 @@ export default function ScholarshipSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -482,7 +482,7 @@ export default function ScholarshipSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
                 marginTop: 20,
               }}
@@ -543,7 +543,7 @@ export default function ScholarshipSupport() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >

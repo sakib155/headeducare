@@ -104,7 +104,7 @@ export const countryDetailStyles = `
     border-radius: 50%;
   }
   .hero-badge-text {
-    font-size: .75rem; font-weight: 600; text-transform: uppercase;
+    font-size: 0.875rem; font-weight: 600; text-transform: uppercase;
     letter-spacing: .12em; color: rgba(255,255,255,.85);
   }
   .hero-title {
@@ -163,7 +163,7 @@ export const countryDetailStyles = `
   .band-mint  { background: #16325c; }
 
   .band-eyebrow {
-    font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+    font-size: 0.875rem; font-weight: 700; letter-spacing: .14em;
     text-transform: uppercase; color: var(--accent);
     margin-bottom: 10px;
   }
@@ -262,16 +262,16 @@ export const countryDetailStyles = `
     color: var(--ink);
   }
   .intake-term {
-    font-size: .68rem; font-weight: 700;
+    font-size: 0.875rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: .12em;
     color: var(--gs-cobalt); margin-bottom: 2px;
   }
   .intake-window {
     display: flex; align-items: center; gap: 6px;
-    font-size: .82rem; color: var(--ink-soft);
+    font-size: 0.875rem; color: var(--ink-soft);
     margin-top: 6px;
   }
-  .intake-start { font-size: .78rem; color: var(--ink-xsoft); margin-top: 2px; }
+  .intake-start { font-size: 0.875rem; color: var(--ink-xsoft); margin-top: 2px; }
 
   /* ═══════════════════════════════════════════════
      TABLES - flat, gostudyin editorial style
@@ -290,7 +290,7 @@ export const countryDetailStyles = `
     padding: 14px 16px;
     background: transparent;
     color: var(--ink);
-    font-size: .8rem;
+    font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .06em;
@@ -311,7 +311,7 @@ export const countryDetailStyles = `
     background: transparent;
     color: var(--gs-cobalt);
     border: 1px solid var(--gs-cobalt);
-    font-size: .68rem; font-weight: 700;
+    font-size: 0.875rem; font-weight: 700;
     padding: 4px 12px; border-radius: 8px;
     letter-spacing: .06em; white-space: nowrap;
     text-transform: uppercase;
@@ -320,7 +320,7 @@ export const countryDetailStyles = `
   .score { font-weight: 700; color: var(--gs-cobalt); }
 
   .fee-note-inline {
-    font-size: .68rem; color: var(--ink-xsoft);
+    font-size: 0.875rem; color: var(--ink-xsoft);
     font-weight: 400; margin-top: 2px;
   }
 
@@ -401,7 +401,7 @@ export const countryDetailStyles = `
   }
   .scholarship-level {
     flex-shrink: 0;
-    font-size: .65rem; font-weight: 700;
+    font-size: 0.875rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: .08em;
     color: var(--gs-cobalt);
     border: 1px solid var(--gs-cobalt);

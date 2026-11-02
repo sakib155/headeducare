@@ -191,12 +191,12 @@ export default function AcademicQualifications() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {standardizedTests.map((t, idx) => (
                     <div key={idx} className="test-card">
-                      <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(32,66,118,0.1)", color: "#204276", display: "flex", alignItems: "center", justifyCenter: "center", shrink: 0, fontWeight: 700, fontSize: 12, justifyContent: "center" }}>
+                      <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(32,66,118,0.1)", color: "#204276", display: "flex", alignItems: "center", justifyCenter: "center", shrink: 0, fontWeight: 700, fontSize: 14, justifyContent: "center" }}>
                         {t.name}
                       </div>
                       <div>
                         <h4 style={{ fontWeight: 700, fontSize: 15, margin: 0, color: "var(--srv-text-primary)" }}>{t.name}</h4>
-                        <p className="srv-body" style={{ fontSize: 13, margin: "4px 0 0" }}>{t.desc}</p>
+                        <p className="srv-body" style={{ fontSize: 14, margin: "4px 0 0" }}>{t.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -214,12 +214,12 @@ export default function AcademicQualifications() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {englishTests.map((t, idx) => (
                     <div key={idx} className="test-card">
-                      <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(43,123,185,0.1)", color: "#2b7bb9", display: "flex", alignItems: "center", justifyCenter: "center", shrink: 0, fontWeight: 700, fontSize: 10, textAlign: "center", padding: 2, justifyContent: "center" }}>
+                      <div style={{ width: 44, height: 44, borderRadius: 10, background: "rgba(43,123,185,0.1)", color: "#2b7bb9", display: "flex", alignItems: "center", justifyCenter: "center", shrink: 0, fontWeight: 700, fontSize: 14, textAlign: "center", padding: 2, justifyContent: "center" }}>
                         TEST
                       </div>
                       <div>
                         <h4 style={{ fontWeight: 700, fontSize: 15, margin: 0, color: "var(--srv-text-primary)" }}>{t.name}</h4>
-                        <p className="srv-body" style={{ fontSize: 13, margin: "4px 0 0" }}>{t.scope}</p>
+                        <p className="srv-body" style={{ fontSize: 14, margin: "4px 0 0" }}>{t.scope}</p>
                       </div>
                     </div>
                   ))}

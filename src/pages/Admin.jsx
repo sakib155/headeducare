@@ -73,12 +73,12 @@ function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH 
         type="button"
         onClick={() => fileRef.current?.click()}
         disabled={uploading}
-        className="w-full px-3 py-2 rounded-lg bg-primary/15 text-primary border border-primary/30 text-xs font-bold hover:bg-primary/25 transition-colors disabled:opacity-50"
+        className="w-full px-3 py-2 rounded-lg bg-primary/15 text-primary border border-primary/30 text-sm font-bold hover:bg-primary/25 transition-colors disabled:opacity-50"
       >
         {uploading ? "Uploading & Resizing..." : label}
       </button>
-      {warning && <p className="text-amber-400 text-xs mt-1">{warning}</p>}
-      {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
+      {warning && <p className="text-amber-400 text-sm mt-1">{warning}</p>}
+      {error && <p className="text-red-400 text-sm mt-1">{error}</p>}
     </div>
   );
 }
@@ -385,7 +385,7 @@ export default function Admin() {
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label className="block text-xs font-bold text-gray-300 uppercase tracking-widest mb-2">
+              <label className="block text-sm font-bold text-gray-300 uppercase tracking-widest mb-2">
                 Username
               </label>
               <input
@@ -399,7 +399,7 @@ export default function Admin() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-300 uppercase tracking-widest mb-2">
+              <label className="block text-sm font-bold text-gray-300 uppercase tracking-widest mb-2">
                 Password
               </label>
               <input
@@ -468,7 +468,7 @@ export default function Admin() {
             </span>
             <div>
               <p className="font-bold text-sm text-white">Administrator</p>
-              <p className="text-xs text-emerald-400 flex items-center gap-1">
+              <p className="text-sm text-emerald-400 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Live (cPanel DB)
               </p>
@@ -503,7 +503,7 @@ export default function Admin() {
                   <span>{tab.label}</span>
                 </div>
                 {tab.badge > 0 && (
-                  <span className="bg-emerald-500 text-slate-950 text-xs px-2 py-0.5 rounded-full font-bold">
+                  <span className="bg-emerald-500 text-slate-950 text-sm px-2 py-0.5 rounded-full font-bold">
                     {tab.badge}
                   </span>
                 )}
@@ -542,7 +542,7 @@ export default function Admin() {
               ].map((card, i) => (
                 <div key={i} className={`p-6 rounded-2xl border ${card.bg} flex flex-col justify-between h-32`}>
                   <div className="flex justify-between items-start">
-                    <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">{card.label}</span>
+                    <span className="text-slate-400 text-sm font-bold uppercase tracking-widest">{card.label}</span>
                     <span className={`material-symbols-outlined ${card.color}`}>{card.icon}</span>
                   </div>
                   <span className={`text-3xl font-black ${card.color}`}>{card.val}</span>
@@ -622,7 +622,7 @@ export default function Admin() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="border-b border-slate-800 text-slate-400 text-xs font-bold uppercase tracking-wider bg-slate-900/50">
+                    <tr className="border-b border-slate-800 text-slate-400 text-sm font-bold uppercase tracking-wider bg-slate-900/50">
                       <th className="p-4 pl-6">Person</th>
                       <th className="p-4">Contact Info</th>
                       <th className="p-4">Message</th>
@@ -644,17 +644,17 @@ export default function Admin() {
                         <tr key={contact.id} className="hover:bg-slate-800/20 transition-colors">
                           <td className="p-4 pl-6">
                             <p className="font-bold text-white text-base">{contact.name}</p>
-                            <span className="text-xs text-slate-500">ID: {contact.id}</span>
+                            <span className="text-sm text-slate-500">ID: {contact.id}</span>
                           </td>
                           <td className="p-4">
                             <p className="text-slate-300">{contact.phone}</p>
-                            <p className="text-slate-500 text-xs">{contact.email}</p>
+                            <p className="text-slate-500 text-sm">{contact.email}</p>
                           </td>
                           <td className="p-4 max-w-[220px]">
-                            <p className="text-slate-400 text-xs line-clamp-2">{contact.message || '-'}</p>
+                            <p className="text-slate-400 text-sm line-clamp-2">{contact.message || '-'}</p>
                           </td>
                           <td className="p-4">
-                            <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                            <span className={`px-2.5 py-1 rounded-full text-[14px] font-bold uppercase tracking-wider ${
                               contact.source === 'manual'
                                 ? "bg-amber-500/10 border border-amber-500/20 text-amber-400"
                                 : "bg-emerald-500/10 border border-emerald-500/20 text-emerald-400"
@@ -664,7 +664,7 @@ export default function Admin() {
                           </td>
                           <td className="p-4">
                             {contact.lead_status ? (
-                              <span className={`px-3 py-1.5 rounded-full text-xs font-extrabold text-slate-950 capitalize ${
+                              <span className={`px-3 py-1.5 rounded-full text-sm font-extrabold text-slate-950 capitalize ${
                                 contact.lead_status === 'new' ? 'bg-emerald-400' :
                                 contact.lead_status === 'contacted' ? 'bg-blue-400' :
                                 contact.lead_status === 'in_progress' ? 'bg-amber-400' :
@@ -673,10 +673,10 @@ export default function Admin() {
                                 {contact.lead_status.replace('_', ' ')}
                               </span>
                             ) : (
-                              <span className="text-xs text-slate-500">No lead</span>
+                              <span className="text-sm text-slate-500">No lead</span>
                             )}
                           </td>
-                          <td className="p-4 text-xs text-slate-500">
+                          <td className="p-4 text-sm text-slate-500">
                             {new Date(contact.created_at).toLocaleDateString()}
                           </td>
                           <td className="p-4 pr-6 text-right space-x-2">
@@ -729,7 +729,7 @@ export default function Admin() {
                   <button
                     key={status}
                     onClick={() => setLeadsFilter(status)}
-                    className={`px-4 py-2 rounded-lg text-xs font-bold capitalize transition-all cursor-pointer ${
+                    className={`px-4 py-2 rounded-lg text-sm font-bold capitalize transition-all cursor-pointer ${
                       leadsFilter === status
                         ? "bg-primary text-white shadow-md"
                         : "text-slate-400 hover:text-white"
@@ -760,7 +760,7 @@ export default function Admin() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="border-b border-slate-800 text-slate-400 text-xs font-bold uppercase tracking-wider bg-slate-900/50">
+                    <tr className="border-b border-slate-800 text-slate-400 text-sm font-bold uppercase tracking-wider bg-slate-900/50">
                       <th className="p-4 pl-6">Client</th>
                       <th className="p-4">Contact</th>
                       <th className="p-4">Preferences</th>
@@ -781,26 +781,26 @@ export default function Admin() {
                         <tr key={lead.id} className="hover:bg-slate-800/20 transition-colors">
                           <td className="p-4 pl-6">
                             <p className="font-bold text-white text-base">{lead.name}</p>
-                            <span className="text-xs text-slate-500">ID: {lead.id}</span>
+                            <span className="text-sm text-slate-500">ID: {lead.id}</span>
                           </td>
                           <td className="p-4">
                             <p className="text-slate-300">{lead.phone}</p>
-                            <p className="text-slate-500 text-xs">{lead.email}</p>
+                            <p className="text-slate-500 text-sm">{lead.email}</p>
                           </td>
                           <td className="p-4">
                             <p className="text-slate-300">Service: {lead.service_interest || 'N/A'}</p>
-                            <p className="text-slate-500 text-xs">Country: {lead.country_interest || 'N/A'}</p>
+                            <p className="text-slate-500 text-sm">Country: {lead.country_interest || 'N/A'}</p>
                           </td>
                           <td className="p-4">
                             <p className="text-slate-300">{lead.preferred_date || 'N/A'}</p>
-                            <p className="text-slate-500 text-xs">{lead.preferred_time || 'N/A'}</p>
+                            <p className="text-slate-500 text-sm">{lead.preferred_time || 'N/A'}</p>
                           </td>
                           <td className="p-4">
                             <select
                               value={lead.status}
                               disabled={actionLoading}
                               onChange={(e) => handleUpdateLeadStatus(lead.id, e.target.value)}
-                              className={`px-3 py-1.5 rounded-full text-xs font-extrabold border-0 outline-none text-slate-950 capitalize cursor-pointer transition-colors ${
+                              className={`px-3 py-1.5 rounded-full text-sm font-extrabold border-0 outline-none text-slate-950 capitalize cursor-pointer transition-colors ${
                                 lead.status === 'new' ? 'bg-emerald-400 hover:bg-emerald-500' :
                                 lead.status === 'contacted' ? 'bg-blue-400 hover:bg-blue-500' :
                                 lead.status === 'in_progress' ? 'bg-amber-400 hover:bg-amber-500' :
@@ -870,7 +870,7 @@ export default function Admin() {
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <span className="material-symbols-outlined text-2xl">{service.icon}</span>
                       </div>
-                      <span className="text-slate-500 font-bold text-xs">Order: {service.display_order}</span>
+                      <span className="text-slate-500 font-bold text-sm">Order: {service.display_order}</span>
                     </div>
                     <div>
                       <h4 className="font-bold text-lg text-white">{service.title}</h4>
@@ -883,13 +883,13 @@ export default function Admin() {
                         setSelectedItem(service);
                         setActiveModal("service");
                       }}
-                      className="flex-1 bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-750 transition-all cursor-pointer"
+                      className="flex-1 bg-slate-800 text-white py-2 rounded-lg text-sm font-bold hover:bg-slate-750 transition-all cursor-pointer"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDeleteItem("service", service.id)}
-                      className="px-3 bg-red-950/20 text-red-400 border border-red-500/10 py-2 rounded-lg text-xs font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
+                      className="px-3 bg-red-950/20 text-red-400 border border-red-500/10 py-2 rounded-lg text-sm font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
                     >
                       Delete
                     </button>
@@ -934,14 +934,14 @@ export default function Admin() {
                         <h4 className="font-bold text-xl text-white flex items-center gap-2">
                           {country.name}
                           {!country.is_active && (
-                            <span className="text-[10px] bg-red-950/50 border border-red-500/20 text-red-400 px-2 py-0.5 rounded-full uppercase">Inactive</span>
+                            <span className="text-[14px] bg-red-950/50 border border-red-500/20 text-red-400 px-2 py-0.5 rounded-full uppercase">Inactive</span>
                           )}
                         </h4>
-                        <span className="text-slate-500 text-xs">Order: {country.display_order}</span>
+                        <span className="text-slate-500 text-sm">Order: {country.display_order}</span>
                       </div>
-                      <p className="text-slate-400 text-xs mt-2 line-clamp-2 leading-relaxed">{country.description}</p>
+                      <p className="text-slate-400 text-sm mt-2 line-clamp-2 leading-relaxed">{country.description}</p>
                       
-                      <div className="mt-3 grid grid-cols-2 gap-2 text-slate-500 text-xs border-t border-slate-800/60 pt-3">
+                      <div className="mt-3 grid grid-cols-2 gap-2 text-slate-500 text-sm border-t border-slate-800/60 pt-3">
                         <div>
                           <p className="font-semibold text-slate-400">Cost:</p>
                           <p className="line-clamp-1">{country.cost_info || 'N/A'}</p>
@@ -959,13 +959,13 @@ export default function Admin() {
                           setSelectedItem(country);
                           setActiveModal("country");
                         }}
-                        className="flex-1 bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-750 transition-all cursor-pointer"
+                        className="flex-1 bg-slate-800 text-white py-2 rounded-lg text-sm font-bold hover:bg-slate-750 transition-all cursor-pointer"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDeleteItem("country", country.id)}
-                        className="px-3 bg-red-950/20 text-red-400 border border-red-500/10 py-2 rounded-lg text-xs font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
+                        className="px-3 bg-red-950/20 text-red-400 border border-red-500/10 py-2 rounded-lg text-sm font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
                       >
                         Delete
                       </button>
@@ -1007,11 +1007,11 @@ export default function Admin() {
                         <img src={testimonial.photo_url} alt={testimonial.student_name} className="w-12 h-12 rounded-full object-cover border border-slate-750" />
                         <div>
                           <h4 className="font-bold text-base text-white">{testimonial.student_name}</h4>
-                          <span className="text-xs text-slate-500">{testimonial.university}, {testimonial.country}</span>
+                          <span className="text-sm text-slate-500">{testimonial.university}, {testimonial.country}</span>
                         </div>
                       </div>
                       {testimonial.is_featured && (
-                        <span className="text-[10px] bg-amber-500/10 border border-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full font-bold uppercase">Featured</span>
+                        <span className="text-[14px] bg-amber-500/10 border border-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full font-bold uppercase">Featured</span>
                       )}
                     </div>
                     <p className="text-slate-400 text-sm italic leading-relaxed">"{testimonial.quote}"</p>
@@ -1023,13 +1023,13 @@ export default function Admin() {
                         setSelectedItem(testimonial);
                         setActiveModal("testimonial");
                       }}
-                      className="flex-1 bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-750 transition-all cursor-pointer"
+                      className="flex-1 bg-slate-800 text-white py-2 rounded-lg text-sm font-bold hover:bg-slate-750 transition-all cursor-pointer"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDeleteItem("testimonial", testimonial.id)}
-                      className="px-3 bg-red-950/20 text-red-400 border border-red-500/10 py-2 rounded-lg text-xs font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
+                      className="px-3 bg-red-950/20 text-red-400 border border-red-500/10 py-2 rounded-lg text-sm font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
                     >
                       Delete
                     </button>
@@ -1051,7 +1051,7 @@ export default function Admin() {
             <form onSubmit={handleSaveSettings} className="bg-slate-900 border border-slate-800 p-8 rounded-2xl max-w-2xl space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Partner Universities</label>
+                  <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Partner Universities</label>
                   <input
                     type="text"
                     required
@@ -1062,7 +1062,7 @@ export default function Admin() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Visa Success Rate</label>
+                  <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Visa Success Rate</label>
                   <input
                     type="text"
                     required
@@ -1073,7 +1073,7 @@ export default function Admin() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Students Placed</label>
+                  <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Students Placed</label>
                   <input
                     type="text"
                     required
@@ -1084,7 +1084,7 @@ export default function Admin() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Years of Experience</label>
+                  <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Years of Experience</label>
                   <input
                     type="text"
                     required
@@ -1119,11 +1119,11 @@ export default function Admin() {
                 {BACKGROUND_SLOTS.map((slot) => (
                   <div key={slot.key} className="border border-slate-800 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between">
-                      <label className="text-xs font-bold text-gray-300 uppercase tracking-widest">
+                      <label className="text-sm font-bold text-gray-300 uppercase tracking-widest">
                         {slot.label}
                       </label>
                       {bgSaved[slot.key] && (
-                        <span className="text-emerald-400 text-xs font-bold">Saved &#10003;</span>
+                        <span className="text-emerald-400 text-sm font-bold">Saved &#10003;</span>
                       )}
                     </div>
                     <img
@@ -1142,7 +1142,7 @@ export default function Admin() {
                           handleBgSave(slot.key, e.target.value);
                         }
                       }}
-                      className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-white text-xs focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
                       placeholder={slot.fallback}
                     />
                     <UploadButton
@@ -1186,7 +1186,7 @@ export default function Admin() {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Full Name *</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Full Name *</label>
                     <input
                       type="text"
                       required
@@ -1199,7 +1199,7 @@ export default function Admin() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email *</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Email *</label>
                       <input
                         type="email"
                         required
@@ -1210,7 +1210,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Phone *</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Phone *</label>
                       <input
                         type="tel"
                         required
@@ -1224,7 +1224,7 @@ export default function Admin() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Country of Interest</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Country of Interest</label>
                       <input
                         type="text"
                         value={selectedItem.country_interest || ""}
@@ -1234,7 +1234,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Interest</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service Interest</label>
                       <input
                         type="text"
                         value={selectedItem.service_interest || ""}
@@ -1246,7 +1246,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message / Notes</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Message / Notes</label>
                     <textarea
                       rows="3"
                       value={selectedItem.message || ""}
@@ -1280,34 +1280,34 @@ export default function Admin() {
             {activeModal === "lead_details" && selectedItem && (
               <div className="space-y-6">
                 <div>
-                  <span className="text-[10px] bg-primary/20 text-primary border border-primary/30 px-2.5 py-0.5 rounded-full font-bold uppercase">Lead File</span>
+                  <span className="text-[14px] bg-primary/20 text-primary border border-primary/30 px-2.5 py-0.5 rounded-full font-bold uppercase">Lead File</span>
                   <h3 className="text-2xl font-black text-white mt-2">{selectedItem.name}</h3>
-                  <p className="text-slate-400 text-xs">Received: {new Date(selectedItem.created_at).toLocaleString()}</p>
+                  <p className="text-slate-400 text-sm">Received: {new Date(selectedItem.created_at).toLocaleString()}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-6 text-sm border-t border-b border-slate-800 py-6">
                   <div>
-                    <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Email</p>
+                    <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Email</p>
                     <p className="text-white mt-1 select-all">{selectedItem.email}</p>
                   </div>
                   <div>
-                    <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Phone</p>
+                    <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Phone</p>
                     <p className="text-white mt-1 select-all">{selectedItem.phone}</p>
                   </div>
                   <div>
-                    <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Country Interest</p>
+                    <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Country Interest</p>
                     <p className="text-white mt-1">{selectedItem.country_interest || 'Not specified'}</p>
                   </div>
                   <div>
-                    <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Service Interest</p>
+                    <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Service Interest</p>
                     <p className="text-white mt-1">{selectedItem.service_interest || 'Not specified'}</p>
                   </div>
                   <div>
-                    <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Contact Preference</p>
+                    <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Contact Preference</p>
                     <p className="text-white mt-1">{selectedItem.preferred_contact || 'Not specified'}</p>
                   </div>
                   <div>
-                    <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Session Slot</p>
+                    <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Session Slot</p>
                     <p className="text-white mt-1">
                       {selectedItem.preferred_date ? `${selectedItem.preferred_date} @ ` : ''}
                       {selectedItem.preferred_time || 'Any slot'}
@@ -1316,7 +1316,7 @@ export default function Admin() {
                 </div>
 
                 <div>
-                  <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">Message</p>
+                  <p className="text-slate-500 font-bold uppercase tracking-wider text-sm">Message</p>
                   <p className="text-slate-300 mt-2 bg-slate-950 p-4 rounded-xl text-sm leading-relaxed border border-slate-850 max-h-40 overflow-y-auto">
                     {selectedItem.message || 'No custom message.'}
                   </p>
@@ -1324,12 +1324,12 @@ export default function Admin() {
 
                 <div className="flex justify-between items-center gap-4">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-slate-400">Pipeline Status:</span>
+                    <span className="text-sm text-slate-400">Pipeline Status:</span>
                     <select
                       value={selectedItem.status}
                       disabled={actionLoading}
                       onChange={(e) => handleUpdateLeadStatus(selectedItem.id, e.target.value)}
-                      className="px-3 py-1.5 bg-slate-950 text-white rounded-lg text-xs font-bold border border-slate-800 outline-none capitalize cursor-pointer"
+                      className="px-3 py-1.5 bg-slate-950 text-white rounded-lg text-sm font-bold border border-slate-800 outline-none capitalize cursor-pointer"
                     >
                       <option value="new">New</option>
                       <option value="contacted">Contacted</option>
@@ -1340,7 +1340,7 @@ export default function Admin() {
 
                   <button
                     onClick={() => handleDeleteLead(selectedItem.id)}
-                    className="bg-red-950/20 text-red-400 border border-red-500/10 px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
+                    className="bg-red-950/20 text-red-400 border border-red-500/10 px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-950/40 hover:text-red-300 transition-all cursor-pointer"
                   >
                     Delete Lead
                   </button>
@@ -1361,7 +1361,7 @@ export default function Admin() {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Title</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service Title</label>
                     <input
                       type="text"
                       required
@@ -1374,7 +1374,7 @@ export default function Admin() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Icon ID (Material Icon)</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Icon ID (Material Icon)</label>
                       <input
                         type="text"
                         required
@@ -1385,7 +1385,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Display Order</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Display Order</label>
                       <input
                         type="number"
                         required
@@ -1397,7 +1397,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Description</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Description</label>
                     <textarea
                       required
                       rows="4"
@@ -1442,7 +1442,7 @@ export default function Admin() {
                 <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                   <div className="grid grid-cols-3 gap-4">
                     <div className="col-span-2">
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Country Name</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Country Name</label>
                       <input
                         type="text"
                         required
@@ -1453,7 +1453,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Flag Emoji</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Flag Emoji</label>
                       <input
                         type="text"
                         required
@@ -1467,7 +1467,7 @@ export default function Admin() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Slug Route</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Slug Route</label>
                       <input
                         type="text"
                         required
@@ -1478,7 +1478,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Display Order</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Display Order</label>
                       <input
                         type="number"
                         required
@@ -1490,7 +1490,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Banner Image URL</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Banner Image URL</label>
                     <input
                       type="url"
                       required
@@ -1509,7 +1509,7 @@ export default function Admin() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Cost Info</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Cost Info</label>
                       <input
                         type="text"
                         value={selectedItem.cost_info}
@@ -1519,7 +1519,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Visa Info</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Visa Info</label>
                       <input
                         type="text"
                         value={selectedItem.visa_info}
@@ -1531,7 +1531,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Popular Courses (Comma-separated)</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Popular Courses (Comma-separated)</label>
                     <input
                       type="text"
                       value={Array.isArray(selectedItem.popular_courses) ? selectedItem.popular_courses.join(", ") : selectedItem.popular_courses}
@@ -1542,7 +1542,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Short Description</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Short Description</label>
                     <textarea
                       required
                       rows="3"
@@ -1597,7 +1597,7 @@ export default function Admin() {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Student Name</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Student Name</label>
                     <input
                       type="text"
                       required
@@ -1610,7 +1610,7 @@ export default function Admin() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">University Name</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">University Name</label>
                       <input
                         type="text"
                         required
@@ -1621,7 +1621,7 @@ export default function Admin() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Destination Country</label>
+                      <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Destination Country</label>
                       <input
                         type="text"
                         required
@@ -1634,7 +1634,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Photo URL</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Photo URL</label>
                     <input
                       type="url"
                       required
@@ -1652,7 +1652,7 @@ export default function Admin() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Quote (Review Text)</label>
+                    <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Quote (Review Text)</label>
                     <textarea
                       required
                       rows="4"

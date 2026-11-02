@@ -8,7 +8,7 @@ const FAQ_STYLES = `
   .faq-section { padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 32px); }
   .faq-inner { max-width: 768px; margin: 0 auto; }
   .faq-eyebrow {
-    font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+    font-size: 0.875rem; font-weight: 700; letter-spacing: .14em;
     text-transform: uppercase; margin-bottom: 10px;
     font-family: "Oswald", sans-serif;
   }

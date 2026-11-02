@@ -273,7 +273,6 @@ export default function FinancialDocumentation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -299,7 +298,6 @@ export default function FinancialDocumentation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -338,7 +336,7 @@ export default function FinancialDocumentation() {
                       </h4>
                     </div>
                     <div className="doc-type-body">
-                      <p className="srv-body" style={{ fontSize: 13 }}>
+                      <p className="srv-body" style={{ fontSize: 14 }}>
                         {d.desc}
                       </p>
                     </div>
@@ -362,7 +360,6 @@ export default function FinancialDocumentation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
               }}
             >
@@ -380,7 +377,6 @@ export default function FinancialDocumentation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 20,
                 marginTop: 20,
               }}
@@ -413,7 +409,6 @@ export default function FinancialDocumentation() {
               className="grid-2"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
                 gap: 32,
               }}
             >

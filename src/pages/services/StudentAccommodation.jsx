@@ -234,7 +234,6 @@ export default function StudentAccommodation() {
               className="grid-2"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
                 gap: 28,
               }}
             >
@@ -255,7 +254,7 @@ export default function StudentAccommodation() {
                       <div>
                         <p
                           style={{
-                            fontSize: 11,
+                            fontSize: 14,
                             fontWeight: 700,
                             color: "rgba(255,255,255,0.7)",
                             textTransform: "uppercase",
@@ -310,7 +309,6 @@ export default function StudentAccommodation() {
               className="grid-3"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
                 gap: 16,
               }}
             >
@@ -340,7 +338,7 @@ export default function StudentAccommodation() {
                       {r.type}
                     </h4>
 
-                    <p className="srv-body" style={{ fontSize: 13 }}>
+                    <p className="srv-body" style={{ fontSize: 14 }}>
                       {r.desc}
                     </p>
                   </div>
@@ -362,7 +360,7 @@ export default function StudentAccommodation() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -387,7 +385,7 @@ export default function StudentAccommodation() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >

@@ -79,7 +79,7 @@ export const BASE_STYLES = `
   .srv-hero > .srv-container { width:100%; }
   .srv-hero::before { content:''; position:absolute; inset:0; background:var(--srv-hero-bg); }
   .srv-hero > * { position:relative; z-index:1; }
-  .srv-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; background:var(--srv-badge-bg); color:#7fb2dd; border:1px solid rgba(127,178,221,0.35); font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
+  .srv-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; background:var(--srv-badge-bg); color:#7fb2dd; border:1px solid rgba(127,178,221,0.35); font-size: 14px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif; }
   .dark .srv-badge { color:#7fb2dd; }
   .srv-badge-dot { width:6px; height:6px; border-radius:50%; background:#7fb2dd; flex-shrink:0; }
   .srv-h1 { font-size:clamp(34px,4.5vw,56px); font-weight:600; line-height:1.12; color:#ffffff; margin-bottom:20px; font-family:"Roboto Slab",serif; }
@@ -90,7 +90,7 @@ export const BASE_STYLES = `
   .srv-h2 { font-size:clamp(24px,3vw,38px); font-weight:600; color:var(--srv-text-primary); margin-bottom:12px; font-family:"Roboto Slab",serif; }
   .srv-h2 span { color:#204276; }
   .dark .srv-h2 span { color:#7fb2dd; }
-  .srv-subtitle { font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#2b7bb9; margin-bottom:10px; font-family:"Oswald",sans-serif; }
+  .srv-subtitle { font-size: 14px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#2b7bb9; margin-bottom:10px; font-family:"Oswald",sans-serif; }
   .dark .srv-subtitle { color:#7fb2dd; }
   .srv-body { font-size:15px; color:var(--srv-text-body); line-height:1.8; font-weight:300; }
   .srv-container { max-width:1200px; margin:0 auto; padding:0 20px; }
@@ -417,8 +417,8 @@ export function StatsStrip({ stats }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${stats.length},1fr)`,
-            gap: 0,
+            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+            rowGap: 32,
           }}
         >
           {stats.map((s, i) => (
@@ -427,11 +427,7 @@ export function StatsStrip({ stats }) {
               className="srv-reveal"
               style={{
                 textAlign: "center",
-                borderRight:
-                  i < stats.length - 1
-                    ? "1px solid rgba(255,255,255,0.15)"
-                    : "none",
-                padding: "0 20px",
+                padding: "0 12px",
               }}
             >
               <p
@@ -447,7 +443,7 @@ export function StatsStrip({ stats }) {
               </p>
               <p
                 style={{
-                  fontSize: 12,
+                  fontSize: 14,
                   color: "rgba(255,255,255,0.75)",
                   textTransform: "uppercase",
                   letterSpacing: ".12em",
@@ -701,7 +697,7 @@ export function CountryTags({ countries }) {
             borderRadius: 3,
             background: "var(--srv-country-tag-bg)",
             border: "1px solid var(--srv-country-tag-border)",
-            fontSize: 13,
+            fontSize: 14,
             fontWeight: 600,
             color: "var(--srv-country-tag-color, #204276)",
             fontFamily: '"Oswald",sans-serif',

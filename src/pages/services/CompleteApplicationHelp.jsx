@@ -235,7 +235,7 @@ export default function ApplicationHelp() {
               className="srv-reveal"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -267,7 +267,7 @@ export default function ApplicationHelp() {
               className="srv-reveal"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
               }}
             >
@@ -285,7 +285,7 @@ export default function ApplicationHelp() {
               className="srv-reveal"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: 20,
                 marginTop: 24,
               }}

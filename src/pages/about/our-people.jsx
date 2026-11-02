@@ -174,7 +174,7 @@ const OurPeople = () => {
             <div className="w-full flex flex-col p-4 gap-1.5">
               {/* Role badge */}
               <span
-                className={`self-start text-[10px] font-semibold px-2 py-0.5 rounded-sm ${getRoleStyle(person.role)}`}
+                className={`self-start text-[14px] font-semibold px-2 py-0.5 rounded-sm ${getRoleStyle(person.role)}`}
               >
                 {person.role}
               </span>
@@ -192,7 +192,7 @@ const OurPeople = () => {
                 {degrees(person).map((deg, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-1 text-[11px] text-gray-500 dark:text-gray-400 leading-snug"
+                    className="flex items-start gap-1 text-[14px] text-gray-500 dark:text-gray-400 leading-snug"
                   >
                     <span className="mt-[3px] shrink-0 w-1 h-1 rounded-full bg-primary/40" />
                     {deg}

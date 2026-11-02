@@ -175,7 +175,7 @@ export default function USMentorship() {
             position: absolute;
             left: 14px;
             bottom: 14px;
-            font-size: 11px;
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: .06em;
@@ -202,7 +202,7 @@ export default function USMentorship() {
             margin-bottom: 3px;
           }
           .profile-card-major {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--srv-text-body);
             font-weight: 400;
             font-family: Lexend, sans-serif;
@@ -218,7 +218,7 @@ export default function USMentorship() {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
             font-family: Lexend, sans-serif;
             color: var(--srv-text-primary);
@@ -262,14 +262,14 @@ export default function USMentorship() {
           .profile-card-detail-copy strong {
             color: var(--srv-text-primary);
             font-weight: 700;
-            font-size: 11px;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: .05em;
             display: block;
             margin-bottom: 2px;
           }
           .profile-card-detail-copy p {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--srv-text-body);
             font-family: Lexend, sans-serif;
             line-height: 1.6;
@@ -282,7 +282,7 @@ export default function USMentorship() {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             color: #204276;
             font-family: Lexend, sans-serif;

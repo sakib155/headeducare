@@ -53,7 +53,7 @@ export const MENTOR_STYLES = `
   .mtr-hero-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
 
   /* Badge */
-  .mtr-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(43,123,185,0.12); color:#204276; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif !important; }
+  .mtr-badge { display:inline-flex; align-items:center; gap:8px; padding:5px 14px; border-radius:3px; background:rgba(43,123,185,0.12); color:#204276; font-size: 14px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; font-family:"Oswald",sans-serif !important; }
   .mtr-badge-dot { width:6px; height:6px; border-radius:50%; background:#2b7bb9; flex-shrink:0; }
 
   /* Typography */
@@ -62,7 +62,7 @@ export const MENTOR_STYLES = `
   .mtr-h2 { font-size:clamp(24px,3vw,38px); font-weight:600; color:#1a1a1a; margin-bottom:12px; font-family:"Roboto Slab",serif; }
   .mtr-h2 span { color:#204276; }
   .mtr-lead { font-size:17px; color:#6b7280; line-height:1.75; font-weight:300; max-width:580px; }
-  .mtr-subtitle { font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#2b7bb9; margin-bottom:10px; font-family:"Oswald",sans-serif !important; }
+  .mtr-subtitle { font-size: 14px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:#2b7bb9; margin-bottom:10px; font-family:"Oswald",sans-serif !important; }
   .mtr-body { font-size:15px; color:#6b7280; line-height:1.8; font-weight:300; }
 
   /* Layout */
@@ -432,13 +432,13 @@ export function MentorFAQ({ items }) {
 ───────────────────────────────────────────── */
 export function MentorStatsStrip({ stats }) {
   return (
-    <section style={{ background: "#204276", padding: "56px 0" }}>
+    <section style={{ background: "linear-gradient(135deg,#0f203c 0%,#16325c 100%)", padding: "56px 0" }}>
       <div className="mtr-container">
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${stats.length},1fr)`,
-            gap: 0,
+            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+            rowGap: 32,
           }}
         >
           {stats.map((s, i) => (
@@ -447,19 +447,15 @@ export function MentorStatsStrip({ stats }) {
               className="mtr-reveal"
               style={{
                 textAlign: "center",
-                borderRight:
-                  i < stats.length - 1
-                    ? "1px solid rgba(255,255,255,0.15)"
-                    : "none",
-                padding: "0 20px",
+                padding: "0 12px",
               }}
             >
               <p
                 style={{
                   fontSize: 44,
-                  fontWeight: 900,
+                  fontWeight: 600,
                   color: "#fff",
-                  fontFamily: "Lexend,sans-serif",
+                  fontFamily: '"Oswald",sans-serif',
                   lineHeight: 1,
                 }}
               >
@@ -467,13 +463,13 @@ export function MentorStatsStrip({ stats }) {
               </p>
               <p
                 style={{
-                  fontSize: 12,
+                  fontSize: 14,
                   color: "rgba(255,255,255,0.75)",
                   textTransform: "uppercase",
-                  letterSpacing: ".08em",
+                  letterSpacing: ".12em",
                   marginTop: 8,
-                  fontFamily: "Lexend,sans-serif",
-                  fontWeight: 600,
+                  fontFamily: '"Oswald",sans-serif',
+                  fontWeight: 500,
                 }}
               >
                 {s.label}
@@ -484,11 +480,7 @@ export function MentorStatsStrip({ stats }) {
       </div>
     </section>
   );
-}
-
-/* ─────────────────────────────────────────────
-   CTA BANNER
-───────────────────────────────────────────── */
+};
 export function MentorCtaBanner({
   title,
   desc,
@@ -696,7 +688,7 @@ export function MentorTagList({ tags }) {
             borderRadius: 40,
             background: "#fff",
             border: "1px solid rgba(32,66,118,0.15)",
-            fontSize: 13,
+            fontSize: 14,
             fontWeight: 600,
             color: "#1a1a1a",
             fontFamily: "Lexend,sans-serif",
@@ -738,7 +730,7 @@ export function MentorProgramNav({ pages, current }) {
             to={p.url}
             style={{
               padding: "14px 18px",
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               fontFamily: "Lexend,sans-serif",
               textDecoration: "none",
@@ -812,8 +804,8 @@ export function MentorProcessArrows({ steps }) {
               fontWeight: 900, fontSize: 14, fontFamily: "Lexend,sans-serif",
               margin: "0 auto 12px",
             }}>{i + 1}</div>
-            <h5 className="mtr-proc-title" style={{ fontWeight: 700, fontSize: 13, color: "#1a1a1a", fontFamily: "Lexend,sans-serif", lineHeight: 1.4 }}>{s.title}</h5>
-            {s.desc && <p className="mtr-body" style={{ fontSize: 12, marginTop: 6 }}>{s.desc}</p>}
+            <h5 className="mtr-proc-title" style={{ fontWeight: 700, fontSize: 14, color: "#1a1a1a", fontFamily: "Lexend,sans-serif", lineHeight: 1.4 }}>{s.title}</h5>
+            {s.desc && <p className="mtr-body" style={{ fontSize: 14, marginTop: 6 }}>{s.desc}</p>}
           </div>
           {i < steps.length - 1 && (
             <div style={{ display: "flex", alignItems: "center", padding: "0 4px", color: "#204276", fontSize: 20, fontWeight: 300, flexShrink: 0 }}>→</div>
@@ -885,7 +877,7 @@ export function MentorColorCard({ title, desc, accentColor = "#204276", icon, ba
         {Icon && <Icon size={18} color={accentColor} />}
         <h4 className="mtr-cc-title" style={{ fontWeight: 700, fontSize: 15, color: "#1a1a1a", fontFamily: "Lexend,sans-serif" }}>{title}</h4>
         {badge && (
-          <span style={{ marginLeft: "auto", fontSize: 10, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase", color: accentColor, background: `${accentColor}15`, padding: "3px 8px", borderRadius: 20 }}>{badge}</span>
+          <span style={{ marginLeft: "auto", fontSize: 14, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase", color: accentColor, background: `${accentColor}15`, padding: "3px 8px", borderRadius: 20 }}>{badge}</span>
         )}
       </div>
       <p className="mtr-body" style={{ fontSize: 14 }}>{desc}</p>
@@ -911,8 +903,8 @@ export function MentorPullQuote({ quote, author, role }) {
       </p>
       {author && (
         <div>
-          <span style={{ fontWeight: 700, fontSize: 13, color: "#204276", fontFamily: "Lexend,sans-serif" }}>{author}</span>
-          {role && <span style={{ fontSize: 13, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}>, {role}</span>}
+          <span style={{ fontWeight: 700, fontSize: 14, color: "#204276", fontFamily: "Lexend,sans-serif" }}>{author}</span>
+          {role && <span style={{ fontSize: 14, color: "#9ca3af", fontFamily: "Lexend,sans-serif" }}>, {role}</span>}
         </div>
       )}
     </div>
@@ -932,9 +924,9 @@ export function MentorAlertBanner({ icon: Icon, label, value, sub, color = "#204
     }}>
       {Icon && <Icon size={36} color={color} />}
       <div>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color, fontFamily: "Lexend,sans-serif" }}>{label}</p>
+        <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color, fontFamily: "Lexend,sans-serif" }}>{label}</p>
         <p style={{ fontSize: 24, fontWeight: 900, color, fontFamily: "Lexend,sans-serif", lineHeight: 1.2 }}>{value}</p>
-        {sub && <p className="mtr-body" style={{ fontSize: 13, marginTop: 4 }}>{sub}</p>}
+        {sub && <p className="mtr-body" style={{ fontSize: 14, marginTop: 4 }}>{sub}</p>}
       </div>
     </div>
   );
@@ -982,7 +974,7 @@ export function MentorTierBars({ tiers }) {
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ width: 12, height: 12, borderRadius: "50%", background: colors[i], display: "inline-block", flexShrink: 0 }} />
               <span className="mtr-tier-title" style={{ fontWeight: 700, fontSize: 17, color: "#1a1a1a", fontFamily: "Lexend,sans-serif" }}>{t.tier}</span>
-              <span style={{ fontSize: 12, color: colors[i], fontWeight: 700, fontFamily: "Lexend,sans-serif", background: `${colors[i]}15`, padding: "2px 10px", borderRadius: 20 }}>{t.count} schools</span>
+              <span style={{ fontSize: 14, color: colors[i], fontWeight: 700, fontFamily: "Lexend,sans-serif", background: `${colors[i]}15`, padding: "2px 10px", borderRadius: 20 }}>{t.count} schools</span>
             </div>
           </div>
           <div className="mtr-tier-track" style={{ height: 8, background: "rgba(0,0,0,0.06)", borderRadius: 8, overflow: "hidden", marginBottom: 10 }}>

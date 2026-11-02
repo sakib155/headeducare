@@ -176,7 +176,7 @@ export default function RefundPolicy() {
         .rp-reveal.rp-visible { opacity:1; transform:none; }
         .rp-table-row { display:grid; grid-template-columns:1fr auto auto; gap:16px; align-items:center; padding:16px 20px; border-radius:12px; margin-bottom:8px; background:#f2f2f2; border:1px solid rgba(0,0,0,0.05); transition:box-shadow .2s; }
         .rp-table-row:hover { box-shadow:0 2px 12px rgba(32,66,118,0.08); }
-        .rp-badge { padding:4px 12px; border-radius:3px; font-size:12px; font-weight:700; font-family:"IBM Plex Sans",sans-serif; white-space:nowrap; }
+        .rp-badge { padding:4px 12px; border-radius:3px; font-size: 14px; font-weight:700; font-family:"IBM Plex Sans",sans-serif; white-space:nowrap; }
         .rp-step { display:flex; gap:20px; align-items:flex-start; padding:24px 28px; border-radius:3px; background:#f2f2f2; border:1px solid rgba(0,0,0,0.05); margin-bottom:12px; transition:all .2s; }
         .rp-step:hover { box-shadow:0 4px 20px rgba(32,66,118,0.08); transform:translateX(4px); }
         .rp-step-num { font-size:28px; font-weight:900; color:rgba(32,66,118,0.15); font-family:"IBM Plex Sans",sans-serif; flex-shrink:0; line-height:1; }
@@ -216,7 +216,7 @@ export default function RefundPolicy() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl rp-reveal">
               <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-6"
                 style={{ background: "rgba(127,178,221,0.18)", color: "#7fb2dd" }}
               >
                 <span
@@ -356,7 +356,7 @@ export default function RefundPolicy() {
                     }}
                   />
                   <span
-                    className="text-xs font-semibold"
+                    className="text-sm font-semibold"
                     style={{ color: l.color, fontFamily: "'IBM Plex Sans', sans-serif" }}
                   >
                     {l.label}
@@ -367,7 +367,7 @@ export default function RefundPolicy() {
 
             {/* Table header */}
             <div
-              className="grid gap-4 px-5 pb-3 text-xs font-bold uppercase tracking-wider"
+              className="grid gap-4 px-5 pb-3 text-sm font-bold uppercase tracking-wider"
               style={{
                 gridTemplateColumns: "1fr auto auto",
                 color: "#9ca3af",
@@ -394,7 +394,7 @@ export default function RefundPolicy() {
                   {row.fee}
                 </span>
                 <span
-                  className="text-xs"
+                  className="text-sm"
                   style={{ color: "#6b7280", fontFamily: "'IBM Plex Sans', sans-serif" }}
                 >
                   {row.condition}
