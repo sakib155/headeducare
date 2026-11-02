@@ -1,3 +1,5 @@
+import { useBackground } from "../../lib/BackgroundsContext";
+
 const people = [
   {
     name: "Shuvo M.",
@@ -119,15 +121,13 @@ const degrees = (person) =>
   [person.degree1, person.degree2, person.degree3].filter(Boolean);
 
 const OurPeople = () => {
+  const bgOurPeople = useBackground("bg_our_people");
   return (
     <div>
       {/* Hero band */}
       <section
         className="sol-overlay sol-hero-inner"
-        style={{
-          backgroundImage:
-            "url(/assets/prettiest-college-campuses-notre-dame-university-1592777643.avif)",
-        }}
+        style={{ backgroundImage: `url(${bgOurPeople})` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-16 text-center">
           <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">Meet Our Team</h2>

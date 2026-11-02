@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { api } from "../lib/apiClient";
+import { BACKGROUND_SLOTS } from "../data/backgrounds";
 
 // Read image dimensions client-side (no upload needed) for size/ratio validation
 function getImageDimensions(file) {
@@ -85,6 +86,7 @@ function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH 
 export default function Admin() {
   const [auth, setAuth] = useState({ loading: true, authenticated: false, user: null });
   const [usernameInput, setUsernameInput] = useState("");
+  const [bgSaved, setBgSaved] = useState({});
   const [passwordInput, setPasswordInput] = useState("");
   const [loginError, setLoginError] = useState("");
   const [activeTab, setActiveTab] = useState("overview");
@@ -316,6 +318,18 @@ export default function Admin() {
       } finally {
         setActionLoading(false);
       }
+    }
+  };
+
+  // Instant-save one background slot after upload/URL change
+  const handleBgSave = async (key, url) => {
+    setSettings((prev) => ({ ...prev, [key]: url }));
+    try {
+      await api.saveSettings({ [key]: url });
+      setBgSaved((prev) => ({ ...prev, [key]: true }));
+      setTimeout(() => setBgSaved((prev) => ({ ...prev, [key]: false })), 2500);
+    } catch (err) {
+      alert("Failed to save background: " + err.message);
     }
   };
 
@@ -1093,6 +1107,54 @@ export default function Admin() {
                 </button>
               </div>
             </form>
+
+            {/* --- Background Images --- */}
+            <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+              <h3 className="text-2xl font-black text-white">Background Images</h3>
+              <p className="text-slate-400 text-sm mt-1 mb-6">
+                Change the hero background picture of each page. Uploads are
+                auto-resized to 2560&times;1440. Leave empty to use the default.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                {BACKGROUND_SLOTS.map((slot) => (
+                  <div key={slot.key} className="border border-slate-800 rounded-xl p-4 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <label className="text-xs font-bold text-gray-300 uppercase tracking-widest">
+                        {slot.label}
+                      </label>
+                      {bgSaved[slot.key] && (
+                        <span className="text-emerald-400 text-xs font-bold">Saved &#10003;</span>
+                      )}
+                    </div>
+                    <img
+                      src={settings[slot.key] || slot.fallback}
+                      alt={slot.label}
+                      className="w-full h-28 object-cover rounded-lg border border-slate-800"
+                    />
+                    <input
+                      type="text"
+                      value={settings[slot.key] || ""}
+                      onChange={(e) =>
+                        setSettings((prev) => ({ ...prev, [slot.key]: e.target.value }))
+                      }
+                      onBlur={(e) => {
+                        if (e.target.value !== (settings[slot.key] || "")) {
+                          handleBgSave(slot.key, e.target.value);
+                        }
+                      }}
+                      className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-white text-xs focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder={slot.fallback}
+                    />
+                    <UploadButton
+                      label="Upload Background (auto-resize 2560×1440)"
+                      targetW={2560}
+                      targetH={1440}
+                      onUploaded={(url) => handleBgSave(slot.key, url)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </main>

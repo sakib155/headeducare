@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useBackground } from "../../lib/BackgroundsContext";
 import { Link } from "react-router-dom";
 
 /* ─────────────────────────────────────────────
@@ -110,7 +111,7 @@ export const BASE_STYLES = `
 const PAGE_HERO_IMAGE = "/assets/prettiest-college-campuses-san-diego-state-university-1592777643.avif";
 
 export function PageHero({
-  image = PAGE_HERO_IMAGE,
+  image,
   badge,
   title,
   highlight,
@@ -122,7 +123,7 @@ export function PageHero({
   return (
     <section
       className="srv-hero"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${useBackground("bg_service_default") || image})` }}
     >
       <div
         className="srv-container"

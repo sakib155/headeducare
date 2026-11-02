@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useBackground } from "../../lib/BackgroundsContext";
 import { fetchMergedCountries } from "../../lib/countryData";
 
 const css = `
@@ -248,6 +249,7 @@ const css = `
 `;
 
 export default function DestinationPage() {
+  const bgAllCountries = useBackground("bg_all_countries");
   // Only show countries that the agency provides (matches navbar menuData)
   const ALLOWED_SLUGS = [
     "uk", "usa", "australia", "new-zealand", "ireland", "canada",
@@ -267,7 +269,14 @@ export default function DestinationPage() {
       <style>{css}</style>
       <div className="dp-root">
         {/* ── header (full-bleed, direct child of dp-root) ── */}
-        <header className="dp-header">
+        <header
+          className="dp-header"
+          style={{
+            backgroundImage: `linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url(${bgAllCountries})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="dp-inner">
             <h1 className="dp-title">
               Explore <em>Destinations</em>

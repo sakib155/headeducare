@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useBackground } from "../lib/BackgroundsContext";
 
 const FALLBACK_TEAM = [
   {
@@ -69,6 +70,7 @@ const milestones = [
 ];
 
 export default function About() {
+  const bgAbout = useBackground("bg_about");
   const [team, setTeam] = useState(FALLBACK_TEAM);
 
   useEffect(() => {
@@ -80,10 +82,7 @@ export default function About() {
       {/* Hero - overlay band */}
       <section
         className="sol-overlay sol-hero-inner"
-        style={{
-          backgroundImage:
-            "url(/assets/prettiest-college-campuses-university-of-chicago-1592777651.avif)",
-        }}
+        style={{ backgroundImage: `url(${bgAbout})` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 lg:pt-44 lg:pb-24">
           <div className="max-w-4xl">

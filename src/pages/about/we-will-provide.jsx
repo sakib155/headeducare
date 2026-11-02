@@ -260,7 +260,10 @@ const stats = [
 ];
 
 /* ─── component ─── */
+import { useBackground } from "../../lib/BackgroundsContext";
+
 export default function WillProvide() {
+  const bgWillProvide = useBackground("bg_we_will_provide");
   const containerRef = useReveal();
 
   return (
@@ -278,7 +281,7 @@ export default function WillProvide() {
             alignItems: "center",
             overflow: "hidden",
             background:
-              "linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url(/assets/prettiest-college-campuses-berry-college-1592777599.avif) center/cover",
+              `linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url(${bgWillProvide}) center/cover`,
           }}
         >
           {/* blob */}

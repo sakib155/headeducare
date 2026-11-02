@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useBackground } from "../lib/BackgroundsContext";
 import {
   Globe, Clock, Shield, Banknote, CheckCircle, FileText, Award, GraduationCap, Stethoscope, Search, MapPin, Users, ChevronRight,
 } from "lucide-react";
@@ -106,6 +107,7 @@ const countryData = {
 };
 
 export default function StudyMBBSDetail() {
+  const bgMbbsDetail = useBackground("bg_mbbs_detail");
   const { slug } = useParams();
   const data = countryData[slug];
 
@@ -123,7 +125,7 @@ export default function StudyMBBSDetail() {
         <section
           className="mbbs-hero"
           style={{
-            backgroundImage: `linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url(${data.image})`,
+            backgroundImage: `linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url(${data.image || bgMbbsDetail})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

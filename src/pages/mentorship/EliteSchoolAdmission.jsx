@@ -6,12 +6,14 @@ import {
   MentorFAQ, MentorStatsStrip, MentorCtaBanner, MentorTagList,
 } from "./mentorshipComponents";
 import { eliteSchoolAdmissionData as d } from "./mentorshipData";
+import { useBackground } from "../../lib/BackgroundsContext";
 import { Link } from "react-router-dom";
 
 const featureIcons = [Search, Target, PenTool, MessageCircle, Star, FileText];
 
 export default function EliteSchoolAdmission() {
   const containerRef = useReveal();
+  const bgElite = useBackground("bg_elite_school");
   return (
     <>
       <style>{MENTOR_STYLES + `
@@ -23,7 +25,14 @@ export default function EliteSchoolAdmission() {
       <div className="mtr-page" ref={containerRef}>
 
         {/* Premium dark hero, visually distinct from every other page */}
-        <section className="elite-hero">
+        <section
+          className="elite-hero"
+          style={{
+            backgroundImage: `linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url(${bgElite})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="elite-blob" style={{ width: 500, height: 500, background: "rgba(255,255,255,0.06)", top: -150, right: -100 }} />
           <div className="elite-blob" style={{ width: 300, height: 300, background: "rgba(127,178,221,0.1)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>

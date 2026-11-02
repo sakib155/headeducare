@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { useBackground } from "../lib/BackgroundsContext";
 import { useState, useRef, useEffect } from "react";
 import { api } from "../lib/apiClient";
 
 type Status = "sending" | "success" | "error" | null;
 
 export default function FreeConsultation() {
+  const bgFree = useBackground("bg_free_consultation");
   const navigate = useNavigate();
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -72,10 +74,7 @@ export default function FreeConsultation() {
       {/* HERO */}
       <section
         className="sol-overlay sol-hero-inner"
-        style={{
-          backgroundImage:
-            "url(/assets/prettiest-college-campuses-princeton-1592777643.avif)",
-        }}
+        style={{ backgroundImage: `url(${bgFree})` }}
       >
         <div className="max-w-6xl mx-auto px-4 pt-40 pb-24 text-center">
           <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-6">

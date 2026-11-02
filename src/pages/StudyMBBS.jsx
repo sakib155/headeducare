@@ -35,17 +35,17 @@ const destinations = [
   { name: "Hungary", slug: "hungary", flag: "🇭🇺", color: "#2b7bb9" },
 ];
 
+import { useBackground } from "../lib/BackgroundsContext";
+
 export default function StudyMBBS() {
+  const bgMbbs = useBackground("bg_study_mbbs");
   return (
     <>
       <style>{styles}</style>
       <div className="mbbs-page">
         <section
           className="sol-overlay sol-hero-inner"
-          style={{
-            backgroundImage:
-              "url(/assets/prettiest-college-campuses-m-i-t-1592777642.avif)",
-          }}
+          style={{ backgroundImage: `url(${bgMbbs})` }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6">

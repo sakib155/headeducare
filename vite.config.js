@@ -7,7 +7,10 @@ export default defineConfig({
   plugins: [seoDevPlugin(), react(), tailwindcss()],
   server: {
     proxy: {
-      '/api': 'http://localhost',
+      '/api': {
+        target: 'https://headeducare.com',
+        changeOrigin: true,
+      },
     },
     allowedHosts: ['.trycloudflare.com'],
   },

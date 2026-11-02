@@ -51,6 +51,7 @@ import StudyMBBS from "./pages/StudyMBBS";
 import StudyMBBSDetail from "./pages/StudyMBBSDetail";
 import AutoSeo from "./components/Seo";
 import { homeFaqs } from "./data/faqData";
+import { BackgroundsProvider } from "./lib/BackgroundsContext";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -90,6 +91,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
+      <BackgroundsProvider>
       <ScrollToTop />
       {!isAdminPage && <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />}
 
@@ -153,6 +155,7 @@ export default function App() {
 
       {!isAdminPage && <Footer />}
       {!isAdminPage && <ChatWidget />}
+      </BackgroundsProvider>
     </div>
   );
 }

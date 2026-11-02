@@ -1,5 +1,6 @@
 import { Target, PenTool, MessageCircle, FileText, Star, Search, GraduationCap, BookOpen, CheckCircle, ChevronRight, Award, Users, Globe } from "lucide-react";
 import { MENTOR_STYLES, useReveal, MentorSectionHeader, MentorIconCard, MentorProcessArrows, MentorFAQ, MentorStatsStrip, MentorCtaBanner, MentorTagList, } from "./mentorshipComponents";
+import { useBackground } from "../../lib/BackgroundsContext";
 import { Link } from "react-router-dom";
 
 const featureIcons = [Search, Target, PenTool, MessageCircle, Star, FileText];
@@ -49,6 +50,7 @@ const faqs = [
 
 export default function RussellGroupApplication() {
   const containerRef = useReveal();
+  const bgRussell = useBackground("bg_russell_group");
   return (
     <>
       <style>{MENTOR_STYLES + `
@@ -66,7 +68,14 @@ export default function RussellGroupApplication() {
       `}</style>
       <div className="mtr-page" ref={containerRef}>
         {/* Hero */}
-        <section className="rg-hero">
+        <section
+          className="rg-hero"
+          style={{
+            backgroundImage: `linear-gradient(rgba(15,32,60,0.88) 0%, rgba(20,42,78,0.82) 100%), url(${bgRussell})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="rg-blob" style={{ width: 500, height: 500, background: "rgba(255,255,255,0.06)", top: -150, right: -100 }} />
           <div className="rg-blob" style={{ width: 300, height: 300, background: "rgba(127,178,221,0.1)", bottom: -80, left: -60 }} />
           <div className="mtr-container" style={{ position: "relative", zIndex: 1 }}>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useBackground } from "../lib/BackgroundsContext";
 import { Link } from "react-router-dom";
 import { api } from "../lib/apiClient";
 
@@ -100,6 +101,7 @@ const processSteps = [
 ];
 
 export default function Services() {
+  const bgServices = useBackground("bg_services");
   const [services, setServices] = useState(FALLBACK_SERVICES);
 
   useEffect(() => {
@@ -119,10 +121,7 @@ export default function Services() {
       {/* Hero - overlay band */}
       <section
         className="sol-overlay sol-hero-inner"
-        style={{
-          backgroundImage:
-            "url(/assets/prettiest-college-campuses-dartmouth-college-1592777600.avif)",
-        }}
+        style={{ backgroundImage: `url(${bgServices})` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 lg:pt-44 lg:pb-24">
           <div className="max-w-3xl">

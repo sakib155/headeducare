@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useBackground } from "../../lib/BackgroundsContext";
 import { Link } from "react-router-dom";
 
 /* ─────────────────────────────────────────────
@@ -139,7 +140,7 @@ export const MENTOR_STYLES = `
 const MENTOR_HERO_IMAGE = "/assets/prettiest-college-campuses-university-of-missouri-1592777652.avif";
 
 export function MentorHero({
-  image = MENTOR_HERO_IMAGE,
+  image,
   badge,
   title,
   highlight,
@@ -155,7 +156,7 @@ export function MentorHero({
       <div
         className="mtr-hero-bg"
         style={{
-          backgroundImage: `linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url(${image})`,
+          backgroundImage: `linear-gradient(rgba(15,32,60,0.88), rgba(20,42,78,0.82)), url(${useBackground("bg_mentor_default") || image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

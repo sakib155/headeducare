@@ -1,3 +1,4 @@
+import { useBackground } from "../../lib/BackgroundsContext";
 import { Calendar, Mail, MailCheck, MapPin, RefreshCcw } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -178,6 +179,7 @@ function useReveal() {
 }
 
 export default function TermsServices() {
+  const bg = useBackground("bg_legal_terms");
   const [activeSection, setActiveSection] = useState(sections[0].id);
   const containerRef = useReveal();
 
@@ -237,8 +239,7 @@ export default function TermsServices() {
         <section
           className="relative pt-40 pb-20 min-h-[620px] max-md:min-h-[460px] flex items-center overflow-hidden"
           style={{
-            background:
-              "linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%), url(/assets/hampton-university-1594329567.avif) center/cover",
+            background: `linear-gradient(rgba(15,32,60,0.9) 0%, rgba(20,42,78,0.85) 100%), url(${bg}) center/cover`,
           }}
         >
           <div

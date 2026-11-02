@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import FaqSection from "../components/FaqSection";
+import { useBackground } from "../lib/BackgroundsContext";
 import { homeFaqs } from "../data/faqData";
 import { api, FALLBACK_COUNTRIES } from "../lib/apiClient";
 import { fetchMergedCountries } from "../lib/countryData";
@@ -172,6 +173,8 @@ const HERO_IMAGES = [
 ];
 
 export default function Home() {
+  const bgHomeHero = useBackground("bg_home_hero");
+  const bgHomeCta = useBackground("bg_home_cta");
   const [services, setServices] = useState(FALLBACK_SERVICES);
   const [countries, setCountries] = useState(FALLBACK_COUNTRIES);
   const [testimonials, setTestimonials] = useState(FALLBACK_TESTIMONIALS);
@@ -383,10 +386,7 @@ export default function Home() {
       {/* ===== HERO SECTION - full-bleed photo + navy overlay, dual-color H1 ===== */}
       <section
         className="sol-overlay sol-hero"
-        style={{
-          backgroundImage:
-            "url(/assets/prettiest-college-campuses-stanford-university-1592777646.avif)",
-        }}
+        style={{ backgroundImage: `url(${bgHomeHero})` }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24 lg:pt-48 lg:pb-32 text-center">
           <h1
@@ -651,10 +651,7 @@ export default function Home() {
       {/* ===== CTA SECTION - overlay band with lead form ===== */}
       <section
         className="sol-overlay"
-        style={{
-          backgroundImage:
-            "url(/assets/prettiest-college-campuses-georgetown-1592777619.avif)",
-        }}
+        style={{ backgroundImage: `url(${bgHomeCta})` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
