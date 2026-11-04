@@ -125,12 +125,10 @@ export default function Services() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 lg:pt-44 lg:pb-24">
           <div className="max-w-3xl">
-            <h2 className="sol-eyebrow !text-[#7fb2dd] text-sm mb-3">What We Offer</h2>
             <h1 className="text-4xl sm:text-5xl font-semibold text-white leading-tight">
               Expert <span className="text-[#7fb2dd]">Services</span> for Your
               Global Journey
             </h1>
-            <hr className="sol-separator-left sol-separator-light mt-6" />
             <p className="text-lg text-white/85 leading-relaxed mt-8">
               Comprehensive support at every stage, from selecting the right
               university to landing in your dream country.

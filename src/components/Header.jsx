@@ -69,7 +69,7 @@ export default function Header({
         <header
           className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
             solid
-              ? "bg-white dark:bg-[#0f203c] border-b border-gray-200 dark:border-white/10 shadow-md"
+              ? "bg-[#E0C040] SOLIDMARK border-b border-[#0f203c]/25 shadow-md"
               : "bg-transparent border-b border-transparent"
           }`}
         >
@@ -121,7 +121,7 @@ export default function Header({
                   className={`w-9 h-9 rounded-sm border flex items-center justify-center transition-colors focus:outline-none ${
                     atTop
                       ? "border-white/70 text-white hover:bg-white/10"
-                      : "border-gray-200 text-[#204276] hover:bg-[#f2f2f2] dark:border-white/20 dark:text-white"
+                      : "border-[#0f203c]/40 text-[#0f203c] hover:bg-[#0f203c]/10"
                   }`}
                   aria-label="Toggle dark mode"
                 >
@@ -155,7 +155,7 @@ export default function Header({
           {/* ── Nav row: Oswald uppercase links with dropdowns ── */}
           <div
             className={`hidden xl:block border-t ${
-              atTop ? "border-white/20 bg-transparent" : "border-gray-100 bg-white dark:bg-[#0f203c] dark:border-white/10"
+              atTop ? "border-white/20 bg-transparent" : "border-[#0f203c]/15 bg-[#E0C040]"
             }`}
           >
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-1">
@@ -186,8 +186,8 @@ export default function Header({
                             ? "text-[#7fb2dd] border-[#7fb2dd]"
                             : "text-white/90 border-transparent hover:text-[#7fb2dd]"
                           : isActive || isOpen
-                          ? "text-[#204276] dark:text-[#7fb2dd] border-[#204276] dark:border-[#7fb2dd]"
-                          : "text-gray-600 dark:text-gray-300 border-transparent hover:text-[#2b7bb9] dark:hover:text-[#7fb2dd]"
+                          ? "text-[#0f203c] border-[#0f203c]"
+                          : "text-[#0f203c]/80 border-transparent hover:text-[#0f203c]"
                       }`}
                       style={{ fontFamily: '"Oswald", sans-serif', fontWeight: 500 }}
                     >
@@ -199,7 +199,7 @@ export default function Header({
                               ? "rotate-180 text-[#204276] dark:text-[#7fb2dd]"
                               : atTop
                               ? "text-white/70"
-                              : "text-gray-400"
+                              : "text-[#0f203c]/70"
                           }`}
                         />
                       )}
