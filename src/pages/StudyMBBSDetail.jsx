@@ -78,7 +78,7 @@ const countryData = {
   malaysia: {
     image: "/assets/malaysia.jpg",
     flag: "🇲🇾", name: "Malaysia",
-    intro: "",
+    intro: "Every year large number of international students come to Malaysia from different countries to study MBBS. Thus, Malaysia has become one of the highly admired destinations for MBBS students. Malaysia being reputed with elite infrastructure and sophisticated technologies offer high viewpoint and standard instruction in the field of medical science. College in Malaysia are the best and hence ideal for universal students.",
     sections: [
       { title: "Why Malaysia", icon: Search,
         desc: "MBBS universities in Malaysia offer comfortable, simple and direct MBBS admission without any entrance exam. The tuition fees to pursue medical studies in Malaysia are much affordable compared to other nations, but there is no compromise in the quality of education. The cost of living and accommodation is much cheaper in Malaysia. You will feel as if you are at your home location." },
