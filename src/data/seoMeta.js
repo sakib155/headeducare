@@ -1,6 +1,6 @@
 const SITE = {
   name: "Head Educare",
-  url: "https://headedu.com",
+  url: "https://headeducare.com",
   logo: "/HEAD_horizontal.png",
   ogImage: "/og-image.jpg",
   twitter: "@head_educare",
@@ -133,6 +133,16 @@ export const routeMeta = [
 
   meta("/courses", "SAT & PTE Courses", "Prepare for Digital SAT and PTE with Head Educare's expert-led coaching in Dhaka. AI-powered practice, interactive lessons, and proven score improvement strategies.", {
     keywords: ["SAT coaching Dhaka", "PTE preparation Bangladesh", "IELTS coaching", "English language test training"],
+  }),
+
+  meta("/courses/pte", "PTE Academic Coaching | Head Educare", "Expert PTE Academic coaching with AI-powered learning, proven strategies, and personalized guidance. Fast results accepted by universities worldwide.", {
+    keywords: "PTE Academic coaching Dhaka, PTE test preparation Bangladesh, PTE coaching for study abroad, Pearson Test of English training",
+    canonical: "https://headeducare.com/courses/pte",
+  }),
+
+  meta("/courses/sat", "Digital SAT Coaching | Head Educare", "Digital SAT preparation with expert-led classes, adaptive practice tests, and proven score improvement strategies for top university admissions.", {
+    keywords: "Digital SAT coaching Dhaka, SAT preparation Bangladesh, SAT classes for university admission, SAT test prep",
+    canonical: "https://headeducare.com/courses/sat",
   }),
 
   meta("/study-mbbs", "Study MBBS Abroad", "Pursue your dream of becoming a doctor with Head Educare. MBBS programs in China, Malaysia, and Hungary for Bangladeshi students at affordable tuition.", {

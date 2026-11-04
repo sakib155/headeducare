@@ -14,7 +14,7 @@ function injectTags(html, meta) {
   const desc = meta.name?.description || "";
   const keywords = meta.name?.keywords || "";
   const canonical = meta.canonical || "";
-  const siteUrl = "https://headedu.com";
+  const siteUrl = "https://headeducare.com";
   const ogImage = `${siteUrl}/og-image.jpg`;
   const fullTitle = meta.title || "";
 
