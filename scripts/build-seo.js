@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const dist = join(__dirname, "..", "dist");
 
 const { routeMeta } = await import("../src/data/seoMeta.js");
+const { countriesFallback } = await import("../src/pages/country/countriesFallback.js");
 
 const indexHtml = readFileSync(join(dist, "index.html"), "utf-8");
 
@@ -73,6 +74,37 @@ for (const meta of routeMeta) {
   const html = injectTags(indexHtml, meta);
   writeFileSync(join(dist, filename), html);
   console.log(`  ✓ ${meta.path} → ${filename}`);
+}
+
+// ── Dynamic detail pages: country + MBBS destinations ──
+for (const country of countriesFallback) {
+  const slug = country.slug || String(country.country || "").toLowerCase();
+  if (!slug) continue;
+  const name = country.name || country.country;
+  const desc = country.description || `Study in ${name} with Head Educare - expert guidance on admissions, scholarships, visas, and more.`;
+  const meta = {
+    path: `/destination/${slug}`,
+    title: `Study in ${name} | Head Educare`,
+    name: { description: desc },
+    canonical: `https://headeducare.com/destination/${slug}`,
+  };
+  const filename = `destination-${slug}.html`;
+  writeFileSync(join(dist, filename), injectTags(indexHtml, meta));
+  console.log(`  ✓ /destination/${slug} → ${filename}`);
+}
+
+const MBBS_DESTINATIONS = ["china", "malaysia", "hungary"];
+for (const slug of MBBS_DESTINATIONS) {
+  const name = slug.charAt(0).toUpperCase() + slug.slice(1);
+  const meta = {
+    path: `/study-mbbs/${slug}`,
+    title: `Study MBBS in ${name} | Head Educare`,
+    name: { description: `Study MBBS in ${name} with Head Educare - BM&DC-approved universities, affordable tuition, and complete admission support.` },
+    canonical: `https://headeducare.com/study-mbbs/${slug}`,
+  };
+  const filename = `study-mbbs-${slug}.html`;
+  writeFileSync(join(dist, filename), injectTags(indexHtml, meta));
+  console.log(`  ✓ /study-mbbs/${slug} → ${filename}`);
 }
 
 // Copy index.html as 404.html for SPA fallback
