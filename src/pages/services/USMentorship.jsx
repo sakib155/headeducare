@@ -308,7 +308,6 @@ export default function USMentorship() {
       <div className="srv-page" ref={containerRef}>
         {/* ── HERO ── */}
         <PageHero
-          badge="USA Mentorship Program"
           title="Holistic Ivy League & Elite College"
           highlight="Mentorship Support"
           desc="Our exclusive US Mentorship Program provides comprehensive guidance for students aiming to gain admission to competitive American universities. Our mentors work closely with students from profile building to final enrollment, ensuring every application reflects the student's full potential."
