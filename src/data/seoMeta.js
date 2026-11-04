@@ -135,12 +135,12 @@ export const routeMeta = [
     keywords: ["SAT coaching Dhaka", "PTE preparation Bangladesh", "IELTS coaching", "English language test training"],
   }),
 
-  meta("/courses/pte", "PTE Academic Coaching | Head Educare", "Expert PTE Academic coaching with AI-powered learning, proven strategies, and personalized guidance. Fast results accepted by universities worldwide.", {
+  meta("/courses/pte", "PTE Academic Coaching", "Expert PTE Academic coaching with AI-powered learning, proven strategies, and personalized guidance. Fast results accepted by universities worldwide.", {
     keywords: "PTE Academic coaching Dhaka, PTE test preparation Bangladesh, PTE coaching for study abroad, Pearson Test of English training",
     canonical: "https://headeducare.com/courses/pte",
   }),
 
-  meta("/courses/sat", "Digital SAT Coaching | Head Educare", "Digital SAT preparation with expert-led classes, adaptive practice tests, and proven score improvement strategies for top university admissions.", {
+  meta("/courses/sat", "Digital SAT Coaching", "Digital SAT preparation with expert-led classes, adaptive practice tests, and proven score improvement strategies for top university admissions.", {
     keywords: "Digital SAT coaching Dhaka, SAT preparation Bangladesh, SAT classes for university admission, SAT test prep",
     canonical: "https://headeducare.com/courses/sat",
   }),
