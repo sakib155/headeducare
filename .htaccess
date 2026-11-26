@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# Serve / through the PHP front controller (route-specific SEO meta at request time)
+DirectoryIndex index.php index.html
+
 # ── Security hardening ───────────────────────────────────────────────────────
 # Disable directory listing
 Options -Indexes

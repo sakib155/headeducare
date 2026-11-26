@@ -107,6 +107,22 @@ for (const slug of MBBS_DESTINATIONS) {
   console.log(`  ✓ /study-mbbs/${slug} → ${filename}`);
 }
 
+// ── sitemap.xml ──
+const SITE = "https://headeducare.com";
+const today = new Date().toISOString().slice(0, 10);
+const urls = [];
+for (const meta of routeMeta) urls.push(SITE + meta.path);
+for (const country of countriesFallback) {
+  const slug = country.slug || String(country.country || "").toLowerCase();
+  if (slug) urls.push(`${SITE}/destination/${slug}`);
+}
+for (const slug of MBBS_DESTINATIONS) urls.push(`${SITE}/study-mbbs/${slug}`);
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
+  .map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`)
+  .join("\n")}\n</urlset>\n`;
+writeFileSync(join(dist, "sitemap.xml"), sitemap);
+console.log(`  ✓ sitemap.xml (${urls.length} URLs)`);
+
 // Copy index.html as 404.html for SPA fallback
 copyFileSync(join(dist, "index.html"), join(dist, "404.html"));
 console.log(`  ✓ 404.html → SPA fallback`);

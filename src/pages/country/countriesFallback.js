@@ -31,9 +31,8 @@ export const countriesFallback = [
       { test: "PTE", level: "Doctorate", min_score: "58", max_score: "72" },
     ],
     intakes: [
-      { name: "February", term: "Term 1", apply_window: "October - November" },
-      { name: "July", term: "Term 2", apply_window: "May - June" },
-      { name: "November", term: "Term 3", apply_window: "September" },
+      { name: "February", term: "Term 1", apply_window: "February - June" },
+      { name: "July", term: "Term 2", apply_window: "July - December" },
     ],
     post_study_work_salary: [
       { field: "IT & Tech", min: 60000, max: 80000, currency: "AUD" },
@@ -118,9 +117,8 @@ export const countriesFallback = [
     ],
     intakes: [
       { name: "Autumn", term: "Term 1", apply_window: "September - December" },
-      { name: "Winter", term: "Term 2", apply_window: "January - April" },
-      { name: "Spring", term: "Term 3", apply_window: "April - June" },
-      { name: "Summer", term: "Term 4", apply_window: "June - August" },
+      { name: "Winter", term: "Term 2", apply_window: "January - May" },
+      { name: "Spring", term: "Term 3", apply_window: "April - August" },
     ],
     post_study_work_salary: [
       {
@@ -203,24 +201,8 @@ export const countriesFallback = [
       { test: "PTE", level: "Doctorate", min_score: "56", max_score: "78" },
     ],
     intakes: [
-      {
-        name: "Fall",
-        term: "Primary",
-        apply_window: "December - February",
-        start_month: "August/September",
-      },
-      {
-        name: "Spring",
-        term: "Secondary",
-        apply_window: "August - October",
-        start_month: "January/February",
-      },
-      {
-        name: "Summer",
-        term: "Limited",
-        apply_window: "February - March",
-        start_month: "May/June",
-      },
+      { name: "Fall", term: "Primary", apply_window: "August - December" },
+      { name: "Spring", term: "Secondary", apply_window: "January - May" },
     ],
     post_study_work_salary: [
       {
@@ -413,18 +395,8 @@ export const countriesFallback = [
       { test: "PTE", level: "Doctorate", min_score: "50", max_score: "65" },
     ],
     intakes: [
-      {
-        name: "February",
-        term: "Term 1",
-        apply_window: "October - December",
-        start_month: "February",
-      },
-      {
-        name: "July",
-        term: "Term 2",
-        apply_window: "April - May",
-        start_month: "July",
-      },
+      { name: "February", term: "Term 1", apply_window: "February - June" },
+      { name: "July", term: "Term 2", apply_window: "July - December" },
     ],
     post_study_work_salary: [
       { field: "IT & Technology", min: 55000, max: 80000, currency: "NZD" },

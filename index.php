@@ -36,9 +36,9 @@ $ROUTES = [
       'url' => $siteUrl,
       'logo' => $siteUrl . '/HEAD_horizontal.png',
       'description' => 'Bangladesh\'s trusted education consultancy for international studies.',
-      'address' => ['@type' => 'PostalAddress', 'street' => 'House-52, Road-4, Block-C, Banani', 'locality' => 'Dhaka', 'region' => 'Dhaka Division', 'postalCode' => '1213', 'country' => 'Bangladesh'],
-      'contactPoint' => ['@type' => 'ContactPoint', 'telephone' => '+8801XXXXXXXXX', 'contactType' => 'customer service'],
-      'sameAs' => ['https://wa.me/8801XXXXXXXXX', 'https://facebook.com/headedu'],
+      'address' => ['@type' => 'PostalAddress', 'street' => '44/16, 3rd Floor, West Panthapath', 'locality' => 'Dhaka', 'region' => 'Dhaka Division', 'postalCode' => '1205', 'country' => 'Bangladesh'],
+      'contactPoint' => ['@type' => 'ContactPoint', 'telephone' => '+8801910833888', 'contactType' => 'customer service'],
+      'sameAs' => ['https://wa.me/8801910833888', 'https://facebook.com/headedu'],
       'areaServed' => ['@type' => 'Country', 'name' => 'Bangladesh'],
     ],
   ],
@@ -281,8 +281,8 @@ if (!$html) { http_response_code(500); die('index.html not found. Run npm run bu
 
 if ($meta) {
   $fullTitle = $meta['title'];
-  $desc = addslashes($meta['desc']);
-  $keywords = addslashes($meta['keywords'] ?? '');
+  $desc = htmlspecialchars($meta['desc'], ENT_QUOTES, 'UTF-8');
+  $keywords = htmlspecialchars($meta['keywords'] ?? '', ENT_QUOTES, 'UTF-8');
   $canonical = $meta['canonical'] ?? $siteUrl . $route;
   $ogType = $meta['og_type'] ?? 'website';
   $ogImage = $siteUrl . '/HEAD_horizontal.png';

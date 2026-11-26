@@ -2,8 +2,8 @@ export const menuData = [
   {
     title: { name: "About", url: "/about" },
     items: [
-      { name: "Our Team", url: "/about/our-people" },
       { name: "About Head Educare", url: "/about" },
+      { name: "Our Team", url: "/about/our-people" },
     ],
   },
   {

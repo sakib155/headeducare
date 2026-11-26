@@ -397,10 +397,10 @@ export default function Home() {
             <span className="block pb-2 text-[#7fb2dd]">Abroad Destination</span>
           </h1>
 
-          <p className="mt-8 text-white/90 text-lg leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
+          <p className="mt-8 text-justify [text-align-last:center] text-white/90 text-lg leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
             Head Educare is one of Bangladesh's leading international education consultancies, helping students pursue higher education opportunities across the globe. For more than a decade, we have successfully guided students through university selection, scholarships, admissions, education financing, visa processing, and pre-departure preparation.
           </p>
-          <p className="mt-4 text-white/75 leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
+          <p className="mt-4 text-justify [text-align-last:center] text-white/75 leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
             Our experienced counselors work closely with every student to understand their academic background, career aspirations, and financial circumstances before designing a personalized study abroad strategy. Whether your destination is the USA, UK, Canada, Australia, New Zealand, Europe, Malaysia, or South Korea, we provide end-to-end support throughout your journey.
           </p>
 
