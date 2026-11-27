@@ -10,6 +10,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { menuData } from "./menuData";
+import { CONTACTS } from "../data/contact";
 
 export default function Header({
   toggleDarkMode,
@@ -76,7 +77,7 @@ export default function Header({
           {/* ── Top row: logo + phone CTA ── */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
-              className={`flex items-center justify-between transition-all duration-300 ${
+              className={`flex items-center justify-between w-full max-w-full overflow-hidden transition-all duration-300 ${
                 solid ? "py-2" : "py-3.5"
               }`}
             >
@@ -87,7 +88,7 @@ export default function Header({
               >
                 <div
                   className={`flex items-center transition-all duration-300 ${
-                    solid ? "h-10" : "h-13"
+                    solid ? "h-13" : "h-13"
                   }`}
                 >
                   <img
@@ -99,12 +100,24 @@ export default function Header({
               </a>
 
               {/* Right side: dark-mode toggle + phone CTA */}
-              <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                {/* Mobile (<640px): compact icon-only tap-to-call button */}
                 <a
-                  href="https://wa.me/8801910833888"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`hidden sm:inline-flex items-center gap-2 whitespace-nowrap shrink-0 text-sm py-2.5 px-5 rounded-sm transition-all duration-300 ${
+                  href={`tel:${CONTACTS.hotline.tel}`}
+                  aria-label={`Call Head Educare: ${CONTACTS.hotline.display}`}
+                  className={`sm:hidden w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                    atTop
+                      ? "border border-white/80 text-white hover:bg-white/10"
+                      : "bg-[#204276] text-white hover:bg-[#16325c]"
+                  }`}
+                >
+                  <Phone className="w-5 h-5 shrink-0" />
+                </a>
+
+                {/* Tablet/desktop (≥640px): full hotline pill (click-to-call) */}
+                <a
+                  href={`tel:${CONTACTS.hotline.tel}`}
+                  className={`hidden! sm:inline-flex! items-center gap-2 whitespace-nowrap shrink-0 text-sm py-2.5 px-5 rounded-sm transition-all duration-300 ${
                     atTop
                       ? "border border-white/80 text-white hover:bg-white hover:text-[#204276] font-bold"
                       : "sol-btn"
@@ -112,7 +125,7 @@ export default function Header({
                   style={{ fontFamily: '"Roboto", sans-serif', fontWeight: 700 }}
                 >
                   <Phone className="w-4 h-4 shrink-0" />
-                  <span className="tracking-wide">+8801910 833 888</span>
+                  <span className="tracking-wide">{CONTACTS.hotline.display}</span>
                 </a>
 
                 <button
@@ -343,13 +356,11 @@ export default function Header({
                     return (
                       <div key={section.title.name} className="pt-4">
                         <a
-                          href="https://wa.me/8801910833888"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={`tel:${CONTACTS.hotline.tel}`}
                           className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sol-btn"
                         >
                           <Phone className="w-4 h-4 shrink-0" />
-                          <span>+8801910 833 888</span>
+                          <span>{CONTACTS.hotline.display}</span>
                         </a>
                       </div>
                     );
@@ -447,7 +458,7 @@ export default function Header({
               {/* Mobile Footer CTA */}
               <div className="p-4 border-t border-gray-200 dark:border-white/10 bg-[#f2f2f2] dark:bg-[#0d1626]">
                 <a
-                  href="/freeconsulation"
+                  href="/freeconsulation#consultation-form"
                   className="w-full inline-flex items-center justify-center py-3 px-4 sol-btn text-sm"
                   onClick={() => setMobileOpen(false)}
                 >

@@ -123,9 +123,14 @@ export const routeMeta = [
     },
   }),
 
+  meta("/admin", "Admin Portal", "Head Educare administration portal — manage contacts, leads, services, destinations, testimonials, and site settings.", {
+    keywords: ["admin"],
+  }),
+
   meta("/freeconsulation", "Free Consultation", "Book your free consultation with Head Educare in Dhaka. Our experts will guide you through university selection, applications, scholarships, and visa processes.", {
     keywords: ["free study abroad consultation", "book appointment Dhaka", "education counseling Bangladesh"],
   }),
+
 
   meta("/allcountries/allcountry", "Study Destinations", "Discover the best countries to study abroad from Bangladesh: USA, UK, Canada, Australia, Europe, Malaysia, South Korea. Compare tuition, visa requirements, and scholarships.", {
     keywords: ["study abroad destinations", "best countries for Bangladeshi students", "USA UK Canada Australia study"],

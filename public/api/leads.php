@@ -30,6 +30,13 @@ if ($method === 'POST') {
     }
 
     // Otherwise, create a new contact + lead (public access)
+    require_once __DIR__ . '/rate_limit.php';
+    if (!rate_limit_check($db, 'leads', 5, 600)) {
+        http_response_code(429);
+        echo json_encode(["error" => "Too many submissions. Please try again later."]);
+        exit();
+    }
+
     $input = json_decode(file_get_contents('php://input'), true);
 
     // Check required fields

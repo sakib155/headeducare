@@ -49,6 +49,7 @@ import Admin from "./pages/Admin";
 import Courses from "./pages/Courses";
 import StudyMBBS from "./pages/StudyMBBS";
 import StudyMBBSDetail from "./pages/StudyMBBSDetail";
+import NotFound from "./pages/NotFound";
 import AutoSeo from "./components/Seo";
 import { homeFaqs } from "./data/faqData";
 import { BackgroundsProvider } from "./lib/BackgroundsContext";
@@ -95,6 +96,7 @@ export default function App() {
       <ScrollToTop />
       {!isAdminPage && <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />}
 
+      <main id="main-content">
       <Routes>
         <Route path="/admin" element={<Admin />} />
         <Route path="/" element={<AutoSeo faqItems={homeFaqs}><Home /></AutoSeo>} />
@@ -105,6 +107,8 @@ export default function App() {
         <Route path="/destination/:slug" element={<AutoSeo><CountryDetails /></AutoSeo>} />
         <Route path="/destination/europe" element={<Navigate to="/allcountries/allcountry" replace />} />
         <Route path="/freeconsulation" element={<AutoSeo><FreeConsultation /></AutoSeo>} />
+        {/* /contact is retired — permanent redirect to the consultation page */}
+        <Route path="/contact" element={<Navigate to="/freeconsulation#consultation-form" replace />} />
         <Route path="/allcountries/allcountry" element={<AutoSeo><DestinationPage /></AutoSeo>} />
         <Route path="/legal/termsService" element={<AutoSeo><TermsServices /></AutoSeo>} />
         <Route path="/legal/privacyPolicy" element={<AutoSeo><PrivacyPolicy /></AutoSeo>} />
@@ -151,7 +155,19 @@ export default function App() {
         <Route path="/courses/sat" element={<AutoSeo><Courses /></AutoSeo>} />
         <Route path="/study-mbbs" element={<AutoSeo><StudyMBBS /></AutoSeo>} />
         <Route path="/study-mbbs/:slug" element={<AutoSeo><StudyMBBSDetail /></AutoSeo>} />
+
+        {/* Catch-all: every unmatched URL renders the branded 404 page.
+            server.cjs additionally serves it with a real HTTP 404 status. */}
+        <Route
+          path="*"
+          element={
+            <AutoSeo titleOverride="Page Not Found (404) | Head Educare" noindex>
+              <NotFound />
+            </AutoSeo>
+          }
+        />
       </Routes>
+      </main>
 
       {!isAdminPage && <Footer />}
       {!isAdminPage && <ChatWidget />}

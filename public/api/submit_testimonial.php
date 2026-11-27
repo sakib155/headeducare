@@ -17,6 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
+require_once __DIR__ . '/rate_limit.php';
+$db = Database::getConnection();
+if (!rate_limit_check($db, 'testimonial', 3, 3600)) {
+    http_response_code(429);
+    echo json_encode(["error" => "Too many submissions. Please try again later."]);
+    exit();
+}
+
 $input = json_decode(file_get_contents('php://input'), true);
 if (!is_array($input)) {
     $input = $_POST;
@@ -54,6 +62,16 @@ if (!empty($input['photo_base64'])) {
         }
         $tmpFile = tempnam(sys_get_temp_dir(), 'ts_');
         file_put_contents($tmpFile, $raw);
+
+        // Decompression-bomb guard: reject oversized pixel dimensions
+        // BEFORE handing the data to GD (which allocates W x H x 4 bytes)
+        $dim = @getimagesize($tmpFile);
+        if ($dim && ($dim[0] > 6000 || $dim[1] > 6000)) {
+            unlink($tmpFile);
+            http_response_code(422);
+            echo json_encode(["error" => "Image dimensions too large."]);
+            exit();
+        }
 
         switch ($mime) {
             case 'image/jpeg': $src = @imagecreatefromjpeg($tmpFile); break;

@@ -18,10 +18,10 @@ export default function Countries() {
   return (
     <div>
       {/* HERO */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 to-blue-50">
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-white/5 dark:to-blue-950/20">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-5xl font-black mb-4">Explore Top Countries</h1>
-          <p className="text-gray-600">Find your perfect study destination.</p>
+          <p className="text-gray-600 dark:text-[#94a3b8]">Find your perfect study destination.</p>
         </div>
       </section>
 
@@ -38,7 +38,7 @@ export default function Countries() {
             <div>
               <span className="text-5xl">{c.flag_url}</span>
               <h2 className="text-3xl font-bold mt-2">{c.name}</h2>
-              <p className="text-gray-600 mt-4">{c.description}</p>
+              <p className="text-gray-600 mt-4 dark:text-[#94a3b8]">{c.description}</p>
 
               <div className="mt-4">
                 <strong>Cost:</strong> {c.cost_info}
@@ -49,7 +49,7 @@ export default function Countries() {
 
               <div className="flex flex-wrap gap-2 mt-4">
                 {c.popular_courses?.map((course, idx) => (
-                  <span key={idx} className="px-2 py-1 bg-gray-100 rounded">
+                  <span key={idx} className="px-2 py-1 bg-gray-100 rounded dark:bg-white/10">
                     {course}
                   </span>
                 ))}

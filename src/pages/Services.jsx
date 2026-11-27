@@ -138,7 +138,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-[#0d1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, i) => (
@@ -153,14 +153,14 @@ export default function Services() {
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-3 text-[#1a1a1a]">
+                    <h3 className="text-xl font-semibold mb-3 text-[#1a1a1a] dark:text-[#f1f1f1]">
                       {service.title}
                     </h3>
-                    <p className="text-gray-500 leading-relaxed mb-4">
+                    <p className="text-gray-500 leading-relaxed mb-4 dark:text-[#94a3b8]">
                       {service.description}
                     </p>
                     {service.detailed_content && (
-                      <p className="text-gray-400 text-sm leading-relaxed">
+                      <p className="text-gray-400 text-sm leading-relaxed dark:text-[#8fa3bf]">
                         {service.detailed_content}
                       </p>
                     )}
@@ -173,15 +173,15 @@ export default function Services() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-[#f2f2f2]">
+      <section className="py-24 bg-[#f2f2f2] dark:bg-[#0a1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="sol-eyebrow text-sm mb-3">The Process</h2>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a] dark:text-[#f1f1f1]">
               How It Works
             </h3>
             <hr className="sol-separator" />
-            <p className="text-gray-500 text-lg mt-6">
+            <p className="text-gray-500 text-lg mt-6 dark:text-[#94a3b8]">
               Our streamlined 6-step process makes your journey from inquiry to
               departure smooth and stress-free.
             </p>
@@ -190,7 +190,7 @@ export default function Services() {
             {processSteps.map((step, i) => (
               <div
                 key={i}
-                className="relative bg-white p-8 pt-10 border border-[#e3e6eb] hover:shadow-lg transition-shadow"
+                className="relative bg-white p-8 pt-10 border border-[#e3e6eb] hover:shadow-lg transition-shadow dark:bg-[#0d1e30] dark:border-white/10"
               >
                 <div
                   className="absolute -top-4 left-6 w-9 h-9 bg-[#204276] text-white flex items-center justify-center font-bold text-lg shadow-md"
@@ -198,13 +198,13 @@ export default function Services() {
                 >
                   {i + 1}
                 </div>
-                <span className="material-symbols-outlined text-[#204276] text-3xl mb-4 block">
+                <span className="material-symbols-outlined text-[#204276] text-3xl mb-4 block dark:text-[#7fb2dd]">
                   {step.icon}
                 </span>
-                <h4 className="text-lg font-semibold mb-2 text-[#1a1a1a]">
+                <h4 className="text-lg font-semibold mb-2 text-[#1a1a1a] dark:text-[#f1f1f1]">
                   {step.title}
                 </h4>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-sm dark:text-[#94a3b8]">
                   {step.desc}
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default function Services() {
             Book a free consultation today and let our experts craft the perfect
             plan for your academic future.
           </p>
-          <Link to="/freeconsulation" className="sol-btn text-lg">
+          <Link to="/freeconsulation#consultation-form" className="sol-btn text-lg">
             Book Free Consultation
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>

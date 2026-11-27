@@ -179,7 +179,7 @@ export const countriesFallback = [
     cost_info: "USD 8,000 – 75,000/year",
     visa_info: "F-1 Student Visa via US Embassy/Consulate",
     image_url:
-      "https://images.unsplash.com/photo-1564309780826-cce2ef0705a0?q=80&w=1170&auto=format&fit=crop",
+      "https://headeducare.com/uploads/img_6ad51b998574c2.46901851.jpg",
     tuition_fees: {
       undergraduate: { min: 8000, max: 75000, currency: "$" },
       postgraduate: { min: 8000, max: 80000, currency: "$" },
@@ -267,7 +267,7 @@ export const countriesFallback = [
     cost_info: "CAD 18,000 – 45,000/year",
     visa_info: "Student Direct Stream (SDS) or regular Study Permit via IRCC",
     image_url:
-      "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800",
+      "https://headeducare.com/uploads/img_6ad51bab9ef446.85638856.jpg",
     tuition_fees: {
       undergraduate: { min: 18000, max: 45000, currency: "CA$" },
       postgraduate: { min: 17000, max: 40000, currency: "CA$" },
@@ -373,7 +373,7 @@ export const countriesFallback = [
     cost_info: "NZD 22,000 – 40,000/year",
     visa_info: "Student Visa via Immigration New Zealand",
     image_url:
-      "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800",
+      "https://headeducare.com/uploads/img_6ad51c1a387d15.61704327.jpg",
     tuition_fees: {
       undergraduate: { min: 22000, max: 40000, currency: "NZ$" },
       postgraduate: { min: 26000, max: 45000, currency: "NZ$" },
@@ -458,7 +458,7 @@ export const countriesFallback = [
     cost_info: "EUR 10,000 – 30,000/year",
     visa_info: "Irish Student Visa (C or D) via INIS",
     image_url:
-      "https://images.unsplash.com/photo-1564959130747-897fb406b9af?w=800",
+      "https://headeducare.com/uploads/img_6ad51c26b57c97.60743785.jpg",
     tuition_fees: {
       undergraduate: { min: 10000, max: 30000, currency: "EUR" },
       postgraduate: { min: 11000, max: 35000, currency: "EUR" },
@@ -558,7 +558,7 @@ export const countriesFallback = [
     cost_info: "USD 2,500 – 6,000/year",
     visa_info: "Student Visa (D-2) via Korean Embassy/Consulate",
     image_url:
-      "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+      "https://headeducare.com/uploads/img_6ad51c3c0c71f8.45634449.jpg",
     tuition_fees: {
       undergraduate: { min: 2500, max: 6000, currency: "$" },
       postgraduate: { min: 3000, max: 7000, currency: "$" },
@@ -759,7 +759,7 @@ export const countriesFallback = [
     description: "Denmark is home to some of the world's leading universities, known for their high academic standards, innovative teaching methods, and strong research focus. Institutions such as the University of Copenhagen, Aarhus University, and the Technical University of Denmark (DTU) offer cutting-edge programs.",
     cost_info: "EUR 6,000 – 20,000/year",
     visa_info: "Student Residence Permit via SIRI (Danish Agency for International Recruitment and Integration)",
-    image_url: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c7bbc83e0.21567985.jpg",
     tuition_fees: {
       undergraduate: { min: 6000, max: 16000, currency: "EUR" },
       postgraduate: { min: 7000, max: 20000, currency: "EUR" },
@@ -826,7 +826,7 @@ export const countriesFallback = [
     description: "Finland is known for having one of the world's most successful education systems, pristine nature, and top-tier universities like University of Helsinki and Aalto University.",
     cost_info: "EUR 7,000 – 20,000/year",
     visa_info: "Student Residence Permit via Migri (Finnish Immigration Service)",
-    image_url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad4fa00ecb261.04811576.jpg",
     tuition_fees: {
       undergraduate: { min: 7000, max: 20000, currency: "EUR" },
       postgraduate: { min: 7000, max: 30000, currency: "EUR" },
@@ -889,7 +889,7 @@ scholarships: [
     description: "Belgium, located in the heart of Europe, hosts highly ranked universities offering diverse English-taught programs and an international environment.",
     cost_info: "EUR 3,000 – 10,000/year",
     visa_info: "Belgian Student Visa (Type D) via Belgian Embassy",
-    image_url: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad4fa1304adf5.44261265.jpg",
     tuition_fees: {
       undergraduate: { min: 3000, max: 10000, currency: "EUR" },
       postgraduate: { min: 3000, max: 15000, currency: "EUR" },
@@ -952,7 +952,7 @@ scholarships: [
     description: "The Netherlands was one of the first non-English-speaking countries to offer English-taught courses. It features top universities, excellent research facilities, and a highly international student body.",
     cost_info: "EUR 10,000 – 20,000/year",
     visa_info: "MVV Entry Visa and VVR Residence Permit via IND",
-    image_url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c89917636.79513931.jpg",
     tuition_fees: {
       undergraduate: { min: 10000, max: 20000, currency: "EUR" },
       postgraduate: { min: 10000, max: 30000, currency: "EUR" },
@@ -1016,7 +1016,7 @@ scholarships: [
     description: "Hungary offers affordable tuition and living costs, making it a popular European destination. Home to centuries-old universities and a rich cultural heritage.",
     cost_info: "EUR 3,000 – 15,000/year",
     visa_info: "D-Type Student Visa via Hungarian Consulate",
-    image_url: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51ca085bb93.98354916.jpg",
     tuition_fees: {
       undergraduate: { min: 3000, max: 12000, currency: "EUR" },
       postgraduate: { min: 3000, max: 15000, currency: "EUR" },
@@ -1067,7 +1067,7 @@ scholarships: [
     description: "Sweden is known for its innovative teaching methods, flat hierarchy, and sustainable approach. Home to world-class universities offering numerous English-taught programmes.",
     cost_info: "EUR 8,000 – 18,000/year",
     visa_info: "Residence Permit for Studies via Swedish Migration Agency",
-    image_url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51cb3179f14.19979448.jpg",
     tuition_fees: {
       undergraduate: { min: 8000, max: 18000, currency: "EUR" },
       postgraduate: { min: 8000, max: 20000, currency: "EUR" },
@@ -1119,7 +1119,7 @@ scholarships: [
     description: "Norway offers high-quality education with no tuition fees at public universities for all students. Known for its stunning nature, high standard of living, and strong economy.",
     cost_info: "No tuition fees (public universities): living costs ~NOK 120,000/year",
     visa_info: "Student Residence Permit via UDI (Norwegian Directorate of Immigration)",
-    image_url: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c6c7b00e4.92739571.jpg",
     tuition_fees: {
       undergraduate: { min: 0, max: 0, currency: "NOK", note: "No tuition fees" },
       postgraduate: { min: 0, max: 0, currency: "NOK", note: "No tuition fees" },

@@ -478,7 +478,7 @@ export default function VisaApplication() {
           title="Ready to Apply for Your Visa?"
           desc="Don't let paperwork stand between you and your dream university. Let our experts handle your visa application today."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

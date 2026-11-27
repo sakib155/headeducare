@@ -216,7 +216,7 @@ export default function ApplicationHelp() {
           subtitle="From shortlisting to enrollment, we handle the complexity"
           desc="Navigating university applications across multiple countries can be overwhelming. Our end-to-end application support ensures every document, deadline, and detail is managed professionally, so you can focus on preparing for your future."
           ctaLabel="Book a Free Consultation"
-          ctaLink="/freeconsulation"
+          ctaLink="/freeconsulation#consultation-form"
           blobTop={-40}
           blobRight={-100}
         />
@@ -383,7 +383,7 @@ export default function ApplicationHelp() {
           title="Ready to Start Your Application?"
           desc="Get personalized guidance from our expert counselors, no obligation, just clear answers."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

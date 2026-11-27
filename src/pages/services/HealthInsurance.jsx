@@ -208,7 +208,7 @@ export default function HealthInsurance() {
                 <p className="srv-body" style={{ marginBottom: 28 }}>
                   We connect you with trusted student healthcare plans for peace of mind. Focus on your studies while we help guide your healthcare choices.
                 </p>
-                <Link to="/freeconsulation" className="srv-cta-btn">
+                <Link to="/freeconsulation#consultation-form" className="srv-cta-btn">
                   Get Expert Guidance →
                 </Link>
               </div>

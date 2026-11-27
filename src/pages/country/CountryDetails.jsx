@@ -242,7 +242,9 @@ export default function CountryDetails() {
         {/* ── HERO - full-bleed photo, left-aligned, cherry CTA ── */}
         <div className="hero">
           {imgUrl ? (
-            <img src={imgUrl} alt={name} className="hero-img" />
+            /* key={imgUrl} remounts on admin image change → the heroFadeIn
+               animation replays, so updated photos cross-fade in smoothly */
+            <img key={imgUrl} src={imgUrl} alt={name} className="hero-img" />
           ) : (
             <div className="hero-placeholder" />
           )}
@@ -253,7 +255,7 @@ export default function CountryDetails() {
             </h1>
             {desc && <p className="hero-desc">{desc}</p>}
             <div className="hero-actions">
-              <Link to="/freeconsulation" className="gs-btn-cherry">
+              <Link to="/freeconsulation#consultation-form" className="gs-btn-cherry">
                 Book Free Consultation
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" />
@@ -360,8 +362,8 @@ export default function CountryDetails() {
         {appChecklist && appChecklist.length > 0 && (
           <div className="band band-mint">
             <div className="band-inner">
-              <p className="band-eyebrow">Get Ready</p>
-              <h2 className="band-title">
+              <p className="band-eyebrow" style={{ color: "#E0C040" }}>Get Ready</p>
+              <h2 className="band-title" style={{ color: "#ffffff" }}>
                 Application <span style={{ color: "#7fb2dd" }}>checklist</span>
               </h2>
               <p className="band-sub" style={{ color: "rgba(255,255,255,0.82)" }}>
@@ -472,7 +474,7 @@ export default function CountryDetails() {
               Book a free counselling session - our experts will map out your admission, visa and funding plan for {name}.
             </p>
             <div className="hero-actions">
-              <Link to="/freeconsulation" className="gs-btn-cherry">
+              <Link to="/freeconsulation#consultation-form" className="gs-btn-cherry">
                 Book Free Consultation
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" />

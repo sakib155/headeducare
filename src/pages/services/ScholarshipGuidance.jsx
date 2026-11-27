@@ -482,7 +482,7 @@ export default function ScholarshipGuide() {
           title="Don't Let Finances Stop You"
           desc="Thousands of scholarships go unclaimed every year. Let us help you find and win the funding you deserve."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

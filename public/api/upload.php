@@ -13,6 +13,10 @@ require_auth();
 
 header('Content-Type: application/json');
 
+// Sanitized context slug for the filename (e.g. "destination", "testimonial")
+$label = isset($_GET['label']) ? preg_replace('/[^a-z0-9-]+/', '-', strtolower(trim($_GET['label']))) : 'image';
+$label = substr($label, 0, 32);
+
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method !== 'POST') {
     http_response_code(405);
@@ -21,8 +25,8 @@ if ($method !== 'POST') {
 }
 
 // ── Target resolution (default 1920x1080) ──────────────────────────────────
-$targetW = isset($_GET['w']) ? max(1, intval($_GET['w'])) : 2560;
-$targetH = isset($_GET['h']) ? max(1, intval($_GET['h'])) : 1440;
+$targetW = isset($_GET['w']) ? min(4096, max(1, intval($_GET['w']))) : 2560;
+$targetH = isset($_GET['h']) ? min(4096, max(1, intval($_GET['h']))) : 1440;
 
 // ── Validate upload ─────────────────────────────────────────────────────────
 if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
@@ -45,6 +49,14 @@ finfo_close($finfo);
 if (!in_array($mime, $allowed)) {
     http_response_code(415);
     echo json_encode(["error" => "Unsupported file type. Use JPG, PNG, WEBP, or GIF."]);
+    exit();
+}
+
+// Decompression-bomb guard: reject oversized pixel dimensions before GD
+$dim = @getimagesize($file['tmp_name']);
+if ($dim && ($dim[0] > 8000 || $dim[1] > 8000)) {
+    http_response_code(422);
+    echo json_encode(["error" => "Image dimensions too large"]);
     exit();
 }
 
@@ -88,15 +100,15 @@ if (!is_dir($uploadsDir)) {
     @mkdir($uploadsDir, 0755, true);
 }
 
-$name = uniqid('img_', true) . '.jpg';
+$name = $label . '-' . time() . '-' . bin2hex(random_bytes(4)) . '.webp';
 $outPath = $uploadsDir . '/' . $name;
 
-// Always output JPEG for uniform quality (transparency flattened to white)
+// Output WebP for modern browsers (transparency flattened to white)
 $white = imagecreatetruecolor($targetW, $targetH);
 $whiteFill = imagecolorallocate($white, 255, 255, 255);
 imagefill($white, 0, 0, $whiteFill);
 imagecopy($white, $dst, 0, 0, 0, 0, $targetW, $targetH);
-$ok = imagejpeg($white, $outPath, 85);
+$ok = imagewebp($white, $outPath, 82);
 
 imagedestroy($src);
 imagedestroy($dst);

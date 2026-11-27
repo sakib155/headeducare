@@ -1,0 +1,3 @@
+<FilesMatch "^(config\.php|db\.php|php\.ini|\.user\.ini)$">
+  Require all denied
+</FilesMatch>

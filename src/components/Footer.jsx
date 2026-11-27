@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Phone, Mail, Clock } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { CONTACTS } from "../data/contact";
 
 export default function Footer() {
   return (
@@ -56,14 +57,30 @@ export default function Footer() {
               <ul className="space-y-4 text-sm text-white/70">
                 <li className="flex items-start gap-2.5">
                   <Phone size={15} className="mt-0.5 shrink-0 text-[#7fb2dd]" />
-                  <a href="tel:+8801910833888" className="hover:text-white transition-colors">
-                    +880 1910 833 888
-                  </a>
+                  <span>
+                    <a href={`tel:${CONTACTS.hotline.tel}`} className="hover:text-white transition-colors">
+                      {CONTACTS.hotline.display}
+                    </a>
+                    <span className="block text-xs text-white/50 mt-0.5">Call / Hotline</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Phone size={15} className="mt-0.5 shrink-0 text-[#7fb2dd]" />
+                  <span>
+                    <a href={`tel:${CONTACTS.alt1.tel}`} className="hover:text-white transition-colors">
+                      {CONTACTS.alt1.display}
+                    </a>
+                    <span className="text-white/50"> | </span>
+                    <a href={`tel:${CONTACTS.alt2.tel}`} className="hover:text-white transition-colors">
+                      {CONTACTS.alt2.display}
+                    </a>
+                    <span className="block text-xs text-white/50 mt-0.5">Alternative Lines</span>
+                  </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Mail size={15} className="mt-0.5 shrink-0 text-[#7fb2dd]" />
-                  <a href="mailto:info@headeducare.com" className="hover:text-white transition-colors">
-                    info@headeducare.com
+                  <a href={`mailto:${CONTACTS.email}`} className="hover:text-white transition-colors">
+                    {CONTACTS.email}
                   </a>
                 </li>
                 <li className="flex items-start gap-2.5">
@@ -85,7 +102,7 @@ export default function Footer() {
                 <li><Link to="/services" className="hover:text-white transition-colors">Our Services</Link></li>
                 <li><Link to="/allcountries/allcountry" className="hover:text-white transition-colors">Study Destinations</Link></li>
                 <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/freeconsulation" className="hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link to="/freeconsulation#consultation-form" className="hover:text-white transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 

@@ -17,10 +17,35 @@ const MANIFEST = path.join(PAGES, "manifest.json");
 if (!fs.existsSync(MANIFEST)) {
   console.error("Missing public/pages/manifest.json — run `npm run build:full` locally and re-upload.");
 }
-const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : {};
+// Lazy-load + hot-reload the manifest: re-read whenever the file's mtime
+// changes, so FTP content deploys take effect without restarting the app.
+let manifestCache = null;
+let manifestMtime = 0;
+function getManifest() {
+  try {
+    const m = fs.statSync(MANIFEST).mtimeMs;
+    if (m !== manifestMtime) {
+      manifestCache = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
+      manifestMtime = m;
+      console.log(`Manifest reloaded (${Object.keys(manifestCache).length} pages)`);
+    }
+  } catch (e) {
+    /* keep the previous manifest on transient read errors */
+  }
+  return manifestCache || {};
+}
 
 const app = express();
 app.disable("x-powered-by");
+
+// Force HTTPS when the proxy explicitly reports plain http (loop-safe)
+app.use((req, res, next) => {
+  const proto = String(req.headers["x-forwarded-proto"] || "").split(",")[0].trim();
+  if (proto === "http") {
+    return res.redirect(301, "https://" + req.headers.host + req.originalUrl);
+  }
+  next();
+});
 
 // Never serve PHP files from Node — Apache/Passenger executes them from public/api.
 // If they ever reach Node (host-specific), block instead of leaking source code.
@@ -30,9 +55,13 @@ app.all(/^\/api\//, (_req, res) => res.status(503).json({ error: "PHP API unavai
 app.use("/assets", express.static(path.join(PUBLIC, "assets"), { immutable: true, maxAge: "30d" }));
 app.use(express.static(PUBLIC, { index: false, maxAge: "1d" }));
 
+// /contact retired — permanent redirect to the consultation page
+app.get(["/contact", "/contact/"], (req, res) => res.redirect(301, "/freeconsulation#consultation-form"));
+
 // Pre-rendered pages — full content in the HTML source
 app.get("*", (req, res) => {
   const route = req.path.replace(/\/+$/, "") || "/";
+  const manifest = getManifest();
   const file = manifest[route];
   if (file && fs.existsSync(path.join(PAGES, file))) {
     return res.sendFile(path.join(PAGES, file));
@@ -44,5 +73,5 @@ app.get("*", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} (${Object.keys(manifest).length} prerendered pages)`);
+  console.log(`Server running on port ${PORT} (${Object.keys(getManifest()).length} prerendered pages)`);
 });

@@ -118,7 +118,7 @@ export function PageHero({
   subtitle,
   desc,
   ctaLabel = "Book a Free Consultation",
-  ctaLink = "/freeconsulation",
+  ctaLink = "/freeconsulation#consultation-form",
 }) {
   return (
     <section
@@ -469,7 +469,7 @@ export function CtaBanner({
   title,
   desc,
   label = "Book a Free Consultation",
-  link = "/freeconsulation",
+  link = "/freeconsulation#consultation-form",
 }) {
   return (
     <section

@@ -233,7 +233,7 @@ export default function AcademicQualifications() {
           title="Not Sure Which Tests You Need to Take?"
           desc="Talk to our test preparation experts today to get guidance on the right exams based on your profile and target universities."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

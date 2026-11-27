@@ -211,7 +211,7 @@ export default function EducationLoanSupport() {
           subtitle="One-stop solution for education loans with trusted partners"
           desc="Financing higher education should never become a barrier to achieving your dreams. Head Educare partners with leading financial institutions to help students secure education loans with competitive interest rates and flexible repayment options."
           ctaLabel="Book a Free Consultation"
-          ctaLink="/freeconsulation"
+          ctaLink="/freeconsulation#consultation-form"
           blobTop={-40}
           blobRight={-100}
         />
@@ -427,7 +427,7 @@ export default function EducationLoanSupport() {
           title="Ready to Fund Your Education?"
           desc="Get a free loan eligibility assessment from our financial advisors, no obligation, just clear guidance."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

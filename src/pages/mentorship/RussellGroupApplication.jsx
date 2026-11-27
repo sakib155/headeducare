@@ -86,7 +86,7 @@ export default function RussellGroupApplication() {
               <p style={{ fontSize: 17, color: "rgba(255,255,255,0.85)", lineHeight: 1.75, fontWeight: 300, maxWidth: 580, marginBottom: 32, fontFamily: "Lexend,sans-serif" }}>
                 Expert guidance for applying to the prestigious Russell Group Universities in the UK. Our expert team gives you a decisive advantage in this competitive admission process.
               </p>
-              <Link to="/freeconsulation" className="mtr-cta-btn">
+              <Link to="/freeconsulation#consultation-form" className="mtr-cta-btn">
                 <ChevronRight size={18} />
                 Book a Free Consultation
               </Link>

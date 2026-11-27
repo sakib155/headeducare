@@ -35,6 +35,15 @@ for (const s of ["china", "malaysia", "hungary"]) {
 
 // ── Static server for dist/ (what Passenger will do in production) ──────────
 const app = express();
+// Proxy /api/* to the production API so pre-rendered pages bake the REAL
+// admin-panel data (images, copy) instead of offline fallbacks
+app.use("/api", (req, res) => {
+  fetch("https://headeducare.com/api" + req.url)
+    .then((up) => up.text().then((body) => {
+      res.status(up.status).type(up.headers.get("content-type") || "application/json").send(body);
+    }))
+    .catch(() => res.status(502).type("application/json").send("{}"));
+});
 app.use(express.static(dist, { index: false }));
 app.get("*", (_req, res) => res.sendFile(join(dist, "index.html")));
 const server = app.listen(PORT);
@@ -131,7 +140,15 @@ for (const route of routes) {
     await new Promise((r) => setTimeout(r, 700)); // let data fetch / helmet settle
     const html = await page.content();
     const seo = seoFor(route);
-    const finalHtml = seo ? enforceMeta(html, seo) : html;
+    // Keep only the first <title> — Helmet can append its own alongside the
+    // static shell title on some routes
+    let finalHtml = seo ? enforceMeta(html, seo) : html;
+    const firstTitleEnd = finalHtml.indexOf("</title>");
+    if (firstTitleEnd !== -1) {
+      finalHtml =
+        finalHtml.slice(0, firstTitleEnd + 8) +
+        finalHtml.slice(firstTitleEnd + 8).replace(/<title>[\s\S]*?<\/title>/g, "");
+    }
     writeFileSync(join(outDir, slug(route)), finalHtml);
     manifest[route] = slug(route);
     console.log(`  ✓ ${route}`);

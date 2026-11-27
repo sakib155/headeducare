@@ -997,7 +997,7 @@ export default function Courses() {
                   <GraduationCap size={44} style={{ color: "#204276", margin: "0 auto 16px" }} />
                   <h4 style={{ fontWeight: 700, fontSize: 16, color: "var(--srv-text-primary)", marginBottom: 8 }}>Ready to Excel?</h4>
                   <p className="srv-body" style={{ fontSize: 14, marginBottom: 20 }}>Get full score prep templates, real mock software drills, and diagnostic profiling.</p>
-                  <a href="/freeconsulation" className="srv-cta-btn" style={{ fontSize: 14, padding: "10px 20px" }}>Enroll Now</a>
+                  <a href="/freeconsulation#consultation-form" className="srv-cta-btn" style={{ fontSize: 14, padding: "10px 20px" }}>Enroll Now</a>
                 </div>
               </div>
             </div>
@@ -1013,7 +1013,7 @@ export default function Courses() {
           title="Ready to Boost Your Exam Scores?"
           desc="Book your diagnostic test or speak with our study preparation tutors to construct a customized schedule."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

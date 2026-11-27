@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { useBackground } from "../lib/BackgroundsContext";
 import { useState, useRef, useEffect } from "react";
 import { api } from "../lib/apiClient";
+import { CONTACTS } from "../data/contact";
 
 type Status = "sending" | "success" | "error" | null;
 
@@ -24,6 +26,9 @@ export default function FreeConsultation() {
     message: "",
   });
   const [status, setStatus] = useState<Status>(null);
+  // Arrival highlight: flashes a ring around the form when the deep link lands
+  const [formPulse, setFormPulse] = useState(false);
+  const pulseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Load countries from the database (api/countries.php) for the dropdown
   useEffect(() => {
@@ -65,9 +70,44 @@ export default function FreeConsultation() {
     }
   };
 
+  const triggerPulse = () => {
+    if (pulseTimer.current) clearTimeout(pulseTimer.current);
+    setFormPulse(true);
+    pulseTimer.current = setTimeout(() => setFormPulse(false), 2200);
+  };
+
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    triggerPulse();
   };
+
+  // Hash deep-link support: /freeconsulation#consultation-form (from any
+  // page). React Router's navigation is wrapped in a transition and resets
+  // scroll to top, and late hero images can shift layout — so re-anchor
+  // every 250ms for up to ~6s, stopping once the form has landed in view.
+  useEffect(() => {
+    let attempts = 0;
+    let landed = false;
+    const tick = () => {
+      attempts++;
+      if (window.location.hash !== "#consultation-form") { clearInterval(timer); return; }
+      const el = formRef.current;
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top = el.getBoundingClientRect().top;
+      if ((top >= 60 && top <= 260) || attempts > 24) { landed = true; clearInterval(timer); triggerPulse(); }
+    };
+    tick();
+    const timer = setInterval(tick, 250);
+    const onHash = () => tick();
+    window.addEventListener("hashchange", onHash);
+    return () => {
+      clearInterval(timer);
+      if (pulseTimer.current) clearTimeout(pulseTimer.current);
+      window.removeEventListener("hashchange", onHash);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -91,7 +131,7 @@ export default function FreeConsultation() {
             className="sol-btn text-lg"
           >
             Book Free Consultation
-            <span className="material-symbols-outlined">arrow_downward</span>
+            <ArrowDown className="w-5 h-5" />
           </button>
         </div>
       </section>
@@ -143,7 +183,13 @@ export default function FreeConsultation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
-            <div className="lg:col-span-3" ref={formRef}>
+            <div
+              id="consultation-form"
+              className={`lg:col-span-3 scroll-mt-28 md:scroll-mt-32 rounded-sm transition-shadow duration-700 ${
+                formPulse ? "shadow-[0_0_0_4px_rgba(127,178,221,0.55)]" : "shadow-none"
+              }`}
+              ref={formRef}
+            >
               <form
                 onSubmit={handleSubmit}
                 className="bg-background-light dark:bg-gray-800 p-8 sm:p-10 rounded-sm border border-gray-100 dark:border-gray-700"
@@ -158,11 +204,13 @@ export default function FreeConsultation() {
                 {/* Row 1: Name + Email */}
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Full Name *
-                    </label>
-                    <input
-                      name="name"
+                      </label>
+                      <input
+                        id="name"
+                      
+                        name="name"
                       value={form.name}
                       onChange={handleChange}
                       required
@@ -171,11 +219,13 @@ export default function FreeConsultation() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Email *
-                    </label>
-                    <input
-                      name="email"
+                      </label>
+                      <input
+                        id="email"
+                      
+                        name="email"
                       type="email"
                       value={form.email}
                       onChange={handleChange}
@@ -189,11 +239,13 @@ export default function FreeConsultation() {
                 {/* Row 2: Phone + Country */}
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Phone *
-                    </label>
-                    <input
-                      name="phone"
+                      </label>
+                      <input
+                        id="phone"
+                      
+                        name="phone"
                       value={form.phone}
                       onChange={handleChange}
                       required
@@ -202,11 +254,13 @@ export default function FreeConsultation() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="country_interest" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Country of Interest
-                    </label>
-                    <select
-                      name="country_interest"
+                      </label>
+                      <select
+                        id="country_interest"
+                      
+                        name="country_interest"
                       value={form.country_interest}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -223,11 +277,13 @@ export default function FreeConsultation() {
                 {/* Row 3: Service + Preferred Contact */}
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="service_interest" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Service Interest
-                    </label>
-                    <select
-                      name="service_interest"
+                      </label>
+                      <select
+                        id="service_interest"
+                      
+                        name="service_interest"
                       value={form.service_interest}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -242,11 +298,13 @@ export default function FreeConsultation() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="preferred_contact" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Preferred Contact Method
-                    </label>
-                    <select
-                      name="preferred_contact"
+                      </label>
+                      <select
+                        id="preferred_contact"
+                      
+                        name="preferred_contact"
                       value={form.preferred_contact}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -263,11 +321,13 @@ export default function FreeConsultation() {
                 {/* Row 4: Preferred Date + Time */}
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="preferred_date" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Preferred Date
-                    </label>
-                    <input
-                      name="preferred_date"
+                      </label>
+                      <input
+                        id="preferred_date"
+                      
+                        name="preferred_date"
                       type="date"
                       value={form.preferred_date}
                       onChange={handleChange}
@@ -276,11 +336,13 @@ export default function FreeConsultation() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="preferred_time" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       Preferred Time
-                    </label>
-                    <select
-                      name="preferred_time"
+                      </label>
+                      <select
+                        id="preferred_time"
+                      
+                        name="preferred_time"
                       value={form.preferred_time}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-[#1a1a1a] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -300,11 +362,13 @@ export default function FreeConsultation() {
 
                 {/* Message */}
                 <div className="mb-8">
-                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Message
+                      </label>
+                      <textarea
+                        id="message"
+                    
+                        name="message"
                     value={form.message}
                     onChange={handleChange}
                     rows={4}
@@ -379,19 +443,25 @@ export default function FreeConsultation() {
                 </h4>
                 <div className="space-y-3">
                   {[
-                    { icon: "call", label: "+8801910 833 888" },
-                    { icon: "call", label: "+8801909 833 888" },
-                    { icon: "chat", label: "WhatsApp: 01910 833 888" },
-                    { icon: "mail", label: "info@headeducare.com" },
+                    { icon: "call", label: CONTACTS.hotline.display, href: `tel:${CONTACTS.hotline.tel}` },
+                    { icon: "call", label: CONTACTS.alt1.display, href: `tel:${CONTACTS.alt1.tel}` },
+                    { icon: "chat", label: `WhatsApp: ${CONTACTS.whatsapp.display}`, href: CONTACTS.whatsapp.url },
+                    { icon: "mail", label: CONTACTS.email, href: `mailto:${CONTACTS.email}` },
                   ].map((c, i) => (
-                    <div key={i} className="flex items-center gap-3">
+                    <a
+                      key={i}
+                      href={c.href}
+                      target={c.href?.startsWith("https") ? "_blank" : undefined}
+                      rel={c.href?.startsWith("https") ? "noopener noreferrer" : undefined}
+                      className="flex items-center gap-3 hover:text-[#204276] transition-colors"
+                    >
                       <span className="material-symbols-outlined text-primary text-base">
                         {c.icon}
                       </span>
                       <p className="text-gray-700 dark:text-gray-300 text-sm">
                         {c.label}
                       </p>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -411,9 +481,11 @@ export default function FreeConsultation() {
             Visiting hour: 10:30 AM to 6:30 PM - drop by for a face-to-face
             consultation with our expert counselors.
           </p>
-          <div className="rounded-sm overflow-hidden border border-gray-100 dark:border-gray-700 h-[500px] shadow-lg">
+          {/* Zero-API-key Google Maps embed (works without billing) —
+              CSP must allow frame-src https://maps.google.com */}
+          <div className="rounded-sm overflow-hidden border border-gray-100 dark:border-gray-700 h-[350px] sm:h-[500px] shadow-lg bg-slate-100 dark:bg-slate-800">
             <iframe
-              title="Head Educare Location"
+              title="Head Educare office location — 44/16 West Panthapath, Dhaka"
               width="100%"
               height="100%"
               loading="lazy"
@@ -483,7 +555,7 @@ export default function FreeConsultation() {
           className="sol-btn-light text-lg"
         >
           Get Free Consultation
-          <span className="material-symbols-outlined">arrow_upward</span>
+          <ArrowUp className="w-5 h-5" />
         </button>
       </section>
     </div>

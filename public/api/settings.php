@@ -46,7 +46,7 @@ if ($method === 'GET') {
     } catch (Exception $e) {
         $db->rollBack();
         http_response_code(500);
-        echo json_encode(["error" => "Failed to update settings", "details" => $e->getMessage()]);
+        echo json_encode(["error" => "Failed to update settings"]);
     }
 
 } else {

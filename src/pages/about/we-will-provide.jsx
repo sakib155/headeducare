@@ -316,7 +316,7 @@ export default function WillProvide() {
                 make studying abroad seamless, affordable, and successful.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <Link to="/freeconsulation" className="wp-cta-btn">
+                <Link to="/freeconsulation#consultation-form" className="wp-cta-btn">
                   <ArrowRight size={18} />
                   Book Free Consultation
                 </Link>
@@ -746,7 +746,7 @@ export default function WillProvide() {
                 }}
               >
                 <Link
-                  to="/freeconsulation"
+                  to="/freeconsulation#consultation-form"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",

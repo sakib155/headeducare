@@ -156,7 +156,7 @@ export default function GeneralDocumentsChecklist() {
           title="Need Help Organising Your Documents?"
           desc="Book your free consultation today and our counselors will walk you through your personalized document checklist."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

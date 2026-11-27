@@ -88,7 +88,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Canada",
     flag_url: "🇨🇦",
     route: "/destination/canada",
-    image_url: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51bab9ef446.85638856.jpg",
     description: "Affordable education with excellent immigration pathways.",
     cost_info: "15,000 - 35,000 CAD/year",
     visa_info: "Study Permit",
@@ -101,7 +101,7 @@ export const FALLBACK_COUNTRIES = [
     name: "United States",
     flag_url: "🇺🇸",
     route: "/destination/usa",
-    image_url: "https://images.unsplash.com/photo-1564309780826-cce2ef0705a0?q=80&w=1170&auto=format&fit=crop",
+    image_url: "https://headeducare.com/uploads/img_6ad51b998574c2.46901851.jpg",
     description: "World leader in higher education and research.",
     cost_info: "25,000 - 60,000 USD/year",
     visa_info: "F-1 Student Visa",
@@ -114,7 +114,7 @@ export const FALLBACK_COUNTRIES = [
     name: "New Zealand",
     flag_url: "🇳🇿",
     route: "/destination/new-zealand",
-    image_url: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c1a387d15.61704327.jpg",
     description: "High-quality education with a safe, welcoming environment and up to 3 years post-study work.",
     cost_info: "22,000 - 40,000 NZD/year",
     visa_info: "Student Visa via Immigration New Zealand",
@@ -127,7 +127,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Ireland",
     flag_url: "🇮🇪",
     route: "/destination/ireland",
-    image_url: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c26b57c97.60743785.jpg",
     description: "Internationally recognized qualifications with a strong job market.",
     cost_info: "10,000 - 30,000 EUR/year",
     visa_info: "Student Visa via Irish Naturalisation and Immigration Service",
@@ -140,7 +140,7 @@ export const FALLBACK_COUNTRIES = [
     name: "South Korea",
     flag_url: "🇰🇷",
     route: "/destination/korea",
-    image_url: "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c3c0c71f8.45634449.jpg",
     description: "Cutting-edge technology and globally ranked universities with generous scholarships.",
     cost_info: "2,500 - 6,000 USD/year",
     visa_info: "Student Visa (D-2)",
@@ -166,7 +166,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Finland",
     flag_url: "🇫🇮",
     route: "/destination/finland",
-    image_url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad4fa00ecb261.04811576.jpg",
     description: "One of the world's most successful education systems with top-tier universities.",
     cost_info: "7,000 - 20,000 EUR/year",
     visa_info: "Student Residence Permit via Migri",
@@ -179,7 +179,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Belgium",
     flag_url: "🇧🇪",
     route: "/destination/belgium",
-    image_url: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad4fa1304adf5.44261265.jpg",
     description: "High-ranking universities with English-taught master's programs at affordable tuition.",
     cost_info: "3,000 - 10,000 EUR/year",
     visa_info: "Student Visa via Belgian Embassy",
@@ -192,7 +192,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Netherlands",
     flag_url: "🇳🇱",
     route: "/destination/netherlands",
-    image_url: "https://images.unsplash.com/photo-1532710093739-9470acff878f?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c89917636.79513931.jpg",
     description: "Innovative universities with over 2,000 English-taught programs.",
     cost_info: "10,000 - 20,000 EUR/year",
     visa_info: "Student Visa via Dutch Embassy",
@@ -205,7 +205,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Hungary",
     flag_url: "🇭🇺",
     route: "/destination/hungary",
-    image_url: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51ca085bb93.98354916.jpg",
     description: "Budget-friendly European education with English-taught programs and rich history.",
     cost_info: "3,000 - 15,000 EUR/year",
     visa_info: "Student Visa via Hungarian Embassy",
@@ -218,7 +218,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Sweden",
     flag_url: "🇸🇪",
     route: "/destination/sweden",
-    image_url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51cb3179f14.19979448.jpg",
     description: "Innovative universities with a focus on research and sustainability.",
     cost_info: "8,000 - 18,000 EUR/year",
     visa_info: "Student Residence Permit via Swedish Migration Agency",
@@ -231,7 +231,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Norway",
     flag_url: "🇳🇴",
     route: "/destination/norway",
-    image_url: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c6c7b00e4.92739571.jpg",
     description: "No tuition fees at public universities with world-class education.",
     cost_info: "No tuition (Public)",
     visa_info: "Student Residence Permit via UDI",
@@ -244,7 +244,7 @@ export const FALLBACK_COUNTRIES = [
     name: "Denmark",
     flag_url: "🇩🇰",
     route: "/destination/denmark",
-    image_url: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800",
+    image_url: "https://headeducare.com/uploads/img_6ad51c7bbc83e0.21567985.jpg",
     description: "World-class education with over 600 English-taught programs across leading universities.",
     cost_info: "6,000 - 20,000 EUR/year",
     visa_info: "Student Residence Permit via SIRI",
@@ -262,6 +262,7 @@ export const FALLBACK_TESTIMONIALS = [
     university: "University of Melbourne",
     country: "Australia",
     quote: "Head Edu Care made my dream of studying in Australia a reality. Their guidance was exceptional from start to finish!",
+    rating: 5,
     is_featured: true
   },
   {
@@ -271,6 +272,7 @@ export const FALLBACK_TESTIMONIALS = [
     university: "University of Toronto",
     country: "Canada",
     quote: "The team helped me secure a full scholarship at UofT. Their expertise is unmatched. Truly life-changing!",
+    rating: 5,
     is_featured: true
   },
   {
@@ -280,6 +282,7 @@ export const FALLBACK_TESTIMONIALS = [
     university: "Imperial College London",
     country: "United Kingdom",
     quote: "From IELTS prep to visa approval, Head Edu Care handled everything professionally. Now at Imperial!",
+    rating: 5,
     is_featured: true
   },
   {
@@ -289,6 +292,7 @@ export const FALLBACK_TESTIMONIALS = [
     university: "MIT",
     country: "United States",
     quote: "I never thought I could get into MIT, but the counselors believed in me and guided me every step!",
+    rating: 5,
     is_featured: true
   }
 ];
@@ -323,10 +327,10 @@ async function request(url, options = {}) {
 
 export const api = {
   // --- Image upload (auto-resize via /api/upload.php) ---
-  async uploadImage(file, { w = 1920, h = 1080 } = {}) {
+  async uploadImage(file, { w = 1920, h = 1080, label = "image" } = {}) {
     const fd = new FormData();
     fd.append("image", file);
-    const res = await fetch(`${API_BASE}/upload.php?w=${w}&h=${h}`, {
+    const res = await fetch(`${API_BASE}/upload.php?w=${w}&h=${h}&label=${encodeURIComponent(label)}`, {
       method: "POST",
       credentials: "include",
       body: fd,

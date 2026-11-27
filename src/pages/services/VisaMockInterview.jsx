@@ -489,7 +489,7 @@ export default function VisaMockInterview() {
           title="Ready to Practice?"
           desc="Don't leave your visa outcome to chance. Book your mock interview session today and walk into the embassy with confidence."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

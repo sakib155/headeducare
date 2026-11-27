@@ -471,7 +471,7 @@ export default function QuickAppointments() {
           title="Ready to Get Answers?"
           desc="Stop guessing and start planning. Book your quick appointment now and take the next step with confidence."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

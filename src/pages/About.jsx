@@ -108,7 +108,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-[#f2f2f2]">
+      <section className="py-20 bg-[#f2f2f2] dark:bg-[#0a1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -134,10 +134,10 @@ export default function About() {
                     {item.icon}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-[#1a1a1a]">
+                <h3 className="text-xl font-semibold mb-3 text-[#1a1a1a] dark:text-[#f1f1f1]">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed dark:text-[#94a3b8]">
                   {item.text}
                 </p>
               </div>
@@ -147,11 +147,11 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-[#0d1626]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="sol-eyebrow text-sm mb-3">Our Journey</h2>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a]">
+            <h3 className="text-3xl sm:text-4xl font-semibold text-[#1a1a1a] dark:text-[#f1f1f1]">
               Milestones That Define Us
             </h3>
             <hr className="sol-separator" />
@@ -170,14 +170,14 @@ export default function About() {
                     <span className="sol-stat-number text-3xl">
                       {m.year}
                     </span>
-                    <h4 className="text-xl font-semibold text-[#1a1a1a] mt-1">
+                    <h4 className="text-xl font-semibold text-[#1a1a1a] mt-1 dark:text-[#f1f1f1]">
                       {m.title}
                     </h4>
-                    <p className="text-gray-500 mt-2">
+                    <p className="text-gray-500 mt-2 dark:text-[#94a3b8]">
                       {m.desc}
                     </p>
                   </div>
-                  <div className="w-5 h-5 bg-[#204276] rounded-full border-4 border-white shadow-lg z-10 shrink-0 hidden md:block" />
+                  <div className="w-5 h-5 bg-[#204276] rounded-full border-4 border-white dark:border-[#0d1626] shadow-lg z-10 shrink-0 hidden md:block" />
                   <div className="md:w-1/2" />
                 </div>
               ))}

@@ -93,6 +93,6 @@ export const menuData = [
     ],
   },
   {
-    title: { name: "Contact Us", url: "/freeconsulation" },
+    title: { name: "Contact Us", url: "/freeconsulation#consultation-form" },
   },
 ];

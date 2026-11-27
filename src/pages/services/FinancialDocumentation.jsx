@@ -472,7 +472,7 @@ export default function FinancialDocumentation() {
           title="Confused About Financial Requirements?"
           desc="Don't risk a visa rejection due to paperwork errors. Get a free financial document assessment from our experts today."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

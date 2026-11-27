@@ -1,6 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import { api } from "../lib/apiClient";
 import { BACKGROUND_SLOTS } from "../data/backgrounds";
+import StarRating from "../components/StarRating";
+import TestimonialAvatar from "../components/TestimonialAvatar";
+import {
+  LayoutDashboard,
+  Contact,
+  Users,
+  GraduationCap,
+  Globe,
+  MessageSquareQuote,
+  Settings,
+  LogOut,
+  Menu,
+  Loader2,
+} from "lucide-react";
 
 // Read image dimensions client-side (no upload needed) for size/ratio validation
 function getImageDimensions(file) {
@@ -19,47 +33,69 @@ function getImageDimensions(file) {
   });
 }
 
-// Reusable upload button, sends the file to /api/upload.php which
-// auto-resizes it to a uniform resolution and returns the hosted URL.
-function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH = 1080, onUploaded }) {
+// Reusable upload button — validates type/size client-side, shows a live
+// preview + spinner, and POSTs multipart/form-data to /api/upload.php which
+// auto-resizes (server-side GD) and returns the hosted /uploads/ URL.
+const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
+const MAX_FILE_MB = 5;
+
+function UploadButton({ label = "Upload & Auto-Resize", slug = "image", targetW = 1920, targetH = 1080, onUploaded }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [warning, setWarning] = useState("");
+  const [success, setSuccess] = useState("");
+  const [preview, setPreview] = useState(null);
   const fileRef = useRef(null);
+
+  // Release the object URL when the preview is replaced/unmounted
+  useEffect(() => () => { if (preview) URL.revokeObjectURL(preview); }, [preview]);
 
   const handleFile = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    setUploading(true);
-    setError("");
-    setWarning("");
+    setError(""); setWarning(""); setSuccess("");
 
-    // Client-side size/aspect validation, warn before uploading
-    try {
-      const { width, height } = await getImageDimensions(file);
-      const srcRatio = width / height;
-      const targetRatio = targetW / targetH;
-      const ratioDiff = Math.abs(srcRatio - targetRatio) / targetRatio;
-      const tooSmall = width < targetW || height < targetH;
-
-      let warn = "";
-      if (tooSmall) {
-        warn = `Warning: image is ${width}×${height}, smaller than ${targetW}×${targetH}. It will be upscaled and may look soft/blurry.`;
-      } else if (ratioDiff > 0.15) {
-        warn = `Warning: image ratio is ${width}:${height}, target is ${targetW}:${targetH}. It will be cropped significantly. Use a similar-ratio image for best results.`;
-      }
-      if (warn) setWarning(warn);
-    } catch {
-      // dimension check failed, still allow upload, server handles it
+    // ── Strict client-side validation (defense in depth — the server
+    //    re-validates MIME + size independently) ──
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      setError(`Unsupported file type (${file.type || "unknown"}). Use JPG, PNG, or WEBP.`);
+      e.target.value = "";
+      return;
+    }
+    if (file.size > MAX_FILE_MB * 1024 * 1024) {
+      setError(`File too large (${(file.size / 1048576).toFixed(1)} MB). Maximum is ${MAX_FILE_MB} MB.`);
+      e.target.value = "";
+      return;
     }
 
+    // ── Live preview thumbnail ──
+    if (preview) URL.revokeObjectURL(preview);
+    setPreview(URL.createObjectURL(file));
+
+    setUploading(true);
+
+    // Aspect-ratio / resolution guidance (non-blocking warning)
     try {
-      const result = await api.uploadImage(file, { w: targetW, h: targetH });
+      const { width, height } = await getImageDimensions(file);
+      const targetRatio = targetW / targetH;
+      const ratioDiff = Math.abs(width / height - targetRatio) / targetRatio;
+      if (width < targetW || height < targetH) {
+        setWarning(`Image is ${width}×${height}, smaller than ${targetW}×${targetH} — it will be upscaled and may look soft.`);
+      } else if (ratioDiff > 0.15) {
+        setWarning(`Image ratio differs from ${targetW}×${targetH} — it will be center-cropped.`);
+      }
+    } catch { /* dimension check failed — server still validates */ }
+
+    try {
+      const result = await api.uploadImage(file, { w: targetW, h: targetH, label: slug });
       if (onUploaded) onUploaded(result.url);
-      // Show server-side warning if client-side check didn't produce one
       if (!warning && result.warning) setWarning(`Warning: ${result.warning}`);
+      setSuccess("Uploaded successfully ✓");
+      setPreview(null); // hosted copy now exists — drop the local preview
+      setTimeout(() => setSuccess(""), 4000);
     } catch (err) {
       setError(err.message);
+      setPreview(null);
     } finally {
       setUploading(false);
       if (fileRef.current) fileRef.current.value = "";
@@ -68,15 +104,23 @@ function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH 
 
   return (
     <div className="mt-2">
-      <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleFile} />
+      {preview && (
+        <div className="flex items-center gap-3 mb-2 p-2 bg-slate-950/60 border border-slate-800 rounded-lg">
+          <img src={preview} alt="Upload preview" className="w-16 h-16 object-cover rounded" />
+          <span className="text-xs text-slate-400">Ready to upload<br />(auto-resized to {targetW}×{targetH})</span>
+        </div>
+      )}
+      <input ref={fileRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleFile} />
       <button
         type="button"
         onClick={() => fileRef.current?.click()}
         disabled={uploading}
-        className="w-full px-3 py-2 rounded-lg bg-primary/15 text-primary border border-primary/30 text-sm font-bold hover:bg-primary/25 transition-colors disabled:opacity-50"
+        className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary border border-primary/30 text-sm font-bold hover:bg-primary/25 transition-colors disabled:opacity-50"
       >
-        {uploading ? "Uploading & Resizing..." : label}
+        {uploading && <Loader2 className="w-4 h-4 animate-spin" />}
+        {uploading ? "Uploading & Resizing…" : label}
       </button>
+      {success && <p className="text-emerald-400 text-sm mt-1">{success}</p>}
       {warning && <p className="text-amber-400 text-sm mt-1">{warning}</p>}
       {error && <p className="text-red-400 text-sm mt-1">{error}</p>}
     </div>
@@ -85,6 +129,17 @@ function UploadButton({ label = "Upload & Auto-Resize", targetW = 1920, targetH 
 
 export default function Admin() {
   const [auth, setAuth] = useState({ loading: true, authenticated: false, user: null });
+  // Mobile: sidebar collapses into a slide-in drawer behind a hamburger menu
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Browser tab title — /admin is served through the SPA fallback shell,
+  // so set it explicitly (and restore when leaving the admin)
+  useEffect(() => {
+    document.title = "Admin Portal | Head Educare";
+    return () => {
+      document.title = "Head Educare - Study Abroad Consultant in Bangladesh | Head Educare";
+    };
+  }, []);
   const [usernameInput, setUsernameInput] = useState("");
   const [bgSaved, setBgSaved] = useState({});
   const [passwordInput, setPasswordInput] = useState("");
@@ -255,6 +310,19 @@ export default function Admin() {
       setSelectedItem(null);
     } catch (err) {
       alert("Failed to add contact: " + err.message);
+    } finally {
+      setActionLoading(false);
+    }
+  };
+
+  // Testimonial publish/hide toggle (lightweight update — no full form)
+  const handleToggleTestimonial = async (t) => {
+    setActionLoading(true);
+    try {
+      await api.saveTestimonial({ id: t.id, is_featured: !t.is_featured });
+      setTestimonials(prev => prev.map(item => item.id === t.id ? { ...item, is_featured: !t.is_featured } : item));
+    } catch (err) {
+      alert("Failed to update visibility: " + err.message);
     } finally {
       setActionLoading(false);
     }
@@ -458,8 +526,37 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col md:flex-row">
-      {/* SIDEBAR */}
-      <aside className="w-full md:w-64 bg-slate-900 border-r border-slate-800 p-6 flex flex-col justify-between shrink-0">
+      {/* Mobile top bar — hamburger opens the sidebar drawer */}
+      <div className="md:hidden sticky top-0 z-30 flex items-center justify-between bg-slate-900 border-b border-slate-800 px-4 py-3">
+        <div className="flex items-center gap-3">
+          <span className="w-9 h-9 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold border border-primary/30">
+            A
+          </span>
+          <span className="font-bold text-sm text-white">Admin Panel</span>
+        </div>
+        <button
+          onClick={() => setSidebarOpen(true)}
+          className="w-11 h-11 flex items-center justify-center rounded-xl text-slate-300 hover:bg-slate-800 cursor-pointer"
+          aria-label="Open admin menu"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Drawer backdrop (mobile only) */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* SIDEBAR — slide-in drawer on mobile, static column on md+ */}
+      <aside
+        className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 p-6 flex flex-col justify-between shrink-0 transform transition-transform duration-300 md:translate-x-0 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
         <div>
           {/* Admin Header */}
           <div className="flex items-center gap-3 mb-10 pb-6 border-b border-slate-800">
@@ -478,30 +575,29 @@ export default function Admin() {
           {/* Navigation Tabs */}
           <nav className="space-y-1">
             {[
-              { id: "overview", label: "Overview", icon: "dashboard" },
-              { id: "contacts", label: "Contacts", icon: "contact_phone", badge: unseenContacts },
-              { id: "leads", label: "Leads Manager", icon: "contacts", badge: newLeadsCount },
-              { id: "services", label: "Services", icon: "school" },
-              { id: "countries", label: "Destinations", icon: "public" },
-              { id: "testimonials", label: "Testimonials", icon: "reviews" },
-              { id: "settings", label: "Site Settings", icon: "settings" },
+              { id: "overview", label: "Overview", Icon: LayoutDashboard },
+              { id: "contacts", label: "Contacts", Icon: Contact, badge: unseenContacts },
+              { id: "leads", label: "Leads Manager", Icon: Users, badge: newLeadsCount },
+              { id: "services", label: "Services", Icon: GraduationCap },
+              { id: "countries", label: "Destinations", Icon: Globe },
+              { id: "testimonials", label: "Testimonials", Icon: MessageSquareQuote },
+              { id: "settings", label: "Site Settings", Icon: Settings },
             ].map(tab => (
               <button
                 key={tab.id}
                 onClick={() => {
                   setActiveTab(tab.id);
                   if (tab.id === "contacts") markContactsSeen();
+                  setSidebarOpen(false);
                 }}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-primary text-white shadow-lg shadow-primary/20"
                     : "text-slate-400 hover:bg-slate-800/50 hover:text-white"
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-lg">{tab.icon}</span>
-                  <span>{tab.label}</span>
-                </div>
+                <tab.Icon className="w-5 h-5 shrink-0" />
+                <span className="flex-1 text-left">{tab.label}</span>
                 {tab.badge > 0 && (
                   <span className="bg-emerald-500 text-slate-950 text-sm px-2 py-0.5 rounded-full font-bold">
                     {tab.badge}
@@ -514,16 +610,19 @@ export default function Admin() {
 
         {/* Logout */}
         <button
-          onClick={handleLogout}
+          onClick={() => {
+            handleLogout();
+            setSidebarOpen(false);
+          }}
           className="w-full flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-950/20 rounded-xl text-sm font-semibold transition-colors mt-8 cursor-pointer"
         >
-          <span className="material-symbols-outlined text-lg">logout</span>
+          <LogOut className="w-5 h-5 shrink-0" />
           Sign Out
         </button>
       </aside>
 
       {/* MAIN CONTENT AREA */}
-      <main className="flex-1 p-6 md:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
+      <main className="flex-1 min-w-0 p-6 md:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
         {/* TAB: OVERVIEW */}
         {activeTab === "overview" && (
           <div className="space-y-8 animate-fadeIn">
@@ -797,6 +896,7 @@ export default function Admin() {
                           </td>
                           <td className="p-4">
                             <select
+                              aria-label={`Update pipeline status for ${lead.name || 'lead'}`}
                               value={lead.status}
                               disabled={actionLoading}
                               onChange={(e) => handleUpdateLeadStatus(lead.id, e.target.value)}
@@ -987,7 +1087,7 @@ export default function Admin() {
               </div>
               <button
                 onClick={() => {
-                  setSelectedItem({ student_name: "", photo_url: "", university: "", country: "", quote: "", is_featured: true });
+                  setSelectedItem({ student_name: "", photo_url: "", university: "", country: "", quote: "", rating: 5, is_featured: true });
                   setActiveModal("testimonial");
                 }}
                 className="bg-primary text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-primary/95 transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-primary/20"
@@ -1002,22 +1102,35 @@ export default function Admin() {
               {testimonials.map(testimonial => (
                 <div key={testimonial.id} className="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between gap-6">
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-3">
-                        <img src={testimonial.photo_url} alt={testimonial.student_name} className="w-12 h-12 rounded-full object-cover border border-slate-750" />
-                        <div>
-                          <h4 className="font-bold text-base text-white">{testimonial.student_name}</h4>
-                          <span className="text-sm text-slate-500">{testimonial.university}, {testimonial.country}</span>
+                    <div className="flex justify-between items-center gap-2">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <TestimonialAvatar name={testimonial.student_name} src={testimonial.photo_url} className="w-12 h-12" />
+                        <div className="min-w-0">
+                          <h4 className="font-bold text-base text-white truncate">{testimonial.student_name}</h4>
+                          <span className="text-sm text-slate-500 truncate block">{testimonial.university}, {testimonial.country}</span>
                         </div>
                       </div>
-                      {testimonial.is_featured && (
-                        <span className="text-[14px] bg-amber-500/10 border border-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full font-bold uppercase">Featured</span>
+                      {testimonial.is_featured ? (
+                        <span className="text-[13px] bg-amber-500/10 border border-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full font-bold uppercase shrink-0">Live</span>
+                      ) : (
+                        <span className="text-[13px] bg-slate-800 border border-slate-700 text-slate-400 px-2.5 py-0.5 rounded-full font-bold uppercase shrink-0">Hidden</span>
                       )}
                     </div>
-                    <p className="text-slate-400 text-sm italic leading-relaxed">"{testimonial.quote}"</p>
+                    <StarRating rating={testimonial.rating} className="w-4 h-4" />
+                    <p className="text-slate-400 text-sm italic leading-relaxed break-words">&ldquo;{testimonial.quote}&rdquo;</p>
                   </div>
-                  
+
                   <div className="flex gap-2 border-t border-slate-800/60 pt-4">
+                    <button
+                      onClick={() => handleToggleTestimonial(testimonial)}
+                      className={`px-3 py-2 rounded-lg text-sm font-bold transition-all cursor-pointer ${
+                        testimonial.is_featured
+                          ? "bg-slate-800 text-slate-300 hover:bg-slate-750 hover:text-red-300"
+                          : "bg-emerald-950/40 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-900/40"
+                      }`}
+                    >
+                      {testimonial.is_featured ? "Hide" : "Publish"}
+                    </button>
                     <button
                       onClick={() => {
                         setSelectedItem(testimonial);
@@ -1147,6 +1260,7 @@ export default function Admin() {
                     />
                     <UploadButton
                       label="Upload Background (auto-resize 2560×1440)"
+                      slug="background"
                       targetW={2560}
                       targetH={1440}
                       onUploaded={(url) => handleBgSave(slot.key, url)}
@@ -1326,6 +1440,7 @@ export default function Admin() {
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-slate-400">Pipeline Status:</span>
                     <select
+                      aria-label="Pipeline status for the selected lead"
                       value={selectedItem.status}
                       disabled={actionLoading}
                       onChange={(e) => handleUpdateLeadStatus(selectedItem.id, e.target.value)}
@@ -1501,6 +1616,7 @@ export default function Admin() {
                     />
                     <UploadButton
                       label="Upload Image (auto-resize 2560×1440)"
+                      slug="destination"
                       targetW={2560}
                       targetH={1440}
                       onUploaded={(url) => setSelectedItem(prev => ({ ...prev, image_url: url }))}
@@ -1645,6 +1761,7 @@ export default function Admin() {
                     />
                     <UploadButton
                       label="Upload Photo (auto-resize 400×400)"
+                      slug="testimonial"
                       targetW={400}
                       targetH={400}
                       onUploaded={(url) => setSelectedItem(prev => ({ ...prev, photo_url: url }))}
@@ -1652,6 +1769,48 @@ export default function Admin() {
                   </div>
 
                   <div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="t-rating" className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Rating (1-5)</label>
+                        <select
+                          id="t-rating"
+                          value={selectedItem.rating ?? 5}
+                          onChange={(e) => setSelectedItem(prev => ({ ...prev, rating: Number(e.target.value) }))}
+                          className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer"
+                        >
+                          {[5, 4, 3, 2, 1].map(n => (
+                            <option key={n} value={n}>{n} star{n > 1 ? "s" : ""}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <span className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Visibility</span>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedItem(prev => ({ ...prev, is_featured: !prev.is_featured }))}
+                          className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all cursor-pointer border ${
+                            selectedItem.is_featured
+                              ? "bg-emerald-950/40 border-emerald-500/30 text-emerald-400"
+                              : "bg-slate-950 border-slate-800 text-slate-400"
+                          }`}
+                        >
+                          <span
+                            className={`w-9 h-5 rounded-full relative transition-colors ${
+                              selectedItem.is_featured ? "bg-emerald-500" : "bg-slate-700"
+                            }`}
+                            aria-hidden="true"
+                          >
+                            <span
+                              className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-transform ${
+                                selectedItem.is_featured ? "translate-x-4" : ""
+                              }`}
+                            />
+                          </span>
+                          {selectedItem.is_featured ? "Live on site" : "Hidden"}
+                        </button>
+                      </div>
+                    </div>
+
                     <label className="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Quote (Review Text)</label>
                     <textarea
                       required

@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import FaqSection from "../components/FaqSection";
+import StarRating from "../components/StarRating";
+import TestimonialAvatar from "../components/TestimonialAvatar";
 import { useBackground } from "../lib/BackgroundsContext";
 import { homeFaqs } from "../data/faqData";
 import { api, FALLBACK_COUNTRIES } from "../lib/apiClient";
@@ -84,7 +87,7 @@ const FALLBACK_TESTIMONIALS = [
     id: "2",
     student_name: "Fatima Khan",
     photo_url:
-      "https://images.unsplash.com/photo-1706256446485-58bedf9cbf97?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=200",
+      "https://images.unsplash.com/photo-1706256446485-58bedf9cbf97?q=80&w=100&auto=format&fit=crop",
     university: "University of Toronto",
     country: "Canada",
     quote:
@@ -332,10 +335,14 @@ export default function Home() {
   }, []);
 
   const leadInputCls =
-    "w-full px-4 py-3 rounded-sm border border-gray-200 bg-white text-[#1a1a1a] focus:ring-2 focus:ring-[#204276] focus:border-transparent";
+    "w-full px-4 py-3 rounded-sm border border-gray-200 bg-white text-[#1a1a1a] focus:ring-2 focus:ring-[#204276] focus:border-transparent dark:bg-[#13233f] dark:border-white/10 dark:text-[#f1f1f1]";
 
   return (
     <div ref={containerRef}>
+      <Helmet>
+        {/* LCP preload — starts the hero download before CSS/JS parsing */}
+        <link rel="preload" as="image" href={bgHomeHero} fetchpriority="high" />
+      </Helmet>
       {/* ===== LIGHTBOX MODAL ===== */}
       {lightbox !== null && (
         <div
@@ -350,6 +357,8 @@ export default function Home() {
             <img
               src={HERO_IMAGES[lightbox].src}
               alt={HERO_IMAGES[lightbox].alt}
+              width={HERO_IMAGES[lightbox].w}
+              height={HERO_IMAGES[lightbox].h}
               className="max-w-full max-h-[85vh] object-contain shadow-2xl"
             />
             <p className="text-center text-white text-lg font-bold mt-4">
@@ -383,18 +392,26 @@ export default function Home() {
         </div>
       )}
 
-      {/* ===== HERO SECTION - full-bleed photo + navy overlay, dual-color H1 ===== */}
-      <section
-        className="sol-overlay sol-hero"
-        style={{ backgroundImage: `url(${bgHomeHero})` }}
-      >
+      {/* ===== HERO SECTION - LCP image + navy overlay, dual-color H1 =====
+          The hero photo is a real <img> (discoverable by the preload scanner)
+          with fetchpriority=high instead of a CSS background-image, so the
+          browser starts downloading it immediately (LCP fix). */}
+      <section className="sol-overlay sol-hero">
+        <img
+          src={bgHomeHero}
+          alt=""
+          fetchpriority="high"
+          decoding="async"
+          width={1280}
+          height={853}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+        />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24 lg:pt-48 lg:pb-32 text-center">
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white opacity-0 animate-fadeInUp"
+            className="text-4xl sm:text-5xl lg:whitespace-nowrap font-semibold leading-tight text-white opacity-0 animate-fadeInUp"
             style={{ fontFamily: '"Roboto Slab", serif' }}
           >
-            Higher Education
-            <span className="block pb-2 text-[#7fb2dd]">Abroad Destination</span>
+            Higher Education Abroad Destination
           </h1>
 
           <p className="mt-8 text-justify [text-align-last:center] text-white/90 text-lg leading-relaxed opacity-0 animate-fadeInUp animate-delay-100">
@@ -405,7 +422,7 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fadeInUp animate-delay-200">
-            <Link to="/freeconsulation" className="sol-btn justify-center text-lg">
+            <Link to="/freeconsulation#consultation-form" className="sol-btn justify-center text-lg">
               Free Consultation
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
@@ -418,9 +435,9 @@ export default function Home() {
           <div className="mt-12 flex items-center justify-center gap-6 opacity-0 animate-fadeInUp animate-delay-300">
             <div className="flex -space-x-3">
               {[
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
-                "https://images.unsplash.com/photo-1672857994550-154578be9f41?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1672857994550-154578be9f41?q=80&w=100&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
               ].map((src, i) => (
                 <img
                   key={i}
@@ -477,7 +494,14 @@ export default function Home() {
                 style={{ transitionDelay: `${i * 60}ms` }}
                 aria-label={img.alt}
               >
-                <img src={img.src} alt={img.alt} loading="lazy" />
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={img.w}
+                  height={img.h}
+                />
                 <span className="sol-gallery-caption text-sm font-semibold">{img.alt}</span>
               </button>
             ))}
@@ -486,7 +510,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES SECTION - icon callout grid ===== */}
-      <section className="py-24 bg-[#f2f2f2]">
+      <section className="py-24 bg-[#f2f2f2] dark:bg-[#0a1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
             <h2 className="sol-eyebrow text-sm mb-3">Our Expert Services</h2>
@@ -519,7 +543,7 @@ export default function Home() {
                 </p>
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-1.5 text-[#2b7bb9] font-bold text-sm hover:text-[#204276] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-[#2b7bb9] font-bold text-sm hover:text-[#204276] transition-colors dark:text-[#7fb2dd] dark:hover:text-[#9cc4ea]"
                 >
                   Learn More
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -572,7 +596,7 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="py-24 bg-[#f2f2f2]">
+      <section className="py-24 bg-[#f2f2f2] dark:bg-[#0a1626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
             <h2 className="sol-eyebrow text-sm mb-3">Success Stories</h2>
@@ -591,7 +615,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.length === 0 && (
-              <div className="md:col-span-2 lg:col-span-4 text-center py-16 text-gray-500">
+              <div className="md:col-span-2 lg:col-span-4 text-center py-16 text-gray-500 dark:text-[#94a3b8]">
                 <span className="material-symbols-outlined text-5xl mb-4 block opacity-40">rate_review</span>
                 <p className="text-lg font-medium">No student reviews yet.</p>
                 <p className="text-sm mt-1">Be the first to share your experience!</p>
@@ -603,26 +627,12 @@ export default function Home() {
                 className="sol-card p-8 reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <span
-                      key={j}
-                      className="material-symbols-outlined text-[#7fb2dd] text-lg"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 italic">
-                  "{t.quote}"
+                <StarRating rating={t.rating} className="w-4 h-4" />
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 italic break-words">
+                  &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <img
-                    src={t.photo_url}
-                    alt={t.student_name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-[#204276]/20"
-                  />
+                  <TestimonialAvatar name={t.student_name} src={t.photo_url} />
                   <div>
                     <p className="font-bold text-sm text-[#1a1a1a] dark:text-white">
                       {t.student_name}
@@ -665,7 +675,7 @@ export default function Home() {
                 path for your academic and professional growth.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/freeconsulation" className="sol-btn-light text-lg">
+                <Link to="/freeconsulation#consultation-form" className="sol-btn-light text-lg">
                   Book Free Consultation
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </Link>
@@ -681,20 +691,20 @@ export default function Home() {
             <div className="reveal">
               <form
                 onSubmit={handleLeadSubmit}
-                className="bg-white p-8 shadow-2xl"
+                className="bg-white p-8 shadow-2xl dark:bg-[#0d1e30]"
                 style={{ borderTop: "3px solid #204276" }}
               >
-                <h3 className="text-2xl font-semibold text-[#1a1a1a] mb-2">
+                <h3 className="text-2xl font-semibold text-[#1a1a1a] mb-2 dark:text-[#f1f1f1]">
                   Get Free Consultation
                 </h3>
-                <p className="text-gray-500 mb-6 text-sm">
+                <p className="text-gray-500 mb-6 text-sm dark:text-[#94a3b8]">
                   Fill in your details and our counselors will contact you
                   within 24 hours.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Full Name *
                     </label>
                     <input
@@ -707,7 +717,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Email *
                     </label>
                     <input
@@ -724,7 +734,7 @@ export default function Home() {
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Phone *
                     </label>
                     <input
@@ -737,7 +747,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Country of Interest
                     </label>
                     <select
@@ -756,7 +766,7 @@ export default function Home() {
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                     Service Interest
                   </label>
                   <select
@@ -776,7 +786,7 @@ export default function Home() {
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                     Message
                   </label>
                   <textarea
@@ -810,7 +820,7 @@ export default function Home() {
                 </button>
 
                 {leadStatus === "success" && (
-                  <p className="mt-4 text-[#2b7bb9] font-semibold text-center">
+                  <p className="mt-4 text-[#2b7bb9] font-semibold text-center dark:text-[#7fb2dd]">
                     Thank you! We'll contact you within 24 hours.
                   </p>
                 )}
@@ -874,7 +884,7 @@ export default function Home() {
                 <form onSubmit={handleTestimonialSubmit}>
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                         Your Name *
                       </label>
                       <input
@@ -887,7 +897,7 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                         University *
                       </label>
                       <input
@@ -901,7 +911,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Country *
                     </label>
                     <input
@@ -914,7 +924,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Your Review *
                     </label>
                     <textarea
@@ -928,7 +938,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="mb-5">
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-[#c7d3e2]">
                       Your Photo (optional)
                     </label>
                     <input

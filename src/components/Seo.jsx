@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { routesLookup, siteConfig } from "../data/seoMeta";
 
-export default function AutoSeo({ children, faqItems, extraKeywords }) {
+export default function AutoSeo({ children, faqItems, extraKeywords, titleOverride, noindex = false }) {
   const ref = useRef(null);
   const { pathname } = useLocation();
 
   const route = pathname.replace(/\/$/, "") || "/";
   const pageMeta = routesLookup[route] || routesLookup[route.replace(/\/[^/]+$/, "")];
 
-  const title = pageMeta?.title || siteConfig.name;
+  const title = titleOverride || pageMeta?.title || siteConfig.name;
   const desc = pageMeta?.name?.description || "";
   const keywords = pageMeta?.name?.keywords || extraKeywords?.join(", ") || "";
   const canonical = pageMeta?.canonical || `${siteConfig.url}${route}`;
@@ -40,6 +40,7 @@ export default function AutoSeo({ children, faqItems, extraKeywords }) {
     <>
       <Helmet>
         <title>{title}</title>
+        {noindex && <meta name="robots" content="noindex, follow" />}
         <link rel="canonical" href={canonical} />
         <meta name="description" content={desc} />
         {keywords && <meta name="keywords" content={keywords} />}

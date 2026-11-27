@@ -147,7 +147,7 @@ export function MentorHero({
   subtitle,
   desc,
   ctaLabel = "Book a Free Consultation",
-  ctaLink = "/freeconsulation",
+  ctaLink = "/freeconsulation#consultation-form",
   blobTop,
   blobRight,
 }) {
@@ -485,7 +485,7 @@ export function MentorCtaBanner({
   title,
   desc,
   label = "Book a Free Consultation",
-  link = "/freeconsulation",
+  link = "/freeconsulation#consultation-form",
 }) {
   return (
     <section
@@ -990,11 +990,14 @@ export function MentorTierBars({ tiers }) {
 /* ─────────────────────────────────────────────
    TWO COLUMN EDITORIAL  (magazine-style text layout)
 ───────────────────────────────────────────── */
-export function MentorEditorial({ header, headerBody, body1, body2 }) {
+export function MentorEditorial({ title, highlight, headerBody, body1, body2 }) {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="mtr-reveal mtr-editorial">
       <div>
-        <h2 className="mtr-h2" style={{ marginBottom: 16 }} dangerouslySetInnerHTML={{ __html: header }} />
+        {/* Safe text rendering — no dangerouslySetInnerHTML */}
+        <h2 className="mtr-h2" style={{ marginBottom: 16 }}>
+          {title} {highlight && <span style={{ color: "#7fb2dd" }}>{highlight}</span>}
+        </h2>
         <p className="mtr-body" style={{ fontSize: 16 }}>{headerBody}</p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>

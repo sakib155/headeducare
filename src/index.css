@@ -400,26 +400,14 @@ color: #1a1a1a;
   transform: translateY(0);
 }
 
-/* ===== CUSTOM SCROLLBAR ===== */
-::-webkit-scrollbar {
-  width: 8px;
+/* ===== PAGE SCROLLBAR (hidden — page stays scrollable) ===== */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #204276;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #16325c;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #1a2235;
+html::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===== GRADIENT TEXT ===== */
@@ -686,13 +674,13 @@ color: #1a1a1a;
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-/* Eyebrow label — Oswald uppercase */
+/* Eyebrow label — Oswald uppercase (AA 4.9:1 on white) */
 .sol-eyebrow {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-weight: 500;
-  color: #2b7bb9;
+  color: #1d6fa5;
 }
 
 /* Dark photo overlay band (hero / why-choose / footer top) */
@@ -705,6 +693,7 @@ color: #1a1a1a;
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1; /* paints above the hero <img>, below the content */
   background: linear-gradient(rgba(15, 32, 60, 0.82), rgba(20, 42, 78, 0.78));
 }
 .sol-overlay > * {
@@ -739,6 +728,12 @@ color: #1a1a1a;
 .dark .sol-callout {
   background: #0d1e30;
   border-color: rgba(255, 255, 255, 0.08);
+}
+.dark .sol-eyebrow {
+  color: #7fb2dd;
+}
+.dark .sol-stat-number {
+  color: #7fb2dd;
 }
 
 /* White icon callout card (icon above title, hover lift) */
@@ -844,4 +839,92 @@ color: #1a1a1a;
 }
 .sol-card:hover {
   box-shadow: 0 14px 34px -18px rgba(32, 66, 118, 0.3);
+}
+/* ═══════════════════════════════════════════════════════════════════════
+   GLOBAL DARK MODE THEME LAYER
+   Root-level re-theming: every page inherits dark surfaces, typography,
+   borders and form styles automatically under `.dark` — no per-file edits
+   needed. Light mode is untouched: every rule below is scoped to `.dark`.
+   Un-layered rules intentionally sit above Tailwind's @layer utilities,
+   so plain utilities (bg-white, text-gray-700, text-[#1a1a1a]…) are
+   re-themed globally across all pages.
+   Surface hierarchy: body #01091c → bands #0a1626 → cards #0d1e30 →
+   inputs/dropdowns #13233f → borders #1e3a5f
+   Contrast: headings ≥ 12:1 · body ≥ 8:1 · muted ≥ 4.5:1 (WCAG AA)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Surfaces: sections, cards, modals ── */
+.dark .bg-white { background-color: #0d1e30; }
+.dark .bg-\[\#f2f2f2\] { background-color: #0a1626; }
+.dark .bg-gray-50 { background-color: #0d1626; }
+.dark .bg-gray-100 { background-color: #13233f; }
+
+/* ── Typography: headings, body, muted ── */
+.dark .text-\[\#1a1a1a\] { color: #f1f5fb; }
+.dark .text-\[\#0f203c\] { color: #f1f5fb; }
+.dark .text-\[\#0f203c\]\/80 { color: #c7d3e2; }
+.dark .text-gray-900 { color: #f1f5fb; }
+.dark .text-gray-800 { color: #e2e9f4; }
+.dark .text-gray-700 { color: #c7d3e2; }
+.dark .text-gray-600 { color: #a5b4cb; }
+.dark .text-gray-500 { color: #94a3b8; }
+.dark .text-gray-400 { color: #8fa3bf; }
+.dark .text-\[\#204276\] { color: #7fb2dd; }
+.dark .text-\[\#2b7bb9\] { color: #7fb2dd; }
+.dark .text-\[\#16325c\] { color: #7fb2dd; }
+
+/* Gold CTA strips keep navy-on-gold (undo overrides inside them) */
+.dark .sol-gold-strip .text-\[\#0f203c\] { color: #0f203c; }
+.dark .sol-gold-strip .text-\[\#0f203c\]\/80 { color: #0f203c; }
+
+/* ── Borders & dividers ── */
+.dark .border-\[\#e3e6eb\] { border-color: rgba(255, 255, 255, 0.1); }
+.dark .border-gray-100 { border-color: #1e3a5f; }
+.dark .border-gray-200 { border-color: #1e3a5f; }
+.dark .border-gray-300 { border-color: #2b4a75; }
+.dark hr { border-color: #1e3a5f; }
+.dark .sol-separator,
+.dark .sol-separator-left { background-color: #2b4a75; }
+.dark .sol-separator-light { background-color: rgba(255, 255, 255, 0.75); }
+
+/* ── Interactive: hovers that would flash light-on-dark ── */
+.dark .hover\:bg-gray-100:hover { background-color: #1e3a5f; }
+
+/* ── Forms: placeholders ── */
+.dark ::placeholder { color: #7c92ad; opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE SAFETY (≤767px)
+   Inline two-column grids (style={{ gridTemplateColumns: "…" }}) cannot
+   shrink below their content's min-width on small screens, causing
+   horizontal overflow. They collapse to a single column on mobile;
+   tablet (≥768px) and desktop keep their original layouts untouched.
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1.2fr 0.8fr"],
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns: repeat(2,1fr)"],
+  [style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  body { overflow-x: hidden; }
+  #root { overflow-x: clip; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Consultation form deep-link highlight (#consultation-form:target)
+   Draws the eye to the form when arriving from any CTA across the site.
+   ═══════════════════════════════════════════════════════════════════════ */
+#consultation-form {
+  transition: box-shadow 0.7s ease, border-color 0.7s ease;
+}
+#consultation-form:target {
+  border-color: #204276;
+  box-shadow: 0 0 0 3px rgba(32, 66, 118, 0.25), 0 12px 40px rgba(32, 66, 118, 0.18);
+}
+.dark #consultation-form:target {
+  border-color: #7fb2dd;
+  box-shadow: 0 0 0 3px rgba(127, 178, 221, 0.22), 0 12px 40px rgba(0, 0, 0, 0.35);
 }

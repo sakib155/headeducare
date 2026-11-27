@@ -55,6 +55,15 @@ if ($method === 'POST') {
         exit();
     }
 
+    // Account+IP throttle: 10 attempts per 15 minutes — session-independent,
+    // so clearing cookies cannot bypass the lockout
+    require_once __DIR__ . '/rate_limit.php';
+    if (!rate_limit_check($db, 'login', 10, 900, $username . '|' . ($_SERVER['REMOTE_ADDR'] ?? ''))) {
+        http_response_code(429);
+        echo json_encode(["error" => "Too many attempts. Please try again later."]);
+        exit();
+    }
+
     $stmt = $db->prepare("SELECT * FROM users WHERE username = ?");
     $stmt->execute([$username]);
     $user = $stmt->fetch();

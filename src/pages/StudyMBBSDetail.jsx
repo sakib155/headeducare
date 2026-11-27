@@ -225,7 +225,7 @@ export default function StudyMBBSDetail() {
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 520, margin: "0 auto 28px" }}>
                 Book a free consultation with our experts today, we'll guide you through every step of the MBBS admission process.
               </p>
-              <Link to="/freeconsulation" className="mbbs-cta-btn" style={{ background: "#fff", color: "#204276" }}>
+              <Link to="/freeconsulation#consultation-form" className="mbbs-cta-btn" style={{ background: "#fff", color: "#204276" }}>
                 Book Free Consultation <ChevronRight size={18} />
               </Link>
             </div>

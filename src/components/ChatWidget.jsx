@@ -1,6 +1,7 @@
+import { CONTACTS } from "../data/contact";
+
 export default function ChatWidget() {
-  const whatsappNumber = "8801910833888";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+  const whatsappUrl = CONTACTS.whatsapp.url;
 
   return (
     <a

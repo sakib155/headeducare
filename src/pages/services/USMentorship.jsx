@@ -458,7 +458,7 @@ export default function USMentorship() {
           title="Ready to Build Your Standout Application?"
           desc="Contact our US admissions specialists and find out how we can guide you into your target Ivy League or top-tier university."
           label="Book a Free Consultation"
-          link="/freeconsulation"
+          link="/freeconsulation#consultation-form"
         />
       </div>
     </>

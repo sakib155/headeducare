@@ -57,7 +57,7 @@ export default function StudyMBBS() {
           </div>
         </section>
 
-        <section className="py-20 bg-white dark:bg-background-dark">
+        <section className="py-20 bg-white dark:bg-[#0d1626]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-2xl sm:text-3xl font-black text-[#1a1a1a] dark:text-white mb-10 text-center">
               Choose Your Destination
@@ -88,7 +88,7 @@ export default function StudyMBBS() {
               <p style={{ fontSize: 16, color: "rgba(15,32,60,0.8)", marginBottom: 28, maxWidth: 520, margin: "0 auto 28px" }}>
                 Book a free consultation with our experts today, we'll guide you through every step of the MBBS admission process.
               </p>
-              <Link to="/freeconsulation" className="mbbs-cta-btn">
+              <Link to="/freeconsulation#consultation-form" className="mbbs-cta-btn">
                 Book Free Consultation →
               </Link>
             </div>
